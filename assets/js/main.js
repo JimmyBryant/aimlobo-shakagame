@@ -216,9 +216,9 @@ function copyToClipboard(text) {
 }
 
 function shareThisSite() {
-    const enCopyContent = "Check this out! 🚀 Visit aimlobo.com for amazing content!";
-    const zhCnCopyContent = "我刚发现了一个有趣的网站！🚀 访问 aimlobo.com 获取精彩内容！";
-    const zhTwCopyContent = "我剛發現了一個有趣的網站！🚀 訪問 aimlobo.com 獲取精彩內容！";
+    const enCopyContent = "Check this out! 🚀 Visit shakagame.com for amazing content!";
+    const zhCnCopyContent = "我刚发现了一个有趣的网站！🚀 访问 shakagame.com 获取精彩内容！";
+    const zhTwCopyContent = "我剛發現了一個有趣的網站！🚀 訪問 shakagame.com 獲取精彩內容！";
 
     const lang = getLanguageFromUrl(); // 获取当前语言，例如 'en', 'zh-cn', 'zh-tw'
 
