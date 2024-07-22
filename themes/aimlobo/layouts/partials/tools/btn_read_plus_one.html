@@ -1,0 +1,45 @@
+{{- /* 阅读 +1 , 在js里写了超过1分钟才能另算+1 */}}
+{{- /* partial "tools/btn_read_plus_one.html" (dict "lang" .Lang)*/}}
+
+
+{{- $lang := .lang -}}
+
+{{- $infoContent := "" }}
+
+{{- if eq $lang "en" }}
+  {{ $infoContent = "📖 Read time + 1 (60s)" }}
+{{- else if eq $lang "zh-cn" }}
+  {{ $infoContent = "📖 阅读次数 + 1 (60s)" }}
+{{- else if eq $lang "zh-tw" }}
+  {{ $infoContent = "📖 閱讀次數 + 1 (60s)" }}
+{{- else }}
+  {{ $infoContent = "📖 Read time + 1 (60s)" }}  <!-- 默认为英文内容 -->
+{{- end }}
+
+
+
+<div class="btn_read_plus_one cursor-pointer tips_icon">
+  <div class="title font-size-1_5 color-white">📖 {{ T "read" }} +1</div>
+
+  <div class="popup_tips popup_box">
+    <div class="popup_box_content">
+      <div class="header">
+        <span class="icon">💡</span>{{- T "tips" -}}
+      </div>
+      
+      <div class="body">
+  
+        <div class="content">
+            <p>{{ $infoContent }}</p>
+        </div>
+          
+      </div>
+  
+      <div class="footer">
+        <button class="btn btn_get_it">{{ T "get_it" }}</button>
+      </div>
+    </div>
+  </div>
+
+
+</div>

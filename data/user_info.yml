@@ -1,0 +1,320 @@
+user_avatar_emoji:
+  - id: beach
+    content: 🏖️
+    weight: 10
+  - id: desert
+    content: 🏜️
+    weight: 20
+  - id: moutain
+    content: 🏔️
+    weight: 30
+  - id: female
+    content: 👩‍💼
+    weight: 40
+  - id: farmer
+    content: 🧑‍🌾
+    weight: 50
+  - id: elve
+    content: 🧝
+    weight: 60
+  - id: lion
+    content: 🦁
+    weight: 70
+  - id: dog
+    content: 🐶
+    weight: 80
+  - id: whale
+    content: 🐳
+    weight: 90
+  - id: dragon
+    content: 🐲
+    weight: 100
+  - id: tiger
+    content: 🐯
+    weight: 110
+  - id: bear
+    content: 🧸
+    weight: 120
+
+user_lucky_point:
+  tips:
+    en:
+      - title: What is lucky point
+        content: Lucky points(🧧) represent the lucky points you get on this website **aimlobo.com**. Lucky points can be used for consumption, and of course they can also be earned. You'll find it used in many places, so enjoy it.
+        weight: 10
+      - title: How to use or earn lucky point
+        content: |
+          1. Earn:
+            - Visit the website pages;
+            - Game rewards;
+            - Check in today;
+            - More...(Enjoy exploring)
+          ---
+          2. Consumption:
+            - game props;
+            - In site trading;
+            - More...(Enjoy exploring)
+        weight: 20
+    zh-cn:
+      - title: 什么是幸运值
+        content: 幸运值(🧧)表示您在本网站**aimlobo.com**所获得的幸运积分，幸运值可以用来消费，当然也可以赚取。你会发现很多地方都会用到它，尽情享受吧。
+        weight: 10
+      - title: 如何使用幸运值
+        content: |
+          1. 赚取:
+            - 浏览网页；
+            - 游戏奖励；
+            - 每日签到；
+            - 更多...（尽情探索吧）
+          ---
+          2. 消费:
+            - 游戏道具；
+            - 站内交易；
+            - 更多...（尽情探索吧）
+        weight: 20
+    zh-tw:
+      - title: 什麽是幸運值
+        content: 幸運值(🧧)表示您在本網站**aimlobo.com**所獲得的幸運積分，幸運值可以用來消費，當然也可以賺取。你會發現很多地方都會用到它，盡情享受吧。
+        weight: 10
+      - title: 如何使用幸運值
+        content: |
+          1. 赚取:
+            - 瀏覽網頁；
+            - 遊戲獎勵；
+            - 每日簽到；
+            - 更多...（盡情探索吧）
+          ---
+          2. 消費:
+            - 遊戲道具；
+            - 站內交易；
+            - 更多...（盡情探索吧
+        weight: 20
+
+user_level:
+  tips:
+    en:
+      - title: level
+        content: Level (🎢) indicates your user level on this website **aimlobo.com**. Higher level mean more benefits, unlock more achievements, Enjoy exploring.
+        weight: 10
+    zh-cn:
+      - title: 等级
+        content: 等级(🎢)表示您在本网站**aimlobo.com**的用户等级，更高等级意味着更多福利，解锁更多成就，请尽情探索。
+        weight: 10
+    zh-tw:
+      - title: 等級
+        content: 等級(🎢)表示您在本網站**aimlobo.com**的用戶等級，更高等級意味著更多福利，解鎖更多成就，請盡情探索。
+        weight: 10
+
+
+user_achievement:
+  lucky_point:
+    - id: 10
+      content: 🤎
+      weight: 10
+    - id: 50
+      content: 💜
+      weight: 20
+    - id: 100
+      content: 🩵
+      weight: 30
+    - id: 200
+      content: 💙
+      weight: 40
+    - id: 500
+      content: 💚
+      weight: 50
+    - id: 1000
+      content: 💛
+      weight: 60
+    - id: 2000
+      content: 🧡
+      weight: 70
+    - id: 5000
+      content: 🩷
+      weight: 80
+    - id: 10000
+      content: 💕
+      weight: 90
+    - id: 20000
+      content: 💞
+      weight: 100
+    - id: 50000
+      content: 💓
+      weight: 110
+    - id: 100000
+      content: 💗
+      weight: 120
+    - id: 200000
+      content: 💖
+      weight: 130
+    - id: 500000
+      content: 💝
+      weight: 140
+    - id: 1000000
+      content: ❤️
+      weight: 150
+    - id: 10000000
+      content: ❤️‍🔥
+      weight: 160
+
+  user_level:
+    - id: 1
+      content: 🧊
+      weight: 10
+    - id: 5
+      content: 🔥
+      weight: 20
+    - id: 10
+      content: 🎋
+      weight: 30
+    - id: 20
+      content: ☀️
+      weight: 40
+    - id: 50
+      content: 🧨
+      weight: 50
+    - id: 100
+      content: 🎈
+      weight: 60
+    - id: 200
+      content: 🎉
+      weight: 70
+    - id: 300
+      content: 💫
+      weight: 80
+    - id: 400
+      content: 🎏
+      weight: 90
+    - id: 500
+      content: 🥉
+      weight: 100
+    - id: 600
+      content: 🥈
+      weight: 110
+    - id: 700
+      content: 🥇
+      weight: 120
+    - id: 800
+      content: 🏅
+      weight: 130
+    - id: 900
+      content: 🏆
+      weight: 140
+    - id: 1000
+      content: 🎖️
+      weight: 150
+    - id: 1500
+      content: 💎
+      weight: 160
+
+  game_time:
+    - id: 1
+      content: 🛼
+      weight: 10
+    - id: 5
+      content: 🛹
+      weight: 20
+    - id: 10
+      content: 🛴
+      weight: 30
+    - id: 20
+      content: 🚲
+      weight: 40
+    - id: 50
+      content: 🛵
+      weight: 50
+    - id: 100
+      content: 🏍️
+      weight: 60
+    - id: 200
+      content: 🛻
+      weight: 70
+    - id: 300
+      content: 🚗
+      weight: 80
+    - id: 400
+      content: 🏎️
+      weight: 90
+    - id: 500
+      content: 🚆
+      weight: 100
+    - id: 600
+      content: 🚅
+      weight: 110
+    - id: 700
+      content: 🚁
+      weight: 120
+    - id: 800
+      content: ✈️
+      weight: 130
+    - id: 900
+      content: 🛰️
+      weight: 140
+    - id: 1000
+      content: 🚀
+      weight: 150
+    - id: 1500
+      content: 🛸
+      weight: 160
+
+  read_time:
+    - id: 1
+      content: 🍃
+      weight: 10
+    - id: 5
+      content: 🌱
+      weight: 20
+    - id: 10
+      content: ☘️
+      weight: 30
+    - id: 20
+      content: 🍀
+      weight: 40
+    - id: 50
+      content: 🌿
+      weight: 50
+    - id: 100
+      content: 🪴
+      weight: 60
+    - id: 200
+      content: 🌴
+      weight: 70
+    - id: 300
+      content: 🌲
+      weight: 80
+    - id: 400
+      content: 🌳
+      weight: 90
+    - id: 500
+      content: 🌸
+      weight: 100
+    - id: 600
+      content: 💐
+      weight: 110
+    - id: 700
+      content: 🌼
+      weight: 120
+    - id: 800
+      content: 🌻
+      weight: 130
+    - id: 900
+      content: 🌺
+      weight: 140
+    - id: 1000
+      content: 🌷
+      weight: 150
+    - id: 1500
+      content: 🌹
+      weight: 160
+
+user_check_in_tips:
+  en: check_in_today_complere, level up +1, lucky score + 10, continue and enjoy.
+  zh-cn: 签到成功，等级 +1, 幸运值 +10, 继续保持。
+  zh-tw: 簽到成功，等級 +1, 幸運值 +10, 繼續保持。
+
+user_unlucky_for_tips:
+  en: No touch unlucky things.
+  zh-cn: 不好的东西咱不碰。
+  zh-tw: 不好的東西咱不碰。
+
+  

@@ -1,0 +1,569 @@
+# head
+- id: head_keywords
+  translation: "Interesting infos, online free games"
+
+- id: head_description
+  translation: "Various interesting and fresh news and stories, free online gaming platform, bringing you unlimited fun and surprises."
+
+
+
+- id: translations
+  translation: "Translations"
+
+
+# top menu
+
+- id: home
+  translation: "Home"
+
+- id: game
+  translation: "Game"
+
+- id: luck
+  translation: "Luck"
+
+- id: astro
+  translation: "Astro"
+
+- id: zodiac
+  translation: "Zodiac"
+
+- id: topic
+  translation: "Topic"
+
+- id: my
+  translation: "My"
+
+- id: search
+  translation: "Search"
+
+- id: secret
+  translation: "Secret"
+
+
+# footer
+
+- id: about
+  translation: "About"
+
+- id: contact_us
+  translation: "Contact us"
+
+- id: footer_copyright
+  translation: "All rights reserved"
+
+- id: brandText
+  translation: "Good luck every day"
+
+- id: footer_declaration
+  translation: "Declaration: The main content of this website is derived from traditional folk culture and AI content generation, rather than rigorous scientific research results. It is provided for entertainment and reference purposes only. Please do not blindly believe in it."
+
+
+# page
+- id: backtohome
+  translation: "Back to Home"
+
+- id: prev
+  translation: "Prev"
+
+- id: next
+  translation: "Next"
+
+- id: summary
+  translation: "Summary"
+
+# other
+- id: tips
+  translation: "Tips"
+
+- id: get_it
+  translation: "Get it"
+
+
+# luck
+- id: number
+  translation: "Lucky number"
+
+- id: flower
+  translation: "Lucky flower"
+
+- id: stone
+  translation: "Lucky stone"
+
+- id: place
+  translation: "Lucky place"
+
+- id: hobby
+  translation: "Lucky hobby"
+
+- id: lot
+  translation: "Lucky lot"
+
+- id: dice
+  translation: "Lucky dice"
+
+- id: color
+  translation: "Lucky color"
+
+# astro
+- id: aries
+  translation: "Aries"
+
+- id: taurus
+  translation: "Taurus"
+
+- id: gemini
+  translation: "Gemini"
+
+- id: cancer
+  translation: "Cancer"
+
+- id: leo
+  translation: "Leo"
+
+- id: virgo
+  translation: "Virgo"
+
+- id: libra
+  translation: "Libra"
+
+- id: scorpio
+  translation: "Scorpio"
+
+- id: sagittarius
+  translation: "Sagittarius"
+
+- id: capricorn
+  translation: "Capricorn"
+
+- id: aquarius
+  translation: "Aquarius"
+
+- id: pisces
+  translation: "Pisces"
+
+# chinese zodiac
+
+- id: rat
+  translation: "Rat"
+
+- id: ox
+  translation: "Ox"
+
+- id: tiger
+  translation: "Tiger"
+
+- id: rabbit
+  translation: "Rabbit"
+
+- id: dragon
+  translation: "Dragon"
+
+- id: snake
+  translation: "Snake"
+
+- id: horse
+  translation: "Horse"
+
+- id: goat
+  translation: "Goat"
+
+- id: monkey
+  translation: "Monkey"
+
+- id: rooster
+  translation: "Rooster"
+
+- id: dog
+  translation: "Dog"
+
+- id: pig
+  translation: "Pig"
+
+
+# get-astro-zodiac
+
+- id: Find your astro and zodiac
+  translation: "Find your astro and zodiac"
+
+- id: year
+  translation: "Year"
+
+- id: month
+  translation: "Month"
+
+- id: day
+  translation: "Day"
+
+- id: date
+  translation: "Date"
+
+- id: submit
+  translation: "Submit"
+
+
+
+# astro
+- id: traits
+  translation: "Traits"
+
+- id: today
+  translation: "Today"
+
+- id: tomorrow
+  translation: "Tomorrow"
+
+- id: next_week
+  translation: "Next week"
+
+- id: this_year
+  translation: "This year"
+
+- id: overall
+  translation: "Overall"
+
+- id: love
+  translation: "Love"
+
+- id: finance
+  translation: "Finance"
+
+- id: health
+  translation: "Health"
+
+- id: career
+  translation: "Career"
+
+- id: description
+  translation: "Description"
+
+- id: best_match
+  translation: "Best match"
+
+- id: info
+  translation: "Info"
+
+- id: dates
+  translation: "Dates"
+
+- id: lucky_number
+  translation: "Lucky number"
+
+- id: lucky_color
+  translation: "Lucky color"
+
+- id: lucky_direction
+  translation: "Lucky direction"
+
+- id: element
+  translation: "Lucky element"
+
+- id: ruling_planet
+  translation: "Lucky planet"
+
+- id: lucky_flower
+  translation: "Lucky flower"
+
+- id: story
+  translation: "Story"
+
+# tags
+- id: tags
+  translation: "Tags"
+
+
+# game happy_worship
+- id: back_to_game
+  translation: "Back to Game"
+
+- id: happy_worship
+  translation: "Happy Worship"
+
+- id: customize_title
+  translation: "Customize Title"
+
+- id: edit_title
+  translation: "Edit Title"
+
+- id: cancel
+  translation: "Cancel"
+
+- id: submit
+  translation: "Submit"
+
+- id: add_god
+  translation: "Add God"
+
+- id: add_offerings
+  translation: "Add Offerings"
+
+- id: add_incense
+  translation: "Add Incense"
+
+- id: start_worship
+  translation: "Start Worship"
+
+- id: worship
+  translation: "Worship"
+
+- id: worshiping
+  translation: "Worshiping"
+
+- id: time_left
+  translation: "Time left"
+
+  
+
+# game wooden_fish
+
+- id: wooden_fish
+  translation: "Wooden fish"
+
+- id: edit_title
+  translation: "Edit Title"
+
+- id: auto_on
+  translation: "Auto On"
+
+- id: auto_off
+  translation: "Auto Off"
+
+- id: bgm_on
+  translation: "BGM On"
+
+- id: bgm_off
+  translation: "BGM Off"
+
+- id: minute
+  translation: "min"
+
+- id: edit_prayer
+  translation: "Edit Prayer"
+
+- id: customize
+  translation: "Customize"
+
+- id: here
+  translation: "Here"
+
+
+
+# game book
+- id: select_category
+  translation: "Select category"
+
+- id: open
+  translation: "Open"
+
+- id: ready?
+  translation: "Ready?"
+
+- id: find_your_answer
+  translation: "Find your answer"
+
+- id: ask_again
+  translation: "Ask again"
+
+
+
+
+# my
+- id: select_your_avatar
+  translation: "Select Avatar"
+
+- id: user_avatar
+  translation: "user avatar"
+
+- id: user_name
+  translation: "Username"
+
+- id: signature
+  translation: "Signature"
+
+- id: good_luck_every_day
+  translation: "Good luck every day"
+
+- id: birthday
+  translation: "Birthday"
+
+
+- id: your_birthday
+  translation: "Your birthday"
+
+
+- id: check_in_today
+  translation: "Check in"
+
+- id: lucky_point
+  translation: "Lucky Point"
+
+- id: user_level
+  translation: "User Level"
+
+- id: achievement
+  translation: "Achievement"
+
+- id: game_time
+  translation: "Game Times"
+
+- id: read_time
+  translation: "Read Times"
+
+- id: lucky_for
+  translation: "Lucky"
+
+- id: unlucky_for
+  translation: "Unlucky"
+
+
+# page rank
+- id: rank
+  translation: "Rank"
+
+- id: user_info
+  translation: "User info"
+
+
+# page topic - list
+- id: posted_at
+  translation: "Posted at"
+
+- id: funny_notice
+  translation: "There will always be warmth and hope in life"
+
+- id: hot_posts
+  translation: "Hot posts"
+
+- id: post_number
+  translation: "number"
+
+- id: post_like
+  translation: "like"
+
+- id: visitor_number
+  translation: "Visitor"
+
+- id: share
+  translation: "Share"
+
+- id: share_this_site
+  translation: "Share this website"
+
+- id: prev_page
+  translation: "Prev"
+
+- id: next_page
+  translation: "Next"
+
+- id: happy_accept
+  translation: "Happy accept"
+
+
+# page topic - single
+- id: summary
+  translation: "Summary"
+
+- id: translation
+  translation: "Translation"
+
+- id: toc
+  translation: "Table of Content"
+
+- id: your
+  translation: "Your"
+
+- id: author
+  translation: "Author"
+
+- id: topic_notice
+  translation: "Notice"
+
+- id: topic_notice_content
+  translation: "Please indicate the source of the article when repost"
+
+- id: link
+  translation: "Link"
+
+- id: read
+  translation: "Read"
+
+# page tag
+- id: tag
+  translation: "Tag"
+
+# game flying book
+- id: flying_book
+  translation: "Flying Book"
+
+- id: more_answers
+  translation: "More Answers"
+
+# page bullet: biu biu
+- id: leave_msg
+  translation: "say something"
+
+
+# game: horse racing
+- id: horse_racing
+  translation: "Horse Racing"
+
+- id: select_horse
+  translation: "Select Horse"
+
+- id: bet
+  translation: "Bet"
+
+- id: your_available_lucky_point
+  translation: "Your available lucky point"
+
+- id: enter_bet_amount
+  translation: "Enter bet amount"
+
+- id: integer
+  translation: "integer"
+
+- id: player_matching
+  translation: "Player matching"
+
+- id: match_success
+  translation: "Match Success"
+
+- id: the_horse_you_bet
+  translation: "The horse you bet"
+
+- id: racing
+  translation: "Racing"
+
+- id: your_bet_amount
+  translation: "Your bet amount"
+
+- id: total_player
+  translation: "Total player"
+
+- id: total_bet_amount
+  translation: "Total bet amount"
+
+- id: player_number
+  translation: "Players number"
+
+- id: bet_amount
+  translation: "Bet amount"
+
+- id: start_game
+  translation: "Start Game"
+
+- id: racing_result
+  translation: "Racing Result"
+
+- id: you_win
+  translation: "You win"
+
+- id: you_lost
+  translation: "You lose"
+
+- id: wining_horse_is
+  translation: "wining horse is"
+
+- id: once_again
+  translation: "Once again"
+

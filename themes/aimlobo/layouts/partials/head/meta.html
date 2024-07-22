@@ -1,0 +1,17 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ printf "%s | %s" .Title site.Title }}{{ end }}</title>
+
+<meta name="keywords" content="{{- with site.Params.keywords -}}{{- T . -}}{{- end -}}">
+<meta name="description" content="{{- with .Params.description -}}{{ . }}{{- else -}}{{- with site.Params.description -}}{{- T . -}}{{- end -}}{{- end -}}">
+
+<link rel="icon" href="{{- site.Params.assets.favicon | absURL -}}" sizes="48x48">
+<link rel="icon" href="{{- site.Params.assets.favicon_svg | absURL -}}" type="image/svg+xml" sizes="any">
+<link rel="apple-touch-icon" href="{{- site.Params.assets.apple_touch_icon | absURL -}}">
+
+
+<link rel="canonical" href="{{- site.BaseURL -}}">
+{{ range site.Languages }}
+    <link rel="alternate" href="{{- site.BaseURL -}}{{- .LanguageCode -}}" hreflang="{{- .LanguageCode -}}">
+{{ end }}

@@ -1,0 +1,36 @@
+{{- /* 
+    1. 优化图片, 主要是png to webp格式, 另外就是降低宽度;
+    2. 使用hugo自带的image.Process处理, 参数传递的时候按照rem传递宽度, 图片的长度要么是:
+        正方形, 计划宽度是: 1024 * 1024 = 64 * 64 rem;
+        长方形, 计划宽度是: 1344 * 768 = 84 * 48 rem;
+ */}}
+
+{{- /* 
+    图片大小的原则是: 在pc端就使用相同大小, 在mobile端就使用1.5倍大小, 也就是说, 如果mobile端需求是16rem,那么图片宽度需要是16 * 1.5 = 24rem。这样才不会让mobile端的图片质量过低, 另外质量也需要设置成85,高于默认的75.
+    pc端设置为85.
+*/}}
+
+{{- /* partial "tools/img-res.html" (dict "class" "class" "imagePath" "/path/to/image.jpg" "alt" "Image Alt Text" "imageWidth" "width number") */}}
+
+
+{{ $class := .class }}
+{{ $imagePath := .imagePath}}
+{{ $alt := .alt }}
+{{ $imageWidth := .imageWidth }}
+
+
+
+{{ with resources.Get $imagePath }}
+    {{ $src := .RelPermalink }}
+    {{ $largeWidth := mul $imageWidth 16 }}
+    {{ $smallWidth := mul (div $imageWidth 2) 24 }}
+
+    {{ $largeImageWebp := .Resize (printf "%dx webp" $largeWidth) }}
+    {{ $smallImageWebp := .Resize (printf "%dx webp q85" $smallWidth) }}
+
+    <picture>
+        <source srcset="{{ $largeImageWebp.RelPermalink }}" type="image/webp" media="(min-width: 600px)">
+        <source srcset="{{ $smallImageWebp.RelPermalink }}" type="image/webp" media="(max-width: 599px)">
+        <img src="{{ $src }}" alt="{{ $alt }}" class="{{ $class }}" loading="lazy">
+    </picture>
+{{ end }}

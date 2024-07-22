@@ -1,0 +1,194 @@
+{{- define "main" -}}
+
+{{- /* topic - list */ -}}
+
+{{- /* 得到所有文章 */ -}}
+{{ $pages := where .Site.RegularPages "Section" "topic" }}
+
+{{- /* 去掉需要隐藏的文章 */ -}}
+{{- $pages = where $pages ".Params.hide" "!=" true -}}
+
+{{- /* 文章分页 */ -}}
+{{- $paginator := .Paginate $pages -}}
+
+<div class="wrap">
+
+  {{- /* 页面标题 */ -}}
+  <div class="padding-1rem"><h1>{{ T "topic" }}</h1></div>
+
+  <div class="page-topic-list flex">
+
+    {{- /* PC端横排， mobile竖排 */ -}}
+
+    {{- /* 推荐阅读，tags */ -}}
+    <div class="left">
+
+      {{- /* 文章信息 */ -}}
+      <div class="topic-info flex flex-column gap-1rem align-items-center shadow-box border-radius-_5rem padding-1rem margin-bottom-1rem">
+
+        {{- /* 头像 */ -}}
+        <div class="logo bg-white border-round padding-1rem">
+          {{- $imagePath := "/image/apple-touch-icon.png" -}}
+          {{- $alt := "aimlobo logo" -}}
+          {{- partial "tools/img-res.html" (dict "imagePath" $imagePath "alt" $alt "imageWidth" 20) }}
+        </div>
+
+        {{- /* 作者名称 */ -}}
+        <div class="font-size-1_5 font-weight-400 font-serif">{{ "Aimlobo" }}</div>
+
+        {{- /* 文章信息 */ -}}
+        <div class="flex align-items-center justify-content-around width-100">
+
+          {{- /* 文章数量 */ -}}
+          <div class="flex flex-column align-items-center gap-_5rem">
+            <div>📃 {{ T "post_number" }}</div>
+            <div>{{ len $pages }}</div>
+          </div>
+
+          {{- /* 文章获赞 */ -}}
+          <div class="flex flex-column align-items-center gap-_5rem">
+            <div>❤️ {{ T "post_like" }}</div>
+            <div class="var_post_like">123</div>
+          </div>
+
+          {{- /* 访客数量 */ -}}
+          <div class="flex flex-column align-items-center gap-_5rem">
+            <div>👨‍👩‍👧‍👦 {{ T "visitor_number" }}</div>
+            <div class="var_visitor_number">123</div>
+          </div>
+
+        </div>
+
+        {{- /* 分享网站 */ -}}
+          {{- partial "tools/popup_info_share.html" (dict "lang" .Lang) }}
+  
+      </div>
+      
+      {{- /* 推荐阅读 - by weight */ -}}
+      <div class="topic-recommond shadow-box border-radius-_5rem padding-1rem">
+
+        <div class="font-size-1_5 margin-bottom-1rem">🔥 {{ T "hot_posts" }}</div>
+        {{- range first 3 (sort $pages "Weight" "desc") -}}
+          <div class="topic-item flex gap-_5rem align-items-center margin-bottom-1rem">
+
+            {{ with . }}
+            {{- /* 封面图片: pc端需求5rem,放15rem，清晰点 - 这里翻了3倍，是因为手机端的大小没有变化 */ -}}
+            <div class="topic-cover">
+              {{- $imagePath := .Params.cover -}}
+              {{- $alt := "image" -}}
+              <a href="{{ .RelPermalink }}">
+                {{- partial "tools/img-res.html" (dict "imagePath" $imagePath "alt" $alt "imageWidth" 20) }}
+              </a>
+            </div>
+
+            {{- /* 文字部分 */ -}}
+            <div class="topic-text flex flex-column">
+
+              {{- /* 标题, 取前边45个字符 */ -}}
+              <div><a href="{{ .RelPermalink }}" class="font-size-1_2 font-weight-400 color-black">{{ .Title | truncate 45}}</a></div>
+
+            </div>
+            
+          {{ end }}
+            
+          </div>
+        {{- end -}}
+      </div>
+    </div>
+
+    {{- /* 正常文章列表 */ -}}
+    <div class="right">
+
+      {{- /* 趣味提示 */ -}}
+      <div class="funny_notice padding-1rem border-radius-_5rem margin-bottom-1rem rose_icon cursor-pointer">✨✨{{ T "funny_notice" -}}✨✨
+        {{- partial "tools/popup_rose.html" }}
+      </div>
+
+
+      <div class="topic-normal flex flex-column align-items-center">
+
+        {{- range $paginator.Pages.ByDate.Reverse -}}
+
+        <div class="topic-item flex align-items-center shadow-box-no-hover margin-bottom-1rem">
+
+          {{ with . }}
+            {{- /* 封面图片: pc端需求20rem,放50rem，清晰点 */ -}}
+            <div class="topic-cover">
+              {{- $imagePath := .Params.cover -}}
+              {{- $alt := "image" -}}
+              <a href="{{ .RelPermalink }}">
+                {{- partial "tools/img-res.html" (dict "imagePath" $imagePath "alt" $alt "imageWidth" 50) }}
+              </a>
+            </div>
+
+            {{- /* 文字部分 */ -}}
+            <div class="topic-text bg-white flex flex-column justify-content-between padding-1rem">
+
+              {{- /* 发布日期 */ -}}
+              <div class="color-grey">🗓️ {{ .Params.Date.Format "2006-01-02 15:04:05" }}</div>
+
+              {{- /* 标题, 取前边50个字符 */ -}}
+              <div><a href="{{ .RelPermalink }}" class="topic-title font-size-1_5 font-weight-400 color-black">{{ .Title | truncate 50 }}</a></div>
+
+              {{- /* summary, 取前边70个字符 */ -}}
+              <div class="summary">{{ .Params.description | truncate 70 }}</div>
+
+              {{- /* tag，每篇文章争取不超过2个 */ -}}
+              {{ with .GetTerms "tags" }}
+                <div class="flex gap-_5rem align-items-center">
+                  {{ range . }}
+                    <a href="{{ .RelPermalink }}">
+                      <div class="padding-tb-_3rem padding-lr-_5rem bg-grey-2 border-radius-_3rem color-grey">⛱️ {{ .LinkTitle }}</div>
+                    </a>
+                  {{ end }}
+                </div>
+                
+              {{ end }}
+
+            </div>
+            
+          {{ end }}
+          
+        </div>
+        
+
+        {{- end -}}
+
+        {{- /* 文章翻页 */ -}}
+
+        {{- if gt $paginator.TotalPages 1 }}
+        
+          <div class="pagination flex gap-1rem align-items-center justify-content-center width-100 margin-tb-1rem bg-grey">
+            {{ if $paginator.HasPrev }}
+              <a class="prev" href="{{ $paginator.Prev.URL }}">{{- T "prev_page" -}}</a>
+            {{ else }}
+                <span class="prev disabled">{{- T "prev_page" -}}</span>
+            {{ end }}
+          
+            
+            <span class="page-info">{{ $paginator.PageNumber }} / {{ $paginator.TotalPages }}</span>
+            
+            {{ if $paginator.HasNext }}
+                <a class="next" href="{{ $paginator.Next.URL }}">{{- T "next_page" -}}</a>
+            {{ else }}
+                <span class="next disabled">{{- T "next_page" -}}</span>
+            {{ end }}
+
+          </div>
+        
+        {{- end }}
+
+
+        {{- /* template "_internal/pagination.html" . */ -}}
+
+      </div> 
+
+    
+ 
+      
+ 
+    </div>
+  </div>
+
+</div>
+{{- end -}}

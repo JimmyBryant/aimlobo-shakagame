@@ -1,0 +1,157 @@
+{{- define "main" -}}
+
+{{- /* topic - single */ -}}
+{{- /* 文章内容页面 */ -}}
+
+
+
+<div class="wrap">
+
+  {{- /* 文章内容页面：两列，右边是内容 */ -}}
+
+  <div class="topic-single flex gap-1rem padding-tb-1rem">
+
+    
+    <div class="left">
+
+      {{- /* 阅读次数 : 跳转到my */ -}}
+      <a href="../../my/">
+        <div class="user_info flex flex-column gap-1rem align-items-center border-radius-_5rem padding-1rem color-black margin-bottom-1rem">
+          <div class="var_user_avatar flex align-items-center justify-content-center bg-white"></div>
+          <div class="var_user_name font-size-1_5 font-weight-400 padding-_5rem"></div>
+
+          <div class="flex gap-1rem align-items-center">
+            <div class="font-size-1_2">📖 {{ T "your" }} {{ T "read_time" }}: </div>
+            <div class="var_read_time font-size-1_5 font-weight-400"></div>
+          </div>
+        </div>
+      </a>
+
+      {{- /* 目录 */ -}}
+        {{ if .Params.toc }}
+          <div class="toc left bg-white border-radius-_5rem padding-1rem margin-bottom-1rem width-100">
+            <details>
+              <summary>
+                <span class="color-black font-size-1_2 font-weight-400 margin-bottom-_5rem">{{ T "toc" }}</span>
+              </summary>
+
+              {{ .TableOfContents }}
+            </details>
+            
+            
+          </div>
+        {{ end }} 
+      
+
+     
+
+    </div>
+
+    {{- /* 内容 */ -}}
+    <div class="right width-100 bg-white border-radius-_5rem padding-1rem">
+
+      {{- /* 标题 */ -}}
+      <div><h1 class="text-center">{{ .Title }}</h1></div>
+
+      {{- /* meta */ -}}
+      <div class="flex flex-column gap-1rem align-items-center">
+
+        {{- /* 其他语言的本文链接 */ -}}
+        <div class="flex gap-1rem align-items-center margin-tb-1rem width-100">
+          
+          
+          {{ with .AllTranslations }}
+          <div>{{ T "translation" }}: </div>
+          {{ range . }}
+          {{ if ne .Language.Lang $.Language.Lang }}
+          <a href="{{ .RelPermalink }}" hreflang="{{ .Language.LanguageCode }}" class="padding-_5rem bg-purple border-radius-_3rem color-white">
+            {{ or .Language.LanguageName .Language.Lang }}
+          </a>
+          {{ end }}
+          {{ end }}
+          {{ end }}
+        </div>
+
+        {{- /* 作者，发表日期 */ -}}
+        <div class="flex gap-1rem align-items-center width-100">
+
+          <div class="flex align-items-center gap-_5rem">
+            <div class="font-size-1_2">{{ "🧑‍💻 " }}</div> 
+            <div>
+              {{- with .Params.author -}}
+                {{- . }}
+              {{- else -}}
+                {{ with site.Params.topic.author -}}
+                  {{- . -}}
+                {{- end -}}
+              {{- end -}}
+            </div>
+            
+          </div>
+
+          <div class="flex align-items-center gap-_5rem">
+            <div class="font-size-1_2">{{ "🗓️" }}</div>
+            <div>
+              {{- with .Params.Date.Format "2006-01-02 15:04:05" -}}
+                {{- . -}}
+              {{- end -}}
+            </div>
+
+          </div>
+        </div>
+
+        {{- /* 目录 */ -}}
+        {{ if .Params.toc }}
+          <div class="toc right bg-white border-radius-_5rem padding-1rem margin-bottom-1rem width-100">
+            <details>
+              <summary>
+                <span class="color-black font-size-1_2 font-weight-400 margin-bottom-_5rem">{{ T "toc" }}</span>
+              </summary>
+
+              {{ .TableOfContents }}
+            </details>
+            
+            
+          </div>
+        {{ end }} 
+
+
+      </div>
+
+      {{- /* 内容 */ -}}
+      {{- if .Content }}
+      <div class="topic-content line-height-1_8">
+        {{ .Content }}
+      </div>
+      {{- end }}
+
+      {{- /* 版权说明 */ -}}
+      <div class="topic_notice flex flex-column gap-1rem padding-1rem margin-bottom-1rem">
+        <div>{{ T "author" }}:{{ "  " }}{{ .Params.author | default site.Params.topic.author }}</div>
+        <div>{{ T "topic_notice" }}:{{ "  " }}{{ T "topic_notice_content" }}</div>
+        <div>{{ T "link" }}:{{ "  " }}{{ .Permalink }}</div>
+      </div>
+
+      
+      <div class="flex align-items-center justify-content-between">
+
+        {{- /* 标记为阅读+1 */ -}}
+        {{- partial "tools/btn_read_plus_one.html" (dict "lang" .Lang) }}
+
+        {{- /* 标记为like，每60s后可以奖励0.5个积分 */ -}}
+        {{- partial "tools/btn_like.html" (dict "lang" .Lang) }}
+      </div>
+
+      {{- /* back to top */ -}}
+      <button id="backToTopBtn" title="Go to top">⬆️</button>
+
+
+      
+      
+    </div>
+
+  </div>
+  
+  
+</div>
+{{- end -}}

@@ -1,0 +1,150 @@
+baseURL: https://aimlobo.com/
+languageCode: en-us
+title: Aimlobo
+theme: aimlobo
+
+paginate: 5
+
+# not wanted
+disableHugoGeneratorInject: true
+disableRSS: true
+
+outputs:
+  home:
+    - HTML
+    - JSON # is necessary
+
+Params:
+  keywords: head_keywords 
+  description: head_description  
+  copyright: footer_copyright
+  contactEmail: contact@aimlobo.com
+  # declaration: footer_declaration
+
+  logo:
+    text: Aimlobo
+    image: "/favicon.svg"
+
+  assets:
+    favicon: "/favicon.ico"
+    apple_touch_icon: "/apple-touch-icon.png"
+    favicon_svg: "/favicon.svg"
+  
+  topic:
+    author: Aimlobo
+    dateformat: "2006-01-02"
+  
+  menus:
+    main:
+    - identifier: home
+      name: Home
+      icon: 🏠
+      pageRef: /
+      weight: 10
+    - identifier: game
+      name: Game
+      icon: 🕹️
+      pageRef: /game
+      weight: 20
+    # - identifier: astro
+    #   name: Astro
+    #   icon: 🔮
+    #   pageRef: /astro
+    #   weight: 30
+    # - identifier: zodiac
+    #   name: Zodiac
+    #   icon: 🐲
+    #   pageRef: /zodiac
+    #   weight: 40
+    - identifier: topic
+      name: Topic
+      icon: 📖
+      pageRef: /topic
+      weight: 50
+    - identifier: rank
+      name: Rank
+      icon: 🏅
+      pageRef: /rank
+      weight: 60
+    - identifier: secret
+      name: Secret
+      icon: 🕯️
+      pageRef: /secret
+      weight: 70
+    - identifier: my
+      name: My
+      icon: 😜
+      pageRef: /my
+      weight: 80
+    - identifier: search
+      name: Search
+      icon: 🔎
+      pageRef: /search
+      weight: 90
+  
+  fuseOpts:
+    isCaseSensitive: false
+    shouldSort: true
+    location: 0
+    distance: 1000
+    threshold: 0.4
+    minMatchCharLength: 0
+    limit: 5 # refer: https://www.fusejs.io/api/methods.html#search
+    keys: ["title", "permalink", "summary", "content"]
+
+# lang
+defaultContentLanguage: en
+defaultContentLanguageInSubdir: true
+languages:
+  en:
+    contentDir: content/en
+    disabled: false
+    languageCode: en
+    languageDirection: ltr
+    languageName: EN
+    weight: 10
+  zh-tw:
+    contentDir: content/zh-tw
+    disabled: false
+    languageCode: zh-tw
+    languageDirection: ltr
+    languageName: 繁中
+    weight: 20
+  zh-cn:
+    contentDir: content/zh-cn
+    disabled: false
+    languageCode: zh-cn
+    languageDirection: ltr
+    languageName: 简中
+    weight: 30
+
+# 不生成的页面类型
+# taxonomy包括了tags, categories,
+# term的定义：term `awesome` in tags taxonomy (/tags/awesome/index.html)
+# disableKinds:
+# - taxonomy
+# - term
+
+# 不要categories,只要tag
+taxonomies:
+  tag: tags
+
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+  tableOfContents:
+    startLevel: 1
+    endLevel: 5
+    ordered: false
+  highlight:
+    noClasses: false
+    style: false
+
+
+
+
+
+
+

@@ -1,0 +1,19 @@
+{{ define "main" }}
+
+{{- /* 定义tag聚合页面，也就是/tags/页面 */ -}}
+<h1 class="margin-bottom-1rem">{{ T "tags" }}</h1>
+{{ $lang := .Lang }}
+{{ $data := .Data }}
+<ul class="list-none">
+  {{ range .Data.Terms.ByCount }}
+  {{ $termLink := printf "/%s/%s/%s/" $lang $data.Plural .Term | urlize }}
+  <li class="inline-block">
+      <a href="{{ $termLink }}" class="margin-_5rem padding-tb-_3rem padding-lr-1rem border-radius-_3rem bg-red width-fit-content color-white block">{{ .Term }} <sup><strong><sup>{{ .Count }}</sup></strong></sup> </a>
+  </li>
+  
+  {{ end }}
+</ul>
+
+
+  
+{{ end }}

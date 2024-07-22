@@ -1,0 +1,30 @@
+{{- /* like faq for user */}}
+{{- /* partial "tools/popup_tips.html" (dict "tipsContent" "tipsContent") */}}
+
+{{- $tipsContent :=  .tipsContent -}}
+
+<div class="popup_tips popup_box">
+  <div class="popup_box_content">
+    <div class="header">
+      <span class="icon">💡</span>{{- T "tips" -}}
+    </div>
+    
+    <div class="body">
+      {{- with $tipsContent -}}
+        {{- range sort . "weight" "asc" -}}
+          <div class="title">
+            {{- .title | markdownify -}}
+          </div>
+
+          <div class="content">
+              <p>{{ .content | markdownify }}</p>
+          </div>
+        {{- end -}}
+      {{- end -}}
+    </div>
+
+    <div class="footer">
+      <button class="btn btn_get_it">{{ T "get_it" }}</button>
+    </div>
+  </div>
+</div>

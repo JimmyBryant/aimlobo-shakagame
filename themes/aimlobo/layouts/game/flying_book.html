@@ -1,0 +1,79 @@
+{{- /* 游戏，飞鸟传信 */ -}}
+{{- define "main" -}}
+{{- $lang := .Lang -}}
+{{- $dataLang := index .Site.Data.game $lang -}}
+{{- $games := $dataLang.game_lists -}}
+{{- $flying_book := where $games "id" "flying_book" -}}
+{{- $tips := (index $flying_book 0).tips -}}
+{{- $steps := (index $flying_book 0).steps -}}
+
+
+<div class="wrap">
+
+    <div class="game_flying_book">
+
+        <div class="book_cover padding-1rem flex flex-column gap-1rem align-items-center border-radius-_5rem">
+
+            <div class="game-title flex align-items-center gap-_5rem padding-tb-1rem">
+                <div class="title font-size-2 cursor-pointer">{{ T "flying_book" }}</div>
+                
+                <div class="tips_icon">
+                    <span class="font-size-1_5 cursor-pointer">👀</span>
+                    {{ partial "tools/popup_tips.html" (dict "tipsContent" $tips) }}
+                </div>
+
+            </div>
+
+            
+            <div class="li_content padding-bottom-1rem margin-bottom-1rem">
+                <ul class="list-style-none">
+
+                    {{ with $steps }}
+                        {{ range . }}
+                            <li class="padding-tb-1rem">{{ .content }}</li>
+                        {{ end }}
+                    {{ end }}
+                    <li class="btn cursor-pointer btn_start_game margin-tb-1rem"><div class="bird-icon">🐥</div></li>
+
+                </ul>
+            </div>
+
+            
+        </div>
+
+        <div class="birds-box"></div>
+
+        <script src="/js/game/flying_book/three.min.js"></script>
+        <script src="/js/game/flying_book/vanta.birds.min.js"></script>
+        <script>
+            VANTA.BIRDS({
+                el: ".birds-box", // 飞鸟容器
+                mouseControls: true,
+                touchControls: true,
+                gyroControls: false,
+                minHeight: 200.00,
+                minWidth: 200.00,
+                scale: 1.00,
+                scaleMobile: 1,
+                backgroundAlpha: 0.3,
+                color1: 0x1a6138,
+                color2: 0xf6f7f7
+            })
+        </script>
+
+        <div class="book_content width-fit-content margin-0-auto flex flex-column gap-1rem align-items-center justify-content-center">
+            <div class="var_book_content text-center color-white font-size-1_2 padding-lr-1rem padding-tb-3rem border-radius-_5rem margin-bottom-1rem"></div>
+            <div class="flex gap-1rem align-items-center justify-content-center">
+                <div class="btn btn_restart_game cursor-pointer font-size-1_5 color-white">{{ T "more_answers" }}</div>
+                {{- /* 分享网站 */ -}}
+                {{- partial "tools/popup_info_share.html" (dict "lang" .Lang) }}
+            </div>
+        </div>
+
+        
+
+    </div>
+
+</div>
+
+{{- end -}}

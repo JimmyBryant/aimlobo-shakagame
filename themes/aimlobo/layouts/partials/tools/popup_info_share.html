@@ -1,0 +1,45 @@
+{{- /* share info , 在js里写了超过1分钟才能另算积分 */}}
+{{- /* partial "tools/popup_info_share.html" (dict "lang" .Lang)*/}}
+
+
+{{- $lang := .lang -}}
+
+{{- $infoContent := "" }}
+
+{{- if eq $lang "en" }}
+  {{ $infoContent = "Copied success, Share it now 🧧 + 2 (60s)" }}
+{{- else if eq $lang "zh-cn" }}
+  {{ $infoContent = "复制成功，快去分享吧 🧧 + 2 (60s)" }}
+{{- else if eq $lang "zh-tw" }}
+  {{ $infoContent = "復製成功，快去分享吧 🧧 + 2 (60s)" }}
+{{- else }}
+  {{ $infoContent = "Copied success, Share it now 🧧 + 2" }}  <!-- 默认为英文内容 -->
+{{- end }}
+
+
+
+<div class="btn_share cursor-pointer tips_icon">
+  <div class="title font-size-1_5 color-white text-center">{{ T "share" }}</div>
+
+  <div class="popup_tips popup_box">
+    <div class="popup_box_content">
+      <div class="header">
+        <span class="icon">💡</span>{{- T "tips" -}}
+      </div>
+      
+      <div class="body">
+  
+        <div class="content">
+            <p>{{ $infoContent }}</p>
+        </div>
+          
+      </div>
+  
+      <div class="footer">
+        <button class="btn btn_get_it">{{ T "get_it" }}</button>
+      </div>
+    </div>
+  </div>
+
+
+</div>

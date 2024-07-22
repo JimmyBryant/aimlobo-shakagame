@@ -1,0 +1,19 @@
+{{/* 合并css文件，以便只有一个页面只有一个css文件 */}}
+{{/* 如果有页面css文件，将其整合到全局css一起 */}}
+{{/* 如果没有页面css文件，那么就只有全局css文件 */}}
+{{/* 这里命名不能固定，不然会输出同样的内容给每一个页面，所以采用了各个页面的path，通过base64进行加密进行处理 */}}
+
+{{- $css := slice (resources.Get "css/main.css") -}}
+
+{{- with .Params.css -}}
+  {{- range . -}}
+    {{- $css = $css | append (resources.Get .) -}} 
+  {{- end -}} 
+{{- end -}}
+
+{{- $pagePath := .Title | base64Encode -}}
+{{- $bundleName := printf "css/%s.bundle.css" $pagePath -}}
+
+{{- $css := $css | resources.Concat $bundleName | minify | fingerprint -}}
+<link rel="stylesheet" href="{{- $css.RelPermalink -}}" integrity="{{- $css.Data.Integrity -}}" crossorigin="anonymous">
+

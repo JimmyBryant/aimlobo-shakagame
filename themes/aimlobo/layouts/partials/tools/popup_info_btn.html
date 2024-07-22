@@ -1,0 +1,24 @@
+{{- /* like faq for user */}}
+{{- /* partial "tools/popup_info_btn.html" (dict "infoContent" "infoContent") */}}
+
+{{- $infoContent :=  .infoContent -}}
+
+<div class="popup_tips popup_box">
+  <div class="popup_box_content">
+    <div class="header">
+      <span class="icon">💡</span>{{- T "tips" -}}
+    </div>
+    
+    <div class="body">
+
+      <div class="content">
+          <p>{{ $infoContent | markdownify }}</p>
+      </div>
+        
+    </div>
+
+    <div class="footer">
+      <button class="btn btn_get_it">{{ T "get_it" }}</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,12 @@
+{{- /* 外部链接在新窗口打开，适用于文章页面内部，在链接末尾添加#external */ -}}
+{{ $url := .Destination | safeURL }}
+{{ $text := .Text | safeHTML }}
+
+{{ if in $url "#external" }}
+  {{ $cleanUrlArray := split $url "#external" }}
+  {{ $cleanUrl := index $cleanUrlArray 0 }}
+  <a href="{{ $cleanUrl }}" target="_blank" rel="noopener noreferrer">{{ $text }}</a>
+{{ else }}
+  <a href="{{ $url }}">{{ $text }}</a>
+{{ end }}
+

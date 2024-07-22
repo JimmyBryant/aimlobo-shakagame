@@ -1,0 +1,10 @@
+redirects:
+- from: /en/**
+  status: 404
+  to: /en/404.html
+- from: /zh-cn/**
+  status: 404
+  to: /zh-cn/404.html
+- from: /zh-tw/**
+  status: 404
+  to: /zh-tw/404.html

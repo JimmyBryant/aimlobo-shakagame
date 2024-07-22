@@ -1,0 +1,558 @@
+# head
+- id: head_keywords
+  translation: "有趣的信息, 在線免費遊戲"
+
+- id: head_description
+  translation: "各種新鮮有趣的資訊和故事，免費的在線遊戲平台，帶給你無限的樂趣和驚喜。"
+
+- id: translations
+  translation: "語言"
+
+# top menu
+
+- id: home
+  translation: "首頁"
+
+- id: game
+  translation: "遊戲"
+
+- id: luck
+  translation: "幸運"
+
+- id: astro
+  translation: "星座"
+
+- id: zodiac
+  translation: "生肖"
+
+- id: topic
+  translation: "話題"
+
+- id: search
+  translation: "搜索"
+
+- id: secret
+  translation: "樹洞"
+
+# footer
+
+- id: about
+  translation: "關於"
+
+- id: my
+  translation: "我的"
+
+
+- id: contact_us
+  translation: "聯繫我們"
+
+- id: footer_copyright
+  translation: "保留所有權利"
+
+- id: brandText
+  translation: "幸運天天来"
+
+- id: footer_declaration
+  translation: "聲明：本網站的主要內容來自於傳統民俗文化和AI內容生成，並非嚴謹的科學研究成果。僅供娛樂參考，請勿盲目迷信。"
+
+# page
+- id: backtohome
+  translation: "回到首頁"
+
+- id: prev
+  translation: "前一頁"
+
+- id: next
+  translation: "後一頁"
+
+- id: summary
+  translation: "概述"
+
+# other
+- id: tips
+  translation: "提示"
+
+- id: get_it
+  translation: "知道了"
+
+# luck
+- id: number
+  translation: "幸運數"
+
+- id: flower
+  translation: "幸運花"
+
+- id: stone
+  translation: "幸運石"
+
+- id: place
+  translation: "幸運地"
+
+- id: hobby
+  translation: "幸運愛好"
+
+- id: lot
+  translation: "幸運籤"
+
+- id: dice
+  translation: "幸運骰子"
+
+- id: color
+  translation: "幸運色"
+
+# astro
+- id: aries
+  translation: "白羊座"
+
+- id: taurus
+  translation: "金牛座"
+
+- id: gemini
+  translation: "雙子座"
+
+- id: cancer
+  translation: "巨蟹座"
+
+- id: leo
+  translation: "獅子座"
+
+- id: virgo
+  translation: "處女座"
+
+- id: libra
+  translation: "天秤座"
+
+- id: scorpio
+  translation: "天蠍座"
+
+- id: sagittarius
+  translation: "射手座"
+
+- id: capricorn
+  translation: "摩羯座"
+
+- id: aquarius
+  translation: "水瓶座"
+
+- id: pisces
+  translation: "雙魚座"
+
+# chinese zodiac
+
+- id: rat
+  translation: "鼠"
+
+- id: ox
+  translation: "牛"
+
+- id: tiger
+  translation: "虎"
+
+- id: rabbit
+  translation: "兔"
+
+- id: dragon
+  translation: "龍"
+
+- id: snake
+  translation: "蛇"
+
+- id: horse
+  translation: "馬"
+
+- id: goat
+  translation: "羊"
+
+- id: monkey
+  translation: "猴"
+
+- id: rooster
+  translation: "雞"
+
+- id: dog
+  translation: "狗"
+
+- id: pig
+  translation: "豬"
+
+
+# get-astro-zodiac
+
+- id: Find your astro and zodiac
+  translation: "尋找你的星座和生肖"
+
+- id: year
+  translation: "年"
+
+- id: month
+  translation: "月"
+
+- id: day
+  translation: "日"
+
+- id: date
+  translation: "日期"
+
+- id: submit
+  translation: "提交"
+
+# astro
+- id: traits
+  translation: "特徵"
+
+- id: today
+  translation: "今天"
+
+- id: tomorrow
+  translation: "明天"
+
+- id: next_week
+  translation: "下週"
+
+- id: this_year
+  translation: "今年"
+
+- id: overall
+  translation: "整體"
+
+- id: love
+  translation: "愛情"
+
+- id: finance
+  translation: "財務"
+
+- id: health
+  translation: "健康"
+
+- id: career
+  translation: "事業"
+
+- id: description
+  translation: "描述"
+
+- id: best_match
+  translation: "最佳匹配"
+
+- id: info
+  translation: "信息"
+
+- id: dates
+  translation: "日期"
+
+- id: lucky_number
+  translation: "幸運數字"
+
+- id: lucky_color
+  translation: "幸運顏色"
+
+- id: lucky_direction
+  translation: "幸運方向"
+
+- id: element
+  translation: "幸運元素"
+
+- id: ruling_planet
+  translation: "幸運行星"
+
+- id: lucky_flower
+  translation: "幸運之花"
+
+- id: story
+  translation: "故事"
+
+# tags
+- id: tags
+  translation: "標籤"
+
+
+# game happy_worship
+- id: back_to_game
+  translation: "回到遊戲"
+
+
+- id: happy_worship
+  translation: "快樂崇拜"
+
+- id: customize_title
+  translation: "自訂標題"
+
+- id: edit_title
+  translation: "編輯標題"
+
+- id: cancel
+  translation: "取消"
+
+- id: submit
+  translation: "送出"
+
+- id: add_god
+  translation: "添加神明"
+
+- id: add_offerings
+  translation: "添加供品"
+
+- id: add_incense
+  translation: "添加香火"
+
+- id: start_worship
+  translation: "開始崇拜"
+
+- id: worship
+  translation: "崇拜"
+
+- id: worshiping
+  translation: "崇拜中"
+
+- id: time_left
+  translation: "剩餘時間"
+
+
+# game wooden_fish
+
+- id: wooden_fish
+  translation: "電子木魚"
+
+- id: edit_title
+  translation: "編輯標題"
+
+- id: auto_on
+  translation: "自動 開"
+
+- id: auto_off
+  translation: "自動 關"
+
+- id: bgm_on
+  translation: "BGM 開"
+
+- id: bgm_off
+  translation: "BGM 關"
+
+- id: minute
+  translation: "分鐘"
+
+- id: edit_prayer
+  translation: "編輯祈禱詞"
+
+- id: customize
+  translation: "自定義"
+
+- id: here
+  translation: "這裡"
+
+
+# game book
+- id: select_category
+  translation: "選擇類別"
+
+- id: open
+  translation: "打開"
+
+- id: ready?
+  translation: "準備好了嗎?"
+
+- id: find_your_answer
+  translation: "尋找你的答案"
+
+- id: ask_again
+  translation: "再問一次"
+
+
+# my
+- id: select_your_avatar
+  translation: "選擇頭像"
+
+- id: user_avatar
+  translation: "用户头像"
+
+- id: user_name
+  translation: "用戶名"
+
+- id: signature
+  translation: "個性簽名"
+
+- id: good_luck_every_day
+  translation: "好運長久"
+
+- id: birthday
+  translation: "生日"
+
+- id: your_birthday
+  translation: "出生日期"
+
+- id: check_in_today
+  translation: "今日簽到"
+
+- id: lucky_point
+  translation: "幸運值"
+
+- id: user_level
+  translation: "用戶等級"
+
+- id: achievement
+  translation: "成就"
+
+- id: game_time
+  translation: "遊戲次數"
+
+- id: read_time
+  translation: "閱讀次數"
+
+- id: lucky_for
+  translation: "宜"
+
+- id: unlucky_for
+  translation: "忌"
+
+
+# page rank
+- id: rank
+  translation: "排行榜"
+
+- id: user_info
+  translation: "用戶信息"
+
+
+# page topic - list
+- id: posted_at
+  translation: "發布於"
+
+- id: funny_notice
+  translation: "人生，總會有不期而遇的溫暖和生生不息的希望"
+
+- id: hot_posts
+  translation: "熱門文章"
+
+- id: post_number
+  translation: "數量"
+
+- id: post_like
+  translation: "點贊"
+
+- id: visitor_number
+  translation: "訪客"
+
+- id: share
+  translation: "分享"
+
+- id: share_this_site
+  translation: "分享本網站"
+
+- id: prev_page
+  translation: "上一頁"
+
+- id: next_page
+  translation: "下一頁"
+
+- id: happy_accept
+  translation: "開心收下"
+
+
+# page topic - single
+- id: summary
+  translation: "摘要"
+
+- id: translation
+  translation: "翻譯"
+
+- id: toc
+  translation: "目錄"
+
+- id: your
+  translation: "你的"
+
+- id: author
+  translation: "作者"
+
+- id: topic_notice
+  translation: "聲明"
+
+- id: topic_notice_content
+  translation: "轉載請註明文章出處"
+
+- id: link
+  translation: "鏈接"
+
+- id: read
+  translation: "閱讀"
+
+# page tag
+- id: tag
+  translation: "標簽"
+
+# game flying book
+- id: flying_book
+  translation: "飛鳥傳書"
+
+- id: more_answers
+  translation: "更多答案"
+
+# page bullet
+- id: leave_msg
+  translation: "說點什麽吧"
+
+
+# game: horse racing
+- id: horse_racing
+  translation: "賽馬"
+
+- id: select_horse
+  translation: "選擇馬匹"
+
+- id: bet
+  translation: "下註"
+
+- id: your_available_lucky_point
+  translation: "你的可用幸運值"
+
+- id: enter_bet_amount
+  translation: "輸入下註金額"
+
+- id: integer
+  translation: "整數"
+
+- id: player_matching
+  translation: "匹配玩家中"
+
+- id: match_success
+  translation: "匹配成功"
+
+- id: the_horse_you_bet
+  translation: "你下註的馬是"
+
+- id: racing
+  translation: "比賽中"
+
+- id: your_bet_amount
+  translation: "你下註的金額"
+
+- id: total_player
+  translation: "玩家總數"
+
+- id: total_bet_amount
+  translation: "下註總金額"
+
+- id: player_number
+  translation: "玩家數量"
+
+- id: bet_amount
+  translation: "下註金額"
+
+- id: start_game
+  translation: "開始遊戲"
+
+- id: racing_result
+  translation: "比賽結果"
+
+- id: you_win
+  translation: "你贏了"
+
+- id: you_lost
+  translation: "你輸了"
+
+- id: wining_horse_is
+  translation: "贏了的馬是"
+
+- id: once_again
+  translation: "再來一次"
+
+

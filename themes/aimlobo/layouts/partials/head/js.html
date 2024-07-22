@@ -1,0 +1,34 @@
+{{/* 合并js文件，以便一个页面只有一个js文件 */}}
+{{/* 如果有页面js文件，将其整合到全局js一起 */}}
+{{/* 如果没有页面js文件，那么就只有全局js文件 */}}
+{{/* 这里命名不能固定，不然会输出同样的内容给每一个页面，所以采用了各个页面的path，通过base64进行加密进行处理 */}}
+
+{{- $js := slice (resources.Get "js/main.js") -}}
+
+{{- with .Params.js -}}
+    {{- range . -}}
+        {{- $js = $js | append (resources.Get .) -}} 
+    {{- end -}}
+{{- end -}}
+
+{{- $pagePath := .Path | base64Encode -}}
+{{- $bundleName := printf "js/%s.bundle.js" $pagePath -}}
+
+{{- $js := $js | resources.Concat $bundleName | js.Build | minify | fingerprint -}}
+<script src="{{- $js.RelPermalink -}}" integrity="{{- $js.Data.Integrity -}}" crossorigin="anonymous" defer></script>
+
+
+{{- /* Search */}}
+{{- if (eq .Layout `search`) -}}
+<link crossorigin="anonymous" rel="preload" as="fetch" href="../index.json">
+{{- $fastsearch := resources.Get "js/fastsearch.js" | js.Build (dict "params" (dict "fuseOpts" site.Params.fuseOpts)) | resources.Minify }}
+{{- $fusejs := resources.Get "js/fuse.basic.min.js" }}
+{{- $license_js := resources.Get "js/license.js" }}
+{{- if not site.Params.assets.disableFingerprinting }}
+{{- $search := (slice $fusejs $license_js $fastsearch ) | resources.Concat "assets/js/search.js" | fingerprint }}
+<script defer crossorigin="anonymous" src="{{ $search.RelPermalink }}" integrity="{{ $search.Data.Integrity }}"></script>
+{{- else }}
+{{- $search := (slice $fusejs $fastsearch ) | resources.Concat "assets/js/search.js" }}
+<script defer crossorigin="anonymous" src="{{ $search.RelPermalink }}"></script>
+{{- end }}
+{{- end -}}

@@ -1,0 +1,24 @@
+{{- /*
+    {{< image-rectangle "/path/to/image.jpg" "Image Alt Text" >}} 
+*/ -}}
+
+
+{{ $imagePath := .Get 0 }}
+{{ $altText := .Get 1 }}
+
+{{ with resources.Get $imagePath }}
+    {{ $lg := .Fill "1024x512" }}
+    {{ $md := .Fill "640x320" }}
+    {{ $sm := .Fill "320x160" }}
+
+    <img 
+        src="{{ .Permalink }}"
+        sizes="(min-width: 1200px) 1024px,
+               (max-width: 1199px) 640px,
+               (max-width: 380px) 320px"
+        srcset="{{ $lg.RelPermalink }} 1024w,
+                 {{ $md.RelPermalink }} 640w,
+                 {{ $sm.RelPermalink }} 320w"
+        alt="{{ $altText }}"
+    >
+{{ end }}

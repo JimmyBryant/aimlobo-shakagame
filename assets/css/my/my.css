@@ -1,0 +1,183 @@
+/* page: my, body - pc */
+
+/* 个人信息 */
+.user_personal_info {
+    height: 7rem;
+    padding: 1rem;
+}
+
+/* 个人信息 - 头像 */
+.var_user_avatar {
+    padding: 2rem;
+    border-radius: 100%;
+    background-color: #8E7AB5;
+    font-size: 3rem;
+    width: 3rem;
+    height: 3rem;
+    overflow: hidden;
+}
+
+/* 表单: 头像选择 */
+.form_user_avatar {
+    .body {
+        
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1vw; 
+
+        .label_in_form {
+            max-width: calc((28rem - var(--gap-in-form) * 2) / 3);
+            max-height: calc((28rem - var(--gap-in-form) * 2) / 3);
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.05);
+            border-radius: 0.5rem;
+            padding: 0.5rem 0;
+            position: relative;
+            overflow: hidden;
+
+            input[type="radio"],
+            input[type="checkbox"] {
+                appearance: none;
+                width: 100%;
+                height: 1.5rem;
+                border-radius: 0;
+                border: none;
+                outline: none;
+                margin: 0 auto;
+                bottom: 0;
+                position: absolute;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 1.2rem;
+            }
+
+            input[type="radio"]::before,
+            input[type="checkbox"]::before {
+
+                content: "";
+                display: block;
+                width: 100%;
+                height: 100%;
+                border-radius: 0.5rem;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 1.2rem;
+                transition: none;
+                top: 0;
+            }
+
+            input[type="radio"]:checked::before,
+            input[type="checkbox"]:checked::before {
+                content: "✅";
+                transform: none;
+                transition: none;
+                background-color: rgba(0, 0, 0, 0.4);
+            }
+
+        }
+    }
+}
+
+
+/* 签到按钮 */
+
+.btn_check_in_today {
+    padding: 0.75rem 1rem;
+}
+
+.btn_check_in_today.disabled {
+    background-color: grey;
+    cursor: not-allowed;
+}
+
+
+/* lucky_for, unlucky_for */
+@keyframes icon-move {
+    50% {
+        transform: translateY(-0.5rem);
+    }
+}
+
+@keyframes light {
+    from {
+        box-shadow: rgba(255, 255, 0, 0.2) 0 0 0 0.5rem;
+    }
+    to {
+        box-shadow: rgba(255, 255, 0, 0.2) 0 0 0 1rem;
+    }
+}
+
+@keyframes rain {
+    from {
+        box-shadow: #2092A9 8px 0px, #2092A9 32px -6px, #2092A9 20px 0px;
+    }
+
+    to {
+        box-shadow: #2092A9 8px 6px, #2092A9 32px 0px, #2092A9 20px 6px;
+    }
+}
+
+.lucky_for, .unlucky_for {
+    width: 48%;
+    min-height: 15rem;
+}
+
+.lucky_for_icon, .unlucky_for_icon {
+    animation: icon-move 3s ease-in-out infinite;
+}
+
+.lucky_for_icon {
+    background: #FFCD41;
+    border-radius: 50%;
+    box-shadow: rgba(255, 255, 0, 0.1) 0 0 0 0.25rem;
+    animation: light 800ms ease-in-out infinite alternate, icon-move 3s ease-in-out infinite;
+}
+
+.unlucky_for_icon {
+    background: #e1e1e1;
+    border-radius: 1rem;
+    width: 1rem;
+    height: 1rem;
+    box-shadow: #e1e1e1 24px -6px 0 2px, #e1e1e1 10px 5px 0 5px, #e1e1e1 30px 5px 0 2px, #e1e1e1 11px -8px 0 -3px, #e1e1e1 25px 11px 0 -1px;
+}
+
+.unlucky_for_icon::after {
+    content: "";
+    position: absolute;
+    border-radius: 0.5rem;
+    background-color: transparent;
+    width: 0.25rem;
+    height: 0.8rem;
+    left: 0;
+    top: 1.5rem;
+    transform: rotate(30deg);
+    animation: rain 800ms ease-in-out infinite alternate;
+}
+
+
+
+
+
+
+/* page: my, body - pc - end */
+
+
+/* page: my, body - mobile */
+@media screen and (max-width: 48rem) {
+
+    .user_personal_info {
+        height: 7rem;
+        padding: 0.5rem;
+    }
+
+    .var_user_name {
+        font-size: 1rem;
+    }
+
+}

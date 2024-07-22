@@ -1,0 +1,58 @@
+<!-- header, height 3+3.5=6.5rem include margin -->
+<!-- logo and lang ,height: 3rem-->
+<div class="logo-lang flex align-items-center justify-content-between margin-top-_5rem margin-bottom-_5rem">
+
+    <!-- logo  height: 2rem-->
+    <a href="{{- site.Home.Permalink | absLangURL -}}" class="link-area flex align-items-center justify-content-start gap-_5rem color-black-2">
+        <div class="logo-image">
+            <img src="{{- site.Params.logo.image -}}" alt="Logo image">
+        </div>
+        <div class="logo-text font-size-1_5 font-weight-600">
+            {{- with site.Params.logo.text -}}{{- . -}}{{- end -}}
+        </div>
+    </a>
+        
+    
+    <div class="lang-switch flex align-items-center justify-content-between gap-1rem">
+        <ul class="list-style-none flex gap-1rem">
+            {{- $currentLang := .Lang -}}
+            {{- with site.Home.AllTranslations -}}
+                {{- range . -}}
+                    {{- if ne $currentLang .Lang -}}
+                    <li class="flex align-items-center">
+                        <a class="color-black-2 font-weight-600 opacity-_7" href="{{- .Permalink -}}">{{- .Language.LanguageName -}}</a>
+                    </li>
+                    {{- end -}}
+                {{- end -}}
+            {{- end -}}
+        </ul>
+
+        <button class="menu-icon hide border-none opacity-_7">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="opacity-_7">
+                <line x1="3" y1="12" x2="21" y2="12"></line>
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <line x1="3" y1="18" x2="21" y2="18"></line>
+              </svg>              
+        </button>
+
+    </div>
+
+</div>
+
+<!-- menu ,height 3.5rem -->
+<div class="menu bg-purple border-radius-_5rem padding-_5rem padding-left-1rem margin-bottom-_5rem">
+    <ul class="flex list-style-none gap-1rem">
+        {{- with site.Params.menus.main -}}
+        {{- range sort . "weight" "asc" -}}
+        <li>
+          <a href="{{- .pageRef | absLangURL -}}" class="block color-white padding-tb-_5rem padding-right-_5rem">
+            <div class="flex align-items-center gap-_5rem">
+                <div class="font-size-1_5">{{- .icon -}}</div>
+                <div>{{- T .identifier -}}</div>
+            </div>
+          </a>
+        </li>
+        {{- end -}}
+        {{- end -}}
+      </ul>
+</div>

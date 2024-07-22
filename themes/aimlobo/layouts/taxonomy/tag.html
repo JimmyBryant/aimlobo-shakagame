@@ -1,0 +1,158 @@
+{{ define "main" }}
+
+{{- /* 定义tag的具体页面，也就是/tags/hugo/这种 */ -}}
+
+{{- /* 得到lang */ -}}
+{{ $lang := .Lang }}
+
+{{- /* 得到所有tag的名称 */ -}}
+{{ $terms := .Site.Taxonomies.tags }}
+
+{{- /* 得到当前tag的名称 */ -}}
+{{- $term := .Data.Term }}
+
+{{- /* 得到所有文章 */ -}}
+{{ $pages := where .Site.RegularPages "Section" "topic" }}
+
+{{- /* 去掉需要隐藏的文章 */ -}}
+{{- $pages = where $pages ".Params.hide" "!=" true -}}
+
+{{- /* 筛选等于当前tag的文章 */ -}}
+{{ $pages = where $pages "Params.tags" "intersect" (slice $term) }}
+
+{{- /* 文章分页 */ -}}
+{{- $paginator := .Paginate $pages -}}
+
+
+
+
+<div class="wrap">
+
+    {{- /* 页面标题 */ -}}
+    <div class="padding-lr-1rem padding-tb-_3rem bg-red color-white width-fit-content border-radius-_3rem margin-tb-1rem font-size-1_5">{{ $term }} ({{ len $pages }})</div>
+  
+    <div class="page-topic-list flex">
+  
+      {{- /* PC端横排， mobile竖排 */ -}}
+  
+  
+      <div class="left">
+
+        
+        {{- /* 列出所有标签 tags */ -}}
+        <div class="topic-recommond shadow-box border-radius-_5rem padding-1rem">
+  
+          <div class="font-size-1_5 margin-bottom-1rem">🏷️ {{ T "tags" }}</div>
+          <div class="flex flex-column gap-_5rem">
+            {{ $data := .Data }}
+            {{ range .Site.Taxonomies.tags.ByCount }}
+                {{ $termLink := printf "/%s/%s/%s/" $lang $data.Plural .Term | urlize }}
+                <div>
+                    <a href="{{ $termLink }}" class="color-black-2 font-size-1_2 padding-tb-_3rem block">{{ .Term }} ({{ .Count }})</a>
+                </div>
+            {{ end }}
+          </div>
+            
+              
+           
+        </div>
+      </div>
+  
+      {{- /* 正常文章列表: 属于当前tag的文章 */ -}}
+      <div class="right">
+  
+        {{- /* 趣味提示 */ -}}
+        <div class="funny_notice padding-1rem border-radius-_5rem margin-bottom-1rem rose_icon cursor-pointer">✨✨{{ T "funny_notice" -}}✨✨
+          {{- partial "tools/popup_rose.html" }}
+        </div>
+  
+  
+        <div class="topic-normal flex flex-column align-items-center">
+  
+          {{- range $paginator.Pages.ByDate.Reverse -}}
+  
+          <div class="topic-item flex align-items-center shadow-box-no-hover margin-bottom-1rem">
+  
+            {{ with . }}
+              {{- /* 封面图片: pc端需求20rem,放50rem，清晰点 */ -}}
+              <div class="topic-cover">
+                {{- $imagePath := .Params.cover -}}
+                {{- $alt := "image" -}}
+                <a href="{{ .RelPermalink }}">
+                  {{- partial "tools/img-res.html" (dict "imagePath" $imagePath "alt" $alt "imageWidth" 50) }}
+                </a>
+              </div>
+  
+              {{- /* 文字部分 */ -}}
+              <div class="topic-text bg-white flex flex-column justify-content-between padding-1rem">
+  
+                {{- /* 发布日期 */ -}}
+                <div class="color-grey">🗓️ {{ .Params.Date.Format "2006-01-02 15:04:05" }}</div>
+  
+                {{- /* 标题, 取前边25个字符 */ -}}
+                <div><a href="{{ .RelPermalink }}" class="topic-title font-size-1_5 font-weight-400 color-black">{{ .Title | truncate 25 }}</a></div>
+  
+                {{- /* summary, 取前边50个字符 */ -}}
+                <div class="summary">{{ .Params.description | truncate 50 }}</div>
+  
+                {{- /* tag，每篇文章争取不超过2个 */ -}}
+                {{ with .GetTerms "tags" }}
+                  <div class="flex gap-_5rem align-items-center">
+                    {{ range . }}
+                      <a href="{{ .RelPermalink }}">
+                        <div class="padding-tb-_3rem padding-lr-_5rem bg-grey-2 border-radius-_3rem color-grey">⛱️ {{ .LinkTitle }}</div>
+                      </a>
+                    {{ end }}
+                  </div>
+                  
+                {{ end }}
+  
+              </div>
+              
+            {{ end }}
+            
+          </div>
+          
+  
+          {{- end -}}
+  
+          {{- /* 文章翻页 */ -}}
+  
+          {{- if gt $paginator.TotalPages 1 }}
+          
+            <div class="pagination flex gap-1rem align-items-center justify-content-center width-100 margin-tb-1rem bg-grey">
+              {{ if $paginator.HasPrev }}
+                <a class="prev" href="{{ $paginator.Prev.URL }}">{{- T "prev_page" -}}</a>
+              {{ else }}
+                  <span class="prev disabled">{{- T "prev_page" -}}</span>
+              {{ end }}
+            
+              
+              <span class="page-info">{{ $paginator.PageNumber }} / {{ $paginator.TotalPages }}</span>
+              
+              {{ if $paginator.HasNext }}
+                  <a class="next" href="{{ $paginator.Next.URL }}">{{- T "next_page" -}}</a>
+              {{ else }}
+                  <span class="next disabled">{{- T "next_page" -}}</span>
+              {{ end }}
+  
+            </div>
+          
+          {{- end }}
+  
+  
+          {{- /* template "_internal/pagination.html" . */ -}}
+  
+        </div> 
+  
+      
+   
+        
+   
+      </div>
+    </div>
+  
+  </div>
+
+  
+{{ end }}

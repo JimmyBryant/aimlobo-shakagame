@@ -1,0 +1,16 @@
+{{- define "main" }}
+
+<div class="page_search padding-1rem margin-0-auto">
+
+    <div class="font-size-1_5 margin-bottom-1rem">{{ T "search" }} 🔎</div>
+
+    <div id="searchbox">
+        <input id="searchInput" autofocus placeholder="{{ .Params.placeholder | default (printf "%s ↵" .Title) }}"
+            aria-label="search" type="search" autocomplete="off" class="padding-_5rem font-size-1_2">
+        <ul id="searchResults" aria-label="search results"></ul>
+    </div>
+
+</div>
+
+
+{{- end }}{{/* end main */}}

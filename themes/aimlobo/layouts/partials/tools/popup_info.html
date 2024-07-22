@@ -1,0 +1,26 @@
+{{- /* send msg to user, aim to show and duration is 3s */}}
+{{- /* partial "tools/popup_info.html" (dict "infoType" $infoType "infoContent" $infoContent) */}}
+
+{{- $infoType := .infoType -}}
+{{- $infoContent := .infoContent -}}
+
+
+  <div class="popup_info {{ $infoType }}">
+    <div class="info_type">
+      {{ if eq $infoType "warning" }}
+      ❗
+      {{ else if eq $infoType "error" }}
+      ❌
+      {{ else if eq $infoType "success" }}
+      ✅
+      {{ else if eq $infoType "normal" }}
+      🍀
+      {{ end }}
+    </div>
+
+    <div class="info_content">
+      {{- $infoContent | markdownify -}}
+    </div>
+    
+  </div>
+

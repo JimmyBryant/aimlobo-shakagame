@@ -1,0 +1,68 @@
+/* 真是草了，不给个空的在这里，第一条就不会有效 */
+body {
+
+}
+
+.logo-lang a,
+.menu-icon {
+    color: white;
+}
+
+.game.wooden_fish {
+    min-height: 100vh;
+}
+
+body {
+    background: black;
+    color: white;
+}
+
+
+.game-title,
+.game-control {
+    margin-bottom: 1rem;
+}
+
+
+.game-content .top {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.game-content .center {
+    padding-top: 5rem;
+}
+
+.subtitleCountTip {
+    /* height: 0.6rem;
+    line-height: 0.6rem; */
+    text-align: center;
+    color: #ffffff;
+    position: absolute;
+    /* left: 50%; */
+    /* font-size: 0.27rem; */
+    left: 0;
+    right: 0;
+    animation: countTipMove 1s;
+    opacity: 0;
+    font-size: 1.5rem;
+}
+
+@keyframes countTipMove {
+    from {
+        top: 3rem;
+        opacity: 1;
+    }
+
+    to {
+        top: -1rem;
+        opacity: 0;
+    }
+}
+
+.speed {
+    max-width: 6.5rem;
+    width: 6rem;
+}
+
+
