@@ -1,6 +1,6 @@
-baseURL: https://aimlobo.com/
+baseURL: https://shakagame.com/
 languageCode: en-us
-title: Aimlobo
+title: Shakagame
 theme: aimlobo
 
 paginate: 5
@@ -22,7 +22,7 @@ Params:
   # declaration: footer_declaration
 
   logo:
-    text: Aimlobo
+    text: Shakagame
     image: "/favicon.svg"
 
   assets:
