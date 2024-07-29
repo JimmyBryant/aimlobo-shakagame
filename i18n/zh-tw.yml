@@ -555,4 +555,17 @@
 - id: once_again
   translation: "再來一次"
 
+# page secret: wish
+- id: wish
+  translation: "許願"
+
+- id: make_a_wish
+  translation: "我要許願"
+
+- id: enter_wish_content
+  translation: "輸入許願內容"
+
+- id: wish here
+  translation: "在這裏許願"
+
 

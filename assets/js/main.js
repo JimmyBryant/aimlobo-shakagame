@@ -11,6 +11,10 @@ function displayBlock(element) {
     element.style.display = "block";
 }
 
+function displayInlineBlock(element) {
+    element.style.display = "inline-block";
+}
+
 function displayGrid(element) {
     element.style.display = "grid";
 }

@@ -1,63 +1,120 @@
 {{ define "main" }}
 
-{{- /* 得到当前语言 */ -}}
-{{ $lang := .Lang }}
-
-{{- /* 得到所有文章 */ -}}
-{{ $pages := where .Site.RegularPages "Section" "topic" }}
-
-{{- /* 去掉需要隐藏的文章 */ -}}
-{{- $pages = where $pages ".Params.hide" "!=" true -}}
+  {{- /* Get the current language */ -}}
+  {{- $lang := .Lang -}}
 
   <div class="wrap">
 
-    {{- /* 趣味提示 */ -}}
-      <div class="rose_icon cursor-pointer">
-        {{- partial "tools/popup_rose.html" }}
-      </div>
+    {{- /* 玫瑰花 */ -}}
+    <div class="rose_icon cursor-pointer">
+      {{- partial "tools/popup_rose.html" }}
+    </div>
 
     <div class="page_home flex gap-1rem padding-tb-1rem">
 
-      
-
       <div class="left flex flex-column gap-1rem">
 
-      {{- /* 电子钟，link to my，目的是签到 */ -}}
-      <div class="digital-clock shadow-box padding-_5rem border-radius-_5rem">
-
-
-        <a href="./my/">
+        {{- /* 电子钟, link to my, purpose is to check in */ -}}
+        <div class="digital-clock shadow-box padding-_5rem border-radius-_5rem">
+          <a href="./my/">
             <div class="time flex gap-_5rem align-items-center">
-                <span class="hours">00</span>
-                <span class="dots">:</span>
-                <span class="minutes">00</span>
-                <div class="right-side">
-                    <span class="period">AM/PM</span>
-                    <span class="seconds">00</span>
-                </div>
+              <span class="hours">00</span>
+              <span class="dots">:</span>
+              <span class="minutes">00</span>
+              <div class="right-side">
+                <span class="period">AM/PM</span>
+                <span class="seconds">00</span>
+              </div>
             </div>
             <div class="calender">
-                <span class="year">year</span>-
-                <span class="month-name">Month</span>-
-                <span class="day-num">00</span>
-                <span class="day-name">Day</span>
+              <span class="year">year</span>-
+              <span class="month-name">Month</span>-
+              <span class="day-num">00</span>
+              <span class="day-name">Day</span>
             </div>
-        </a>
-        
+          </a>
+        </div>
+
+        {{- /* Share button */ -}}
+        {{- partial "tools/popup_info_share_site.html" (dict "lang" .Lang) }}
+
+        {{- /* 树洞 - by weight */ -}}
+        <div class="topic-recommond shadow-box border-radius-_5rem padding-1rem">
+          <a href="/{{- $lang -}}/secret/">
+            <div class="font-size-1_5 margin-bottom-1rem color-black">🕯️ {{ T "secret" }}</div>
+          </a>
+          
+
+          {{- $dataSecret := index .Site.Data.secret.secret_list .Lang -}}
+          {{- with $dataSecret -}}
+          {{- range first 5 (sort . "weight" "asc") -}}
+          <div class="topic-item flex gap-_5rem align-items-center margin-bottom-1rem bg-color-04 border-radius-_5rem padding-_5rem">
+            {{ with . }}
+            {{- /* Cover image: 5rem for PC, 15rem for clarity - 3x scaling for mobile size */ -}}
+            <div class="topic-cover">
+              {{- $imagePath := .cover -}}
+              {{- $alt := .id -}}
+              <a href="/{{- $lang -}}/secret/{{- .id | urlize -}}/">
+                {{- partial "tools/img-res.html" (dict "imagePath" $imagePath "alt" $alt "imageWidth" 20) }}
+              </a>
+            </div>
+
+            {{- /* Text part */ -}}
+            <div class="topic-text flex flex-column align-items-center justify-content-center">
+              {{- /* Title */ -}}
+              <div>
+                <a href="/{{- $lang -}}/secret/{{- .id | urlize -}}/" class="font-weight-400 color-black font-size-1_2">
+                  {{ .name }}
+                </a>
+              </div>
+            </div>
+            {{- end -}}
+          </div>
+          {{- end -}}
+          {{- end -}}
+        </div>
       </div>
 
-      {{- /* 分享按钮 */ -}}
-      {{- partial "tools/popup_info_share_site.html" (dict "lang" .Lang) }}
+      <div class="center flex flex-column gap-1rem">
+        <div class="game-lists shadow-box padding-_5rem border-radius-1rem">
+          {{- $dataGame := index .Site.Data.game .Lang -}}
+          {{- with $dataGame.game_lists -}}
+          {{- range first 5 (sort . "weight" "asc") -}}
+          <div class="list-item padding-_5rem bg-purple border-radius-1rem">
+            {{- $path := .cover -}}
+            {{- $alt := .id -}}
+            <a href="/{{- $lang -}}/game/{{- .id | urlize -}}/" class="flex gap-1rem align-items-center">
+              <div class="game-cover border-radius-_5rem">
+                {{ partial "tools/img-res.html" (dict "imagePath" $path "alt" $alt "imageWidth" 20) }}
+              </div>
+              <div class="game-title">
+                {{- .name -}}
+              </div>
+            </a>
+          </div>
+          {{- end -}}
+          {{- end -}}
+        </div>
+      </div>
 
-      {{- /* 推荐阅读 - by weight */ -}}
-      <div class="topic-recommond shadow-box border-radius-_5rem padding-1rem">
+      <div class="right flex flex-column gap-1rem">
+        {{- /* Recommended reading - by weight */ -}}
+        <div class="topic-recommond shadow-box border-radius-_5rem padding-1rem">
+          <a href="/{{- $lang -}}/topic/">
+            <div class="font-size-1_5 margin-bottom-1rem color-black">🔥 {{ T "hot_posts" }}</div>
+          </a>
+          
+          
+          {{- /* Get all posts */ -}}
+          {{ $pages := where .Site.RegularPages "Section" "topic" }}
+        
+          {{- /* Exclude hidden posts */ -}}
+          {{- $pages = where $pages ".Params.hide" "!=" true -}}
 
-        <div class="font-size-1_5 margin-bottom-1rem">🔥 {{ T "hot_posts" }}</div>
-        {{- range first 5 (sort $pages "Weight" "desc") -}}
+          {{- range first 5 (sort $pages "Weight" "desc") -}}
           <div class="topic-item flex gap-_5rem align-items-center margin-bottom-1rem">
-
             {{ with . }}
-            {{- /* 封面图片: pc端需求5rem,放15rem，清晰点 - 这里翻了3倍，是因为手机端的大小没有变化 */ -}}
+            {{- /* Cover image: 5rem for PC, 15rem for clarity - 3x scaling for mobile size */ -}}
             <div class="topic-cover">
               {{- $imagePath := .Params.cover -}}
               {{- $alt := "image" -}}
@@ -66,57 +123,22 @@
               </a>
             </div>
 
-            {{- /* 文字部分 */ -}}
+            {{- /* Text part */ -}}
             <div class="topic-text flex flex-column">
-
-              {{- /* 标题, 取前边45个字符 */ -}}
-              <div><a href="{{ .RelPermalink }}" class="font-weight-400 color-black">{{ .Title | truncate 45}}</a></div>
-
+              {{- /* Title, truncated to first 45 characters */ -}}
+              <div>
+                <a href="{{ .RelPermalink }}" class="font-weight-400 color-black">
+                  {{ .Title | truncate 45 }}
+                </a>
+              </div>
             </div>
-            
-          {{ end }}
-            
+            {{ end }}
           </div>
-        {{- end -}}
-      </div>
-
-      </div>
-  
-  
-      <div class="center">
-
-        <div class="game-lists shadow-box padding-_5rem border-radius-1rem">
-
-          {{- $dataLang := index .Site.Data.game .Lang -}}
-          {{- with $dataLang.game_lists -}}
-          {{- range first 5 (sort . "weight" "asc") -}}
-                <div class="list-item padding-_5rem bg-purple border-radius-1rem">
-                    {{- $path := .cover -}}
-                    {{- $alt := .id -}}
-                    <a href="/{{ $lang }}/game/{{- .id | urlize -}}/" class="flex gap-1rem align-items-center">
-                      <div class="game-cover border-radius-_5rem">
-                        {{ partial "tools/img-res.html" (dict "imagePath" $path "alt" $alt "imageWidth" 20) }}
-                      </div>
-                      <div class="game-title">
-                        {{- .name -}}
-                      </div>
-                      
-                    </a>
-    
-                </div>
-            {{- end -}}
           {{- end -}}
-    
-      </div>
-  
-      </div>
-  
-      <div class="right">
-  
+        </div>
       </div>
 
     </div>
-    
 
   </div>
 

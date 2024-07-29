@@ -567,3 +567,15 @@
 - id: once_again
   translation: "Once again"
 
+# page secret: wish
+- id: wish
+  translation: "Wish"
+
+- id: make_a_wish
+  translation: "make a wish"
+
+- id: enter_wish_content
+  translation: "Enter wish content"
+
+- id: wish here
+  translation: "Wish here"

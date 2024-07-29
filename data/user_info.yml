@@ -308,9 +308,9 @@ user_achievement:
       weight: 160
 
 user_check_in_tips:
-  en: check_in_today_complere, level up +1, lucky score + 10, continue and enjoy.
-  zh-cn: 签到成功，等级 +1, 幸运值 +10, 继续保持。
-  zh-tw: 簽到成功，等級 +1, 幸運值 +10, 繼續保持。
+  en: 🎢 +1, 🧧 +10, continue and enjoy.
+  zh-cn: 🎢 +1, 🧧 +10, 继续保持。
+  zh-tw: 🎢 +1, 🧧 +10, 繼續保持。
 
 user_unlucky_for_tips:
   en: No touch unlucky things.

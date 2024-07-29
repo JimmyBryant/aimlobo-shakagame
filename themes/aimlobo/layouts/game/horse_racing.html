@@ -217,8 +217,23 @@
                 <span>{{ T "wining_horse_is" }}: </span>
                 <span class="var_winner font-size-1_2"></span>
             </div>
-            <div class="text-center">
-                <button id="resetGame" class="btn btn_reset_game">{{ T "once_again" }}</button>
+            <div class="btn_area flex gap-1rem align-items-center justify-content-center">
+                <button id="resetGame" class="btn btn_reset_game cursor-pointer">{{ T "once_again" }}</button>
+                {{- /* 分享网站 */ -}}
+                {{- partial "tools/popup_info_share.html" (dict "lang" .Lang) }}
+            </div>
+        
+            {{- /* Google adense shakagame.com-04 */ -}}
+            <div class="google_ad margin-tb-1rem">
+                <script async
+                    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2994572689024438"
+                    crossorigin="anonymous"></script>
+                <!-- shakagame.com-04 -->
+                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2994572689024438"
+                    data-ad-slot="6023085196" data-ad-format="auto" data-full-width-responsive="true"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
             </div>
         </div>
 

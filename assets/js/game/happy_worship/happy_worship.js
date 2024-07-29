@@ -6,18 +6,27 @@ const gameTitle = document.querySelector('.game-title .title');
 const popupFormGameTitle = document.querySelector('.popup-form-game-title');
 const formGameTitle = document.querySelector('.form-game-title');
 
-clickDisplayFlex(gameTitle, popupFormGameTitle);
+
+gameTitle.addEventListener('click', () => {
+  bgmSelect.play();
+  displayFlex(popupFormGameTitle);
+  bgmSelect.stop();
+});
 
 formGameTitle.addEventListener('submit', (event) => {
   event.preventDefault();
+  bgmSelect.play();
   const gameTitleInput = document.querySelector('.game-title-input').value;
   gameTitle.innerHTML = gameTitleInput;
   hide(popupFormGameTitle);
+  bgmSelect.stop();
 });
 
 formGameTitle.addEventListener('reset', () => {
+  bgmSelect.play();
   formGameTitle.reset();
   hide(popupFormGameTitle);
+  bgmSelect.stop();
 });
 // 编辑标题 end
 
@@ -28,14 +37,31 @@ const offeringsInPage = document.querySelector('.offerings-in-page');
 const popupFormOfferings = document.querySelector('.popup-form-offerings');
 const formOfferings = document.querySelector('.form-offerings');
 
-clickDisplayFlex(btnOpenFormOfferings, popupFormOfferings);
-clickDisplayFlex(offeringsInPage, popupFormOfferings);
-clickDisplayFlex(tableImg, popupFormOfferings);
+btnOpenFormOfferings.addEventListener('click', () => {
+  bgmSelect.play();
+  displayFlex(popupFormOfferings);
+  bgmSelect.stop();
+});
+
+offeringsInPage.addEventListener('click', () => {
+  bgmSelect.play();
+  displayFlex(popupFormOfferings);
+  bgmSelect.stop();
+});
+
+tableImg.addEventListener('click', () => {
+  bgmSelect.play();
+  displayFlex(popupFormOfferings);
+  bgmSelect.stop();
+});
+
+
 
 formOfferings.addEventListener('submit', (event) => {
   event.preventDefault();
   const selectedOfferings = document.querySelectorAll('input[name="select-offerings"]:checked');
   if (selectedOfferings.length > 0) {
+    bgmSelect.play();
     offeringsInPage.innerHTML = '';
     hide(btnOpenFormOfferings);
     selectedOfferings.forEach((selectedOffering) => {
@@ -43,6 +69,7 @@ formOfferings.addEventListener('submit', (event) => {
       offeringDiv.innerHTML = selectedOffering.value; // 将选中项的值作为 div 内容
       offeringsInPage.appendChild(offeringDiv); // 将创建的 div 元素添加到页面中
     });
+    bgmSelect.stop();
   } else {
     offeringsInPage.innerHTML = '';
     displayBlock(btnOpenFormOfferings);
@@ -53,8 +80,10 @@ formOfferings.addEventListener('submit', (event) => {
 });
 
 formOfferings.addEventListener('reset', () => {
+  bgmSelect.play();
   formOfferings.reset();
   hide(popupFormOfferings);
+  bgmSelect.stop();
 });
 // 编辑编辑供品 end
 
@@ -66,14 +95,32 @@ const incenseItemsInPage = incenseInPage.querySelectorAll('.incense-item');
 const popupFormIncense = document.querySelector('.popup-form-incense');
 const formIncense = document.querySelector('.form-incense');
 
-clickDisplayFlex(btnOpenFormIncense, popupFormIncense);
-clickDisplayFlex(incenseInPage, popupFormIncense);
-clickDisplayFlex(stove, popupFormIncense);
+
+
+btnOpenFormIncense.addEventListener('click', () => {
+  bgmSelect.play();
+  displayFlex(popupFormIncense);
+  bgmSelect.stop();
+});
+
+incenseInPage.addEventListener('click', () => {
+  bgmSelect.play();
+  displayFlex(popupFormIncense);
+  bgmSelect.stop();
+});
+
+stove.addEventListener('click', () => {
+  bgmSelect.play();
+  displayFlex(popupFormIncense);
+  bgmSelect.stop();
+});
+
 
 formIncense.addEventListener('submit', (event) => {
   event.preventDefault();
   const selectedIncense = document.querySelector('input[name="select-incense"]:checked');
   if (selectedIncense.value) {
+    bgmSelect.play();
     displayFlex(incenseInPage);
     incenseInPage.innerHTML = '';
     hide(btnOpenFormIncense);
@@ -93,7 +140,7 @@ formIncense.addEventListener('submit', (event) => {
     
     // 调整香火在页面上的展示css：只有一根香火的情况下，应该居中，超过一根香火，就有left和right= 3vh;
     adjustIncenseItemInPage();
-
+    bgmSelect.stop();
   } else {
     hide(incenseInPage);
     incenseInPage.innerHTML = '';
@@ -105,8 +152,10 @@ formIncense.addEventListener('submit', (event) => {
 });
 
 formIncense.addEventListener('reset', () => {
+  bgmSelect.play();
   formIncense.reset();
   hide(popupFormIncense);
+  bgmSelect.stop();
 });
 // 编辑编辑香火 end
 
@@ -208,6 +257,14 @@ function burnIncense() {
     body.classList.add('burn');
   });
 }
+
+// 选择音效-- 有效
+const bgmSelect = new Howl({
+  src: ["/audio/game/horse_racing/select-sound-121244.mp3"],
+  html5: true,
+  loop: false,
+  volume: 0.4,
+});
 
 // 初始化背景音乐
 const bgm = new Howl({

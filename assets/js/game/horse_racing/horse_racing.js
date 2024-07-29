@@ -107,7 +107,9 @@ formHorseSelect.addEventListener("submit", (event) => {
 });
 
 formHorseSelect.addEventListener('reset', () => {
+    bgmSelect.play();
     formHorseSelect.reset();
+    bgmSelect.stop();
 });
 
 // 第二个页面，选择下注金额
@@ -128,9 +130,6 @@ formBetAmount.addEventListener("submit", (event) => {
         } else {
             
             bgmSelect.play();
-            // 扣减幸运值
-            updateTotalLuckyPoint(-userBetAmount);
-            writeEventLogLuckyPoint('horse racing cost', -userBetAmount);
             hide(formBetAmount);
             updateUserBetInfo();
             displayBlock(match); // 显示匹配中
@@ -146,7 +145,21 @@ formBetAmount.addEventListener("submit", (event) => {
 });
 
 formBetAmount.addEventListener('reset', () => {
+
+    bgmSelect.play();
+    // 重置表单
+    formHorseSelect.reset();
     formBetAmount.reset();
+
+    // 显示内容
+    displayFlex(gameTitle);
+    displayBlock(formHorseSelect);
+
+    // 隐藏内容
+    
+    hide(formBetAmount);
+    bgmSelect.stop();
+
 });
 
 // 第三个页面，显示下注的所有数据
@@ -183,6 +196,9 @@ function updateUserBetInfo() {
 readyStartButton.addEventListener("click", () => {
     hide(matchSuccess);
     hide(gameMatchSection);
+    // 扣减幸运值
+    updateTotalLuckyPoint(-userBetAmount);
+    writeEventLogLuckyPoint('horse racing cost', -userBetAmount);
     resetHorseStyle();
     displayFlex(gamePlayingSection);
     hide(txtRacing);
@@ -198,6 +214,14 @@ function startCountDown() {
     bgmCountDown.play();
 
     const interval = setInterval(() => {
+        // Add scale effect class
+        countDown.classList.add('scale-effect');
+
+        // Remove the class after the animation duration to allow re-adding it for the next number
+        setTimeout(() => {
+            countDown.classList.remove('scale-effect');
+        }, 500); // match this duration with the CSS animation duration
+        
         countdown--;
         
         countDown.textContent = countdown;

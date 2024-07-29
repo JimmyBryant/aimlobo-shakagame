@@ -553,3 +553,16 @@
 
 - id: once_again
   translation: "再来一次"
+
+# page secret: wish
+- id: wish
+  translation: "许愿"
+
+- id: make_a_wish
+  translation: "我要许愿"
+
+- id: enter_wish_content
+  translation: "输入许愿内容"
+
+- id: wish here
+  translation: "在这里许愿"

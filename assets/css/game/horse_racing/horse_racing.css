@@ -117,6 +117,24 @@ body {
     }
 }
 
+/* 游戏倒计时 */
+@keyframes scaleEffect {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(2);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  .scale-effect {
+    animation: scaleEffect 0.5s;
+  }
+  
+
 
 
 /* 游戏进行中 */
