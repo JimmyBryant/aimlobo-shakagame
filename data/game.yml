@@ -354,6 +354,32 @@ en:
             3. Evaluation: **I'm not particularly smart, I'm just full of curiosity**
           weight: 100
 
+    # - id: lottery_3
+    #   name: lottery_3
+    #   weight: 2
+    #   cover: /image/game/horse_racing/cover.png
+    #   msg_not_enought_lucky_point: Not enough lucky point(🧧). 
+    #   msg_bet_stop: bet stop. 
+    #   tips:
+    #   - title: What is a Horse Racing Game?
+    #     content: The horse racing game (**aimlobo.com**) simulates real horse racing, allowing you to enjoy the exciting process and win rewards.
+    #     weight: 10
+    #   - title: How to Play the Horse Racing Game?
+    #     content: |
+    #       1. Choose your preferred horse;
+    #       2. Place a bet, **you must bet at least 1 luck point; if your luck points are less than 1, you cannot start the game**;
+    #       3. Wait for the system to match other players;
+    #       4. Review the prize pool information and click **Start Game**;
+    #       5. Watch the exciting horse race;
+    #       6. Wait for the race results, **either you win or you lose**.
+    #     weight: 20
+    #   - title: Luck Points System
+    #     content: |
+    #       1. After you place a bet, the system will immediately deduct the luck points you bet;
+    #       2. If you lose, you get nothing; but if you win, you will receive a reward much higher than your bet.
+    #       3. If you win, the system will deduct 3% of the prize as a service fee.
+    #       4. Each time you see the race results, it adds one more game count.
+    #     weight: 30
 
 zh-cn:
   game_lists:

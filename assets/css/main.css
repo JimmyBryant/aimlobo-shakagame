@@ -1063,6 +1063,11 @@ hr {
   font-size: 1.2rem;
 }
 
+.btn:disabled {
+  background-color: grey;
+  cursor: not-allowed;
+}
+
 .btn:hover {
   filter: brightness(115%);
 }
