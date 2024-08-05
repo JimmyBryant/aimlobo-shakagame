@@ -662,7 +662,7 @@ function initializeUserSystem() {
     }
 
     // 用户系统，幸运积分，用户头像，用户名，签名，生日，等级 -- 积分记录待添加
-    initializeLocalStorageKey('total_lucky_point', 10);//赠送10个积分
+    initializeLocalStorageKey('total_lucky_point', 100);//赠送100个积分
     initializeLocalStorageKey('user_avatar', '🎃');
     initializeLocalStorageKey('user_name', 'aimlobo_' + translate(getLanguageFromUrl(), 'username'));
     initializeLocalStorageKey('user_description', translate(getLanguageFromUrl(), 'personalized_signature'));
