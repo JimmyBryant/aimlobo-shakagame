@@ -579,3 +579,102 @@
 
 - id: wish here
   translation: "Wish here"
+
+
+  # game toto_3
+- id: toto_3
+  translation: "ToTo 3"
+
+- id: next_round_count_down
+  translation: "Next Round Count Down"
+
+- id: round_number
+  translation: "Round No."
+
+- id: win_number
+  translation: "Win Number"
+
+- id: status
+  translation: "Status"
+
+- id: lottery_check
+  translation: "Check"
+
+- id: status_open
+  translation: "Open"
+
+- id: status_close
+  translation: "Close"
+
+- id: status_bonus
+  translation: "Bonus"
+
+- id: status_stop
+  translation: "Stop"
+
+- id: bet_number
+  translation: "Bet Number"
+
+- id: single_bet_cost_lucky_point
+  translation: "Single Bet Cost Lucky Point"
+
+- id: bet_multiple
+  translation: "Bet Multiple"
+
+- id: bet_amount
+  translation: "Bet Amount"
+
+- id: bet_bonus
+  translation: "Bet Bonus"
+
+- id: bet_record
+  translation: "Bet Record"
+
+- id: lottery_home
+  translation: "Home"
+
+- id: total_bet_player
+  translation: "Total Bet Player"
+
+- id: total_bet_multiple
+  translation: "Total Bet Multiple"
+
+- id: total_bet_amount
+  translation: "Total Bet Amount"
+
+- id: total_win_player
+  translation: "Total Win Player"
+
+- id: total_win_multiple
+  translation: "Total Win Multiple"
+
+- id: total_win_amount
+  translation: "Total Win Amount"
+
+- id: user_bet_or_not
+  translation: "You bet or not"
+
+- id: congratulation
+  translation: "Congratulation"
+
+- id: bonus_success
+  translation: "Bonus success"
+
+- id: lottery_bonus
+  translation: "Bonus"
+
+- id: user_win_or_not
+  translation: "You win or not"
+
+- id: user_bonus_or_not
+  translation: "You bonus or not"
+
+- id: user_win_multiple
+  translation: "You Win Multiple"
+
+- id: user_win_amount
+  translation: "You Win Amount"
+
+- id: user_win_or_not
+  translation: "You win or not"
+

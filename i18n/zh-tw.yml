@@ -569,3 +569,101 @@
   translation: "在這裏許願"
 
 
+  # game toto_3
+- id: toto_3
+  translation: "多多 3"
+
+- id: next_round_count_down
+  translation: "下一輪倒計時"
+
+- id: round_number
+  translation: "輪次"
+
+- id: win_number
+  translation: "中獎號碼"
+
+- id: status
+  translation: "狀態"
+
+- id: lottery_check
+  translation: "查看"
+
+- id: status_open
+  translation: "開盤"
+
+- id: status_close
+  translation: "封盤"
+
+- id: status_bonus
+  translation: "兌獎"
+
+- id: status_stop
+  translation: "結束"
+
+- id: bet_number
+  translation: "下註號碼"
+
+- id: single_bet_cost_lucky_point
+  translation: "單註花費幸運值"
+
+- id: bet_multiple
+  translation: "下註註數"
+
+- id: bet_amount
+  translation: "下註金額"
+
+- id: bet_bonus
+  translation: "Bet Bonus"
+
+- id: bet_record
+  translation: "下註記錄"
+
+- id: lottery_home
+  translation: "遊戲首頁"
+
+- id: total_bet_player
+  translation: "參與玩家總數"
+
+- id: total_bet_multiple
+  translation: "玩家下註註數"
+
+- id: total_bet_amount
+  translation: "玩家下註總額"
+
+- id: total_win_player
+  translation: "中獎玩家總數"
+
+- id: total_win_multiple
+  translation: "中獎總註數"
+
+- id: total_win_amount
+  translation: "中獎總額"
+
+- id: user_bet_or_not
+  translation: "您是否參與"
+
+- id: congratulation
+  translation: "恭喜"
+
+- id: bonus_success
+  translation: "兌獎成功"
+
+- id: lottery_bonus
+  translation: "兌獎"
+
+- id: user_win_or_not
+  translation: "您是否中獎"
+
+- id: user_bonus_or_not
+  translation: "您是否兌獎"
+
+- id: user_win_multiple
+  translation: "您中獎註數"
+
+- id: user_win_amount
+  translation: "您中獎總額"
+
+- id: user_win_or_not
+  translation: "您是否中獎"
+
+

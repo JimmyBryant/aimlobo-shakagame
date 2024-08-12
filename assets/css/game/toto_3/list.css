@@ -1,0 +1,64 @@
+body {
+
+}
+
+
+
+
+.btn_bonus.disabled {
+    background-color: grey;
+    cursor: not-allowed;
+}
+
+.round_number, .var_round_number {
+    width: 4rem;
+}
+
+
+.win_number, .var_win_number, .current_user_bet_number, .var_current_user_bet_number {
+    width: 12rem;
+}
+
+.status, .var_status, .check, .current_user_bet_multiple, .current_user_bet_amount, .var_current_user_bet_multiple, .var_current_user_bet_amount {
+    width: 4rem;
+}
+
+.var_current_user_bet_multiple, .var_current_user_bet_amount {
+    text-align: center;
+}
+
+
+.table_title {
+    border-bottom: 0.1rem solid black;
+}
+
+
+input[name=bet_number], input[name=bet_multiple]{
+    width: 5rem;
+}
+
+.game_toto_3_bet .round_info {
+    width: 20rem;
+}
+
+
+.user_bet_record, .bet_info, .win_info, .user_win_or_not_info, .user_win_info {
+    width: 21.5rem;
+}
+
+.record_item_1 {
+    border-bottom: 0.1rem solid black;
+}
+
+
+
+@media screen and (max-width: 48rem) {
+
+    .game_toto_3_home .status {
+        display: none;
+    }
+
+    .game_toto_3_home .var_status {
+        display: none;
+    }
+}

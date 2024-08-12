@@ -1,0 +1,16 @@
+{{- /* 页面内的一个提示框，用户点击 X 可以关闭 */}}
+{{- /* 适用于简短重要的提示 */}}
+{{- /* partial "tools/in_page_tips.html" (dict "inPageTipsContent" "inPageTipsContent" "tipsType" "tipsType") */}}
+
+{{- $inPageTipsContent :=  .inPageTipsContent -}}
+{{- $tipsType :=  .tipsType -}}
+
+<div class="in_page_tips {{ $tipsType }} flex gap-1rem align-items-center justify-content-between border-radius-_3rem padding-1rem">
+
+    <div class="content">{{ $inPageTipsContent | markdownify }}</div>
+
+    <div class="close flex align-items-center justify-content-center border-round cursor-pointer font-size-1_2 color-white">
+      &times;
+    </div>
+
+</div>
