@@ -3,7 +3,7 @@
 
 // 参数变量，方便调试和修改
 const recordCount = 7; // 需要生成的记录数目
-const intervalMinutes = 1; // 间隔时间（分钟）-- 非常重要 -- 一定要 >= 1,才能正确更新list页面的数据（按条）
+const intervalMinutes = 5; // 间隔时间（分钟）-- 非常重要 -- 一定要 >= 1,才能正确更新list页面的数据（按条）
 const intervalMinutesClose = 0.5; // 提前多长时间封盘
 const intervalMinutesValidBet = intervalMinutes - intervalMinutesClose; // 有效下注时间
 const intervalMinutesValidBonus = intervalMinutes; // 有效兑奖时间
