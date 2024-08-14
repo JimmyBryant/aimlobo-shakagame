@@ -578,6 +578,12 @@
 - id: round_number
   translation: "轮次"
 
+- id: current_round_number
+  translation: "当前轮次"
+
+- id: next_round_number
+  translation: "下一轮次"
+
 - id: win_number
   translation: "中奖号码"
 
@@ -597,7 +603,7 @@
   translation: "兑奖"
 
 - id: status_stop
-  translation: "结束"
+  translation: "已结束"
 
 - id: bet_number
   translation: "下注号码"
@@ -619,6 +625,9 @@
 
 - id: lottery_home
   translation: "游戏首页"
+
+- id: lottery_rule
+  translation: "规则"
 
 - id: total_bet_player
   translation: "参与玩家总数"
@@ -647,6 +656,9 @@
 - id: bonus_success
   translation: "兑奖成功"
 
+- id: lottery_no_bonus
+  translation: "没中奖"
+
 - id: lottery_bonus
   translation: "兑奖"
 
@@ -664,3 +676,18 @@
 
 - id: user_win_or_not
   translation: "您是否中奖"
+
+- id: show
+  translation: "显示"
+
+- id: hide
+  translation: "隐藏"
+
+- id: all_tips_on_this_page
+  translation: "本页面所有提示"
+
+- id: bet_stop_you_can_go_to_page
+  translation: "已封盘，你可前往"
+
+- id: wait_for_bonus
+  translation: "页面等待开奖"

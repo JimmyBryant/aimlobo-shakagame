@@ -583,13 +583,19 @@
 
   # game toto_3
 - id: toto_3
-  translation: "ToTo 3"
+  translation: "Toto 3"
 
 - id: next_round_count_down
   translation: "Next Round Count Down"
 
 - id: round_number
   translation: "Round No."
+
+- id: current_round_number
+  translation: "Current Round No."
+
+- id: next_round_number
+  translation: "Next Round No."
 
 - id: win_number
   translation: "Win Number"
@@ -633,6 +639,9 @@
 - id: lottery_home
   translation: "Home"
 
+- id: lottery_rule
+  translation: "Rule"
+
 - id: total_bet_player
   translation: "Total Bet Player"
 
@@ -660,6 +669,9 @@
 - id: bonus_success
   translation: "Bonus success"
 
+- id: lottery_no_bonus
+  translation: "No bonus"
+
 - id: lottery_bonus
   translation: "Bonus"
 
@@ -677,4 +689,21 @@
 
 - id: user_win_or_not
   translation: "You win or not"
+
+- id: show
+  translation: "Show"
+
+- id: hide
+  translation: "Hide"
+
+- id: all_tips_on_this_page
+  translation: "all tips on this page"
+
+- id: bet_stop_you_can_go_to_page
+  translation: "Bet stop, you can go to page "
+
+- id: wait_for_bonus
+  translation: " wait for bonus"
+
+
 

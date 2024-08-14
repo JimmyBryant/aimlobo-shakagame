@@ -1,5 +1,11 @@
+// 用来记录页面上用户是显示还是隐藏所有提示
+const pageName = 'list';
+const checkbox = document.getElementById('hide_or_show_all_tips_in_current_page');
+
+
+
 // 弹窗提示 -- 可点击关闭
-clickHideInPageTips(); 
+aimloboClickHideInPageTips(); 
 
 
 // 写入数据到html
@@ -110,11 +116,22 @@ function updateRoundBetStatusInLocal() {
     updateIndexRoundStatusInLocal(0);
 }
 
+// 更新用户的配置：显示还是隐藏所有提示 -- 并进行更新
+checkbox.addEventListener('change', function() {
+    updatePageConfigToLocalHideOrShowAllTipsInCurrentPage(pageName);
+    updatePageConfigInPageHideOrShowAllTipsInCurrentPage(pageName);
+});
+
+
 
 // 进入页面先做这些：
 
 // 页面更新 -- 更新页面上的倒计时
 updatePageRoundCountDown();
+
+// 初始化用户的配置：显示还是隐藏所有提示
+initPageConfigValueToLocalHideOrShowAllTipsInCurrentPage(pageName);
+updatePageConfigInPageHideOrShowAllTipsInCurrentPage(pageName);
 
 
 /*

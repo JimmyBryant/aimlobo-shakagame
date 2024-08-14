@@ -3,56 +3,136 @@ body {
 }
 
 
+/* page: list */
 
+.table_title {
+    border-bottom: 0.1rem solid black;
+}
+
+.game_toto_3_home .round_number, 
+.game_toto_3_home .var_round_number, 
+.game_toto_3_home .status,
+.game_toto_3_home .var_status,
+.game_toto_3_home .check {
+
+    width: 18%;
+}
+
+
+.game_toto_3_home .win_number,
+.game_toto_3_home .var_win_number {
+
+    width: 46%;
+    min-width: 12rem;
+}
+
+.list_rule_other_area {
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.win_number_part {
+    background: url(/image/game/toto_3/blue.png);
+    background-size: 2rem;
+}
+
+
+
+/* page: list  -- end */
+
+/* page: bet */
+
+.page_bet .page_bet_left,
+.page_bonus .page_bonus_left,
+.page_history .page_history_left {
+    width: 42rem;
+}
+
+.page_bet .page_bet_right,
+.page_bonus .page_bonus_right,
+.page_history .page_history_right  {
+    width: 21rem;
+}
+
+
+input[name=bet_number], input[name=bet_multiple]{
+    width: 10rem;
+}
+
+.user_bet_record .var_current_user_bet_number,
+.user_bet_record .current_user_bet_number,
+.var_user_bet_record .var_current_user_bet_number {
+    width: 50%;
+}
+
+.user_bet_record .var_current_user_bet_multiple,
+.user_bet_record .current_user_bet_multiple,
+.var_user_bet_record .var_current_user_bet_multiple {
+    width: 25%;
+}
+
+.user_bet_record .var_current_user_bet_amount,
+.user_bet_record .current_user_bet_amount,
+.var_user_bet_record .var_current_user_bet_amount {
+    width: 25%;
+}
+
+.down_check_bet_record {
+    display: none;
+}
+
+.down_check_bet_record_icon {
+    display: inline-block;
+    position: relative;
+    animation: down_check_bet_record_icon_animation 1s infinite alternate ease-in-out;
+}
+
+@keyframes down_check_bet_record_icon_animation {
+    0% {
+        top: -0.5rem;
+    }
+    100% {
+        top: 0;
+    }
+}
+
+
+
+/* page: bet -- end */
+
+
+/* page: bonus */
 
 .btn_bonus.disabled {
     background-color: grey;
     cursor: not-allowed;
 }
 
-.round_number, .var_round_number {
-    width: 4rem;
-}
 
-
-.win_number, .var_win_number, .current_user_bet_number, .var_current_user_bet_number {
-    width: 12rem;
-}
-
-.status, .var_status, .check, .current_user_bet_multiple, .current_user_bet_amount, .var_current_user_bet_multiple, .var_current_user_bet_amount {
-    width: 4rem;
-}
-
-.var_current_user_bet_multiple, .var_current_user_bet_amount {
-    text-align: center;
-}
-
-
-.table_title {
-    border-bottom: 0.1rem solid black;
-}
-
-
-input[name=bet_number], input[name=bet_multiple]{
-    width: 5rem;
-}
-
-.game_toto_3_bet .round_info {
-    width: 20rem;
-}
-
-
-.user_bet_record, .bet_info, .win_info, .user_win_or_not_info, .user_win_info {
-    width: 21.5rem;
-}
-
-.record_item_1 {
-    border-bottom: 0.1rem solid black;
-}
-
+/* page: bonus -- end */
 
 
 @media screen and (max-width: 48rem) {
+
+
+    /* page: list */
+
+    .list_bet_bonus, .list_stop_rule {
+
+        flex-direction: column;
+    }
+
+    .list_bet, .list_bonus, .list_stop, .list_rule {
+
+        width: 100%;
+    }
+
+    .list_rule_other_area {
+
+        grid-template-columns: repeat(2, 1fr);
+    }
 
     .game_toto_3_home .status {
         display: none;
@@ -61,4 +141,33 @@ input[name=bet_number], input[name=bet_multiple]{
     .game_toto_3_home .var_status {
         display: none;
     }
+
+    /* page: list  -- end */
+
+    /* page: bet */
+
+    .page_bet, .page_bonus, .page_history {
+        flex-direction: column;
+    }
+
+    .page_bet .page_bet_left,
+    .page_bet .page_bet_right,
+    .page_bonus .page_bonus_left,
+    .page_bonus .page_bonus_right,
+    .page_history .page_history_left,
+    .page_history .page_history_right {
+
+        width: 100%;
+    }
+
+    .down_check_bet_record {
+        display: block;
+    }
+
+
+    /* page: bet -- end */
+
+
+
+    
 }

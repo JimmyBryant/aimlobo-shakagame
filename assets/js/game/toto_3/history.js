@@ -36,6 +36,17 @@ function updatePageRoundStopPlayerBetAndWinnerInfo() {
     updatePageRoundPlayerBetAndWinnerInfo(getRecordIndexFromURL());
 }
 
+// 更新页面信息 -- 用户参与和中奖 -- index = 
+function updatePageRoundHistoryUserBetAndWinnerInfo() {
+    updatePageRoundUserBetAndWinnerInfo(getRecordIndexFromURL());
+}
+
+
+// 更新页面信息 -- 用户下注记录 -- index = 
+function updatePageRoundHistoryUserBetRecords() {
+    updatePageRoundUserBetRecords(getRecordIndexFromURL());
+}
+
 
 /*
 按照频次更新：
@@ -44,5 +55,5 @@ function updatePageRoundStopPlayerBetAndWinnerInfo() {
 2.1 更新本地的全部记录；
 2.2 写入对应的记录到相应的html模块 -- 
 */
-executeEvery(intervalTimeToUpdateAllRound(), updateRoundRecordInLocal, updatePageRoundStopNumber, updatePageRoundStopWinNumber, updatePageRoundStopPlayerBetAndWinnerInfo);
+executeEvery(intervalTimeToUpdateAllRound(), updateRoundRecordInLocal, updatePageRoundStopNumber, updatePageRoundStopWinNumber, updatePageRoundStopPlayerBetAndWinnerInfo, updatePageRoundHistoryUserBetAndWinnerInfo, updatePageRoundHistoryUserBetRecords);
 

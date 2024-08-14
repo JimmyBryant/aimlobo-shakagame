@@ -6,10 +6,14 @@ const popupUserBonusInfoNoWin = document.querySelector('.popup_user_bonus_info_n
 const popupUserBonusInfoNoWinBtnGetIt = popupUserBonusInfoNoWin.querySelector('.btn_get_it');
 const varAddLuckyPoint = popupUserBonusInfo.querySelector('.var_add_lucky_point');
 
+// 用来记录页面上用户是显示还是隐藏所有提示
+const pageName = 'bonus';
+const checkbox = document.getElementById('hide_or_show_all_tips_in_current_page');
 
-// 更新页面信息 -- 轮次号码信息 -- index = 1
+// 更新页面信息 -- 轮次号码信息 -- index = 1 & index = 0
 function updatePageRoundBonusNumber() {
     updatePageRoundNumber(1);
+    updatePageRoundNumber(0);
 }
 
 // 更新页面信息 -- 中奖号码 -- index = 1
@@ -99,12 +103,12 @@ btnBonus.addEventListener('click', () => {
 
                 bgmWin.play();
 
-                updateTotalLuckyPoint(addLuckyPoint * 0.97);
-                writeEventLogLuckyPoint(`${keyName_1_00} bonus`, addLuckyPoint * 0.97);
+                updateTotalLuckyPoint(addLuckyPoint * (1 - taxRate));
+                writeEventLogLuckyPoint(`${keyName_1_00} bonus`, addLuckyPoint * (1 - taxRate));
 
                 writeValueToIndexRecordInLocal(keyName_1_00, 1, keyName_1_18, true);
 
-                varAddLuckyPoint.textContent = addLuckyPoint * 0.97;
+                varAddLuckyPoint.textContent = addLuckyPoint * (1 - taxRate);
 
                 displayFlex(popupUserBonusInfo);
 
@@ -145,6 +149,13 @@ btnBonus.addEventListener('click', () => {
 });
 
 
+// 更新用户的配置：显示还是隐藏所有提示 -- 并进行更新
+checkbox.addEventListener('change', function() {
+    updatePageConfigToLocalHideOrShowAllTipsInCurrentPage(pageName);
+    updatePageConfigInPageHideOrShowAllTipsInCurrentPage(pageName);
+});
+
+
 // 进入页面先做这些：
 
 // 页面更新 -- 更新页面上的// 兑奖按钮
@@ -153,6 +164,12 @@ updateBtnBonusClickable();
 // 页面信息 -- 下一轮更新时间倒计时
 updatePageRoundCountDown();
 
+// 弹窗提示 -- 可点击关闭
+aimloboClickHideInPageTips(); 
+
+// 初始化用户的配置：显示还是隐藏所有提示
+initPageConfigValueToLocalHideOrShowAllTipsInCurrentPage(pageName);
+updatePageConfigInPageHideOrShowAllTipsInCurrentPage(pageName);
 
 
 /*

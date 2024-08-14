@@ -1,0 +1,23 @@
+{{- /* 隐藏当前页面上的所有提示 */}}
+{{- /* partial "tools/hide_page_all_tips.html" */}}
+
+
+<div class="hide_or_show_all_tips_in_current_page margin-tb-_5rem">
+
+    {{- /* 默认是选中状态，也就是显示所有提示 */}}
+    <input type="checkbox" name="hide_or_show_all_tips_in_current_page" id="hide_or_show_all_tips_in_current_page" checked>
+
+
+    <label for="hide_or_show_all_tips_in_current_page" class="flex align-items-center">
+
+        <div>
+            <span class="on">{{ T "hide" }}</span>
+
+            <span class="off">{{ T "show" }}</span>
+        </div>
+        
+
+        <div>&nbsp;{{ T "all_tips_on_this_page" }}</div>
+
+    </label>
+</div>

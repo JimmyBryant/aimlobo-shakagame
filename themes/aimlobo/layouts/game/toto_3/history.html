@@ -5,112 +5,180 @@
 {{- $games := $dataLang.game_lists -}}
 {{- $toto_3 := where $games "id" "toto_3" -}}
 {{- $tips := (index $toto_3 0).tips -}}
-{{- $msg_not_enought_lucky_point := (index $toto_3 0).msg_not_enought_lucky_point -}}
-{{- $msg_bet_stop := (index $toto_3 0).msg_bet_stop -}}
 
 
 <div class="wrap">
 
     <div class="game_toto_3_history">
-        <div class="game_toto_3 padding-tb-1rem flex flex-column gap-1rem align-items-center">
 
+        <div class="page_history flex gap-1rem justify-content-between">
 
-            <div class="flex gap-1rem justify-content-between align-items-center width-20rem">
+            <div class="page_history_left">
 
-                {{- /* 返回上层 */ -}}
-                <a href="../">
-                    <div class="btn">{{ T "lottery_home" }}</div>
-                </a>
+                {{- /* 游戏首页 & 下注页面 */ -}}
+                <div class="go_to_other_page flex gap-1rem justify-content-between align-items-center">
 
-                {{- /* 前往下注 */ -}}
-                <a href="../bet">
-                    <div class="btn">{{ T "bet" }}</div>
-                </a>
-
-            </div>
-
-            {{- /* 显示轮次信息 */ -}}
-            <div class="round_info flex flex-column gap-1rem">
-                <div class="flex gap-1rem align-items-center">
-                    <div>{{ T "round_number" }}{{ " : " }}</div>
-                    <div class="var_round_number font-size-1_5">00000</div>
-                </div>
+                    {{- /* 返回上层 */ -}}
+                    <a href="../">
+                        <div class="btn">{{ T "lottery_home" }}</div>
+                    </a>
     
-                <div class="flex gap-1rem align-items-center">
-                    <div>{{ T "status" }}: </div>
-                    <div class="status padding-_5rem bg-purple border-radius-_5rem color-white text-center">{{ T "status_stop" }}</div>
+                    {{- /* 前往兑奖 */ -}}
+                    <a href="../bet">
+                        <div class="btn">{{ T "bet" }}</div>
+                    </a>
+    
                 </div>
 
-                {{- /* 显示本轮中奖号码 */ -}}
-                <div class="flex gap-1rem align-items-center">
-                    <div>{{ T "win_number" }}: </div>
-                    <div class="var_win_number flex gap-_5rem align-items-center justify-content-center">
-                        {{ range $index, $item := seq 1 3 }}
-                            <div class="var_win_number_part_{{ add $index 1 }} bg-purple border-round padding-_5rem flex justify-content-center align-items-center color-white width-2rem height-2rem">?</div>
-                        {{ end }}
-                        
+                {{- /* 显示轮次信息 */ -}}
+                <div class="round_info flex flex-column gap-1rem margin-tb-1rem">
+                    <div class="flex gap-1rem align-items-center">
+                        <div>{{ T "round_number" }}{{ " : " }}</div>
+                        <div class="var_round_number font-size-1_5">00000</div>
                     </div>
+        
+                    <div class="flex gap-1rem align-items-center">
+                        <div>{{ T "status" }}: </div>
+                        <div class="status padding-_5rem bg-purple border-radius-_5rem color-white text-center">{{ T "status_stop" }}</div>
+                    </div>
+
+                    {{- /* 显示本轮中奖号码 */ -}}
+                    <div class="flex gap-1rem align-items-center">
+                        <div>{{ T "win_number" }}: </div>
+                        <div class="var_win_number_index_1 var_win_number flex gap-_5rem align-items-center justify-content-center">
+                            {{ range $index, $item := seq 1 3 }}
+                                <div class="var_win_number_part_{{ add $index 1 }} win_number_part border-round padding-_5rem flex justify-content-center align-items-center color-white width-2rem font-weight-600">?</div>
+                            {{ end }}
+                            
+                        </div>
+                    </div>
+
+
                 </div>
 
+                {{- /* 显示玩家参与信息 */ -}}
+                <div class="bet_info flex flex-column gap-1rem border-radius-_5rem padding-1rem bg-white margin-bottom-1rem">
+
+                    <div class="total_bet_player flex align-items-center justify-content-between">
+                        <div>{{ T "total_bet_player" }}: </div>
+                        <div class="var_total_bet_player">???</div>
+                    </div>
+
+                    <div class="total_bet_multiple flex align-items-center justify-content-between">
+                        <div>{{ T "total_bet_multiple" }}: </div>
+                        <div class="var_total_bet_multiple">???</div>
+                    </div>
+
+                    <div class="total_bet_amount flex align-items-center justify-content-between">
+                        <div>{{ T "total_bet_amount" }}: </div>
+                        <div class="var_total_bet_amount">???</div>
+                    </div>
+
+                </div>
+
+                {{- /* 显示玩家中奖信息 */ -}}
+                <div class="win_info flex flex-column gap-1rem border-radius-_5rem padding-1rem bg-white margin-bottom-1rem">
+
+                    <div class="total_win_player flex align-items-center justify-content-between">
+                        <div>{{ T "total_win_player" }}: </div>
+                        <div class="var_total_win_player">???</div>
+                    </div>
+
+                    <div class="total_win_multiple flex align-items-center justify-content-between">
+                        <div>{{ T "total_win_multiple" }}: </div>
+                        <div class="var_total_win_multiple">???</div>
+                    </div>
+
+                    <div class="total_win_amount flex align-items-center justify-content-between">
+                        <div>{{ T "total_win_amount" }}: </div>
+                        <div class="var_total_win_amount">???</div>
+                    </div>
+
+                    {{- /* 显示用户是否参与 */ -}}
+                    <div class="user_bet_or_not_info flex align-items-center justify-content-between">
+                        <div>{{ T "user_bet_or_not" }}: </div>
+                        <div class="var_user_bet_or_not font-size-1_2 bg-purple border-radius-_3rem padding-_5rem color-white">???</div>
+                    </div>
+
+                </div>
 
             </div>
 
+            <div class="page_history_right">
 
-            {{- /* Google adense shakagame.com-04 */ -}}
-            <div class="google_ad margin-tb-1rem">
-                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2994572689024438"
-                    crossorigin="anonymous"></script>
-                <!-- shakagame.com-04 -->
-                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2994572689024438" data-ad-slot="6023085196"
-                    data-ad-format="auto" data-full-width-responsive="true"></ins>
-                <script>
-                    (adsbygoogle = window.adsbygoogle || []).push({});
-                </script>
+                {{- /* Google adense shakagame.com-04 */ -}}
+                <div class="google_ad margin-tb-1rem">
+                    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2994572689024438"
+                        crossorigin="anonymous"></script>
+                    <!-- shakagame.com-04 -->
+                    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2994572689024438" data-ad-slot="6023085196"
+                        data-ad-format="auto" data-full-width-responsive="true"></ins>
+                    <script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                </div>
+
+                {{- /* 显示用户是否中奖 */ -}}
+                <div class="user_win_or_not_info hide align-items-center justify-content-between border-radius-_5rem padding-1rem bg-color-04 margin-tb-1rem">
+                    <div>{{ T "user_win_or_not" }}: </div>
+                    <div class="var_user_win_or_not font-size-1_2 padding-_5rem bg-purple border-radius-_3rem color-white">???</div>
+                </div>
+
+                {{- /* 显示用户中奖信息 */ -}}
+                <div class="user_win_info hide flex-column gap-1rem border-radius-_5rem padding-1rem bg-color-02 margin-tb-1rem">
+
+                    <div class="user_bonus_or_not flex align-items-center justify-content-between">
+                        <div>{{ T "user_bonus_or_not" }}: </div>
+                        <div class="var_user_bonus_or_not font-size-1_2 padding-_5rem bg-purple border-radius-_3rem color-white">???</div>
+                    </div>                
+
+                    <div class="user_win_multiple flex align-items-center justify-content-between">
+                        <div>{{ T "user_win_multiple" }}: </div>
+                        <div class="var_user_win_multiple font-size-1_2">???</div>
+                    </div>
+
+                    <div class="user_win_amount flex align-items-center justify-content-between">
+                        <div>{{ T "user_win_amount" }}: </div>
+                        <div class="var_user_win_amount font-size-1_2">???</div>
+                    </div>
+
+                </div>
+
+                {{- /* 用户下注历史记录：因为同一期用户可能会多次下注，且选择不同号码，所以需要展示相关信息 */ -}}
+                <div class="user_bet_record hide flex-column gap-1rem align-items-center border-radius-_5rem padding-1rem bg-white width-100">
+
+                    <div class="font-size-1_5 margin-tb-1rem text-center width-100">{{ T "bet_record" }}</div>
+
+                    <div class="record_item_1 flex align-items-center justify-content-between width-100">
+                        <div class="current_user_bet_number text-center">{{ T "bet_number" }}</div>
+                        <div class="current_user_bet_multiple text-center">{{ T "bet_multiple" }}</div>
+                        <div class="current_user_bet_amount text-center">{{ T "bet_amount" }}</div>
+                    </div>
+
+                    {{- /* 用户本期下注记录 */ -}}
+                    <div class="var_user_bet_record flex flex-column gap-1rem width-100">
+
+                        {{- /* 这里到时用js生成，因为用户的每次投注记录都要更新在下边 */ -}}
+                        <div class="record_item flex gap-_5rem align-items-center">
+                            <div class="var_current_user_bet_number flex gap-_5rem align-items-center justify-content-center">
+                                {{ range $index, $item := seq 1 3 }}
+                                    <div class="var_win_number_part_{{ add $index 1 }} bg-purple border-round padding-_5rem flex justify-content-center align-items-center color-white width-2rem height-2rem">?</div>
+                                {{ end }}
+                            </div>
+                            <div class="var_current_user_bet_multiple">?</div>
+                            <div class="var_current_user_bet_amount">?</div>
+                        </div>
+                        
+
+                    </div>
+
+                </div>
+                
             </div>
 
-
-            {{- /* 显示玩家参与信息 */ -}}
-            <div class="bet_info flex flex-column gap-1rem border-radius-_5rem padding-1rem bg-grey-1">
-
-                <div class="total_bet_player flex align-items-center justify-content-between">
-                    <div>{{ T "total_bet_player" }}: </div>
-                    <div class="var_total_bet_player">???</div>
-                </div>
-
-                <div class="total_bet_multiple flex align-items-center justify-content-between">
-                    <div>{{ T "total_bet_multiple" }}: </div>
-                    <div class="var_total_bet_multiple">???</div>
-                </div>
-
-                <div class="total_bet_amount flex align-items-center justify-content-between">
-                    <div>{{ T "total_bet_amount" }}: </div>
-                    <div class="var_total_bet_amount">???</div>
-                </div>
-
-            </div>
-
-            {{- /* 显示玩家中奖息 */ -}}
-            <div class="win_info flex flex-column gap-1rem border-radius-_5rem padding-1rem bg-grey-1">
-
-                <div class="total_win_player flex align-items-center justify-content-between">
-                    <div>{{ T "total_win_player" }}: </div>
-                    <div class="var_total_win_player">???</div>
-                </div>
-
-                <div class="total_win_multiple flex align-items-center justify-content-between">
-                    <div>{{ T "total_win_multiple" }}: </div>
-                    <div class="var_total_win_multiple">???</div>
-                </div>
-
-                <div class="total_win_amount flex align-items-center justify-content-between">
-                    <div>{{ T "total_win_amount" }}: </div>
-                    <div class="var_total_win_amount">???</div>
-                </div>
-
-            </div>
-
-    
         </div>
+
+        
     </div>
     
 

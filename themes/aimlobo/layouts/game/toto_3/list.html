@@ -5,16 +5,20 @@
 {{- $games := $dataLang.game_lists -}}
 {{- $toto_3 := where $games "id" "toto_3" -}}
 {{- $tips := (index $toto_3 0).tips -}}
-{{- $msg_not_enought_lucky_point := (index $toto_3 0).msg_not_enought_lucky_point -}}
-{{- $msg_bet_stop := (index $toto_3 0).msg_bet_stop -}}
 {{- $inPageTipsContent := (index $toto_3 0).in_page_tips_content -}}
 {{- $tipsType := "normal" -}}
+{{- $inPageTipsContentPageListBet := (index $toto_3 0).in_page_tips_content_page_list_bet -}}
+{{- $inPageTipsContentPageListBonus := (index $toto_3 0).in_page_tips_content_page_list_bonus -}}
+{{- $inPageTipsContentPageListStop := (index $toto_3 0).in_page_tips_content_page_list_stop -}}
+{{- $subtitle := (index $toto_3 0).subtitle -}}
 
 
 <div class="wrap">
 
     <div class="game_toto_3_home">
-        <div class="game_toto_3 padding-tb-1rem flex flex-column gap-1rem align-items-center">
+
+        {{- /* 游戏标题 & 游戏规则 & 倒计时 */ -}}
+        <div class="flex flex-column gap-_5rem align-items-center">
 
             {{- /* 游戏标题 */ -}}
             <div class="game_title flex align-items-center gap-_5rem padding-tb-1rem">
@@ -26,163 +30,200 @@
                 </div>
             </div>
 
+
+            {{- /* 游戏副标题 */ -}}
+            <div class="game_subtitle padding-tb-_5rem">
+                <div class="font-size-1_2">{{ $subtitle }}</div>
+            </div>
+
+            {{- /* 隐藏当前页面上的所有提示 */ -}}
+            {{- partial "tools/hide_page_all_tips.html" }}
+
+            {{- /* 游戏规则 -- 可点击取消 */ -}}
             {{- partial "tools/in_page_tips.html" (dict "inPageTipsContent" $inPageTipsContent "tipsType" $tipsType) }}
 
-
             {{- /* 显示下一轮更新倒计时 */ -}}
-            <div class="next_round_count_down flex gap-1rem align-items-center">
+            <div class="next_round_count_down flex gap-1rem align-items-center justify-content-center width-100">
                 <div>{{ T "next_round_count_down" }}: </div>
                 <div class="var_next_round_count_down font-size-1_5"></div>
             </div>
-    
-    
-            
+
+
+        </div>
+
+        {{- /* 下注 & 兑奖 */ -}}
+        <div class="list_bet_bonus flex gap-2rem justify-content-between margin-tb-1rem">
 
             {{- /* 进行中的下注 - 1条：两种状态：开盘中，封盘中 */ -}}
+                <div class="list_bet border-radius-_5rem padding-_5rem bg-white width-100">
 
-            <div class="border-radius-_5rem padding-_5rem bg-white">
+                    <a href="./bet">
 
-                <a href="./bet">
+                        <div class="font-size-1_5 margin-tb-1rem text-center padding-1rem border-radius-_3rem bg-color-04 color-black">{{ T "bet" }}</div>
 
-                    <div class="font-size-1_5 margin-tb-1rem text-center padding-1rem border-radius-_3rem bg-color-02">{{ T "status_open" }}</div>
+                    </a>
 
-                </a>
-                
-
-                <div class="game_bet flex flex-column gap-_5rem align-items-center justify-content-between margin-tb-1rem">
-    
-                    {{- /* 表格标题 */ -}}
-                    <div class="table_title item_info flex align-items-center justify-content-between">
-        
-                        {{- /* 轮次 */ -}}
-                        <div class="round_number text-center">{{ T "round_number" }}</div>
-        
-                        {{- /* 中奖号码 */ -}}
-                        <div class="win_number text-center">{{ T "win_number" }}</div>
-        
-                        {{- /* 状态 */ -}}
-                        <div class="status text-center">{{ T "status" }}</div>
-        
-                        {{- /* 点击查看详情 */ -}}
-                        <div class="check text-center">{{ T "lottery_check" }}</div>
-        
-                    </div>
-        
-                    {{- /* 表格内容 */ -}}
+                    {{- /* 游戏规则 -- 可点击取消 */ -}}
+                    {{- partial "tools/in_page_tips.html" (dict "inPageTipsContent" $inPageTipsContentPageListBet "tipsType" $tipsType) }}
                     
-                    <div class="table_content item_info flex align-items-center justify-content-between">
+
+                    <div class="game_bet flex flex-column gap-_5rem align-items-center justify-content-between margin-tb-1rem width-100">
         
-                        {{- /* 轮次 */ -}}
-                        <div class="var_round_number_index_0 var_round_number text-center">00000</div>
-        
-                        {{- /* 中奖号码 */ -}}
-                        <div class="win_number flex gap-_5rem align-items-center justify-content-center">
-                            {{ range seq 1 3 }}
-                                <div class="bg-purple border-round padding-_5rem flex justify-content-center align-items-center color-white width-2rem height-2rem">?</div>
-                            {{ end }}
-                            
+                        {{- /* 表格标题 */ -}}
+                        <div class="table_title item_info flex align-items-center justify-content-between width-100">
+            
+                            {{- /* 轮次 */ -}}
+                            <div class="round_number text-center">{{ T "round_number" }}</div>
+            
+                            {{- /* 中奖号码 */ -}}
+                            <div class="win_number text-center">{{ T "win_number" }}</div>
+            
+                            {{- /* 状态 */ -}}
+                            <div class="status text-center">{{ T "status" }}</div>
+            
+                            {{- /* 点击查看详情 */ -}}
+                            <div class="check text-center">{{ T "lottery_check" }}</div>
+            
                         </div>
-        
-                        {{- /* 状态: 开盘或者封盘 */ -}}
-                        <div class="status var_round_status_index_0 text-center">
-                            {{ "open_or_stop" }}
-                        </div>
-        
-                        {{- /* 点击参与或者查看详情 */ -}}
-                        <a href="./bet">
+            
+                        {{- /* 表格内容 */ -}}
+                        
+                        <div class="table_content item_info flex align-items-center justify-content-between width-100">
+            
+                            {{- /* 轮次 */ -}}
+                            <div class="var_round_number_index_0 var_round_number text-center">00000</div>
+            
+                            {{- /* 中奖号码 */ -}}
+                            <div class="win_number flex gap-_5rem align-items-center justify-content-center">
+                                {{ range seq 1 3 }}
+                                    <div class="win_number_part border-round padding-_5rem flex justify-content-center align-items-center color-white width-2rem font-weight-600">?</div>
+                                {{ end }}
+                                
+                            </div>
+            
+                            {{- /* 状态: 开盘或者封盘 */ -}}
+                            <div class="status var_round_status_index_0 text-center">
+                                {{ "open_or_stop" }}
+                            </div>
+            
+                            {{- /* 点击参与或者查看详情 */ -}}
                             <div class="check text-center flex justify-content-center align-items-center text-center">
-                                <div class="bg-purple border-round padding-_5rem color-white width-2rem height-2rem">{{ ">" }}</div>
+                                <a href="./bet">
+                                    <div class="flex align-items-center justify-content-center bg-purple border-round padding-_5rem color-white width-2rem height-2rem">&gt;</div>
+                                </a>
                             </div>
-                        </a>
-        
-                    </div>
-        
-                    
-        
-                </div>
-
-            </div>
-    
-            {{- /* 开奖中的下注 - 1条，一种状态：开奖中 */ -}}
-
-            <div class="border-radius-_5rem padding-_5rem bg-white">
-
-                <a href="./bonus">
-
-                    <div class="font-size-1_5 margin-tb-1rem text-center padding-1rem border-radius-_3rem bg-color-04">{{ T "status_bonus" }}</div>
-
-                </a>
-                
-
-                <div class="game_bonus flex flex-column gap-_5rem align-items-center justify-content-between margin-tb-1rem">
-    
-                    {{- /* 表格标题 */ -}}
-                    <div class="table_title item_info flex align-items-center justify-content-between">
-        
-                        {{- /* 轮次 */ -}}
-                        <div class="round_number text-center">{{ T "round_number" }}</div>
-        
-                        {{- /* 中奖号码 */ -}}
-                        <div class="win_number text-center">{{ T "win_number" }}</div>
-        
-                        {{- /* 状态 */ -}}
-                        <div class="status text-center">{{ T "status" }}</div>
-        
-                        {{- /* 点击查看详情 */ -}}
-                        <div class="check text-center">{{ T "lottery_check" }}</div>
-        
-                    </div>
-        
-                    {{- /* 表格内容 */ -}}
-                    
-                    <div class="table_content item_info flex align-items-center justify-content-between">
-        
-                        {{- /* 轮次 */ -}}
-                        <div class="var_round_number_index_1 var_round_number text-center">20200000000</div>
-        
-                        {{- /* 中奖号码 */ -}}
-                        <div class="var_round_win_number_index_1 var_win_number flex gap-_5rem align-items-center justify-content-center text-center">
-                            {{ range $index, $item := seq 1 3 }}
-                                <div class="var_win_number_part_{{ add $index 1 }} bg-purple border-round padding-_5rem flex justify-content-center align-items-center color-white width-2rem height-2rem">?</div>
-                            {{ end }}
                             
+            
                         </div>
-        
-                        {{- /* 状态: 开奖中 */ -}}
-                        <div class="status text-center">
-                            {{ T "status_bonus" }}
-                        </div>
-        
-                        {{- /* 详情: 点击兑奖 */ -}}
-                        <a href="./bonus">
-                            <div class="check text-center flex justify-content-center align-items-center">
-                                <div class="bg-purple border-round padding-_5rem color-white width-2rem height-2rem">{{ ">" }}</div>
-                            </div>
-                        </a>
-        
+            
+                        
+            
                     </div>
-        
-                    
-        
-                </div>
-            </div>
 
+                </div>
+
+        
+                {{- /* 开奖中的下注 - 1条，一种状态：开奖中 */ -}}
+                <div class="list_bonus border-radius-_5rem padding-_5rem bg-white width-100">
+
+                    <a href="./bonus">
+
+                        <div class="font-size-1_5 margin-tb-1rem text-center padding-1rem border-radius-_3rem bg-color-02 color-black">{{ T "status_bonus" }}</div>
+
+                    </a>
+
+                    {{- /* 游戏规则 -- 可点击取消 */ -}}
+                    {{- partial "tools/in_page_tips.html" (dict "inPageTipsContent" $inPageTipsContentPageListBonus "tipsType" $tipsType) }}
+                    
+
+                    <div class="game_bonus flex flex-column gap-_5rem align-items-center justify-content-between margin-tb-1rem width-100">
+        
+                        {{- /* 表格标题 */ -}}
+                        <div class="table_title item_info flex align-items-center justify-content-between width-100">
+            
+                            {{- /* 轮次 */ -}}
+                            <div class="round_number text-center">{{ T "round_number" }}</div>
+            
+                            {{- /* 中奖号码 */ -}}
+                            <div class="win_number text-center">{{ T "win_number" }}</div>
+            
+                            {{- /* 状态 */ -}}
+                            <div class="status text-center">{{ T "status" }}</div>
+            
+                            {{- /* 点击查看详情 */ -}}
+                            <div class="check text-center">{{ T "lottery_check" }}</div>
+            
+                        </div>
+            
+                        {{- /* 表格内容 */ -}}
+                        
+                        <div class="table_content item_info flex align-items-center justify-content-between width-100">
+            
+                            {{- /* 轮次 */ -}}
+                            <div class="var_round_number_index_1 var_round_number text-center">00000</div>
+            
+                            {{- /* 中奖号码 */ -}}
+                            <div class="var_round_win_number_index_1 var_win_number flex gap-_5rem align-items-center justify-content-center text-center">
+                                {{ range $index, $item := seq 1 3 }}
+                                    <div class="var_win_number_part_{{ add $index 1 }} win_number_part border-round padding-_5rem flex justify-content-center align-items-center color-white width-2rem font-weight-600">?</div>
+                                {{ end }}
+                                
+                            </div>
+            
+                            {{- /* 状态: 开奖中 */ -}}
+                            <div class="status text-center">
+                                {{ T "status_bonus" }}
+                            </div>
+            
+                            {{- /* 详情: 点击兑奖 */ -}}
+                            <div class="check text-center flex justify-content-center align-items-center">
+                                <a href="./bonus">
+                                    <div class="flex align-items-center justify-content-center bg-purple border-round padding-_5rem color-white width-2rem height-2rem">&gt;</div>
+                                </a>
+                            </div>
+                            
+            
+                        </div>
+            
+                        
+            
+                    </div>
+                </div>
+
+        </div>
+
+        {{- /* Google adense shakagame.com-04 */ -}}
+        <div class="google_ad margin-tb-1rem">
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2994572689024438"
+                crossorigin="anonymous"></script>
+            <!-- shakagame.com-04 -->
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2994572689024438" data-ad-slot="6023085196"
+                data-ad-format="auto" data-full-width-responsive="true"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+
+        {{- /* 历史记录 & 规则 */ -}}
+        <div class="list_stop_rule flex gap-2rem justify-content-between">
 
             {{- /* 已结束的下注 - 5条 - 从js读取，一种状态：已结束 */ -}}
+            <div class="list_stop border-radius-_5rem padding-_5rem bg-white width-100">
 
-            <div class="border-radius-_5rem padding-_5rem bg-white">
+                
 
-                <a href="./history/?index=2">
+                <div class="font-size-1_5 margin-tb-1rem text-center padding-1rem border-radius-_3rem bg-grey-1">{{ T "status_stop" }}</div>
 
-                    <div class="font-size-1_5 margin-tb-1rem text-center padding-1rem border-radius-_3rem bg-grey-1">{{ T "status_stop" }}</div>
+                {{- /* 游戏规则 -- 可点击取消 */ -}}
+                    {{- partial "tools/in_page_tips.html" (dict "inPageTipsContent" $inPageTipsContentPageListStop "tipsType" $tipsType) }}
 
-                </a>
+                
                 
 
                 <div class="game_stop flex flex-column gap-_5rem align-items-center justify-content-between margin-tb-1rem">
         
                     {{- /* 表格标题 */ -}}
-                    <div class="table_title item_info flex align-items-center justify-content-between">
+                    <div class="table_title item_info flex align-items-center justify-content-between width-100">
         
                         {{- /* 轮次 */ -}}
                         <div class="round_number text-center">{{ T "round_number" }}</div>
@@ -200,7 +241,7 @@
         
                     {{- /* 表格内容 */ -}}
                     {{ range $index_1, $item_1 := seq 1 5 }}
-                        <div class="table_content item_info flex align-items-center justify-content-between">
+                        <div class="table_content item_info flex align-items-center justify-content-between width-100">
         
                             {{- /* 轮次 */ -}}
                             <div class="var_round_number_index_{{ add 2 $index_1 }} var_round_number text-center">00000</div>
@@ -208,7 +249,7 @@
                             {{- /* 中奖号码 */ -}}
                             <div class="var_round_win_number_index_{{ add 2 $index_1 }} var_win_number flex gap-_5rem align-items-center justify-content-center text-center">
                                 {{ range $index, $item := seq 1 3 }}
-                                    <div class="var_win_number_part_{{ add $index 1 }} bg-purple border-round padding-_5rem flex justify-content-center align-items-center color-white width-2rem height-2rem">?</div>
+                                    <div class="var_win_number_part_{{ add $index 1 }} win_number_part border-round padding-_5rem flex justify-content-center align-items-center color-white width-2rem font-weight-600">?</div>
                                 {{ end }}
                                 
                             </div>
@@ -219,11 +260,12 @@
                             </div>
         
                             {{- /* 详情 */ -}}
-                            <a href="./history/?index={{ add 2 $index_1 }}">
-                                <div class="check text-center flex justify-content-center align-items-center">
-                                    <div class="bg-purple border-round padding-_5rem color-white width-2rem height-2rem">{{ ">" }}</div>
-                                </div>
-                            </a>
+                            <div class="check text-center flex justify-content-center align-items-center">
+                                <a href="./history/?index={{ add 2 $index_1 }}">
+                                    <div class="flex align-items-center justify-content-center bg-purple border-round padding-_5rem color-white width-2rem height-2rem">&gt;</div>
+                                </a>
+                            </div>
+                            
                             
         
                         </div>
@@ -235,17 +277,37 @@
 
 
             </div>
-            
+
+
+            {{- /* 游戏规则等相关的链接 */ -}}
+            <div class="list_rule border-radius-_5rem padding-_5rem bg-white width-100">
+
+                <div class="font-size-1_5 margin-tb-1rem text-center padding-1rem border-radius-_3rem bg-grey-1">{{ T "lottery_rule" }}</div>
+
+                <div class="list_rule_other_area">
+
+                    <a href="./rules">
+
+                        <div class="flex flex-column gap-1rem align-items-center justify-content-between border-radius-_5rem padding-_5rem bg-purple height-10rem">
+
+                            <div class="icon font-size-5">📃</div>
     
-            
-            
+                            <div class="text color-white font-size-1_2">{{ T "lottery_rule" }}</div>
     
+                        </div>
+
+                    </a>
+                    
+                    
+                </div>
+
+            </div>
             
-            
-            
-    
-    
+
         </div>
+
+        
+        
     </div>
     
 
