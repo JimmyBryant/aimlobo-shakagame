@@ -1,0 +1,55 @@
+{{- /* 游戏，博彩，3位数,首页 */ -}}
+{{- define "main" -}}
+{{- $lang := .Lang -}}
+{{- $dataLang := index .Site.Data.game $lang -}}
+{{- $games := $dataLang.game_lists -}}
+{{- $toto_5 := where $games "id" "toto_5" -}}
+{{- $rules := (index $toto_5 0).rules -}}
+
+
+<div class="wrap">
+
+    <div class="game_toto_5_rules">
+        
+        {{- /* 返回上层 */ -}}
+        <div class="flex gap-1rem justify-content-between align-items-center width-20rem margin-tb-1rem">
+
+            <a href="../">
+                <div class="btn btn_goto_home">{{ T "lottery_home" }}</div>
+            </a>
+
+        </div>
+
+
+        {{- /* 规则内容 */ -}}
+        <div class="flex flex-column gap-1rem padding-1rem">
+
+            {{ with $rules }}
+
+                {{- range sort . "weight" "asc" -}}
+
+                    <div class="title font-size-1_5 font-weight-600">
+                        {{- .title | markdownify -}}
+                    </div>
+
+                    <div class="content font-size-1_2 margin-bottom-1rem line-height-1_5">
+                        <p>{{ .content | markdownify }}</p>
+                    </div>
+
+                {{- end -}}
+
+            {{ end }}
+
+
+        </div>
+
+
+        {{- /* back to top */ -}}
+        <button id="backToTopBtn" title="Go to top">⬆️</button>
+  
+    </div>
+    
+
+</div>
+
+{{- end -}}

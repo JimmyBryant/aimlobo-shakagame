@@ -380,7 +380,7 @@ en:
         - title: How to play Toto 3?
           content: |
             1. You can learn the detailed gameplay by clicking on the [rules](./rules) on the game homepage. Below is a quick introduction:
-            2. Click on the **Open** module to enter the **Bet** page. On this page, you can place your bets by selecting any integer within the range of 0-999. Each bet costs 1 lucky point. Players can multiply their bet on a number by a range of 1-100 times and can view their betting records for the current round.
+            2. Click on the **Bet** module to enter the **Bet** page. On this page, you can place your bets by selecting any integer within the range of 0-999. Each bet costs 1 lucky point. Players can multiply their bet on a number by a range of 1-100 times and can view their betting records for the current round.
             3. The game matches one round every 5 minutes, with bets closing 30 seconds prior. Players can only place bets during the **Open** period. No betting is allowed once the **Bets Closed** period starts, and the system clears the board.
             4. Players can click the **Bonus** button to go to the rewards page. This page updates the winning status every 5 minutes, and the system automatically settles the player's winnings.
             5. Users must click the **Bonus** button to claim their winnings. The rewards claiming period is 5 minutes. If the claim is not made before the deadline, it is considered forfeited.
@@ -410,6 +410,64 @@ en:
           weight: 30
         - title: Claiming Rewards
           content: Toto 3 rewards must be claimed within 5 minutes of the draw. If the player fails to claim the reward within the given time, it will be considered forfeited.
+          weight: 40
+
+    - id: toto_5
+      name: Toto 5
+      weight: 40
+      cover: /image/game/toto_5/cover.png
+      msg_not_enought_lucky_point: Insufficient lucky points (🧧).
+      msg_bet_stop: Betting is closed, no further bets allowed.
+      in_page_tips_type: normal
+      in_page_tips_content: Check out the [rules](./rules) to learn how to play.
+      in_page_tips_content_page_list_bet: 'Click 👆 **Bet** to start game first step: bet.'
+      in_page_tips_content_page_list_bonus: Click 👆 **Bonus** to check whether you win if you have done bet.
+      in_page_tips_content_page_list_stop: Check out latest 5 round's bet and bonus records which status is Stop. 👇
+      in_page_tips_content_page_bet_bet_number: Enter 0 - 99999 integer number here when bet open. 👆
+      in_page_tips_content_page_bet_bet_multiple_1: Enter 1 - 100 integer number here when bet open. 👆
+      in_page_tips_content_page_bet_bet_multiple_2: I suggest you try only 1 bet multiple (default) first to start game.
+      in_page_tips_content_page_bonus_next_round_number: Please note your bet round No. , you can [go bet](../bet) to check.
+      in_page_tips_content_page_bonus_current_round_info: Below 👇 is current round info which status is Bonus.
+      in_page_tips_content_page_bonus_btn_1: Click **Bonus** button to bonus. 👆
+      in_page_tips_content_page_bonus_btn_2: If **Bonus** button's color is grey (click disabled) mean you don't bet current round or you have already done bonus.
+      subtitle: 100,000 🧧 bonus for you
+      tips:
+        - title: What is Toto 5?
+          content: Toto 5 (**aimlobo.com**) is an online luck-based betting game where players choose any integer between 0-99999 to place their bets. Each bet can be multiplied by 1-100 times. If any of the bet numbers match the winning number given by the system during the draw, the player will receive a fixed reward of 100,000 lucky points per bet.
+          weight: 10
+        - title: How to play Toto 5?
+          content: |
+            1. You can learn the detailed gameplay by clicking on the [rules](./rules) on the game homepage. Below is a quick introduction:
+            2. Click on the **Bet** module to enter the **Bet** page. On this page, you can place your bets by selecting any integer within the range of 0-99999. Each bet costs 1 lucky point. Players can multiply their bet on a number by a range of 1-100 times and can view their betting records for the current round.
+            3. The game matches one round every 6 minutes, with bets closing 30 seconds prior. Players can only place bets during the **Open** period. No betting is allowed once the **Bets Closed** period starts, and the system clears the board.
+            4. Players can click the **Bonus** button to go to the rewards page. This page updates the winning status every 6 minutes, and the system automatically settles the player's winnings.
+            5. Users must click the **Bonus** button to claim their winnings. The rewards claiming period is 6 minutes. If the claim is not made before the deadline, it is considered forfeited.
+            6. Players can click the **Stop** button to view the results of the last 5 rounds.
+          weight: 20
+        - title: Lucky Points System
+          content: |
+            1. The corresponding lucky points will be deducted after correctly submitting your bet data and clicking the **Submit** button on the betting page.
+            2. If you win, you will receive a reward of 100,000 lucky points per bet, but the system will deduct 3% of the winnings as a service fee.
+            3. Each round of betting participation will increase your game count.
+          weight: 30
+      rules:
+        - title: Game Rules
+          content: |
+            **Toto 5** involves selecting a 5-digit number from 000-99999 as a betting number. Each bet costs 1 lucky point
+            Users can multiply their chosen bet number by 1-100 times.
+            Toto 5 matches one round every 6 minutes.
+            The reward for each bet is a fixed 100,000 lucky points.
+          weight: 10
+        - title: Draw
+          content: |
+            Toto 5 has a draw every 6 minutes.
+            The 5-digit number generated by the system will be the winning number for the current Toto 5 round.
+          weight: 20
+        - title: Winning
+          content: To win, the bet number must match the winning number in both digits and sequence. For example, if the winning number is 12345, the bet number must also be 12345 to win.
+          weight: 30
+        - title: Claiming Rewards
+          content: Toto 5 rewards must be claimed within 6 minutes of the draw. If the player fails to claim the reward within the given time, it will be considered forfeited.
           weight: 40
 
 
@@ -801,7 +859,7 @@ zh-cn:
       - title: 如何玩多多3?
         content: |
           1. 具体玩法可以点击游戏首页的 [规则](./rules) 进行了解，下方是快速介绍： 
-          2. 点击 **开盘** 模块进入 **下注** 页面，在该页面进行投注，玩家可以选择0-999范围内的任意整数进行下注，每注花费1个幸运积分，玩家可以对该号码选择1-100整数范围内的加倍投注，玩家可以查看自己在本轮的下注记录;
+          2. 点击 **下注** 模块进入 **下注** 页面，在该页面进行投注，玩家可以选择0-999范围内的任意整数进行下注，每注花费1个幸运积分，玩家可以对该号码选择1-100整数范围内的加倍投注，玩家可以查看自己在本轮的下注记录;
           3. 游戏每5分钟匹配一轮，提前30秒封盘，玩家只能在 **开盘** 期间进行投注， **封盘** 后不允许下注，系统清盘;
           4. 玩家可点击页面上的 **兑奖** 按钮前往兑奖页面，该页面每5分钟更新一次中奖情况，系统自动清算用户的中奖情况;
           5. 用户必须点击 **兑奖** 按钮进行兑奖，兑奖有效期为5分钟，超过页面上的兑奖截止时间视为放弃兑奖;
@@ -831,6 +889,64 @@ zh-cn:
         weight: 30
       - title: 兑奖
         content: 多多3 兑奖当期有效，中奖玩家应在开奖时间起5分钟内完成兑奖，超时视为放弃兑奖。
+        weight: 40
+
+    - id: toto_5
+      name: 多多 5
+      weight: 40
+      cover: /image/game/toto_5/cover.png
+      msg_not_enought_lucky_point: 幸运值不足(🧧). 
+      msg_bet_stop: 封盘中，禁止下注. 
+      in_page_tips_type: normal
+      in_page_tips_content: 查看 [规则](./rules) 了解如何游戏.
+      in_page_tips_content_page_list_bet: '点击 👆 **下注** 开始游戏的第一步：下注'
+      in_page_tips_content_page_list_bonus: 如果已经完成下注，点击 👆 **兑奖** 查看你是否中奖
+      in_page_tips_content_page_list_stop: 查看最近5轮已结束的下注和中奖信息 👇
+      in_page_tips_content_page_bet_bet_number: 开盘状态下，在这里输入 0 - 99999 范围内的整数. 👆
+      in_page_tips_content_page_bet_bet_multiple_1: 开盘状态下，在这里输入 1 - 100 范围内的整数. 👆
+      in_page_tips_content_page_bet_bet_multiple_2: 建议先从 1 注 (默认值) 开始游戏.
+      in_page_tips_content_page_bonus_next_round_number: 请注意你下注的轮次号码，你可以 [前往下注页面](../bet)  查看已下注的轮次号码
+      in_page_tips_content_page_bonus_current_round_info: 下方 👇 是当前开奖中的轮次信息
+      in_page_tips_content_page_bonus_btn_1: 点击 **兑奖** 按钮兑奖 👆
+      in_page_tips_content_page_bonus_btn_2: 如果 **兑奖** 按钮是灰色(不可点击)，说明你在当前轮次没有下注或者你已经点击过了兑奖按钮
+      subtitle: 🧧 十万大奖等你来
+      tips:
+      - title: 什么是多多5?
+        content: 多多5(**aimlobo.com**) 是一款在线幸运博彩游戏，玩家选择0-99999之间的任意整数进行下注，每个下注号码可以选择1-100倍的投注，开奖时如果有任一下注的号码与系统给出的中奖号码一致，即可获得每注100,000幸运积分的固定奖励.
+        weight: 10
+      - title: 如何玩多多5?
+        content: |
+          1. 具体玩法可以点击游戏首页的 [规则](./rules) 进行了解，下方是快速介绍： 
+          2. 点击 **下注** 模块进入 **下注** 页面，在该页面进行投注，玩家可以选择0-99999范围内的任意整数进行下注，每注花费1个幸运积分，玩家可以对该号码选择1-100整数范围内的加倍投注，玩家可以查看自己在本轮的下注记录;
+          3. 游戏每6分钟匹配一轮，提前30秒封盘，玩家只能在 **开盘** 期间进行投注， **封盘** 后不允许下注，系统清盘;
+          4. 玩家可点击页面上的 **兑奖** 按钮前往兑奖页面，该页面每5分钟更新一次中奖情况，系统自动清算用户的中奖情况;
+          5. 用户必须点击 **兑奖** 按钮进行兑奖，兑奖有效期为6分钟，超过页面上的兑奖截止时间视为放弃兑奖;
+          6. 用户可以点击页面上的 **结束** 查看最近5期的开奖记录.
+        weight: 20
+      - title: 幸运积分系统
+        content: |
+          1. 在下注页面正确提交下注数据并点击 **确认** 按钮后会扣除相应的幸运积分;
+          2. 如果你赢了，你会获得每注100,000幸运积分的奖励，但是系统会扣除3%的奖金作为服务费.
+          3. 参与下注的每一轮都会增加一次游戏次数.
+        weight: 30
+      rules:
+      - title: 游戏方法
+        content: |
+          **多多5** 指从000-99999的数字中选取1个5位数作为一注投注号码进行的投注，每注花费1个幸运积分;
+          用户可对其选定的投注号码进行多倍投注，投注倍数范围为 1-100 倍；
+          多多5 每6分钟匹配一轮；
+          单注奖励固定为100,000幸运积分。
+        weight: 10
+      - title: 开奖
+        content: |
+          多多5 每6分钟开奖一次;
+          以系统生成的5位号码作为多多5当期的开奖号码。
+        weight: 20
+      - title: 中奖
+        content: 投注号码与开奖号码数字相同且顺序一致，即中奖。例如，开奖号码为12345，则投注号码为12345即中奖。
+        weight: 30
+      - title: 兑奖
+        content: 多多5 兑奖当期有效，中奖玩家应在开奖时间起6分钟内完成兑奖，超时视为放弃兑奖。
         weight: 40
 
 
@@ -1232,7 +1348,7 @@ zh-tw:
       - title: 如何玩多多3?
         content: |
           1. 具體玩法可以點擊遊戲首頁的 [規則](./rules) 進行了解，下方是快速介紹： 
-          2. 點擊 **開盤** 模塊進入 **下註** 頁面，在該頁面進行投註，玩家可以選擇0-999範圍內的任意整數進行下註，每註花費1個幸運積分，玩家可以對該號碼選擇1-100整數範圍內的加倍投註，玩家可以查看自己在本輪的下註記錄;
+          2. 點擊 **下註** 模塊進入 **下註** 頁面，在該頁面進行投註，玩家可以選擇0-999範圍內的任意整數進行下註，每註花費1個幸運積分，玩家可以對該號碼選擇1-100整數範圍內的加倍投註，玩家可以查看自己在本輪的下註記錄;
           3. 遊戲每5分鐘匹配一輪，提前30秒封盤，玩家只能在 **開盤** 期間進行投註， **封盤** 後不允許下註，系統清盤;
           4. 玩家可點擊頁面上的 **兌獎** 按鈕前往兌獎頁面，該頁面每5分鐘更新一次中獎情況，系統自動清算用戶的中獎情況;
           5. 用戶必須點擊 **兌獎** 按鈕進行兌獎，兌獎有效期為5分鐘，超過頁面上的兌獎截止時間視為放棄兌獎;
@@ -1264,3 +1380,60 @@ zh-tw:
         content: 多多3 兌獎當期有效，中獎玩家應在開獎時間起5分鐘內完成兌獎，超時視為放棄兌獎。
         weight: 40
 
+    - id: toto_5
+      name: 多多 5
+      weight: 40
+      cover: /image/game/toto_5/cover.png
+      msg_not_enought_lucky_point: 幸運值不足(🧧). 
+      msg_bet_stop: 封盤中，禁止下註. 
+      in_page_tips_type: normal
+      in_page_tips_content: 查看 [規則](./rules) 了解如何遊戲.
+      in_page_tips_content_page_list_bet: '點擊 👆 **下註** 開始遊戲的第一步：下註'
+      in_page_tips_content_page_list_bonus: 如果已經完成下註，點擊 👆 **兌獎** 查看你是否中獎
+      in_page_tips_content_page_list_stop: 查看最近5輪已結束的下註和中獎信息 👇
+      in_page_tips_content_page_bet_bet_number: 開盤狀態下，在這裏輸入 0 - 99999 範圍內的整數. 👆
+      in_page_tips_content_page_bet_bet_multiple_1: 開盤狀態下，在這裏輸入 1 - 100 範圍內的整數. 👆
+      in_page_tips_content_page_bet_bet_multiple_2: 建議先從 1 註 (默認值) 開始遊戲.
+      in_page_tips_content_page_bonus_next_round_number: 請註意你下註的輪次號碼，你可以 [前往下註頁面](../bet)  查看已下註的輪次號碼
+      in_page_tips_content_page_bonus_current_round_info: 下方 👇 是當前開獎中的輪次信息
+      in_page_tips_content_page_bonus_btn_1: 點擊 **兌獎** 按鈕兌獎 👆
+      in_page_tips_content_page_bonus_btn_2: 如果 **兌獎** 按鈕是灰色(不可點擊)，說明你在當前輪次沒有下註或者你已經點擊過了兌獎按鈕
+      subtitle: 🧧 十萬大獎等你來
+      tips:
+      - title: 什麽是多多5?
+        content: 多多5(**aimlobo.com**) 是一款在線幸運博彩遊戲，玩家選擇0-99999之間的任意整數進行下註，每個下註號碼可以選擇1-100倍的投註，開獎時如果有任一下註的號碼與系統給出的中獎號碼一致，即可獲得每註100,000幸運積分的固定獎勵.
+        weight: 10
+      - title: 如何玩多多5?
+        content: |
+          1. 具體玩法可以點擊遊戲首頁的 [規則](./rules) 進行了解，下方是快速介紹： 
+          2. 點擊 **下註** 模塊進入 **下註** 頁面，在該頁面進行投註，玩家可以選擇0-99999範圍內的任意整數進行下註，每註花費1個幸運積分，玩家可以對該號碼選擇1-100整數範圍內的加倍投註，玩家可以查看自己在本輪的下註記錄;
+          3. 遊戲每6分鐘匹配一輪，提前30秒封盤，玩家只能在 **開盤** 期間進行投註， **封盤** 後不允許下註，系統清盤;
+          4. 玩家可點擊頁面上的 **兌獎** 按鈕前往兌獎頁面，該頁面每6分鐘更新一次中獎情況，系統自動清算用戶的中獎情況;
+          5. 用戶必須點擊 **兌獎** 按鈕進行兌獎，兌獎有效期為6分鐘，超過頁面上的兌獎截止時間視為放棄兌獎;
+          6. 用戶可以點擊頁面上的 **結束** 查看最近5期的開獎記錄.
+        weight: 20
+      - title: 幸運積分系統
+        content: |
+          1. 在下註頁面正確提交下註數據並點擊 **確認** 按鈕後會扣除相應的幸運積分;
+          2. 如果你贏了，你會獲得每註100,000幸運積分的獎勵，但是系統會扣除3%的獎金作為服務費.
+          3. 參與下註的每一輪都會增加一次遊戲次數.
+        weight: 30
+      rules:
+      - title: 遊戲方法
+        content: |
+          **多多5** 指從000-99999的數字中選取1個5位數作為一註投註號碼進行的投註，每註花費1個幸運積分;
+          用戶可對其選定的投註號碼進行多倍投註，投註倍數範圍為 1-100 倍；
+          多多5 每6分鐘匹配一輪；
+          單註獎勵固定為100,000幸運積分。
+        weight: 10
+      - title: 開獎
+        content: |
+          多多5 每6分鐘開獎一次;
+          以系統生成的5位號碼作為多多5當期的開獎號碼。
+        weight: 20
+      - title: 中獎
+        content: 投註號碼與開獎號碼數字相同且順序一致，即中獎。例如，開獎號碼為12345，則投註號碼為12345即中獎。
+        weight: 30
+      - title: 兌獎
+        content: 多多5 兌獎當期有效，中獎玩家應在開獎時間起6分鐘內完成兌獎，超時視為放棄兌獎。
+        weight: 40

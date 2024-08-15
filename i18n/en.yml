@@ -585,6 +585,9 @@
 - id: toto_3
   translation: "Toto 3"
 
+- id: toto_5
+  translation: "Toto 5"
+
 - id: next_round_count_down
   translation: "Next Round Count Down"
 

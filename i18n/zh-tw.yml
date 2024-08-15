@@ -573,6 +573,9 @@
 - id: toto_3
   translation: "多多 3"
 
+- id: toto_5
+  translation: "多多 5"
+
 - id: next_round_count_down
   translation: "下一輪倒計時"
 

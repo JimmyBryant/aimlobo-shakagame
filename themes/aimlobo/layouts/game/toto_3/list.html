@@ -12,6 +12,8 @@
 {{- $inPageTipsContentPageListStop := (index $toto_3 0).in_page_tips_content_page_list_stop -}}
 {{- $subtitle := (index $toto_3 0).subtitle -}}
 
+{{- /* 几位数字 - 3 */ -}}
+{{- $winNumberParts := 3 -}}
 
 <div class="wrap">
 
@@ -95,7 +97,7 @@
             
                             {{- /* 中奖号码 */ -}}
                             <div class="win_number flex gap-_5rem align-items-center justify-content-center">
-                                {{ range seq 1 3 }}
+                                {{ range seq 1 $winNumberParts }}
                                     <div class="win_number_part border-round padding-_5rem flex justify-content-center align-items-center color-white width-2rem font-weight-600">?</div>
                                 {{ end }}
                                 
@@ -164,7 +166,7 @@
             
                             {{- /* 中奖号码 */ -}}
                             <div class="var_round_win_number_index_1 var_win_number flex gap-_5rem align-items-center justify-content-center text-center">
-                                {{ range $index, $item := seq 1 3 }}
+                                {{ range $index, $item := seq 1 $winNumberParts }}
                                     <div class="var_win_number_part_{{ add $index 1 }} win_number_part border-round padding-_5rem flex justify-content-center align-items-center color-white width-2rem font-weight-600">?</div>
                                 {{ end }}
                                 
@@ -192,12 +194,12 @@
 
         </div>
 
-        {{- /* Google adense shakagame.com-04 */ -}}
+        {{- /* Google adense shakagame.com-05 -- 宽屏 */ -}}
         <div class="google_ad margin-tb-1rem">
             <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2994572689024438"
                 crossorigin="anonymous"></script>
-            <!-- shakagame.com-04 -->
-            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2994572689024438" data-ad-slot="6023085196"
+            <!-- shakagame.com-05 -->
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2994572689024438" data-ad-slot="2665755115"
                 data-ad-format="auto" data-full-width-responsive="true"></ins>
             <script>
                 (adsbygoogle = window.adsbygoogle || []).push({});
@@ -248,7 +250,7 @@
         
                             {{- /* 中奖号码 */ -}}
                             <div class="var_round_win_number_index_{{ add 2 $index_1 }} var_win_number flex gap-_5rem align-items-center justify-content-center text-center">
-                                {{ range $index, $item := seq 1 3 }}
+                                {{ range $index, $item := seq 1 $winNumberParts }}
                                     <div class="var_win_number_part_{{ add $index 1 }} win_number_part border-round padding-_5rem flex justify-content-center align-items-center color-white width-2rem font-weight-600">?</div>
                                 {{ end }}
                                 

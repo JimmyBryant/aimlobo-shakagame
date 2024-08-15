@@ -11,6 +11,9 @@
 {{- $inPageTipsContentPageBonusBtn01 := (index $toto_3 0).in_page_tips_content_page_bonus_btn_1 -}}
 {{- $inPageTipsContentPageBonusBtn02 := (index $toto_3 0).in_page_tips_content_page_bonus_btn_2 -}}
 
+{{- /* 几位数字 - 3 */ -}}
+{{- $winNumberParts := 3 -}}
+
 <div class="wrap">
 
     <div class="game_toto_3_bonus">
@@ -53,7 +56,7 @@
                     <div class="flex gap-1rem align-items-center">
                         <div>{{ T "win_number" }}: </div>
                         <div class="var_win_number_index_1 var_win_number flex gap-_5rem align-items-center justify-content-center">
-                            {{ range $index, $item := seq 1 3 }}
+                            {{ range $index, $item := seq 1 $winNumberParts }}
                                 <div class="var_win_number_part_{{ add $index 1 }} win_number_part border-round padding-_5rem flex justify-content-center align-items-center color-white width-2rem font-weight-600">?</div>
                             {{ end }}
                             
@@ -254,7 +257,7 @@
                         {{- /* 这里到时用js生成，因为用户的每次投注记录都要更新在下边 */ -}}
                         <div class="record_item flex gap-_5rem align-items-center">
                             <div class="var_current_user_bet_number flex gap-_5rem align-items-center justify-content-center">
-                                {{ range $index, $item := seq 1 3 }}
+                                {{ range $index, $item := seq 1 $winNumberParts }}
                                     <div class="var_win_number_part_{{ add $index 1 }} bg-purple border-round padding-_5rem flex justify-content-center align-items-center color-white width-2rem height-2rem">?</div>
                                 {{ end }}
                             </div>

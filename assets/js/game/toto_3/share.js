@@ -1145,7 +1145,7 @@ function updatePageRoundUserBetRecords(index) {
         const betNumberParts = splitNumberToParts(record[keyName_1_15_01], winningNumberParts);
         betNumberParts.forEach((part, index) => {
             const betNumberPartDiv = document.createElement('div');
-            betNumberPartDiv.className = `var_win_number_part_${index + 1} win_number_part border-round padding-_5rem flex justify-content-center align-items-center color-white width-2rem height-2rem`;
+            betNumberPartDiv.className = `var_win_number_part_${index + 1} win_number_part border-round padding-_5rem flex justify-content-center align-items-center color-white width-2rem`;
             betNumberPartDiv.textContent = part;
             betNumberContainer.appendChild(betNumberPartDiv);
         });
