@@ -1,78 +1,99 @@
 {{- define "main" -}}
+
+
+{{- $lang := .Lang -}}
+{{- $dataLang := index .Site.Data.game $lang -}}
+{{- $games := $dataLang.game_lists -}}
+{{- $woodenFish := where $games "id" "wooden_fish" -}}
+{{ $tips := (index $woodenFish 0).tips }}
+{{ $prayer := (index $woodenFish 0).prayer }}
+{{ $inPageTipsTitle := (index $woodenFish 0).in_page_tips_title }}
+{{ $inPageTipsAuto := (index $woodenFish 0).in_page_tips_auto }}
+{{ $inPageTipsCount := (index $woodenFish 0).in_page_tips_count }}
+
+
+
 <div class="game wooden_fish flex flex-column align-items-center">
 
-    {{- $lang := .Lang -}}
-    {{- $dataLang := index .Site.Data.game $lang -}}
-    {{- $games := $dataLang.game_lists -}}
-    {{- $woodenFish := where $games "id" "wooden_fish" -}}
-    {{ $tips := (index $woodenFish 0).tips }}
-    {{ $prayer := (index $woodenFish 0).prayer }}
+    {{- /* 标题 */ -}}
+    <div class="flex align-items-center gap-_5rem justify-content-center">
 
+        <div class="var_game_title font-size-2 cursor-pointer">{{ T "customize_title" }}</div>
 
-    <div class="game-title flex align-items-center gap-_5rem justify-content-center">
-        <div class="title font-size-2">{{ T "customize_title" }}</div>
-        {{- /* 点击game-title后打开popup-form-game-title */ -}}
-        <div class="popup-form-game-title popup_form popup_box">
-            <div class="popup_box_content">
-              <form class="form-game-title">
-                <div class="header">
-                  <span class="icon">✏️</span>
-                  {{- T "edit_title" -}}
-                </div>
-          
-                <div class="body">
-                    <input class="game-title-input" type="text" id="game_title_input" name="game_title_input" minlength="1" maxlength="15" placeholder="{{ T "wooden_fish" }}(1-15)" required pattern=".*\S.*">
-                </div>
-          
-                <div class="footer">
-                  <button class="btn btn_reset" type="reset">{{ T "cancel" }}</button>
-                  <button class="btn btn_submit" type="submit">{{ T "submit" }}</button>
-                </div>
+            {{- /* 点击game-title后打开popup_form_edit_game_title */ -}}
+            <div class="popup_form_edit_game_title popup_box">
+
+                <div class="popup_box_content">
+
+                    <form class="form_edit_game_title">
+
+                        <div class="header">
+                            <span class="font-size-1">✏️&nbsp;</span>
+                            <span class="font-size-1_5">{{- T "edit_title" -}}</span>
+                        </div>
                 
-              </form>
+                        <div class="body">
+                            <input class="game_title_input" type="text" id="game_title_input" name="game_title_input" minlength="1" maxlength="15" placeholder="{{ T "wooden_fish" }}(1-15)" required pattern=".*\S.*">
+                        </div>
+                
+                        <div class="footer">
+                            <button class="btn btn_reset" type="reset">{{ T "cancel" }}</button>
+                            <button class="btn btn_submit" type="submit">{{ T "submit" }}</button>
+                        </div>
+                        
+                    </form>
+                </div>
             </div>
-        </div>
     
         <div class="tips_icon">
+
             <span class="font-size-1_5 cursor-pointer">👀</span>
+
             {{ partial "tools/popup_tips.html" (dict "tipsContent" $tips) }}
+
         </div>
         
     </div>
 
+    {{- partial "tools/hide_page_all_tips.html" }}
+
+    {{- partial "tools/in_page_tips.html" (dict "inPageTipsContent" $inPageTipsTitle "tipsType" "normal") }}
+
     <div class="game-control flex align-items-center justify-content-between overflow-auto">
 
-            <div class="auto toggle-switch">
+            <div class="toggle-switch">
                 <input type="checkbox" name="auto" id="auto">
                 <label for="auto"><span class="on">{{ T "auto_on" }}</span> <span class="off">{{ T "auto_off" }}</span></label>
             </div>
 
-            <div class="bgm toggle-switch">
+            <div class="toggle-switch">
                 <input type="checkbox" name="bgm" id="bgm">
                 <label for="bgm"><span class="on">{{ T "bgm_on" }}</span> <span class="off">{{ T "bgm_off" }}</span></label>
             </div>
 
-            <a href="../../rank/" class="color-white">
-                <div class="speed flex align-items-center justify-content-between">
-                    <div class="font-size-1_5">🏅</div>
-                    <div><span class="var-speed"></span><span>/</span><span>{{ T "minute" }}</span></div>                
-                </div>
-            </a>
-                
-
-        
-    
-        
-
     </div>
 
+    {{- partial "tools/in_page_tips.html" (dict "inPageTipsContent" $inPageTipsAuto "tipsType" "normal") }}
+
     <div class="game-content flex flex-column align-items-center">
+
         <div class="top flex flex-column gap-_5rem align-items-center justify-content-center">
-            <div class="count font-size-5">0</div>
-            <div class="popup-form-prayer popup_form popup_box">
+
+            <div class="var_count font-size-5">0</div>
+
+            {{- partial "tools/in_page_tips.html" (dict "inPageTipsContent" $inPageTipsCount "tipsType" "normal") }}
+
+            <div class="popup_form_edit_prayer popup_form popup_box">
+
                 <div class="popup_box_content">
-                    <form class="form-prayer">
-                        <div class="header"><span class="icon-edit-title">✏️</span>{{ T "edit_prayer" }}</div>
+
+                    <form class="form_edit_prayer">
+
+                        <div class="header">
+                            <span class="font-size-1">✏️&nbsp;</span>
+                            <span class="font-size-1_5">{{ T "edit_prayer" }}</span>
+                        </div>
+
                         <div class="body">
                             {{- /* 自定义的提示语 */ -}}
                             {{ with $prayer }}
@@ -93,6 +114,7 @@
                            
                             <input class="hide" type="text" id="prayer_customize_input" name="prayer_customize_input" minlength="1" maxlength="15" class="hidden" placeholder="{{ T "here" }}(0-15)">
                         </div>
+
                         <div class="footer">
                             <button class="btn btn-reset btn-reset-form-prayer" type="reset">{{ T "cancel" }}</button>
                             <button class="btn btn-submit btn-submit-form-prayer" type="submit">{{ T "submit" }}</button>
@@ -104,22 +126,13 @@
         </div>
 
         <div class="center position-relative">
-            <svg
-          class="woodenFish"
-          width="157pt"
-          height="126pt"
-          viewBox="0 0 247 197"
-          version="1.1"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <g id="#eeeeeeff">
-            <path
-              fill="#eeeeee"
-              opacity="1.00"
-              d=" M 109.12 6.53 C 124.09 4.27 139.37 2.82 154.47 4.79 C 173.07 7.14 191.38 14.02 206.02 25.89 C 217.01 34.77 225.17 46.63 231.55 59.13 C 237.81 72.25 241.16 86.53 243.92 100.74 C 225.49 104.75 206.58 105.76 187.77 106.20 C 186.21 100.02 183.12 93.94 177.74 90.25 C 172.00 85.96 163.98 84.19 157.26 87.18 C 145.99 91.69 139.62 105.22 142.63 116.85 C 145.12 127.39 154.97 136.11 166.05 135.69 C 176.18 134.97 184.61 126.81 187.19 117.22 C 192.74 116.73 198.32 116.63 203.89 116.32 C 217.57 115.26 231.14 113.14 244.82 111.98 C 245.52 121.28 246.13 130.75 244.11 139.94 C 242.32 149.02 239.23 158.07 233.39 165.39 C 224.88 176.55 212.15 183.64 199.01 187.98 C 187.42 191.86 175.20 193.41 163.05 194.29 C 140.40 195.87 117.64 195.62 94.99 194.19 C 74.79 192.81 54.55 190.78 34.79 186.17 C 27.91 184.54 21.07 182.47 14.77 179.21 C 8.58 175.93 4.23 169.71 2.72 162.92 C -0.48 151.41 3.00 139.09 9.20 129.21 C 14.61 119.75 27.61 116.88 30.81 105.83 C 35.50 90.01 37.28 73.40 42.87 57.82 C 47.56 45.36 54.34 33.26 64.82 24.75 C 77.25 14.19 93.24 9.04 109.12 6.53 Z"
-            />
-          </g>
-        </svg>
+            <svg class="woodenFish" width="157pt" height="126pt" viewBox="0 0 247 197" version="1.1"
+                xmlns="http://www.w3.org/2000/svg">
+                <g id="#eeeeeeff">
+                    <path fill="#eeeeee" opacity="1.00"
+                        d=" M 109.12 6.53 C 124.09 4.27 139.37 2.82 154.47 4.79 C 173.07 7.14 191.38 14.02 206.02 25.89 C 217.01 34.77 225.17 46.63 231.55 59.13 C 237.81 72.25 241.16 86.53 243.92 100.74 C 225.49 104.75 206.58 105.76 187.77 106.20 C 186.21 100.02 183.12 93.94 177.74 90.25 C 172.00 85.96 163.98 84.19 157.26 87.18 C 145.99 91.69 139.62 105.22 142.63 116.85 C 145.12 127.39 154.97 136.11 166.05 135.69 C 176.18 134.97 184.61 126.81 187.19 117.22 C 192.74 116.73 198.32 116.63 203.89 116.32 C 217.57 115.26 231.14 113.14 244.82 111.98 C 245.52 121.28 246.13 130.75 244.11 139.94 C 242.32 149.02 239.23 158.07 233.39 165.39 C 224.88 176.55 212.15 183.64 199.01 187.98 C 187.42 191.86 175.20 193.41 163.05 194.29 C 140.40 195.87 117.64 195.62 94.99 194.19 C 74.79 192.81 54.55 190.78 34.79 186.17 C 27.91 184.54 21.07 182.47 14.77 179.21 C 8.58 175.93 4.23 169.71 2.72 162.92 C -0.48 151.41 3.00 139.09 9.20 129.21 C 14.61 119.75 27.61 116.88 30.81 105.83 C 35.50 90.01 37.28 73.40 42.87 57.82 C 47.56 45.36 54.34 33.26 64.82 24.75 C 77.25 14.19 93.24 9.04 109.12 6.53 Z" />
+                </g>
+            </svg>
         </div>
     </div>
 

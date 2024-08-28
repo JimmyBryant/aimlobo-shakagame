@@ -1,0 +1,40 @@
+{{- /* 阅读 +1 , 在js里写了超过1分钟才能另算+1 */}}
+{{- /* partial "tools/btn_read_plus.html" */}}
+
+
+
+<div class="btn_read_plus cursor-pointer tips_icon">
+
+  <div class="title font-size-1_2 color-white text-center">{{ "📖 + 1" }}</div>
+
+  <div class="popup_tips popup_box">
+
+    <div class="popup_box_content">
+      
+      <div class="header">
+        <span class="icon">💡</span>{{- T "tips" -}}
+      </div>
+      
+      <div class="body">
+  
+        <div class="content">
+            <p>
+
+              {{ T "read_time" }}&nbsp;+1
+
+              &nbsp;(<span class="var_interval_click_btn_read_plus"></span><span class="var_i18n_time_second"></span>)&nbsp;
+      
+            </p>
+        </div>
+          
+      </div>
+  
+      <div class="footer">
+        <button class="btn btn_get_it">{{ T "get_it" }}</button>
+      </div>
+
+    </div>
+  </div>
+
+
+</div>

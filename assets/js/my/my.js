@@ -1,301 +1,529 @@
-// 编辑用户头像
+// 定义常量
+
+const keyName_1_00 = 'my';
+
+const pageName = 'list';
+
+const checkbox = document.getElementById('hide_or_show_all_tips_in_current_page');
+
+const setGoodOrBadForItemsNumber = 3; // 设置生成几条数据
+
+const configName_01 = 'good_bad_items';
+
+const configName_01_01 = 'good_items';
+
+const configName_01_02 = 'bad_items';
+
+const configName_02 = 'update_good_bad_items_date';
+
+
+
+// 选择元素
 const varUserAvatar = document.querySelector('.var_user_avatar');
 const formUserAvatar = document.querySelector('.form_user_avatar');
 const popupFormUserAvatar = document.querySelector('.popup_form_user_avatar');
 
-// 读取用户头像
-varUserAvatar.textContent = readFromLocalStorage('user_avatar');
+const varUserName = document.querySelector('.var_user_name');
+const formUserName = document.querySelector('.form_user_name');
+const popupFormUserName = document.querySelector('.popup_form_user_name');
 
-clickDisplayFlex(varUserAvatar, popupFormUserAvatar);
+const varUserSignature = document.querySelector('.var_user_signature');
+const formUserSignature = document.querySelector('.form_user_signature');
+const popupFormUserSignature = document.querySelector('.popup_form_user_signature');
+
+const varUserBirthDate = document.querySelector('.var_user_birth_date');
+const formUserBirthDate = document.querySelector('.form_user_birth_date');
+const popupFormUserBirthDate = document.querySelector('.popup_form_user_birth_date');
+
+const varUserGender = document.querySelector('.var_user_gender');
+const formUserGender = document.querySelector('.form_user_gender');
+const popupFormUserGender = document.querySelector('.popup_form_user_gender');
+
+const btnCheckIn = document.querySelector('.btn_check_in');
+const popupBtnCheckIn = document.querySelector('.popup_btn_check_in');
+const popupBtnCheckInBtnGetIt = popupBtnCheckIn.querySelector('.btn_get_it');
+
+const varUserLevel = document.querySelector('.var_user_level');
+const varUserGameTime = document.querySelector('.var_user_game_time');
+const varUserReadTime = document.querySelector('.var_user_read_time');
+
+
+
+
+
+
+// 函数
+// 函数
+// 函数
+// 函数
+// 函数
+
+
+// 更新签到按钮状态
+function updateBtnCheckIn() {
+
+  const lastCheckInDate = readValueFromRecordInLocal(keyName_0_01, keyName_0_01_09);
+
+  const lastLogInDate = readValueFromRecordInLocal(keyName_0_01, keyName_0_01_10);
+
+  if (lastCheckInDate === null || lastCheckInDate != lastLogInDate) {
+
+    btnCheckIn.disabled = false;
+    btnCheckIn.classList.remove('disabled');
+
+  } else {
+
+    btnCheckIn.disabled = true;
+    btnCheckIn.classList.add('disabled');
+
+  }
+}
+
+
+// 更新页面上的用户信息
+function updateUserInfoInPage() {
+
+  varUserAvatar.textContent = readValueFromRecordInLocal(keyName_0_01, keyName_0_01_02);
+
+  varUserName.textContent = readValueFromRecordInLocal(keyName_0_01, keyName_0_01_03);
+
+  varUserSignature.textContent = readValueFromRecordInLocal(keyName_0_01, keyName_0_01_04);
+
+  varUserBirthDate.textContent = readValueFromRecordInLocal(keyName_0_01, keyName_0_01_05);
+
+  varUserGender.textContent = i18n(`${readValueFromRecordInLocal(keyName_0_01, keyName_0_01_14)}`);
+
+  varUserLevel.textContent = readValueFromRecordInLocal(keyName_0_01, keyName_0_01_06);
+
+  varUserGameTime.textContent = readValueFromRecordInLocal(keyName_0_01, keyName_0_01_07);
+
+  varUserReadTime.textContent = readValueFromRecordInLocal(keyName_0_01, keyName_0_01_08);
+}
+
+// 更新今天适合，不适合 做什么 到本地 -- 参数传递生成的内容
+function updateGoodOrBadForToLocal(goodOrBadContent) {
+
+  const updatedDate =  readPageConfig(keyName_1_00, pageName, configName_02);
+
+  // 读取不到 -- 第一次登录
+  // 日期不是今天 -- 需要更新
+  if (updatedDate === DEFAULT_VALUE_UNDEFINED || updatedDate != getFormattedDateWithDash()) {
+
+    writePageConfig(keyName_1_00, pageName, configName_01, goodOrBadContent);
+
+    writePageConfig(keyName_1_00, pageName, configName_02, getFormattedDateWithDash());
+  }
+}
+
+
+
+// 生成今天的适合，不适合 做什么
+function generateGoodOrBadContent() {
+
+  const goodItems = getRandomItems(siteDataGoodFor, setGoodOrBadForItemsNumber);
+  const badItems = getRandomItems(siteDataBadFor, setGoodOrBadForItemsNumber);
+
+  return {
+      [configName_01_01]: goodItems,
+      [configName_01_02]: badItems,
+  };
+
+}
+
+// 辅助函数 -- 洗牌算法 -- 返回随机内容 -- 后附函数解释
+/*
+
+功能：
+这个函数的作用是从给定的数组 arr 中随机挑选 num 个元素，并返回一个包含这些元素的新数组。
+语法和逻辑：
+函数参数：
+
+arr：这是一个数组，表示你要从中随机挑选元素的集合。
+num：这是一个数字，表示你希望返回的随机元素的个数。
+数组排序 (arr.sort()):
+
+arr.sort() 是 JavaScript 中的一个数组排序方法。它接受一个比较函数作为参数，根据比较函数的返回值来排序数组中的元素。
+在这个函数中，arr.sort(() => 0.5 - Math.random()) 使用了一个自定义的比较函数。这个比较函数随机返回正值或负值，导致数组中的元素被随机重新排序。
+0.5 - Math.random() 的逻辑：
+
+Math.random() 是一个生成 0 到 1 之间的随机数（不包括1）的函数。
+0.5 - Math.random() 会生成一个介于 -0.5 到 0.5 之间的随机数。如果这个值大于 0，sort 方法会认为第一个元素应该排在后面；如果小于 0，则认为第一个元素应该排在前面。
+这种方式会随机地打乱数组的顺序（称为洗牌算法）。
+数组切片 (arr.slice()):
+
+slice() 是 JavaScript 数组的一个方法，用于返回数组的一部分。
+arr.slice(0, num) 返回 arr 中从索引 0 开始的 num 个元素。也就是说，它返回了打乱顺序后的前 num 个元素。
+代码工作流程：
+打乱数组顺序：
+
+arr.sort(() => 0.5 - Math.random()) 随机地打乱数组 arr 的元素顺序。
+打乱顺序后，将结果存储在 shuffled 变量中。
+获取前 num 个元素：
+
+shuffled.slice(0, num) 提取 shuffled 数组中的前 num 个元素，形成一个新数组。
+返回结果：
+
+返回包含 num 个随机元素的数组。
+例子：
+假设我们有一个数组 [1, 2, 3, 4, 5]，并且我们希望随机选取其中的两个元素：
+
+
+const result = getRandomItems([1, 2, 3, 4, 5], 2);
+arr.sort(() => 0.5 - Math.random()) 可能会将数组打乱为 [4, 1, 3, 2, 5]。
+slice(0, 2) 将返回 [4, 1]，这是打乱后数组的前两个元素。
+每次运行这个函数，返回的结果都会有所不同，因为排序是随机的。
+*/
+function getRandomItems(arr, num) {
+  const shuffled = arr.sort(() => 0.5 - Math.random());
+  return shuffled.slice(0, num);
+}
+
+// 更新今天的适合，不适合 做什么 到页面
+function updateGoodOrBadForInpage() {
+
+  const goodOrBadForContent = readPageConfig(keyName_1_00, pageName, configName_01);
+  const goodForContent = goodOrBadForContent[configName_01_01];
+  const badForContent = goodOrBadForContent[configName_01_02];
+
+  const varGoodFor = document.querySelector('.var_good_for');
+  const varBadFor = document.querySelector('.var_bad_for');
+
+  const language = returnLangFromUrl(); // good_for 需要跳转到对应的页面
+
+  if (!varGoodFor || !varBadFor) {
+    console.error("Target containers not found");
+    return;
+  }
+
+  // 清空目标容器内容
+  varGoodFor.innerHTML = '';
+  varBadFor.innerHTML = '';
+
+  // 创建带链接的元素
+  goodForContent.forEach((item, index) => {
+    const linkElement = createElementWithClass('a', `/${language}/${item.link}`, `text-center padding-_5rem color-white bg-color-0${(index % 4) + 1} border-radius-_5rem`, i18n(item.name));
+    varGoodFor.appendChild(linkElement);
+  });
+
+  // 创建没有链接的元素
+  badForContent.forEach((item) => {
+    const itemElement = createElementWithClass('div', null, 'text-center padding-_5rem color-black bg-grey-1 border-radius-_5rem cursor-not-allowed', i18n(item.name));
+    varBadFor.appendChild(itemElement);
+  });
+}
+
+// 辅助函数：用于创建元素并添加类名和文本内容
+function createElementWithClass(tagName, href, className, textContent) {
+  const element = document.createElement(tagName);
+  element.className = className;
+  element.textContent = textContent;
+  if (href) {
+    element.href = href;
+  }
+  return element;
+}
+
+
+
+// 函数 -- end
+// 函数 -- end
+// 函数 -- end
+// 函数 -- end
+// 函数 -- end
+
+
+// 编辑用户头像
+
+
+// 读取用户头像
+
+
+clickSetDisplay(varUserAvatar, popupFormUserAvatar, displayTypes.flex);
 
 formUserAvatar.addEventListener('submit', (event) => {
+
   event.preventDefault();
+
+  siteBgmSelect.play();
+
   const selectedUserAvatar = document.querySelector('input[name="select_user_avatar"]:checked');
+
   let selectedUserAvatarValue = selectedUserAvatar.value
+
   if (selectedUserAvatar.value) {
-    writeToLocalStorage('user_avatar', selectedUserAvatarValue);
-    varUserAvatar.textContent = readFromLocalStorage('user_avatar'); // 更新用户头像
+
+    writeValueToRecordInLocal(keyName_0_01, keyName_0_01_02, selectedUserAvatarValue);
+
+    varUserAvatar.textContent = readValueFromRecordInLocal(keyName_0_01, keyName_0_01_02); // 更新用户头像
   } 
 
-  hide(popupFormUserAvatar);
+  formUserAvatar.reset();
+
+  siteBgmSelect.stop();
+
 });
 
 formUserAvatar.addEventListener('reset', () => {
+
     formUserAvatar.reset();
-    hide(popupFormUserAvatar);
+
+    setDisplay(popupFormUserAvatar, displayTypes.none);
 });
 
 // 编辑用户头像 - end
 
 // 编辑用户名称
-const varUserName = document.querySelector('.var_user_name');
-const formUserName = document.querySelector('.form_user_name');
-const popupFormUserName = document.querySelector('.popup_form_user_name');
+
 
 // 读取用户名
-varUserName.textContent = readFromLocalStorage('user_name');
 
-clickDisplayFlex(varUserName, popupFormUserName);
+
+clickSetDisplay(varUserName, popupFormUserName, displayTypes.flex);
 
 formUserName.addEventListener('submit', (event) => {
+
   event.preventDefault();
+
+  siteBgmSelect.play();
+
   const inputUserName = document.querySelector('.input_user_name').value;
+
   if (inputUserName) {
-    writeToLocalStorage('user_name', inputUserName);
-    varUserName.innerHTML = readFromLocalStorage('user_name'); // 更新用户名
+
+    writeValueToRecordInLocal(keyName_0_01, keyName_0_01_03, inputUserName);
+
+    varUserName.textContent = readValueFromRecordInLocal(keyName_0_01, keyName_0_01_03); // 更新用户名
   } 
   
-  hide(popupFormUserName);
+  formUserName.reset();
+
+  siteBgmSelect.stop();
 });
 
 formUserName.addEventListener('reset', () => {
+
     formUserName.reset();
-    hide(popupFormUserName);
+
+    setDisplay(popupFormUserName, displayTypes.none);
 });
 
 // 编辑用户名称 - end
 
 // 编辑用户个性签名
-const varUserSignature = document.querySelector('.var_user_signature');
-const formUserSignature = document.querySelector('.form_user_signature');
-const popupFormUserSignature = document.querySelector('.popup_form_user_signature');
+
 
 // 读取用户个性签名
-varUserSignature.textContent = readFromLocalStorage('user_description');
 
-clickDisplayFlex(varUserSignature, popupFormUserSignature);
+
+clickSetDisplay(varUserSignature, popupFormUserSignature, displayTypes.flex);
 
 formUserSignature.addEventListener('submit', (event) => {
+
   event.preventDefault();
+
+  siteBgmSelect.play();
+
   const inputUserSignature = document.querySelector('.input_user_signature').value;
+
   if (inputUserSignature) {
-    writeToLocalStorage('user_description', inputUserSignature);
-    varUserSignature.innerHTML = readFromLocalStorage('user_description'); // 更新用户个性签名
+
+    writeValueToRecordInLocal(keyName_0_01, keyName_0_01_04, inputUserSignature);
+
+    varUserSignature.textContent = readValueFromRecordInLocal(keyName_0_01, keyName_0_01_04); // 更新用户个性签名
   } 
 
-  hide(popupFormUserSignature);
+  formUserSignature.reset();
+
+  siteBgmSelect.stop();
 });
 
 formUserSignature.addEventListener('reset', () => {
-    formUserName.reset();
-    hide(popupFormUserSignature);
+
+  formUserSignature.reset();
+
+  setDisplay(popupFormUserSignature, displayTypes.none);
 });
 
 // 编辑用户个性签名 - end
 
 // 编辑用户生日
-const varUserBirthDate = document.querySelector('.var_user_birth_date');
-const formUserBirthDate = document.querySelector('.form_user_birth_date');
-const popupFormUserBirthDate = document.querySelector('.popup_form_user_birth_date');
+
 
 // 读取用户生日
-varUserBirthDate.textContent = readFromLocalStorage('user_birthday');
 
-clickDisplayFlex(varUserBirthDate, popupFormUserBirthDate);
+
+clickSetDisplay(varUserBirthDate, popupFormUserBirthDate, displayTypes.flex);
 
 formUserBirthDate.addEventListener('submit', (event) => {
+
   event.preventDefault();
+
+  siteBgmSelect.play();
+
   const inputUserBirthDate = document.querySelector('.input_user_birth_date').value;
+
   if (inputUserBirthDate) {
-    writeToLocalStorage('user_birthday', inputUserBirthDate);
-    varUserBirthDate.innerHTML = readFromLocalStorage('user_birthday'); // 更新用户生日
+
+    writeValueToRecordInLocal(keyName_0_01, keyName_0_01_05, inputUserBirthDate);
+
+    varUserBirthDate.textContent = readValueFromRecordInLocal(keyName_0_01, keyName_0_01_05); // 更新用户生日
   }
 
-  hide(popupFormUserBirthDate);
+  formUserBirthDate.reset();
+
+  siteBgmSelect.play();
 });
 
 formUserBirthDate.addEventListener('reset', () => {
-    formUserName.reset();
-    hide(popupFormUserBirthDate);
+
+  formUserBirthDate.reset();
+
+  setDisplay(popupFormUserBirthDate, displayTypes.none);
 });
 
 // 编辑用户生日 - end
 
-// 用户签到
-const btnCheckInToday = document.querySelector('.btn_check_in_today');
 
-// 读取签到状态
-checkWhetherUserCheckInToday();
 
-// 值是1，代表已经签到，值是其他代表没签到，存储用的值是0表示没签到
-function checkWhetherUserCheckInToday() {
+// 编辑用户性别
 
-  // 通过日期进行校验，联动到状态，也就是说如果判断上次签到日期是今天，那么就已签到，否则为每签到
-  const today = getTodayDate();
-  const lastCheckInDate = readFromLocalStorage('last_check_in_date');
 
-  if (lastCheckInDate === today) {
-    writeToLocalStorage('user_check_in_today', 1);
-    btnCheckInToday.disabled = true;
-    btnCheckInToday.classList.add('disabled');
-  } else {
-    writeToLocalStorage('user_check_in_today', 0);
-    btnCheckInToday.disabled = false;
-    btnCheckInToday.classList.remove('disabled');
-  }
-}
+// 读取用户性别
 
-// 点击签到按钮 -- 能点击，就代表一定还没签到
-btnCheckInToday.addEventListener('click', () => {
-  
-  const today = getTodayDate();
-  writeToLocalStorage('last_check_in_date', today);
-  checkWhetherUserCheckInToday();
 
-  // 签到成功后，增加10点幸运值，等级+1
-  if (isUserDuoDiu()) {
-    updateTotalLuckyPoint(1060);
-    updateUserLevel(3);
-  } else {
-    updateTotalLuckyPoint(10);
-    updateUserLevel(1);
+clickSetDisplay(varUserGender, popupFormUserGender, displayTypes.flex);
+
+formUserGender.addEventListener('submit', (event) => {
+
+  event.preventDefault();
+
+  siteBgmSelect.play();
+
+  const userGender = document.querySelector('input[name="choose_gender"]:checked');
+
+  if (userGender) {
+
+    const userGenderValue = userGender.value;
+
+    writeValueToRecordInLocal(keyName_0_01, keyName_0_01_14, userGenderValue);
+
+    varUserGender.textContent = i18n(`${readValueFromRecordInLocal(keyName_0_01, keyName_0_01_14)}`); // 更新用户性别
   }
 
+  formUserGender.reset();
 
-  // 记录事件
-  writeEventLogLuckyPoint('check in today', 10);
-  writeEventLogUserLevel('check in today', 1);
-  
-
-  // 刷新页面数据
-  updatePageTotalLuckyPoint();
-  updatePageUserLevel();
-  updatePageAchievement();
+  siteBgmSelect.stop();
 });
+
+formUserGender.addEventListener('reset', () => {
+
+  formUserGender.reset();
+
+  setDisplay(popupFormUserGender, displayTypes.none);
+});
+
+
+
+// 编辑用户性别 - end
+
+// 用户签到按钮
+
+
+clickSetDisplay(popupBtnCheckInBtnGetIt, popupBtnCheckIn, displayTypes.none);
+
+btnCheckIn.addEventListener('click', () => {
+
+  siteBgmWin.play();
+
+  const userLevel = readValueFromRecordInLocal(keyName_0_01, keyName_0_01_06);
+
+  const varAddLuckyPoint = document.querySelector('.var_add_lucky_point');
+
+  const varAddUserLevel = document.querySelector('.var_add_user_level');
+
+  let addLuckyPoint;
+
+  let addUserLevel;
+
+  // 彩蛋位置
+
+  if (isSpecialUser()) {
+
+    addLuckyPoint = (1060 + userLevel / setBonusAddLuckyPointCheckIn).toFixed(1);
+
+    addUserLevel = 5;
+
+  } else {
+
+     addLuckyPoint = (setBaseAddLuckyPointCheckIn + userLevel / setBonusAddLuckyPointCheckIn).toFixed(1);
+
+     addUserLevel = setBaseAddUSerLevelCheckIn;
+  }
+  
+
+  varAddLuckyPoint.textContent = addLuckyPoint;
+
+  varAddUserLevel.textContent = addUserLevel;
+
+  updateUserLuckyPointToLocal(addLuckyPoint);
+
+  updateUserLuckyPointInPage();
+
+  updateUserLevelToLocal(addUserLevel);
+
+  updateUserLevelInPage();
+
+  writeValueToRecordInLocal(keyName_0_01, keyName_0_01_09, getFormattedDateWithDash());
+
+  setDisplay(popupBtnCheckIn, displayTypes.flex);
+
+  updateBtnCheckIn();
+
+  siteBgmWin.stop();
+});
+
 
 // 用户签到 -- end
 
-// 用户幸运值
-
-// 读取用户当前幸运值
-updatePageTotalLuckyPoint();
-// 用户幸运值 -- end
-
-// 用户等级
-
-// 读取用户当前等级
-updatePageUserLevel();
-// 用户等级 -- end
-
-// 游戏次数
-
-// 读取用户当前游戏次数
-updatePageUserGameTime();
-// 游戏次数 -- end
-
-// 阅读次数
-
-// 读取用户当前阅读次数
-updatePageUserReadTime();
-// 阅读次数 -- end
-
-// 用户成就
-
-function clickOpenUserAchievement() {
-
-  const btnOpenUserAchievement = document.querySelector('.btn_open_user_achievement');
-  const popupUserAchievement = document.querySelector('.popup_user_achievement');
-  const btnGetIt = popupUserAchievement.querySelector('.btn_get_it');
-
-  clickDisplayFlex(btnOpenUserAchievement, popupUserAchievement);
-  btnGetIt.addEventListener('click', (event) => {
-    hide(popupUserAchievement);
-    event.stopPropagation(); // 阻止事件冒泡
-  });
-}
 
 
 
-// 用户等级不够的情况让荣誉icon的透明度是0.3，超过的情况下就移除该属性
-
-function removeOpacityIfAchievementMatch(readkey, selector) {
-  const userLevel = readFromLocalStorage(readkey);
-  const icons = document.querySelectorAll(selector);
-
-  icons.forEach(icon => {
-    const idClass = Array.from(icon.classList).find(cls => cls.startsWith('id_'));
-    if (idClass) {
-      const id = parseInt(idClass.split('_').pop(), 10);
-      if (userLevel >= id) {
-        icon.classList.remove('opacity-_3');
-      }
-    }
-  });
-}
-
-// 刷新页面上的成就
-function updatePageAchievement() {
-  removeOpacityIfAchievementMatch('total_lucky_point', '.var_achievement_lucky_point_icon');
-  removeOpacityIfAchievementMatch('user_level', '.var_achievement_user_level_icon');
-  removeOpacityIfAchievementMatch('game_time', '.var_achievement_game_time_icon');
-  removeOpacityIfAchievementMatch('read_time', '.var_achievement_read_time_icon');
-}
-
-clickOpenUserAchievement();
-updatePageAchievement();
+// 进入页面按顺序执行
+// 进入页面按顺序执行
+// 进入页面按顺序执行
 
 
-// 用户荣誉 -- end
+
+// 显示/隐藏页面提示 -- 初始化到本地 -- 默认显示 
+// 如果有值，就按照这个值来更新页面上的提示显示/隐藏 -- 包括：checkbox.checked
+initTipsVisibilityConfig(keyName_1_00, pageName);
+hideOrShowAllTipsInCurrentPage(keyName_1_00, pageName);
+checkbox.checked = readTipsVisibilityConfig(keyName_1_00, pageName);
 
 
-// 今天适合干什么，不适合干什么
-renderLuckyForItems();
-renderUnluckyForItems();
-
-// 适合干什么
-function renderLuckyForItems() {
-  // 获取页面语言
-  const language = getLanguageFromUrl();
-
-  // 读取本地存储中的lucky_for_items数据
-  const luckyForItems = JSON.parse(readFromLocalStorage('lucky_for_items'));
-
-  // 获取目标容器
-  const container = document.querySelector('.lucky_for_content');
-
-  // 清空目标容器内容
-  container.innerHTML = '';
-
-  // 遍历lucky_for_items数据并生成HTML元素
-  luckyForItems.forEach((item, index) => {
-    const linkElement = document.createElement('a');
-    linkElement.href = `/${language}/${item.link}`;
-
-    // 根据索引计算背景颜色类
-    const bgColorClass = `bg-color-0${(index % 4) + 1}`;
-    linkElement.className = `text-center padding-_5rem color-white ${bgColorClass} border-radius-_5rem`;
-    linkElement.textContent = translate(language, item.name);
-
-    // 添加生成的元素到容器中
-    container.appendChild(linkElement);
-  });
-}
-
-// 不适合干什么
-function renderUnluckyForItems() {
-  // 获取页面语言
-  const language = getLanguageFromUrl();
-
-  // 读取本地存储中的unlucky_for_items数据
-  const unluckyForItems = JSON.parse(readFromLocalStorage('unlucky_for_items'));
-
-  // 获取目标容器
-  const container = document.querySelector('.unlucky_for_content');
-
-  // 清空目标容器内容
-  container.innerHTML = '';
-
-  // 遍历unlucky_for_items数据并生成HTML元素
-  unluckyForItems.forEach((item) => {
-      const itemElement = document.createElement('div');
-
-      itemElement.className = `text-center padding-_5rem color-black bg-grey-1 border-radius-_5rem cursor-not-allowed`;
-      itemElement.textContent = translate(language, item.name);
-
-      // 添加生成的元素到容器中
-      container.appendChild(itemElement);
-  });
-}
+// 显示/隐藏页面提示 -- 用户选择的时候进行记录到本地并更新页面
+checkbox.addEventListener('change', () => {
+    const isVisible = checkbox.checked;
+    writeTipsVisibilityConfig(keyName_1_00, pageName, isVisible);
+    hideOrShowAllTipsInCurrentPage(keyName_1_00, pageName);
+});
 
 
-// 今天适合干什么，不适合干什么  -- end
+// 更新页面上的用户信息
+updateUserInfoInPage();
+
+// 更新签到按钮状态
+updateBtnCheckIn();
+
+// 更新今天适合，不适合 做什么 到本地 -- 参数传递生成的内容
+updateGoodOrBadForToLocal(generateGoodOrBadContent());
+
+
+// 更新今天的适合，不适合 做什么 到页面
+updateGoodOrBadForInpage();
+
+
+
+// 进入页面按顺序执行 -- end
+// 进入页面按顺序执行 -- end
+// 进入页面按顺序执行 -- end

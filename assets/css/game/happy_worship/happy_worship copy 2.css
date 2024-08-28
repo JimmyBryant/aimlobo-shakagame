@@ -1,0 +1,369 @@
+:root {
+
+    --height-game-title: 10vh;
+    --height-god-img: 35vh;
+    --height-gap-god-img-table: 5vh;
+    --gap-in-form: 1vw;
+    --height-table: 10vh;
+    --height-offering: 5vh;
+    --height-incense: 15vh;
+    --height-incense-head: 4px;
+    --height-incense-gap: 2px;
+    /* --height-incense-body:  calc(var(--height-incense) - var(--height-incense-head) - var(--height-incense-gap))*/
+    --height-stove: 10vh;
+
+    /* 所以总计高度是：10+35+5+10+15+10 = 85vh */
+}
+
+.gods {
+
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    
+
+    /* 让用户不点击get_it按钮来隐藏popup_box, 不然会直接默认表单提交 */
+    .popup_box_content {
+        .footer {
+            display: none;
+        }
+    }
+}
+
+.god_img {
+    width: 6rem;
+    height: 6rem;
+    border-radius: 0.5rem;
+    vertical-align: middle;
+    object-fit: cover;
+    transition: all .3s ease;
+}
+
+.god_img:hover {
+    transform: scale(1.3);
+}
+
+/* 目的是让用户玩游戏的过程中可以退出 */
+header {
+    position: relative;
+    z-index: 20;
+}
+
+
+main {
+    height: 100vh;
+    margin-top: 0;
+}
+
+/* 页面上的标题 */
+.game-title {
+    height: var(--height-game-title);
+}
+
+/* 页面上的神明: slice */
+.god-imgs {
+    
+    width: calc(var(--height-god-img) + 16vw);
+    max-width: 95vw;
+
+    img {
+        height: var(--height-god-img);
+        width: auto;
+        max-height: 80vw;
+        max-width: 80vw;
+    }
+
+    .splide__pagination {
+        display: none;
+    }
+
+    
+}
+
+
+/* overlay */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    z-index: 10;
+}
+
+/* 页面上的桌子和供品区域 */
+.table {
+    margin-top: var(--height-gap-god-img-table); 
+    
+    .table-img {
+        height: var(--height-table);
+        width: calc(var(--height-table) * 5);
+        object-fit: contain;
+    }
+
+    .btn_open_form_offerings {
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 15rem;
+        /* background-color: #61dbf0; */
+    }
+
+    .offerings-in-page {
+        width: calc(var(--height-table) * 5);
+        left: 50%;
+        top: 10%;
+        transform: translate(-50%, -50%);
+    }
+
+}
+
+/* 表单: 供品和香火 */
+.form-offerings,
+.form-incense {
+    .body {
+        
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--gap-in-form); 
+
+        .label-img-text-in-form {
+            max-width: calc((28rem - var(--gap-in-form) * 2) / 3);
+            max-height: calc((28rem - var(--gap-in-form) * 2) / 3);
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.05);
+            border-radius: 0.5rem;
+            padding: 0.5rem 0;
+            position: relative;
+            overflow: hidden;
+
+            input[type="radio"],
+            input[type="checkbox"] {
+                appearance: none;
+                width: 100%;
+                height: 1.5rem;
+                border-radius: 0;
+                border: none;
+                outline: none;
+                margin: 0 auto;
+                bottom: 0;
+                position: absolute;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 1.2rem;
+            }
+
+            input[type="radio"]::before,
+            input[type="checkbox"]::before {
+
+                content: "";
+                display: block;
+                width: 100%;
+                height: 100%;
+                border-radius: 0.5rem;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 1.2rem;
+                transition: none;
+                top: 0;
+            }
+
+            input[type="radio"]:checked::before,
+            input[type="checkbox"]:checked::before {
+                content: "✅";
+                transform: none;
+                transition: none;
+                background-color: rgba(0, 0, 0, 0.4);
+            }
+
+        }
+    }
+}
+
+ /* 表单里的供品图案大小 */
+ .form-offerings .label-img-in-form {
+    font-size: 3rem;
+ }
+
+/* 香火图案大小 */
+.incense-item {
+    display: flex;
+    flex-direction: column;
+    gap:var(--height-incense-gap);
+}
+.incense-head {
+    height: var(--height-incense-head);
+    width: var(--height-incense-head);
+    background: linear-gradient(180deg, rgba(255, 3, 3, 1) 0%, rgba(244, 102, 0, 1) 100%);
+}
+
+.incense-body {
+    height: calc(var(--height-incense) - var(--height-incense-head) - var(--height-incense-gap));
+    width: var(--height-incense-head);
+    background-color: #008000;
+}
+
+/* 页面上的香火和火炉区域 */
+.incense-img {
+    height: calc(var(--height-incense) + var(--height-stove));
+
+    .stove {
+        bottom: 0;
+        img {
+            height: var(--height-stove);
+        }
+    }
+
+    .btn_open_form_incense {
+        left: 50%;
+        top: 80%;
+        transform: translate(-50%, -50%);
+        width: 15rem;
+        /* background-color: #61dbf0; */
+    }
+
+    .incense-in-page {
+        bottom: calc(var(--height-stove) - 1.5vh );
+        height: var(--height-incense);
+        width: var(--height-stove);
+        z-index: 1;
+        display: none;
+
+        .incense-item {
+            display: flex;
+            justify-content: center;
+            position: absolute;
+            bottom: 0;
+        }
+    
+        .incense-item:first-child {
+            left: 3vh;
+        }
+    
+        .incense-item:last-child {
+            right: 3vh;
+        }
+    }
+}
+
+
+/* worship */
+.worship_box {
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    border-radius: 1rem;
+    background-color: white;
+    z-index: 20;
+
+    .worship_title {
+        color: #47c2d7;
+    }
+
+    .worship_thumb {
+        background-color: #5d5d5d;
+        border-radius: 100%;
+        width: 4rem;
+        height: 4rem;
+    }
+
+    .bgm-thumb {
+        width: 3rem;
+    }
+
+}
+
+.count-down {
+    display: inline-block;
+    width: 2rem;
+}
+
+.rotate-animation {
+    animation: rotateAnimation 5s linear infinite;
+}
+
+@keyframes rotateAnimation {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+.burn {
+    animation: burnAnimation var(--burn-duration, 15s) linear forwards;
+}
+
+@keyframes burnAnimation {
+    from {
+        height: var(--height-incense);
+    }
+
+    to {
+        height: 0;
+
+    }
+}
+
+
+/* bubble */
+#bubble-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    /* background-color: #f0f8ff; */
+}
+
+.bubble {
+    position: absolute;
+    bottom: -100px; /* Start from below the screen */
+    padding: 2rem;
+    background-color: rgba(173, 216, 230, 0.7);
+    border-radius: 100%;
+    cursor: pointer;
+    animation: rise linear infinite;
+}
+
+@keyframes rise {
+    to {
+        transform: translateY(-110vh); /* Move above the screen */
+    }
+}
+
+/* 每次点击气球后显示 + 1 */
+.plus-one {
+    position: fixed;
+    font-size: 2em;
+    color: red;
+    animation: fadeOut 1s forwards;
+    pointer-events: none; /* 防止点击事件影响 */
+  }
+  
+  @keyframes fadeOut {
+    0% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(-50px);
+    }
+  }
+
+
+  @media screen and (max-width: 48rem) {
+
+
+
+
+  }

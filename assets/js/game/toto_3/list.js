@@ -1,11 +1,14 @@
-// 用来记录页面上用户是显示还是隐藏所有提示
+// 定义常量
 const pageName = 'list';
 const checkbox = document.getElementById('hide_or_show_all_tips_in_current_page');
 
 
+// 函数
+// 函数
+// 函数
+// 函数
+// 函数
 
-// 弹窗提示 -- 可点击关闭
-aimloboClickHideInPageTips(); 
 
 
 // 写入数据到html
@@ -106,7 +109,7 @@ function writeDataToHtmlBet() {
             htmlVarRoundNumber.textContent = record[keyName_1_01];
 
             // 填充轮次状态
-            htmlVarStatus.textContent = i19n(record[keyName_1_06]);
+            htmlVarStatus.textContent = i18n(record[keyName_1_06]);
         }
     }
 }
@@ -116,11 +119,37 @@ function updateRoundBetStatusInLocal() {
     updateIndexRoundStatusInLocal(0);
 }
 
-// 更新用户的配置：显示还是隐藏所有提示 -- 并进行更新
-checkbox.addEventListener('change', function() {
-    updatePageConfigToLocalHideOrShowAllTipsInCurrentPage(pageName);
-    updatePageConfigInPageHideOrShowAllTipsInCurrentPage(pageName);
+
+// 函数 -- end
+// 函数 -- end
+// 函数 -- end
+// 函数 -- end
+// 函数 -- end
+
+
+
+// 进入页面按顺序执行
+// 进入页面按顺序执行
+// 进入页面按顺序执行
+
+
+
+
+// 显示/隐藏页面提示 -- 初始化到本地 -- 默认显示 
+// 如果有值，就按照这个值来更新页面上的提示显示/隐藏 -- 包括：checkbox.checked
+initTipsVisibilityConfig(keyName_1_00, pageName);
+hideOrShowAllTipsInCurrentPage(keyName_1_00, pageName);
+checkbox.checked = readTipsVisibilityConfig(keyName_1_00, pageName);
+
+
+// 显示/隐藏页面提示 -- 用户选择的时候进行记录到本地并更新页面
+checkbox.addEventListener('change', () => {
+    const isVisible = checkbox.checked;
+    writeTipsVisibilityConfig(keyName_1_00, pageName, isVisible);
+    hideOrShowAllTipsInCurrentPage(keyName_1_00, pageName);
 });
+
+
 
 
 
@@ -129,9 +158,7 @@ checkbox.addEventListener('change', function() {
 // 页面更新 -- 更新页面上的倒计时
 updatePageRoundCountDown();
 
-// 初始化用户的配置：显示还是隐藏所有提示
-initPageConfigValueToLocalHideOrShowAllTipsInCurrentPage(pageName);
-updatePageConfigInPageHideOrShowAllTipsInCurrentPage(pageName);
+
 
 
 /*
@@ -160,3 +187,9 @@ executeEvery(intervalTimeToUpdateRoundBetStatus(), updateRoundBetStatusInLocal, 
 */
 
 executeEvery(1, updatePageRoundCountDown);
+
+
+
+// 进入页面按顺序执行 -- end
+// 进入页面按顺序执行 -- end
+// 进入页面按顺序执行 -- end

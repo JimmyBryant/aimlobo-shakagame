@@ -1,0 +1,72 @@
+{{- define "main" -}}
+{{- $lang := .Lang -}}
+{{- $dataLang := index .Site.Data.game $lang -}}
+{{- $games := $dataLang.game_lists -}}
+{{- $happy_worship := where $games "id" "happy_worship" -}}
+{{- $offerings := (index $happy_worship 0).offerings -}}
+{{- $tipsMissData := (index $happy_worship 0).tips_miss_data -}}
+{{- $tipsPageOfferingSelect := (index $happy_worship 0).tips_page_offering_select -}}
+
+<div class="wrap">
+
+    <div class="game_happy_worship_offering">
+
+        <div class="page_left">
+
+            {{- /* 选择贡品 */ -}}
+            <form class="form_offerings_select width-100 bg-white padding-1rem border-radius-_3rem">
+
+                <div class="header padding-1rem text-center font-size-1_5">
+                    {{- T "select_offerings" -}}
+                </div>
+
+                <div class="body offerings gap-1rem align-items-center padding-tb-1rem">
+
+                    {{- with $offerings -}}
+
+                        {{- range sort . "weight" "asc" -}}
+
+                            <label for="{{- .id -}}" class="flex flex-column gap-_5rem align-items-center justify-content-center shadow-box border-radius-_5rem padding-_5rem">
+                                <p class="width-100 text-center">{{- .name -}}</p>
+                                <div class="label_offering font-size-4">
+                                    {{- .content -}}  
+                                </div>
+                                <input type="checkbox" id="{{- .id -}}" name="select_offerings" value="{{- .content -}}" />
+                            </label>
+
+                        {{- end -}}
+                                    
+                    {{- end -}}
+                </div>
+
+                <div class="footer flex gap-1rem align-items-center justify-content-center margin-tb-1rem">
+
+                    <button class="btn btn_reset" type="reset">{{ T "cancel" }}</button>
+
+                    <button class="btn btn_submit" type="submit">{{ T "submit" }}</button>
+                    
+                </div>
+
+            </form>
+
+        </div>
+
+        <div class="page_right">
+
+            {{- partial "google_adsense/04.html" }}
+
+        </div>
+
+    </div>
+
+    <div class="user_no_select info_icon">
+
+        {{- partial "tools/popup_info.html" (dict "infoType" "warning" "infoContent" $tipsPageOfferingSelect) }}
+    </div>
+    
+
+    {{- partial "game/popup_miss_data.html" (dict "tipsContent" $tipsMissData) }}
+
+</div>
+
+{{- end -}}

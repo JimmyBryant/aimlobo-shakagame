@@ -14,30 +14,17 @@
     
     <div class="left">
 
-      {{- /* 阅读次数 : 跳转到my */ -}}
-      <a href="../../my/">
-        <div class="user_info flex flex-column gap-1rem align-items-center border-radius-_5rem padding-1rem color-black margin-bottom-1rem">
-          <div class="var_user_avatar flex align-items-center justify-content-center bg-white"></div>
-          <div class="var_user_name font-size-1_5 font-weight-400 padding-_5rem"></div>
+      <div class="user_info flex flex-column gap-1rem align-items-center border-radius-_5rem padding-1rem color-black margin-bottom-1rem">
+        <div class="var_user_avatar flex align-items-center justify-content-center bg-white"></div>
+        <div class="var_user_name font-size-1_5 font-weight-400 padding-_5rem"></div>
 
-          <div class="flex gap-1rem align-items-center">
-            <div class="font-size-1_2">📖 {{ T "your" }} {{ T "read_time" }}: </div>
-            <div class="var_read_time font-size-1_5 font-weight-400"></div>
-          </div>
+        <div class="flex gap-1rem align-items-center">
+          <div class="font-size-1_2">📖 {{ T "your" }} {{ T "read_time" }}: </div>
+          <div class="var_user_read_time font-size-1_5 font-weight-400"></div>
         </div>
-      </a>
+      </div>
 
-      {{- /* Google adense shakagame.com-02 */ -}}
-        <div class="google_ad margin-tb-1rem">
-          <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2994572689024438"
-            crossorigin="anonymous"></script>
-          <!-- shakagame.com-02 -->
-          <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2994572689024438" data-ad-slot="3648300734"
-            data-ad-format="auto" data-full-width-responsive="true"></ins>
-          <script>
-            (adsbygoogle = window.adsbygoogle || []).push({});
-          </script>
-        </div>
+      {{- partial "google_adsense/04.html" }}
 
 
       {{- /* 目录 */ -}}
@@ -134,6 +121,15 @@
 
       </div>
 
+      <div class="bg-purple border-radius-_3rem padding-1rem flex align-items-center justify-content-between margin-tb-1rem">
+
+        {{- /* 标记为阅读+1 */ -}}
+        {{- partial "tools/btn_read_plus.html" }}
+
+        {{- /* 标记为like */ -}}
+        {{- partial "tools/btn_post_like.html" }}
+      </div>
+
       {{- /* 内容 */ -}}
       {{- if .Content }}
       <div class="topic-content line-height-1_8">
@@ -149,20 +145,11 @@
       </div>
 
       
-      <div class="flex align-items-center justify-content-between">
 
-        {{- /* 标记为阅读+1 */ -}}
-        {{- partial "tools/btn_read_plus_one.html" (dict "lang" .Lang) }}
-
-        {{- /* 标记为like，每60s后可以奖励0.5个积分 */ -}}
-        {{- partial "tools/btn_like.html" (dict "lang" .Lang) }}
-      </div>
 
       {{- /* back to top */ -}}
-      <button id="backToTopBtn" title="Go to top">⬆️</button>
+      {{- partial "tools/btn_back_to_top.html" }}
 
-
-      
       
     </div>
 

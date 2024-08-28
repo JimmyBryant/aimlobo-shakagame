@@ -76,7 +76,7 @@
                             <div class="body bet_amount flex flex-column gap-1rem padding-tb-1rem">
                                 <div class="flex gap-1rem align-items-center justify-content-between">
                                     <div>{{ T "your_available_lucky_point" }}: </div>
-                                    <div class="var_total_lucky_point font-size-1_5"></div>
+                                    <div class="var_user_lucky_point font-size-1_5"></div>
                                 </div>
 
                                 
@@ -232,17 +232,7 @@
     
             <div class="page_bet_right">
 
-                {{- /* Google adense shakagame.com-04 */ -}}
-                <div class="google_ad margin-tb-1rem">
-                    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2994572689024438"
-                        crossorigin="anonymous"></script>
-                    <!-- shakagame.com-04 -->
-                    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2994572689024438" data-ad-slot="6023085196"
-                        data-ad-format="auto" data-full-width-responsive="true"></ins>
-                    <script>
-                        (adsbygoogle = window.adsbygoogle || []).push({});
-                    </script>
-                </div>
+                {{- partial "google_adsense/04.html" }}
 
                 {{- /* 用户下注历史记录：因为同一期用户可能会多次下注，且选择不同号码，所以需要展示相关信息 */ -}}
                 <div class="user_bet_record flex flex-column gap-_5rem align-items-center border-radius-_5rem padding-_5rem bg-white width-100">

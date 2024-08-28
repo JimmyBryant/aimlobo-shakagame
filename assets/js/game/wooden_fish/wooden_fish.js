@@ -1,225 +1,376 @@
-// Initialize game state from localStorage
-function initializeGameState() {
-  const today = new Date();
-  const savedState = JSON.parse(readFromLocalStorage("game_wooden_fish")) || {};
+// 定义常量
+const keyName_1_00 = 'game_wooden_fish';
+const pageName = 'list';
+const checkbox = document.getElementById('hide_or_show_all_tips_in_current_page');
 
-  if (!savedState.lastReset || new Date(savedState.lastReset).getDate() !== today.getDate()) {
-      savedState.lastReset = today;
-      savedState.clickCount = 0;
-      savedState.lastExecutedCount = 0;
-  }
+const keyName_1_01 = 'click_count'; // 统计用户点击了多少次木鱼 -- 每天都会重置为0
+const keyName_1_02 = 'last_reset_date'; // 上次重置的日期
+const keyName_1_03 = 'last_exec_count'; // 上次执行统计的点击次数 -- 每满多少次点击给多少幸运值，游戏次数
+const keyName_1_04 = 'user_input_game_title'; // 用户输入的标题
+const keyName_1_05 = 'user_input_prayer'; // 用户选择/输入的祈祷文
 
-  writeToLocalStorage("game_wooden_fish", JSON.stringify(savedState));
-  return savedState;
+const setNumberOfClickWhenBouns = 300; // -- 每满多少次点击给幸运值，游戏次数
+const setBonusLuckyPoint = 1;
+const setBonusGameTime = 1;
+
+const setIntervalAutoClick = 1; // 自动敲击的间隔时间
+const setIntervalAnimation = 0.2; // 动画效果间隔时间
+const setIntervalPrayerMove = 1; // 祈祷文持续时间
+
+let autoClick = DEFAULT_VALUE_FALSE;
+let autoBgmMusic = DEFAULT_VALUE_FALSE;
+
+
+// 选择元素
+const varGameTitle = document.querySelector('.var_game_title');
+const popupFormEditGameTitle = document.querySelector('.popup_form_edit_game_title');
+const formEditGameTitle = popupFormEditGameTitle.querySelector('.form_edit_game_title');
+const formEditGameTitleBtnSubmit = formEditGameTitle.querySelector('.btn_submit');
+const formEditGameTitleBtnReset = formEditGameTitle.querySelector('.btn_reset');
+
+
+
+const popupFormEditPrayer = document.querySelector('.popup_form_edit_prayer');
+const formEditPrayer = popupFormEditPrayer.querySelector('.form_edit_prayer');
+const formEditPrayerBtnSubmit = formEditPrayer.querySelector('.btn_submit');
+const formEditPrayerBtnReset = formEditPrayer.querySelector('.btn_reset');
+const prayerCustomizeInput = document.getElementById('prayer_customize_input');
+
+const varCount = document.querySelector('.var_count');
+const woodenFishElement = document.querySelector(".woodenFish");
+const centerElement = document.querySelector(".center");
+
+const autoCheckbox = document.querySelector('input[name="auto"]');
+const bgmCheckbox = document.querySelector('input[name="bgm"]');
+
+
+
+const bgmClick = newSound('/audio/game/wooden_fish/sound', false, 0.8);
+const bgmMusic = newSound('/audio/game/wooden_fish/1721013450', true, 0.3);
+
+// 函数
+// 函数
+// 函数
+// 函数
+// 函数
+
+// 初始化游戏数据
+function initGameData() {
+
+    const userData = readDataFromLocal(keyName_1_00);
+
+    if (userData === DEFAULT_VALUE_NULL) {
+
+        const data = {
+
+            [keyName_1_01]: 0,
+            [keyName_1_02]: getFormattedDateWithDash(),
+            [keyName_1_03]: 0,
+            [keyName_1_04]: varGameTitle.textContent,
+            [keyName_1_05]: '🥰 + 1, 😭 - 1',
+        }
+
+        writeDataToLocal(keyName_1_00, data);
+
+    } else if (readValueFromRecordInLocal(keyName_1_00, keyName_1_02) != getFormattedDateWithDash()) {
+
+        const updateData = readDataFromLocal(keyName_1_00);
+        
+        updateData[keyName_1_01] = 0;
+        updateData[keyName_1_02] = getFormattedDateWithDash();
+        updateData[keyName_1_03] = 0;
+
+        writeDataToLocal(keyName_1_00, updateData);
+
+    }
 }
 
-// Save game state to localStorage
-function saveGameState(state) {
-  writeToLocalStorage("game_wooden_fish", JSON.stringify(state));
+// 动画效果 -- 初始化
+function initAnimate() {
+
+    varCount.style.transform = "scale(1)";
+
+    woodenFishElement.style.transform = "scale(1)";
+}
+
+// 动画效果 -- 变化过程 -- 参数传递 -- 点击木鱼弹出的祈祷文 -- 每秒变化第一次
+function startAnimate(message) {
+
+    varCount.style.transform = "scale(1.2)";
+
+    woodenFishElement.style.transform = "scale(.95)";
+
+    const div = document.createElement("div");
+
+    div.classList.add("subtitleCountTip");
+
+    div.textContent = message;
+
+    centerElement.appendChild(div);
+
+    setTimeout(() => {
+
+        div.remove();
+
+    }, setIntervalPrayerMove * 1000);
+}
+
+// 返回用户的点击次数
+function returnClickCount() {
+
+    return readValueFromRecordInLocal(keyName_1_00, keyName_1_01);
+}
+
+// 返回用户上次执行过统计的点击次数
+function returnLastExecClickCount() {
+
+    return readValueFromRecordInLocal(keyName_1_00, keyName_1_03);
+}
+
+// 写入用户的点击次数到本地 -- 参数传递 -- 点击次数
+function writeClickCountToLocal(count) {
+
+    writeValueToRecordInLocal(keyName_1_00, keyName_1_01, count);
+}
+
+// 写入用户上次执行过统计的点击次数到本地 -- 参数传递 -- 点击次数
+function writeLastExecClickCountToLocal(count) {
+
+    writeValueToRecordInLocal(keyName_1_00, keyName_1_03, count);
+}
+
+// 更新用户输入标题到页面
+function updateGameTitleInPage() {
+
+    varGameTitle.textContent = readValueFromRecordInLocal(keyName_1_00, keyName_1_04);
+}
+
+// 更新用户的点击次数到页面
+function updateClickCountInPage() {
+
+    varCount.textContent = returnClickCount();
+}
+
+// 返回用户选择/输入的祈祷文
+function returnUserPrayer() {
+
+    return readValueFromRecordInLocal(keyName_1_00, keyName_1_05);
+}
+
+// 点击木鱼
+function counter(message) {
+
+    let clickCount = returnClickCount();
+
+    clickCount++;
+
+    bgmClick.play();
+
+    writeClickCountToLocal(clickCount);
+
+    updateClickCountInPage();
+
+    startAnimate(message);
+
+    bgmClick.stop();
+    
+    // -- 每满多少次点击给一个幸运值，并增加一次游戏次数；
+    if (clickCount % setNumberOfClickWhenBouns === 0 && clickCount > returnLastExecClickCount()) {
+
+        updateUserLuckyPointToLocal(setBonusLuckyPoint);
+
+        updateUserGameTimeToLocal(setBonusGameTime);
+
+        writeLastExecClickCountToLocal(clickCount);
+        
+    }
+}
+
+// 更新用户信息
+function updateUserInfo() {
+
+    const userData = readDataFromLocal(keyName_1_00);
+
+    if (userData) {
+
+        const gameTitle = readValueFromRecordInLocal(keyName_1_00, keyName_1_04);
+
+        updateClickCountInPage();
+
+        if (gameTitle) {
+
+            updateGameTitleInPage();
+        }
+    }
 }
 
 
-// Initialize game
-function initializeGame() {
-  let blessContent = "🥰 + 1, 😭 - 1";
-  const sound = new Howl({ src: ["/audio/game/wooden_fish/sound.mp3"] });
-  const bgm = new Howl({
-      src: ["/audio/game/wooden_fish/1721013450.mp3"],
-      html5: true,
-      loop: true,
-      volume: 0.3,
-  });
 
-  let ringId = 0;
-  let count = 0;
-  let autoClick = false;
-  let autoClickInterval = null;
-  let clickTimes = [];
-  let lastClickTime = new Date().getTime(); // Initialize the last click time
-  const speedDisplay = document.querySelector('.var-speed');
-  const countElement = document.querySelector(".count");
-  const woodenFishElement = document.querySelector(".woodenFish");
-  const centerElement = document.querySelector(".center");
 
-  const gameState = initializeGameState();
-  count = gameState.clickCount;
-  countElement.innerHTML = String(count);
+// 函数 -- end
+// 函数 -- end
+// 函数 -- end
+// 函数 -- end
+// 函数 -- end
 
-  function startAnimate(message) {
-      countElement.style.transform = "scale(1.2)";
-      woodenFishElement.style.transform = "scale(.95)";
-      const div = document.createElement("div");
-      div.classList.add("subtitleCountTip");
-      div.innerText = message;
-      centerElement.appendChild(div);
-      setTimeout(() => {
-          div.remove();
-      }, 1000);
-  }
 
-  function initAnimate() {
-      countElement.style.transform = "scale(1)";
-      woodenFishElement.style.transform = "scale(1)";
-  }
 
-  function counter(message = blessContent) {
-      count++;
-      countElement.innerHTML = String(count);
-      startAnimate(message);
-      if (ringId !== 0) {
-          if (sound.playing()) {
-              sound.stop(ringId);
-          }
-          sound.play(ringId);
-      } else {
-          ringId = sound.play();
-      }
 
-      gameState.clickCount = count;
-      
-      // Check if the click count is a multiple of 100 and update game state accordingly -- 每满100次点击给一个幸运值，并增加一次游戏次数；
-      if (count % 100 === 0 && count > gameState.lastExecutedCount) {
-          updateTotalLuckyPoint(1);
-          writeEventLogLuckyPoint('wooden fish click 100', 1);
-          updateGameTime(1);
-          writeEventLogGameTime('wooden fish', 1);
-          gameState.lastExecutedCount = count;
-      }
+// 进入页面按顺序执行
+// 进入页面按顺序执行
+// 进入页面按顺序执行
 
-      saveGameState(gameState);
+// 显示/隐藏页面提示 -- 初始化到本地 -- 默认显示 
+// 如果有值，就按照这个值来更新页面上的提示显示/隐藏 -- 包括：checkbox.checked
+initTipsVisibilityConfig(keyName_1_00, pageName);
+hideOrShowAllTipsInCurrentPage(keyName_1_00, pageName);
+checkbox.checked = readTipsVisibilityConfig(keyName_1_00, pageName);
 
-      // Record click time
-      const now = new Date().getTime();
-      lastClickTime = now; // Update the last click time
-      clickTimes.push(now);
 
-      // Maintain click times list length to 5
-      if (clickTimes.length > 5) {
-          clickTimes.shift();
-      }
+// 显示/隐藏页面提示 -- 用户选择的时候进行记录到本地并更新页面
+checkbox.addEventListener('change', () => {
+    const isVisible = checkbox.checked;
+    writeTipsVisibilityConfig(keyName_1_00, pageName, isVisible);
+    hideOrShowAllTipsInCurrentPage(keyName_1_00, pageName);
+});
 
-      // Calculate speed
-      if (clickTimes.length === 5) {
-          const duration = (clickTimes[4] - clickTimes[0]) / 1000; // Total time for 5 clicks in seconds
-          const clicksPerMinute = (4 / duration) * 60; // Clicks per minute
-          speedDisplay.innerHTML = clicksPerMinute.toFixed(0); // Update speed display
-      }
-  }
+// 初始化游戏数据
+initGameData();
 
-  // Update speed display every second
-  setInterval(() => {
-      const now = new Date().getTime();
-      const timeSinceLastClick = (now - lastClickTime) / 1000; // Time since last click in seconds
 
-      if (timeSinceLastClick > 5) {
-          speedDisplay.innerHTML = "0"; // Display 0 if more than 5 seconds since last click
-      } else if (clickTimes.length === 5) {
-          const duration = (clickTimes[4] - clickTimes[0]) / 1000; // Total time for 5 clicks in seconds
-          const clicksPerMinute = (4 / duration) * 60; // Clicks per minute
-          speedDisplay.innerHTML = clicksPerMinute.toFixed(0); // Update speed display
-      } else {
-          speedDisplay.innerHTML = "0"; // Display 0 if fewer than 5 clicks
-      }
-  }, 1000);
+// 更新页面信息
+updateUserInfo();
 
-  woodenFishElement.addEventListener("mouseover", () => {
-      woodenFishElement.style.cursor = "url('/image/game/wooden_fish/cursor.cur'), auto";
-  });
+clickSetDisplay(varGameTitle, popupFormEditGameTitle, displayTypes.flex);
 
-  woodenFishElement.addEventListener("mouseout", () => {
-      woodenFishElement.style.cursor = "auto";
-  });
+clickSetDisplay(varCount, popupFormEditPrayer, displayTypes.flex);
 
-  woodenFishElement.addEventListener("mouseup", () => {
-      counter();
-  });
+formEditGameTitle.addEventListener('submit', (event) => {
 
-  woodenFishElement.addEventListener("mousedown", () => {
-      setTimeout(initAnimate, 200);
-  });
+    event.preventDefault();
 
-  const autoCheckbox = document.querySelector('input[name="auto"]');
-  const bgmCheckbox = document.querySelector('input[name="bgm"]');
+    siteBgmSelect.play();
 
-  autoCheckbox.addEventListener("change", () => {
-      if (autoCheckbox.checked) {
-          autoClick = true;
-          // 开启自动敲击消耗0.5个幸运值；
-          updateTotalLuckyPoint(-0.5);
-          writeEventLogLuckyPoint('wooden fish auto click', -0.5);
-          autoClickInterval = setInterval(() => {
-              counter();
-              setTimeout(initAnimate, 200);
-          }, 1000);
-      } else {
-          autoClick = false;
-          clearInterval(autoClickInterval);
-      }
-  });
+    const gameTitleInput = document.querySelector('.game_title_input').value;
 
-  bgmCheckbox.addEventListener("change", () => {
-      if (bgmCheckbox.checked) {
-          if (bgm.state() !== "loaded") {
-              bgm.load();
-          }
-          bgm.play();
-      } else {
-          bgm.pause();
-      }
-  });
+    if (gameTitleInput) {
 
-  // Edit prayer
-  const popupFormPrayer = document.querySelector('.popup-form-prayer');
-  const prayerCustomizeInput = document.getElementById('prayer_customize_input');
-  const formPrayer = document.querySelector('.form-prayer');
+        writeValueToRecordInLocal(keyName_1_00, keyName_1_04, gameTitleInput);
 
-  clickDisplayFlex(countElement, popupFormPrayer);
+        updateGameTitleInPage();
+    } 
+    
+    formEditGameTitle.reset();
 
-  formPrayer.addEventListener('change', (event) => {
-      if (event.target.name === 'prayer') {
-          if (event.target.id === 'prayer_customize') {
-              prayerCustomizeInput.classList.remove('hide');
-          } else {
-              prayerCustomizeInput.classList.add('hide');
-          }
-      }
-  });
+    siteBgmSelect.stop();
 
-  formPrayer.addEventListener('submit', (event) => {
-      event.preventDefault();
-      const selectedPrayerElement = document.querySelector('input[name="prayer"]:checked');
-      let selectedPrayer = selectedPrayerElement.value;
-      blessContent = selectedPrayer;
-      if (selectedPrayer === 'prayer_customize') {
-          blessContent = prayerCustomizeInput.value;
-      }
-      hide(popupFormPrayer);
-  });
+});
 
-  formPrayer.addEventListener('reset', () => {
-      formPrayer.reset();
-      hide(popupFormPrayer);
-  });
+formEditGameTitle.addEventListener('reset', () => {
 
-  // Edit game title
-  const gameTitle = document.querySelector('.game-title .title');
-  const popupFormGameTitle = document.querySelector('.popup-form-game-title');
-  const formGameTitle = document.querySelector('.form-game-title');
+    formEditGameTitle.reset();
 
-  clickDisplayFlex(gameTitle, popupFormGameTitle);
+    setDisplay(popupFormEditGameTitle, displayTypes.none);
+});
 
-  formGameTitle.addEventListener('submit', (event) => {
-      event.preventDefault();
-      const gameTitleInput = document.querySelector('.game-title-input').value;
-      gameTitle.innerHTML = gameTitleInput;
-      hide(popupFormGameTitle);
-  });
 
-  formGameTitle.addEventListener('reset', () => {
-      formGameTitle.reset();
-      hide(popupFormGameTitle);
-  });
-}
+formEditPrayer.addEventListener('change', (event) => {
 
-// Initialize the game when the script is loaded
-initializeGame();
+    if (event.target.name === 'prayer') {
+
+        if (event.target.id === 'prayer_customize') {
+
+            prayerCustomizeInput.classList.remove('hide');
+
+        } else {
+
+            prayerCustomizeInput.classList.add('hide');
+        }
+    }
+});
+
+formEditPrayer.addEventListener('submit', (event) => {
+
+    event.preventDefault();
+
+    siteBgmSelect.play();
+
+    const selectedPrayer = document.querySelector('input[name="prayer"]:checked').value;
+
+    writeValueToRecordInLocal(keyName_1_00, keyName_1_05, selectedPrayer);
+
+    if (selectedPrayer === 'prayer_customize') {
+
+        writeValueToRecordInLocal(keyName_1_00, keyName_1_05, prayerCustomizeInput.value);
+    }
+    
+    formEditPrayer.reset();
+
+    siteBgmSelect.stop();
+
+});
+
+formEditPrayer.addEventListener('reset', () => {
+
+    formEditPrayer.reset();
+
+    setDisplay(popupFormEditPrayer, displayTypes.none);
+});
+
+autoCheckbox.addEventListener("change", () => {
+
+    if (autoCheckbox.checked) {
+
+        autoClick = true;
+
+        autoClickInterval = setInterval(() => {
+
+            counter(returnUserPrayer());
+
+            setTimeout(initAnimate, setIntervalAnimation * 1000);
+
+        }, setIntervalAutoClick * 1000);
+
+    } else {
+
+        autoClick = false;
+
+        clearInterval(autoClickInterval);
+    }
+});
+
+bgmCheckbox.addEventListener("change", () => {
+
+    if (bgmCheckbox.checked) {
+
+        if (bgmMusic.state() !== "loaded") {
+
+            bgmMusic.load();
+        }
+
+        bgmMusic.play();
+
+    } else {
+
+        bgmMusic.pause();
+    }
+});
+
+// 鼠标悬停和离开使用CSS效果来实现
+woodenFishElement.style.cursor = "url('/image/game/wooden_fish/cursor.cur'), auto";
+
+woodenFishElement.addEventListener("mousedown", () => {
+    initAnimate();
+});
+
+woodenFishElement.addEventListener("click", () => {
+    counter(returnUserPrayer());
+    setTimeout(initAnimate, setIntervalAnimation * 1000);
+});
+
+
+
+
+// 进入页面按顺序执行 -- end
+// 进入页面按顺序执行 -- end
+// 进入页面按顺序执行 -- end

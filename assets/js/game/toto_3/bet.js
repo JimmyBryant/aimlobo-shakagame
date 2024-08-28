@@ -84,7 +84,7 @@ function showPopupGoToPageBonus() {
 
     if (!pageBetTipGoToBonus && userBetOrNot && roundStatus === statusClose) {
 
-        displayFlex(popupGoToPageBonus);
+        setDisplay(popupGoToPageBonus, displayTypes.flex);
 
         writeValueToIndexRecordInLocal(keyName_1_00, 0, keyName_1_19, true);
 
@@ -112,13 +112,13 @@ formBet.addEventListener("submit", (event) => {
     if (currentUserBetNumberInPageBet >= winningNumberLowest && currentUserBetNumberInPageBet <= winningNumberHighest) {
 
         const betCost = singleBetCost * currentUserBetMultipleInPageBet;
-        const totalLuckyPoint = parseInt(readFromLocalStorage('total_lucky_point'));
+        const userLuckyPoint = parseInt(readValueFromRecordInLocal(keyName_0_01, keyName_0_01_01));
 
         // 积分不足
-        if (betCost > totalLuckyPoint) {
+        if (betCost > userLuckyPoint) {
 
-            const notEnoughLuckyPoint = document.querySelector('.not_enough_lucky_point');
-            notEnoughLuckyPoint.click();
+            clickNotEnoughLuckyPoint();
+
             formBet.reset();
 
         } else {
@@ -128,24 +128,19 @@ formBet.addEventListener("submit", (event) => {
 
             if (roundStatus === statusOpen) {
 
-                bgmSelect.play();
+                siteBgmSelect.play();
 
-                // 本地扣除积分, 写入事件, 更新扣减后的积分到页面 ;
-                updateTotalLuckyPoint(-betCost);
+                // 本地扣除积分, 更新扣减后的积分到页面 ;
+                updateUserLuckyPointToLocal(-betCost);
 
-                const logName = `${keyName_1_00} cost`;
-
-                writeEventLogLuckyPoint(logName, -betCost);
-
-                updatePageTotalLuckyPoint();
+                updateUserLuckyPointInPage();
 
                 if (readValueFromIndexRecordInLocal(keyName_1_00, 0, keyName_1_14) === false) {
                     
-                    // 更新本地记录 -- 游戏次数， 游戏记录；
+                    // 更新本地记录 -- 游戏次数；
                     // 参与一轮算一次游戏次数；
-                    // 判断方法就是：读取用户本轮是否参与,如果是false（默认值）,那么就增加一次;
-                    updateGameTime(1);
-                    writeEventLogGameTime(keyName_1_00, 1);
+                    // 判断方法就是：读取用户本轮是否参与,如果是false（默认值）,那么就增加一次 -- 后期更新为true就不触发了;
+                    updateUserGameTimeToLocal(1);
 
                     // 更新本地记录 -- 用户本轮已经参与下注，本轮参与玩家 + 1
                     updateRoundBetUserBetStatusAndTotalPlayerNumberInLocal();
@@ -176,17 +171,19 @@ formBet.addEventListener("submit", (event) => {
                 popupUserBetInfo.querySelector('.var_current_user_bet_amount').textContent = betCost;
 
                 // 显示popup 用户本次下注信息
-                displayFlex(popupUserBetInfo);
+                setDisplay(popupUserBetInfo, displayTypes.flex);
 
                 formBet.reset();
 
-                bgmSelect.stop();
+                siteBgmSelect.stop();
 
             } else {
 
                 // 提示封盘，不可下注
                 const betStop = document.querySelector('.bet_stop');
+
                 betStop.click();
+                
                 formBet.reset();
 
             }   
@@ -195,34 +192,50 @@ formBet.addEventListener("submit", (event) => {
 });
 
 formBet.addEventListener('reset', () => {
-    bgmSelect.play();
+
+    siteBgmSelect.play();
+
     formBet.reset();
-    bgmSelect.stop();
+
+    siteBgmSelect.stop();
 });
 
 // 点击 popup_user_bet_info 的 btn_get_it
 popupUserBetInfoBtnGetIt.addEventListener('click', (event) => {
-    hide(popupUserBetInfo);
+
+    setDisplay(popupUserBetInfo, displayTypes.none);
+
     event.stopPropagation(); // 阻止事件冒泡
 }); 
 
 // 点击 popup_go_to_page_bonus 的 btn_get_it
 popupGoToPageBonusBtnGetIt.addEventListener('click', (event) => {
-    hide(popupGoToPageBonus);
+
+    setDisplay(popupGoToPageBonus, displayTypes.none);
+
     event.stopPropagation(); // 阻止事件冒泡
 }); 
 
 
-// 更新用户的配置：显示还是隐藏所有提示 -- 并进行更新
-checkbox.addEventListener('change', function() {
-    updatePageConfigToLocalHideOrShowAllTipsInCurrentPage(pageName);
-    updatePageConfigInPageHideOrShowAllTipsInCurrentPage(pageName);
+
+// 进入页面按顺序执行
+// 进入页面按顺序执行
+// 进入页面按顺序执行
+
+// 显示/隐藏页面提示 -- 初始化到本地 -- 默认显示 
+// 如果有值，就按照这个值来更新页面上的提示显示/隐藏 -- 包括：checkbox.checked
+initTipsVisibilityConfig(keyName_1_00, pageName);
+hideOrShowAllTipsInCurrentPage(keyName_1_00, pageName);
+checkbox.checked = readTipsVisibilityConfig(keyName_1_00, pageName);
+
+
+// 显示/隐藏页面提示 -- 用户选择的时候进行记录到本地并更新页面
+checkbox.addEventListener('change', () => {
+    const isVisible = checkbox.checked;
+    writeTipsVisibilityConfig(keyName_1_00, pageName, isVisible);
+    hideOrShowAllTipsInCurrentPage(keyName_1_00, pageName);
 });
 
-
- 
-
-// 进入页面先做这些：
 
 // 页面更新 -- 更新页面上的轮次号码
 updatePageRoundBetNumber();
@@ -233,18 +246,11 @@ updatePageRoundBetStatus();
 // 页面更新 -- 更新页面上的下一轮轮更新倒计时
 updatePageRoundCountDown();
 
-// 页面更新 -- 更新页面上的可用积分，
-updatePageTotalLuckyPoint(); 
 
 // 页面更新 -- 更新页面上的投注记录
 updatePageRoundBetUserBetrecords();
 
-// 弹窗提示 -- 可点击关闭
-aimloboClickHideInPageTips(); 
 
-// 初始化用户的配置：显示还是隐藏所有提示
-initPageConfigValueToLocalHideOrShowAllTipsInCurrentPage(pageName);
-updatePageConfigInPageHideOrShowAllTipsInCurrentPage(pageName);
 
 /*
 按照频次更新：
@@ -277,7 +283,9 @@ executeEvery(intervalTimeToUpdateAllRound(), updateRoundRecordInLocal, updatePag
 executeEvery(1, updatePageRoundCountDown);
 
 
-
+// 进入页面按顺序执行 -- end
+// 进入页面按顺序执行 -- end
+// 进入页面按顺序执行 -- end
 
 
 

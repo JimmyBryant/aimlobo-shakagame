@@ -1,0 +1,73 @@
+{{- /* 游戏，赛马 */ -}}
+{{- define "main" -}}
+{{- $lang := .Lang -}}
+{{- $dataLang := index .Site.Data.game $lang -}}
+{{- $games := $dataLang.game_lists -}}
+{{- $horseRacing := where $games "id" "horse_racing" -}}
+{{- $tips := (index $horseRacing 0).tips -}}
+{{- $horses := (index $horseRacing 0).horses -}}
+
+
+<div class="wrap">
+
+    <div class="game_horse_home">
+
+        {{- /* 游戏介绍，第一个页面 */ -}}
+        <div class="game_intro padding-tb-1rem flex flex-column gap-1rem align-items-center border-radius-_5rem">
+
+            {{- /* 游戏标题 */ -}}
+            <div class="game_title flex align-items-center gap-_5rem padding-tb-1rem">
+                <div class="title font-size-2">{{ T "horse_racing" }}</div>
+
+                <div class="tips_icon">
+                    <span class="font-size-1_5 cursor-pointer">👀</span>
+                    {{ partial "tools/popup_tips.html" (dict "tipsContent" $tips) }}
+                </div>
+            </div>
+
+            {{- /* 下注：马的信息，选择几号马；下注金额 */ -}}
+            {{- /* 马的信息，选择几号马 */ -}}
+            <form class="form_horse_select width-100">
+                <div class="header padding-1rem text-center font-size-1_5">
+                    {{- T "select_horse" -}}
+                </div>
+
+                <div class="body horses flex gap-1rem align-items-center padding-tb-1rem">
+                    {{ range $index, $horse := $horses }}
+                    <label for="horse_{{ add $index 1 }}"
+                        class="flex flex-column gap-1rem align-items-center shadow-box border-radius-_5rem padding-_5rem">
+                        <p class="font-size-1_2">{{ add $index 1 }}</p>
+                        <div class="info_icon_btn cursor-pointer overflow-hidden border-radius-_5rem">
+                            {{- $path := $horse.img -}}
+                            {{- $alt := $horse.name -}}
+                            {{ partial "tools/img-res.html" (dict "class" "horse_img" "imagePath" $path "alt" $alt
+                            "imageWidth" 32) }}
+                            {{ partial "tools/popup_info_btn.html" (dict "infoContent" $horse.description) }}
+                        </div>
+
+                        <input type="radio" id="horse_{{ add $index 1 }}" name="select_horse"
+                            value="{{ add $index 1 }}" required />
+
+                    </label>
+                    {{ end }}
+                </div>
+
+                <div class="footer flex gap-1rem align-items-center justify-content-center margin-tb-1rem">
+
+                    <button class="btn btn_reset" type="reset">{{ T "cancel" }}</button>
+
+                    <button class="btn btn_submit" type="submit">{{ T "submit" }}</button>
+                    
+                </div>
+
+            </form>
+
+            
+
+        </div>
+
+        
+
+    </div>
+
+    {{- end -}}

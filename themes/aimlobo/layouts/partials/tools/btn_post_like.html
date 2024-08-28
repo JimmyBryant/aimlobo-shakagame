@@ -1,0 +1,41 @@
+{{- /* 点赞 , 在js里写了超过1分钟才能另算积分 */}}
+{{- /* partial "tools/btn_post_like.html" */}}
+
+
+<div class="btn_post_like cursor-pointer tips_icon">
+
+  <div class="title font-size-1_2 color-white text-center">{{ "❤️ + 1" }}</div>
+
+  <div class="popup_tips popup_box">
+
+    <div class="popup_box_content">
+      
+      <div class="header">
+        <span class="icon">💡</span>{{- T "tips" -}}
+      </div>
+      
+      <div class="body">
+  
+        <div class="content">
+            <p>
+
+              {{ T "post_like_content" }}
+
+              <span class="var_bonus_lucky_point_click_btn_post_like"></span>
+
+              &nbsp;(<span class="var_interval_click_btn_post_like"></span><span class="var_i18n_time_second"></span>)&nbsp;
+      
+            </p>
+        </div>
+          
+      </div>
+  
+      <div class="footer">
+        <button class="btn btn_get_it">{{ T "get_it" }}</button>
+      </div>
+
+    </div>
+  </div>
+
+
+</div>

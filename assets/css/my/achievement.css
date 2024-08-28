@@ -1,0 +1,37 @@
+/* page: my - achievemtn */
+
+.body {
+
+}
+
+
+.var_achievement_user_lucky_point,
+.var_achievement_user_level,
+.var_achievement_user_game_time,
+.var_achievement_user_read_time {
+
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 1rem;
+}
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 48rem) {
+
+    .var_achievement_user_lucky_point,
+    .var_achievement_user_level,
+    .var_achievement_user_game_time,
+    .var_achievement_user_read_time {
+
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+}

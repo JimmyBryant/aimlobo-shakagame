@@ -1,0 +1,52 @@
+/* page: rank, body - pc */
+
+/* rank 1，2，3 添加背景色 */
+
+.rank_item_1 {
+    background: linear-gradient(135deg, #f9f513, #f3f303, #edeb9b);
+    background-size: 400% 400%;
+    animation: gradientAnimation 5s ease infinite;
+}
+.rank_item_2 {
+    background: linear-gradient(135deg, #c0c0c0, #dcdcdc, #e0e0e0);
+    background-size: 400% 400%;
+    animation: gradientAnimation 5s ease infinite;
+}
+.rank_item_3 {
+    background: linear-gradient(135deg, #f3bf8b, #d9a16d, #d6bd71);
+    background-size: 400% 400%;
+    animation: gradientAnimation 5s ease infinite;
+}
+
+
+
+/* 渐变动画 */
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* 用户信息卡 */
+.user_info_card_user_name, .user_info_card_user_description {
+    max-width: 16rem;
+    overflow: auto;
+}
+
+
+
+
+/* page: rank, body - pc - end */
+
+
+/* page: rank, body - mobile */
+@media screen and (max-width: 48rem) {
+
+    /* 用户信息卡 */
+    .user_info_card_user_name, .user_info_card_user_description {
+        max-width: 8rem;
+        overflow: auto;
+    }
+    
+
+}

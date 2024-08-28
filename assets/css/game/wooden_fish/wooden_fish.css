@@ -3,6 +3,8 @@ body {
 
 }
 
+
+
 .logo-lang a,
 .menu-icon {
     color: white;
@@ -17,6 +19,10 @@ body {
     color: white;
 }
 
+.in_page_tips {
+
+    color: black;
+}
 
 .game-title,
 .game-control {

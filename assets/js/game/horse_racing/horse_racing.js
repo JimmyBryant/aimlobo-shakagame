@@ -32,63 +32,7 @@ let totalBetAmount = 0;
 let userBetInfo = {};
 let boostCount = 0; // 助力计数器
 
-// 初始化音乐
-// 选择音效-- 有效
-const bgmSelect = new Howl({
-    src: ["/audio/game/horse_racing/select-sound-121244.mp3"],
-    html5: true,
-    loop: false,
-    volume: 0.4,
-});
 
-// 选择音效-- 无效
-const bgmInvalid = new Howl({
-    src: ["/audio/game/horse_racing/90s-game-ui-5-185098.mp3"],
-    html5: true,
-    loop: false,
-    volume: 0.4,
-});
-
-// 游戏开始倒计时
-const bgmCountDown = new Howl({
-    src: ["/audio/game/horse_racing/race-start-beeps-125125.mp3"],
-    html5: true,
-    loop: false,
-    volume: 0.3,
-});
-
-// 游戏中
-const bgmGame = new Howl({
-    src: ["/audio/game/horse_racing/bgm_game.mp3"],
-    html5: true,
-    loop: false,
-    volume: 0.3,
-});
-
-// 游戏胜利
-const bgmWin = new Howl({
-    src: ["/audio/game/horse_racing/winning-218995.mp3"],
-    html5: true,
-    loop: false,
-    volume: 0.3,
-});
-
-// 游戏失败
-const bgmLose = new Howl({
-    src: ["/audio/game/horse_racing/negative_beeps-6008.mp3"],
-    html5: true,
-    loop: false,
-    volume: 0.3,
-});
-
-
-function bgmInvalidPlayOneSecond() {
-    bgmInvalid.play();
-    // 一秒以后关闭
-    setTimeout(() => {
-        bgmInvalid.stop();
-    }, 1000);
-}
 
 // 第一个页面，选择马匹
 formHorseSelect.addEventListener("submit", (event) => {
@@ -122,10 +66,11 @@ formBetAmount.addEventListener("submit", (event) => {
 
         // 查看用户的幸运值够不够玩的，不够的话就弹出提示，重置游戏
         if (userBetAmount > parseInt(readFromLocalStorage('total_lucky_point'))) {
+            bgmInvalid.play();
             const notEnoughLuckyPoint = document.querySelector('.not_enough_lucky_point');
             notEnoughLuckyPoint.click();
             formBetAmount.reset();
-            bgmInvalidPlayOneSecond();
+            bgmInvalid.();
 
         } else {
             

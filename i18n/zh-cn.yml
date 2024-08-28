@@ -37,6 +37,9 @@
 - id: secret
   translation: "树洞"
 
+- id: lang
+  translation: "语言"
+
 # footer
 
 - id: about
@@ -68,6 +71,12 @@
 
 - id: summary
   translation: "概述"
+
+- id: more
+  translation: "更多"
+
+- id: back_to_page_top
+  translation: "返回页面顶部"
 
 # other
 - id: tips
@@ -286,14 +295,26 @@
 - id: submit
   translation: "确认"
 
-- id: add_god
-  translation: "添加神明"
+- id: select_god
+  translation: "选择神明"
 
-- id: add_offerings
-  translation: "添加供品"
+- id: select_offerings
+  translation: "选择贡品"
 
-- id: add_incense
-  translation: "添加香火"
+- id: select_incense
+  translation: "选择香火"
+
+- id: end_worship
+  translation: "崇拜完成"
+
+- id: base_bonus
+  translation: "基础奖励"
+
+- id: bubble_count
+  translation: "幸运气球点击数量"
+
+- id: total_bonus
+  translation: "合计奖励"
 
 - id: start_worship
   translation: "开始崇拜"
@@ -378,8 +399,20 @@
 - id: your_birthday
   translation: "出生日期"
 
+- id: your_gender
+  translation: "你的性别"
+
+- id: gender_male
+  translation: "男"
+
+- id: gender_female
+  translation: "女"
+
 - id: check_in_today
   translation: "今日签到"
+
+- id: check_in_success
+  translation: "签到成功"
 
 - id: lucky_point
   translation: "幸运值"
@@ -410,6 +443,9 @@
 - id: user_info
   translation: "用户信息"
 
+- id: last_rank_info
+  translation: "上次排名情况"
+
 
 # page topic - list
 - id: posted_at
@@ -433,8 +469,14 @@
 - id: share
   translation: "分享"
 
-- id: share_this_site
-  translation: "分享本网站"
+- id: share_site
+  translation: "分享网站"
+
+- id: share_site_content
+  translation: "复制成功，快去和你的朋友分享本网站吧 🧧 + "
+
+- id: post_like_content
+  translation: "感谢点赞 🧧 + "
 
 - id: prev_page
   translation: "上一页"
@@ -548,8 +590,11 @@
 - id: you_lost
   translation: "你输了"
 
-- id: wining_horse_is
+- id: winning_horse_is
   translation: "赢了的马是"
+
+- id: total_win_player_bet_amount
+  translation: "赢家下注总额"
 
 - id: once_again
   translation: "再来一次"

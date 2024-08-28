@@ -76,7 +76,8 @@
 
 
   /* link */
-  --link-color: var(--color-01-01);
+  /* --link-color: var(--color-01-01); */
+  --link-color: #08c;
   --link-hover-color: orange;
   --link-visited-color: var(--color-03-05);
 
@@ -253,6 +254,10 @@
 
 .border-round {
   border-radius: 50%;
+}
+
+.border-bottom-_1rem {
+  border-bottom: 0.1rem solid black;
 }
 
 /* border - end */
@@ -462,6 +467,14 @@
 
 .width-50 {
   width: 50%;
+}
+
+.width-20 {
+  width: 20%;
+}
+
+.width-40 {
+  width: 40%;
 }
 
 .width-100vw {
@@ -1124,14 +1137,21 @@ hr {
   font-size: 1.2rem;
 }
 
+.btn:hover {
+  /* filter: brightness(115%); */
+  background: #37b17c;
+}
+
 .btn:disabled {
   background-color: grey;
   cursor: not-allowed;
 }
 
-.btn:hover {
-  filter: brightness(115%);
+.btn:disabled:hover {
+  background-color: grey;
 }
+
+
 
 .btn_no_hover {
   color: white;
@@ -1166,48 +1186,36 @@ hr {
   background: #9DB2BF;
 }
 
-/* 分享按钮 */
-.btn_share, .btn_share_style {
+/* 
+分享按钮,
+阅读次数 +1,
+文章点赞 +1
+ */
+.btn_share,
+.btn_share_style,
+.btn_read_plus,
+.btn_post_like {
+
   background: #39c5bb;
-  padding: 0.5rem 2rem;
-  border-radius: 1.5rem;
+  padding: 0.75rem 2rem;
+  border-radius: 0.5rem;
   transition: background .5s ease-out;
 }
 
-.btn_share_site {
-  padding: 0.5rem 1rem;
+.btn_read_plus,
+.btn_post_like {
+
+  border-radius: 2rem;
 }
 
+.btn_share:hover,
+.btn_share_style:hover,
+.btn_post_like:hover,
+.btn_read_plus:hover {
 
-
-.btn_share:hover, .btn_share_style:hover {
   background: #23a6d5;
 }
 
-/* 点赞按钮 */
-.btn_like {
-  background: #39c5bb;
-  padding: 0.5rem 2rem;
-  border-radius: 1.5rem;
-  transition: background .5s ease-out;
-}
-
-.btn_like:hover {
-  background: #23a6d5;
-}
-
-
-/* 阅读次数+1 */
-.btn_read_plus_one {
-  background: #39c5bb;
-  padding: 0.5rem 1rem;
-  border-radius: 1.5rem;
-  transition: background .5s ease-out;
-}
-
-.btn_read_plus_one:hover {
-  background: #23a6d5;
-}
 
 
 /* 游戏 */
@@ -1224,12 +1232,14 @@ hr {
   box-shadow: inset -0.25rem -0.25rem 0.6rem rgba(255, 255, 255, 0.7), inset 0.25rem 0.25rem 1rem rgba(0, 0, 0, 0.3), 0.25rem 0.25rem 1rem rgba(0, 0, 0, 0.3);
   transition: all 0.2s ease;
   cursor: pointer;
+  border: none;
 }
 
 .btn_game:hover {
   box-shadow: inset -0.2rem -0.2rem 0.3rem rgba(255, 255, 255, 0.6),
     inset 0.2rem 0.2rem 0.3rem rgba(0, 0, 0, 0.2),
     0.2rem 0.2rem 0.3rem rgba(0, 0, 0, 0.2);
+  color: white;
 }
 
 .btn_game_blue {
@@ -2047,7 +2057,8 @@ footer {
   
 }
 
-#backToTopBtn {
+#backToTopBtn,
+#btnBackToTop {
   display: none; /* 默认隐藏 */
   position: fixed; /* 固定位置 */
   bottom: 20px; /* 距离底部20px */
@@ -2064,7 +2075,8 @@ footer {
   opacity: 0.5;
 }
 
-#backToTopBtn:hover {
+#backToTopBtn:hover,
+#btnBackToTop:hover {
   opacity: 1;
 }
 
@@ -2194,113 +2206,6 @@ footer {
 
 /* 全网站的主体css - pc - end  */
 
-/* rank : 这里单独添加是因为rank.css的内容不起作用 */
-.rank_item_1 {
-  background: linear-gradient(135deg, #f9f513, #f3f303, #edeb9b);
-  background-size: 400% 400%;
-  animation: gradientAnimation 5s ease infinite;
-}
-/* rank - end */
-
-/* digital-clock */
-.digital-clock {
-
-  max-width: 100%;
-    position: relative;
-    color: #fff;
-    background: #2e2e44;
-    padding: 0.6rem;
-    /* box-shadow: 0 0.3rem 1.5rem rgba(14, 21, 37, 0.8); */
-    border-radius: 0.5rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    transition: transform 0.3s ease;
-
-  .hours,
-  .dots,
-  .minutes {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0 0.4rem;
-    line-height: 1.5;
-  }
-
-  .hours,
-  .minutes {
-    font-size: 3.5rem;
-  }
-
-  .dots {
-    font-size: 3rem;
-    color: #929292;
-    padding: 0 0.2rem;
-  }
-
-  .hours {
-    background: -webkit-linear-gradient(90deg, #634dff, #5fd4ff);
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-
-
-  .minutes {
-    background: -webkit-linear-gradient(90deg, #ff5e9e, #ffb960);
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-
-  .right-side {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    /* margin-left: 10px; */
-  }
-
-
-  .period,
-  .seconds {
-    font-size: 1rem;
-    line-height: 1.5;
-  }
-
-  .period {
-    /* transform: translateY(-20px); */
-    background: -webkit-linear-gradient(90deg, #f7b63f, #faf879);
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-
-
-  .seconds {
-    /* transform: translateY(16px); */
-    background: -webkit-linear-gradient(90deg, #24ff6d, #2f93f1);
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-
-  .calender {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.3rem;
-    /* font-weight: 500; */
-    margin-bottom: 5px;
-    background: -webkit-linear-gradient(90deg, #ae4af6, #ff98d1);
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-
-  .day-name {
-    margin-left: 0.5rem;
-  }
-
-}
-
-/* digital-clock  -- end */
 
 
 /* 全网站的主体css - mobile (48rem) */
@@ -2527,7 +2432,7 @@ footer {
 /* page home -- end */
 
 
-}
+
 
 
 

@@ -1,0 +1,60 @@
+{{- /* 游戏，赛马 */ -}}
+{{- define "main" -}}
+{{- $lang := .Lang -}}
+{{- $dataLang := index .Site.Data.game $lang -}}
+{{- $games := $dataLang.game_lists -}}
+{{- $horseRacing := where $games "id" "horse_racing" -}}
+{{- $tips := (index $horseRacing 0).tips -}}
+{{- $horses := (index $horseRacing 0).horses -}}
+{{- $tipsMissData := (index $horseRacing 0).tips_miss_data -}}
+
+<div class="wrap">
+
+    <div class="game_horse_racing">
+
+        
+
+        {{- /* 游戏进行中， gaming */ -}}
+        <div class="game_playing flex flex-column gap-1rem align-items-center">
+            
+            <div class="text-center">
+
+                <div class="count_down font-size-1_5 flex gap-_5rem align-items-center">
+                    <div>{{ T "racing" }}&nbsp;</div>
+                    <div class="count_down_circle flex gap-_5rem align-items-center">
+
+                        <div class="count_down_circle_item count_down_circle_item_3">🔴</div>
+                        <div class="count_down_circle_item count_down_circle_item_2">🟡</div>
+                        <div class="count_down_circle_item count_down_circle_item_1">🟢</div>
+                        <div class="count_down_circle_item count_down_circle_item_0"></div>
+                    </div>
+                    
+                </div>
+
+            </div>
+
+            <div class="current_user_bet_horse flex gap-1rem align-items-center">
+                <div class="font-size-1_2">{{ T "the_horse_you_bet" }}</div>
+                <div class="var_current_user_bet_horse horse_color border-round padding-_5rem text-center font-weight-600"></div>
+            </div>
+
+            
+            <div class="track flex flex-column gap-_5rem align-items-start">
+                {{ range $index, $horse := $horses }}
+                <div class="lane flex align-items-center" data-lane="{{ add $index 1 }}">
+                    <div class="horse_in_lane width-fit-content">
+                        <img src="/image/game/horse_racing/horse.gif" class="horse_img_in_lane horse_color_{{ add $index 1 }}">
+                    </div>
+                </div>
+                {{ end }}
+            </div>
+
+            <button id="boostButton" class="btn_boost btn_game btn_game_purple">{{ "Jia" }}</button>
+        </div>
+
+        {{- partial "game/horse_racing/popup_miss_data.html" (dict "tipsContent" $tipsMissData) }}
+        
+
+    </div>
+
+    {{- end -}}

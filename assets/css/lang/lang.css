@@ -1,0 +1,15 @@
+body {
+
+}
+
+.lang_img img {
+    width: 10rem;
+}
+
+@media screen and (max-width: 48rem) {
+
+    .lang_list {
+        
+        flex-direction: column;
+    }
+}

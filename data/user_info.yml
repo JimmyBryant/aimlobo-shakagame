@@ -36,11 +36,17 @@ user_avatar_emoji:
     content: 🧸
     weight: 120
 
+user_input_birthday_gender:
+  in_page_tips_content:
+      en: Correctly filling in your information allows for more accurate website services. **Your data will only be stored locally; we will not collect your data.**
+      zh-cn: 正确填写信息可以获得更精准的网站服务，**你的数据只会存储在本地，我们不会收集你的数据**。
+      zh-tw: 正確填寫信息可以獲得更精準的網站服務，**你的數據只會存儲在本地，我們不會收集你的數據**。
+
 user_lucky_point:
   tips:
     en:
       - title: What is lucky point
-        content: Lucky points(🧧) represent the lucky points you get on this website **aimlobo.com**. Lucky points can be used for consumption, and of course they can also be earned. You'll find it used in many places, so enjoy it.
+        content: Lucky points(🧧) represent the lucky points you get on this website **shakagame.com**. Lucky points can be used for consumption, and of course they can also be earned. You'll find it used in many places, so enjoy it.
         weight: 10
       - title: How to use or earn lucky point
         content: |
@@ -57,7 +63,7 @@ user_lucky_point:
         weight: 20
     zh-cn:
       - title: 什么是幸运值
-        content: 幸运值(🧧)表示您在本网站**aimlobo.com**所获得的幸运积分，幸运值可以用来消费，当然也可以赚取。你会发现很多地方都会用到它，尽情享受吧。
+        content: 幸运值(🧧)表示您在本网站**shakagame.com**所获得的幸运积分，幸运值可以用来消费，当然也可以赚取。你会发现很多地方都会用到它，尽情享受吧。
         weight: 10
       - title: 如何使用幸运值
         content: |
@@ -74,7 +80,7 @@ user_lucky_point:
         weight: 20
     zh-tw:
       - title: 什麽是幸運值
-        content: 幸運值(🧧)表示您在本網站**aimlobo.com**所獲得的幸運積分，幸運值可以用來消費，當然也可以賺取。你會發現很多地方都會用到它，盡情享受吧。
+        content: 幸運值(🧧)表示您在本網站**shakagame.com**所獲得的幸運積分，幸運值可以用來消費，當然也可以賺取。你會發現很多地方都會用到它，盡情享受吧。
         weight: 10
       - title: 如何使用幸運值
         content: |
@@ -94,17 +100,46 @@ user_level:
   tips:
     en:
       - title: level
-        content: Level (🎢) indicates your user level on this website **aimlobo.com**. Higher level mean more benefits, unlock more achievements, Enjoy exploring.
+        content: Level (🎢) indicates your user level on this website **shakagame.com**. Higher level mean more benefits, unlock more achievements, Enjoy exploring.
         weight: 10
     zh-cn:
       - title: 等级
-        content: 等级(🎢)表示您在本网站**aimlobo.com**的用户等级，更高等级意味着更多福利，解锁更多成就，请尽情探索。
+        content: 等级(🎢)表示您在本网站**shakagame.com**的用户等级，更高等级意味着更多福利，解锁更多成就，请尽情探索。
         weight: 10
     zh-tw:
       - title: 等級
-        content: 等級(🎢)表示您在本網站**aimlobo.com**的用戶等級，更高等級意味著更多福利，解鎖更多成就，請盡情探索。
+        content: 等級(🎢)表示您在本網站**shakagame.com**的用戶等級，更高等級意味著更多福利，解鎖更多成就，請盡情探索。
         weight: 10
 
+user_game_time:
+  tips:
+    en:
+      - title: Game time
+        content: Game time (🎮) represents the number of times you've enjoyed playing games on **shakagame.com**. More game time means more rewards and unlocking more achievements. Dive in and explore!
+        weight: 10
+    zh-cn:
+      - title: 游戏次数
+        content: 游戏次数(🎮)表示您在本网站**shakagame.com**畅玩游戏的次数，更多游戏次数意味着更多福利，解锁更多成就，请尽情探索。
+        weight: 10
+    zh-tw:
+      - title: 遊戲次數
+        content: 遊戲次數(🎮)表示您在本網站**shakagame.com**暢玩遊戲的次數，更多遊戲次數意味著更多福利，解鎖更多成就，請盡情探索。
+        weight: 10
+
+user_read_time:
+  tips:
+    en:
+      - title: Read time
+        content: Read time (📖) represents the number of times you've reading posts on **shakagame.com**. More read time means more rewards and unlocking more achievements. Dive in and explore!
+        weight: 10
+    zh-cn:
+      - title: 阅读次数
+        content: 阅读次数(📖)表示您在本网站**shakagame.com**阅读文章的次数，更多阅读次数意味着更多福利，解锁更多成就，请尽情探索。
+        weight: 10
+    zh-tw:
+      - title: 閱讀次數
+        content: 閱讀次數(📖)表示您在本網站**shakagame.com**閱讀文章的次數，更多閱讀次數意味著更多福利，解鎖更多成就，請盡情探索。
+        weight: 10
 
 user_achievement:
   lucky_point:
@@ -229,31 +264,31 @@ user_achievement:
     - id: 200
       content: 🛻
       weight: 70
-    - id: 300
+    - id: 500
       content: 🚗
       weight: 80
-    - id: 400
+    - id: 1000
       content: 🏎️
       weight: 90
-    - id: 500
+    - id: 2000
       content: 🚆
       weight: 100
-    - id: 600
+    - id: 5000
       content: 🚅
       weight: 110
-    - id: 700
+    - id: 10000
       content: 🚁
       weight: 120
-    - id: 800
+    - id: 20000
       content: ✈️
       weight: 130
-    - id: 900
+    - id: 50000
       content: 🛰️
       weight: 140
-    - id: 1000
+    - id: 100000
       content: 🚀
       weight: 150
-    - id: 1500
+    - id: 500000
       content: 🛸
       weight: 160
 
@@ -279,42 +314,87 @@ user_achievement:
     - id: 200
       content: 🌴
       weight: 70
-    - id: 300
+    - id: 500
       content: 🌲
       weight: 80
-    - id: 400
+    - id: 1000
       content: 🌳
       weight: 90
-    - id: 500
+    - id: 2000
       content: 🌸
       weight: 100
-    - id: 600
+    - id: 5000
       content: 💐
       weight: 110
-    - id: 700
+    - id: 10000
       content: 🌼
       weight: 120
-    - id: 800
+    - id: 20000
       content: 🌻
       weight: 130
-    - id: 900
+    - id: 50000
       content: 🌺
       weight: 140
-    - id: 1000
+    - id: 100000
       content: 🌷
       weight: 150
-    - id: 1500
+    - id: 500000
       content: 🌹
       weight: 160
 
-user_check_in_tips:
-  en: 🎢 +1, 🧧 +10, continue and enjoy.
-  zh-cn: 🎢 +1, 🧧 +10, 继续保持。
-  zh-tw: 🎢 +1, 🧧 +10, 繼續保持。
+  in_page_tips_content:
+    en: Colored icons indicate that you have achieved this milestone, while gray icons show those you have yet to accomplish. Keep pushing to achieve more!
+    zh-cn: 彩色的图标表示你目前已经达成该成就，灰色的图标表示你还没达成，加油去达成更多的成就吧！
+    zh-tw: 彩色的圖標表示你目前已經達成該成就，灰色的圖標表示你還沒達成，加油去達成更多的成就吧！
+
 
 user_unlucky_for_tips:
-  en: No touch unlucky things.
+  en: No touch bad things.
   zh-cn: 不好的东西咱不碰。
   zh-tw: 不好的東西咱不碰。
 
-  
+rank_list:
+  in_page_tips_content:
+    en: |
+      Place in the top three to win rewards; aim to get on the leaderboard!
+
+      Daily settlement is done automatically at midnight.
+
+      Each leaderboard's 1st place rewards 50 lucky points;
+
+      Each leaderboard's 2nd place rewards 30 lucky points;
+
+      Each leaderboard's 3rd place rewards 10 lucky points;
+
+      Ranking 1st on more than one leaderboard grants an additional 50 lucky points;
+
+      Ranking 1st on more than one leaderboard also grants an additional 1 user level.
+
+    zh-cn: |
+      位列前三即可获得奖励; 争取上榜吧!
+
+      每日凌晨自动结算;
+
+      每个榜单第一名奖励50幸运值;
+
+      每个榜单第二名奖励30幸运值;
+
+      每个榜单第三名奖励10幸运值;
+
+      超过一个榜单名列第一额外奖励50幸运值;
+
+      超过一个榜单名列第一额外奖励1级用户等级;
+    zh-tw: |
+      位列前三即可獲得獎勵; 爭取上榜吧!
+
+      每日淩晨自動結算;
+
+      每個榜單第一名獎勵50幸運值;
+
+      每個榜單第二名獎勵30幸運值;
+
+      每個榜單第三名獎勵10幸運值;
+
+      超過一個榜單名列第一額外獎勵50幸運值;
+
+      超過一個榜單名列第一額外獎勵1級用戶等級;

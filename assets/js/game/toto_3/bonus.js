@@ -57,34 +57,22 @@ function updateBtnBonusClickable() {
     }
 }
 
-function updateBtnBonusClickable2() {
-
-    const userWinOrNot = readValueFromIndexRecordInLocal(keyName_1_00, 1, keyName_1_16);
-
-    const userClickedBtnBonus = readValueFromIndexRecordInLocal(keyName_1_00, 1, keyName_1_18);
-
-    if (userWinOrNot && !userClickedBtnBonus) {
-        btnBonus.disabled = false;
-        btnBonus.classList.remove('disabled');
-        return true;
-    } else {
-        btnBonus.disabled = true;
-        btnBonus.classList.add('disabled');
-        return false;
-    }
-}
 
 
 // 点击 popupUserBonusInfo 的 btn_get_it
 popupUserBonusInfoBtnGetIt.addEventListener('click', (event) => {
-    hide(popupUserBonusInfo);
+    
+    setDisplay(popupUserBonusInfo, displayTypes.none);
+
     event.stopPropagation(); // 阻止事件冒泡
 }); 
 
 
 // 点击 popupUserBonusInfoNoWin 的 btn_get_it
 popupUserBonusInfoNoWinBtnGetIt.addEventListener('click', (event) => {
-    hide(popupUserBonusInfoNoWin);
+  
+    setDisplay(popupUserBonusInfoNoWin, displayTypes.none);
+
     event.stopPropagation(); // 阻止事件冒泡
 }); 
 
@@ -101,75 +89,64 @@ btnBonus.addEventListener('click', () => {
 
             if (addLuckyPoint) {
 
-                bgmWin.play();
+                siteBgmWin.play();
 
-                updateTotalLuckyPoint(addLuckyPoint * (1 - taxRate));
-                writeEventLogLuckyPoint(`${keyName_1_00} bonus`, addLuckyPoint * (1 - taxRate));
+                updateUserLuckyPointToLocal(addLuckyPoint * (1 - taxRate));
 
                 writeValueToIndexRecordInLocal(keyName_1_00, 1, keyName_1_18, true);
 
                 varAddLuckyPoint.textContent = addLuckyPoint * (1 - taxRate);
 
-                displayFlex(popupUserBonusInfo);
+                setDisplay(popupUserBonusInfo, displayTypes.flex);
 
                 updateBtnBonusClickable();
 
-                bgmWin.stop();
+                siteBgmWin.stop();
 
-            } else {
-
-                
-
-
-                // console.log('ERR: no record found in ', `${keyName_1_15_06}`);
-            }
-
+            } 
         } else {
 
-            bgmLose.play();
+            siteBgmLose.play();
 
             writeValueToIndexRecordInLocal(keyName_1_00, 1, keyName_1_18, true);
 
-            displayFlex(popupUserBonusInfoNoWin);
+            setDisplay(popupUserBonusInfoNoWin, displayTypes.flex);
 
             updateBtnBonusClickable();
 
-            bgmLose.stop();
-
-            // console.log('ERR: no record found in ', `${keyName_1_17}`);
-        }
-        
+            siteBgmLose.stop();
+        }  
     }
-    
-
-
-
-
-
 });
 
 
-// 更新用户的配置：显示还是隐藏所有提示 -- 并进行更新
-checkbox.addEventListener('change', function() {
-    updatePageConfigToLocalHideOrShowAllTipsInCurrentPage(pageName);
-    updatePageConfigInPageHideOrShowAllTipsInCurrentPage(pageName);
+
+
+
+// 进入页面按顺序执行
+// 进入页面按顺序执行
+// 进入页面按顺序执行
+
+// 显示/隐藏页面提示 -- 初始化到本地 -- 默认显示 
+// 如果有值，就按照这个值来更新页面上的提示显示/隐藏 -- 包括：checkbox.checked
+initTipsVisibilityConfig(keyName_1_00, pageName);
+hideOrShowAllTipsInCurrentPage(keyName_1_00, pageName);
+checkbox.checked = readTipsVisibilityConfig(keyName_1_00, pageName);
+
+
+// 显示/隐藏页面提示 -- 用户选择的时候进行记录到本地并更新页面
+checkbox.addEventListener('change', () => {
+    const isVisible = checkbox.checked;
+    writeTipsVisibilityConfig(keyName_1_00, pageName, isVisible);
+    hideOrShowAllTipsInCurrentPage(keyName_1_00, pageName);
 });
 
-
-// 进入页面先做这些：
 
 // 页面更新 -- 更新页面上的// 兑奖按钮
 updateBtnBonusClickable();
 
 // 页面信息 -- 下一轮更新时间倒计时
 updatePageRoundCountDown();
-
-// 弹窗提示 -- 可点击关闭
-aimloboClickHideInPageTips(); 
-
-// 初始化用户的配置：显示还是隐藏所有提示
-initPageConfigValueToLocalHideOrShowAllTipsInCurrentPage(pageName);
-updatePageConfigInPageHideOrShowAllTipsInCurrentPage(pageName);
 
 
 /*
@@ -188,3 +165,7 @@ executeEvery(intervalTimeToUpdateAllRound(), updateRoundRecordInLocal, updatePag
 */
 
 executeEvery(1, updatePageRoundCountDown);
+
+// 进入页面按顺序执行 -- end
+// 进入页面按顺序执行 -- end
+// 进入页面按顺序执行 -- end

@@ -4,6 +4,12 @@ en:
       name: Happy worship
       weight: 10
       cover: /image/game/happy_worship/cover.png
+      tips_miss_data: Miss data, [restart game](../).
+      tips_page_offering_select: You much select at least 1 offering.
+      tips_click_bubble: Click the lucky bubble to add lucky point.
+      table_img: /image/game/happy_worship/table.png
+      stove_img: /image/game/happy_worship/stove.png
+      thumb_img: /image/game/happy_worship/bgm_thumb.png
       gods:
         - id: god_1
           name: Buddha
@@ -65,7 +71,11 @@ en:
           img: /image/game/happy_worship/god_12.png
           description: __Luxing__ is the god of career in Chinese folk belief, symbolizing high-ranking career. People worship the Lucky Star to pray for success in career and prosperity in life.
           weight: 120
-
+        - id: god_13
+          name: Jigong
+          img: /image/game/happy_worship/god_13.png
+          description: __Jigong__ is the embodiment of morality in Chinese folk beliefs and is famous for helping the poor, healing and educating people. He is regarded as a symbol of kindness and compassion and often appears as a monk.
+          weight: 130
         - id: god_14
           name: Health
           img: /image/game/happy_worship/god_14.png
@@ -91,13 +101,6 @@ en:
           img: /image/game/happy_worship/god_18.png
           description: __Tuigong__ is the earth god in Chinese folk belief, who rules over land and farmland. People believe in the Lord of the Land to pray for a good harvest and peace of their homes. He is regarded as the patron saint of the countryside and the protector of people's lives.
           weight: 180
-        - id: god_19
-          name: Jigong
-          img: /image/game/happy_worship/god_19.png
-          description: __Jigong__ is the embodiment of morality in Chinese folk beliefs and is famous for helping the poor, healing and educating people. He is regarded as a symbol of kindness and compassion and often appears as a monk.
-          weight: 190
-
-
       offerings:
         - id: offering_1
           name: flowers
@@ -163,24 +166,21 @@ en:
       msg_not_enought_lucky_point: Not enough lucky point(🧧), try only one offering and one incense to earn more. 
       tips:
         - title: What is Happy Worship
-          content: Happy Worship (**aimlobo.com**) is a way to worship and show respect to deities. It includes lighting virtual incense, placing virtual offerings, and performing prayers and wishes. During this process, you can collect a lot of lucky points. Come and try it.
+          content: Happy Worship (**shakagame.com**) is a way to worship and show respect to deities. It includes lighting virtual incense, placing virtual offerings, and performing prayers and wishes. During this process, you can collect a lot of lucky points. Come and try it.
           weight: 10
         - title: How to Use Happy Worship
           content: |
-            1. Click the title to modify the title content;
-            2. Click to see the [deity information](../happy_worship_god_info), and click the left and right arrows to switch deity images;
-            3. Click the "Add Offering" button or the offering icon to select offerings, multiple selections are allowed;
-            4. Click the "Add Incense" button or the incense icon to select incense, single selection only;
-            5. Click the "Start Worship" button to immediately begin the worship ceremony. During the worship, many lucky balloons will appear, click the balloons will collect lucky points.
-            6. During the worship, clicking the rotating Logo avatar can enable/disable background music.
-            7. __If you are prompted with not enough point, please choose only one offering, one incense to start the game and earn lucky points.__
+            1. Select god, single selection only;
+            2. Select offerings, multiple selections are allowed;
+            3. Select incense, single selection only;
+            4. Worship ceremony begin. During the worship, many lucky balloons will appear, click the balloons will collect lucky points.
+            5. During the worship, clicking the rotating Logo avatar can enable/disable background music.
           weight: 20
         - title: Lucky Points System
           content:  |
-            1. Each offering costs 1 lucky point;
-            2. Each incense stick costs 1 lucky point;
-            3. Complete the worship ceremony adds 5 lucky points;
-            4. Each clicked lucky balloon adds 0.1 lucky point.
+            1. Worship somebody cost nothing, so no cost lucky point;
+            2. Complete the worship ceremony adds 5 lucky points;
+            3. Each clicked lucky balloon adds 1 lucky point.
           weight: 30
 
     - id: wooden_fish
@@ -194,54 +194,55 @@ en:
           weight: 20
         - title: luck +1, bless +1
           weight: 30
+      in_page_tips_title: You can click on the title above to edit it
+      in_page_tips_auto: You can click the button to turn on/off auto tapping and background music
+      in_page_tips_count: Click on the number above to select/customize the prayer content
       tips:
       - title: What is  Wooden Fish
-        content: The Wooden Fish (**aimlobo.com**) simulates the function of a traditional wooden fish, striking the fish brings tranquility and peace.
+        content: The Wooden Fish (**shakagame.com**) simulates the function of a traditional wooden fish, striking the fish brings tranquility and peace.
         weight: 10
       - title: How to play  Wooden Fish
         content: |
           1. Click on the white wooden fish icon to start tapping;
           2. You can click **Auto** to toggle auto-tapping, which taps once per second;
           3. You can click **BGM** to toggle the background music on or off;
-          4. The speed display shows the number of taps per minute. Click the speed icon 🏅 to view the leaderboard;
-          5. Click the **title** to edit the title content, with a character limit of **1-15**;
-          6. Click the number in the center of the screen to edit the prayer content. There are three predefined options, or you can click **Custom** to create your own with a character limit of **0-15**.
+          4. Click the **title** to edit the title content, with a character limit of **1-15**;
+          5. Click the number in the center of the screen to edit the prayer content. There are three predefined options, or you can click **Custom** to create your own with a character limit of **0-15**.
         weight: 20
       - title: Lucky Points System
         content: |
-            1. Each time you enable Auto, it costs 0.5 lucky points;
-            2. Every 100 taps increase your lucky points by 1;
-            3. Every 100 taps also increase your game count by 1.
+            1. Pursuing tranquility comes at no cost, so no luck points will be deducted;
+            2. One luck point is added for every 300 clicks;
+            3. One game count is added for every 300 clicks;
         weight: 30
 
     - id: flying_book
       name: Flying Book
       weight: 30
       cover: /image/game/flying_book/cover.png
+      tips_miss_data: Miss data, [restart game](../).
       tips:
       - title: What is Flying Book?
-        content: Flying Book (**aimlobo.com**) usually gives you the answers you want. It solves all problems in daily life. Just ask a question, and the flying book will find the answer for you.
+        content: Flying Book (**shakagame.com**) usually gives you the answers you want. It solves all problems in daily life. Just ask a question, and the flying book will find the answer for you.
         weight: 10
       - title: How to use Flying Book?
         content: |
           1. Follow the instructions on the page;
           2. First, think about the question you want to ask;
           3. Click the button, and the flying book will deliver the answer you need;
-          4. Clicking **More Answers** will generate new responses directly.
-          5. If you can't see the answer clearly, you can swipe the mouse or touch the screen to make the bird leave.
+          4. If you can't see the answer clearly, you can swipe the mouse or touch the screen to make the bird leave.
         weight: 20
       - title: Are the answers from Flying Book accurate?
         content: It depends on you! Flying Book is intriguing, inspiring, and very fun to use. Maintain a positive attitude towards the questions, and the answers will come easily. The correct answer is in your mind.
         weight: 30
       - title: Luck Points System
         content: |
-          1. Each answer costs 0.5 luck points, **Please pay attention to the consumption of lucky points**;
-          2. Click the **Share** button and share this site (**aimlobo.com**) to get 2 luck points.
-          3. The game allows users to run in arrears, meaning that you can still play the game even if your lucky point is less than 0.
+          1. Each answer costs 1 luck points, **Please pay attention to the consumption of lucky points**;
+          1. The game allows users to run in arrears, meaning that you can still play the game even if your lucky point is less than 0.
         weight: 40
       steps:
       - step: 1
-        content: Ready your question
+        content: Ready your question in mind
         weight: 10
       - step: 2
         content: Click the button below to get answer
@@ -252,9 +253,15 @@ en:
       weight: 1
       cover: /image/game/horse_racing/cover.png
       msg_not_enought_lucky_point: Not enough lucky point(🧧). 
+      in_page_tips_type: normal
+      in_page_tips_content_page_bet_lucky_point: I suggest you try only 1 bet amount (default) first to start game.
+      tips_miss_data: Miss data, [restart game](../).
+      tips_no_select_horse: you don't select horse, go [select horse](../).
+      tips_no_bet: you don't bet, go [bet](../bet).
+      tips_no_racing: you don't enjoy the game, [start game](../).
       tips:
       - title: What is a Horse Racing Game?
-        content: The horse racing game (**aimlobo.com**) simulates real horse racing, allowing you to enjoy the exciting process and win rewards.
+        content: The horse racing game (**shakagame.com**) simulates real horse racing, allowing you to enjoy the exciting process and win rewards.
         weight: 10
       - title: How to Play the Horse Racing Game?
         content: |
@@ -262,15 +269,15 @@ en:
           2. Place a bet, **you must bet at least 1 luck point; if your luck points are less than 1, you cannot start the game**;
           3. Wait for the system to match other players;
           4. Review the prize pool information and click **Start Game**;
-          5. Watch the exciting horse race;
-          6. Wait for the race results, **either you win or you lose**.
+          5. Enjoy the exciting horse race;
+          6. Check the race results, **either you win or you lose**.
         weight: 20
       - title: Luck Points System
         content: |
-          1. After you place a bet, the system will immediately deduct the luck points you bet;
+          1. After you click **Start Game**, the system will deduct the luck points you bet;
           2. If you lose, you get nothing; but if you win, you will receive a reward much higher than your bet.
           3. If you win, the system will deduct 3% of the prize as a service fee.
-          4. Each time you see the race results, it adds one more game count.
+          4. Each time you check race results, it adds one more game count.
         weight: 30
       horses:
         - id: horse_1
@@ -375,7 +382,7 @@ en:
       subtitle: 1000 🧧 bonus for you
       tips:
         - title: What is Toto 3?
-          content: Toto 3 (**aimlobo.com**) is an online luck-based betting game where players choose any integer between 0-999 to place their bets. Each bet can be multiplied by 1-100 times. If any of the bet numbers match the winning number given by the system during the draw, the player will receive a fixed reward of 1000 lucky points per bet.
+          content: Toto 3 (**shakagame.com**) is an online luck-based betting game where players choose any integer between 0-999 to place their bets. Each bet can be multiplied by 1-100 times. If any of the bet numbers match the winning number given by the system during the draw, the player will receive a fixed reward of 1000 lucky points per bet.
           weight: 10
         - title: How to play Toto 3?
           content: |
@@ -433,7 +440,7 @@ en:
       subtitle: 100,000 🧧 bonus for you
       tips:
         - title: What is Toto 5?
-          content: Toto 5 (**aimlobo.com**) is an online luck-based betting game where players choose any integer between 0-99999 to place their bets. Each bet can be multiplied by 1-100 times. If any of the bet numbers match the winning number given by the system during the draw, the player will receive a fixed reward of 100,000 lucky points per bet.
+          content: Toto 5 (**shakagame.com**) is an online luck-based betting game where players choose any integer between 0-99999 to place their bets. Each bet can be multiplied by 1-100 times. If any of the bet numbers match the winning number given by the system during the draw, the player will receive a fixed reward of 100,000 lucky points per bet.
           weight: 10
         - title: How to play Toto 5?
           content: |
@@ -453,7 +460,7 @@ en:
       rules:
         - title: Game Rules
           content: |
-            **Toto 5** involves selecting a 5-digit number from 000-99999 as a betting number. Each bet costs 1 lucky point
+            **Toto 5** involves selecting a 5-digit number from 00000-99999 as a betting number. Each bet costs 1 lucky point
             Users can multiply their chosen bet number by 1-100 times.
             Toto 5 matches one round every 6 minutes.
             The reward for each bet is a fixed 100,000 lucky points.
@@ -477,6 +484,12 @@ zh-cn:
       name: 快乐崇拜
       weight: 10
       cover: /image/game/happy_worship/cover.png
+      tips_miss_data: 缺少数据, [重新游戏](../).
+      tips_page_offering_select: 你需要选择至少一个贡品.
+      tips_click_bubble: 点击幸运气球收获幸运值.
+      table_img: /image/game/happy_worship/table.png
+      stove_img: /image/game/happy_worship/stove.png
+      thumb_img: /image/game/happy_worship/bgm_thumb.png
       gods:
         - id: god_1
           name: 佛祖
@@ -539,6 +552,11 @@ zh-cn:
           img: /image/game/happy_worship/god_12.png
           description: "**禄星**是中国民间信仰中的福禄之神，象征高官厚禄和荣华富贵。人们供奉禄星以祈求事业成功和生活富足。"
           weight: 120
+        - id: god_13
+          name: 济公
+          img: /image/game/happy_worship/god_13.png
+          description: "**济公**是中国民间信仰中的道德化身，以济贫救苦、医病教化著称。他被视为善良和慈悲的象征，经常以和尚形象示人。"
+          weight: 130
 
         - id: god_14
           name: 寿星
@@ -570,11 +588,7 @@ zh-cn:
           description: "**土地公**是中国民间信仰中的地神，主宰土地和农田。人们信奉土地公以祈求丰收和家园安宁，他被视为乡村守护神和人们生活的保障者。"
           weight: 180
 
-        - id: god_19
-          name: 济公
-          img: /image/game/happy_worship/god_19.png
-          description: "**济公**是中国民间信仰中的道德化身，以济贫救苦、医病教化著称。他被视为善良和慈悲的象征，经常以和尚形象示人。"
-          weight: 190
+
 
 
       offerings:
@@ -642,24 +656,21 @@ zh-cn:
       msg_not_enought_lucky_point: 幸运积分不足(🧧), 请尝试一个供品，一根香火以获得更多幸运积分. 
       tips:
         - title: 快乐崇拜是什么
-          content: 快乐崇拜(**aimlobo.com**)是对神明进行祭拜和表达敬意。包括点燃虚拟的香烛、摆放虚拟的供品，以及进行祈祷和祝愿，在这个过程中你可以收集大量的幸运值，快来试试吧。
+          content: 快乐崇拜(**shakagame.com**)是对神明进行祭拜和表达敬意。包括点燃虚拟的香烛、摆放虚拟的供品，以及进行祈祷和祝愿，在这个过程中你可以收集大量的幸运值，快来试试吧。
           weight: 10
         - title: 快乐崇拜如何使用
           content: |
-            1. 点击标题即可修改标题内容；
-            2. 点击查看相应的[神明介绍](../happy_worship_god_info)，点击左右箭头切换神明图片；
-            3. 点击“添加供品”按钮或者供品图案选择供品，可多选；
-            4. 点击“添加香火”按钮或者香火图案选择香火，单选；
-            5. 点击"开始崇拜"按钮会立刻开启崇拜仪式，崇拜过程中为会出现大量的幸运气球，点击气球可以收集幸运值。
-            6. 崇拜过程中点击转动的Logo头像可开启/关闭背景音乐。
-            7. **如果提示积分不足，请选择一个供品，一根香火开始游戏并赚取幸运值。**
+            1. 选择神明，单选；
+            2. 选择供品，可多选；
+            3. 选择香火，单选；
+            4. 崇拜仪式自动开始，崇拜过程中为会出现大量的幸运气球，点击气球可以收集幸运值。
+            5. 崇拜过程中点击转动的Logo头像可开启/关闭背景音乐。
           weight: 20
         - title: 幸运积分系统
           content:  |
-            1. 每个供品花费1点幸运值；
-            2. 每根香火花费1点幸运值；
-            3. 完成崇拜仪式增加5点幸运值；
-            4. 每个被点击的幸运气球增加0.1点幸运值。
+            1. 崇拜一个人是不需要代价的，所以不会花费幸运值；
+            2. 完成崇拜仪式增加5点幸运值；
+            3. 每个被点击的幸运气球增加1点幸运值。
           weight: 30
 
     - id: wooden_fish
@@ -673,54 +684,55 @@ zh-cn:
           weight: 20
         - title: 幸福 +1, 快乐 +1, 平安 +1
           weight: 30
+      in_page_tips_title: 你可以点击上方标题进行编辑
+      in_page_tips_auto: 你可以点击按钮开启/关闭自动敲击和背景音乐
+      in_page_tips_count: 点击上方数字可以选择/自定义祈祷内容
       tips:
       - title: 什么是电子木鱼
-        content: 电子木鱼 (**aimlobo.com**) 模拟了传统木鱼的功能，敲击木鱼获得宁静与平和。
+        content: 电子木鱼 (**shakagame.com**) 模拟了传统木鱼的功能，敲击木鱼获得宁静与平和。
         weight: 10
       - title: 如何使用电子木鱼
         content: |
           1. 点击白色的木鱼图案就会开始敲击；
           2. 可以点击**自动**来实现开启/关闭自动敲击木鱼，速度是每秒钟敲击一次；
           3. 可以点击**BGM**来实现开启/关闭背景音乐；
-          4. 速度显示的是每分钟敲击木鱼的次数，点击速度图标 🏅 可以查看排行榜；
-          5. 点击**标题**可以编辑标题内容，字符数量限制是 **1-15**。
-          6. 点击屏幕中间的数字可以编辑祈祷内容，有三个已经定义好的选项，不满意的话可以点击**自定义**自己编辑，字符数量限制是 **0-15**。
+          4. 点击**标题**可以编辑标题内容，字符数量限制是 **1-15**。
+          5. 点击屏幕中间的数字可以编辑祈祷内容，有三个已经定义好的选项，不满意的话可以点击**自定义**自己编辑，字符数量限制是 **0-15**。
         weight: 20
       - title: 幸运积分系统
         content: |
-            1. 每次开启自动花费0.5个幸运值；
-            2. 每100次敲击增加1点幸运值；
-            3. 每100次敲击增加1次游戏次数。
+            1. 追求宁静不需要代价，因此不会扣减幸运值；
+            2. 每300次点击增加一个幸运值；
+            3. 每300次点击增加一次游戏次数；
         weight: 30
 
     - id: flying_book
       name: 飞鸟传书
       weight: 30
       cover: /image/game/flying_book/cover.png
+      tips_miss_data: 缺少数据, [重新游戏](../).
       tips:
       - title: 飞鸟传书是什么?
-        content: 飞鸟传书(**aimlobo.com**) 通常会给你想要的答案。 解决日常生活中的所有问题，只需提出一个问题，飞鸟就会为你找到答案。
+        content: 飞鸟传书(**shakagame.com**) 通常会给你想要的答案。 解决日常生活中的所有问题，只需提出一个问题，飞鸟就会为你找到答案。
         weight: 10
       - title: 如何使用飞鸟传书？
         content: |
           1. 按照页面提示进行操作；
           2. 首先想好自己想要问的问题；
           3. 点击按钮，飞鸟就会送来你需要的答案；
-          4. 点击**更多答案**会直接产生新的回答；
-          5. 看不清答案的情况下，可以划过鼠标或者触屏点击让飞鸟离开。
+          4. 看不清答案的情况下，可以划过鼠标或者触屏点击让飞鸟离开。
         weight: 20
       - title: 飞鸟传书的答案正确吗？
         content: 这取决于你！飞鸟传书耐人寻味、鼓舞人心，而且使用起来非常有趣。对问题保持积极的态度，问题就会迎刃而解，正确答案就在你的脑海中。
         weight: 30
       - title: 幸运积分系统
         content: |
-            1. 每次获得答案花费0.5个幸运值，**请注意幸运值的消耗情况**；
-            2. 点击**分享**按钮，并分享本站(**aimlobo.com**),即可获得2个幸运值。
-            3. 该游戏允许用户欠费运行，意思是即使你的幸运值小于0也仍然可以玩该游戏。
+            1. 每次获得答案花费1个幸运值，**请注意幸运值的消耗情况**；
+            2. 该游戏允许用户欠费运行，意思是即使你的幸运值小于0也仍然可以玩该游戏。
         weight: 40
       steps:
       - step: 1
-        content: 准备好你的问题
+        content: 在心中想好你要问的问题
         weight: 10
       - step: 2
         content: 点击下方按钮获得答案
@@ -731,9 +743,15 @@ zh-cn:
       weight: 1
       cover: /image/game/horse_racing/cover.png
       msg_not_enought_lucky_point: 幸运值不足(🧧). 
+      in_page_tips_type: normal
+      in_page_tips_content_page_bet_lucky_point: 建议从1个幸运积分（默认值）开始你的游戏.
+      tips_miss_data: 缺少数据, [重新游戏](../).
+      tips_no_select_horse: 你没有选择马匹, 前往 [选择马匹](../).
+      tips_no_bet: 你没有下注, 前往 [下注](../bet).
+      tips_no_racing: 你没有享受游戏过程, [开始游戏](../).
       tips:
       - title: 什么是赛马游戏?
-        content: 赛马游戏(**aimlobo.com**) 模拟了真实的赛马运动，享受激动人心的赛马过程，赢得奖励.
+        content: 赛马游戏(**shakagame.com**) 模拟了真实的赛马运动，享受激动人心的赛马过程，赢得奖励.
         weight: 10
       - title: 如何玩赛马游戏?
         content: |
@@ -741,15 +759,15 @@ zh-cn:
           2. 下注，**至少下注1个幸运值，你的幸运值如果低于1将无法开始游戏**;
           3. 等待系统匹配其他玩家;
           4. 浏览奖池信息，点击**开始游戏**;
-          5. 观看激动人心的赛马过程;
-          6. 等待赛马结果，**要么赢，要么输**。
+          5. 享受激动人心的赛马过程;
+          6. 查看赛马结果，**要么赢，要么输**。
         weight: 20
       - title: 幸运积分系统
         content: |
-          1. 你下注后，系统会直接扣除下注的幸运值;
+          1. 点击**开始游戏**后，系统会扣除下注的幸运值;
           2. 如果你输了，什么都没有；但是如果你赢了，你会获得远高于你下注的奖励.
           3. 如果你赢了，系统会扣除3%的奖金作为服务费.
-          4. 每次看到比赛结果都会增加1次游戏次数。
+          4. 每次查看比赛结果都会增加1次游戏次数。
         weight: 30
       horses:
         - id: horse_1
@@ -854,7 +872,7 @@ zh-cn:
       subtitle: 🧧 千分大奖等你来
       tips:
       - title: 什么是多多3?
-        content: 多多3(**aimlobo.com**) 是一款在线幸运博彩游戏，玩家选择0-999之间的任意整数进行下注，每个下注号码可以选择1-100倍的投注，开奖时如果有任一下注的号码与系统给出的中奖号码一致，即可获得每注1000幸运积分的固定奖励.
+        content: 多多3(**shakagame.com**) 是一款在线幸运博彩游戏，玩家选择0-999之间的任意整数进行下注，每个下注号码可以选择1-100倍的投注，开奖时如果有任一下注的号码与系统给出的中奖号码一致，即可获得每注1000幸运积分的固定奖励.
         weight: 10
       - title: 如何玩多多3?
         content: |
@@ -912,7 +930,7 @@ zh-cn:
       subtitle: 🧧 十万大奖等你来
       tips:
       - title: 什么是多多5?
-        content: 多多5(**aimlobo.com**) 是一款在线幸运博彩游戏，玩家选择0-99999之间的任意整数进行下注，每个下注号码可以选择1-100倍的投注，开奖时如果有任一下注的号码与系统给出的中奖号码一致，即可获得每注100,000幸运积分的固定奖励.
+        content: 多多5(**shakagame.com**) 是一款在线幸运博彩游戏，玩家选择0-99999之间的任意整数进行下注，每个下注号码可以选择1-100倍的投注，开奖时如果有任一下注的号码与系统给出的中奖号码一致，即可获得每注100,000幸运积分的固定奖励.
         weight: 10
       - title: 如何玩多多5?
         content: |
@@ -932,7 +950,7 @@ zh-cn:
       rules:
       - title: 游戏方法
         content: |
-          **多多5** 指从000-99999的数字中选取1个5位数作为一注投注号码进行的投注，每注花费1个幸运积分;
+          **多多5** 指从00000-99999的数字中选取1个5位数作为一注投注号码进行的投注，每注花费1个幸运积分;
           用户可对其选定的投注号码进行多倍投注，投注倍数范围为 1-100 倍；
           多多5 每6分钟匹配一轮；
           单注奖励固定为100,000幸运积分。
@@ -956,6 +974,12 @@ zh-tw:
       name: 快樂崇拜
       weight: 10
       cover: /image/game/happy_worship/cover.png
+      tips_miss_data: 缺少數據, [重新遊戲](../).
+      tips_page_offering_select: 你需要選擇至少一個貢品.
+      tips_click_bubble: 點擊幸運氣球收獲幸運值.
+      table_img: /image/game/happy_worship/table.png
+      stove_img: /image/game/happy_worship/stove.png
+      thumb_img: /image/game/happy_worship/bgm_thumb.png
       gods:
         - id: god_1
           name: 佛祖
@@ -1028,6 +1052,12 @@ zh-tw:
           description: "**祿星**是中國民間信仰中的福祿之神，象征高官厚祿和榮華富貴。人們供奉祿星以祈求事業成功和生活富足。"
           weight: 120
 
+        - id: god_13
+          name: 济公
+          img: /image/game/happy_worship/god_13.png
+          description: "**济公**是中国民间信仰中的道德化身，以济贫救苦、医病教化著称。他被视为善良和慈悲的象征，经常以和尚形象示人。"
+          weight: 130
+
         - id: god_14
           name: 壽星
           img: /image/game/happy_worship/god_14.png
@@ -1058,11 +1088,7 @@ zh-tw:
           description: "**土地公**是中國民間信仰中的地神，主宰土地和農田。人們信奉土地公以祈求豐收和家園安寧，他被視為鄉村守護神和人們生活的保障者。"
           weight: 180
 
-        - id: god_19
-          name: 济公
-          img: /image/game/happy_worship/god_19.png
-          description: "**济公**是中国民间信仰中的道德化身，以济贫救苦、医病教化著称。他被视为善良和慈悲的象征，经常以和尚形象示人。"
-          weight: 190
+
 
 
       offerings:
@@ -1129,25 +1155,22 @@ zh-tw:
       msg_end_worship: 崇拜完成 🎉. 🧧 +
       msg_not_enought_lucky_point: 幸運積分不足(🧧), 請嘗試一個供品，一根香火以獲得更多幸運積分. 
       tips:
-        - title: 快樂崇拜是什麼
-          content: 快樂崇拜(**aimlobo.com**)是對神明進行祭拜和表達敬意。包括點燃虛擬的香燭、擺放虛擬的供品，以及進行祈禱和祝願，在這個過程中你可以收集大量的幸運值，快來試試吧。
+        - title: 快樂崇拜是什麽
+          content: 快樂崇拜(**shakagame.com**)是對神明進行祭拜和表達敬意。包括點燃虛擬的香燭、擺放虛擬的供品，以及進行祈禱和祝願，在這個過程中你可以收集大量的幸運值，快來試試吧。
           weight: 10
         - title: 快樂崇拜如何使用
           content: |
-            1. 點擊標題即可修改標題內容；
-            2. 點擊查看相應的[神明介紹](../happy_worship_god_info)，點擊左右箭頭切換神明圖片；
-            3. 點擊“添加供品”按鈕或者供品圖案選擇供品，可多選；
-            4. 點擊“添加香火”按鈕或者香火圖案選擇香火，單選；
-            5. 點擊"開始崇拜"按鈕會立刻開啟崇拜儀式，崇拜過程中會出現大量的幸運氣球，點擊氣球可以收集幸運值。
-            6. 崇拜過程中點擊轉動的Logo頭像可開啟/關閉背景音樂。
-            7. **如果提示積分不足，請選擇一個供品，一根香火開始遊戲並賺取幸運值。**
+            1. 選擇神明，單選；
+            2. 選擇供品，可多選；
+            3. 選擇香火，單選；
+            4. 崇拜儀式自動開始，崇拜過程中為會出現大量的幸運氣球，點擊氣球可以收集幸運值。
+            5. 崇拜過程中點擊轉動的Logo頭像可開啟/關閉背景音樂。
           weight: 20
         - title: 幸運積分系統
           content:  |
-            1. 每個供品花費1點幸運值；
-            2. 每根香火花費1點幸運值；
-            3. 崇拜儀式增加5點幸運值；
-            4. 每個被點擊的幸運氣球增加0.1點幸運值。
+            1. 崇拜一個人是不需要代價的，所以不會花費幸運值；
+            2. 完成崇拜儀式增加5點幸運值；
+            3. 每個被點擊的幸運氣球增加1點幸運值。
           weight: 30
 
 
@@ -1162,54 +1185,55 @@ zh-tw:
           weight: 20
         - title: 幸福 +1, 快樂 +1, 平安 +1
           weight: 30
+      in_page_tips_title: 你可以點擊上方標題進行編輯
+      in_page_tips_auto: 你可以點擊按鈕開啟/關閉自動敲擊和背景音樂
+      in_page_tips_count: 點擊上方數字可以選擇/自定義祈禱內容
       tips:
       - title: 什麼是電子木魚
-        content: 電子木魚 (**aimlobo.com**) 模擬了傳統木魚的功能，敲擊木魚獲得寧靜與平和。
+        content: 電子木魚 (**shakagame.com**) 模擬了傳統木魚的功能，敲擊木魚獲得寧靜與平和。
         weight: 10
       - title: 如何使用電子木魚
         content: |
           1. 點擊白色的木魚圖案就會開始敲擊；
           2. 可以點擊**自動**來實現開啟/關閉自動敲擊木魚，速度是每秒鐘敲擊一次；
           3. 可以點擊**BGM**來實現開啟/關閉背景音樂；
-          4. 速度顯示的是每分鐘敲擊木魚的次數，點擊速度圖標 🏅 可以查看排行榜；
-          5. 點擊**標題**可以編輯標題內容，字符數量限制是 **1-15**。
+          4. 點擊**標題**可以編輯標題內容，字符數量限制是 **1-15**。
           6. 點擊螢幕中間的數字可以編輯祈禱內容，有三個已經定義好的選項，不滿意的話可以點擊**自定義**自己編輯，字符數量限制是 **0-15**。
         weight: 20
       - title: 幸運積分系統
         content: |
-            1. 每次開啟自動花費0.5個幸運值；
-            2. 每100次敲擊增加1點幸運值；
-            3. 每100次敲擊增加1次遊戲次數。
+            1. 追求寧靜不需要代價，因此不會扣減幸運值；
+            2. 每300次點擊增加一個幸運值；
+            3. 每300次點擊增加一次遊戲次數；
         weight: 30
 
     - id: flying_book
       name: 飛鳥傳書
       weight: 30
       cover: /image/game/flying_book/cover.png
+      tips_miss_data: 缺少數據, [重新遊戲](../).
       tips:
-        - title: 飛鳥傳書是什麼？
-          content: 飛鳥傳書(**aimlobo.com**) 通常會給你想要的答案。 解決日常生活中的所有問題，只需提出一個問題，飛鳥就會為你找到答案。
-          weight: 10
-        - title: 如何使用飛鳥傳書？
-          content: |
-            1. 按照頁面提示進行操作；
-            2. 首先想好自己想要問的問題；
-            3. 點擊按鈕，飛鳥就會送來你需要的答案；
-            4. 點擊**更多答案**會直接產生新的回答；
-            5. 看不清答案的情況下，可以劃過鼠標或者觸屏點擊讓飛鳥離開。
-          weight: 20
-        - title: 飛鳥傳書的答案正確嗎？
-          content: 這取決於你！飛鳥傳書耐人尋味、鼓舞人心，而且使用起來非常有趣。對問題保持積極的態度，問題就會迎刃而解，正確答案就在你的腦海中。
-          weight: 30
-        - title: 幸運積分系統
-          content: |
-              1. 每次獲得答案花費0.5個幸運值，**請註意幸運值的消耗情況**；
-              2. 點擊**分享**按鈕，並分享本站(**aimlobo.com**),即可獲得2個幸運值。
-              3. 該遊戲允許用戶欠費運行，意思是即使你的幸運值小於0也仍然可以玩該遊戲。
-          weight: 40
+      - title: 飛鳥傳書是什麽?
+        content: 飛鳥傳書(**shakagame.com**) 通常會給你想要的答案。 解決日常生活中的所有問題，只需提出一個問題，飛鳥就會為你找到答案。
+        weight: 10
+      - title: 如何使用飛鳥傳書？
+        content: |
+          1. 按照頁面提示進行操作；
+          2. 首先想好自己想要問的問題；
+          3. 點擊按鈕，飛鳥就會送來你需要的答案；
+          4. 看不清答案的情況下，可以劃過鼠標或者觸屏點擊讓飛鳥離開。
+        weight: 20
+      - title: 飛鳥傳書的答案正確嗎？
+        content: 這取決於你！飛鳥傳書耐人尋味、鼓舞人心，而且使用起來非常有趣。對問題保持積極的態度，問題就會迎刃而解，正確答案就在你的腦海中。
+        weight: 30
+      - title: 幸運積分系統
+        content: |
+            1. 每次獲得答案花費1個幸運值，**請註意幸運值的消耗情況**；
+            2. 該遊戲允許用戶欠費運行，意思是即使你的幸運值小於0也仍然可以玩該遊戲。
+        weight: 40
       steps:
       - step: 1
-        content: 準備好你的問題
+        content: 在心中想好你要問的問題
         weight: 10
       - step: 2
         content: 點擊下方按鈕獲得答案
@@ -1220,9 +1244,35 @@ zh-tw:
       weight: 1
       cover: /image/game/horse_racing/cover.png
       msg_not_enought_lucky_point: 幸運值不足(🧧). 
+      in_page_tips_type: normal
+      in_page_tips_content_page_bet_lucky_point: 建議從1個幸運積分（默認值）開始你的遊戲.
+      tips_miss_data: 缺少數據, [重新遊戲](../).
+      tips_no_select_horse: 你沒有選擇馬匹, 前往 [選擇馬匹](../).
+      tips_no_bet: 你沒有下註, 前往 [下註](../bet).
+      tips_no_racing: 你沒有享受遊戲過程, [開始遊戲](../).
       tips:
       - title: 什麽是賽馬遊戲?
-        content: 賽馬遊戲(**aimlobo.com**) 模擬了真實的賽馬運動，享受激動人心的賽馬過程，贏得獎勵.
+        content: 賽馬遊戲(**shakagame.com**) 模擬了真實的賽馬運動，享受激動人心的賽馬過程，贏得獎勵.
+        weight: 10
+      - title: 如何玩賽馬遊戲?
+        content: |
+          1. 選擇你看好的馬;
+          2. 下註，**至少下註1個幸運值，你的幸運值如果低於1將無法開始遊戲**;
+          3. 等待系統匹配其他玩家;
+          4. 瀏覽獎池信息，點擊**開始遊戲**;
+          5. 享受激動人心的賽馬過程;
+          6. 查看賽馬結果，**要麽贏，要麽輸**。
+        weight: 20
+      - title: 幸運積分系統
+        content: |
+          1. 點擊**開始遊戲**後，系統會扣除下註的幸運值;
+          2. 如果你輸了，什麽都沒有；但是如果你贏了，你會獲得遠高於你下註的獎勵.
+          3. 如果你贏了，系統會扣除3%的獎金作為服務費.
+          4. 每次查看比賽結果都會增加1次遊戲次數。
+        weight: 30 
+      tips:
+      - title: 什麽是賽馬遊戲?
+        content: 賽馬遊戲(**shakagame.com**) 模擬了真實的賽馬運動，享受激動人心的賽馬過程，贏得獎勵.
         weight: 10
       - title: 如何玩賽馬遊戲?
         content: |
@@ -1343,7 +1393,7 @@ zh-tw:
       subtitle: 🧧 千分大獎等你來
       tips:
       - title: 什麽是多多3?
-        content: 多多3(**aimlobo.com**) 是一款在線幸運博彩遊戲，玩家選擇0-999之間的任意整數進行下註，每個下註號碼可以選擇1-100倍的投註，開獎時如果有任一下註的號碼與系統給出的中獎號碼一致，即可獲得每註1000幸運積分的固定獎勵.
+        content: 多多3(**shakagame.com**) 是一款在線幸運博彩遊戲，玩家選擇0-999之間的任意整數進行下註，每個下註號碼可以選擇1-100倍的投註，開獎時如果有任一下註的號碼與系統給出的中獎號碼一致，即可獲得每註1000幸運積分的固定獎勵.
         weight: 10
       - title: 如何玩多多3?
         content: |
@@ -1401,7 +1451,7 @@ zh-tw:
       subtitle: 🧧 十萬大獎等你來
       tips:
       - title: 什麽是多多5?
-        content: 多多5(**aimlobo.com**) 是一款在線幸運博彩遊戲，玩家選擇0-99999之間的任意整數進行下註，每個下註號碼可以選擇1-100倍的投註，開獎時如果有任一下註的號碼與系統給出的中獎號碼一致，即可獲得每註100,000幸運積分的固定獎勵.
+        content: 多多5(**shakagame.com**) 是一款在線幸運博彩遊戲，玩家選擇0-99999之間的任意整數進行下註，每個下註號碼可以選擇1-100倍的投註，開獎時如果有任一下註的號碼與系統給出的中獎號碼一致，即可獲得每註100,000幸運積分的固定獎勵.
         weight: 10
       - title: 如何玩多多5?
         content: |
@@ -1421,7 +1471,7 @@ zh-tw:
       rules:
       - title: 遊戲方法
         content: |
-          **多多5** 指從000-99999的數字中選取1個5位數作為一註投註號碼進行的投註，每註花費1個幸運積分;
+          **多多5** 指從00000-99999的數字中選取1個5位數作為一註投註號碼進行的投註，每註花費1個幸運積分;
           用戶可對其選定的投註號碼進行多倍投註，投註倍數範圍為 1-100 倍；
           多多5 每6分鐘匹配一輪；
           單註獎勵固定為100,000幸運積分。

@@ -4,11 +4,11 @@ body {
 
 }
 
-.form_bet_amount, .game_match, .game_playing, .game_result {
-    display: none;
-}
 
 
+/* list */
+/* list */
+/* list */
 
 .horses {
     display: grid;
@@ -35,6 +35,50 @@ body {
     transform: scale(1.3);
 }
 
+
+/* list -- end */
+/* list -- end */
+/* list -- end */
+
+
+/* bet */
+/* bet */
+/* bet */
+
+.game_horse_bet,
+.game_horse_match,
+.game_horse_result {
+
+    display: flex;
+    gap: 1rem;
+}
+
+.page_bet_left,
+.page_match_left,
+.page_result_left {
+
+    width: 42rem;
+}
+
+.page_bet_right,
+.page_match_right,
+.page_result_right {
+
+    width: 21rem;
+}
+
+input[name=bet_amount] {
+    width: 10rem;
+}
+
+.horse_img_in_match {
+    width: 2rem;
+}
+
+/* bet -- end */
+/* bet -- end */
+/* bet -- end */
+
 /* 每只马的代表色 */
 .horse_color {
     border-radius: 50%;
@@ -47,7 +91,7 @@ body {
     background-color: #FF7EE2;
 }
 .horse_color_2 {
-    background-color: #E9FF97;
+    background-color: #f6f03a;
 }
 .horse_color_3 {
     background-color: #EF5A6F;
@@ -59,7 +103,7 @@ body {
     background-color: #E6B9A6;
 }
 .horse_color_6 {
-    background-color: #536493;
+    background-color: #00bfff;
 }
 .horse_color_7 {
     background-color: #FFA823;
@@ -75,13 +119,7 @@ body {
 }
 
 
-/* 下注信息 */
 
-.current_user_bet_info, .total_user_bet_info, .total_user_bet_detail {
-    width: fit-content;
-    margin: 1rem auto;
-    min-width: 20rem;
-}
 
 /* 匹配中 */
 .dot {
@@ -117,27 +155,21 @@ body {
     }
 }
 
-/* 游戏倒计时 */
-@keyframes scaleEffect {
-    0% {
-      transform: scale(1);
-    }
-    50% {
-      transform: scale(2);
-    }
-    100% {
-      transform: scale(1);
-    }
-  }
-  
-  .scale-effect {
-    animation: scaleEffect 0.5s;
-  }
+.count_down_circle_item {
+    
+    visibility: hidden;
+}
+
+
   
 
 
 
 /* 游戏进行中 */
+
+.btn_boost {
+    display: none;
+}
 
 .game_playing {
     width: 80%;
@@ -175,10 +207,21 @@ body {
 /* 游戏结果 */
 
 
+.btn_bonus.disabled {
+    background-color: grey;
+    cursor: not-allowed;
+}
 
+.game_horse_result .page_result_right .btn_restart:hover {
+    color: white;
+}
 
 
 @media screen and (max-width: 48rem) {
+
+    /* list */
+    /* list */
+    /* list */
 
     .horses {
         grid-template-columns: repeat(3, 1fr);  
@@ -192,8 +235,36 @@ body {
         width: 5rem;
     }
 
-    /* 下注信息 */
-    .current_user_bet_info, .total_user_bet_info, .total_user_bet_detail {
+    /* list -- end */
+    /* list -- end */
+    /* list -- end */
+
+
+    /* bet */
+    /* bet */
+    /* bet */
+
+    .game_horse_bet,
+    .game_horse_match,
+    .game_horse_result {
+        flex-direction: column;
+    }
+
+    .page_bet_left,
+    .page_bet_right,
+    .page_match_left,
+    .page_match_right,
+    .page_result_left,
+    .page_result_right {
         width: 100%;
     }
+
+    
+
+
+
+    /* bet -- end */
+    /* bet -- end */
+    /* bet -- end */
+
 }

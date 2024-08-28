@@ -1,8 +1,4 @@
 // 选择元素
-var gameTitle = document.querySelector('.game_title')
-var btnStartGame = document.querySelector('.btn_start_game')
-var wishContent = document.querySelector('.wish_content')
-var formWish = document.querySelector('.form_wish')
 var wishTxt = document.querySelector('.wish_txt')
 var varWishContent = document.querySelector('.var_wish_content')
 var pool = document.querySelector('.pool')
@@ -15,13 +11,37 @@ var btnArea = document.querySelector('.btn_area')
 var btnRestartGame = document.querySelector('.btn_restart_game')
 
 
+const bgm = newSound('/audio/secret/wish/quiet-stars-ai-203565', true, 0.5);
 
+
+const pageName = 'wish';
+const checkbox = document.getElementById('hide_or_show_all_tips_in_current_page');
+
+
+// 判断用户是否直接跳转到该页面
+function isUserJumpToThisPage() {
+
+    const userStartGame = readValueFromRecordInLocal(keyName_1_00, keyName_1_01);
+
+    const userWishContent = readValueFromRecordInLocal(keyName_1_00, keyName_1_02);
+
+    if (userStartGame === DEFAULT_VALUE_NULL || userWishContent === DEFAULT_VALUE_NULL || userStartGame === DEFAULT_VALUE_FALSE) {
+
+        showPopupMissData();
+        
+        return false;
+
+    } else if (userStartGame && userWishContent) {
+
+        return true;
+    }
+}
 
 // 生成星星
-generateStars();
 function generateStars() {
     var starContainer = document.querySelector('.star');
-    var screenW = 320;
+
+    var screenW = 320; // 和css设置的pool大小相关
     var screenH = 160;
     
     for (var i = 0; i < 50; i++) {
@@ -45,8 +65,7 @@ function generateStars() {
 }
 
 // 生成流星
-generateMeteor();
-function generateMeteor() {
+function generateMeteor2() {
     const lineList = [
         { c1: "#69E4F6", c2: "#69e4f600", l: "0px", d: 3 },
         { c1: "#FED258", c2: "rgba(254,210,88,0)", l: "60px", d: 5 },
@@ -78,20 +97,55 @@ function generateMeteor() {
 }
 
 
-// 灯球赋值
-generateBulb();
-function generateBulb() {
-    document.querySelectorAll('.bulb').forEach(bulb => {
-        const color = bulb.getAttribute('data-color');
-        const size = bulb.getAttribute('data-size');
-        
-        bulb.style.setProperty('--bulb-color', color);
-        bulb.style.setProperty('--bulb-width', size);
-      });      
+// 生成流星
+function generateMeteor() {
+    const windowWidth = window.innerWidth;
+    const baseMeteorCount = 10; // 基础流星数量
+    const additionalMeteors = Math.floor(windowWidth / 200); // 每200px宽度增加一个流星
+    const totalMeteors = baseMeteorCount + additionalMeteors;
+
+    const lineBox = document.getElementById('line-box');
+    lineBox.innerHTML = ''; // 清空之前生成的流星
+
+    for (let i = 0; i < totalMeteors; i++) {
+        const item = generateRandomMeteor();
+        const lineItem = document.createElement('span');
+        lineItem.className = 'line-item';
+        lineItem.style.setProperty('--c1', item.c1);
+        lineItem.style.setProperty('--c2', item.c2);
+        lineItem.style.left = item.left;
+        lineItem.style.setProperty('--d', item.d);
+        lineBox.appendChild(lineItem);
+    }
 }
 
+// 生成随机流星数据
+function generateRandomMeteor() {
+    const colors = [
+        { c1: "#69E4F6", c2: "#69e4f600" },
+        { c1: "#FED258", c2: "rgba(254,210,88,0)" }
+    ];
+    const color = colors[Math.floor(Math.random() * colors.length)];
+    const leftPosition = `${Math.random() * 100}vw`; // 生成随机的left位置，范围是0到100vw
+    const delay = Math.floor(Math.random() * 6);
+
+    return {
+        c1: color.c1,
+        c2: color.c2,
+        left: leftPosition,
+        d: delay
+    };
+}
+
+// 调用生成流星
+generateMeteor();
+
+
+// 调用生成流星
+
+
+
 // 蜡烛赋值
-generateCandle();
 function generateCandle() {
     document.querySelectorAll('.candle').forEach(bulb => {
         const size = bulb.getAttribute('data-size');
@@ -100,71 +154,20 @@ function generateCandle() {
 }
 
 
-// 初始化音乐
-// 选择音效-- 有效
-const bgmSelect = new Howl({
-    src: ["/audio/game/horse_racing/select-sound-121244.mp3"],
-    html5: true,
-    loop: false,
-    volume: 0.4,
-});
-
-// 游戏中
-const bgmGame = new Howl({
-    src: ["/audio/secret/wish/quiet-stars-ai-203565.mp3"],
-    html5: true,
-    loop: true,
-    volume: 0.5,
-});
-
-// 第1步，点击许愿按钮
-btnStartGame.addEventListener("click", () => {
-    hide(gameTitle);
-    bgmSelect.play();
-    hide(btnStartGame);
-    displayFlex(wishContent);
-    bgmSelect.stop();
-});
-
-// 第2步，输入愿望
-formWish.addEventListener("submit", (event) => {
-    event.preventDefault();
-    const userInputWishContent = document.querySelector('input[name="wish_content"]');
-    let userInputWish = userInputWishContent.value;
-
-    if (userInputWish) {
-        bgmSelect.play();
-        varWishContent.textContent = userInputWish;
-        bgmSelect.stop();
-        hide(wishContent);
-        // displayBlock(pool);
-        displayBlock(moon1);
-        hide(wishTxt);
-        displayFlex(candleArea);
-        lightCandlesSequentially(); // 点亮蜡烛
-        displayBlock(meteorArea);
-        bgmGame.play();
-        displayFlex(btnArea);
-    }
-    
-});
-
-formWish.addEventListener('reset', () => {
-    bgmSelect.play();
-    formWish.reset();
-    hide(wishContent);
-    displayInlineBlock(btnStartGame);
-    displayFlex(gameTitle);
-    bgmSelect.stop();
-});
 
 // 依次点亮蜡烛
 function lightCandlesSequentially() {
+
     const candles = document.querySelectorAll('.candle');
+
     candles.forEach((candle, index) => {
+
         setTimeout(() => {
+
             candle.classList.remove('out');
-            bgmSelect.play();
+
+            siteBgmSelect.play();
+
         }, index * 500); // 每隔0.5秒点亮一个蜡烛
     });
 }
@@ -178,44 +181,64 @@ function outCandles() {
 }
 
 
-// 点击月亮
-moonClick();
-function moonClick() {
-    moon1.addEventListener('click', () => {
-        hide(moon1);
-        displayBlock(moon2);
-        displayFlex(wishTxt);
-    });
 
-    moon2.addEventListener('click', () => {
-        hide(moon2)
-        hide(wishTxt);
-        displayBlock(moon1);
-    });
+
+
+function initGame() {
+
+    if (isUserJumpToThisPage()) {
+
+        bgm.play();
+
+        const userWishContent = readValueFromRecordInLocal(keyName_1_00, keyName_1_02);
+        
+        const varWishContent = document.querySelector('.var_wish_content');
+
+        varWishContent.textContent = userWishContent;
+
+        generateStars();
+
+        generateMeteor();
+
+        generateCandle();
+
+        lightCandlesSequentially();
+
+        writeValueToRecordInLocal(keyName_1_00, keyName_1_01, false);
+
+    }
 }
 
-// 再来一次
-btnRestartGame.addEventListener('click', () => {
-    bgmGame.stop();
-
-    // 隐藏内容
-    hide(candleArea);
-
-    // 恢复蜡烛的熄灭状态
-    outCandles();
-    hide(moon1);
-    hide(moon2);
-    hide(wishTxt);
-    hide(btnArea);
-
-    formWish.reset();
+// 显示/隐藏页面提示 -- 初始化到本地 -- 默认显示 
+// 如果有值，就按照这个值来更新页面上的提示显示/隐藏 -- 包括：checkbox.checked
+initTipsVisibilityConfig(keyName_1_00, pageName);
+hideOrShowAllTipsInCurrentPage(keyName_1_00, pageName);
+checkbox.checked = readTipsVisibilityConfig(keyName_1_00, pageName);
 
 
-    // 显示内容
-    displayFlex(gameTitle);
-    displayInlineBlock(btnStartGame);
-    
-
+// 显示/隐藏页面提示 -- 用户选择的时候进行记录到本地并更新页面
+checkbox.addEventListener('change', () => {
+    const isVisible = checkbox.checked;
+    writeTipsVisibilityConfig(keyName_1_00, pageName, isVisible);
+    hideOrShowAllTipsInCurrentPage(keyName_1_00, pageName);
 });
 
+initGame();
 
+moon1.addEventListener('click', () => {
+
+    setDisplay(moon1, displayTypes.none);
+
+    setDisplay(moon2, displayTypes.block);
+
+    setDisplay(wishTxt, displayTypes.flex);
+});
+
+moon2.addEventListener('click', () => {
+
+    setDisplay(moon2, displayTypes.none);
+
+    setDisplay(moon1, displayTypes.block);
+
+    setDisplay(wishTxt, displayTypes.none);
+});

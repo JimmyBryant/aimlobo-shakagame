@@ -1,22 +1,99 @@
-// 更新文章获赞数量
-updatePostLike(getRandomValueInRange(3, 5));
+const keyName_1_00 = 'topic';
 
-// 刷新文章获赞数量
-updatePagePostLike();
+const pageName = 'list';
 
-// 更新访客数量
-updateVisitorNumber(getRandomValueInRange(1, 5));
+const configName_01 = 'update_post_like_and_site_visitor_number_date';
 
-// 刷新访客数量
-updatePageVisitorNumber();
+const checkbox = document.getElementById('hide_or_show_all_tips_in_current_page');
 
+// 函数
+// 函数
+// 函数
+// 函数
+// 函数
 
+// 更新每天的文章点赞和网站访客数量
+function updatePostLikeAndSiteVisitorNumberDaily() {
 
-function rose() {
-    var b = document.body;  
-    var c = document.getElementsByTagName('canvas')[0];  
-    var a = c.getContext('2d');  
-    document.body.clientWidth;  
-    
-    with(m=Math)C=cos,S=sin,P=pow,R=random;c.width=c.height=f=600;h=-250;function p(a,b,c){if(c>60)return[S(a*7)*(13+5/(.2+P(b*4,4)))-S(b)*50,b*f+50,625+C(a*7)*(13+5/(.2+P(b*4,4)))+b*400,a*1-b/2,a];A=a*2-1;B=b*2-1;if(A*A+B*B<1){if(c>37){n=(j=c&1)?6:4;o=.5/(a+.01)+C(b*125)*3-a*300;w=b*h;return[o*C(n)+w*S(n)+j*610-390,o*S(n)-w*C(n)+550-j*350,1180+C(B+A)*99-j*300,.4-a*.1+P(1-B*B,-h*6)*.15-a*b*.4+C(a+b)/5+P(C((o*(a+1)+(B>0?w:-w))/25),30)*.1*(1-B*B),o/1e3+.7-o*w*3e-6]}if(c>32){c=c*1.16-.15;o=a*45-20;w=b*b*h;z=o*S(c)+w*C(c)+620;return[o*C(c)-w*S(c),28+C(B*.5)*99-b*b*b*60-z/2-h,z,(b*b*.3+P((1-(A*A)),7)*.15+.3)*b,b*.7]}o=A*(2-b)*(80-c*2);w=99-C(A)*120-C(b)*(-h-c*4.9)+C(P(1-b,7))*50+c*2;z=o*S(c)+w*C(c)+700;return[o*C(c)-w*S(c),B*99-C(P(b, 7))*50-c/3-z/1.35+450,z,(1-b/1.2)*.9+a*.1, P((1-b),20)/4+.05]}}setInterval('for(i=0;i<1e4;i++)if(s=p(R(),R(),i%46/.74)){z=s[2];x=~~(s[0]*f/z-h);y=~~(s[1]*f/z-h);if(!m[q=y*f+x]|m[q]>z)m[q]=z,a.fillStyle="rgb("+~(s[3]*h)+","+~(s[4]*h)+","+~(s[3]*s[3]*-80)+")",a.fillRect(x,y,1,1)}',0)
+    const updatedDate =  readPageConfig(keyName_1_00, pageName, configName_01);
+
+  // 读取不到 -- 第一次登录 -- 初始化已经有值了 -- 所以不用再添加 -- 但是要更新：updateDate
+  // 日期不是今天 -- 需要更新
+  if (updatedDate === DEFAULT_VALUE_UNDEFINED) {
+
+    writePageConfig(keyName_1_00, pageName, configName_01, getFormattedDateWithDash());
+
+  } else if (updatedDate != getFormattedDateWithDash()) {
+
+    const postLikeNumber = readValueFromRecordInLocal(keyName_0_03, keyName_0_03_01);
+
+    const siteVisitorNumber = readValueFromRecordInLocal(keyName_0_03, keyName_0_03_02);
+
+    const addPostLikeNumberDaily = getRandomIntegerInRange(setMinPostLikeNumberForUserDaily, setMaxPostLikeNumberForUserDaily);
+
+    const addSiteVisitorNumberDaily = getRandomIntegerInRange(setMinSiteVisitorNumberForUserDaily, setMaxSiteVisitorNumberForUserDaily);
+
+    writeValueToRecordInLocal(keyName_0_03, keyName_0_03_01, postLikeNumber + addPostLikeNumberDaily);
+
+    writeValueToRecordInLocal(keyName_0_03, keyName_0_03_02, siteVisitorNumber + addSiteVisitorNumberDaily);
+
+    writePageConfig(keyName_1_00, pageName, configName_01, getFormattedDateWithDash());
+
+  }
+
 }
+
+
+
+
+// 函数 -- end
+// 函数 -- end
+// 函数 -- end
+// 函数 -- end
+// 函数 -- end
+
+// 进入页面按顺序执行
+// 进入页面按顺序执行
+// 进入页面按顺序执行
+
+// 页面提示 -- 可点击隐藏
+clickHideInPageTips();
+
+// 显示/隐藏页面提示 -- 初始化到本地 -- 默认显示 
+// 如果有值，就按照这个值来更新页面上的提示显示/隐藏 -- 包括：checkbox.checked
+initTipsVisibilityConfig(keyName_1_00, pageName);
+hideOrShowAllTipsInCurrentPage(keyName_1_00, pageName);
+checkbox.checked = readTipsVisibilityConfig(keyName_1_00, pageName);
+
+
+// 显示/隐藏页面提示 -- 用户选择的时候进行记录到本地并更新页面
+checkbox.addEventListener('change', () => {
+    const isVisible = checkbox.checked;
+    writeTipsVisibilityConfig(keyName_1_00, pageName, isVisible);
+    hideOrShowAllTipsInCurrentPage(keyName_1_00, pageName);
+});
+
+
+// 更新每天的文章点赞和网站访客数量
+updatePostLikeAndSiteVisitorNumberDaily();
+
+
+// 更新文章点赞数量到本地
+updatePostLikeToLocal(getRandomIntegerInRange(setMinPostLikeNumberForUserEveryTime, setMaxPostLikeNumberForUserEveryTime));
+
+// 更新网站访客数量到本地
+updateSiteVisitorNumberToLocal(getRandomIntegerInRange(setMinSiteVisitorNumberForUserEveryTime, setMaxSiteVisitorNumberForUserEveryTime));
+
+
+// 更新文章点赞数量到页面
+updatePostLikeInPage();
+
+// 更新网站访客数量到页面
+updateSiteVisitorNumberInPage();
+
+
+
+// 进入页面按顺序执行 -- end
+// 进入页面按顺序执行 -- end
+// 进入页面按顺序执行 -- end
+

@@ -3,7 +3,13 @@
 {{/* 如果没有页面js文件，那么就只有全局js文件 */}}
 {{/* 这里命名不能固定，不然会输出同样的内容给每一个页面，所以采用了各个页面的path，通过base64进行加密进行处理 */}}
 
-{{- $js := slice (resources.Get "js/main.js") -}}
+
+{{- $js := slice (resources.Get "js/site_parameter.js") -}}
+
+{{- $js = $js | append (resources.Get "js/site_data.js") -}}
+{{- $js = $js | append (resources.Get "js/site_i18n_data.js") -}}
+{{- $js = $js | append (resources.Get "js/site_sound.js") -}}
+{{- $js = $js | append (resources.Get "js/site_main.js") -}}
 
 {{- with .Params.js -}}
     {{- range . -}}
@@ -11,11 +17,33 @@
     {{- end -}}
 {{- end -}}
 
-{{- $pagePath := .Path | base64Encode -}}
+{{- $pagePath := printf "%s-%s" .Path .Title | base64Encode -}}
 {{- $bundleName := printf "js/%s.bundle.js" $pagePath -}}
 
 {{- $js := $js | resources.Concat $bundleName | js.Build | minify | fingerprint -}}
 <script src="{{- $js.RelPermalink -}}" integrity="{{- $js.Data.Integrity -}}" crossorigin="anonymous" defer></script>
+
+
+
+{{/* 
+
+{{- $js := slice -}}
+
+{{- with .Params.js -}}
+    {{- range . -}}
+        {{- $js = $js | append (resources.Get .) -}} 
+    {{- end -}}
+{{- end -}}
+
+{{- $js = $js | append (resources.Get "js/main.js") -}}
+
+{{- $pagePath := printf "%s-%s" .Path .Title | base64Encode -}}
+{{- $bundleName := printf "js/%s.bundle.js" $pagePath -}}
+
+{{- $js := $js | resources.Concat $bundleName | js.Build | minify | fingerprint -}}
+<script src="{{- $js.RelPermalink -}}" integrity="{{- $js.Data.Integrity -}}" crossorigin="anonymous" defer></script>
+
+*/}}
 
 
 {{- /* Search */}}

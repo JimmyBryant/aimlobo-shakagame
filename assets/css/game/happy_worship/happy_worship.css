@@ -21,22 +21,151 @@ header {
     z-index: 20;
 }
 
+.game_happy_worship_home {
 
-main {
-    height: 100vh;
-    margin-top: 0;
-}
+    .gods {
 
-/* 页面上的标题 */
-.game-title {
-    height: var(--height-game-title);
-}
-
-/* 页面上的神明: slice */
-.god-imgs {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        
     
-    width: calc(var(--height-god-img) + 16vw);
-    max-width: 95vw;
+        /* 让用户不点击get_it按钮来隐藏popup_box, 不然会直接默认表单提交 */
+        .popup_box_content {
+            .footer {
+                display: none;
+            }
+        }
+    }
+    
+    .god_img {
+        width: 6rem;
+        height: 6rem;
+        border-radius: 0.5rem;
+        vertical-align: middle;
+        object-fit: cover;
+        object-position: top;
+        transition: all .3s ease;
+    }
+    
+    .god_img:hover {
+        transform: scale(1.3);
+    }
+}
+
+.game_happy_worship_offering {
+
+    display: flex;
+    gap: 1rem;
+    /* align-items: center;
+    justify-content: center; */
+
+    .page_left {
+
+        width: 42rem;
+    }
+
+    .page_right {
+
+        width: 21rem;
+    }
+
+    .offerings {
+
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+
+    }
+
+    .form_offerings_select {
+
+        input[type="checkbox"] {
+            appearance: none;
+            width: 100%;
+            height: 1.5rem;
+            border-radius: 0;
+            border: none;
+            outline: none;
+            margin: 0 auto;
+            bottom: 0;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+    
+        input[type="radio"]::before,
+        input[type="checkbox"]::before {
+    
+            content: "";
+            display: block;
+            width: 100%;
+            height: 100%;
+            border-radius: 0.5rem;
+            position: relative;
+            bottom: 0;
+            left: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            transition: none;
+            top: 0;
+        }
+    
+        input[type="radio"]:checked::before,
+        input[type="checkbox"]:checked::before {
+            content: "✅";
+            transform: none;
+            transition: none;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+
+    }
+
+    
+    
+    /* .god_img {
+        width: 6rem;
+        height: 6rem;
+        border-radius: 0.5rem;
+        vertical-align: middle;
+        object-fit: cover;
+        object-position: top;
+        transition: all .3s ease;
+    }
+    
+    .god_img:hover {
+        transform: scale(1.3);
+    } */
+}
+
+
+/* 香火图案大小 */
+.incense-item {
+    display: flex;
+    flex-direction: column;
+    gap:var(--height-incense-gap);
+}
+.incense-head {
+    height: var(--height-incense-head);
+    width: var(--height-incense-head);
+    background: linear-gradient(180deg, rgba(255, 3, 3, 1) 0%, rgba(244, 102, 0, 1) 100%);
+}
+
+.incense-body {
+    height: calc(var(--height-incense) - var(--height-incense-head) - var(--height-incense-gap));
+    width: var(--height-incense-head);
+    background-color: #008000;
+}
+
+
+/* 页面上的神明 */
+.god_img {
+    
+    /* width: calc(var(--height-god-img) + 16vw);
+    max-width: 95vw; */
 
     img {
         height: var(--height-god-img);
@@ -45,23 +174,6 @@ main {
         max-width: 80vw;
     }
 
-    .splide__pagination {
-        display: none;
-    }
-
-    
-}
-
-
-/* overlay */
-.overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: transparent;
-    z-index: 10;
 }
 
 /* 页面上的桌子和供品区域 */
@@ -91,96 +203,6 @@ main {
 
 }
 
-/* 表单: 供品和香火 */
-.form-offerings,
-.form-incense {
-    .body {
-        
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: var(--gap-in-form); 
-
-        .label-img-text-in-form {
-            max-width: calc((28rem - var(--gap-in-form) * 2) / 3);
-            max-height: calc((28rem - var(--gap-in-form) * 2) / 3);
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.05);
-            border-radius: 0.5rem;
-            padding: 0.5rem 0;
-            position: relative;
-            overflow: hidden;
-
-            input[type="radio"],
-            input[type="checkbox"] {
-                appearance: none;
-                width: 100%;
-                height: 1.5rem;
-                border-radius: 0;
-                border: none;
-                outline: none;
-                margin: 0 auto;
-                bottom: 0;
-                position: absolute;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                font-size: 1.2rem;
-            }
-
-            input[type="radio"]::before,
-            input[type="checkbox"]::before {
-
-                content: "";
-                display: block;
-                width: 100%;
-                height: 100%;
-                border-radius: 0.5rem;
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                font-size: 1.2rem;
-                transition: none;
-                top: 0;
-            }
-
-            input[type="radio"]:checked::before,
-            input[type="checkbox"]:checked::before {
-                content: "✅";
-                transform: none;
-                transition: none;
-                background-color: rgba(0, 0, 0, 0.4);
-            }
-
-        }
-    }
-}
-
- /* 表单里的供品图案大小 */
- .form-offerings .label-img-in-form {
-    font-size: 3rem;
- }
-
-/* 香火图案大小 */
-.incense-item {
-    display: flex;
-    flex-direction: column;
-    gap:var(--height-incense-gap);
-}
-.incense-head {
-    height: var(--height-incense-head);
-    width: var(--height-incense-head);
-    background: linear-gradient(180deg, rgba(255, 3, 3, 1) 0%, rgba(244, 102, 0, 1) 100%);
-}
-
-.incense-body {
-    height: calc(var(--height-incense) - var(--height-incense-head) - var(--height-incense-gap));
-    width: var(--height-incense-head);
-    background-color: #008000;
-}
 
 /* 页面上的香火和火炉区域 */
 .incense-img {
@@ -193,20 +215,16 @@ main {
         }
     }
 
-    .btn_open_form_incense {
-        left: 50%;
-        top: 80%;
-        transform: translate(-50%, -50%);
-        width: 15rem;
-        /* background-color: #61dbf0; */
-    }
-
     .incense-in-page {
         bottom: calc(var(--height-stove) - 1.5vh );
         height: var(--height-incense);
         width: var(--height-stove);
         z-index: 1;
-        display: none;
+        /* display: none; */
+
+        .incense_id {
+            display: none;
+        }
 
         .incense-item {
             display: flex;
@@ -222,17 +240,23 @@ main {
         .incense-item:last-child {
             right: 3vh;
         }
+
+        .incense_1 {
+
+            .incense-item:first-child {
+                left: 50%;
+            }
+        
+            .incense-item:last-child {
+                right: 50%;
+            }
+        }
     }
 }
 
-
 /* worship */
 .worship_box {
-    align-items: center;
-    justify-content: space-between;
-    padding: 1rem;
-    border-radius: 1rem;
-    background-color: white;
+
     z-index: 20;
 
     .worship_title {
@@ -288,12 +312,23 @@ main {
 }
 
 
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    z-index: 10;
+}
+
+
 /* bubble */
 #bubble-container {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
+    /* position: relative; */
+    width: 80%;
+    /* min-height: 80vh; */
+    /* overflow: hidden; */
     /* background-color: #f0f8ff; */
 }
 
@@ -334,9 +369,106 @@ main {
   }
 
 
-  @media screen and (max-width: 48rem) {
+.game_happy_worship_result {
+
+    display: flex;
+    gap: 1rem;
+
+
+    .page_left {
+
+        width: 42rem;
+    }
+
+    .page_right {
+
+        width: 21rem;
+    }
+
+}
+
+
+.down_check_bet_record {
+    display: none;
+}
+
+.down_check_bet_record_icon {
+    display: inline-block;
+    position: relative;
+    animation: down_check_bet_record_icon_animation 1s infinite alternate ease-in-out;
+}
+
+@keyframes down_check_bet_record_icon_animation {
+    0% {
+        top: -0.5rem;
+    }
+    100% {
+        top: 0;
+    }
+}
 
 
 
+@media screen and (max-width: 48rem) {
 
-  }
+    .game_happy_worship_home {
+
+        .gods {
+
+            grid-template-columns: repeat(3, 1fr);  
+        }
+    
+        .gods label {
+            gap: 0.5rem;
+        }
+    
+        .god_img {
+            width: 5rem;
+            height: 5rem;
+        }
+
+    }
+
+    .game_happy_worship_offering {
+
+        flex-direction: column;
+
+        .page_left,
+        .page_right {
+
+            width: 100%;
+        }
+        .offerings {
+
+            grid-template-columns: repeat(3, 1fr);  
+        }
+    
+        .offerings label {
+            gap: 0.5rem;
+        }
+
+        .label_offering {
+
+            font-size: 2rem;
+        }
+    }
+
+    .game_happy_worship_result {
+
+        flex-direction: column;
+
+        .page_left,
+        .page_right {
+
+            width: 100%;
+        }
+    
+    }
+
+    .down_check_bet_record {
+        display: block;
+    }
+    
+
+
+}

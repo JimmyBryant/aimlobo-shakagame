@@ -1,0 +1,24 @@
+{{- /* 用户直接来到这个页面，缺乏正常的游戏数据，就提示重新开始游戏 */ -}}
+{{- /* partial "game/horse_racing/popup_miss_data.html" (dict "tipsContent" "tipsContent") */}}
+
+{{- $tipsContent :=  .tipsContent -}}
+
+
+<div class="popup_miss_data popup_tips popup_box">
+
+    <div class="popup_box_content">
+
+        <div class="header">
+            <span class="icon">💡</span>{{- T "tips" -}}
+        </div>
+        
+        <div class="body">
+    
+            <div class="content">
+                <p>{{ $tipsContent | markdownify }}</p>
+            </div>
+            
+        </div>
+
+    </div>
+</div>

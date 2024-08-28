@@ -1,10 +1,14 @@
 /* page: my, body - pc */
 
+body {
+    
+}
+
 /* 个人信息 */
-.user_personal_info {
+/* .user_personal_info {
     height: 7rem;
     padding: 1rem;
-}
+} */
 
 /* 个人信息 - 头像 */
 .var_user_avatar {
@@ -16,6 +20,13 @@
     height: 3rem;
     overflow: hidden;
 }
+
+
+.user_loyal_info_title {
+
+    min-width: 8rem;
+}
+
 
 /* 表单: 头像选择 */
 .form_user_avatar {
@@ -84,6 +95,16 @@
     }
 }
 
+.input_user_birth_date {
+    min-width: 10rem;
+    min-height: 1rem;
+}
+
+
+.popup_form_user_gender label {
+
+    width: 30%;
+}
 
 /* 签到按钮 */
 
@@ -171,13 +192,18 @@
 /* page: my, body - mobile */
 @media screen and (max-width: 48rem) {
 
-    .user_personal_info {
+    /* .user_personal_info {
         height: 7rem;
         padding: 0.5rem;
     }
 
     .var_user_name {
         font-size: 1rem;
+    } */
+
+    .popup_form_user_gender label {
+
+        width: 40%;
     }
 
 }

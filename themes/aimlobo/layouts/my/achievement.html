@@ -1,0 +1,147 @@
+{{- define "main" -}}
+
+{{- /* 用户个人成就界面 */ -}}
+{{- /* 目前包括：幸运积分，用户等级，游戏次数，阅读此书 */ -}}
+
+{{- $lang := .Lang -}}
+{{- $achievementLuckyPoint := .Site.Data.user_info.user_achievement.lucky_point -}}
+{{- $achievementUserLevel := .Site.Data.user_info.user_achievement.user_level -}}
+{{- $achievementGameTime := .Site.Data.user_info.user_achievement.game_time -}}
+{{- $achievementReadTime := .Site.Data.user_info.user_achievement.read_time -}}
+{{- $inPageTipsContent := .Site.Data.user_info.user_achievement.in_page_tips_content -}}
+{{- $inPageTipsContentLang := index $inPageTipsContent $lang -}}
+
+
+
+
+<div class="wrap">
+
+  {{- /* 用户个人成就 */ -}}
+  <div class="user_achievement">
+
+      <div class="font-size-1_5 font-weight-600 text-center margin-tb-1rem">{{ T "achievement" }}</div>
+
+      <div class="margin-tb-1rem">
+        <a class="btn inline-block" href="../">&lt;&lt;&lt;&nbsp;</a>
+      </div>
+      
+
+      {{- partial "tools/hide_page_all_tips.html" }}
+
+      {{- partial "tools/in_page_tips.html" (dict "inPageTipsContent" $inPageTipsContentLang "tipsType" "normal") }}
+
+
+
+    <div class="user_lucky_point margin-tb-1rem">
+
+      <div class="flex flex-column gap-1rem padding-_5rem bg-white border-radius-_5rem">
+
+        <div class="font-size-1_5 margin-top-1rem text-center">🧧 {{ T "lucky_point" }}</div>
+
+        <div class="var_achievement_user_lucky_point">
+
+          {{- range $achievementLuckyPoint -}}
+
+            <div class="id_{{ .id }} flex flex-column align-items-center">
+
+              <div class="var_achievement_user_lucky_point_icon id_{{ .id }} font-size-3 opacity-_3">{{- .content -}}</div>
+              
+              <div class="text">{{- .id -}}</div>
+
+            </div>
+
+          {{- end  -}}
+
+        </div>
+
+      </div>
+
+    </div>
+
+    {{- partial "google_adsense/05.html" }}
+
+    <div class="user_level margin-tb-1rem">
+
+      <div class="flex flex-column gap-1rem padding-_5rem bg-white border-radius-_5rem">
+
+        <div class="font-size-1_5 margin-top-1rem text-center">🎢 {{ T "user_level" }}</div>
+
+        <div class="var_achievement_user_level">
+
+          {{- range $achievementUserLevel -}}
+
+            <div class="id_{{ .id }} flex flex-column align-items-center">
+
+              <div class="var_achievement_user_level_icon id_{{ .id }} font-size-3 opacity-_3">{{- .content -}}</div>
+              
+              <div class="text">{{- .id -}}</div>
+
+            </div>
+            
+          {{- end  -}}
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="user_game_time margin-tb-1rem">
+
+      <div class="flex flex-column gap-1rem padding-_5rem bg-white border-radius-_5rem">
+
+        <div class="font-size-1_5 margin-top-1rem text-center">🎮 {{ T "game_time" }}</div>
+
+        <div class="var_achievement_user_game_time">
+
+          {{- range $achievementGameTime -}}
+
+            <div class="id_{{ .id }} flex flex-column align-items-center">
+
+              <div class="var_achievement_user_game_time_icon id_{{ .id }} font-size-3 opacity-_3">{{- .content -}}</div>
+              
+              <div class="text">{{- .id -}}</div>
+
+            </div>
+            
+          {{- end  -}}
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="user_read_time margin-tb-1rem">
+
+      <div class="flex flex-column gap-1rem padding-_5rem bg-white border-radius-_5rem">
+
+        <div class="font-size-1_5 margin-top-1rem text-center">📖 {{ T "read_time" }}</div>
+
+        <div class="var_achievement_user_read_time">
+
+          {{- range $achievementReadTime -}}
+
+            <div class="id_{{ .id }} flex flex-column align-items-center">
+
+              <div class="var_achievement_user_read_time_icon id_{{ .id }} font-size-3 opacity-_3">{{- .content -}}</div>
+              
+              <div class="text">{{- .id -}}</div>
+
+            </div>
+            
+          {{- end  -}}
+
+        </div>
+
+      </div>
+
+    </div>
+
+ 
+
+    
+  </div>
+
+</div>
+{{- end -}}

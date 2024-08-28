@@ -1,0 +1,79 @@
+{{- define "main" -}}
+{{- $lang := .Lang -}}
+{{- $dataLang := index .Site.Data.game $lang -}}
+{{- $games := $dataLang.game_lists -}}
+{{- $happy_worship := where $games "id" "happy_worship" -}}
+{{- $tips := (index $happy_worship 0).tips -}}
+{{- $gods := (index $happy_worship 0).gods -}}
+{{- $offerings := (index $happy_worship 0).offerings -}}
+{{- $msg_end_worship := (index $happy_worship 0).msg_end_worship -}}
+{{- $msg_not_enought_lucky_point := (index $happy_worship 0).msg_not_enought_lucky_point -}}
+
+<div class="wrap">
+
+    <div class="game_happy_worship_home">
+
+        {{- /* 游戏介绍，第一个页面 */ -}}
+        <div class="game_intro padding-tb-1rem flex flex-column gap-1rem align-items-center">
+
+            {{- /* 游戏标题 */ -}}
+            <div class="flex align-items-center gap-_5rem padding-tb-1rem">
+                <div class="game_title font-size-2">{{ T "happy_worship" }}</div>
+
+                <div class="tips_icon">
+                    <span class="font-size-1_5 cursor-pointer">👀</span>
+                    {{ partial "tools/popup_tips.html" (dict "tipsContent" $tips) }}
+                </div>
+            </div>
+
+            {{- /* 选择神明 */ -}}
+            <form class="form_god_select width-100">
+
+                <div class="header padding-1rem text-center font-size-1_5">
+                    {{- T "select_god" -}}
+                </div>
+
+                <div class="body gods gap-1rem align-items-center padding-tb-1rem">
+
+                    {{ range $index, $god := $gods }}
+
+                        <label for="god_{{ add $index 1 }}"
+                            class="flex flex-column gap-1rem align-items-center shadow-box border-radius-_5rem padding-_5rem">
+                            <p class="font-size-1_2">{{ add $index 1 }}</p>
+
+                            <div class="info_icon_btn cursor-pointer overflow-hidden border-radius-_5rem">
+                                {{- $path := $god.img -}}
+                                {{- $alt := $god.name -}}
+                                {{ partial "tools/img-res.html" (dict "class" "god_img" "imagePath" $path "alt" $alt
+                                "imageWidth" 15) }}
+                                {{ partial "tools/popup_info_btn.html" (dict "infoContent" $god.description) }}
+                            </div>
+
+                            <input type="radio" id="god_{{ add $index 1 }}" name="select_god"
+                                value="{{ add $index 1 }}" required />
+
+                        </label>
+                    {{ end }}
+                </div>
+
+                <div class="footer flex gap-1rem align-items-center justify-content-center margin-tb-1rem">
+
+                    <button class="btn btn_reset" type="reset">{{ T "cancel" }}</button>
+
+                    <button class="btn btn_submit" type="submit">{{ T "submit" }}</button>
+                    
+                </div>
+
+            </form>
+
+            
+
+        </div>
+
+        
+
+    </div>
+
+</div>
+
+{{- end -}}

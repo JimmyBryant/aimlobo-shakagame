@@ -6,10 +6,10 @@ body {
     min-height: 100vh;
 }
 
-.book_cover {
+/* .book_cover {
     min-height: 100vh;
     background: rgba(225, 225, 225, 0.9);
-}
+} */
 
 .birds-box {
     /* display: none; */
@@ -90,7 +90,7 @@ body {
 }
 
 .book_content {
-    display: none;
+    
     position: relative;
     top: 10rem;
 
@@ -101,15 +101,17 @@ body {
     }
 }
 
-.btn_share, .btn_restart_game {
-    background-color: rgba(119, 249, 182, 0.3);
+
+.btn_restart_game {
+    background-color: rgba(119, 249, 182, .3);
     transition: background .5s ease-out;
 }
 
 .btn_restart_game:hover {
+
+    color: white;
     background: #23a6d5;
 }
-
 
 
 

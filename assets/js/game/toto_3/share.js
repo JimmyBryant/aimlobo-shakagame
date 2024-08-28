@@ -1,114 +1,80 @@
 // 这个库用来作为几个页面都会使用到的一些函数集合，方便大家一起使用
+/* 
+
+该函数库的目录：
+
+    - 根据 winningNumberParts 动态生成 fixedPart 的值，也就是说这里是3位数的博彩，生成'03'，5位数的，生成'05'
+    - 拆分数字成几位，不足就用0补充，比如121拆分成：1 2 1,  80拆分成 0 8 0, 5拆分成 0 0 5
+    - 生成轮次信息
+        - 生成轮次信息 -- 指定轮次的号码: -- 参数代表序号： 0 表示当前，1表示上一轮，2表示上上轮...
+        - 生成轮次信息 -- 指定轮次的下注开始时间
+        - 生成轮次信息 -- 指定轮次的下注停止时间
+        - 生成轮次信息 -- 指定轮次的开奖开始时间
+        - 生成轮次信息 -- 指定轮次的开奖停止时间
+        - 生成轮次信息 -- 指定轮次的当前状态
+    - 生成模拟数据
+        - 生成模拟数据 - 参与下注的玩家数量
+        - 生成模拟数据 - 参与下注的玩家下注的总注数: 模拟每个人都选择1-100的注；传递一个参数 -- 参与下注的玩家数量
+        - 生成模拟数据 - 参与下注的玩家下注的总金额, 传递参数 -- 参与下注的玩家下注的总注数
+        - 生成模拟数据 - 中奖的号码
+        - 生成模拟数据 - 中奖的玩家数量
+        - 生成模拟数据 - 中奖的玩家下注的总注数, 传递参数 -- 获奖的玩家数量
+        - 生成模拟数据 - 中奖的总金额, 传递参数 -- 中奖的玩家下注的总注数
+    - 历史信息 -- 生成模拟的数据 -- 参数代表: 要写进到本地的数据的条数 -- core 重要
+    - 初始化游戏 -- 生成模拟的数据 -- 参数代表: 要生成几条记录
+    - 本地记录的更新
+        - 更新本地记录 -- 某条记录的状态
+        - 更新本地记录 -- 某条记录中的用户中奖信息: 是否中奖, 中奖记录(中奖号码对应的下注总注数，下注总金额，中奖金额)
+        - 更新本地记录 -- 全部记录 -- 下一轮或者过了很多轮开始了 -- core 重要
+    - 辅助函数 -- 本地记录的更新
+        - 轮次更新的时候更新中奖号码 -- 彩蛋位置
+        - 汇总统计用户的下注信息（统计每个下注号码的总下注注数，总下注金额）, 返回一个汇总后的数组 -- 参数代表获取第几条记录
+        - 得到当前时间应该有哪些轮次号码，返回一个数组（按照时间从现在到之前）
+        - 得到当前记录里的轮次号码，返回一个数组（按照时间从现在到之前）
+        - 判断两个数组是否一致
+        - 判断两个数组是否完全不一致
+        - 获取需要更新的类型和需要保留的记录内容
+    - 页面信息的更新
+        - 页面信息的更新 -- 更新页面记录中的轮次号码信息 -- 参数传递需要获取第几条记录
+        - 页面信息的更新 -- 更新页面记录中的轮次状态信息 -- 参数传递需要获取第几条记录
+        - 更新页面信息 -- 下一轮更新时间倒计时
+        - 页面信息的更新 -- 更新页面记录中的轮次中奖号码信息 -- 参数传递需要获取第几条记录 -- 使用范围：页面上只有一个中奖号码 -- bonus, history
+        - 页面信息的更新 -- 更新页面记录中的所有玩家参与和中奖信息 -- 参数传递需要获取第几条记录
+        - 页面信息的更新 -- 更新页面记录中的用户参与和中奖信息 -- 参数传递需要获取第几条记录
+        - 页面信息的更新 -- 更新页面记录中的轮次的用户下注记录 -- 参数传递需要获取第几条记录 
+        - 页面信息的更新 -- 更新页面记录中的轮次的用户下注记录 -- 参数传递需要获取第几条记录 
+    辅助函数 -- 页面信息的更新
+        - 更新时间间隔 -- 轮次重排 -- 适用： list，bet
+        - 更新时间间隔 -- 轮次状态 -- index = 0 -- 适用： list，bet
 
 
-// 参数变量，方便调试和修改
-const recordCount = 7; // 需要生成的记录数目
-const intervalMinutes = 5; // 间隔时间（分钟）-- 非常重要 -- 一定要 >= 1,才能正确更新list页面的数据（按条）
-const intervalMinutesClose = 0.5; // 提前多长时间封盘
-const intervalMinutesValidBet = intervalMinutes - intervalMinutesClose; // 有效下注时间
-const intervalMinutesValidBonus = intervalMinutes; // 有效兑奖时间
-const minBetMultiple = 1; // 最低下注注数
-const maxBetMultiple = 100; // 最高下注注数
-const singleBetCost = 1; // 单注下注金额
-const singleBetBonus = 1000; // 单注奖励
-const taxRate = 0.03; // 扣去多少作为服务费
-const minPlayerNumber = 2000; // 模拟的参与人数下限
-const maxPlayerNumber = 8000; // 模拟的参与人数上限
-const minWinners = 0; // 模拟的中奖人数下限
-const maxWinners = 30; // 模拟的中奖人数上限
-const statusOpen = 'lottery_open'; // 轮次状态信息：开盘
-const statusClose = 'lottery_close'; // 轮次状态信息：封盘
-const statusBonus = 'lottery_bonus'; // 轮次状态信息：开奖中
-const statusStop = 'lottery_stop'; // 轮次状态信息：结束
-const winningNumberParts = 3; // 中奖号码的位数
-const winningNumberLowest = 0; // 中奖号码的最低数字
-const winningNumberHighest = 999; // 中奖号码的最高数字
+*/ 
 
-
-
-// 参数变量，写入local
-// 一级名称
-const keyName_1_00 = 'game_toto_3';
-
-// 二级名称，用来记录最近7期的情况，其中5期是历史记录（已结束的轮次），一期是开奖中，一期是当前轮次（开盘，封盘）
-// 每期的记录包括：轮次，下注开始时间，下注停止时间，开奖开始时间，开奖停止时间，状态，参与玩家总数，下注总注数，下注总金额，中奖人数，中奖注数，中奖金额，中奖号码，用户是否参与，参与记录，用户是否中奖，用户中奖记录, 用户是否兑奖;
-
-
-const keyName_1_01 = 'round_number'; // 轮次号码
-const keyName_1_02 = 'round_bet_begin_time'; // 下注开始时间
-const keyName_1_03 = 'round_bet_close_time'; // 下注停止时间
-const keyName_1_04 = 'round_bonus_begin_time'; // 开奖开始时间
-const keyName_1_05 = 'round_bonus_close_time'; // 开奖停止时间
-const keyName_1_06 = 'round_status'; // // 轮次状态
-const keyName_1_07 = 'round_total_bet_player'; // 下注玩家总数
-const keyName_1_08 = 'round_total_bet_multiple'; // 玩家下注总注数
-const keyName_1_09 = 'round_total_bet_amount'; // 玩家下注总金额
-const keyName_1_10 = 'round_total_win_player'; // 中奖玩家总数
-const keyName_1_11 = 'round_total_win_multiple'; // 中奖玩家下注总注数
-const keyName_1_12 = 'round_total_win_amount'; // 中奖玩家下注总金额
-const keyName_1_13 = 'round_win_number'; // 中奖号码
-const keyName_1_14 = 'round_user_bet_or_not'; // 用户是否下注
-const keyName_1_15 = 'round_user_bet_record'; // 用户下注记录
-const keyName_1_16 = 'round_user_win_or_not'; // 用户是否中奖
-const keyName_1_17 = 'round_user_win_record'; // 用户中奖记录
-const keyName_1_18 = 'round_user_bonus_or_not'; // 用户是否兑奖
-const keyName_1_19 = 'round_page_bet_tip_go_to_bonus'; // 下注页面出现popup提示用户封盘了，可以去兑奖了
-
-// 用户下注的键名
-const keyName_1_15_01 = 'user_bet_number'; // 用户下注记录 -- 用户下注号码
-const keyName_1_15_02 = 'user_bet_multiple'; // 用户下注记录 -- 用户下注注数
-const keyName_1_15_03 = 'user_bet_amount'; // 用户下注记录 -- 用户下注金额
-
-// 用来汇总统计用户的下注记录中，中奖的总下注注数, 总下注金额, 获奖金额
-const keyName_1_15_04 = 'user_total_bet_multiple'; // 用户中奖记录 -- 用户中奖总注数
-const keyName_1_15_05 = 'user_total_bet_amount'; // 用户中奖记录 -- 用户中奖总注数对应的总下注金额
-const keyName_1_15_06 = 'user_bonus_amount'; // 用户中奖记录 -- 用户中奖总金额
 
 
 
 // 函数
+// 函数
+// 函数
+// 函数
+// 函数
 
-/**
- * 每隔指定时间（秒）执行给定的一系列回调函数
- * @param {number} interval - 时间间隔（单位：秒）
- * @param  {...function} callbacks - 需要执行的回调函数
- * 不能传递参数 -- 重要
- */
-function executeEvery(interval, ...callbacks) {
-    // 将时间间隔转换为毫秒
-    const intervalInMs = interval * 1000;
 
-    // 对每个回调函数使用 setInterval
-    callbacks.forEach(callback => {
-        setInterval(callback, intervalInMs);
-    });
-}
-
-/*
-
-// 示例用法
-function fun1() {
-    console.log('fun1 执行');
-}
-
-function fun2() {
-    console.log('fun2 执行');
-}
-
-executeEvery(5, fun1, fun2);
-
-*/
 
 
 // 根据 winningNumberParts 动态生成 fixedPart 的值，也就是说这里是3位数的博彩，生成'03'，5位数的，生成'05'
 function getFixedPart(winningNumberParts) {
+
     return winningNumberParts.toString().padStart(2, '0'); // 可以更改这里的2变成3改成类似'003'这种效果
 }
 
 // 拆分数字成几位，不足就用0补充，比如121拆分成：1 2 1,  80拆分成 0 8 0, 5拆分成 0 0 5.
 function splitNumberToParts(number, bit) {
+
     let numberStr = number.toString().padStart(bit, '0');
+
     let parts = numberStr.split('').map(Number);
+
     return parts;
 }
 
@@ -121,31 +87,6 @@ function splitNumberToParts(number, bit) {
 // 基础函数 -- 时间
 
 
-// 获取今天的日期并格式化为字符串（如 "YYYYMMDD"）
-function getTodayDateWithoutDash() {
-    const today = new Date();
-    const year = today.getFullYear();
-    const month = String(today.getMonth() + 1).padStart(2, '0');
-    const day = String(today.getDate()).padStart(2, '0');
-    return `${year}${month}${day}`;
-}
-
-// 获取昨天日期，格式为YYYYMMDD
-function getYesterdayDateWithoutDash() {
-    const currentTime = new Date();
-    currentTime.setDate(currentTime.getDate() - 1);
-    const year = currentTime.getFullYear();
-    const month = String(currentTime.getMonth() + 1).padStart(2, '0');
-    const day = String(currentTime.getDate()).padStart(2, '0');
-    return `${year}${month}${day}`;
-}
-
-// 获取当天的凌晨0点时间
-function getTodayStartTime() {
-    const today = new Date();
-    today.setHours(0, 0, 0, 0);
-    return today;
-}
 
 // 获取当前时间 -- 返回Date对象 -- 如果需要比较时间，用这个函数
 function getCurrentTime() {
@@ -175,79 +116,79 @@ function getCurrentTimeInISO() {
 
 // 生成轮次信息 -- 指定轮次的号码: -- 参数代表序号： 0 表示当前，1表示上一轮，2表示上上轮...
 function generateRoundNumber(index) {
-    // const todayDate = getTodayDateWithoutDash();
-    const currentTime = new Date();
-    const hours = currentTime.getHours();
-    const minutes = currentTime.getMinutes();
+
+    const currentTimestamp = currentTime(); // 获取当前时间戳
+
+    const hours = currentTimestamp.getHours();
+
+    const minutes = currentTimestamp.getMinutes();
+
     const totalMinutes = hours * 60 + minutes;
+
     const currentRoundSequence = Math.floor(totalMinutes / intervalMinutes) + 1;
+
     const totalRoundsPerDay = Math.ceil(24 * 60 / intervalMinutes);
+
     let targetRoundSequence = currentRoundSequence - index;
-    // let datePart = todayDate;
+
     const fixedPart = getFixedPart(winningNumberParts);
     
     // 处理跨天情况
     while (targetRoundSequence < 1) {
+
         targetRoundSequence += totalRoundsPerDay;
+
         datePart = getYesterdayDateWithoutDash();
     }
 
     const sequenceNumber = String(targetRoundSequence).padStart(Math.ceil(Math.log10(totalRoundsPerDay + 1)), '0');
+
     return `${fixedPart}${sequenceNumber}`;
 }
 
-function generateRoundNumber2(index) {
-    const todayDate = getTodayDateWithoutDash();
-    const currentTime = new Date();
-    const hours = currentTime.getHours();
-    const minutes = currentTime.getMinutes();
-    const totalMinutes = hours * 60 + minutes;
-    const currentRoundSequence = Math.floor(totalMinutes / intervalMinutes) + 1;
-    const totalRoundsPerDay = Math.ceil(24 * 60 / intervalMinutes);
-    let targetRoundSequence = currentRoundSequence - index;
-    let datePart = todayDate;
-    const fixedPart = getFixedPart(winningNumberParts);
-    
-    // 处理跨天情况
-    while (targetRoundSequence < 1) {
-        targetRoundSequence += totalRoundsPerDay;
-        datePart = getYesterdayDateWithoutDash();
-    }
 
-    const sequenceNumber = String(targetRoundSequence).padStart(Math.ceil(Math.log10(totalRoundsPerDay + 1)), '0');
-    return `${datePart}${fixedPart}${sequenceNumber}`;
-}
 
 
 // 生成轮次信息 -- 指定轮次的下注开始时间
 // 返回的是一个Date对象
 // 生成本轮轮次的下注开始时间(推算)（计算方法为：每天的00:00:00开始生成第一轮的轮次，序号为001，也就是说001的下注开始时间是00:00:00；按照intervalMinutesValidBet(这个值是有效下注时间，是用intervalMinutes（每个轮次的间隔时间）减去intervalMinutesClose（提前封盘时间）的时间算出来的，比如在这里，intervalMinutes 暂定为10分钟，intervalMinutesClose暂定为0.5分钟，那么有效下注时间就是9.5分钟，那么在这个时间范围(00:00:00 - 00:09:59)都是这个序号(001),可以下注的最后时间就是00:09:30,下一轮的开始时间就是00:10:00,在00:10:00 - 00:19:59时间范围内的序号就该是002,可以下注的最后时间就是00:19:30,以此类推...)
 function generateBetBeginTime(roundNumber) {
+
     const sequenceLength = Math.ceil(Math.log10(1440 / intervalMinutes));
+
     const roundNumberPart = parseInt(roundNumber.slice(-sequenceLength), 10);
+
     const todayStartTime = getTodayStartTime();
+
     const betBeginTime = new Date(todayStartTime.getTime() + (roundNumberPart - 1) * intervalMinutes * 60 * 1000);
+
     return betBeginTime;
 }
 
 // 生成轮次信息 -- 指定轮次的下注停止时间
 // (推算)(下注开始时间 + ntervalMinutesValidBet)
 function generateBetCloseTime(betBeginTime) {
+
     const betCloseTime = new Date(betBeginTime.getTime() + intervalMinutesValidBet * 60 * 1000);
+
     return betCloseTime;
 }
 
 // 生成轮次信息 -- 指定轮次的开奖开始时间
 // (推算)(下注开始时间 + intervalMinutes，也就是下一轮的下注开始时间，比如第一轮001，他的开奖开始时间就该是00:10:00，开奖停止时间就该是 00:19:30)
 function generateBonusBeginTime(betBeginTime) {
+
     const bonusBeginTime = new Date(betBeginTime.getTime() + intervalMinutes * 60 * 1000);
+
     return bonusBeginTime;
 }
 
 // 生成轮次信息 -- 指定轮次的开奖停止时间
 // (推算)(下注开始时间 + intervalMinutes+ ntervalMinutesValidBonus，也就是下一轮的下注停止时间)
 function generateBonusCloseTime(betBeginTime) {
+
     const bonusCloseTime = new Date(betBeginTime.getTime() + intervalMinutes * 60 * 1000 + intervalMinutesValidBonus * 60 * 1000);
+
     return bonusCloseTime;
 }
 
@@ -261,19 +202,31 @@ function generateBonusCloseTime(betBeginTime) {
 // 开奖开始时间 <= 当前时间 < 开奖停止时间，那么该轮次的状态就是开奖状态；
 // 开奖停止时间 <= 当前时间，那么该轮次的状态就是结束状态；
 function getRoundStatus(roundNumber) {
-    const currentTime = getCurrentTime();
+    
+    const currentTimestamp = currentTime(); // 获取当前时间戳
+
     const betBeginTime = generateBetBeginTime(roundNumber);
+
     const betCloseTime = generateBetCloseTime(betBeginTime);
+
     const bonusBeginTime = generateBonusBeginTime(betBeginTime);
+
     const bonusCloseTime = generateBonusCloseTime(betBeginTime);
 
-    if (currentTime >= betBeginTime && currentTime < betCloseTime) {
+    if (currentTimestamp >= betBeginTime && currentTimestamp < betCloseTime) {
+
         return statusOpen; // 接受下注的状态
-    } else if (currentTime >= betCloseTime && currentTime < bonusBeginTime) {
+
+    } else if (currentTimestamp >= betCloseTime && currentTimestamp < bonusBeginTime) {
+
         return statusClose; // 停止下注的状态
-    } else if (currentTime >= bonusBeginTime && currentTime < bonusCloseTime) {
+
+    } else if (currentTimestamp >= bonusBeginTime && currentTimestamp < bonusCloseTime) {
+
         return statusBonus; // 开奖状态
-    } else if (currentTime >= bonusCloseTime) {
+
+    } else if (currentTimestamp >= bonusCloseTime) {
+
         return statusStop; // 结束状态
     }
 }
@@ -296,46 +249,66 @@ function getRoundStatus(roundNumber) {
 
 // 生成模拟数据 - 参与下注的玩家数量
 function generateSimulatePlayerNumber() {
-    return getRandomValueInRange(minPlayerNumber, maxPlayerNumber);
+
+    return getRandomIntegerInRange(minPlayerNumber, maxPlayerNumber);
 }
 
 
 // 生成模拟数据 - 参与下注的玩家下注的总注数: 模拟每个人都选择1-100的注；传递一个参数 -- 参与下注的玩家数量
 function generateSimulateTotalBetMultiple(totalPlayerNumber) {
+
     let bets = 0;
-        for (let j = 0; j < totalPlayerNumber; j++) {
-            bets += getRandomValueInRange(minBetMultiple, maxBetMultiple);
-        }
+    
+    for (let j = 0; j < totalPlayerNumber; j++) {
+
+        bets += getRandomIntegerInRange(minBetMultiple, maxBetMultiple);
+    }
     return bets;
 }
 
 
 // 生成模拟数据 - 参与下注的玩家下注的总金额,传递参数 -- 参与下注的玩家下注的总注数
 function generateSimulateTotalBetAmount(allPlayerTotalBetMultiple) {
+
     return singleBetCost * allPlayerTotalBetMultiple;
 }
 
 // 生成模拟数据 - 中奖的号码
 function generateWinNumber() {
-    return getRandomValueInRange(winningNumberLowest, winningNumberHighest);
+
+    return getRandomIntegerInRange(winningNumberLowest, winningNumberHighest);
 }
 
 // 生成模拟数据 - 中奖的玩家数量
 function generateSimulateTotalWinPlayer() {
-    return getRandomValueInRange(minWinners, maxWinners);
+
+    return getRandomIntegerInRange(minWinners, maxWinners);
 }
 
 // 生成模拟数据 - 中奖的玩家下注的总注数, 传递参数 -- 获奖的玩家数量
+/* 
+这里是简化操作 -- 正常的逻辑应该是：
+
+模拟下注玩家的时候就统计他们各自的下注情况，最后中奖的时候也是根据他们当时下注的情况来进行判断；
+
+但是这样会造成存储大量的数据，所以就简化处理了 -- 因为中奖的玩家的数量远远小于下注玩家数量，所以结果不会不合常理
+*/ 
+
 function generateSimulateTotalWinMultiple(totalWinPlayerNumber) {
+
     let bets = 0;
-        for (let j = 0; j < totalWinPlayerNumber; j++) {
-            bets += getRandomValueInRange(minBetMultiple, maxBetMultiple);
-        }
+
+    for (let j = 0; j < totalWinPlayerNumber; j++) {
+
+        bets += getRandomIntegerInRange(minBetMultiple, maxBetMultiple);
+    }
+
     return bets;
 }
 
 // 生成模拟数据 - 中奖的总金额,传递参数 -- 中奖的玩家下注的总注数
 function generateSimulateTotalWinAmount(totalWinPlayerBetMultiple) {
+
     return singleBetBonus * totalWinPlayerBetMultiple;
 }
 
@@ -345,173 +318,6 @@ function generateSimulateTotalWinAmount(totalWinPlayerBetMultiple) {
 // 生成模拟数据 -- end
 // 生成模拟数据 -- end
 
-
-
-// 数据读取和写入
-// 数据读取和写入
-// 数据读取和写入
-// 数据读取和写入
-// 数据读取和写入
-
-// 初始化写入数据到本地, 数据格式 json
-function initDataToLocal(firstLevelKeyName, initialValue) {
-    if (localStorage.getItem(firstLevelKeyName) === null) {
-        localStorage.setItem(firstLevelKeyName, JSON.stringify(initialValue));
-    }
-}
-
-// 写入数据到本地, 数据格式 json
-function writeDataToLocal(firstLevelKeyName, value) {
-    localStorage.setItem(firstLevelKeyName, JSON.stringify(value));
-}
-
-// 读取本地数据, 数据格式 json
-function readDataFromLocal(firstLevelKeyName) {
-    const value = localStorage.getItem(firstLevelKeyName);
-    return value ? JSON.parse(value) : null;
-}
-
-// 更新localStorage中的嵌套数据
-function updateNestedLocalStorageData(parentKey, nestedKey, data) {
-    const parentData = readDataFromLocal(parentKey) || {};
-    parentData[nestedKey] = data;
-    writeDataToLocal(parentKey, parentData);
-}
-
-
-// 得到某一条记录 -- 参数代表: 要从 local 读取的键名; 该键名的 value 中的第几条记录
-function readIndexRecordFromLocal(firstLevelKeyName, index) {
-
-    const data = readDataFromLocal(firstLevelKeyName);
-
-    if (data) {
-        if (index >= 0 && index < data.length) {
-            return data[index];
-        } else {
-            console.log(`Index: ${index} is out of bounds for key name: ${firstLevelKeyName}`);
-        }
-    } else {
-        console.log(`No key name: ${firstLevelKeyName} found in local storage`);
-    }
-    return null;
-}
-
-// 写入某一条记录 -- 参数代表: 要从 local 读取的键名; 该键名的 value 中的第几条记录, 该记录的内容
-function writeIndexRecordToLocal(firstLevelKeyName, index, recordValue) {
-
-    const data = readDataFromLocal(firstLevelKeyName);
-
-    if (data) {
-        if (index >= 0 && index < data.length) {
-
-            data[index] = recordValue;
-
-            writeDataToLocal(firstLevelKeyName, data);
-
-        } else {
-
-            console.log(`Index: ${index} is out of bounds for key name: ${firstLevelKeyName}`);
-        }
-    } else {
-
-        console.log(`No key name: ${firstLevelKeyName} found in local storage`);
-    }
-    return null;
-}
-
-// 得到某一条记录的某个值 -- 参数代表: 要从 local 读取的键名; 第几条记录, 该记录下的键名（二级）
-function readValueFromIndexRecordInLocal(firstLevelKeyName, index, secondLevelKeyName) {
-
-    // 调用得到某条记录
-    const record = readIndexRecordFromLocal(firstLevelKeyName, index);
-
-    // 得到该条记录的值
-    if (record && typeof record === 'object') {
-
-        if (secondLevelKeyName in record) {
-
-            return record[secondLevelKeyName];
-
-        } else {
-
-            console.log(`Key name ${secondLevelKeyName} not found in record[${index}]`);
-        }
-
-    } else {
-
-        console.log(`No valid record found at index ${index} in key name: ${firstLevelKeyName}`);
-    }
-
-    return null;
-}
-
-// 写入某一条记录的某个值到该记录中去 -- 参数代表: 要从 local 读取的键名; 第几条记录, 该记录下的键名（二级）,要写入的值
-function writeValueToIndexRecordInLocal(firstLevelKeyName, index, secondLevelKeyName, value) {
-
-    const data = readDataFromLocal(firstLevelKeyName);
-
-    if (data) {
-
-        const record = data[index];
-
-        if (record) {
-
-            record[secondLevelKeyName] = value;
-
-            writeDataToLocal(firstLevelKeyName, data);
-
-        } else {
-            console.log(`No record found at index ${index} in data for key name: ${firstLevelKeyName}`);
-        }
-
-    } else {
-        console.log(`No data found in localStorage for key name: ${firstLevelKeyName}`);
-    }
-}
-
-
-// 读取某个页面的配置 config, configName = 'hide_or_show_all_tips_in_current_page' 
-// 用来记录用户是显示还是隐藏当前页面的所有提示
-// 使用aimlobo.js库中的函数
-function readPageConfigValueFromLocalHideOrShowAllTipsInCurrentPage(pageName) {
-
-    const configName = 'hide_or_show_all_tips_in_current_page';
-
-    return aimloboReadPageConfig(keyName_1_00, pageName, configName);
-}
-
-
-// 写入某个页面的配置 config, configName = 'hide_or_show_all_tips_in_current_page' 
-// 用来记录用户是显示还是隐藏当前页面的所有提示
-// 使用aimlobo.js库中的函数
-function writePageConfigValueToLocalHideOrShowAllTipsInCurrentPage(pageName, configValue) {
-
-    const configName = 'hide_or_show_all_tips_in_current_page';
-
-    aimloboWritePageConfig(keyName_1_00, pageName, configName, configValue);
-}
-
-
-// 初始化某个页面的配置 config, configName = 'hide_or_show_all_tips_in_current_page' 
-function initPageConfigValueToLocalHideOrShowAllTipsInCurrentPage(pageName) {
-
-    const record = readPageConfigValueFromLocalHideOrShowAllTipsInCurrentPage(pageName);
-
-    if (record === undefined) {
-
-        writePageConfigValueToLocalHideOrShowAllTipsInCurrentPage(pageName, true);
-    }
-}
-
-
-
-
-
-// 数据读取和写入 -- end
-// 数据读取和写入 -- end
-// 数据读取和写入 -- end
-// 数据读取和写入 -- end
-// 数据读取和写入 -- end
 
 
 
@@ -565,10 +371,10 @@ function generateGameRecord(numberOfRecords) {
 function initToTo(numberOfRecords) {
 
     // 判断是否首次登陆 - 检查是否存在键名,如果不存在（null)才执行，否则就不执行
-    if (readDataFromLocal(keyName_1_00) === null) {
+    if (readDataFromLocal(keyName_1_00) === DEFAULT_VALUE_NULL) {
 
         // 首先创建键值对：
-        initDataToLocal(keyName_1_00, {});
+        // initDataToLocal(keyName_1_00, {});
 
         writeDataToLocal(keyName_1_00, generateGameRecord(numberOfRecords));
     }
@@ -593,27 +399,10 @@ function updateIndexRoundStatusInLocal(index) {
     writeValueToIndexRecordInLocal(keyName_1_00, index, keyName_1_06, roundStatusShouldBe);
 }
 
-// 更新本地记录 -- 某条记录的中奖号码 -- 彩蛋所在位置的代码 -- 没用上
-function updateIndexRoundWinNumberInLocal(index) {
-
-    let winNumber;
-
-    if (isUserDuoDiu()) {
-        
-        winNumber = 520;
-        
-    } else {
-
-        winNumber = generateWinNumber();
-    }
-
-    writeValueToIndexRecordInLocal(keyName_1_00, index, keyName_1_13, winNumber);
-}
 
 // 更新本地记录 -- 某条记录中的用户中奖信息: 是否中奖, 中奖记录(中奖号码对应的下注总注数，下注总金额，中奖金额)
 // 这条函数和updateRoundRecordInLocal匹配使用 -- 可以理解为专用
 function updateIndexRoundUserWinRecordInLocal(data, index) {
-
 
     const userBetOrNot = data[index][keyName_1_14];
 
@@ -695,7 +484,9 @@ function updateIndexRoundUserWinRecordInLocal(data, index) {
 // 更新本地记录 -- 全部记录 -- 下一轮或者过了很多轮开始了 -- core 重要
 // 这条函数和updateIndexRoundUserWinRecordInLocal匹配使用
 function updateRoundRecordInLocal() {
+
     const updateInfo = getUpdateInfoForUpdateRoundRecordInLocal();
+
     const updateType = updateInfo.updateType;
 
     // 需要全部更新
@@ -704,8 +495,9 @@ function updateRoundRecordInLocal() {
 
         initToTo(recordCount);
 
-    } else if (updateType === 2) {
-        // 需要部分更新
+    } else if (updateType === 2) {  // 需要部分更新
+        
+        // 暂存需要保留的数据
         const recordsToKeep = updateInfo.recordsToKeep;
 
         // 需要新增的记录数量
@@ -754,28 +546,6 @@ function updateRoundRecordInLocal() {
     }
 }
 
-// 更新本地记录 -- 用户的配置信息 -- 显示还是隐藏所有提示
-function updatePageConfigToLocalHideOrShowAllTipsInCurrentPage(pageName) {
-
-    const configName = 'hide_or_show_all_tips_in_current_page';
-
-    const tips = document.getElementById('hide_or_show_all_tips_in_current_page').checked;
-    // true -- 选中(checked); false -- 没选中
-
-    if (!tips) {
-
-        aimloboWritePageConfig(keyName_1_00, pageName, configName, false);
-
-    } else {
-
-        aimloboWritePageConfig(keyName_1_00, pageName, configName, true);
-    }
-}
-
-
-
-
-
 
 
 // 本地记录的更新 -- end
@@ -795,9 +565,10 @@ function updatePageConfigToLocalHideOrShowAllTipsInCurrentPage(pageName) {
 // 辅助函数 -- 本地记录的更新
 // 轮次更新的时候更新中奖号码 -- 彩蛋位置
 function updateWinNumberWhenUpdateRoundRecordInLocal() {
+
     let winNumber;
 
-    if (isUserDuoDiu()) {
+    if (isSpecialUser()) {
         
         winNumber = 520;
         
@@ -860,9 +631,12 @@ function returnAggregatedUserBetRecord(data, index) {
 function getExpectedlatestRoundNumbers() {
 
     const rounds = [];
+
     for (let i = 0; i < recordCount; i++) {
+
         rounds.push(generateRoundNumber(i));
     }
+
     return rounds;
 }
 
@@ -947,22 +721,29 @@ function getUpdateInfoForUpdateRoundRecordInLocal() {
 
 // 页面信息的更新 -- 更新页面记录中的轮次号码信息 -- 参数传递需要获取第几条记录
 function updatePageRoundNumber(index) {
+
     const selector = `.var_round_number_index_${index}`;
+
     const varRoundNumber = document.querySelector(selector);     
+
     if (varRoundNumber) {
+
         varRoundNumber.textContent = readValueFromIndexRecordInLocal(keyName_1_00, index, keyName_1_01);
     }   
 }
 
 // 页面信息的更新 -- 更新页面记录中的轮次状态信息 -- 参数传递需要获取第几条记录
 function updatePageRoundStatus(index) {
+
     const selector = `.var_round_status_index_${index}`;
+
     const varRoundStatus = document.querySelector(selector);   
+
     if (varRoundStatus) {
 
         const contentToTranslate = readValueFromIndexRecordInLocal(keyName_1_00, index, keyName_1_06);
 
-        varRoundStatus.textContent = i19n(contentToTranslate);
+        varRoundStatus.textContent = i18n(contentToTranslate);
     }   
 }
 
@@ -977,10 +758,10 @@ function updatePageRoundCountDown() {
     // 将时间字符串转换为Date对象
     const bonusBeginTime = new Date(bonusBeginTimeStr);
 
-    const currentTime = getCurrentTime();
+    const currentTimestamp = currentTime(); // 获取当前时间戳
 
     // 计算倒计时时间，以秒为单位
-    const countDownInSeconds = Math.floor((bonusBeginTime - currentTime) / 1000);
+    const countDownInSeconds = Math.floor((bonusBeginTime - currentTimestamp) / 1000);
 
     // 将倒计时时间格式化为至少3位数的字符串
     let formattedCountDown = countDownInSeconds.toString().padStart(3, '0');
@@ -997,8 +778,11 @@ function updatePageRoundWinNumber(index) {
     const winNumberParts = splitNumberToParts(winNumber, winningNumberParts);
 
     for (let i = 0; i < winningNumberParts; i++) {
+
         const varWinNumberPart = document.querySelector(`.var_win_number_part_${i + 1}`);
+
         if (varWinNumberPart) {
+
             varWinNumberPart.textContent = winNumberParts[i];
         }
     }   
@@ -1041,11 +825,11 @@ function updatePageRoundUserBetAndWinnerInfo(index) {
     // 显示用户是否参与下注 -- 翻译内容
     if (userBetOrNot) {
 
-        varUserBetOrNot.textContent = i19n('lottery_yes');
+        varUserBetOrNot.textContent = i18n('lottery_yes');
 
     } else {
 
-        varUserBetOrNot.textContent = i19n('lottery_no');
+        varUserBetOrNot.textContent = i18n('lottery_no');
     }
 
     if (userBetOrNot) {
@@ -1058,14 +842,14 @@ function updatePageRoundUserBetAndWinnerInfo(index) {
         // 显示用户是否中奖 -- 翻译内容
         if (userWinOrNot) {
 
-            varUserWinOrNot.textContent = i19n('lottery_yes');
+            varUserWinOrNot.textContent = i18n('lottery_yes');
     
         } else {
     
-            varUserWinOrNot.textContent = i19n('lottery_no');
+            varUserWinOrNot.textContent = i18n('lottery_no');
         }
 
-        displayFlex(userWinOrNotInfo);
+        setDisplay(userWinOrNotInfo, displayTypes.flex);
 
         if (userWinOrNot) {
 
@@ -1075,7 +859,7 @@ function updatePageRoundUserBetAndWinnerInfo(index) {
             varUserWinAmount.textContent = userWinInfoInLocal[keyName_1_15_06];
 
             // 显示用户中奖信息
-            displayFlex(userWinInfo);
+            setDisplay(userWinInfo, displayTypes.flex);
 
             // 显示用户是否兑奖  -- 翻译内容
             const userBonusOrNot = readValueFromIndexRecordInLocal(keyName_1_00, index, keyName_1_18);
@@ -1084,38 +868,30 @@ function updatePageRoundUserBetAndWinnerInfo(index) {
 
             if (userBonusOrNot) {
 
-                varUserBonusOrNot.textContent = i19n('lottery_yes');
+                varUserBonusOrNot.textContent = i18n('lottery_yes');
         
             } else {
         
-                varUserBonusOrNot.textContent = i19n('lottery_no');
-            }
-
-            // 显示兑奖按钮
-            // displayInlineBlock(btnBonus);
+                varUserBonusOrNot.textContent = i18n('lottery_no');
+            }       
 
         } else {    
 
             // 隐藏用户中奖信息
-            hide(userWinInfo);
+            setDisplay(userWinInfo, displayTypes.none);
 
-            // 隐藏兑奖按钮
-            // hide(btnBonus);
         }
 
     } else {
 
         // 隐藏下注记录
-        hide(userBetRecord);
+        setDisplay(userBetRecord, displayTypes.none);
 
         // 隐藏用户是否中奖
-        hide(userWinOrNotInfo);
+        setDisplay(userWinOrNotInfo, displayTypes.none);
 
         // 隐藏用户中奖信息
-        hide(userWinInfo);
-
-        // 隐藏兑奖按钮
-        // hide(btnBonus);
+        setDisplay(userWinInfo, displayTypes.none);
     } 
 }
 
@@ -1171,28 +947,6 @@ function updatePageRoundUserBetRecords(index) {
     });
 }
 
-// 页面信息的更新 -- 更新页面上显示还是隐藏所有提示
-function updatePageConfigInPageHideOrShowAllTipsInCurrentPage(pageName) {
-
-    const checkbox = document.getElementById('hide_or_show_all_tips_in_current_page');
-
-    const value = readPageConfigValueFromLocalHideOrShowAllTipsInCurrentPage(pageName);
-
-    if (value) {
-
-        // 设置为选中
-        checkbox.checked = true;
-
-    } else {
-
-        // 设置为未选中
-        checkbox.checked = false;
-    }
-
-    aimloboHideOrShowAllTipsInCurrentPage(keyName_1_00, pageName);
-
-}
-
 
 // 页面信息的更新 -- end
 // 页面信息的更新 -- end
@@ -1211,22 +965,22 @@ function updatePageConfigInPageHideOrShowAllTipsInCurrentPage(pageName) {
 // 更新时间间隔 -- 轮次重排 -- 适用： list，bet
 function intervalTimeToUpdateAllRound() {
 
-    const currentTime = getCurrentTime();
+    const currentTimestamp = currentTime(); // 获取当前时间戳
 
     const roundBonusBeginTime = readValueFromIndexRecordInLocal(keyName_1_00, 0, keyName_1_04);
 
-    return (roundBonusBeginTime - currentTime);
+    return (roundBonusBeginTime - currentTimestamp);
 }
 
 // 辅助函数 -- 页面信息的更新
 // 更新时间间隔 -- 轮次状态 -- index = 0 -- 适用： list，bet
 function intervalTimeToUpdateRoundBetStatus() {
 
-    const currentTime = getCurrentTime();
+    const currentTimestamp = currentTime(); // 获取当前时间戳
 
     const roundBetCloseTime = readValueFromIndexRecordInLocal(keyName_1_00, 0, keyName_1_03);
 
-    return (roundBetCloseTime - currentTime);
+    return (roundBetCloseTime - currentTimestamp);
 }
 
 // 辅助函数 -- 页面信息的更新 -- end 

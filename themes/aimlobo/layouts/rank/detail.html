@@ -1,0 +1,240 @@
+{{- define "main" -}}
+
+{{- /* rank - detail */ -}}
+{{- /* 布局：目前是4个
+  1. 幸运值；
+  2. 等级；
+  3. 游戏次数；
+  4. 阅读次数；
+
+  实现逻辑：
+  1. js会初始化生成30位随机用户的信息；
+  2. 加入当前用户的信息到数据集里。
+  3. 根据从高到低的排序得到前5位的信息；
+  
+  */ -}}
+{{- /* rank */ -}}
+
+{{- $lang := .Lang -}}
+{{- $achievementLuckyPoint := .Site.Data.user_info.user_achievement.lucky_point -}}
+{{- $achievementUserLevel := .Site.Data.user_info.user_achievement.user_level -}}
+{{- $achievementGameTime := .Site.Data.user_info.user_achievement.game_time -}}
+{{- $achievementReadTime := .Site.Data.user_info.user_achievement.read_time -}}
+
+
+<div class="wrap margin-tb-1rem">
+
+  {{- /* 其他用户展示页面 */ -}}
+  <div class="flex flex-column gap-1rem">
+
+    <div class="margin-tb-1rem">
+      <a class="btn inline-block" href="../">&lt;&lt;&lt;&nbsp;</a>
+    </div>
+
+    {{- /* 其他用户个人信息 */ -}}
+    <div class="user_personal_info flex gap-1rem align-items-center border-radius-_5rem bg-white padding-1rem">
+
+      {{- /* 用户头像 */ -}}
+      <div class="other_user_avatar">
+        <div class="var_other_user_avatar flex align-items-center justify-content-center">🎃</div>
+      </div>
+
+      <div class="height-100 flex flex-column gap-_5rem justify-content-around">
+
+        {{- /* 用户名 */ -}}
+        <div class="other_user_name">
+          <div class="flex align-items-center gap-_5rem">
+            <div>{{ "👻" }}</div>
+            <div class="var_other_user_name font-size-1_5 font-weight-600">{{ T "user_name" }}</div>
+          </div>
+        </div>
+  
+        {{- /* 用户签名 */ -}}
+        <div class="other_user_signature width-100 overflow-hidden">
+          <div class="flex align-items-center gap-_5rem">
+            <div>{{ "✨" }}</div>
+            <div class="var_other_user_signature font-size-1_2">N</div>
+          </div>
+        </div>
+
+        {{- /* 用户生日 */ -}}
+        <div class="other_user_birth_date">
+          <div class="flex align-items-center gap-_5rem">
+            <div>{{ "🎂" }}</div>
+            <div class="var_other_user_birth_date font-size-1_2">******</div>
+          </div>
+        </div>
+
+
+        {{- /* 用户性别 */ -}}
+        <div class="other_user_gender">
+          <div class="flex align-items-center gap-_5rem">
+            <div>{{ "👫" }}</div>
+            <div class="var_other_user_gender font-size-1_2">******</div>
+          </div>
+        </div>
+
+
+      </div>
+
+      
+
+    </div>
+
+    {{- partial "google_adsense/05.html" }}
+
+    {{- /* 用户衷心系统 */ -}}
+    <div class="user_loyal_info flex flex-column gap-1rem border-radius-_5rem bg-white padding-1rem">
+
+      
+
+      {{- /* 用户幸运值 */ -}}
+      <div class="other_user_lucky_point flex gap-1rem align-items-center tips_icon">
+        <div class="user_loyal_info_title">🧧 {{ T "lucky_point" -}}:</div>
+        <div class="var_other_user_lucky_point font-size-1_5">0</div>
+      </div>
+      
+
+      {{- /* 用户等级 */ -}}
+      <div class="other_user_level flex gap-1rem align-items-center tips_icon">
+        <div class="user_loyal_info_title">🎢 {{ T "user_level" -}}:</div>
+        <div class="var_other_user_level font-size-1_5">0</div>
+      </div>
+
+      {{- /* 游戏次数 */ -}}
+      <div class="other_user_game_time flex gap-1rem align-items-center tips_icon">
+        <div class="user_loyal_info_title">🎮 {{ T "game_time" -}}:</div>
+        <div class="var_other_user_game_time font-size-1_5">0</div>
+      </div>
+
+      {{- /* 阅读次数 */ -}}
+      <div class="other_user_read_time flex gap-1rem align-items-center tips_icon">
+        <div class="user_loyal_info_title">📖 {{ T "read_time" -}}:</div>
+        <div class="var_other_user_read_time font-size-1_5">0</div>
+      </div>
+
+    </div>
+
+
+    {{- /* 用户成就系统 */ -}}
+    <div class="user_achievement">
+
+      <div class="font-size-1_5 font-weight-600 text-center margin-tb-1rem">{{ T "achievement" }}</div>
+
+
+
+      <div class="user_lucky_point margin-tb-1rem">
+
+        <div class="flex flex-column gap-1rem padding-_5rem bg-white border-radius-_5rem">
+
+          <div class="font-size-1_5 margin-top-1rem text-center">🧧 {{ T "lucky_point" }}</div>
+
+          <div class="var_achievement_user_lucky_point">
+
+            {{- range $achievementLuckyPoint -}}
+
+              <div class="id_{{ .id }} flex flex-column align-items-center">
+
+                <div class="var_achievement_user_lucky_point_icon id_{{ .id }} font-size-3 opacity-_3">{{- .content -}}</div>
+                
+                <div class="text">{{- .id -}}</div>
+
+              </div>
+
+            {{- end  -}}
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="user_level margin-tb-1rem">
+
+        <div class="flex flex-column gap-1rem padding-_5rem bg-white border-radius-_5rem">
+
+          <div class="font-size-1_5 margin-top-1rem text-center">🎢 {{ T "user_level" }}</div>
+
+          <div class="var_achievement_user_level">
+
+            {{- range $achievementUserLevel -}}
+
+              <div class="id_{{ .id }} flex flex-column align-items-center">
+
+                <div class="var_achievement_user_level_icon id_{{ .id }} font-size-3 opacity-_3">{{- .content -}}</div>
+                
+                <div class="text">{{- .id -}}</div>
+
+              </div>
+              
+            {{- end  -}}
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="user_game_time margin-tb-1rem">
+
+        <div class="flex flex-column gap-1rem padding-_5rem bg-white border-radius-_5rem">
+
+          <div class="font-size-1_5 margin-top-1rem text-center">🎮 {{ T "game_time" }}</div>
+
+          <div class="var_achievement_user_game_time">
+
+            {{- range $achievementGameTime -}}
+
+              <div class="id_{{ .id }} flex flex-column align-items-center">
+
+                <div class="var_achievement_user_game_time_icon id_{{ .id }} font-size-3 opacity-_3">{{- .content -}}</div>
+                
+                <div class="text">{{- .id -}}</div>
+
+              </div>
+              
+            {{- end  -}}
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="user_read_time margin-tb-1rem">
+
+        <div class="flex flex-column gap-1rem padding-_5rem bg-white border-radius-_5rem">
+
+          <div class="font-size-1_5 margin-top-1rem text-center">📖 {{ T "read_time" }}</div>
+
+          <div class="var_achievement_user_read_time">
+
+            {{- range $achievementReadTime -}}
+
+              <div class="id_{{ .id }} flex flex-column align-items-center">
+
+                <div class="var_achievement_user_read_time_icon id_{{ .id }} font-size-3 opacity-_3">{{- .content -}}</div>
+                
+                <div class="text">{{- .id -}}</div>
+
+              </div>
+              
+            {{- end  -}}
+
+          </div>
+
+        </div>
+
+      </div>
+
+ 
+
+    
+    </div>
+    
+
+  </div>
+  
+</div>
+{{- end -}}

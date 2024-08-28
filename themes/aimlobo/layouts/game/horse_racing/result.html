@@ -1,0 +1,155 @@
+{{- /* 游戏，赛马 */ -}}
+{{- define "main" -}}
+{{- $lang := .Lang -}}
+{{- $dataLang := index .Site.Data.game $lang -}}
+{{- $games := $dataLang.game_lists -}}
+{{- $horseRacing := where $games "id" "horse_racing" -}}
+{{- $tips := (index $horseRacing 0).tips -}}
+{{- $tipsMissData := (index $horseRacing 0).tips_miss_data -}}
+
+
+<div class="wrap">
+
+    <div class="game_horse_result">
+
+        <div class="page_result_left">
+
+            
+
+            <div class="flex flex-column gap-_5rem align-items-center bg-white border-radius-_5rem padding-_5rem margin-tb-1rem">
+
+                <div class="font-size-1_2 font-weight-600 text-center">{{ T "racing_result" }}</div>
+
+                <div class="padding-tb-_5rem flex align-items-center justify-content-between width-100">
+
+                    <div>{{ T "winning_horse_is" }}:</div>
+                    <div class="var_winning_horse horse_color border-round padding-_5rem text-center font-weight-600"></div>
+                    
+                </div>
+
+                <div class="padding-tb-_5rem flex align-items-center justify-content-between width-100">
+
+                    <div>{{ T "total_win_player" }}:</div>
+                    <div class="var_total_win_player font-size-1_2"></div>
+                    
+                </div>
+
+                <div class="padding-tb-_5rem flex align-items-center justify-content-between width-100">
+
+                    <div>{{ T "total_win_player_bet_amount" }}:</div>
+                    <div class="var_total_win_player_bet_amount font-size-1_2"></div>
+                    
+                </div>
+
+                
+
+                <div class="padding-tb-_5rem flex align-items-center justify-content-between width-100">
+
+                    <div>{{ T "total_win_amount" }}:</div>
+                    <div class="var_total_win_amount font-size-1_2"></div>
+                    
+                </div>
+
+                <div class="padding-tb-_5rem flex align-items-center justify-content-between width-100">
+
+                    <div>{{ T "total_bet_player" }}:</div>
+                    <div class="var_total_bet_player font-size-1_2"></div>
+                    
+                </div>
+
+                <div class="padding-tb-_5rem flex align-items-center justify-content-between width-100">
+
+                    <div>{{ T "the_horse_you_bet" }}:</div>
+                    <div class="var_user_bet_horse horse_color border-round padding-_5rem text-center font-weight-600"></div>
+                    
+                </div>
+
+                <div class="padding-tb-_5rem flex align-items-center justify-content-between width-100">
+
+                    <div>{{ T "your_bet_amount" }}:</div>
+                    <div class="var_user_bet_amount font-size-1_2"></div>
+                    
+                </div>
+            </div>
+        </div>
+
+        <div class="page_result_right">
+
+            
+            
+            {{- /* 谷歌广告代码 04 */}}
+            {{- partial "google_adsense/04.html" }}
+
+            {{- /* 兑奖按钮 */ -}}
+            <button class="btn_bonus btn_game btn_game_blue border-none width-100 margin-tb-_5rem" disabled>{{ T "lottery_bonus" }}</button>
+
+            {{- /* 再来一次 */ -}}
+            <a class="btn_restart btn_game btn_game_yellow border-none width-100 margin-tb-_5rem" href="../">{{ T "once_again" }}</a>
+
+            
+
+            {{- /* 用户兑奖信息展示 -- 中奖 */ -}}
+            <div class="popup_user_bonus_info popup_tips popup_box">
+                <div class="popup_box_content">
+                    <div class="header">
+                    <span class="icon">💡</span>{{- T "congratulation" -}}
+                    </div>
+                    
+                    <div class="body">
+                
+                    <div class="content">
+
+                        <div class="font-size-1_5">
+
+                            {{ T "bonus_success" }}{{ ". 🧧 + " }}
+
+                            <span class="var_add_lucky_point"></span>
+
+                            {{ "  " }}<a href="../">{{ T "once_again" }}</a>
+                            
+            
+                        </div>
+                    </div>
+                        
+                    </div>
+                
+                    <div class="footer">
+                    <button class="btn btn_get_it">{{ T "get_it" }}</button>
+                    </div>
+                </div>
+            </div>
+            
+
+            {{- /* 用户兑奖信息展示 -- 没中奖 */ -}}
+            <div class="popup_user_bonus_info_no_win popup_tips popup_box">
+                <div class="popup_box_content">
+                    <div class="header">
+                    <span class="icon">💡</span>{{- "O.O" -}}
+                    </div>
+                    
+                    <div class="body">
+                
+                    <div class="content">
+
+                        <div class="font-size-1_5">
+
+                            {{ T "lottery_no_bonus" }}{{ ".  " }}<a href="../">{{ T "once_again" }}</a>
+            
+                        </div>
+                    </div>
+                        
+                    </div>
+                
+                    <div class="footer">
+                    <button class="btn btn_get_it">{{ T "get_it" }}</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        {{- partial "game/horse_racing/popup_miss_data.html" (dict "tipsContent" $tipsMissData) }}
+        
+
+    </div>
+
+    {{- end -}}

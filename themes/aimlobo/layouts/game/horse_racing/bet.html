@@ -1,0 +1,99 @@
+{{- /* 游戏，赛马 */ -}}
+{{- define "main" -}}
+{{- $lang := .Lang -}}
+{{- $dataLang := index .Site.Data.game $lang -}}
+{{- $games := $dataLang.game_lists -}}
+{{- $horseRacing := where $games "id" "horse_racing" -}}
+{{ $minBetAmount := 1 }}
+{{ $maxBetAmount := 100 }}
+{{- $msg_not_enought_lucky_point := (index $horseRacing 0).msg_not_enought_lucky_point -}}
+{{- $inPageTipsContentPageBetLuckyPoint := (index $horseRacing 0).in_page_tips_content_page_bet_lucky_point -}}
+{{- $tipsMissData := (index $horseRacing 0).tips_miss_data -}}
+
+
+<div class="wrap">
+
+    <div class="game_horse_bet">
+
+        <div class="page_bet_left">
+
+            {{- partial "tools/hide_page_all_tips.html" }}
+
+
+            {{- /* 用户下注 */ -}}
+            
+            <form class="form_bet_amount bg-color-04 border-radius-_3rem padding-1rem">
+                <div class="header padding-1rem text-center font-size-1_5">
+                    {{- T "bet" -}}
+                </div>
+
+                
+
+                <div class="body bet_amount flex flex-column gap-1rem align-items-center padding-tb-1rem">
+
+                    <div class="flex justify-content-between align-items-center width-100">
+                        <div class="font-size-1_2">{{ T "your_available_lucky_point" }}</div>
+                        <div class="var_user_lucky_point font-size-1_5"></div>
+                    </div>
+
+                    <div class="flex justify-content-between align-items-center width-100">
+
+                        <label for="amount">{{ T "enter_bet_amount" }}({{ $minBetAmount }}-{{ $maxBetAmount }} {{ T "integer" }})</label>
+                        <input type="number" id="amount" min="{{ $minBetAmount }}" max="{{ $maxBetAmount }}" name="bet_amount" class="width-5rem" value="1" required>
+
+                    </div>
+
+                    {{- partial "tools/in_page_tips.html" (dict "inPageTipsContent" $inPageTipsContentPageBetLuckyPoint "tipsType" "normal") }}
+                    
+                    
+                </div>
+
+                <div class="footer flex gap-1rem align-items-center justify-content-center">
+                    <button class="btn btn_reset" type="reset">{{ T "cancel" }}</button>
+                    <button class="btn btn_submit" type="submit">{{ T "submit" }}</button>
+                </div>
+
+                <div class="not_enough_lucky_point info_icon">
+                    {{- $infoType := "warning" -}}
+                    {{- $infoContent := $msg_not_enought_lucky_point -}}
+                    {{- partial "tools/popup_info.html" (dict "infoType" $infoType "infoContent" $infoContent) -}}
+                </div>
+
+                <div class="popup_info_match popup_info success">
+                    <div class="info_type">
+                        <img src="/image/game/horse_racing/horse.gif" class="horse_img_in_match">
+                    </div>
+                
+                    <div class="info_content">
+                        
+                        {{ T "player_matching" }}
+
+                        <span class="loading font-size-1_5">
+                            <span class="dot">.</span>
+                            <span class="dot">.</span>
+                            <span class="dot">.</span>
+                        </span>
+                    </div>
+                    
+                  </div>
+
+            </form>
+
+        </div>
+
+
+        <div class="page_bet_right">
+
+            {{- /* 谷歌广告代码 04 */}}
+            {{- partial "google_adsense/04.html" }}
+            
+        </div>
+        
+  
+    </div>
+
+    {{- partial "game/horse_racing/popup_miss_data.html" (dict "tipsContent" $tipsMissData) }}
+    
+</div>
+
+    {{- end -}}

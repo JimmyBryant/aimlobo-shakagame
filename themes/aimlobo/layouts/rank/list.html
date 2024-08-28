@@ -15,113 +15,188 @@
   */ -}}
 {{- /* rank */ -}}
 
+{{- $lang := .Lang -}}
+{{- $achievementLuckyPoint := .Site.Data.user_info.user_achievement.lucky_point -}}
+{{- $achievementUserLevel := .Site.Data.user_info.user_achievement.user_level -}}
+{{- $achievementGameTime := .Site.Data.user_info.user_achievement.game_time -}}
+{{- $achievementReadTime := .Site.Data.user_info.user_achievement.read_time -}}
+
+{{- $inPageTipsContent := .Site.Data.user_info.rank_list.in_page_tips_content -}}
+{{- $inPageTipsContentLang := index $inPageTipsContent $lang -}}
+
 
 <div class="wrap margin-tb-1rem">
 
-  {{- /* 展示用户信息卡 */ -}}
-  <div class="popup_user_info_card popup_box">
-    <div class="popup_box_content">
-      <div class="header">
-        <span class="icon">🗂️</span>{{- T "user_info" -}}
-      </div>
-      
-      <div class="body">
-  
-        <div class="content flex flex-column gap-1rem">
+  {{- /* rank - list */ -}}
+  <div class="rank_list flex flex-column">
 
-            {{- /* 用户头像 */ -}}
-            <div class="flex align-items-center gap-1rem">
-              <div class="width-8rem text-right">🎃 {{ T "user_avatar" }}:</div>
-              <div class="user_info_card_user_avatar font-size-1_5"></div>
-            </div>
+    {{- partial "tools/hide_page_all_tips.html" }}
 
-            {{- /* 用户名称 */ -}}
-            <div class="flex align-items-center gap-1rem">
-              <div class="width-8rem text-right">🫅 {{ T "user_name" }}:</div>
-              <div class="user_info_card_user_name font-size-1_5"></div>
-            </div>
+    {{- partial "tools/in_page_tips.html" (dict "inPageTipsContent" $inPageTipsContentLang "tipsType" "normal") }}
 
-            {{- /* 用户签名 */ -}}
-            <div class="flex align-items-center gap-1rem">
-              <div class="width-8rem text-right">✨ {{ T "signature" }}:</div>
-              <div class="user_info_card_user_description"></div>
-            </div>
+    {{- /* rank - 用户幸运值 */ -}}
+    <div class="flex flex-column gap-1rem padding-_5rem bg-white border-radius-_3rem margin-tb-_5rem">
 
-            {{- /* 用户生日 */ -}}
-            <div class="flex align-items-center gap-1rem">
-              <div class="width-8rem text-right">🎂 {{ T "birthday" }}:</div>
-              <div class="font-size-1_5">******</div>
-            </div>
-
-            {{- /* 用户幸运值 */ -}}
-            <div class="flex align-items-center gap-1rem">
-              <div class="width-8rem text-right">🧧 {{ T "lucky_point" }}:</div>
-              <div class="user_info_card_lucky_point font-size-1_5"></div>
-            </div>
-
-            {{- /* 用户等级 */ -}}
-            <div class="flex align-items-center gap-1rem">
-              <div class="width-8rem text-right">🎢 {{ T "user_level" }}:</div>
-              <div class="user_info_card_user_level font-size-1_5"></div>
-            </div>
-
-            {{- /* 游戏次数 */ -}}
-            <div class="flex align-items-center gap-1rem">
-              <div class="width-8rem text-right">🎮 {{ T "game_time" }}:</div>
-              <div class="user_info_card_game_time font-size-1_5"></div>
-            </div>
-
-            {{- /* 阅读次数 */ -}}
-            <div class="flex align-items-center gap-1rem">
-              <div class="width-8rem text-right">📖 {{ T "read_time" }}:</div>
-              <div class="user_info_card_read_time font-size-1_5"></div>
-            </div>
-
-
-        </div>
-          
-      </div>
-  
-      <div class="footer">
-        <button class="btn btn_get_it">{{ T "get_it" }}</button>
-      </div>
-    </div>
-  </div>
-  
-  <div class="rank_lucky_point padding-_5rem margin-top-1rem">
-
-    <a href="../my/" class="color-black-hover">
       <div class="font-size-1_5 text-center">{{ T "rank" }}: {{ T "lucky_point" }} 🧧</div>
-    </a>
-    
-    <div class="var_rank_lucky_point flex flex-column gap-_5rem align-items-center margin-tb-1rem shadow-box border-radius-_5rem padding-1rem">
+
+      <div class="rank_user_lucky_point flex flex-column gap-1rem align-items-center">
+
+          {{ range $index, $item := seq 1 5 }}
+
+            <div class="list_item rank_item_{{ add $index 1 }} flex gap-1rem align-items-center justify-content-between padding-_5rem width-100 cursor-pointer">
+
+              <div class="rank_number rank_number_{{ add $index 1 }} flex align-items-center justify-content-centers">
+
+                <div class="bg-grey-1 border-round height-2rem width-2rem flex align-items-center justify-content-center padding-_5rem font-weight-600">
+                  {{ add $index 1 }}
+                </div>
+                
+              </div>
+
+              <div class="var_rank_user_avatar font-size-1_5 text-center">🎃</div>
+
+              <div class="var_rank_user_name text-left overflow-x-auto">{{ T "user_name"}}</div>
+
+              <div class="var_rank_user_lucky_point font-size-1_2 text-left font-weight-600 overflow-x-auto">0</div>
+
+            </div>
+
+          {{ end }}
+      </div>
     </div>
 
-  </div>
-  
-  <div class="rank_user_level padding-_5rem margin-top-1rem">
-    <a href="../my/" class="color-black-hover">
+    {{- partial "google_adsense/05.html" }}
+
+    {{- /* rank - 用户等级 */ -}}
+    <div class="flex flex-column gap-1rem padding-_5rem bg-white border-radius-_3rem margin-tb-_5rem">
+
       <div class="font-size-1_5 text-center">{{ T "rank" }}: {{ T "user_level" }} 🎢</div>
-    </a>
 
-    <div class="var_rank_user_level flex flex-column gap-_5rem align-items-center margin-tb-1rem shadow-box border-radius-_5rem padding-1rem"></div>
-  </div>
-  
-  <div class="rank_game_time padding-_5rem margin-top-1rem">
-    <a href="../game/" class="color-black-hover">
+      <div class="rank_user_level flex flex-column gap-1rem align-items-center">
+
+          {{ range $index, $item := seq 1 5 }}
+
+            <div class="list_item rank_item_{{ add $index 1 }} flex gap-1rem align-items-center justify-content-between padding-_5rem width-100 cursor-pointer">
+
+              <div class="rank_number rank_number_{{ add $index 1 }} flex align-items-center justify-content-centers">
+
+                <div class="bg-grey-1 border-round height-2rem width-2rem flex align-items-center justify-content-center padding-_5rem font-weight-600">
+                  {{ add $index 1 }}
+                </div>
+                
+              </div>
+
+              <div class="var_rank_user_avatar font-size-1_5 text-center">🎃</div>
+
+              <div class="var_rank_user_name text-left overflow-x-auto">{{ T "user_name"}}</div>
+
+              <div class="var_rank_user_level font-size-1_2 text-left font-weight-600 overflow-x-auto">0</div>
+
+            </div>
+
+          {{ end }}
+      </div>
+    </div>
+
+
+    {{- /* rank - 用户游戏次数 */ -}}
+    <div class="flex flex-column gap-1rem padding-_5rem bg-white border-radius-_3rem margin-tb-_5rem">
+
       <div class="font-size-1_5 text-center">{{ T "rank" }}: {{ T "game_time" }} 🎮</div>
-    </a>
 
-    <div class="var_rank_game_time flex flex-column gap-_5rem align-items-center margin-tb-1rem shadow-box border-radius-_5rem padding-1rem"></div>
-  </div>
-  
-  <div class="rank_read_time padding-_5rem margin-top-1rem">
-    <a href="../topic/" class="color-black-hover">
+      <div class="rank_user_game_time flex flex-column gap-1rem align-items-center">
+
+          {{ range $index, $item := seq 1 5 }}
+
+            <div class="list_item rank_item_{{ add $index 1 }} flex gap-1rem align-items-center justify-content-between padding-_5rem width-100 cursor-pointer">
+
+              <div class="rank_number rank_number_{{ add $index 1 }} flex align-items-center justify-content-centers">
+
+                <div class="bg-grey-1 border-round height-2rem width-2rem flex align-items-center justify-content-center padding-_5rem font-weight-600">
+                  {{ add $index 1 }}
+                </div>
+                
+              </div>
+
+              <div class="var_rank_user_avatar font-size-1_5 text-center">🎃</div>
+
+              <div class="var_rank_user_name text-left overflow-x-auto">{{ T "user_name"}}</div>
+
+              <div class="var_rank_user_game_time font-size-1_2 text-left font-weight-600 overflow-x-auto">0</div>
+
+            </div>
+
+          {{ end }}
+      </div>
+    </div>
+
+    {{- /* rank - 用户阅读次数 */ -}}
+    <div class="flex flex-column gap-1rem padding-_5rem bg-white border-radius-_3rem margin-tb-_5rem">
+
       <div class="font-size-1_5 text-center">{{ T "rank" }}: {{ T "read_time" }} 📖</div>
-    </a>
+
+      <div class="rank_user_read_time flex flex-column gap-1rem align-items-center">
+
+          {{ range $index, $item := seq 1 5 }}
+
+            <div class="list_item rank_item_{{ add $index 1 }} flex gap-1rem align-items-center justify-content-between padding-_5rem width-100 cursor-pointer">
+
+              <div class="rank_number rank_number_{{ add $index 1 }} flex align-items-center justify-content-centers">
+
+                <div class="bg-grey-1 border-round height-2rem width-2rem flex align-items-center justify-content-center padding-_5rem font-weight-600">
+                  {{ add $index 1 }}
+                </div>
+                
+              </div>
+
+              <div class="var_rank_user_avatar font-size-1_5 text-center">🎃</div>
+
+              <div class="var_rank_user_name text-left overflow-x-auto">{{ T "user_name"}}</div>
+
+              <div class="var_rank_user_read_time font-size-1_2 text-left font-weight-600 overflow-x-auto">0</div>
+
+            </div>
+
+          {{ end }}
+      </div>
+    </div>
+
+
+    <div class="popup_bonus popup_tips popup_box">
+      <div class="popup_box_content">
+        <div class="header">
+          <span class="icon">💡</span>{{- T "tips" -}}
+        </div>
+        
+        <div class="body">
     
-    <div class="var_rank_read_time flex flex-column gap-_5rem align-items-center margin-tb-1rem shadow-box border-radius-_5rem padding-1rem"></div>
+          <div class="content flex flex-column gap-1rem">
+            <div class="font-size-1_2 font-weight-600">{{ T "last_rank_info" }}</div>
+
+            <div>{{ T "lucky_point" }}&nbsp;{{ T "rank" }}:&nbsp;&nbsp;<span class="var_popup_bonus_rank_lucky_point font-size-1_2 font-weight-600"></span></div>
+
+            <div>{{ T "user_level" }}&nbsp;{{ T "rank" }}:&nbsp;&nbsp;<span class="var_popup_bonus_rank_user_level font-size-1_2 font-weight-600"></span></div>
+
+            <div>{{ T "game_time" }}&nbsp;{{ T "rank" }}:&nbsp;&nbsp;<span class="var_popup_bonus_rank_game_time font-size-1_2 font-weight-600"></span></div>
+
+            <div>{{ T "read_time" }}&nbsp;{{ T "rank" }}:&nbsp;&nbsp;<span class="var_popup_bonus_rank_read_time font-size-1_2 font-weight-600"></span></div>
+
+            <div>{{ "🧧 + " }}&nbsp;<span class="var_add_lucky_point font-size-1_5 font-weight-600"></span></div>
+
+            <div>{{ "🎢 + " }}&nbsp;<span class="var_add_user_level font-size-1_5 font-weight-600"></span></div>
+          </div>
+            
+        </div>
+    
+        <div class="footer">
+          <button class="btn btn_get_it">{{ T "get_it" }}</button>
+        </div>
+      </div>
+    </div>
+    
+    
+
   </div>
   
-  </div>
+</div>
 {{- end -}}

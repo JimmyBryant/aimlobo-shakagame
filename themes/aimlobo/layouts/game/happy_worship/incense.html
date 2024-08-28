@@ -1,0 +1,63 @@
+{{- define "main" -}}
+{{- $lang := .Lang -}}
+{{- $dataLang := index .Site.Data.game $lang -}}
+{{- $games := $dataLang.game_lists -}}
+{{- $happy_worship := where $games "id" "happy_worship" -}}
+{{- $tipsMissData := (index $happy_worship 0).tips_miss_data -}}
+
+<div class="wrap">
+
+    <div class="game_happy_worship_incense">
+
+        {{- /* 选择香火 */ -}}
+            <form class="form_incense_select width-100 bg-white padding-1rem border-radius-_3rem">
+
+                <div class="header padding-1rem text-center font-size-1_5">
+                    {{- T "select_incense" -}}
+                </div>
+
+                <div class="body incense flex gap-1rem align-items-center justify-content-center padding-tb-1rem">
+
+                    {{ range $i, $n := (seq 1 3) }}
+
+                        <label for="incense_{{ $n }}" class="flex flex-column gap-_5rem align-items-center justify-content-center shadow-box border-radius-_5rem padding-_5rem width-5rem">
+                            
+                                <p class="width-100 text-center">{{- $n -}}</p>
+                                <div class="incense-items width-50 flex align-items-center justify-content-around">
+
+                                    {{ range $j, $m := (seq 1 (add $n 0)) }}
+
+                                        <div class="incense-item">
+                                            <div class="incense-head"></div>
+                                            <div class="incense-body"></div>
+                                        </div>
+
+                                    {{ end }}
+                                </div>
+
+                            <input type="radio" id="incense_{{ $n }}" name="select_incense" value="{{ $n }}" />
+                        </label>
+
+                        {{ end }}
+                </div>
+
+                <div class="footer flex gap-1rem align-items-center justify-content-center margin-tb-1rem">
+
+                    <button class="btn btn_reset" type="reset">{{ T "cancel" }}</button>
+
+                    <button class="btn btn_submit" type="submit">{{ T "submit" }}</button>
+                    
+                </div>
+
+            </form>
+    </div>
+
+
+    {{- partial "google_adsense/05.html" }}
+    
+
+    {{- partial "game/popup_miss_data.html" (dict "tipsContent" $tipsMissData) }}
+
+</div>
+
+{{- end -}}

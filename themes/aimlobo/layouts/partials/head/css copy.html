@@ -1,0 +1,17 @@
+{{/* 每个css文件一个链接 */}}
+
+
+
+
+{{- $mainCSS := resources.Get "css/main.css" | minify | fingerprint -}}
+
+<link rel="stylesheet" href="{{- $mainCSS.RelPermalink -}}" integrity="{{- $mainCSS.Data.Integrity -}}" crossorigin="anonymous">
+
+{{- with .Params.css -}}
+  {{- range . -}}
+    {{- $css := resources.Get . | minify | fingerprint -}} 
+
+    <link rel="stylesheet" href="{{- $css.RelPermalink -}}" integrity="{{- $css.Data.Integrity -}}" crossorigin="anonymous">
+
+  {{- end -}} 
+{{- end -}}

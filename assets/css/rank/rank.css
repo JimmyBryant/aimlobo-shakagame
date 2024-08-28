@@ -2,23 +2,49 @@
 
 /* rank 1，2，3 添加背景色 */
 
+body{
+
+}
+
 .rank_item_1 {
+    border-radius: 0.5rem;
     background: linear-gradient(135deg, #f9f513, #f3f303, #edeb9b);
     background-size: 400% 400%;
     animation: gradientAnimation 5s ease infinite;
 }
 .rank_item_2 {
+    border-radius: 0.5rem;
     background: linear-gradient(135deg, #c0c0c0, #dcdcdc, #e0e0e0);
     background-size: 400% 400%;
     animation: gradientAnimation 5s ease infinite;
 }
 .rank_item_3 {
+    border-radius: 0.5rem;
     background: linear-gradient(135deg, #f3bf8b, #d9a16d, #d6bd71);
     background-size: 400% 400%;
     animation: gradientAnimation 5s ease infinite;
 }
 
 
+.rank_number,
+.var_rank_user_avatar {
+
+    width: 10%;
+}
+
+.var_rank_user_name {
+
+    width: 50%;
+}
+
+
+.var_rank_user_lucky_point,
+.var_rank_user_level,
+.var_rank_user_game_time,
+.var_rank_user_read_time {
+
+    width: 30%;
+}
 
 /* 渐变动画 */
 @keyframes gradientAnimation {
@@ -27,11 +53,6 @@
     100% { background-position: 0% 50%; }
 }
 
-/* 用户信息卡 */
-.user_info_card_user_name, .user_info_card_user_description {
-    max-width: 16rem;
-    overflow: auto;
-}
 
 
 
@@ -42,11 +63,7 @@
 /* page: rank, body - mobile */
 @media screen and (max-width: 48rem) {
 
-    /* 用户信息卡 */
-    .user_info_card_user_name, .user_info_card_user_description {
-        max-width: 8rem;
-        overflow: auto;
-    }
+    
     
 
 }

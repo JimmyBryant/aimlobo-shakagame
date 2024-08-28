@@ -11,31 +11,15 @@
             {{- with site.Params.logo.text -}}{{- . -}}{{- end -}}
         </div>
     </a>
-        
-    
-    <div class="lang-switch flex align-items-center justify-content-between gap-1rem">
-        <ul class="list-style-none flex gap-1rem">
-            {{- $currentLang := .Lang -}}
-            {{- with site.Home.AllTranslations -}}
-                {{- range . -}}
-                    {{- if ne $currentLang .Lang -}}
-                    <li class="flex align-items-center">
-                        <a class="color-black-2 font-weight-600 opacity-_7" href="{{- .Permalink -}}">{{- .Language.LanguageName -}}</a>
-                    </li>
-                    {{- end -}}
-                {{- end -}}
-            {{- end -}}
-        </ul>
 
-        <button class="menu-icon hide border-none opacity-_7">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="opacity-_7">
-                <line x1="3" y1="12" x2="21" y2="12"></line>
-                <line x1="3" y1="6" x2="21" y2="6"></line>
-                <line x1="3" y1="18" x2="21" y2="18"></line>
-              </svg>              
-        </button>
+    <button class="menu-icon hide border-none opacity-_7">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="opacity-_7">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>              
+    </button>
 
-    </div>
 
 </div>
 

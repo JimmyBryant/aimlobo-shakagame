@@ -1,0 +1,90 @@
+{{- /* 游戏，赛马 */ -}}
+{{- define "main" -}}
+{{- $lang := .Lang -}}
+{{- $dataLang := index .Site.Data.game $lang -}}
+{{- $games := $dataLang.game_lists -}}
+{{- $horseRacing := where $games "id" "horse_racing" -}}
+{{- $tips := (index $horseRacing 0).tips -}}
+{{- $horses := (index $horseRacing 0).horses -}}
+{{- $tipsMissData := (index $horseRacing 0).tips_miss_data -}}
+
+
+<div class="wrap">
+
+    <div class="game_horse_match">
+
+        <div class="page_match_left">
+
+            <div class="flex flex-column gap-_5rem align-items-center bg-white border-radius-_5rem padding-_5rem margin-tb-1rem">
+
+                <div class="padding-tb-_5rem border-bottom-_1rem flex align-items-center justify-content-between width-100">
+                    <div class="text-center font-size-1_2 width-20">{{ "🐎" }}</div>
+
+                    <div class="font-size-1_2 text-center width-40">{{ T "player_number" }}</div>
+                    <div class="font-size-1_2 text-center width-40">{{ T "bet_amount" }}</div>
+                </div>
+
+                {{ range $index, $horse := $horses }}
+                    <div class="flex align-items-center justify-content-between width-100">
+                        <div class="width-20 flex align-items-center justify-content-center">
+                            <div class="horse_color horse_color_{{ add $index 1 }} border-round padding-_5rem text-center font-weight-600">{{ add $index 1}}</div>
+                        </div>
+                        
+
+                        <div class="var_player_bet_horse_{{ add $index 1 }} width-40 text-center">0</div>
+                        <div class="var_bet_amount_horse_{{ add $index 1 }} width-40 text-center">0</div>
+                    </div>
+                {{ end }}
+            </div>
+
+        </div>
+
+        
+
+        <div class="page_match_right">
+
+
+            {{- /* 谷歌广告代码 04 */}}
+            {{- partial "google_adsense/04.html" }}
+
+
+            
+            <button id="readyToStart" class="btn_game btn_game_blue btn_start_game width-100">{{ T "start_game" }}</button>
+            
+
+
+            <div class="flex flex-column gap-1rem align-items-center bg-white border-radius-_5rem padding-1rem margin-tb-1rem">
+                <div class="flex align-items-center justify-content-between width-100">
+                    <div>{{ T "the_horse_you_bet" }}</div>
+                    <div class="var_current_user_bet_horse horse_color border-round padding-_5rem text-center font-weight-600">0</div>
+                </div>
+
+                <div class="flex align-items-center justify-content-between width-100">
+                    <div>{{ T "your_bet_amount" }}</div>
+                    <div class="var_current_user_bet_amount font-size-1_2">0</div>
+                </div>
+
+                <div class="flex gap-1rem align-items-center justify-content-between width-100">
+                    <div>{{ T "total_bet_player" }}</div>
+                    <div class="var_total_bet_player font-size-1_2">0</div>
+                </div>
+
+                <div class="flex gap-1rem align-items-center justify-content-between width-100">
+                    <div>{{ T "total_bet_amount" }}</div>
+                    <div class="var_total_bet_amount font-size-1_2">0</div>
+                </div>
+
+                
+                    
+            </div>
+
+
+            
+
+        </div>        
+
+    </div>
+
+    {{- partial "game/horse_racing/popup_miss_data.html" (dict "tipsContent" $tipsMissData) }}
+
+    {{- end -}}

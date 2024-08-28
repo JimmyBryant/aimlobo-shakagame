@@ -11,7 +11,7 @@
   {{- end -}} 
 {{- end -}}
 
-{{- $pagePath := .Title | base64Encode -}}
+{{- $pagePath := printf "%s-%s" .Path .Title | base64Encode -}}
 {{- $bundleName := printf "css/%s.bundle.css" $pagePath -}}
 
 {{- $css := $css | resources.Concat $bundleName | minify | fingerprint -}}

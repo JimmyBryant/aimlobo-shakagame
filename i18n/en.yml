@@ -40,6 +40,9 @@
 - id: secret
   translation: "Secret"
 
+- id: lang
+  translation: "Language"
+
 
 # footer
 
@@ -71,6 +74,12 @@
 
 - id: summary
   translation: "Summary"
+
+- id: more
+  translation: "More"
+
+- id: back_to_page_top
+  translation: "Back to page top"
 
 # other
 - id: tips
@@ -291,14 +300,28 @@
 - id: submit
   translation: "Submit"
 
-- id: add_god
-  translation: "Add God"
+- id: select_god
+  translation: "Select God"
 
-- id: add_offerings
-  translation: "Add Offerings"
+- id: select_offerings
+  translation: "Select Offerings"
 
-- id: add_incense
-  translation: "Add Incense"
+- id: select_incense
+  translation: "Select Incense"
+
+- id: end_worship
+  translation: "Worship End"
+
+- id: base_bonus
+  translation: "Base Bonus"
+
+- id: bubble_count
+  translation: "Lucky Bubble Click Count"
+
+- id: total_bonus
+  translation: "Total Bonus"
+
+
 
 - id: start_worship
   translation: "Start Worship"
@@ -386,13 +409,24 @@
 - id: birthday
   translation: "Birthday"
 
-
 - id: your_birthday
   translation: "Your birthday"
 
+- id: your_gender
+  translation: "Your gender"
+
+- id: gender_male
+  translation: "Male"
+
+- id: gender_female
+  translation: "Female"
 
 - id: check_in_today
   translation: "Check in"
+
+- id: check_in_success
+  translation: "Check in successfully"
+
 
 - id: lucky_point
   translation: "Lucky Point"
@@ -410,10 +444,10 @@
   translation: "Read Times"
 
 - id: lucky_for
-  translation: "Lucky"
+  translation: "Good"
 
 - id: unlucky_for
-  translation: "Unlucky"
+  translation: "Bad"
 
 
 # page rank
@@ -422,6 +456,9 @@
 
 - id: user_info
   translation: "User info"
+
+- id: last_rank_info
+  translation: "Last Rank Info"
 
 
 # page topic - list
@@ -446,8 +483,14 @@
 - id: share
   translation: "Share"
 
-- id: share_this_site
-  translation: "Share this website"
+- id: share_site
+  translation: "Share website"
+
+- id: share_site_content
+  translation: "Copied success, Share this website with your friends now 🧧 + "
+
+- id: post_like_content
+  translation: "Thanks Like 🧧 + "
 
 - id: prev_page
   translation: "Prev"
@@ -561,8 +604,11 @@
 - id: you_lost
   translation: "You lose"
 
-- id: wining_horse_is
-  translation: "wining horse is"
+- id: winning_horse_is
+  translation: "Winning horse is"
+
+- id: total_win_player_bet_amount
+  translation: "Win player bet amount"
 
 - id: once_again
   translation: "Once again"

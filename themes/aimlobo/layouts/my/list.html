@@ -13,22 +13,32 @@
 {{- $achievementUserLevel := .Site.Data.user_info.user_achievement.user_level -}}
 {{- $achievementGameTime := .Site.Data.user_info.user_achievement.game_time -}}
 {{- $achievementReadTime := .Site.Data.user_info.user_achievement.read_time -}}
+
 {{- $luckyPointTips := index .Site.Data.user_info.user_lucky_point.tips $lang -}}
 {{- $userLevelTips := index .Site.Data.user_info.user_level.tips $lang -}}
+{{- $userGameTimeTips := index .Site.Data.user_info.user_game_time.tips $lang -}}
+{{- $userReadTimeTips := index .Site.Data.user_info.user_read_time.tips $lang -}}
+
 {{- $userCheckInTips := index .Site.Data.user_info.user_check_in_tips $lang -}}
 {{- $userUnluckyForTips := index .Site.Data.user_info.user_unlucky_for_tips $lang -}}
+
+{{- $inPageTipsContent := .Site.Data.user_info.user_input_birthday_gender.in_page_tips_content -}}
+{{- $inPageTipsContentLang := index $inPageTipsContent $lang -}}
 
 <div class="wrap">
 
   {{- /* 用户个人信息 */ -}}
   <div class="my flex flex-column gap-1rem">
 
+    {{- partial "tools/hide_page_all_tips.html" }}
+
     {{- /* 用户个人信息: 带添加生日 */ -}}
     <div class="user_personal_info flex gap-1rem align-items-center border-radius-_5rem shadow-box padding-1rem">
 
+      {{- /* 用户头像 */ -}}
       <div class="user_avatar">
         <div class="var_user_avatar flex align-items-center justify-content-center cursor-pointer">🎃</div>
-        {{- /* 点击user_name后打开popup_form_user_name */ -}}
+        {{- /* 点击user_avatar后打开popup_form_user_avatar */ -}}
         <div class="popup_form_user_avatar popup_form popup_box">
             <div class="popup_box_content">
               <form class="form_user_avatar">
@@ -56,13 +66,13 @@
         </div>
       </div>
 
-      <div class="user_avator_text height-100 flex flex-column justify-content-around">
+      <div class="height-100 flex flex-column gap-_5rem justify-content-around">
 
         {{- /* 用户名 */ -}}
         <div class="user_name">
           <div class="flex align-items-center gap-_5rem">
-            <div class="font-size-1">{{ "✏️" }}</div>
-            <div class="var_user_name font-size-1_5 font-weight-600 cursor-pointer">aimlobo_{{ T "user_name" }}</div>
+            <div>{{ "👻" }}</div>
+            <div class="var_user_name font-size-1_5 font-weight-600 cursor-pointer">{{ T "user_name" }}</div>
           </div>
           
           {{- /* 点击user_name后打开popup_form_user_name */ -}}
@@ -75,7 +85,7 @@
                   </div>
             
                   <div class="body">
-                      <input class="input_user_name" type="text" id="input_user_name" name="input_user_name" minlength="1" maxlength="20" placeholder="{{ "aimlobo" }}_123(1-20)" required pattern=".*\S.*">
+                      <input class="input_user_name" type="text" id="input_user_name" name="input_user_name" minlength="1" maxlength="20" placeholder="{{ site.Title }}_123(1-20)" required pattern=".*\S.*">
                   </div>
             
                   <div class="footer">
@@ -88,13 +98,14 @@
           </div>
         </div>
   
+        {{- /* 用户签名 */ -}}
         <div class="user_signature width-100 overflow-hidden">
           <div class="flex align-items-center gap-_5rem">
-            <div class="font-size-1">{{ "✨" }}</div>
-            <div class="var_user_signature cursor-pointer"></div>
+            <div>{{ "✨" }}</div>
+            <div class="var_user_signature cursor-pointer font-size-1_2"></div>
           </div>
           
-          {{- /* 点击user_name后打开popup_form_user_name */ -}}
+          {{- /* 点击user_signature后打开popup_form_user_signature */ -}}
           <div class="popup_form_user_signature popup_form popup_box">
               <div class="popup_box_content">
                 <form class="form_user_signature">
@@ -104,7 +115,7 @@
                   </div>
             
                   <div class="body">
-                      <input class="input_user_signature" type="text" id="input_user_signature" name="input_user_signature" minlength="1" maxlength="25" placeholder="{{ T "good_luck_every_day" }}(1-25)" required pattern=".*\S.*">
+                      <input class="input_user_signature" type="text" id="input_user_signature" name="input_user_signature" minlength="1" maxlength="30" placeholder="{{ T "good_luck_every_day" }}(1-30)" required pattern=".*\S.*">
                   </div>
             
                   <div class="footer">
@@ -117,10 +128,11 @@
           </div>
         </div>
 
+        {{- /* 用户生日 */ -}}
         <div class="user_birth_date">
           <div class="flex align-items-center gap-_5rem">
-            <div class="font-size-1">{{ "🎂" }}</div>
-            <div class="var_user_birth_date cursor-pointer"></div>
+            <div>{{ "🎂" }}</div>
+            <div class="var_user_birth_date cursor-pointer font-size-1_2"></div>
           </div>
 
           
@@ -148,177 +160,191 @@
         </div>
 
 
+        {{- /* 用户性别 */ -}}
+        <div class="user_gender">
+          <div class="flex align-items-center gap-_5rem">
+            <div>{{ "👫" }}</div>
+            <div class="var_user_gender cursor-pointer font-size-1_2"></div>
+          </div>
+
+          
+          {{- /* 点击user_gender后打开popup_form_user_gender */ -}}
+          <div class="popup_form_user_gender popup_form popup_box">
+              <div class="popup_box_content">
+                <form class="form_user_gender">
+                  <div class="header">
+                    <span class="icon">✏️</span>
+                    {{- T "your_gender" -}}
+                  </div>
+            
+                  <div class="body flex gap-2rem align-items-center justify-content-center">
+
+                    <label for="user_gender_male" class="flex flex-column gap-1rem align-items-center border-radius-_3rem padding-_5rem bg-grey-1">
+
+                        <p class="font-size-1_2">{{ T "gender_male" }}</p>
+                        <p class="font-size-3">{{ "🕺" }}</p>
+
+                        <input type="radio" id="user_gender_male" name="choose_gender" value="male" required />
+
+                    </label>
+
+                    <label for="user_gender_female" class="flex flex-column gap-1rem align-items-center border-radius-_3rem padding-_5rem bg-grey-1">
+
+                      <p class="font-size-1_2">{{ T "gender_female" }}</p>
+                      <p class="font-size-3">{{ "💃" }}</p>
+
+                      <input type="radio" id="user_gender_female" name="choose_gender" value="female" required />
+
+                    </label>
+
+                  </div>
+            
+                  <div class="footer">
+                    <button class="btn btn_reset" type="reset">{{ T "cancel" }}</button>
+                    <button class="btn btn_submit" type="submit">{{ T "submit" }}</button>
+                  </div>
+                  
+                </form>
+              </div>
+          </div>
+        </div>
+
+        {{- partial "tools/in_page_tips.html" (dict "inPageTipsContent" $inPageTipsContentLang "tipsType" "normal") }}
+
+
       </div>
 
       
 
     </div>
 
+    {{- partial "google_adsense/05.html" }}
+
     {{- /* 用户衷心系统 */ -}}
-    <div class="user_loyal_info flex flex-column gap-1rem border-radius-1rem shadow-box padding-1rem">
+    <div class="user_loyal_info flex flex-column gap-1rem border-radius-_5rem shadow-box padding-1rem">
 
       <div class="flex gap-1rem align-items-center justify-content-center">
 
         {{- /* 用户每日签到 */ -}}
-        <button class="btn_check_in_today btn_no_hover user_check_in info_icon cursor-pointer shadow-box width-10rem">
-          <p>{{- T "check_in_today" -}}</p>
-          {{- partial "tools/popup_info.html" (dict "infoType" "success" "infoContent" $userCheckInTips) -}}
-        </button>
+          <button class="btn btn_check_in cursor-pointer" disabled>
+            
+            {{- T "check_in_today" -}}
+
+          </button>
+
+          <div class="popup_btn_check_in popup_tips popup_box">
+            <div class="popup_box_content">
+              <div class="header">
+                <span class="icon">💡</span>{{- T "tips" -}}
+              </div>
+              
+              <div class="body">
+          
+                <div class="content flex flex-column gap-1rem">
+                  <p>{{- T "check_in_success" -}}</p>
+
+                  <p>
+    
+                    {{ "🧧 + " }}<span class="var_add_lucky_point"></span>,&nbsp;
+    
+                    {{ "🎢 + " }}<span class="var_add_user_level"></span>
+                  </p>
+                </div>
+                  
+              </div>
+          
+              <div class="footer">
+                <button class="btn btn_get_it">{{ T "get_it" }}</button>
+              </div>
+            </div>
+          </div>
 
         {{- /* 排行榜 */ -}}
-        <div><a href="../rank/" class="block color-white btn_no_hover width-10rem">{{ T "rank" }}</a></div>
+        <div><a href="../rank/" class="block color-white btn">{{ T "rank" }}</a></div>
       </div>
 
       
 
       {{- /* 用户幸运值 */ -}}
-      <div class="total_lucky_point flex gap-1rem align-items-center cursor-pointer tips_icon">
-        <div class="width-8rem">🧧 {{ T "lucky_point" -}}:</div>
-        <div class="var_total_lucky_point font-size-1_5"></div>
+      <div class="user_lucky_point flex gap-1rem align-items-center cursor-pointer tips_icon">
+        <div class="user_loyal_info_title">🧧 {{ T "lucky_point" -}}:</div>
+        <div class="var_user_lucky_point font-size-1_5"></div>
         {{ partial "tools/popup_tips.html" (dict "tipsContent" $luckyPointTips) }}
       </div>
       
 
       {{- /* 用户等级 */ -}}
       <div class="user_level flex gap-1rem align-items-center cursor-pointer tips_icon">
-        <div class="width-8rem">🎢 {{ T "user_level" -}}:</div>
+        <div class="user_loyal_info_title">🎢 {{ T "user_level" -}}:</div>
         <div class="var_user_level font-size-1_5"></div>
         {{ partial "tools/popup_tips.html" (dict "tipsContent" $userLevelTips) }}
       </div>
 
       {{- /* 游戏次数 */ -}}
-      <div class="game_time flex gap-1rem align-items-center cursor-pointer">
-        <div class="width-8rem">🎮 {{ T "game_time" -}}:</div>
-        <div class="var_game_time font-size-1_5"></div>
+      <div class="user_game_time flex gap-1rem align-items-center cursor-pointer tips_icon">
+        <div class="user_loyal_info_title">🎮 {{ T "game_time" -}}:</div>
+        <div class="var_user_game_time font-size-1_5"></div>
+        {{ partial "tools/popup_tips.html" (dict "tipsContent" $userGameTimeTips) }}
       </div>
 
       {{- /* 阅读次数 */ -}}
-      <div class="read_time flex gap-1rem align-items-center cursor-pointer">
-        <div class="width-8rem">📖 {{ T "read_time" -}}:</div>
-        <div class="var_read_time font-size-1_5"></div>
+      <div class="user_read_time flex gap-1rem align-items-center cursor-pointer tips_icon">
+        <div class="user_loyal_info_title">📖 {{ T "read_time" -}}:</div>
+        <div class="var_user_read_time font-size-1_5"></div>
+        {{ partial "tools/popup_tips.html" (dict "tipsContent" $userReadTimeTips) }}
       </div>
       
 
       {{- /* 用户成就 */ -}}
       <div class="user_achievement flex gap-1rem align-items-center">
-        <div class="width-8rem">🎖️ {{ T "achievement" -}}:</div>
-        <button class="btn btn_open btn_open_user_achievement">👉 {{ T "open" -}}</button>
-
-        {{- /* 点击btn_open_user_achievement后打开popup_tips,这里没有调用，因为有些差异 */ -}}
-        <div class="popup_user_achievement popup_tips popup_box">
-          <div class="popup_box_content">
-            <div class="header">
-              <span class="icon">🎖️</span>{{- T "achievement" -}}
-            </div>
-            
-            <div class="body width-100">
-        
-              <div class="content flex flex-column gap-1rem">
-
-                {{- /* 目前是：积分，等级，游戏次数，阅读次数 */ -}}
-
-                <div class="flex flex-column gap-1rem">
-                  <div class="font-size-1_5 margin-0-auto">🧧 {{ T "lucky_point" }}</div>
-                  <div class="var_achievement_user_level grid grid-3-columns gap-1rem  border-radius-_5rem">
-
-                    {{- range $achievementLuckyPoint -}}
-                    <div class="id_{{ .id }} flex flex-column align-items-center">
-                      <div class="var_achievement_lucky_point_icon id_{{ .id }} font-size-3 opacity-_3">{{- .content -}}</div>
-                      <div class="text">{{- .id -}}</div>
-                    </div>
-                    {{- end  -}}
-
-                  </div>
-                </div>
-
-                <div class="flex flex-column gap-1rem">
-                  <div class="font-size-1_5 margin-0-auto">🎢 {{ T "user_level" }}</div>
-                  <div class="var_achievement_user_level grid grid-3-columns gap-1rem  border-radius-_5rem">
-
-                    {{- range $achievementUserLevel -}}
-                    <div class="id_{{ .id }} flex flex-column align-items-center">
-                      <div class="var_achievement_user_level_icon id_{{ .id }} font-size-3 opacity-_3">{{- .content -}}</div>
-                      <div class="text">{{- .id -}}</div>
-                    </div>
-                    {{- end  -}}
-
-                  </div>
-                </div>
-
-                <div class="flex flex-column gap-1rem">
-                  <div class="font-size-1_5 margin-0-auto">🎮 {{ T "game_time" }}</div>
-                  <div class="var_achievement_user_level grid grid-3-columns gap-1rem  border-radius-_5rem">
-
-                    {{- range $achievementGameTime -}}
-                    <div class="id_{{ .id }} flex flex-column align-items-center">
-                      <div class="var_achievement_game_time_icon id_{{ .id }} font-size-3 opacity-_3">{{- .content -}}</div>
-                      <div class="text">{{- .id -}}</div>
-                    </div>
-                    {{- end  -}}
-
-                  </div>
-                </div>
-
-                <div class="flex flex-column gap-1rem">
-                  <div class="font-size-1_5 margin-0-auto">📖 {{ T "read_time" }}</div>
-                  <div class="var_achievement_user_level grid grid-3-columns gap-1rem  border-radius-_5rem">
-
-                    {{- range $achievementReadTime -}}
-                    <div class="id_{{ .id }} flex flex-column align-items-center">
-                      <div class="var_achievement_read_time_icon id_{{ .id }} font-size-3 opacity-_3">{{- .content -}}</div>
-                      <div class="text">{{- .id -}}</div>
-                    </div>
-                    {{- end  -}}
-
-                  </div>
-                </div>
-
-              </div>
-                
-            </div>
-        
-            <div class="footer">
-              <button class="btn btn_get_it">{{ T "get_it" }}</button>
-            </div>
-          </div>
-        </div>
-
+        <div class="user_loyal_info_title">🎖️ {{ T "achievement" -}}:</div>
+        <a class="btn inline-block" href="./achievement">&gt;&gt;&gt;</a>
       </div>
 
     </div>
     
+    
 
   </div>
+
 
   {{- /* 适合，不适合做什么 */ -}}
   <div class="lucky_for_unlucky_for flex gap-1rem justify-content-between margin-top-1rem">
 
-    <div class="lucky_for flex flex-column gap-1rem padding-tb-1rem border-radius-1rem shadow-box">
+    <div class="lucky_for flex flex-column gap-1rem padding-tb-1rem border-radius-_5rem shadow-box">
+
       <div class="flex align-items-center justify-content-between overflow-hidden padding-lr-_5rem">
+
         <div class="font-size-1_5 font-weight-600 padding-left-_5rem">{{ T "lucky_for" }}</div>
+
         <div class="width-5rem height-5rem">
+
           <div class="lucky_for_icon sun width-3rem height-3rem margin-1rem"></div>
+
         </div>
-      </div>
-      
-      
-      <div class="lucky_for_content padding-lr-1rem flex flex-column gap-1rem">
 
       </div>
+      
+      <div class="var_good_for padding-lr-1rem flex flex-column gap-1rem"></div>
+
     </div>
 
-    <div class="unlucky_for flex flex-column gap-1rem padding-tb-1rem border-radius-1rem shadow-box info_icon">
+    <div class="unlucky_for flex flex-column gap-1rem padding-tb-1rem border-radius-_5rem shadow-box info_icon">
       {{- partial "tools/popup_info.html" (dict "infoType" "warning" "infoContent" $userUnluckyForTips) -}}
       <div class="flex align-items-center justify-content-between overflow-hidden padding-lr-_5rem">
+
         <div class="font-size-1_5 font-weight-600 padding-left-_5rem">{{ T "unlucky_for" }}</div>
+
         <div class="width-5rem height-5rem">
+
           <div class="unlucky_for_icon cloud width-3rem height-3rem margin-1rem"></div>
+
         </div>
+
       </div>
       
-      <div class="unlucky_for_content padding-lr-1rem flex flex-column gap-1rem">
-        <a href="/">Go Home</a>
-      </div>
+      <div class="var_bad_for padding-lr-1rem flex flex-column gap-1rem"></div>
+
     </div>
   </div>
 </div>
