@@ -44,8 +44,8 @@ const autoCheckbox = document.querySelector('input[name="auto"]');
 const bgmCheckbox = document.querySelector('input[name="bgm"]');
 
 
-// const bgmClick = new Howl({ src: ["/audio/game/wooden_fish/sound.mp3"] });
-const bgmClick = newSound('/audio/game/wooden_fish/sound', false, 1);
+const bgmClick = new Howl({ src: ["/audio/game/wooden_fish/sound.mp3"] });
+// const bgmClick = newSound('/audio/game/wooden_fish/sound', false, 1);
 const bgmMusic = newSound('/audio/game/wooden_fish/1721013450', true, 0.3);
 
 // 函数
