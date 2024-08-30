@@ -44,8 +44,8 @@ const autoCheckbox = document.querySelector('input[name="auto"]');
 const bgmCheckbox = document.querySelector('input[name="bgm"]');
 
 
-// const bgmClick = new Howl({ src: ["/audio/game/wooden_fish/sound.mp3"] });
-const bgmClick = newSound('/audio/game/wooden_fish/sound', false, 1);
+const bgmClick = new Howl({ src: ["/audio/game/wooden_fish/sound.mp3"] });
+// const bgmClick = newSound('/audio/game/wooden_fish/sound', false, 1);
 const bgmMusic = newSound('/audio/game/wooden_fish/1721013450', true, 0.3);
 
 // 函数
@@ -327,7 +327,18 @@ autoCheckbox.addEventListener("change", () => {
 
             counter(returnUserPrayer());
 
-            bgmClick.play();
+            // 加载点击木鱼的音频
+            if (bgmClick.state() !== "loaded") {
+
+                bgmClick.once('load', () => {
+
+                    bgmClick.play();
+                });
+
+            } else {
+                
+                bgmClick.play();
+            }
 
             setTimeout(initAnimate, setIntervalAnimation * 1000);
 
@@ -362,18 +373,25 @@ bgmCheckbox.addEventListener("change", () => {
 
     if (bgmCheckbox.checked) {
 
-        // if (bgmMusic.state() !== "loaded") {
+        if (bgmMusic.state() !== "loaded") {
 
-        //     bgmMusic.load();
-        // }
+            bgmMusic.once('load', () => {
 
-        bgmMusic.play();
+                bgmMusic.play();
+            });
+
+            bgmMusic.load();  // 显式调用加载
+
+        } else {
+
+            bgmMusic.play();
+        }
 
     } else {
-
         bgmMusic.stop();
     }
 });
+
 
 // 鼠标悬停和离开使用CSS效果来实现
 woodenFishElement.style.cursor = "url('/image/game/wooden_fish/cursor.cur'), auto";
@@ -383,8 +401,22 @@ woodenFishElement.addEventListener("mousedown", () => {
 });
 
 woodenFishElement.addEventListener("click", () => {
+    
     counter(returnUserPrayer());
-    bgmClick.play();
+
+    // 加载点击木鱼的音频
+    if (bgmClick.state() !== "loaded") {
+
+        bgmClick.once('load', () => {
+
+            bgmClick.play();
+        });
+
+    } else {
+
+        bgmClick.play();
+    }
+
     setTimeout(initAnimate, setIntervalAnimation * 1000);
 });
 
