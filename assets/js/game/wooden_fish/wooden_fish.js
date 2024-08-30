@@ -335,8 +335,10 @@ autoCheckbox.addEventListener("change", () => {
                     bgmClick.play();
                 });
 
+                bgmClick.load(); // 显式调用加载
+
             } else {
-                
+
                 bgmClick.play();
             }
 
@@ -401,7 +403,7 @@ woodenFishElement.addEventListener("mousedown", () => {
 });
 
 woodenFishElement.addEventListener("click", () => {
-    
+
     counter(returnUserPrayer());
 
     // 加载点击木鱼的音频
@@ -411,6 +413,8 @@ woodenFishElement.addEventListener("click", () => {
 
             bgmClick.play();
         });
+
+        bgmClick.load(); // 显式调用加载
 
     } else {
 
