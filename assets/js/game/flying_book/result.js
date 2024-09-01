@@ -1,3 +1,5 @@
+const bgmCheckbox = document.querySelector('input[name="bgm"]');
+
 
 // 函数
 // 函数
@@ -5,6 +7,9 @@
 
 
 // 背景音乐 + 鸟叫声
+const bgmBird = new newSound('/audio/game/flying_book/audio_d27edefa4c', true, 0.3);
+const bgmBG= new newSound('/audio/game/flying_book/serene-sky-relaxing-piano-176513', true, 0.5);
+
 function playBGM() {
 
     const bgmBird = new newSound('/audio/game/flying_book/audio_d27edefa4c', true, 0.3);
@@ -50,8 +55,6 @@ function startGame() {
 
     if (userStartGame) {
 
-        playBGM();
-
         showBookContent();
 
         writeValueToRecordInLocal(keyName_1_00, keyName_1_01, DEFAULT_VALUE_FALSE);
@@ -68,7 +71,19 @@ function startGame() {
 
 startGame();
 
+bgmCheckbox.addEventListener("change", () => {
 
+    if (bgmCheckbox.checked) {
+
+        bgmBG.play();
+        bgmBird.play();
+
+    } else {
+        
+        bgmBG.stop();
+        bgmBird.stop();
+    }
+});
 
 
 
