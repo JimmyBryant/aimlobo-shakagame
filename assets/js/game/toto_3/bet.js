@@ -175,8 +175,6 @@ formBet.addEventListener("submit", (event) => {
 
                 formBet.reset();
 
-                siteBgmSelect.stop();
-
             } else {
 
                 // 提示封盘，不可下注
@@ -193,11 +191,7 @@ formBet.addEventListener("submit", (event) => {
 
 formBet.addEventListener('reset', () => {
 
-    siteBgmSelect.play();
-
     formBet.reset();
-
-    siteBgmSelect.stop();
 });
 
 // 点击 popup_user_bet_info 的 btn_get_it
