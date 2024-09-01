@@ -126,8 +126,6 @@ formBetAmount.addEventListener("submit", (event) => {
 
             clickNotEnoughLuckyPoint();
 
-            siteBgmInvalid.stop();
-
         } else {
 
             if (isUserSelectdHorse()) {
@@ -145,8 +143,6 @@ formBetAmount.addEventListener("submit", (event) => {
                     // 跳转到 match
                     window.location.href = "../match";
                 }, 1000); // 延时1秒显示下注数模拟匹配过程
-
-                siteBgmSelect.stop();
 
             }
   

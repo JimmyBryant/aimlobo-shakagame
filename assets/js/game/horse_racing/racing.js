@@ -13,6 +13,9 @@ const bgmGame = newSound(bgmGameLocation, bgmGameLoop, bgmGameVolume);
 
 const bgmJia = newSound(bgmJiaLocation, bgmJiaLoop, bgmJiaVolume);
 
+const infoIconForceClose = document.querySelector('.tips_icon_force_close');
+const btnStartGame = infoIconForceClose.querySelector('.btn_get_it');
+
 // 函数
 // 函数
 // 函数
@@ -191,9 +194,14 @@ function initGame() {
 // 进入页面按顺序执行
 // 进入页面按顺序执行
 
+infoIconForceClose.click();
+
+btnStartGame.addEventListener('click', () => {
+
+    initGame();
+});
 
 
-initGame();
 
 btnBoost.addEventListener('click', function() {
     if (isSpecialUser()) {
@@ -201,8 +209,6 @@ btnBoost.addEventListener('click', function() {
         bgmJia.play();
 
         boostHorse();
-
-        bgmJia.stop();
     }
 });
 

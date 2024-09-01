@@ -37,7 +37,14 @@ formHorseSelect.addEventListener("submit", (event) => {
         // 跳转到.bet
         window.location.href = "./bet";
 
-    } 
+    } else {
+
+        siteBgmInvalid.play();
+    
+        const userNOSelect = document.querySelector('.user_no_select');
+    
+        userNOSelect.click();
+      } 
 });
 
 formHorseSelect.addEventListener('reset', () => {
@@ -45,8 +52,6 @@ formHorseSelect.addEventListener('reset', () => {
     siteBgmSelect.play();
 
     formHorseSelect.reset();
-
-    siteBgmSelect.stop();
 
 });
 

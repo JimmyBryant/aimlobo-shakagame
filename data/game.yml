@@ -255,6 +255,8 @@ en:
       weight: 1
       cover: /image/game/horse_racing/cover.png
       msg_not_enought_lucky_point: Not enough lucky point(🧧). 
+      tips_page_1_item_select: You much select 1 item.
+      tips_start_game: Game will start immediately when green light on
       in_page_tips_type: normal
       in_page_tips_content_page_bet_lucky_point: I suggest you try only 1 bet amount (default) first to start game.
       tips_miss_data: Miss data, [restart game](../).
@@ -747,6 +749,8 @@ zh-cn:
       weight: 1
       cover: /image/game/horse_racing/cover.png
       msg_not_enought_lucky_point: 幸运值不足(🧧). 
+      tips_page_1_item_select: 你需要选择一个项目.
+      tips_start_game: 绿灯亮起，游戏开始
       in_page_tips_type: normal
       in_page_tips_content_page_bet_lucky_point: 建议从1个幸运积分（默认值）开始你的游戏.
       tips_miss_data: 缺少数据, [重新游戏](../).
@@ -1250,6 +1254,8 @@ zh-tw:
       weight: 1
       cover: /image/game/horse_racing/cover.png
       msg_not_enought_lucky_point: 幸運值不足(🧧). 
+      tips_page_1_item_select: 你需要選擇一個項目.
+      tips_start_game: 綠燈亮起，遊戲開始
       in_page_tips_type: normal
       in_page_tips_content_page_bet_lucky_point: 建議從1個幸運積分（默認值）開始你的遊戲.
       tips_miss_data: 缺少數據, [重新遊戲](../).

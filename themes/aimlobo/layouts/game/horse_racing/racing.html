@@ -7,6 +7,7 @@
 {{- $tips := (index $horseRacing 0).tips -}}
 {{- $horses := (index $horseRacing 0).horses -}}
 {{- $tipsMissData := (index $horseRacing 0).tips_miss_data -}}
+{{- $tipsStartGame := (index $horseRacing 0).tips_start_game -}}
 
 <div class="wrap">
 
@@ -16,6 +17,12 @@
 
         {{- /* 游戏进行中， gaming */ -}}
         <div class="game_playing flex flex-column gap-1rem align-items-center">
+
+            <div class="tips_icon_force_close">
+
+                {{- partial "tools/popup_info_btn.html" (dict "infoContent" $tipsStartGame) }}
+    
+            </div>
             
             <div class="text-center">
 

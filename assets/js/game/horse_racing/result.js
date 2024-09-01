@@ -156,8 +156,6 @@ btnBonus.addEventListener('click', () => {
 
             updateBtnBonusClickable();
 
-            siteBgmWin.stop();
-
         } else {
 
             siteBgmLose.play();
@@ -167,8 +165,6 @@ btnBonus.addEventListener('click', () => {
             setDisplay(popupUserBonusInfoNoWin, displayTypes.flex);
 
             updateBtnBonusClickable();
-
-            siteBgmLose.stop();
         }
 
         updateUserGameTimeToLocal(1);
