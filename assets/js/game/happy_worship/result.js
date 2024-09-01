@@ -111,8 +111,6 @@ btnBonus.addEventListener('click', () => {
 
       updateUserLuckyPointToLocal(setBonusBaseLuckyPoint + readValueFromRecordInLocal(keyName_1_00, keyName_1_06));
 
-      
-
       writeValueToRecordInLocal(keyName_1_00, keyName_1_08, DEFAULT_VALUE_TRUE);
   
       updateBtnBonusClickable();
@@ -123,8 +121,6 @@ btnBonus.addEventListener('click', () => {
       writeValueToRecordInLocal(keyName_1_00, keyName_1_01, DEFAULT_VALUE_NULL);
       writeValueToRecordInLocal(keyName_1_00, keyName_1_02, DEFAULT_VALUE_NULL);
       writeValueToRecordInLocal(keyName_1_00, keyName_1_03, DEFAULT_VALUE_NULL);
-  
-      siteBgmWin.stop();
 
     }
   }

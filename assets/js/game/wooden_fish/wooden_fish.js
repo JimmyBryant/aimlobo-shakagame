@@ -44,7 +44,7 @@ const autoCheckbox = document.querySelector('input[name="auto"]');
 const bgmCheckbox = document.querySelector('input[name="bgm"]');
 
 
-const bgmClick = new Howl({ src: ["/audio/game/wooden_fish/sound.mp3"] });
+const bgmClick = newSoundNoHtml5('/audio/game/wooden_fish/sound', false, 1);
 // const bgmClick = newSound('/audio/game/wooden_fish/sound', false, 1);
 const bgmMusic = newSound('/audio/game/wooden_fish/1721013450', true, 0.3);
 
@@ -164,7 +164,7 @@ function counter(message) {
 
     clickCount++;
 
-    // bgmClick.play();
+    bgmClick.play();
 
     writeClickCountToLocal(clickCount);
 
@@ -249,8 +249,6 @@ formEditGameTitle.addEventListener('submit', (event) => {
 
     event.preventDefault();
 
-    siteBgmSelect.play();
-
     const gameTitleInput = document.querySelector('.game_title_input').value;
 
     if (gameTitleInput) {
@@ -262,13 +260,13 @@ formEditGameTitle.addEventListener('submit', (event) => {
     
     formEditGameTitle.reset();
 
-    siteBgmSelect.stop();
-
 });
 
 formEditGameTitle.addEventListener('reset', () => {
 
     formEditGameTitle.reset();
+
+    siteBgmSelect.play();
 
     setDisplay(popupFormEditGameTitle, displayTypes.none);
 });
@@ -293,8 +291,6 @@ formEditPrayer.addEventListener('submit', (event) => {
 
     event.preventDefault();
 
-    siteBgmSelect.play();
-
     const selectedPrayer = document.querySelector('input[name="prayer"]:checked').value;
 
     writeValueToRecordInLocal(keyName_1_00, keyName_1_05, selectedPrayer);
@@ -306,13 +302,13 @@ formEditPrayer.addEventListener('submit', (event) => {
     
     formEditPrayer.reset();
 
-    siteBgmSelect.stop();
-
 });
 
 formEditPrayer.addEventListener('reset', () => {
 
     formEditPrayer.reset();
+
+    siteBgmSelect.play();
 
     setDisplay(popupFormEditPrayer, displayTypes.none);
 });
@@ -328,19 +324,19 @@ autoCheckbox.addEventListener("change", () => {
             counter(returnUserPrayer());
 
             // 加载点击木鱼的音频
-            if (bgmClick.state() !== "loaded") {
+            // if (bgmClick.state() !== "loaded") {
 
-                bgmClick.once('load', () => {
+            //     bgmClick.once('load', () => {
 
-                    bgmClick.play();
-                });
+            //         bgmClick.play();
+            //     });
 
-                bgmClick.load(); // 显式调用加载
+            //     bgmClick.load(); // 显式调用加载
 
-            } else {
+            // } else {
 
-                bgmClick.play();
-            }
+            //     bgmClick.play();
+            // }
 
             setTimeout(initAnimate, setIntervalAnimation * 1000);
 
@@ -407,19 +403,19 @@ woodenFishElement.addEventListener("click", () => {
     counter(returnUserPrayer());
 
     // 加载点击木鱼的音频
-    if (bgmClick.state() !== "loaded") {
+    // if (bgmClick.state() !== "loaded") {
 
-        bgmClick.once('load', () => {
+    //     bgmClick.once('load', () => {
 
-            bgmClick.play();
-        });
+    //         bgmClick.play();
+    //     });
 
-        bgmClick.load(); // 显式调用加载
+    //     bgmClick.load(); // 显式调用加载
 
-    } else {
+    // } else {
 
-        bgmClick.play();
-    }
+    //     bgmClick.play();
+    // }
 
     setTimeout(initAnimate, setIntervalAnimation * 1000);
 });

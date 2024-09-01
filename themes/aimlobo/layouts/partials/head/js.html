@@ -25,26 +25,6 @@
 
 
 
-{{/* 
-
-{{- $js := slice -}}
-
-{{- with .Params.js -}}
-    {{- range . -}}
-        {{- $js = $js | append (resources.Get .) -}} 
-    {{- end -}}
-{{- end -}}
-
-{{- $js = $js | append (resources.Get "js/main.js") -}}
-
-{{- $pagePath := printf "%s-%s" .Path .Title | base64Encode -}}
-{{- $bundleName := printf "js/%s.bundle.js" $pagePath -}}
-
-{{- $js := $js | resources.Concat $bundleName | js.Build | minify | fingerprint -}}
-<script src="{{- $js.RelPermalink -}}" integrity="{{- $js.Data.Integrity -}}" crossorigin="anonymous" defer></script>
-
-*/}}
-
 
 {{- /* Search */}}
 {{- if (eq .Layout `search`) -}}

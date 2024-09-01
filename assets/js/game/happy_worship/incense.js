@@ -45,7 +45,14 @@ formIncenseSelect.addEventListener('submit', (event) => {
     // 跳转到.worship
     window.location.href = "../worship";
 
-  } 
+  } else {
+
+    siteBgmInvalid.play();
+
+    const userNOSelect = document.querySelector('.user_no_select');
+
+    userNOSelect.click();
+  }
 });
 
 

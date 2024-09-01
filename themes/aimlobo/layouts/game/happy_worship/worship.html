@@ -15,9 +15,22 @@
 
     <div class="game_happy_worship flex flex-column align-items-center justify-content-center text-center">
 
+        {{/* 
         <div class="info_icon">
             {{- partial "tools/popup_info.html" (dict "infoType" "normal" "infoContent" $tipsClickBubble) }}
         </div>
+
+        */}}
+
+        <div class="tips_icon_force_close">
+
+            {{- partial "tools/popup_info_btn.html" (dict "infoContent" $tipsClickBubble) }}
+
+        </div>
+
+        
+
+        <!-- <button class="btn_start_game btn_game btn_game_blue">{{ "start_game" }}</button> -->
         
         <div class="god_img margin-top-1rem">
 

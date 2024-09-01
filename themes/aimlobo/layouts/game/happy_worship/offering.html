@@ -5,7 +5,7 @@
 {{- $happy_worship := where $games "id" "happy_worship" -}}
 {{- $offerings := (index $happy_worship 0).offerings -}}
 {{- $tipsMissData := (index $happy_worship 0).tips_miss_data -}}
-{{- $tipsPageOfferingSelect := (index $happy_worship 0).tips_page_offering_select -}}
+{{- $tipsPageAtLeastOneItemSelect := (index $happy_worship 0).tips_page_at_least_1_item_select -}}
 
 <div class="wrap">
 
@@ -61,7 +61,7 @@
 
     <div class="user_no_select info_icon">
 
-        {{- partial "tools/popup_info.html" (dict "infoType" "warning" "infoContent" $tipsPageOfferingSelect) }}
+        {{- partial "tools/popup_info.html" (dict "infoType" "warning" "infoContent" $tipsPageAtLeastOneItemSelect) }}
     </div>
     
 

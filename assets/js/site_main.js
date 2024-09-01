@@ -1041,7 +1041,7 @@ function clickBtnShareSite() {
                 writeValueToRecordInLocal(keyName_0_01, keyName_0_01_11, currentTimestamp.toISOString());
             }
 
-            siteBgmSelect.stop();
+            // siteBgmSelect.stop();
         });
     }
 }
@@ -1205,7 +1205,7 @@ function clickBtnReadPlus() {
                 updateUserReadTimeInPage();
             }
 
-            siteBgmSelect.stop();
+            // siteBgmSelect.stop();
         });
     }
 }
@@ -1242,7 +1242,7 @@ function clickBtnPostLike() {
                 writeValueToRecordInLocal(keyName_0_01, keyName_0_01_13, currentTimestamp.toISOString());
             }
 
-            siteBgmSelect.stop();
+            // siteBgmSelect.stop();
         });
     }
 }
@@ -1373,6 +1373,37 @@ function clickOpenPopupTips() {
     });
 }
 
+
+// popupTips: 包裹在tips_icon下边 -- 有 btn_get_it -- 只能点击btn_get_it才能关闭
+clickOpenPopupTipsForceClose();
+function clickOpenPopupTipsForceClose() {
+
+    const tipsIcons = document.querySelectorAll('.tips_icon_force_close');
+
+    tipsIcons.forEach(tipsIcon => {
+
+        const popupTips = tipsIcon.querySelector('.popup_tips');
+
+        const btnGetIt = popupTips ? popupTips.querySelector('.btn_get_it') : null;
+
+        if (popupTips && btnGetIt) {
+
+            tipsIcon.addEventListener('click', (event) => {
+
+                setDisplay(popupTips, displayTypes.flex);
+
+                event.stopPropagation(); // 这里只要加上就可以强制用户只能点击btn才能关闭
+            });
+
+            btnGetIt.addEventListener('click', (event) => {
+
+                setDisplay(popupTips, displayTypes.none);
+
+                event.stopPropagation(); // 阻止事件冒泡
+            });
+        }
+    });
+}
 
 
 

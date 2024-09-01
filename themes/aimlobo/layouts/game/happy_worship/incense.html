@@ -4,6 +4,7 @@
 {{- $games := $dataLang.game_lists -}}
 {{- $happy_worship := where $games "id" "happy_worship" -}}
 {{- $tipsMissData := (index $happy_worship 0).tips_miss_data -}}
+{{- $tipsPageOneItemSelect := (index $happy_worship 0).tips_page_1_item_select -}}
 
 <div class="wrap">
 
@@ -50,6 +51,11 @@
                 </div>
 
             </form>
+
+            <div class="user_no_select info_icon">
+
+                {{- partial "tools/popup_info.html" (dict "infoType" "warning" "infoContent" $tipsPageOneItemSelect) }}
+            </div>
     </div>
 
 

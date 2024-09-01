@@ -67,7 +67,14 @@ formGodSelect.addEventListener('submit', (event) => {
     // 跳转到.offering
     window.location.href = "./offering";
 
-  } 
+  } else {
+
+    siteBgmInvalid.play();
+
+    const userNOSelect = document.querySelector('.user_no_select');
+
+    userNOSelect.click();
+  }
 
 });
 
@@ -77,8 +84,6 @@ formGodSelect.addEventListener('reset', () => {
   siteBgmSelect.play();
 
   formGodSelect.reset();
-
-  siteBgmSelect.stop();
 });
 
 

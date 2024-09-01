@@ -34,6 +34,9 @@
 
 // 返回sound对象 -- 支持webm的情况下，返回webm格式的文件，不支持或者没找到webm的情况下,返回mp3格式的文件
 // 更新 -- 必须提供webm才能不出错，所以音频文件需要同时提供：webm, mp3
+
+
+
 function newSound(audioBaseName, loop = false, volume = 1) {
 
     const webmSrc = `${audioBaseName}.webm`;
@@ -42,6 +45,20 @@ function newSound(audioBaseName, loop = false, volume = 1) {
     return new Howl({
         src: [webmSrc, mp3Src], // 尝试加载webm文件，如果失败自动回退到mp3
         html5: true,
+        loop: loop,
+        volume: volume
+    });
+}
+
+
+function newSoundNoHtml5(audioBaseName, loop = false, volume = 1) {
+
+    const webmSrc = `${audioBaseName}.webm`;
+    const mp3Src = `${audioBaseName}.mp3`;
+
+    return new Howl({
+        src: [webmSrc, mp3Src], // 尝试加载webm文件，如果失败自动回退到mp3
+        // html5: true,
         loop: loop,
         volume: volume
     });
@@ -66,17 +83,34 @@ const bgmSelectLoopTrue = newSound('/audio/game/horse_racing/select-sound-121244
 // 函数 -- end
 
 
+// // 选择音效-- 有效
+// const siteBgmSelect = newSound('/audio/share/select-121244', false, 0.4);
+
+// // 选择音效-- 无效
+// const siteBgmInvalid = newSound('/audio/share/invalid-185098', false, 0.4);
+
+// // 倒计时4s
+// const siteBgmCountDown4s = newSound('/audio/share/count_down_4s-125125', false, 0.3);
+
+// // 游戏胜利
+// const siteBgmWin = newSound('/audio/share/win-218995', false, 0.3);
+
+// // 游戏失败
+// const siteBgmLose = newSound('/audio/share/lose-6008', false, 0.3);
+
+
+
 // 选择音效-- 有效
-const siteBgmSelect = newSound('/audio/share/select-121244', false, 0.4);
+var siteBgmSelect = newSoundNoHtml5('/audio/share/select-121244', false, 0.4);
 
 // 选择音效-- 无效
-const siteBgmInvalid = newSound('/audio/share/invalid-185098', false, 0.4);
+const siteBgmInvalid = newSoundNoHtml5('/audio/share/invalid-185098', false, 0.4);
 
 // 倒计时4s
-const siteBgmCountDown4s = newSound('/audio/share/count_down_4s-125125', false, 0.3);
+const siteBgmCountDown4s = newSoundNoHtml5('/audio/share/count_down_4s-125125', false, 0.3);
 
 // 游戏胜利
-const siteBgmWin = newSound('/audio/share/win-218995', false, 0.3);
+const siteBgmWin = newSoundNoHtml5('/audio/share/win-218995', false, 0.3);
 
 // 游戏失败
-const siteBgmLose = newSound('/audio/share/lose-6008', false, 0.3);
+const siteBgmLose = newSoundNoHtml5('/audio/share/lose-6008', false, 0.3);

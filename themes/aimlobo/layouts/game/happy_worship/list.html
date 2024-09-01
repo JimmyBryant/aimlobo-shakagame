@@ -8,6 +8,7 @@
 {{- $offerings := (index $happy_worship 0).offerings -}}
 {{- $msg_end_worship := (index $happy_worship 0).msg_end_worship -}}
 {{- $msg_not_enought_lucky_point := (index $happy_worship 0).msg_not_enought_lucky_point -}}
+{{- $tipsPageOneItemSelect := (index $happy_worship 0).tips_page_1_item_select -}}
 
 <div class="wrap">
 
@@ -21,7 +22,7 @@
                 <div class="game_title font-size-2">{{ T "happy_worship" }}</div>
 
                 <div class="tips_icon">
-                    <span class="font-size-1_5 cursor-pointer">👀</span>
+                    <span class="tips_icon_in_page">❔</span>
                     {{ partial "tools/popup_tips.html" (dict "tipsContent" $tips) }}
                 </div>
             </div>
@@ -50,7 +51,7 @@
                             </div>
 
                             <input type="radio" id="god_{{ add $index 1 }}" name="select_god"
-                                value="{{ add $index 1 }}" required />
+                                value="{{ add $index 1 }}" />
 
                         </label>
                     {{ end }}
@@ -66,7 +67,10 @@
 
             </form>
 
-            
+            <div class="user_no_select info_icon">
+
+                {{- partial "tools/popup_info.html" (dict "infoType" "warning" "infoContent" $tipsPageOneItemSelect) }}
+            </div>
 
         </div>
 

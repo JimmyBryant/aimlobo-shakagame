@@ -5,7 +5,8 @@ en:
       weight: 10
       cover: /image/game/happy_worship/cover.png
       tips_miss_data: Miss data, [restart game](../).
-      tips_page_offering_select: You much select at least 1 offering.
+      tips_page_at_least_1_item_select: You much select at least 1 item.
+      tips_page_1_item_select: You much select 1 item.
       tips_click_bubble: Click the lucky bubble to add lucky point.
       table_img: /image/game/happy_worship/table.png
       stove_img: /image/game/happy_worship/stove.png
@@ -208,6 +209,7 @@ en:
           3. You can click **BGM** to toggle the background music on or off;
           4. Click the **title** to edit the title content, with a character limit of **1-15**;
           5. Click the number in the center of the screen to edit the prayer content. There are three predefined options, or you can click **Custom** to create your own with a character limit of **0-15**.
+          6. **On mobile devices, please tap the background music button first to enable background music and lift the restriction on audio output.**
         weight: 20
       - title: Lucky Points System
         content: |
@@ -485,7 +487,8 @@ zh-cn:
       weight: 10
       cover: /image/game/happy_worship/cover.png
       tips_miss_data: 缺少数据, [重新游戏](../).
-      tips_page_offering_select: 你需要选择至少一个贡品.
+      tips_page_at_least_1_item_select: 你需要选择至少一个项目.
+      tips_page_1_item_select: 你需要选择一个项目.
       tips_click_bubble: 点击幸运气球收获幸运值.
       table_img: /image/game/happy_worship/table.png
       stove_img: /image/game/happy_worship/stove.png
@@ -698,6 +701,7 @@ zh-cn:
           3. 可以点击**BGM**来实现开启/关闭背景音乐；
           4. 点击**标题**可以编辑标题内容，字符数量限制是 **1-15**。
           5. 点击屏幕中间的数字可以编辑祈祷内容，有三个已经定义好的选项，不满意的话可以点击**自定义**自己编辑，字符数量限制是 **0-15**。
+          6. **移动端请先点击背景音乐按钮开启背景音乐以解除移动端对音频输出的限制**
         weight: 20
       - title: 幸运积分系统
         content: |
@@ -975,7 +979,8 @@ zh-tw:
       weight: 10
       cover: /image/game/happy_worship/cover.png
       tips_miss_data: 缺少數據, [重新遊戲](../).
-      tips_page_offering_select: 你需要選擇至少一個貢品.
+      tips_page_at_least_1_item_select: 你需要選擇至少一個項目.
+      tips_page_1_item_select: 你需要選擇一個項目.
       tips_click_bubble: 點擊幸運氣球收獲幸運值.
       table_img: /image/game/happy_worship/table.png
       stove_img: /image/game/happy_worship/stove.png
@@ -1198,7 +1203,8 @@ zh-tw:
           2. 可以點擊**自動**來實現開啟/關閉自動敲擊木魚，速度是每秒鐘敲擊一次；
           3. 可以點擊**BGM**來實現開啟/關閉背景音樂；
           4. 點擊**標題**可以編輯標題內容，字符數量限制是 **1-15**。
-          6. 點擊螢幕中間的數字可以編輯祈禱內容，有三個已經定義好的選項，不滿意的話可以點擊**自定義**自己編輯，字符數量限制是 **0-15**。
+          5. 點擊螢幕中間的數字可以編輯祈禱內容，有三個已經定義好的選項，不滿意的話可以點擊**自定義**自己編輯，字符數量限制是 **0-15**。
+          6. **移動端請先點擊背景音樂按鈕開啟背景音樂以解除移動端對音頻輸出的限製**
         weight: 20
       - title: 幸運積分系統
         content: |

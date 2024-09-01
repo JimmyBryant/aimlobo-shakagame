@@ -5,7 +5,10 @@ const bgmThumb = document.querySelector('.bgm-thumb');
 const bubbleCountInPage = document.querySelector('.bubble-count');
 const bubbleContainer = document.getElementById('bubble-container');
 
-const infoIcon = document.querySelector('.info_icon');
+// const infoIcon = document.querySelector('.info_icon');
+
+const infoIconForceClose = document.querySelector('.tips_icon_force_close');
+const btnStartGame = infoIconForceClose.querySelector('.btn_get_it');
 
 
 
@@ -244,13 +247,22 @@ function endWorship() {
 updateTimeSecondInpage();
 
 // 提示用户点击气球
-infoIcon.click();
+// infoIcon.click();
 
-// 确保所有资源加载完成后再运行
-window.addEventListener('load', function() {
+infoIconForceClose.click();
+
+console.log('infoIconForceClose exec');
+
+btnStartGame.addEventListener('click', () => {
 
   startWorship();
 });
+
+// 确保所有资源加载完成后再运行
+// window.addEventListener('load', function() {
+
+//   startWorship();
+// });
 
 
 
