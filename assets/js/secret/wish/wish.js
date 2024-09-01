@@ -13,6 +13,9 @@ var btnRestartGame = document.querySelector('.btn_restart_game')
 
 const bgm = newSound('/audio/secret/wish/quiet-stars-ai-203565', true, 0.5);
 
+const infoIconForceClose = document.querySelector('.tips_icon_force_close');
+const btnStartGame = infoIconForceClose.querySelector('.btn_get_it');
+
 
 const pageName = 'wish';
 const checkbox = document.getElementById('hide_or_show_all_tips_in_current_page');
@@ -223,7 +226,13 @@ checkbox.addEventListener('change', () => {
     hideOrShowAllTipsInCurrentPage(keyName_1_00, pageName);
 });
 
-initGame();
+infoIconForceClose.click();
+
+btnStartGame.addEventListener('click', () => {
+
+    initGame();
+});
+
 
 moon1.addEventListener('click', () => {
 

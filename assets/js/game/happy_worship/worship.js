@@ -246,12 +246,9 @@ function endWorship() {
 // 翻译秒
 updateTimeSecondInpage();
 
-// 提示用户点击气球
-// infoIcon.click();
-
+// 提示用户点击气球 -- 并开始游戏
 infoIconForceClose.click();
 
-console.log('infoIconForceClose exec');
 
 btnStartGame.addEventListener('click', () => {
 
