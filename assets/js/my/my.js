@@ -259,8 +259,6 @@ formUserAvatar.addEventListener('submit', (event) => {
 
   formUserAvatar.reset();
 
-  siteBgmSelect.stop();
-
 });
 
 formUserAvatar.addEventListener('reset', () => {
@@ -297,7 +295,6 @@ formUserName.addEventListener('submit', (event) => {
   
   formUserName.reset();
 
-  siteBgmSelect.stop();
 });
 
 formUserName.addEventListener('reset', () => {
@@ -334,7 +331,6 @@ formUserSignature.addEventListener('submit', (event) => {
 
   formUserSignature.reset();
 
-  siteBgmSelect.stop();
 });
 
 formUserSignature.addEventListener('reset', () => {
@@ -371,7 +367,6 @@ formUserBirthDate.addEventListener('submit', (event) => {
 
   formUserBirthDate.reset();
 
-  siteBgmSelect.play();
 });
 
 formUserBirthDate.addEventListener('reset', () => {
@@ -412,7 +407,6 @@ formUserGender.addEventListener('submit', (event) => {
 
   formUserGender.reset();
 
-  siteBgmSelect.stop();
 });
 
 formUserGender.addEventListener('reset', () => {
@@ -479,7 +473,6 @@ btnCheckIn.addEventListener('click', () => {
 
   updateBtnCheckIn();
 
-  siteBgmWin.stop();
 });
 
 
