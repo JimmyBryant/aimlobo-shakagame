@@ -169,9 +169,8 @@ function startBubbleGame() {
   }, setGameDurationTime);
 }
 
-
-// 开始游戏
-function startWorship() {
+// 更新页面内容
+function updatePageInfo() {
 
   if (isUserJumpToThisPage()) {
 
@@ -180,6 +179,20 @@ function startWorship() {
     updateOfferingsInPage();
 
     updateIncenseInPage();
+  }
+}
+
+
+// 开始游戏
+function startWorship() {
+
+  if (isUserJumpToThisPage()) {
+
+    // updateGodInPage();
+
+    // updateOfferingsInPage();
+
+    // updateIncenseInPage();
 
     // 重置 clickCount
     clickCount = 0;
@@ -246,9 +259,11 @@ function endWorship() {
 // 翻译秒
 updateTimeSecondInpage();
 
+// 更新页面内容 -- 预先加载
+updatePageInfo();
+
 // 提示用户点击气球 -- 并开始游戏
 infoIconForceClose.click();
-
 
 btnStartGame.addEventListener('click', () => {
 
