@@ -1,0 +1,46 @@
+{{- define "main" -}}
+{{- $lang := .Lang -}}
+{{- $dataLang := index .Site.Data.game $lang -}}
+{{- $games := $dataLang.game_lists -}}
+{{- $guessWhoWinRock := where $games "id" "guess_who_win_rock" -}}
+{{- $tipsMissData := (index $guessWhoWinRock 0).tips_miss_data -}}
+{{- $tipsStartGame := (index $guessWhoWinRock 0).tips_start_game -}}
+
+<div class="wrap">
+
+    <div class="game_guess_who_win_rock">
+
+        <div class="page_play flex gap-1rem align-items-center">
+
+            <div class="page_left flex justify-content-center align-items-center">
+
+                <div class="tips_icon_force_close">
+
+                    {{- partial "tools/popup_info_btn.html" (dict "infoContent" $tipsStartGame) }}
+        
+                </div>
+
+                <div class="game_area"></div>
+                
+
+            </div>
+
+            
+
+            <div class="page_right">
+
+            {{- /* 谷歌广告代码 04 */}}
+            {{- partial "google_adsense/04.html" }}
+
+            </div>
+
+        </div>
+        
+  
+    </div>
+
+    {{- partial "game/popup_miss_data.html" (dict "tipsContent" $tipsMissData) }}
+    
+</div>
+
+{{- end -}}

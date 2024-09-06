@@ -741,3 +741,16 @@
 - id: wait_for_bonus
   translation: "頁面等待開獎"
 
+# game: guess who win - rock
+- id: guess_who_win
+  translation: "猜猜誰會贏"
+
+- id: game_end
+  translation: "遊戲結束"
+
+- id: winning_element
+  translation: "獲勝元素"
+
+- id: your_bet_element
+  translation: "你下註的元素"
+

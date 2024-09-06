@@ -4,7 +4,7 @@ en:
       name: Happy worship
       weight: 10
       cover: /image/game/happy_worship/cover.png
-      tips_miss_data: Miss data, [restart game](../).
+      tips_miss_data: Missing data, [restart game](../).
       tips_page_at_least_1_item_select: You much select at least 1 item.
       tips_page_1_item_select: You much select 1 item.
       tips_click_bubble: Click the lucky bubble to add lucky point.
@@ -164,7 +164,7 @@ en:
           content: ☕
           weight: 150
       msg_end_worship: Worship complete 🎉. 🧧 +
-      msg_not_enought_lucky_point: Not enough lucky point(🧧), try only one offering and one incense to earn more. 
+      msg_not_enought_lucky_point: Not enough lucky point(🧧). 
       tips:
         - title: What is Happy Worship
           content: Happy Worship (**shakagame.com**) is a way to worship and show respect to deities. It includes lighting virtual incense, placing virtual offerings, and performing prayers and wishes. During this process, you can collect a lot of lucky points. Come and try it.
@@ -222,7 +222,7 @@ en:
       name: Flying Book
       weight: 30
       cover: /image/game/flying_book/cover.png
-      tips_miss_data: Miss data, [restart game](../).
+      tips_miss_data: Missing data, [restart game](../).
       tips:
       - title: What is Flying Book?
         content: Flying Book (**shakagame.com**) usually gives you the answers you want. It solves all problems in daily life. Just ask a question, and the flying book will find the answer for you.
@@ -259,7 +259,7 @@ en:
       tips_start_game: Game will start immediately when green light on
       in_page_tips_type: normal
       in_page_tips_content_page_bet_lucky_point: I suggest you try only 1 bet amount (default) first to start game.
-      tips_miss_data: Miss data, [restart game](../).
+      tips_miss_data: Missing data, [restart game](../).
       tips_no_select_horse: you don't select horse, go [select horse](../).
       tips_no_bet: you don't bet, go [bet](../bet).
       tips_no_racing: you don't enjoy the game, [start game](../).
@@ -369,7 +369,7 @@ en:
       name: Toto 3
       weight: 2
       cover: /image/game/toto_3/cover.png
-      msg_not_enought_lucky_point: Insufficient lucky points (🧧).
+      msg_not_enought_lucky_point: Not enough lucky points (🧧).
       msg_bet_stop: Betting is closed, no further bets allowed.
       in_page_tips_type: normal
       in_page_tips_content: Check out the [rules](./rules) to learn how to play.
@@ -427,7 +427,7 @@ en:
       name: Toto 5
       weight: 40
       cover: /image/game/toto_5/cover.png
-      msg_not_enought_lucky_point: Insufficient lucky points (🧧).
+      msg_not_enought_lucky_point: Not enough lucky points (🧧).
       msg_bet_stop: Betting is closed, no further bets allowed.
       in_page_tips_type: normal
       in_page_tips_content: Check out the [rules](./rules) to learn how to play.
@@ -480,6 +480,52 @@ en:
         - title: Claiming Rewards
           content: Toto 5 rewards must be claimed within 6 minutes of the draw. If the player fails to claim the reward within the given time, it will be considered forfeited.
           weight: 40
+
+    - id: guess_who_win_rock
+      name: Guess Who Wins - Rock Paper Scissors
+      weight: 70
+      cover: /image/game/guess_who_win_rock/cover.png
+      msg_not_enought_lucky_point: Not enough lucky points (🧧). 
+      tips_page_1_item_select: You need to select an item.
+      tips_start_game: The game ends when only one element remains.
+      tips_miss_data: Missing data, [restart the game](../).
+      in_page_tips_content_page_bet_lucky_point: It is recommended to start your game with 1 lucky point (default value).
+      tips_start_game: |
+        🪨 > ✂️
+
+        ✂️ > 📄
+
+        📄 > 🪨
+      players:
+        - id: 1
+          name: Scissors
+          content: ✂️
+          weight: 10
+        - id: 2
+          name: Rock
+          content: 🪨
+          weight: 20
+        - id: 3
+          name: Paper
+          content: 📄
+          weight: 30
+      tips:
+        - title: What is Guess Who Wins - Rock Paper Scissors?
+          content: Guess Who Wins - Rock Paper Scissors (**shakagame.com**) is a simple online game where users bet to predict which element will win. After starting the game, three randomly generated elements will follow the rules to attack and evade. The game ends when only one element remains.
+          weight: 10
+        - title: How to play Guess Who Wins - Rock Paper Scissors?
+          content: |
+            1. Choose the element you believe will win.
+            2. Place your bet on the betting page.
+            3. Start the game.
+            4. Check if you've won.
+          weight: 20
+        - title: Lucky Points System
+          content: |
+            1. Clicking **Got it** on the game page will deduct the corresponding lucky points for the bet.
+            2. If you win, you will receive a reward of 3 times the lucky points you bet, but the system will charge a 3% service fee.
+            3. Each round of the game will increase the game count by one.
+          weight: 30
 
 
 zh-cn:
@@ -658,7 +704,7 @@ zh-cn:
           content: ☕
           weight: 150
       msg_end_worship: 崇拜完成 🎉. 🧧 +
-      msg_not_enought_lucky_point: 幸运积分不足(🧧), 请尝试一个供品，一根香火以获得更多幸运积分. 
+      msg_not_enought_lucky_point: 幸运值不足(🧧).
       tips:
         - title: 快乐崇拜是什么
           content: 快乐崇拜(**shakagame.com**)是对神明进行祭拜和表达敬意。包括点燃虚拟的香烛、摆放虚拟的供品，以及进行祈祷和祝愿，在这个过程中你可以收集大量的幸运值，快来试试吧。
@@ -974,7 +1020,52 @@ zh-cn:
       - title: 兑奖
         content: 多多5 兑奖当期有效，中奖玩家应在开奖时间起6分钟内完成兑奖，超时视为放弃兑奖。
         weight: 40
+    
+    - id: guess_who_win_rock
+      name: 猜谁赢 - 石头剪刀布
+      weight: 70
+      cover: /image/game/guess_who_win_rock/cover.png
+      msg_not_enought_lucky_point: 幸运值不足(🧧). 
+      tips_page_1_item_select: 你需要选择一个项目.
+      tips_start_game: 当只剩一个元素的时候游戏结束
+      tips_miss_data: 缺少数据, [重新游戏](../).
+      in_page_tips_content_page_bet_lucky_point: 建议从1个幸运积分（默认值）开始你的游戏.
+      tips_start_game: |
+        🪨 > ✂️
 
+        ✂️ > 📄
+
+        📄 > 🪨
+      players:
+        - id: 1
+          name: 剪刀
+          content: ✂️
+          weight: 10
+        - id: 2
+          name: 石头
+          content: 🪨
+          weight: 20
+        - id: 3
+          name: 布
+          content: 📄
+          weight: 30 
+      tips:
+        - title: 什么是 猜谁赢 - 石头剪刀布?
+          content: 猜谁赢 - 石头剪刀布 (**shakagame.com**) 是一个简单的在线小游戏，用户下注预测哪个元素会赢，开始游戏后随机生成的三种元素就会按照规则进行攻击与躲避，最后只剩一个元素的时候游戏结束.
+          weight: 10
+        - title: 怎么玩 猜谁赢 - 石头剪刀布?
+          content: |
+            1. 选择你看好的元素:
+            2. 在下注页面投注.
+            3. 开始游戏.
+            4. 确认是否中奖.
+          weight: 20
+        - title: 幸运积分系统
+          content: |
+            1. 在游戏页面点击 **知道了** 会扣除相应的下注幸运值.
+            2. 如果你赢了，你会获得下注幸运值的3倍积分奖励，但系统会收取3%的服务费.
+            3. 每一轮游戏都会增加一次游戏次数.
+          weight: 30
 
 zh-tw:
   game_lists:
@@ -1162,7 +1253,7 @@ zh-tw:
           content: ☕
           weight: 150
       msg_end_worship: 崇拜完成 🎉. 🧧 +
-      msg_not_enought_lucky_point: 幸運積分不足(🧧), 請嘗試一個供品，一根香火以獲得更多幸運積分. 
+      msg_not_enought_lucky_point: 幸運值不足(🧧).
       tips:
         - title: 快樂崇拜是什麽
           content: 快樂崇拜(**shakagame.com**)是對神明進行祭拜和表達敬意。包括點燃虛擬的香燭、擺放虛擬的供品，以及進行祈禱和祝願，在這個過程中你可以收集大量的幸運值，快來試試吧。
@@ -1499,3 +1590,49 @@ zh-tw:
       - title: 兌獎
         content: 多多5 兌獎當期有效，中獎玩家應在開獎時間起6分鐘內完成兌獎，超時視為放棄兌獎。
         weight: 40
+
+    - id: guess_who_win_rock
+      name: 猜誰贏 - 石頭剪刀布
+      weight: 70
+      cover: /image/game/guess_who_win_rock/cover.png
+      msg_not_enought_lucky_point: 幸運值不足(🧧). 
+      tips_page_1_item_select: 你需要選擇一個項目.
+      tips_start_game: 當只剩一個元素的時候遊戲結束
+      tips_miss_data: 缺少數據, [重新遊戲](../).
+      in_page_tips_content_page_bet_lucky_point: 建議從1個幸運積分（默認值）開始你的遊戲.
+      tips_start_game: |
+        🪨 > ✂️
+
+        ✂️ > 📄
+
+        📄 > 🪨
+      players:
+        - id: 1
+          name: 剪刀
+          content: ✂️
+          weight: 10
+        - id: 2
+          name: 石頭
+          content: 🪨
+          weight: 20
+        - id: 3
+          name: 布
+          content: 📄
+          weight: 30 
+      tips:
+        - title: 什麽是 猜誰贏 - 石頭剪刀布?
+          content: 猜誰贏 - 石頭剪刀布 (**shakagame.com**) 是一個簡單的在線小遊戲，用戶下註預測哪個元素會贏，開始遊戲後隨機生成的三種元素就會按照規則進行攻擊與躲避，最後只剩一個元素的時候遊戲結束.
+          weight: 10
+        - title: 怎麽玩 猜誰贏 - 石頭剪刀布?
+          content: |
+            1. 選擇你看好的元素:
+            2. 在下註頁面投註.
+            3. 開始遊戲.
+            4. 確認是否中獎.
+          weight: 20
+        - title: 幸運積分系統
+          content: |
+            1. 在遊戲頁面點擊 **知道了** 會扣除相應的下註幸運值.
+            2. 如果你贏了，你會獲得下註幸運值的3倍積分獎勵，但系統會收取3%的服務費.
+            3. 每一輪遊戲都會增加一次遊戲次數.
+          weight: 30
