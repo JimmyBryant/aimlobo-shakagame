@@ -522,8 +522,71 @@ en:
           weight: 20
         - title: Lucky Points System
           content: |
-            1. Clicking **Got it** on the game page will deduct the corresponding lucky points for the bet.
+            1. Clicking **Get it** on the game page will deduct the corresponding lucky points for the bet.
             2. If you win, you will receive a reward of 3 times the lucky points you bet, but the system will charge a 3% service fee.
+            3. Each round of the game will increase the game count by one.
+          weight: 30
+    - id: guess_who_win_animal
+      name: Guess Who Wins - Animal
+      weight: 80
+      cover: /image/game/guess_who_win_rock/cover.png
+      msg_not_enought_lucky_point: Not enough lucky points (🧧). 
+      tips_page_1_item_select: You need to select an item.
+      tips_miss_data: Missing data, [restart the game](../).
+      in_page_tips_content_page_bet_lucky_point: It is recommended to start your game with 1 lucky point (default value).
+      tips_start_game: |
+        🦁 🐯 > 🦬 🐏 🐰 🦌 🦘 🦓
+
+        🦬 🐏 🐰 🦌 🦘 🦓 > 🌿
+      players:
+        - id: 1
+          name: Lion
+          content: 🦁
+          weight: 10
+        - id: 2
+          name: Tiger
+          content: 🐯
+          weight: 20
+      herbivores:
+        - id: 1
+          name: Bull
+          content: 🦬
+          weight: 10
+        - id: 2
+          name: Sheep
+          content: 🐏
+          weight: 20
+        - id: 3
+          name: Rabbit
+          content: 🐰
+          weight: 30
+        - id: 4
+          name: Deer
+          content: 🦌
+          weight: 40
+        - id: 5
+          name: Kangaroo
+          content: 🦘
+          weight: 50
+        - id: 6
+          name: Zebra
+          content: 🦓
+          weight: 60
+      tips:
+        - title: What is Guess Who Wins - Animal?
+          content: Guess Who Wins - Animals (shakagame.com) is a simple online game where users bet to predict which animal will win. After the game starts, herbivores will eat plants, and lions and tigers will eat the herbivores. The game ends when there are no herbivores left on the page, and the lion or tiger with the highest score wins.
+          weight: 10
+        - title: How to play Guess Who Wins - Animal?
+          content: |
+            1. Choose the element you believe will win.
+            2. Place your bet on the betting page.
+            3. Start the game.
+            4. Check if you've won.
+          weight: 20
+        - title: Lucky Points System
+          content: |
+            1. Clicking **Get it** on the game page will deduct the corresponding lucky points for the bet.
+            2. If you win, you will receive a reward of 2 times the lucky points you bet, but the system will charge a 3% service fee.
             3. Each round of the game will increase the game count by one.
           weight: 30
 
@@ -1064,6 +1127,70 @@ zh-cn:
           content: |
             1. 在游戏页面点击 **知道了** 会扣除相应的下注幸运值.
             2. 如果你赢了，你会获得下注幸运值的3倍积分奖励，但系统会收取3%的服务费.
+            3. 每一轮游戏都会增加一次游戏次数.
+          weight: 30
+          
+    - id: guess_who_win_animal
+      name: 猜谁赢 - 动物
+      weight: 80
+      cover: /image/game/guess_who_win_rock/cover.png
+      msg_not_enought_lucky_point: 幸运值不足(🧧).
+      tips_page_1_item_select: 你需要选择一个项目.
+      tips_miss_data: 缺少数据, [重新游戏](../).
+      in_page_tips_content_page_bet_lucky_point: 建议从1个幸运积分（默认值）开始你的游戏.
+      tips_start_game: |
+        🦁 🐯 > 🦬 🐏 🐰 🦌 🦘 🦓
+
+        🦬 🐏 🐰 🦌 🦘 🦓 > 🌿
+      players:
+        - id: 1
+          name: 狮子
+          content: 🦁
+          weight: 10
+        - id: 2
+          name: 老虎
+          content: 🐯
+          weight: 20
+      herbivores:
+        - id: 1
+          name: 牛
+          content: 🦬
+          weight: 10
+        - id: 2
+          name: 羊
+          content: 🐏
+          weight: 20
+        - id: 3
+          name: 兔
+          content: 🐰
+          weight: 30
+        - id: 4
+          name: 鹿
+          content: 🦌
+          weight: 40
+        - id: 5
+          name: 袋鼠
+          content: 🦘
+          weight: 50
+        - id: 6
+          name: 斑马
+          content: 🦓
+          weight: 60
+      tips:
+        - title: 什么是 猜谁赢 - 动物?
+          content: 猜谁赢 - 动物 (**shakagame.com**) 是一个简单的在线小游戏，用户下注预测哪个动物会赢，开始游戏后食草动物会吃草，狮子和老虎会吃食草动物，页面上没有食草动物的时候游戏结束，狮子和老虎谁的积分高谁获胜.
+          weight: 10
+        - title: 怎么玩 猜谁赢 - 动物?
+          content: |
+            1. 选择你看好的元素:
+            2. 在下注页面投注.
+            3. 开始游戏.
+            4. 确认是否中奖.
+          weight: 20
+        - title: 幸运积分系统
+          content: |
+            1. 在游戏页面点击 **知道了** 会扣除相应的下注幸运值.
+            2. 如果你赢了，你会获得下注幸运值的2倍积分奖励，但系统会收取3%的服务费.
             3. 每一轮游戏都会增加一次游戏次数.
           weight: 30
 
@@ -1634,5 +1761,69 @@ zh-tw:
           content: |
             1. 在遊戲頁面點擊 **知道了** 會扣除相應的下註幸運值.
             2. 如果你贏了，你會獲得下註幸運值的3倍積分獎勵，但系統會收取3%的服務費.
+            3. 每一輪遊戲都會增加一次遊戲次數.
+          weight: 30
+    
+    - id: guess_who_win_animal
+      name: 猜誰贏 - 動物
+      weight: 80
+      cover: /image/game/guess_who_win_rock/cover.png
+      msg_not_enought_lucky_point: 幸運值不足(🧧).
+      tips_page_1_item_select: 你需要選擇一個項目.
+      tips_miss_data: 缺少數據, [重新遊戲](../).
+      in_page_tips_content_page_bet_lucky_point: 建議從1個幸運積分（默認值）開始你的遊戲.
+      tips_start_game: |
+        🦁 🐯 > 🦬 🐏 🐰 🦌 🦘 🦓
+
+        🦬 🐏 🐰 🦌 🦘 🦓 > 🌿
+      players:
+        - id: 1
+          name: 獅子
+          content: 🦁
+          weight: 10
+        - id: 2
+          name: 老虎
+          content: 🐯
+          weight: 20
+      herbivores:
+        - id: 1
+          name: 牛
+          content: 🦬
+          weight: 10
+        - id: 2
+          name: 羊
+          content: 🐏
+          weight: 20
+        - id: 3
+          name: 兔
+          content: 🐰
+          weight: 30
+        - id: 4
+          name: 鹿
+          content: 🦌
+          weight: 40
+        - id: 5
+          name: 袋鼠
+          content: 🦘
+          weight: 50
+        - id: 6
+          name: 斑馬
+          content: 🦓
+          weight: 60
+      tips:
+        - title: 什麽是 猜誰贏 - 動物?
+          content: 猜誰贏 - 動物 (**shakagame.com**) 是一個簡單的在線小遊戲，用戶下註預測哪個動物會贏，開始遊戲後食草動物會吃草，獅子和老虎會吃食草動物，頁面上沒有食草動物的時候遊戲結束，獅子和老虎誰的積分高誰獲勝.
+          weight: 10
+        - title: 怎麽玩 猜誰贏 - 動物?
+          content: |
+            1. 選擇你看好的元素:
+            2. 在下註頁面投註.
+            3. 開始遊戲.
+            4. 確認是否中獎.
+          weight: 20
+        - title: 幸運積分系統
+          content: |
+            1. 在遊戲頁面點擊 **知道了** 會扣除相應的下註幸運值.
+            2. 如果你贏了，你會獲得下註幸運值的2倍積分獎勵，但系統會收取3%的服務費.
             3. 每一輪遊戲都會增加一次遊戲次數.
           weight: 30

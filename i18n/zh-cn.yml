@@ -752,3 +752,7 @@
 
 - id: your_bet_element
   translation: "你下注的元素"
+
+# game: guess who win - animal
+- id: score
+  translation: "积分"

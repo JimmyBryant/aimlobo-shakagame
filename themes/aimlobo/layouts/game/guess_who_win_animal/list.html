@@ -1,0 +1,87 @@
+{{- define "main" -}}
+{{- $lang := .Lang -}}
+{{- $dataLang := index .Site.Data.game $lang -}}
+{{- $games := $dataLang.game_lists -}}
+{{- $guessWhoWinAnimal := where $games "id" "guess_who_win_animal" -}}
+{{- $tips := (index $guessWhoWinAnimal 0).tips -}}
+{{- $tipsMissData := (index $guessWhoWinAnimal 0).tips_miss_data -}}
+{{- $tipsPageOneItemSelect := (index $guessWhoWinAnimal 0).tips_page_1_item_select -}}
+{{- $players := (index $guessWhoWinAnimal 0).players -}}
+
+<div class="wrap">
+
+    <div class="game_guess_who_win_rock">
+
+        <div class="page_list flex flex-column gap-1rem align-items-center">
+
+            {{- /* 游戏标题 */ -}}
+            <div class="flex align-items-center gap-_5rem padding-tb-1rem">
+                <div class="game_title font-size-2">{{ T "guess_who_win" }}</div>
+
+                <div class="tips_icon">
+                    <span class="tips_icon_in_page">❔</span>
+                    {{ partial "tools/popup_tips.html" (dict "tipsContent" $tips) }}
+                </div>
+            </div>
+
+            {{- /* 表单 -- 选择赢家 */ -}}
+            <form class="form_select_winner width-100 bg-white padding-1rem border-radius-_3rem">
+
+                {{- /*
+                <div class="header padding-1rem text-center font-size-1_5">
+                    {{- "guess_who_win" -}}
+                </div>
+                */ -}}
+
+                <div class="body incense flex gap-1rem align-items-center justify-content-center padding-tb-1rem">
+
+                    {{ with $players }}
+
+                        {{ range . }}
+
+                            <label for="select_winner_{{- .id -}}" class="select_winner flex flex-column gap-_5rem align-items-center justify-content-center shadow-box border-radius-_5rem padding-_5rem">
+                                
+                                    <p class="width-100 text-center">{{- .name -}}</p>
+                                    <div class="font-size-4">
+
+                                        {{- .content -}}
+                                    </div>
+
+                                <input type="radio" id="select_winner_{{- .id -}}" name="select_winner" value="{{- .content -}}" />
+                            </label>
+
+                        {{ end }}
+
+                    {{ end }}
+                </div>
+
+                <div class="footer flex gap-1rem align-items-center justify-content-center margin-tb-1rem">
+
+                    <button class="btn btn_reset" type="reset">{{ T "cancel" }}</button>
+
+                    <button class="btn btn_submit" type="submit">{{ T "submit" }}</button>
+                    
+                </div>
+
+            </form>
+
+            <div class="user_no_select info_icon">
+
+                {{- partial "tools/popup_info.html" (dict "infoType" "warning" "infoContent" $tipsPageOneItemSelect) }}
+            </div>
+
+
+        </div>
+
+        
+    </div>
+
+
+    {{- partial "google_adsense/05.html" }}
+    
+
+    {{- partial "game/popup_miss_data.html" (dict "tipsContent" $tipsMissData) }}
+
+</div>
+
+{{- end -}}

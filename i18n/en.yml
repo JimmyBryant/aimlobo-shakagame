@@ -767,4 +767,8 @@
 - id: your_bet_element
   translation: "Your Bet Element"
 
+# game: guess who win - animal
+- id: score
+  translation: "Score"
+
 

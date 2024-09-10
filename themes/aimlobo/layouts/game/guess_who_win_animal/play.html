@@ -1,0 +1,61 @@
+{{- define "main" -}}
+{{- $lang := .Lang -}}
+{{- $dataLang := index .Site.Data.game $lang -}}
+{{- $games := $dataLang.game_lists -}}
+{{- $guessWhoWinAnimal := where $games "id" "guess_who_win_animal" -}}
+{{- $Players := (index $guessWhoWinAnimal 0).players -}}
+{{- $Herbivores := (index $guessWhoWinAnimal 0).herbivores -}}
+{{- $tipsMissData := (index $guessWhoWinAnimal 0).tips_miss_data -}}
+{{- $tipsStartGame := (index $guessWhoWinAnimal 0).tips_start_game -}}
+
+<div class="wrap">
+
+    <div class="game_guess_who_win_rock">
+
+        <div class="page_play flex gap-1rem align-items-center">
+
+            <div class="page_left flex gap-1rem justify-content-between align-items-center">
+
+                <div class="tips_icon_force_close">
+
+                    {{- partial "tools/popup_info_btn.html" (dict "infoContent" $tipsStartGame) }}
+        
+                </div>
+
+                <div class="game_area"></div>
+
+                <div class="flex flex-column gap-1rem align-items-center">
+
+                    <div class="font-size-1_5 font-weight-600">{{ T "score" }}</div>
+
+                    <div class="score_board flex flex-column gap-_5rem align-items-center font-size-1_2">
+
+                        
+                    </div>
+
+                </div>
+
+                
+                
+
+            </div>
+
+            
+
+            <div class="page_right">
+
+            {{- /* 谷歌广告代码 04 */}}
+            {{- partial "google_adsense/04.html" }}
+
+            </div>
+
+        </div>
+        
+  
+    </div>
+
+    {{- partial "game/popup_miss_data.html" (dict "tipsContent" $tipsMissData) }}
+    
+</div>
+
+{{- end -}}

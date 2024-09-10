@@ -1,0 +1,58 @@
+body {
+
+}
+
+.page_left {
+
+    width: 42rem;
+}
+
+.page_right {
+
+    width: 21rem;
+}
+
+.game_area {
+
+    width: 20rem;
+    height: 20rem;
+    background-color: #fff;
+    position: relative;
+    border: 2px solid #000;
+    overflow: hidden;
+}
+
+.game_area .element {
+
+    position: absolute;
+    font-size: 1.5rem;
+}
+
+.down_check_bet_record {
+    display: none;
+}
+
+@media screen and (max-width: 48rem) {
+
+    .page_bet,
+    .page_play,
+    .page_result {
+
+        flex-direction: column;
+    }
+
+    .page_left,
+    .page_right {
+
+        width: 100%;
+    }
+
+    /* .page_left {
+
+        flex-direction: column;
+    } */
+
+    .down_check_bet_record {
+        display: block;
+    }
+}
