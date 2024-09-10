@@ -195,6 +195,8 @@ function checkGameEnd() {
 
         writeValueToRecordInLocal(keyName_1_00, keyName_1_03, true);
 
+        clearInterval(gameLoop);
+
         window.location.href = '../result';
     }
 }
@@ -263,7 +265,8 @@ function initElement() {
 }
 
 
-
+// 启动游戏循环
+const gameLoop = setInterval(moveElements, 50);
 
 
 
@@ -301,7 +304,8 @@ btnStartGame.addEventListener('click', () => {
     
 });
 
-setInterval(moveElements, 50);
+// setInterval(moveElements, 50);
+
 
 
 
