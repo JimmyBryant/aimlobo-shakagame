@@ -46,6 +46,12 @@
 
 # footer
 
+- id: privacy
+  translation: "Privacy"
+
+- id: terms
+  translation: "Terms"
+
 - id: about
   translation: "About"
 

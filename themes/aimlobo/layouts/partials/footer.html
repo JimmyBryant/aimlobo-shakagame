@@ -12,11 +12,24 @@
 
     <div class="">&copy; {{ site.Title }} {{ T site.Params.copyright }}, {{ now.Year }}.</div>
 
-    {{- with site.Params.contactEmail -}}
-    <div class="contact-email">
-        <a href="mailto:{{ . }}" target="_blank">{{- T "contact_us" -}} </a>
-    </div>
+    <div class="flex align-items-center justify-content-center">
+
+        <a href="{{- site.Home.Permalink | absLangURL -}}/privacy">{{- T "privacy" -}}</a>&nbsp;|&nbsp;
+
+        <a href="{{- site.Home.Permalink | absLangURL -}}/terms">{{- T "terms" -}}</a>&nbsp;|&nbsp;
+
+        <a href="{{- site.Home.Permalink | absLangURL -}}/lang">🌐</a>&nbsp;|&nbsp;
+
+        {{- with site.Params.contactEmail -}}
+            <div class="contact-email">
+                <a href="mailto:{{ . }}" target="_blank">{{- T "contact_us" -}} </a>
+            </div>
     {{- end -}}
+
+
+    </div>
+
+    
 
 </div>
 

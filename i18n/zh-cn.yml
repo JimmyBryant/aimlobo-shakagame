@@ -42,6 +42,12 @@
 
 # footer
 
+- id: privacy
+  translation: "隐私权"
+
+- id: terms
+  translation: "条款"
+
 - id: about
   translation: "关于"
 

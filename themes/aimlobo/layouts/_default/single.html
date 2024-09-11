@@ -1,0 +1,13 @@
+{{ define "main" }}
+
+{{- if .Content }}
+
+    <div class="line-height-2">
+
+        {{- .Content | markdownify -}}
+        
+    </div>
+    
+{{- end }}
+
+{{ end }}
