@@ -762,3 +762,20 @@
 # game: guess who win - animal
 - id: score
   translation: "积分"
+
+
+# secret: show_love
+- id: show_love
+  translation: "表白"
+
+- id: your_name
+  translation: "你的名字"
+
+- id: his_or_her_name
+  translation: "他/她的名字"
+
+- id: your_love_words
+  translation: "你的心声"
+
+- id: show_love_records
+  translation: "表白记录"

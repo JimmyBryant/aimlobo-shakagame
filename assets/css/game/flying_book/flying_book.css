@@ -114,103 +114,25 @@ body {
 }
 
 
-.toggle-switch {
-    /* width: 8rem; */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-  
-  /*
-     Size the label, and make the on and off parts sit on top
-     of one another using positioning
-  */
-  
-  label {
-    width: fit-content;
-    height: 1rem;
-    line-height: 1rem;
-    position: relative;
-  }
-  
-  label span {
-    /* position: absolute; */
-  }
-  
-  /*
-     remove the default styling of the checkbox using appearance
-     and create the outer toggle area
-  */
-  
-  input[type="checkbox"] {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 2.75rem;
-    height: 1.5rem;
-    border-radius: 0.75rem;
-    border: 2px solid black;
-    background: #eee;
-    transition: all 0.4s;
-    position: relative;
-  }
-  
-  /*
-     style the ::before content to look like
-     the inner toggle switch - the bit that moves
-  */
-  
-  input[type="checkbox"]::before {
-    width: 1rem;
-    height: 1rem;
-    border-radius: 0.5rem;
-    background-color: black;
-    content: '';
-    position: absolute;
-    top: 0.1rem;
-    left: 8%;
-    transition: all 0.4s;
-  }
-  
-  /*
-     change the outer background color and move the inner toggle switch
-     when the checkbox is checked; use transitions for smooth animation
-  */
-  
-  input[type="checkbox"]:checked {
-    /* background-color: #ffaa00; */
-    background-color: #fcbad3;
-    transition: all 0.4s;
-  }
-  
-  input[type="checkbox"]:checked::before {
-    left: 50%;
-    transition: all 0.4s;
-  }
-  
-  /*
-     cause the On and Off parts of the label to be visible when the checkbox is
-     checked and unchecked, respectively
-  */
-  
-  input[type="checkbox"] ~ label .on, input[type="checkbox"]:checked ~ label .off {
-    /* opacity: 0; */
-    display: none;
-  }
-  
-  input[type="checkbox"] ~ label .off, input[type="checkbox"]:checked ~ label .on {
-    /* opacity: 1; */
-    display: block;
-  }
-  
-  /*
-     make the focus outline a bit more subtle on Chrome, rather than the
-     default heavy blue outline
-  */
-  
-  /* input:focus {
-    outline: 1px solid black;
-    
-  } */
+
+
+  .toggle-switch {
+
+      input[type="checkbox"] {
+
+          border: none;
+      }
+
+      input[type="checkbox"]:checked {
+
+          background-color: #0aeca4;
+      }
+
+      input[type="checkbox"]::before {
+
+          background-color: rgb(20, 156, 241);
+      }
+
   }
 
 

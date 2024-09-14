@@ -30,7 +30,7 @@
 
           {{- $dataSecret := index .Site.Data.secret .Lang -}}
           {{- with $dataSecret.secret_list -}}
-          {{- range first 5 (sort . "weight" "asc") -}}
+          {{- range first 2 (sort . "weight" "asc") -}}
           <a href="/{{- $lang -}}/secret/{{- .id | urlize -}}/">
             <div class="topic-item flex gap-_5rem align-items-center margin-bottom-1rem bg-color-04 border-radius-_5rem padding-_5rem">
              

@@ -778,3 +778,20 @@
   translation: "Score"
 
 
+# secret: show_love
+- id: show_love
+  translation: "Show Love"
+
+- id: your_name
+  translation: "Your name"
+
+- id: his_or_her_name
+  translation: "His/her name"
+
+- id: your_love_words
+  translation: "Your love words"
+
+- id: show_love_records
+  translation: "Show Love Records"
+
+
