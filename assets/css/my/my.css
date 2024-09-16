@@ -96,9 +96,21 @@ body {
 }
 
 .input_user_birth_date {
-    min-width: 10rem;
-    min-height: 1rem;
+    min-width: 15rem;
+    min-height: 3rem;
+    border: 1px solid #ccc; /* 设置边框样式 */
+    border-radius: 5px; /* 圆角边框 */
+    background-color: #f9f9f9; /* 背景颜色 */
+    color: #333; /* 文字颜色 */
+    padding: 0.5rem;
 }
+
+.input_user_birth_date:focus {
+    outline: none;
+    border-color: #007bff; /* 点击时的边框颜色 */
+    background-color: #fff; /* 点击时的背景颜色 */
+}
+
 
 
 .popup_form_user_gender label {
