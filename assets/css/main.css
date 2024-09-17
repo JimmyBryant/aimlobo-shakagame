@@ -2411,6 +2411,11 @@ footer {
   .left, .center, .right {
     width: 100%;
   }
+
+  .left {
+
+    display: none;
+  }
   
 
   }
