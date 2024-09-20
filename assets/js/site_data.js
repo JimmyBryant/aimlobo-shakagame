@@ -117,12 +117,12 @@ const siteDataGoodFor = [
     { name: 'game', link: 'game' },
     { name: 'happy', link: 'game/happy_worship' },
     { name: 'exercise', link: 'game/wooden_fish' },
-    { name: 'show_love', link: 'secret/bullet' },
+    { name: 'show_love', link: 'secret/show_love' },
     { name: 'read', link: 'topic' },
     { name: 'dating', link: 'secret/wish' },
     { name: 'laugh', link: 'rank' },
     { name: 'rich', link: 'game/toto_3' },
-    { name: 'match', link: 'game/flying_book' },
+    { name: 'match', link: 'luck/find_constellation_zodiac' },
     { name: 'healthy', link: 'game/horse_racing' }
 ]
 

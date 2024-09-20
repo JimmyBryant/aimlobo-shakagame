@@ -1,0 +1,56 @@
+{{- define "main" -}}
+
+
+{{- $lang := .Lang -}}
+{{- $dataLang := index .Site.Data.luck $lang -}}
+{{- $luckLists := $dataLang.luck_lists -}}
+{{- $zodiac := where $luckLists "id" "zodiac" -}}
+{{- $title := (index $zodiac 0).name -}}
+{{- $lists := (index $zodiac 0).lists -}}
+
+<div class="wrap">
+
+  <div class="margin-tb-1rem text-center padding-1rem">
+
+    <div class="font-size-1_5 font-weight-600">{{ $title }}</div> 
+
+  </div>
+
+  <div class="game-lists">
+
+    {{- with $lists -}}
+
+      {{- range sort . "weight" "asc" -}}
+
+          <div class="list-item">
+
+              {{- $path := .image -}}
+
+              {{- $alt := .id -}}
+
+              <a href="{{- .id | urlize -}}/" class="position-relative">
+
+                  <div class="game-cover border-radius-_5rem">
+
+                    {{ partial "tools/img-res.html" (dict "imagePath" $path "alt" $alt "imageWidth" 20) }}
+
+                    <div class="game-title">
+
+                      {{- T .id -}}
+
+                    </div>
+
+                  </div>
+
+              </a>
+
+          </div>
+
+      {{- end -}}
+      
+    {{- end -}}
+
+  </div>
+
+</div>
+{{- end -}}

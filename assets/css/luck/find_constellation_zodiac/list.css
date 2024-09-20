@@ -1,0 +1,73 @@
+body {
+
+}
+
+
+.find_constellation_zodiac {
+
+    display: flex;
+    gap: 1rem;
+}
+
+.page_left {
+
+    width: 42rem;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    background-color: #aee2ff;
+}
+
+.page_right {
+
+    width: 21rem;
+}
+
+
+.input_user_birth_date {
+    min-width: 15rem;
+    min-height: 3rem;
+    border: 1px solid #ccc; /* 设置边框样式 */
+    border-radius: 5px; /* 圆角边框 */
+    background-color: #f9f9f9; /* 背景颜色 */
+    color: #333; /* 文字颜色 */
+    padding: 0.5rem;
+}
+
+.input_user_birth_date:focus {
+    outline: none;
+    border-color: #007bff; /* 点击时的边框颜色 */
+    background-color: #fff; /* 点击时的背景颜色 */
+}
+
+.link_zodiac,
+.link_constellation {
+
+    padding: 1rem;
+    border-radius: 0.3rem;
+    width: 100%;
+    min-height: 5rem;
+}
+
+.link_zodiac {
+
+    background-color: #FFFFD2;
+}
+
+.link_constellation {
+
+    background-color: #B799FF;
+}
+
+@media screen and (max-width: 48rem) {
+
+    .page_left,
+    .page_right {
+
+        width: 100%;
+    }
+
+    .find_constellation_zodiac {
+
+        flex-direction: column;
+    }
+}

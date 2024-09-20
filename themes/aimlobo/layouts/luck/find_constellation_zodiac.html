@@ -1,0 +1,78 @@
+{{- define "main" -}}
+
+
+{{- $lang := .Lang -}}
+{{- $dataLang := index .Site.Data.luck $lang -}}
+{{- $luckLists := $dataLang.luck_lists -}}
+{{- $findConstellationZodiac := where $luckLists "id" "find_constellation_zodiac" -}}
+{{- $tips := (index $findConstellationZodiac 0).tips -}}
+
+<div class="wrap">
+
+  <div class="find_constellation_zodiac">
+
+    <div class="page_left">
+
+      <form class="form_user_birth_date flex flex-column gap-1rem align-items-center">
+
+        {{- /* 游戏标题 */ -}}
+        <div class="game_title flex align-items-center justify-content-center gap-_5rem padding-tb-1rem">
+            <div class="title font-size-2">{{ T "constellation_zodiac" }}</div>
+
+            <div class="tips_icon">
+                <span class="tips_icon_in_page">❔</span>
+                {{ partial "tools/popup_tips.html" (dict "tipsContent" $tips) }}
+            </div>
+        </div>
+    
+        <div class="body flex flex-column gap-1rem align-items-center justify-content-center">
+
+          <label for="input_user_birth_date" class="font-size-1_2">{{ T "select_birthday" }}</label>
+
+          <input class="input_user_birth_date font-size-1_2" type="date" id="input_user_birth_date" name="input_user_birth_date" required>
+        </div>
+    
+        <div class="footer">
+          <button class="btn btn_reset" type="reset">{{ T "cancel" }}</button>
+          <button class="btn btn_submit" type="submit">{{ T "submit" }}</button>
+        </div>
+        
+      </form>
+
+      <div class="find_constellation_zodiac_result flex flex-column gap-1rem align-items-center margin-top-1rem">
+
+
+        <a href="../constellation/" class="link_constellation margin-tb-_5rem color-black">
+
+          <div class="constellation_content flex gap-1rem align-items-center">
+            <div class="constellation_icon font-size-2"></div>
+            <div class="constellation_text font-size-1_2 font-weight-600"></div>                
+          </div>
+
+        </a>
+        
+
+        <a href="../zodiac/" class="link_zodiac margin-tb-_5rem color-black">
+
+          <div class="zodiac_content flex gap-1rem align-items-center">
+            <div class="zodiac_icon font-size-2"></div>
+            <div class="zodiac_text font-size-1_2 font-weight-600"></div>                
+          </div>
+
+        </a>
+
+
+      </div>
+
+    </div>
+
+    <div class="page_right">
+
+      {{- partial "google_adsense/04.html" }}
+
+    </div>
+
+  </div>
+
+</div>
+{{- end -}}

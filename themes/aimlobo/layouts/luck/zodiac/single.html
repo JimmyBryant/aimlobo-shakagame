@@ -1,0 +1,242 @@
+{{- define "main" -}}
+
+{{- $zodiacName := T .File.BaseFileName -}}
+
+{{- $lang := .Lang -}}
+{{- $dataLang := index .Site.Data.luck $lang -}}
+{{- $luckLists := $dataLang.luck_lists -}}
+{{- $zodiac := where $luckLists "id" "zodiac" -}}
+{{- $title := (index $zodiac 0).name -}}
+{{- $itemThumbLists := (index $zodiac 0).item_thumb_lists -}}
+{{- $displayThumbLists := (index $zodiac 0).display_thumb_lists -}}
+{{- $lists := (index $zodiac 0).lists -}}
+{{- $indexZodiac := where $lists "id" .File.BaseFileName -}}
+{{- $indexZodiacID := (index $indexZodiac 0).id -}}
+{{- $indexZodiacImage := (index $indexZodiac 0).image -}}
+{{- $indexZodiacDescription := (index $indexZodiac 0).description -}}
+{{- $bestMatch := (index $indexZodiac 0).best_match -}}
+{{- $luckyIndex := (index $indexZodiac 0).lucky_index -}}
+
+{{- $item := (index $indexZodiac 0).item -}}
+
+<div class="wrap">
+
+  <div class="info_1 info flex gap-1rem">
+
+    <div class="page_left flex align-items-center justify-content-between gap-1rem overflow-hidden">
+
+      <div>
+        {{- $class := "constellation_image"}}
+        {{- $alt := $title -}}
+        {{- $path := $indexZodiacImage -}}
+        {{ partial "tools/img-res.html" (dict "class" $class "imagePath" $path "alt" $alt "imageWidth" 20) }}
+      </div>
+
+      
+      <div class="constellation_text margin-tb-1rem flex flex-column gap-1rem justify-content-between">
+
+        {{- /* 标题 */ -}}
+        <div class="title font-size-2 font-weight-600 text-center width-100 padding-_5rem border-radius-_5rem">
+          {{ T $indexZodiacID  }}
+        </div>
+
+
+        {{- /* 描述 */ -}}
+        <div class="description padding-_5rem border-radius-_3rem">
+
+          {{- $indexZodiacDescription -}}
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="page_right">
+
+      {{- partial "google_adsense/04.html" }}
+
+    </div>
+
+  </div>
+
+
+  <div class="info_4 info flex gap-1rem">
+
+    <div class="page_left">
+
+      <div class="margin-top-1rem text-center padding-tb-1rem">
+
+        <div class="font-size-2 font-weight-600 text-left">{{- T "lucky_index" -}}</div> 
+    
+      </div> 
+
+      {{- $luckyIndexArray := slice -}} <!-- 初始化一个空数组 -->
+      
+      <!-- 将 lucky_index 转换为数组，并将键值对存储在数组中 -->
+      {{- range $key, $value := $luckyIndex }}
+        {{- $luckyIndexArray = $luckyIndexArray | append (dict "key" $key "value" $value "weight" $value.weight) -}}
+      {{- end }}
+      
+      <!-- 按 weight 对数组排序 -->
+      {{- $sortedLuckyIndex := sort $luckyIndexArray "weight" "asc" -}}
+
+      <div class="lucky_index_title flex gap-1rem">
+
+        {{- range $item := $sortedLuckyIndex -}}
+
+          <div class="lucky_index_title_item {{ $item.key }} font-size-1_2 font-weight-600 cursor-pointer">{{ T $item.key }}</div> <!-- 输出 today, tomorrow 等 -->
+
+        {{- end -}}
+      </div>
+      
+      <!-- 遍历排序后的数组 -->
+      {{- range $item := $sortedLuckyIndex }}
+
+        <div class="lucky_index_content {{ $item.key }} flex flex-column gap-1rem padding-1rem">
+
+          <!-- 将 content 转换为数组，并按 weight 排序 -->
+          {{- $contentArray := slice -}}
+          {{- range $index, $content := $item.value.content }}
+            {{- $contentArray = $contentArray | append (dict "index" $index "content" $content.content "weight" $content.weight) -}}
+          {{- end }}
+          
+          {{- $sortedContentArray := sort $contentArray "weight" "asc" -}}
+
+          <!-- 遍历排序后的 content -->
+          {{- range $sortedItem := first 5 $sortedContentArray }}
+
+            <!-- 跳过 description -->
+            
+
+              <div class="flex gap-1rem align-items-center">
+                <label for="{{ $sortedItem.index }}" class="font-size-1_2 font-weight-600">{{ index $displayThumbLists $sortedItem.index }}&nbsp;{{ T $sortedItem.index }}:</label>
+                <progress id="{{ $sortedItem.index }}" max="10" value="{{ $sortedItem.content }}" class="progress_{{ $sortedItem.index }}">{{ $sortedItem.content }}</progress>
+              </div>
+
+            
+
+          {{- end }}
+
+        </div> <!-- 输出 overall 的 content -->
+
+      {{- end }}
+
+    </div>
+    
+    <div class="page_right">
+
+      {{- partial "google_adsense/04.html" }}
+
+    </div>
+  </div>
+  
+
+  <div class="info_2 info flex gap-1rem">
+
+    <div class="page_left">
+
+      {{- /* 标题 */ -}}
+      <div class="margin-top-1rem text-center padding-tb-1rem">
+
+        <div class="font-size-2 font-weight-600 text-left">{{- T "best_match" -}}</div> 
+    
+      </div>
+
+      <div class="link_best_match flex gap-2rem align-items-center justify-content-between">
+
+        {{ range $index, $match := $bestMatch }}
+
+          <a class="constellation_link {{ if eq $index 0 }}first{{ else }}second{{ end }} flex gap-1rem align-items-center padding-1rem border-radius-_5rem" href="../{{ $match | lower }}/">
+            <div class="match_image_area">
+              {{- $class := "match_image"}}
+              {{- $alt := $match -}}
+              {{- $path := printf "/image/luck/zodiac/%s.jpg" $match | lower -}}
+              {{ partial "tools/img-res.html" (dict "class" $class "imagePath" $path "alt" $alt "imageWidth" 20) }}
+            </div>
+            <div class="match_item font-size-1_5 font-weight-600 color-black">
+              {{- T ($match | lower ) -}}
+            </div>
+          </a>
+
+
+        {{ end }}
+      </div>
+
+    </div>
+
+    <div class="page_right">
+
+      {{- partial "google_adsense/04.html" }}
+
+    </div>
+
+  </div>
+
+  <div class="info_3">
+
+    <div class="font-size-2 font-weight-600 text-left padding-tb-1rem margin-top-1rem">
+      {{- T "lucky_info" -}}
+    </div>
+
+    <div class="lucky_items flex gap-1rem align-items-center padding-1rem bg-grey-1 border-radius-_3rem">
+
+      {{- $bgIndex := 1 -}} <!-- 初始背景颜色索引 -->
+
+      {{- $itemArray := slice -}} <!-- 初始化一个空数组 -->
+      
+      <!-- 将 item 转换为数组，并将键值对存储在数组中 -->
+      {{- range $key, $value := $item }}
+        {{- $itemArray = $itemArray | append (dict "key" $key "value" $value "weight" $value.weight) -}}
+      {{- end }}
+      
+      <!-- 按 weight 对数组排序 -->
+      {{- $sortedItem := sort $itemArray "weight" "asc" -}}
+
+      {{- range $item := $sortedItem }}
+      
+        <div class="item flex flex-column gap-1rem align-items-center border-radius-_5rem bg-color-0{{ $bgIndex }} cursor-pointer">
+          
+          <div class="flex gap-_5rem align-items-center text-left width-100">
+
+            {{- /* 根据键名在 item_thumb_lists 中获取图标值 */ -}}
+            <div class="font-size-1_5">{{ index $itemThumbLists $item.key }}</div>
+
+            {{- /* 显示 item 的键名作为标题，比如 "Dates", "Element" 等 */ -}}
+            <div class="title font-weight-600 font-size-1_2">{{- T $item.key -}}</div>
+
+          </div>
+    
+          <div class="content flex align-items-center">
+    
+            <div class="content_details flex flex-column gap-0_5rem margin-left-1rem">
+              
+              <div class="content_thumb font-size-5">
+                {{- $item.value.content_thumb -}} 
+              </div>
+              
+              <div class="content_text font-size-1_2 margin-top-1rem text-center">
+                {{- $item.value.content -}}
+              </div>
+    
+            </div>
+            
+          </div>
+          
+        </div>
+  
+        {{- /* 每次循环递增颜色索引，并在 4 后重置 */ -}}
+        {{- $bgIndex = mod (add $bgIndex 1) 4 -}}
+        {{- if eq $bgIndex 0 -}}
+          {{- $bgIndex = 4 -}}
+        {{- end -}}
+
+      {{- end }}
+    </div>
+
+  </div>
+
+</div>
+
+
+{{- end -}}

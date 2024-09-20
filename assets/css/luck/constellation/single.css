@@ -1,0 +1,282 @@
+body {
+
+}
+
+.page_left {
+
+    width: 42rem;
+}
+
+.page_right {
+
+    width: 21rem;
+}
+
+.constellation_image {
+
+    width: 15rem;
+    height: 15rem;
+    border-radius: 0.5rem;
+}
+
+.constellation_text {
+
+    width: 26rem;
+    height: 15rem;
+
+    .description {
+
+        background-color: #e5d1fa;
+    }
+}
+
+.info_1 .title {
+    background-color: var(--color-01-03);
+}
+
+.info_1 .description {
+
+    /* height: auto; */
+    overflow-x: hidden;
+    overflow-y: auto;
+    overflow-wrap: break-word;
+    line-height: 1.5;
+    font-size: 1.2rem;
+}
+
+.constellation_link {
+
+    width: 50%;
+    transition: transform 0.3s ease;
+}
+
+.constellation_link.first {
+
+    background-color: #fcbad3;
+}
+
+.constellation_link.second {
+
+    background-color: #e5d1fa;
+}
+
+.constellation_link:hover {
+
+    transform: scale(1.03);
+}
+
+.match_image {
+
+    width: 7rem;
+    height: 7rem;
+    border-radius: 0.5rem;
+}
+
+.lucky_items {
+
+    padding: 2rem 0.5rem;
+    border-radius: 0.5rem;
+    background-color: rgba(233, 233, 233, 0.3);
+    display: flex;
+    gap: 1rem;
+    overflow-x: scroll;
+}
+
+
+.item {
+
+    padding: 2rem 1rem;
+    height: 20rem;
+    min-width: 15rem;
+    box-shadow: 0 20px 25px -5px rgb(0 0 0/0.1),0 8px 10px -6px rgb(0 0 0/0.1);
+    transition: transform 0.3s ease;
+}
+
+.item:hover {
+    transform: scale(1.03);
+}
+
+.content_thumb {
+    text-align: center;
+    transition: transform 0.3s ease;
+    
+}
+
+.content_thumb:hover {
+    transform: scale(1.2);
+}
+
+.lucky_index_title {
+
+    background-color: var(--color-03-04);
+    background-color: #aa96da;
+    padding-top: 0.5rem;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+    padding-left: 0.5rem;
+    
+}
+
+.lucky_index_title_item {
+
+    padding: 0.5rem;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+}
+
+.lucky_index_title_item.active {
+
+    background-color: var(--color-03-04) !important;
+}
+
+.lucky_index_title_item.today {
+
+    background-color: #fcbad3;
+}
+
+.lucky_index_title_item.tomorrow {
+
+    background-color: #a8d8ea;
+}
+
+.lucky_index_title_item.next_week {
+
+    background-color: #e5d1fa;
+}
+
+.lucky_index_title_item.this_year {
+
+    background-color: #a1ce5b;
+}
+
+.lucky_index_content {
+
+    background-color: var(--color-03-04);
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+
+    label {
+
+        width: 30%;
+        overflow: hidden;
+    }
+
+    progress {
+        appearance: none; 
+        height: 1.2rem;
+        border-radius: 0.7rem;
+
+        width: 70%;
+    
+    }
+
+    display: none;
+}
+
+.lucky_index_content.active {
+
+    display: flex;
+}
+
+
+
+
+::-webkit-progress-bar {
+    
+    border-radius: 0.7rem;
+    height: 1.2rem;
+    background-color: #f1f1f1 !important;
+    
+}
+
+::-webkit-progress-value {
+
+    height: 1.2rem;
+    background-color: red;
+    border-radius: 0.7rem;
+}
+
+.progress_overall::-webkit-progress-value {
+
+    background-color: #aa96da;
+}
+
+.progress_love::-webkit-progress-value {
+
+    background-color: #fcbad3;
+}
+
+.progress_career::-webkit-progress-value {
+
+    background-color: #8E7AB5;
+}
+
+.progress_finance::-webkit-progress-value {
+
+    background-color: #F9F07A;
+}
+
+.progress_health::-webkit-progress-value {
+
+    background-color: #a1ce5b;
+}
+
+@media screen and (max-width: 48rem) {
+
+    .page_left,
+    .page_right {
+
+        width: 100%;
+    }
+
+    .info {
+
+        flex-direction: column;
+    }
+
+    .lucky_index_title {
+
+        gap: 0.5rem;
+        overflow: auto;
+    }
+    .lucky_index_content {
+    
+        label {
+    
+            width: 40%;
+        }
+    
+        progress {
+
+            width: 60%;
+        }
+    }
+
+    .constellation_image {
+
+        width: 10rem;
+        height: 10rem;
+    }
+    
+    .constellation_text {
+    
+        width: calc(100% - 11rem);
+        height: 10rem;
+    }
+
+    .link_best_match {
+
+        flex-direction: column;
+    }
+
+    .constellation_link {
+
+        width: 100%;
+    }
+
+    .match_image {
+
+        width: 5rem;
+        height: 5rem;
+    }
+}

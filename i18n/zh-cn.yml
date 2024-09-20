@@ -779,3 +779,19 @@
 
 - id: show_love_records
   translation: "表白记录"
+
+
+# page: luck - find_constellation_astro
+- id: constellation_zodiac
+  translation: "星座 | 生肖"
+
+- id: select_birthday
+  translation: "选择生日"
+
+
+# page: constellation - single
+- id: lucky_index
+  translation: "幸运指数"
+
+- id: lucky_info
+  translation: "幸运信息"

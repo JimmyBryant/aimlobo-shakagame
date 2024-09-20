@@ -229,10 +229,10 @@
   translation: "Tomorrow"
 
 - id: next_week
-  translation: "Next week"
+  translation: "Week"
 
 - id: this_year
-  translation: "This year"
+  translation: "Year"
 
 - id: overall
   translation: "Overall"
@@ -794,4 +794,19 @@
 - id: show_love_records
   translation: "Show Love Records"
 
+
+# page: luck - find_constellation_astro
+- id: constellation_zodiac
+  translation: "Constellation | Zodiac"
+
+- id: select_birthday
+  translation: "Select Birthday"
+
+
+# page: constellation - single
+- id: lucky_index
+  translation: "Lucky Index"
+
+- id: lucky_info
+  translation: "Lucky Info"
 

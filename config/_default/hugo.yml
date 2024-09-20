@@ -41,52 +41,47 @@ Params:
       name: Home
       icon: 🏠
       pageRef: /
-      weight: 10
+      weight: 100
     - identifier: game
       name: Game
       icon: 🕹️
       pageRef: /game
-      weight: 20
-    # - identifier: astro
-    #   name: Astro
-    #   icon: 🔮
-    #   pageRef: /astro
-    #   weight: 30
-    # - identifier: zodiac
-    #   name: Zodiac
-    #   icon: 🐲
-    #   pageRef: /zodiac
-    #   weight: 40
-    - identifier: topic
-      name: Topic
-      icon: 📖
-      pageRef: /topic
-      weight: 50
-    - identifier: rank
-      name: Rank
-      icon: 🏅
-      pageRef: /rank
-      weight: 60
+      weight: 200
+    - identifier: luck
+      name: Luck
+      icon: 🍀
+      pageRef: /luck
+      weight: 300
     - identifier: secret
       name: Secret
       icon: 🕯️
       pageRef: /secret
-      weight: 70
+      weight: 400
+    - identifier: rank
+      name: Rank
+      icon: 🏅
+      pageRef: /rank
+      weight: 500
+    - identifier: topic
+      name: Topic
+      icon: 📖
+      pageRef: /topic
+      weight: 600
     - identifier: my
       name: My
       icon: 😜
       pageRef: /my
-      weight: 80
+      weight: 700
     - identifier: search
       name: Search
       icon: 🔎
       pageRef: /search
-      weight: 90
+      weight: 800
     - identifier: lang
       name: Lang
       icon: 🌐
       pageRef: /lang
-      weight: 100
+      weight: 900
   
   fuseOpts:
     isCaseSensitive: false
