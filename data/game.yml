@@ -2,7 +2,7 @@ en:
   game_lists:
     - id: happy_worship
       name: Happy worship
-      weight: 10
+      weight: 500
       cover: /image/game/happy_worship/cover.png
       tips_miss_data: Missing data, [restart game](../).
       tips_page_at_least_1_item_select: You much select at least 1 item.
@@ -186,7 +186,7 @@ en:
 
     - id: wooden_fish
       name: Wooden fish
-      weight: 20
+      weight: 600
       cover: /image/game/wooden_fish/cover.png
       prayer:
         - title: happy +1, sorrow -1
@@ -220,7 +220,7 @@ en:
 
     - id: flying_book
       name: Flying Book
-      weight: 30
+      weight: 700
       cover: /image/game/flying_book/cover.png
       tips_miss_data: Missing data, [restart game](../).
       tips:
@@ -252,7 +252,7 @@ en:
 
     - id: horse_racing
       name: Horse Racing
-      weight: 1
+      weight: 200
       cover: /image/game/horse_racing/cover.png
       msg_not_enought_lucky_point: Not enough lucky point(🧧). 
       tips_page_1_item_select: You much select 1 item.
@@ -367,7 +367,7 @@ en:
 
     - id: toto_3
       name: Toto 3
-      weight: 2
+      weight: 300
       cover: /image/game/toto_3/cover.png
       msg_not_enought_lucky_point: Not enough lucky points (🧧).
       msg_bet_stop: Betting is closed, no further bets allowed.
@@ -425,7 +425,7 @@ en:
 
     - id: toto_5
       name: Toto 5
-      weight: 40
+      weight: 800
       cover: /image/game/toto_5/cover.png
       msg_not_enought_lucky_point: Not enough lucky points (🧧).
       msg_bet_stop: Betting is closed, no further bets allowed.
@@ -483,7 +483,7 @@ en:
 
     - id: guess_who_win_rock
       name: Guess Who Wins - Rock Paper Scissors
-      weight: 70
+      weight: 900
       cover: /image/game/guess_who_win_rock/cover.png
       msg_not_enought_lucky_point: Not enough lucky points (🧧). 
       tips_page_1_item_select: You need to select an item.
@@ -526,9 +526,10 @@ en:
             2. If you win, you will receive a reward of 3 times the lucky points you bet, but the system will charge a 3% service fee.
             3. Each round of the game will increase the game count by one.
           weight: 30
+
     - id: guess_who_win_animal
       name: Guess Who Wins - Animal
-      weight: 80
+      weight: 400
       cover: /image/game/guess_who_win_animal/cover.png
       msg_not_enought_lucky_point: Not enough lucky points (🧧). 
       tips_page_1_item_select: You need to select an item.
@@ -590,12 +591,39 @@ en:
             3. Each round of the game will increase the game count by one.
           weight: 30
 
+    - id: fruit_slot
+      name: Fruit Slot Machine
+      weight: 100
+      cover: /image/game/fruit_slot/cover.png
+      msg_not_enought_lucky_point: Not enough lucky points (🧧). 
+      tips_start_game: Enjoy your happy game time, good luck. 🎋
+      tips_win: 🎉 Win 🎊
+      tips:
+      - title: What is the Fruit Slot Machine?
+        content: The Fruit Slot Machine (shakagame.com) is a classic online free game that simulates a real slot machine.
+        weight: 10
+      - title: How to Play the Fruit Slot Machine?
+        content: |
+          1. Click the 🎰 button to start spinning the slot machine, and it will stop automatically.
+          2. If three identical fruits appear on the screen, the player will earn 10 lucky points.
+          3. If the three identical fruits are in the same row, the player will earn an additional 30 lucky points.
+          4. Click the 💰 button to receive the reward of lucky points * the bet lucky points.
+          5. Click the ➖ button to reduce the bet lucky points (minimum bet is 1 lucky point).
+          6. Click the ➕ button to increase the bet lucky points (maximum bet is 10 lucky points).
+        weight: 20
+      - title: Lucky Point System
+        content: |
+          1. Clicking the 🎰 button will automatically deduct the bet lucky points.
+          2. Clicking the 💰 button will reward the player with the bet lucky points * the reward.
+          3. Each round of the game will increase the game count by one.
+        weight: 30
+
 
 zh-cn:
   game_lists:
     - id: happy_worship
       name: 快乐崇拜
-      weight: 10
+      weight: 500
       cover: /image/game/happy_worship/cover.png
       tips_miss_data: 缺少数据, [重新游戏](../).
       tips_page_at_least_1_item_select: 你需要选择至少一个项目.
@@ -789,7 +817,7 @@ zh-cn:
 
     - id: wooden_fish
       name: 电子木鱼
-      weight: 20
+      weight: 600
       cover: /image/game/wooden_fish/cover.png
       prayer:
         - title: 快乐 +1, 烦恼 -1
@@ -823,7 +851,7 @@ zh-cn:
 
     - id: flying_book
       name: 飞鸟传书
-      weight: 30
+      weight: 700
       cover: /image/game/flying_book/cover.png
       tips_miss_data: 缺少数据, [重新游戏](../).
       tips:
@@ -855,7 +883,7 @@ zh-cn:
     
     - id: horse_racing
       name: 赛马
-      weight: 1
+      weight: 200
       cover: /image/game/horse_racing/cover.png
       msg_not_enought_lucky_point: 幸运值不足(🧧). 
       tips_page_1_item_select: 你需要选择一个项目.
@@ -970,7 +998,7 @@ zh-cn:
 
     - id: toto_3
       name: 多多 3
-      weight: 2
+      weight: 300
       cover: /image/game/toto_3/cover.png
       msg_not_enought_lucky_point: 幸运值不足(🧧). 
       msg_bet_stop: 封盘中，禁止下注. 
@@ -1028,7 +1056,7 @@ zh-cn:
 
     - id: toto_5
       name: 多多 5
-      weight: 40
+      weight: 800
       cover: /image/game/toto_5/cover.png
       msg_not_enought_lucky_point: 幸运值不足(🧧). 
       msg_bet_stop: 封盘中，禁止下注. 
@@ -1086,7 +1114,7 @@ zh-cn:
     
     - id: guess_who_win_rock
       name: 猜谁赢 - 石头剪刀布
-      weight: 70
+      weight: 900
       cover: /image/game/guess_who_win_rock/cover.png
       msg_not_enought_lucky_point: 幸运值不足(🧧). 
       tips_page_1_item_select: 你需要选择一个项目.
@@ -1132,7 +1160,7 @@ zh-cn:
           
     - id: guess_who_win_animal
       name: 猜谁赢 - 动物
-      weight: 80
+      weight: 400
       cover: /image/game/guess_who_win_animal/cover.png
       msg_not_enought_lucky_point: 幸运值不足(🧧).
       tips_page_1_item_select: 你需要选择一个项目.
@@ -1194,11 +1222,39 @@ zh-cn:
             3. 每一轮游戏都会增加一次游戏次数.
           weight: 30
 
+    - id: fruit_slot
+      name: 水果机
+      weight: 100
+      cover: /image/game/fruit_slot/cover.png
+      msg_not_enought_lucky_point: 幸运值不足(🧧).
+      tips_start_game: 享受快乐游戏时光，祝你好运. 🎋
+      tips_win: 🎉 赢啦 🎊
+      tips:
+        - title: 什么是水果机?
+          content: 水果机 (shakagame.com) 是一款经典的在线免费游戏，模拟了真实的水果机游戏.
+          weight: 10
+        - title: 如何玩什么是水果机?
+          content: |
+            1. 点击 🎰 按钮水果机会开始旋转并自动停下.
+            2. 页面上出现三个相同的水果，玩家就会获得10个幸运积分.
+            3. 如果三个相同的水果在同一排，玩家会获得额外的30个幸运积分.
+            4. 点击 💰 按钮会获得奖励的幸运积分 * 下注的幸运积分.
+            5. 点击 ➖ 按钮会减少下注的幸运积分（最低下注1个幸运积分）.
+            6. 点击 ➕ 按钮会增加下注的幸运积分（最高下注10个幸运积分）.
+          weight: 20
+        - title: 幸运积分系统
+          content: |
+            1. 点击 🎰 按钮会自动扣减下注的幸运积分.
+            2. 点击 💰 按钮会获得下注的幸运积分 * 奖励.
+            3. 每一轮游戏都会增加一次游戏次数.
+          weight: 30
+
+
 zh-tw:
   game_lists:
     - id: happy_worship
       name: 快樂崇拜
-      weight: 10
+      weight: 500
       cover: /image/game/happy_worship/cover.png
       tips_miss_data: 缺少數據, [重新遊戲](../).
       tips_page_at_least_1_item_select: 你需要選擇至少一個項目.
@@ -1403,7 +1459,7 @@ zh-tw:
 
     - id: wooden_fish
       name: 電子木魚
-      weight: 20
+      weight: 600
       cover: /image/game/wooden_fish/cover.png
       prayer:
         - title: 快樂 +1, 煩惱 -1
@@ -1437,7 +1493,7 @@ zh-tw:
 
     - id: flying_book
       name: 飛鳥傳書
-      weight: 30
+      weight: 700
       cover: /image/game/flying_book/cover.png
       tips_miss_data: 缺少數據, [重新遊戲](../).
       tips:
@@ -1469,7 +1525,7 @@ zh-tw:
   
     - id: horse_racing
       name: 賽馬
-      weight: 1
+      weight: 200
       cover: /image/game/horse_racing/cover.png
       msg_not_enought_lucky_point: 幸運值不足(🧧). 
       tips_page_1_item_select: 你需要選擇一個項目.
@@ -1604,7 +1660,7 @@ zh-tw:
     
     - id: toto_3
       name: 多多 3
-      weight: 2
+      weight: 300
       cover: /image/game/toto_3/cover.png
       msg_not_enought_lucky_point: 幸運值不足(🧧). 
       msg_bet_stop: 封盤中，禁止下註. 
@@ -1662,7 +1718,7 @@ zh-tw:
 
     - id: toto_5
       name: 多多 5
-      weight: 40
+      weight: 800
       cover: /image/game/toto_5/cover.png
       msg_not_enought_lucky_point: 幸運值不足(🧧). 
       msg_bet_stop: 封盤中，禁止下註. 
@@ -1720,7 +1776,7 @@ zh-tw:
 
     - id: guess_who_win_rock
       name: 猜誰贏 - 石頭剪刀布
-      weight: 70
+      weight: 900
       cover: /image/game/guess_who_win_rock/cover.png
       msg_not_enought_lucky_point: 幸運值不足(🧧). 
       tips_page_1_item_select: 你需要選擇一個項目.
@@ -1766,7 +1822,7 @@ zh-tw:
     
     - id: guess_who_win_animal
       name: 猜誰贏 - 動物
-      weight: 80
+      weight: 400
       cover: /image/game/guess_who_win_animal/cover.png
       msg_not_enought_lucky_point: 幸運值不足(🧧).
       tips_page_1_item_select: 你需要選擇一個項目.
@@ -1825,5 +1881,32 @@ zh-tw:
           content: |
             1. 在遊戲頁面點擊 **知道了** 會扣除相應的下註幸運值.
             2. 如果你贏了，你會獲得下註幸運值的2倍積分獎勵，但系統會收取3%的服務費.
+            3. 每一輪遊戲都會增加一次遊戲次數.
+          weight: 30
+
+    - id: fruit_slot
+      name: 水果機
+      weight: 100
+      cover: /image/game/fruit_slot/cover.png
+      msg_not_enought_lucky_point: 幸運值不足(🧧). 
+      tips_start_game: 享受快樂遊戲時光，祝你好運. 🎋
+      tips_win: 🎉 贏啦 🎊
+      tips:
+        - title: 什麽是水果機?
+          content: 水果機 (shakagame.com) 是一款經典的在線免費遊戲，模擬了真實的水果機遊戲.
+          weight: 10
+        - title: 如何玩什麽是水果機?
+          content: |
+            1. 點擊 🎰 按鈕水果機會開始旋轉並自動停下.
+            2. 頁面上出現三個相同的水果，玩家就會獲得10個幸運積分.
+            3. 如果三個相同的水果在同一排，玩家會獲得額外的30個幸運積分.
+            4. 點擊 💰 按鈕會獲得獎勵的幸運積分 * 下註的幸運積分.
+            5. 點擊 ➖ 按鈕會減少下註的幸運積分（最低下註1個幸運積分）.
+            6. 點擊 ➕ 按鈕會增加下註的幸運積分（最高下註10個幸運積分）.
+          weight: 20
+        - title: 幸運積分系統
+          content: |
+            1. 點擊 🎰 按鈕會自動扣減下註的幸運積分.
+            2. 點擊 💰 按鈕會獲得下註的幸運積分 * 獎勵.
             3. 每一輪遊戲都會增加一次遊戲次數.
           weight: 30

@@ -810,3 +810,9 @@
 - id: lucky_info
   translation: "Lucky Info"
 
+#page: game - fruit_slot
+- id: lottery_win
+  translation: "Win"
+
+- id: fruit_slot_machine
+  translation: "Fruit slot machine"

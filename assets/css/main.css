@@ -1580,6 +1580,11 @@ footer {
 
 /* page: home, body */
 /* to add */
+
+.page_home .center .game-lists .game-title {
+
+  text-align: left;
+}
 /* page: home, body - end */
 
 

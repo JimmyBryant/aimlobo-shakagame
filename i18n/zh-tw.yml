@@ -797,3 +797,10 @@
 - id: lucky_info
   translation: "幸運信息"
 
+#page: game - fruit_slot
+- id: lottery_win
+  translation: "贏"
+
+- id: fruit_slot_machine
+  translation: "水果機"
+

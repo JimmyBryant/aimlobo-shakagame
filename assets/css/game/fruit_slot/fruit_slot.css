@@ -1,0 +1,102 @@
+body {
+
+}
+
+.slot_machine_wrap {
+
+    /* background: url('/image/game/fruit_slot/bg_image.jpg') no-repeat center center / cover; */
+    background: linear-gradient(to bottom, rgb(190, 150, 60) 0%, rgb(200,115,40) 40%, rgb(245,210,90) 80%);
+    background: rgb(245,210,90);
+    /* background: #A1EEBD; */
+}
+
+
+.slot_machine {
+    display: flex;
+    justify-content: space-around;
+    width: 300px;
+    height: 180px; /* 可见的3排 */
+    overflow: hidden;
+    /* border: 2px solid #333; */
+    border-radius: 0.5rem;
+}
+
+.column_item {
+    
+    background: #f9f9fb;
+    box-shadow: inset 2px 2px 5px 1px rgba(0, 0, 0, 0.5);
+    border-radius: 0.3rem;
+
+}
+
+.column {
+    width: 80px;
+    height: 100%; /* 占满父级高度 */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+
+
+.fruit {
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    /* border: 1px solid #333;
+    margin: 2px 0; */
+}
+
+.game_data {
+
+    width: 316px;
+    background: #e4bb03;
+    background: #A1EEBD;
+    background: #FCBAD3;
+    background: rgb(245,210,90);
+}
+
+.var_user_win_amount,
+.var_user_bet_amount,
+.var_user_lucky_point {
+
+    padding: 0.2rem 0.5rem;
+    border-radius: 0.3rem;
+    background: rgb(16,8,3);
+    color: white;
+}
+
+.game_control {
+
+    width: 316px;
+    background: #aee2ff;
+    /* background: url('/image/game/fruit_slot/bg_image.jpg') no-repeat center center / cover; */
+}
+
+/* button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+} */
+
+#minus_bonus,
+#add_bonus {
+
+    appearance: none;
+    padding: 0.5rem 1rem;
+}
+
+#bonus,
+#startBtn {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 1.5rem;
+    height: 4rem;
+    width: 4rem;
+    border-radius: 100%;
+}
