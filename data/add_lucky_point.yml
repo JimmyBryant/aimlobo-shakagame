@@ -1,0 +1,54 @@
+# 用来记录哪些页面/应用可以增加幸运积分，用来给积分不够的人
+
+en:
+  game_lists:
+
+    - id: happy_worship
+      weight: 100
+
+    - id: wooden_fish
+      weight: 200
+
+  secret_lists:
+
+    - id: wish
+      weight: 100
+
+    - id: show_love
+      weight: 200
+
+
+zh-cn:
+  game_lists:
+
+    - id: happy_worship
+      weight: 100
+
+    - id: wooden_fish
+      weight: 200
+
+  secret_lists:
+
+    - id: wish
+      weight: 100
+
+    - id: show_love
+      weight: 200
+
+
+zh-tw:
+  game_lists:
+
+    - id: happy_worship
+      weight: 100
+
+    - id: wooden_fish
+      weight: 200
+
+  secret_lists:
+
+    - id: wish
+      weight: 100
+
+    - id: show_love
+      weight: 200

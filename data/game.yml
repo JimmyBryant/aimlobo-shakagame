@@ -164,7 +164,6 @@ en:
           content: ☕
           weight: 150
       msg_end_worship: Worship complete 🎉. 🧧 +
-      msg_not_enought_lucky_point: Not enough lucky point(🧧). 
       tips:
         - title: What is Happy Worship
           content: Happy Worship (**shakagame.com**) is a way to worship and show respect to deities. It includes lighting virtual incense, placing virtual offerings, and performing prayers and wishes. During this process, you can collect a lot of lucky points. Come and try it.
@@ -199,24 +198,24 @@ en:
       in_page_tips_auto: You can click the button to turn on/off auto tapping and background music
       in_page_tips_count: Click on the number above to select/customize the prayer content
       tips:
-      - title: What is  Wooden Fish
-        content: The Wooden Fish (**shakagame.com**) simulates the function of a traditional wooden fish, striking the fish brings tranquility and peace.
-        weight: 10
-      - title: How to play  Wooden Fish
-        content: |
-          1. Click on the white wooden fish icon to start tapping;
-          2. You can click **Auto** to toggle auto-tapping, which taps once per second;
-          3. You can click **BGM** to toggle the background music on or off;
-          4. Click the **title** to edit the title content, with a character limit of **1-15**;
-          5. Click the number in the center of the screen to edit the prayer content. There are three predefined options, or you can click **Custom** to create your own with a character limit of **0-15**.
-          6. **On mobile devices, please tap the background music button first to enable background music and lift the restriction on audio output.**
-        weight: 20
-      - title: Lucky Points System
-        content: |
-            1. Pursuing tranquility comes at no cost, so no luck points will be deducted;
-            2. One luck point is added for every 300 clicks;
-            3. One game count is added for every 300 clicks;
-        weight: 30
+        - title: What is  Wooden Fish
+          content: The Wooden Fish (**shakagame.com**) simulates the function of a traditional wooden fish, striking the fish brings tranquility and peace.
+          weight: 10
+        - title: How to play  Wooden Fish
+          content: |
+            1. Click on the white wooden fish icon to start tapping;
+            2. You can click **Auto** to toggle auto-tapping, which taps once per second;
+            3. You can click **BGM** to toggle the background music on or off;
+            4. Click the **title** to edit the title content, with a character limit of **1-15**;
+            5. Click the number in the center of the screen to edit the prayer content. There are three predefined options, or you can click **Custom** to create your own with a character limit of **0-15**.
+            6. **On mobile devices, please tap the background music button first to enable background music and lift the restriction on audio output.**
+          weight: 20
+        - title: Lucky Points System
+          content: |
+              1. Pursuing tranquility comes at no cost, so no luck points will be deducted;
+              2. One luck point is added for every 300 clicks;
+              3. One game count is added for every 300 clicks;
+          weight: 30
 
     - id: flying_book
       name: Flying Book
@@ -224,37 +223,37 @@ en:
       cover: /image/game/flying_book/cover.png
       tips_miss_data: Missing data, [restart game](../).
       tips:
-      - title: What is Flying Book?
-        content: Flying Book (**shakagame.com**) usually gives you the answers you want. It solves all problems in daily life. Just ask a question, and the flying book will find the answer for you.
-        weight: 10
-      - title: How to use Flying Book?
-        content: |
-          1. Follow the instructions on the page;
-          2. First, think about the question you want to ask;
-          3. Click the button, and the flying book will deliver the answer you need;
-          4. If you can't see the answer clearly, you can swipe the mouse or touch the screen to make the bird leave.
-        weight: 20
-      - title: Are the answers from Flying Book accurate?
-        content: It depends on you! Flying Book is intriguing, inspiring, and very fun to use. Maintain a positive attitude towards the questions, and the answers will come easily. The correct answer is in your mind.
-        weight: 30
-      - title: Luck Points System
-        content: |
-          1. Each answer costs 1 luck points, **Please pay attention to the consumption of lucky points**;
-          1. The game allows users to run in arrears, meaning that you can still play the game even if your lucky point is less than 0.
-        weight: 40
+        - title: What is Flying Book?
+          content: Flying Book (**shakagame.com**) usually gives you the answers you want. It solves all problems in daily life. Just ask a question, and the flying book will find the answer for you.
+          weight: 10
+        - title: How to use Flying Book?
+          content: |
+            1. Follow the instructions on the page;
+            2. First, think about the question you want to ask;
+            3. Click the button, and the flying book will deliver the answer you need;
+            4. If you can't see the answer clearly, you can swipe the mouse or touch the screen to make the bird leave.
+          weight: 20
+        - title: Are the answers from Flying Book accurate?
+          content: It depends on you! Flying Book is intriguing, inspiring, and very fun to use. Maintain a positive attitude towards the questions, and the answers will come easily. The correct answer is in your mind.
+          weight: 30
+        - title: Luck Points System
+          content: |
+            1. Each answer costs 1 luck points, **Please pay attention to the consumption of lucky points**;
+            1. The game allows users to run in arrears, meaning that you can still play the game even if your lucky point is less than 0.
+          weight: 40
       steps:
-      - step: 1
-        content: Ready your question in mind
-        weight: 10
-      - step: 2
-        content: Click the button below to get answer
-        weight: 20
+        - step: 1
+          content: Ready your question in mind
+          weight: 10
+        - step: 2
+          content: Click the button below to get answer
+          weight: 20
 
     - id: horse_racing
       name: Horse Racing
       weight: 200
       cover: /image/game/horse_racing/cover.png
-      msg_not_enought_lucky_point: Not enough lucky point(🧧). 
+      msg_not_enought_lucky_point: Not enough lucky point(🧧). [Get more](../../../add_lucky_point)
       tips_page_1_item_select: You much select 1 item.
       tips_start_game: Game will start immediately when green light on
       in_page_tips_type: normal
@@ -264,25 +263,25 @@ en:
       tips_no_bet: you don't bet, go [bet](../bet).
       tips_no_racing: you don't enjoy the game, [start game](../).
       tips:
-      - title: What is a Horse Racing Game?
-        content: The horse racing game (**shakagame.com**) simulates real horse racing, allowing you to enjoy the exciting process and win rewards.
-        weight: 10
-      - title: How to Play the Horse Racing Game?
-        content: |
-          1. Choose your preferred horse;
-          2. Place a bet, **you must bet at least 1 luck point; if your luck points are less than 1, you cannot start the game**;
-          3. Wait for the system to match other players;
-          4. Review the prize pool information and click **Start Game**;
-          5. Enjoy the exciting horse race;
-          6. Check the race results, **either you win or you lose**.
-        weight: 20
-      - title: Luck Points System
-        content: |
-          1. After you click **Start Game**, the system will deduct the luck points you bet;
-          2. If you lose, you get nothing; but if you win, you will receive a reward much higher than your bet.
-          3. If you win, the system will deduct 3% of the prize as a service fee.
-          4. Each time you check race results, it adds one more game count.
-        weight: 30
+        - title: What is a Horse Racing Game?
+          content: The horse racing game (**shakagame.com**) simulates real horse racing, allowing you to enjoy the exciting process and win rewards.
+          weight: 10
+        - title: How to Play the Horse Racing Game?
+          content: |
+            1. Choose your preferred horse;
+            2. Place a bet, **you must bet at least 1 luck point; if your luck points are less than 1, you cannot start the game**;
+            3. Wait for the system to match other players;
+            4. Review the prize pool information and click **Start Game**;
+            5. Enjoy the exciting horse race;
+            6. Check the race results, **either you win or you lose**.
+          weight: 20
+        - title: Luck Points System
+          content: |
+            1. After you click **Start Game**, the system will deduct the luck points you bet;
+            2. If you lose, you get nothing; but if you win, you will receive a reward much higher than your bet.
+            3. If you win, the system will deduct 3% of the prize as a service fee.
+            4. Each time you check race results, it adds one more game count.
+          weight: 30
       horses:
         - id: horse_1
           name: Lightning
@@ -369,7 +368,7 @@ en:
       name: Toto 3
       weight: 300
       cover: /image/game/toto_3/cover.png
-      msg_not_enought_lucky_point: Not enough lucky points (🧧).
+      msg_not_enought_lucky_point: Not enough lucky point(🧧). [Get more](../../../add_lucky_point)
       msg_bet_stop: Betting is closed, no further bets allowed.
       in_page_tips_type: normal
       in_page_tips_content: Check out the [rules](./rules) to learn how to play.
@@ -427,7 +426,7 @@ en:
       name: Toto 5
       weight: 800
       cover: /image/game/toto_5/cover.png
-      msg_not_enought_lucky_point: Not enough lucky points (🧧).
+      msg_not_enought_lucky_point: Not enough lucky point(🧧). [Get more](../../../add_lucky_point)
       msg_bet_stop: Betting is closed, no further bets allowed.
       in_page_tips_type: normal
       in_page_tips_content: Check out the [rules](./rules) to learn how to play.
@@ -485,7 +484,7 @@ en:
       name: Guess Who Wins - Rock Paper Scissors
       weight: 900
       cover: /image/game/guess_who_win_rock/cover.png
-      msg_not_enought_lucky_point: Not enough lucky points (🧧). 
+      msg_not_enought_lucky_point: Not enough lucky point(🧧). [Get more](../../../add_lucky_point)
       tips_page_1_item_select: You need to select an item.
       tips_start_game: The game ends when only one element remains.
       tips_miss_data: Missing data, [restart the game](../).
@@ -531,7 +530,7 @@ en:
       name: Guess Who Wins - Animal
       weight: 400
       cover: /image/game/guess_who_win_animal/cover.png
-      msg_not_enought_lucky_point: Not enough lucky points (🧧). 
+      msg_not_enought_lucky_point: Not enough lucky point(🧧). [Get more](../../../add_lucky_point)
       tips_page_1_item_select: You need to select an item.
       tips_miss_data: Missing data, [restart the game](../).
       in_page_tips_content_page_bet_lucky_point: It is recommended to start your game with 1 lucky point (default value).
@@ -595,7 +594,7 @@ en:
       name: Fruit Slot Machine
       weight: 100
       cover: /image/game/fruit_slot/cover.png
-      msg_not_enought_lucky_point: Not enough lucky points (🧧). 
+      msg_not_enought_lucky_point: Not enough lucky point(🧧). [Get more](../../add_lucky_point)
       tips_start_game: Enjoy your happy game time, good luck. 🎋
       tips_win: 🎉 Win 🎊
       tips:
@@ -730,9 +729,6 @@ zh-cn:
           description: "**土地公**是中国民间信仰中的地神，主宰土地和农田。人们信奉土地公以祈求丰收和家园安宁，他被视为乡村守护神和人们生活的保障者。"
           weight: 180
 
-
-
-
       offerings:
         - id: offering_1
           name: 莲花
@@ -795,7 +791,6 @@ zh-cn:
           content: ☕
           weight: 150
       msg_end_worship: 崇拜完成 🎉. 🧧 +
-      msg_not_enought_lucky_point: 幸运值不足(🧧).
       tips:
         - title: 快乐崇拜是什么
           content: 快乐崇拜(**shakagame.com**)是对神明进行祭拜和表达敬意。包括点燃虚拟的香烛、摆放虚拟的供品，以及进行祈祷和祝愿，在这个过程中你可以收集大量的幸运值，快来试试吧。
@@ -830,24 +825,24 @@ zh-cn:
       in_page_tips_auto: 你可以点击按钮开启/关闭自动敲击和背景音乐
       in_page_tips_count: 点击上方数字可以选择/自定义祈祷内容
       tips:
-      - title: 什么是电子木鱼
-        content: 电子木鱼 (**shakagame.com**) 模拟了传统木鱼的功能，敲击木鱼获得宁静与平和。
-        weight: 10
-      - title: 如何使用电子木鱼
-        content: |
-          1. 点击白色的木鱼图案就会开始敲击；
-          2. 可以点击**自动**来实现开启/关闭自动敲击木鱼，速度是每秒钟敲击一次；
-          3. 可以点击**BGM**来实现开启/关闭背景音乐；
-          4. 点击**标题**可以编辑标题内容，字符数量限制是 **1-15**。
-          5. 点击屏幕中间的数字可以编辑祈祷内容，有三个已经定义好的选项，不满意的话可以点击**自定义**自己编辑，字符数量限制是 **0-15**。
-          6. **移动端请先点击背景音乐按钮开启背景音乐以解除移动端对音频输出的限制**
-        weight: 20
-      - title: 幸运积分系统
-        content: |
-            1. 追求宁静不需要代价，因此不会扣减幸运值；
-            2. 每300次点击增加一个幸运值；
-            3. 每300次点击增加一次游戏次数；
-        weight: 30
+        - title: 什么是电子木鱼
+          content: 电子木鱼 (**shakagame.com**) 模拟了传统木鱼的功能，敲击木鱼获得宁静与平和。
+          weight: 10
+        - title: 如何使用电子木鱼
+          content: |
+            1. 点击白色的木鱼图案就会开始敲击；
+            2. 可以点击**自动**来实现开启/关闭自动敲击木鱼，速度是每秒钟敲击一次；
+            3. 可以点击**BGM**来实现开启/关闭背景音乐；
+            4. 点击**标题**可以编辑标题内容，字符数量限制是 **1-15**。
+            5. 点击屏幕中间的数字可以编辑祈祷内容，有三个已经定义好的选项，不满意的话可以点击**自定义**自己编辑，字符数量限制是 **0-15**。
+            6. **移动端请先点击背景音乐按钮开启背景音乐以解除移动端对音频输出的限制**
+          weight: 20
+        - title: 幸运积分系统
+          content: |
+              1. 追求宁静不需要代价，因此不会扣减幸运值；
+              2. 每300次点击增加一个幸运值；
+              3. 每300次点击增加一次游戏次数；
+          weight: 30
 
     - id: flying_book
       name: 飞鸟传书
@@ -855,37 +850,37 @@ zh-cn:
       cover: /image/game/flying_book/cover.png
       tips_miss_data: 缺少数据, [重新游戏](../).
       tips:
-      - title: 飞鸟传书是什么?
-        content: 飞鸟传书(**shakagame.com**) 通常会给你想要的答案。 解决日常生活中的所有问题，只需提出一个问题，飞鸟就会为你找到答案。
-        weight: 10
-      - title: 如何使用飞鸟传书？
-        content: |
-          1. 按照页面提示进行操作；
-          2. 首先想好自己想要问的问题；
-          3. 点击按钮，飞鸟就会送来你需要的答案；
-          4. 看不清答案的情况下，可以划过鼠标或者触屏点击让飞鸟离开。
-        weight: 20
-      - title: 飞鸟传书的答案正确吗？
-        content: 这取决于你！飞鸟传书耐人寻味、鼓舞人心，而且使用起来非常有趣。对问题保持积极的态度，问题就会迎刃而解，正确答案就在你的脑海中。
-        weight: 30
-      - title: 幸运积分系统
-        content: |
-            1. 每次获得答案花费1个幸运值，**请注意幸运值的消耗情况**；
-            2. 该游戏允许用户欠费运行，意思是即使你的幸运值小于0也仍然可以玩该游戏。
-        weight: 40
+        - title: 飞鸟传书是什么?
+          content: 飞鸟传书(**shakagame.com**) 通常会给你想要的答案。 解决日常生活中的所有问题，只需提出一个问题，飞鸟就会为你找到答案。
+          weight: 10
+        - title: 如何使用飞鸟传书？
+          content: |
+            1. 按照页面提示进行操作；
+            2. 首先想好自己想要问的问题；
+            3. 点击按钮，飞鸟就会送来你需要的答案；
+            4. 看不清答案的情况下，可以划过鼠标或者触屏点击让飞鸟离开。
+          weight: 20
+        - title: 飞鸟传书的答案正确吗？
+          content: 这取决于你！飞鸟传书耐人寻味、鼓舞人心，而且使用起来非常有趣。对问题保持积极的态度，问题就会迎刃而解，正确答案就在你的脑海中。
+          weight: 30
+        - title: 幸运积分系统
+          content: |
+              1. 每次获得答案花费1个幸运值，**请注意幸运值的消耗情况**；
+              2. 该游戏允许用户欠费运行，意思是即使你的幸运值小于0也仍然可以玩该游戏。
+          weight: 40
       steps:
-      - step: 1
-        content: 在心中想好你要问的问题
-        weight: 10
-      - step: 2
-        content: 点击下方按钮获得答案
-        weight: 20
+        - step: 1
+          content: 在心中想好你要问的问题
+          weight: 10
+        - step: 2
+          content: 点击下方按钮获得答案
+          weight: 20
     
     - id: horse_racing
       name: 赛马
       weight: 200
       cover: /image/game/horse_racing/cover.png
-      msg_not_enought_lucky_point: 幸运值不足(🧧). 
+      msg_not_enought_lucky_point: 幸运值不足(🧧). [获取更多](../../../add_lucky_point)
       tips_page_1_item_select: 你需要选择一个项目.
       tips_start_game: 绿灯亮起，游戏开始
       in_page_tips_type: normal
@@ -895,25 +890,25 @@ zh-cn:
       tips_no_bet: 你没有下注, 前往 [下注](../bet).
       tips_no_racing: 你没有享受游戏过程, [开始游戏](../).
       tips:
-      - title: 什么是赛马游戏?
-        content: 赛马游戏(**shakagame.com**) 模拟了真实的赛马运动，享受激动人心的赛马过程，赢得奖励.
-        weight: 10
-      - title: 如何玩赛马游戏?
-        content: |
-          1. 选择你看好的马;
-          2. 下注，**至少下注1个幸运值，你的幸运值如果低于1将无法开始游戏**;
-          3. 等待系统匹配其他玩家;
-          4. 浏览奖池信息，点击**开始游戏**;
-          5. 享受激动人心的赛马过程;
-          6. 查看赛马结果，**要么赢，要么输**。
-        weight: 20
-      - title: 幸运积分系统
-        content: |
-          1. 点击**开始游戏**后，系统会扣除下注的幸运值;
-          2. 如果你输了，什么都没有；但是如果你赢了，你会获得远高于你下注的奖励.
-          3. 如果你赢了，系统会扣除3%的奖金作为服务费.
-          4. 每次查看比赛结果都会增加1次游戏次数。
-        weight: 30
+        - title: 什么是赛马游戏?
+          content: 赛马游戏(**shakagame.com**) 模拟了真实的赛马运动，享受激动人心的赛马过程，赢得奖励.
+          weight: 10
+        - title: 如何玩赛马游戏?
+          content: |
+            1. 选择你看好的马;
+            2. 下注，**至少下注1个幸运值，你的幸运值如果低于1将无法开始游戏**;
+            3. 等待系统匹配其他玩家;
+            4. 浏览奖池信息，点击**开始游戏**;
+            5. 享受激动人心的赛马过程;
+            6. 查看赛马结果，**要么赢，要么输**。
+          weight: 20
+        - title: 幸运积分系统
+          content: |
+            1. 点击**开始游戏**后，系统会扣除下注的幸运值;
+            2. 如果你输了，什么都没有；但是如果你赢了，你会获得远高于你下注的奖励.
+            3. 如果你赢了，系统会扣除3%的奖金作为服务费.
+            4. 每次查看比赛结果都会增加1次游戏次数。
+          weight: 30
       horses:
         - id: horse_1
           name: 闪电
@@ -1000,7 +995,7 @@ zh-cn:
       name: 多多 3
       weight: 300
       cover: /image/game/toto_3/cover.png
-      msg_not_enought_lucky_point: 幸运值不足(🧧). 
+      msg_not_enought_lucky_point: 幸运值不足(🧧). [获取更多](../../../add_lucky_point)
       msg_bet_stop: 封盘中，禁止下注. 
       in_page_tips_type: normal
       in_page_tips_content: 查看 [规则](./rules) 了解如何游戏.
@@ -1016,49 +1011,49 @@ zh-cn:
       in_page_tips_content_page_bonus_btn_2: 如果 **兑奖** 按钮是灰色(不可点击)，说明你在当前轮次没有下注或者你已经点击过了兑奖按钮
       subtitle: 🧧 千分大奖等你来
       tips:
-      - title: 什么是多多3?
-        content: 多多3(**shakagame.com**) 是一款在线幸运博彩游戏，玩家选择0-999之间的任意整数进行下注，每个下注号码可以选择1-100倍的投注，开奖时如果有任一下注的号码与系统给出的中奖号码一致，即可获得每注1000幸运积分的固定奖励.
-        weight: 10
-      - title: 如何玩多多3?
-        content: |
-          1. 具体玩法可以点击游戏首页的 [规则](./rules) 进行了解，下方是快速介绍： 
-          2. 点击 **下注** 模块进入 **下注** 页面，在该页面进行投注，玩家可以选择0-999范围内的任意整数进行下注，每注花费1个幸运积分，玩家可以对该号码选择1-100整数范围内的加倍投注，玩家可以查看自己在本轮的下注记录;
-          3. 游戏每5分钟匹配一轮，提前30秒封盘，玩家只能在 **开盘** 期间进行投注， **封盘** 后不允许下注，系统清盘;
-          4. 玩家可点击页面上的 **兑奖** 按钮前往兑奖页面，该页面每5分钟更新一次中奖情况，系统自动清算用户的中奖情况;
-          5. 用户必须点击 **兑奖** 按钮进行兑奖，兑奖有效期为5分钟，超过页面上的兑奖截止时间视为放弃兑奖;
-          6. 用户可以点击页面上的 **结束** 查看最近5期的开奖记录.
-        weight: 20
-      - title: 幸运积分系统
-        content: |
-          1. 在下注页面正确提交下注数据并点击 **确认** 按钮后会扣除相应的幸运积分;
-          2. 如果你赢了，你会获得每注1000幸运积分的奖励，但是系统会扣除3%的奖金作为服务费.
-          3. 参与下注的每一轮都会增加一次游戏次数.
-        weight: 30
+        - title: 什么是多多3?
+          content: 多多3(**shakagame.com**) 是一款在线幸运博彩游戏，玩家选择0-999之间的任意整数进行下注，每个下注号码可以选择1-100倍的投注，开奖时如果有任一下注的号码与系统给出的中奖号码一致，即可获得每注1000幸运积分的固定奖励.
+          weight: 10
+        - title: 如何玩多多3?
+          content: |
+            1. 具体玩法可以点击游戏首页的 [规则](./rules) 进行了解，下方是快速介绍： 
+            2. 点击 **下注** 模块进入 **下注** 页面，在该页面进行投注，玩家可以选择0-999范围内的任意整数进行下注，每注花费1个幸运积分，玩家可以对该号码选择1-100整数范围内的加倍投注，玩家可以查看自己在本轮的下注记录;
+            3. 游戏每5分钟匹配一轮，提前30秒封盘，玩家只能在 **开盘** 期间进行投注， **封盘** 后不允许下注，系统清盘;
+            4. 玩家可点击页面上的 **兑奖** 按钮前往兑奖页面，该页面每5分钟更新一次中奖情况，系统自动清算用户的中奖情况;
+            5. 用户必须点击 **兑奖** 按钮进行兑奖，兑奖有效期为5分钟，超过页面上的兑奖截止时间视为放弃兑奖;
+            6. 用户可以点击页面上的 **结束** 查看最近5期的开奖记录.
+          weight: 20
+        - title: 幸运积分系统
+          content: |
+            1. 在下注页面正确提交下注数据并点击 **确认** 按钮后会扣除相应的幸运积分;
+            2. 如果你赢了，你会获得每注1000幸运积分的奖励，但是系统会扣除3%的奖金作为服务费.
+            3. 参与下注的每一轮都会增加一次游戏次数.
+          weight: 30
       rules:
-      - title: 游戏方法
-        content: |
-          **多多3** 指从000-999的数字中选取1个3位数作为一注投注号码进行的投注，每注花费1个幸运积分;
-          用户可对其选定的投注号码进行多倍投注，投注倍数范围为 1-100 倍；
-          多多3 每5分钟匹配一轮；
-          单注奖励固定为1000幸运积分。
-        weight: 10
-      - title: 开奖
-        content: |
-          多多3 每5分钟开奖一次;
-          以系统生成的3位号码作为多多3当期的开奖号码。
-        weight: 20
-      - title: 中奖
-        content: 投注号码与开奖号码数字相同且顺序一致，即中奖。例如，开奖号码为123，则投注号码为123即中奖。
-        weight: 30
-      - title: 兑奖
-        content: 多多3 兑奖当期有效，中奖玩家应在开奖时间起5分钟内完成兑奖，超时视为放弃兑奖。
-        weight: 40
+        - title: 游戏方法
+          content: |
+            **多多3** 指从000-999的数字中选取1个3位数作为一注投注号码进行的投注，每注花费1个幸运积分;
+            用户可对其选定的投注号码进行多倍投注，投注倍数范围为 1-100 倍；
+            多多3 每5分钟匹配一轮；
+            单注奖励固定为1000幸运积分。
+          weight: 10
+        - title: 开奖
+          content: |
+            多多3 每5分钟开奖一次;
+            以系统生成的3位号码作为多多3当期的开奖号码。
+          weight: 20
+        - title: 中奖
+          content: 投注号码与开奖号码数字相同且顺序一致，即中奖。例如，开奖号码为123，则投注号码为123即中奖。
+          weight: 30
+        - title: 兑奖
+          content: 多多3 兑奖当期有效，中奖玩家应在开奖时间起5分钟内完成兑奖，超时视为放弃兑奖。
+          weight: 40
 
     - id: toto_5
       name: 多多 5
       weight: 800
       cover: /image/game/toto_5/cover.png
-      msg_not_enought_lucky_point: 幸运值不足(🧧). 
+      msg_not_enought_lucky_point: 幸运值不足(🧧). [获取更多](../../../add_lucky_point)
       msg_bet_stop: 封盘中，禁止下注. 
       in_page_tips_type: normal
       in_page_tips_content: 查看 [规则](./rules) 了解如何游戏.
@@ -1074,49 +1069,49 @@ zh-cn:
       in_page_tips_content_page_bonus_btn_2: 如果 **兑奖** 按钮是灰色(不可点击)，说明你在当前轮次没有下注或者你已经点击过了兑奖按钮
       subtitle: 🧧 十万大奖等你来
       tips:
-      - title: 什么是多多5?
-        content: 多多5(**shakagame.com**) 是一款在线幸运博彩游戏，玩家选择0-99999之间的任意整数进行下注，每个下注号码可以选择1-100倍的投注，开奖时如果有任一下注的号码与系统给出的中奖号码一致，即可获得每注100,000幸运积分的固定奖励.
-        weight: 10
-      - title: 如何玩多多5?
-        content: |
-          1. 具体玩法可以点击游戏首页的 [规则](./rules) 进行了解，下方是快速介绍： 
-          2. 点击 **下注** 模块进入 **下注** 页面，在该页面进行投注，玩家可以选择0-99999范围内的任意整数进行下注，每注花费1个幸运积分，玩家可以对该号码选择1-100整数范围内的加倍投注，玩家可以查看自己在本轮的下注记录;
-          3. 游戏每6分钟匹配一轮，提前30秒封盘，玩家只能在 **开盘** 期间进行投注， **封盘** 后不允许下注，系统清盘;
-          4. 玩家可点击页面上的 **兑奖** 按钮前往兑奖页面，该页面每5分钟更新一次中奖情况，系统自动清算用户的中奖情况;
-          5. 用户必须点击 **兑奖** 按钮进行兑奖，兑奖有效期为6分钟，超过页面上的兑奖截止时间视为放弃兑奖;
-          6. 用户可以点击页面上的 **结束** 查看最近5期的开奖记录.
-        weight: 20
-      - title: 幸运积分系统
-        content: |
-          1. 在下注页面正确提交下注数据并点击 **确认** 按钮后会扣除相应的幸运积分;
-          2. 如果你赢了，你会获得每注100,000幸运积分的奖励，但是系统会扣除3%的奖金作为服务费.
-          3. 参与下注的每一轮都会增加一次游戏次数.
-        weight: 30
+        - title: 什么是多多5?
+          content: 多多5(**shakagame.com**) 是一款在线幸运博彩游戏，玩家选择0-99999之间的任意整数进行下注，每个下注号码可以选择1-100倍的投注，开奖时如果有任一下注的号码与系统给出的中奖号码一致，即可获得每注100,000幸运积分的固定奖励.
+          weight: 10
+        - title: 如何玩多多5?
+          content: |
+            1. 具体玩法可以点击游戏首页的 [规则](./rules) 进行了解，下方是快速介绍： 
+            2. 点击 **下注** 模块进入 **下注** 页面，在该页面进行投注，玩家可以选择0-99999范围内的任意整数进行下注，每注花费1个幸运积分，玩家可以对该号码选择1-100整数范围内的加倍投注，玩家可以查看自己在本轮的下注记录;
+            3. 游戏每6分钟匹配一轮，提前30秒封盘，玩家只能在 **开盘** 期间进行投注， **封盘** 后不允许下注，系统清盘;
+            4. 玩家可点击页面上的 **兑奖** 按钮前往兑奖页面，该页面每5分钟更新一次中奖情况，系统自动清算用户的中奖情况;
+            5. 用户必须点击 **兑奖** 按钮进行兑奖，兑奖有效期为6分钟，超过页面上的兑奖截止时间视为放弃兑奖;
+            6. 用户可以点击页面上的 **结束** 查看最近5期的开奖记录.
+          weight: 20
+        - title: 幸运积分系统
+          content: |
+            1. 在下注页面正确提交下注数据并点击 **确认** 按钮后会扣除相应的幸运积分;
+            2. 如果你赢了，你会获得每注100,000幸运积分的奖励，但是系统会扣除3%的奖金作为服务费.
+            3. 参与下注的每一轮都会增加一次游戏次数.
+          weight: 30
       rules:
-      - title: 游戏方法
-        content: |
-          **多多5** 指从00000-99999的数字中选取1个5位数作为一注投注号码进行的投注，每注花费1个幸运积分;
-          用户可对其选定的投注号码进行多倍投注，投注倍数范围为 1-100 倍；
-          多多5 每6分钟匹配一轮；
-          单注奖励固定为100,000幸运积分。
-        weight: 10
-      - title: 开奖
-        content: |
-          多多5 每6分钟开奖一次;
-          以系统生成的5位号码作为多多5当期的开奖号码。
-        weight: 20
-      - title: 中奖
-        content: 投注号码与开奖号码数字相同且顺序一致，即中奖。例如，开奖号码为12345，则投注号码为12345即中奖。
-        weight: 30
-      - title: 兑奖
-        content: 多多5 兑奖当期有效，中奖玩家应在开奖时间起6分钟内完成兑奖，超时视为放弃兑奖。
-        weight: 40
+        - title: 游戏方法
+          content: |
+            **多多5** 指从00000-99999的数字中选取1个5位数作为一注投注号码进行的投注，每注花费1个幸运积分;
+            用户可对其选定的投注号码进行多倍投注，投注倍数范围为 1-100 倍；
+            多多5 每6分钟匹配一轮；
+            单注奖励固定为100,000幸运积分。
+          weight: 10
+        - title: 开奖
+          content: |
+            多多5 每6分钟开奖一次;
+            以系统生成的5位号码作为多多5当期的开奖号码。
+          weight: 20
+        - title: 中奖
+          content: 投注号码与开奖号码数字相同且顺序一致，即中奖。例如，开奖号码为12345，则投注号码为12345即中奖。
+          weight: 30
+        - title: 兑奖
+          content: 多多5 兑奖当期有效，中奖玩家应在开奖时间起6分钟内完成兑奖，超时视为放弃兑奖。
+          weight: 40
     
     - id: guess_who_win_rock
       name: 猜谁赢 - 石头剪刀布
       weight: 900
       cover: /image/game/guess_who_win_rock/cover.png
-      msg_not_enought_lucky_point: 幸运值不足(🧧). 
+      msg_not_enought_lucky_point: 幸运值不足(🧧). [获取更多](../../../add_lucky_point)
       tips_page_1_item_select: 你需要选择一个项目.
       tips_start_game: 当只剩一个元素的时候游戏结束
       tips_miss_data: 缺少数据, [重新游戏](../).
@@ -1162,7 +1157,7 @@ zh-cn:
       name: 猜谁赢 - 动物
       weight: 400
       cover: /image/game/guess_who_win_animal/cover.png
-      msg_not_enought_lucky_point: 幸运值不足(🧧).
+      msg_not_enought_lucky_point: 幸运值不足(🧧). [获取更多](../../../add_lucky_point)
       tips_page_1_item_select: 你需要选择一个项目.
       tips_miss_data: 缺少数据, [重新游戏](../).
       in_page_tips_content_page_bet_lucky_point: 建议从1个幸运积分（默认值）开始你的游戏.
@@ -1226,7 +1221,7 @@ zh-cn:
       name: 水果机
       weight: 100
       cover: /image/game/fruit_slot/cover.png
-      msg_not_enought_lucky_point: 幸运值不足(🧧).
+      msg_not_enought_lucky_point: 幸运值不足(🧧). [获取更多](../../add_lucky_point)
       tips_start_game: 享受快乐游戏时光，祝你好运. 🎋
       tips_win: 🎉 赢啦 🎊
       tips:
@@ -1371,9 +1366,6 @@ zh-tw:
           description: "**土地公**是中國民間信仰中的地神，主宰土地和農田。人們信奉土地公以祈求豐收和家園安寧，他被視為鄉村守護神和人們生活的保障者。"
           weight: 180
 
-
-
-
       offerings:
         - id: offering_1
           name: 蓮花
@@ -1436,7 +1428,6 @@ zh-tw:
           content: ☕
           weight: 150
       msg_end_worship: 崇拜完成 🎉. 🧧 +
-      msg_not_enought_lucky_point: 幸運值不足(🧧).
       tips:
         - title: 快樂崇拜是什麽
           content: 快樂崇拜(**shakagame.com**)是對神明進行祭拜和表達敬意。包括點燃虛擬的香燭、擺放虛擬的供品，以及進行祈禱和祝願，在這個過程中你可以收集大量的幸運值，快來試試吧。
@@ -1456,7 +1447,6 @@ zh-tw:
             3. 每個被點擊的幸運氣球增加1點幸運值。
           weight: 30
 
-
     - id: wooden_fish
       name: 電子木魚
       weight: 600
@@ -1472,24 +1462,24 @@ zh-tw:
       in_page_tips_auto: 你可以點擊按鈕開啟/關閉自動敲擊和背景音樂
       in_page_tips_count: 點擊上方數字可以選擇/自定義祈禱內容
       tips:
-      - title: 什麼是電子木魚
-        content: 電子木魚 (**shakagame.com**) 模擬了傳統木魚的功能，敲擊木魚獲得寧靜與平和。
-        weight: 10
-      - title: 如何使用電子木魚
-        content: |
-          1. 點擊白色的木魚圖案就會開始敲擊；
-          2. 可以點擊**自動**來實現開啟/關閉自動敲擊木魚，速度是每秒鐘敲擊一次；
-          3. 可以點擊**BGM**來實現開啟/關閉背景音樂；
-          4. 點擊**標題**可以編輯標題內容，字符數量限制是 **1-15**。
-          5. 點擊螢幕中間的數字可以編輯祈禱內容，有三個已經定義好的選項，不滿意的話可以點擊**自定義**自己編輯，字符數量限制是 **0-15**。
-          6. **移動端請先點擊背景音樂按鈕開啟背景音樂以解除移動端對音頻輸出的限製**
-        weight: 20
-      - title: 幸運積分系統
-        content: |
-            1. 追求寧靜不需要代價，因此不會扣減幸運值；
-            2. 每300次點擊增加一個幸運值；
-            3. 每300次點擊增加一次遊戲次數；
-        weight: 30
+        - title: 什麼是電子木魚
+          content: 電子木魚 (**shakagame.com**) 模擬了傳統木魚的功能，敲擊木魚獲得寧靜與平和。
+          weight: 10
+        - title: 如何使用電子木魚
+          content: |
+            1. 點擊白色的木魚圖案就會開始敲擊；
+            2. 可以點擊**自動**來實現開啟/關閉自動敲擊木魚，速度是每秒鐘敲擊一次；
+            3. 可以點擊**BGM**來實現開啟/關閉背景音樂；
+            4. 點擊**標題**可以編輯標題內容，字符數量限制是 **1-15**。
+            5. 點擊螢幕中間的數字可以編輯祈禱內容，有三個已經定義好的選項，不滿意的話可以點擊**自定義**自己編輯，字符數量限制是 **0-15**。
+            6. **移動端請先點擊背景音樂按鈕開啟背景音樂以解除移動端對音頻輸出的限製**
+          weight: 20
+        - title: 幸運積分系統
+          content: |
+              1. 追求寧靜不需要代價，因此不會扣減幸運值；
+              2. 每300次點擊增加一個幸運值；
+              3. 每300次點擊增加一次遊戲次數；
+          weight: 30
 
     - id: flying_book
       name: 飛鳥傳書
@@ -1497,37 +1487,37 @@ zh-tw:
       cover: /image/game/flying_book/cover.png
       tips_miss_data: 缺少數據, [重新遊戲](../).
       tips:
-      - title: 飛鳥傳書是什麽?
-        content: 飛鳥傳書(**shakagame.com**) 通常會給你想要的答案。 解決日常生活中的所有問題，只需提出一個問題，飛鳥就會為你找到答案。
-        weight: 10
-      - title: 如何使用飛鳥傳書？
-        content: |
-          1. 按照頁面提示進行操作；
-          2. 首先想好自己想要問的問題；
-          3. 點擊按鈕，飛鳥就會送來你需要的答案；
-          4. 看不清答案的情況下，可以劃過鼠標或者觸屏點擊讓飛鳥離開。
-        weight: 20
-      - title: 飛鳥傳書的答案正確嗎？
-        content: 這取決於你！飛鳥傳書耐人尋味、鼓舞人心，而且使用起來非常有趣。對問題保持積極的態度，問題就會迎刃而解，正確答案就在你的腦海中。
-        weight: 30
-      - title: 幸運積分系統
-        content: |
-            1. 每次獲得答案花費1個幸運值，**請註意幸運值的消耗情況**；
-            2. 該遊戲允許用戶欠費運行，意思是即使你的幸運值小於0也仍然可以玩該遊戲。
-        weight: 40
+        - title: 飛鳥傳書是什麽?
+          content: 飛鳥傳書(**shakagame.com**) 通常會給你想要的答案。 解決日常生活中的所有問題，只需提出一個問題，飛鳥就會為你找到答案。
+          weight: 10
+        - title: 如何使用飛鳥傳書？
+          content: |
+            1. 按照頁面提示進行操作；
+            2. 首先想好自己想要問的問題；
+            3. 點擊按鈕，飛鳥就會送來你需要的答案；
+            4. 看不清答案的情況下，可以劃過鼠標或者觸屏點擊讓飛鳥離開。
+          weight: 20
+        - title: 飛鳥傳書的答案正確嗎？
+          content: 這取決於你！飛鳥傳書耐人尋味、鼓舞人心，而且使用起來非常有趣。對問題保持積極的態度，問題就會迎刃而解，正確答案就在你的腦海中。
+          weight: 30
+        - title: 幸運積分系統
+          content: |
+              1. 每次獲得答案花費1個幸運值，**請註意幸運值的消耗情況**；
+              2. 該遊戲允許用戶欠費運行，意思是即使你的幸運值小於0也仍然可以玩該遊戲。
+          weight: 40
       steps:
-      - step: 1
-        content: 在心中想好你要問的問題
-        weight: 10
-      - step: 2
-        content: 點擊下方按鈕獲得答案
-        weight: 20
+        - step: 1
+          content: 在心中想好你要問的問題
+          weight: 10
+        - step: 2
+          content: 點擊下方按鈕獲得答案
+          weight: 20
   
     - id: horse_racing
       name: 賽馬
       weight: 200
       cover: /image/game/horse_racing/cover.png
-      msg_not_enought_lucky_point: 幸運值不足(🧧). 
+      msg_not_enought_lucky_point: 幸運值不足(🧧). [獲取更多](../../../add_lucky_point) 
       tips_page_1_item_select: 你需要選擇一個項目.
       tips_start_game: 綠燈亮起，遊戲開始
       in_page_tips_type: normal
@@ -1537,45 +1527,25 @@ zh-tw:
       tips_no_bet: 你沒有下註, 前往 [下註](../bet).
       tips_no_racing: 你沒有享受遊戲過程, [開始遊戲](../).
       tips:
-      - title: 什麽是賽馬遊戲?
-        content: 賽馬遊戲(**shakagame.com**) 模擬了真實的賽馬運動，享受激動人心的賽馬過程，贏得獎勵.
-        weight: 10
-      - title: 如何玩賽馬遊戲?
-        content: |
-          1. 選擇你看好的馬;
-          2. 下註，**至少下註1個幸運值，你的幸運值如果低於1將無法開始遊戲**;
-          3. 等待系統匹配其他玩家;
-          4. 瀏覽獎池信息，點擊**開始遊戲**;
-          5. 享受激動人心的賽馬過程;
-          6. 查看賽馬結果，**要麽贏，要麽輸**。
-        weight: 20
-      - title: 幸運積分系統
-        content: |
-          1. 點擊**開始遊戲**後，系統會扣除下註的幸運值;
-          2. 如果你輸了，什麽都沒有；但是如果你贏了，你會獲得遠高於你下註的獎勵.
-          3. 如果你贏了，系統會扣除3%的獎金作為服務費.
-          4. 每次查看比賽結果都會增加1次遊戲次數。
-        weight: 30 
-      tips:
-      - title: 什麽是賽馬遊戲?
-        content: 賽馬遊戲(**shakagame.com**) 模擬了真實的賽馬運動，享受激動人心的賽馬過程，贏得獎勵.
-        weight: 10
-      - title: 如何玩賽馬遊戲?
-        content: |
-          1. 選擇你看好的馬;
-          2. 下註，**至少下註1個幸運值，你的幸運值如果低於1將無法開始遊戲**;
-          3. 等待系統匹配其他玩家;
-          4. 瀏覽獎池信息，點擊**開始遊戲**;
-          5. 觀看激動人心的賽馬過程;
-          6. 等待賽馬結果，**要麽贏，要麽輸**。
-        weight: 20
-      - title: 幸運積分系統
-        content: |
-          1. 你下註後，系統會直接扣除下註的幸運值;
-          2. 如果你輸了，什麽都沒有；但是如果你贏了，你會獲得遠高於你下註的獎勵.
-          3. 如果你贏了，系統會扣除3%的獎金作為服務費.
-          4. 每次看到比賽結果都會增加1次遊戲次數。
-        weight: 30
+        - title: 什麽是賽馬遊戲?
+          content: 賽馬遊戲(**shakagame.com**) 模擬了真實的賽馬運動，享受激動人心的賽馬過程，贏得獎勵.
+          weight: 10
+        - title: 如何玩賽馬遊戲?
+          content: |
+            1. 選擇你看好的馬;
+            2. 下註，**至少下註1個幸運值，你的幸運值如果低於1將無法開始遊戲**;
+            3. 等待系統匹配其他玩家;
+            4. 瀏覽獎池信息，點擊**開始遊戲**;
+            5. 享受激動人心的賽馬過程;
+            6. 查看賽馬結果，**要麽贏，要麽輸**。
+          weight: 20
+        - title: 幸運積分系統
+          content: |
+            1. 點擊**開始遊戲**後，系統會扣除下註的幸運值;
+            2. 如果你輸了，什麽都沒有；但是如果你贏了，你會獲得遠高於你下註的獎勵.
+            3. 如果你贏了，系統會扣除3%的獎金作為服務費.
+            4. 每次查看比賽結果都會增加1次遊戲次數。
+          weight: 30 
       horses:
         - id: horse_1
           name: 閃電
@@ -1662,7 +1632,7 @@ zh-tw:
       name: 多多 3
       weight: 300
       cover: /image/game/toto_3/cover.png
-      msg_not_enought_lucky_point: 幸運值不足(🧧). 
+      msg_not_enought_lucky_point: 幸運值不足(🧧). [獲取更多](../../../add_lucky_point) 
       msg_bet_stop: 封盤中，禁止下註. 
       in_page_tips_type: normal
       in_page_tips_content: 查看 [規則](./rules) 了解如何遊戲.
@@ -1678,49 +1648,49 @@ zh-tw:
       in_page_tips_content_page_bonus_btn_2: 如果 **兌獎** 按鈕是灰色(不可點擊)，說明你在當前輪次沒有下註或者你已經點擊過了兌獎按鈕
       subtitle: 🧧 千分大獎等你來
       tips:
-      - title: 什麽是多多3?
-        content: 多多3(**shakagame.com**) 是一款在線幸運博彩遊戲，玩家選擇0-999之間的任意整數進行下註，每個下註號碼可以選擇1-100倍的投註，開獎時如果有任一下註的號碼與系統給出的中獎號碼一致，即可獲得每註1000幸運積分的固定獎勵.
-        weight: 10
-      - title: 如何玩多多3?
-        content: |
-          1. 具體玩法可以點擊遊戲首頁的 [規則](./rules) 進行了解，下方是快速介紹： 
-          2. 點擊 **下註** 模塊進入 **下註** 頁面，在該頁面進行投註，玩家可以選擇0-999範圍內的任意整數進行下註，每註花費1個幸運積分，玩家可以對該號碼選擇1-100整數範圍內的加倍投註，玩家可以查看自己在本輪的下註記錄;
-          3. 遊戲每5分鐘匹配一輪，提前30秒封盤，玩家只能在 **開盤** 期間進行投註， **封盤** 後不允許下註，系統清盤;
-          4. 玩家可點擊頁面上的 **兌獎** 按鈕前往兌獎頁面，該頁面每5分鐘更新一次中獎情況，系統自動清算用戶的中獎情況;
-          5. 用戶必須點擊 **兌獎** 按鈕進行兌獎，兌獎有效期為5分鐘，超過頁面上的兌獎截止時間視為放棄兌獎;
-          6. 用戶可以點擊頁面上的 **結束** 查看最近5期的開獎記錄.
-        weight: 20
-      - title: 幸運積分系統
-        content: |
-          1. 在下註頁面正確提交下註數據並點擊 **確認** 按鈕後會扣除相應的幸運積分;
-          2. 如果你贏了，你會獲得每註1000幸運積分的獎勵，但是系統會扣除3%的獎金作為服務費.
-          3. 參與下註的每一輪都會增加一次遊戲次數.
-        weight: 30
+        - title: 什麽是多多3?
+          content: 多多3(**shakagame.com**) 是一款在線幸運博彩遊戲，玩家選擇0-999之間的任意整數進行下註，每個下註號碼可以選擇1-100倍的投註，開獎時如果有任一下註的號碼與系統給出的中獎號碼一致，即可獲得每註1000幸運積分的固定獎勵.
+          weight: 10
+        - title: 如何玩多多3?
+          content: |
+            1. 具體玩法可以點擊遊戲首頁的 [規則](./rules) 進行了解，下方是快速介紹： 
+            2. 點擊 **下註** 模塊進入 **下註** 頁面，在該頁面進行投註，玩家可以選擇0-999範圍內的任意整數進行下註，每註花費1個幸運積分，玩家可以對該號碼選擇1-100整數範圍內的加倍投註，玩家可以查看自己在本輪的下註記錄;
+            3. 遊戲每5分鐘匹配一輪，提前30秒封盤，玩家只能在 **開盤** 期間進行投註， **封盤** 後不允許下註，系統清盤;
+            4. 玩家可點擊頁面上的 **兌獎** 按鈕前往兌獎頁面，該頁面每5分鐘更新一次中獎情況，系統自動清算用戶的中獎情況;
+            5. 用戶必須點擊 **兌獎** 按鈕進行兌獎，兌獎有效期為5分鐘，超過頁面上的兌獎截止時間視為放棄兌獎;
+            6. 用戶可以點擊頁面上的 **結束** 查看最近5期的開獎記錄.
+          weight: 20
+        - title: 幸運積分系統
+          content: |
+            1. 在下註頁面正確提交下註數據並點擊 **確認** 按鈕後會扣除相應的幸運積分;
+            2. 如果你贏了，你會獲得每註1000幸運積分的獎勵，但是系統會扣除3%的獎金作為服務費.
+            3. 參與下註的每一輪都會增加一次遊戲次數.
+          weight: 30
       rules:
-      - title: 遊戲方法
-        content: |
-          **多多3** 指從000-999的數字中選取1個3位數作為一註投註號碼進行的投註，每註花費1個幸運積分;
-          用戶可對其選定的投註號碼進行多倍投註，投註倍數範圍為 1-100 倍；
-          多多3 每5分鐘匹配一輪；
-          單註獎勵固定為1000幸運積分。
-        weight: 10
-      - title: 開獎
-        content: |
-          多多3 每5分鐘開獎一次;
-          以系統生成的3位號碼作為多多3當期的開獎號碼。
-        weight: 20
-      - title: 中獎
-        content: 投註號碼與開獎號碼數字相同且順序一致，即中獎。例如，開獎號碼為123，則投註號碼為123即中獎。
-        weight: 30
-      - title: 兌獎
-        content: 多多3 兌獎當期有效，中獎玩家應在開獎時間起5分鐘內完成兌獎，超時視為放棄兌獎。
-        weight: 40
+        - title: 遊戲方法
+          content: |
+            **多多3** 指從000-999的數字中選取1個3位數作為一註投註號碼進行的投註，每註花費1個幸運積分;
+            用戶可對其選定的投註號碼進行多倍投註，投註倍數範圍為 1-100 倍；
+            多多3 每5分鐘匹配一輪；
+            單註獎勵固定為1000幸運積分。
+          weight: 10
+        - title: 開獎
+          content: |
+            多多3 每5分鐘開獎一次;
+            以系統生成的3位號碼作為多多3當期的開獎號碼。
+          weight: 20
+        - title: 中獎
+          content: 投註號碼與開獎號碼數字相同且順序一致，即中獎。例如，開獎號碼為123，則投註號碼為123即中獎。
+          weight: 30
+        - title: 兌獎
+          content: 多多3 兌獎當期有效，中獎玩家應在開獎時間起5分鐘內完成兌獎，超時視為放棄兌獎。
+          weight: 40
 
     - id: toto_5
       name: 多多 5
       weight: 800
       cover: /image/game/toto_5/cover.png
-      msg_not_enought_lucky_point: 幸運值不足(🧧). 
+      msg_not_enought_lucky_point: 幸運值不足(🧧). [獲取更多](../../../add_lucky_point) 
       msg_bet_stop: 封盤中，禁止下註. 
       in_page_tips_type: normal
       in_page_tips_content: 查看 [規則](./rules) 了解如何遊戲.
@@ -1736,49 +1706,49 @@ zh-tw:
       in_page_tips_content_page_bonus_btn_2: 如果 **兌獎** 按鈕是灰色(不可點擊)，說明你在當前輪次沒有下註或者你已經點擊過了兌獎按鈕
       subtitle: 🧧 十萬大獎等你來
       tips:
-      - title: 什麽是多多5?
-        content: 多多5(**shakagame.com**) 是一款在線幸運博彩遊戲，玩家選擇0-99999之間的任意整數進行下註，每個下註號碼可以選擇1-100倍的投註，開獎時如果有任一下註的號碼與系統給出的中獎號碼一致，即可獲得每註100,000幸運積分的固定獎勵.
-        weight: 10
-      - title: 如何玩多多5?
-        content: |
-          1. 具體玩法可以點擊遊戲首頁的 [規則](./rules) 進行了解，下方是快速介紹： 
-          2. 點擊 **下註** 模塊進入 **下註** 頁面，在該頁面進行投註，玩家可以選擇0-99999範圍內的任意整數進行下註，每註花費1個幸運積分，玩家可以對該號碼選擇1-100整數範圍內的加倍投註，玩家可以查看自己在本輪的下註記錄;
-          3. 遊戲每6分鐘匹配一輪，提前30秒封盤，玩家只能在 **開盤** 期間進行投註， **封盤** 後不允許下註，系統清盤;
-          4. 玩家可點擊頁面上的 **兌獎** 按鈕前往兌獎頁面，該頁面每6分鐘更新一次中獎情況，系統自動清算用戶的中獎情況;
-          5. 用戶必須點擊 **兌獎** 按鈕進行兌獎，兌獎有效期為6分鐘，超過頁面上的兌獎截止時間視為放棄兌獎;
-          6. 用戶可以點擊頁面上的 **結束** 查看最近5期的開獎記錄.
-        weight: 20
-      - title: 幸運積分系統
-        content: |
-          1. 在下註頁面正確提交下註數據並點擊 **確認** 按鈕後會扣除相應的幸運積分;
-          2. 如果你贏了，你會獲得每註100,000幸運積分的獎勵，但是系統會扣除3%的獎金作為服務費.
-          3. 參與下註的每一輪都會增加一次遊戲次數.
-        weight: 30
+        - title: 什麽是多多5?
+          content: 多多5(**shakagame.com**) 是一款在線幸運博彩遊戲，玩家選擇0-99999之間的任意整數進行下註，每個下註號碼可以選擇1-100倍的投註，開獎時如果有任一下註的號碼與系統給出的中獎號碼一致，即可獲得每註100,000幸運積分的固定獎勵.
+          weight: 10
+        - title: 如何玩多多5?
+          content: |
+            1. 具體玩法可以點擊遊戲首頁的 [規則](./rules) 進行了解，下方是快速介紹： 
+            2. 點擊 **下註** 模塊進入 **下註** 頁面，在該頁面進行投註，玩家可以選擇0-99999範圍內的任意整數進行下註，每註花費1個幸運積分，玩家可以對該號碼選擇1-100整數範圍內的加倍投註，玩家可以查看自己在本輪的下註記錄;
+            3. 遊戲每6分鐘匹配一輪，提前30秒封盤，玩家只能在 **開盤** 期間進行投註， **封盤** 後不允許下註，系統清盤;
+            4. 玩家可點擊頁面上的 **兌獎** 按鈕前往兌獎頁面，該頁面每6分鐘更新一次中獎情況，系統自動清算用戶的中獎情況;
+            5. 用戶必須點擊 **兌獎** 按鈕進行兌獎，兌獎有效期為6分鐘，超過頁面上的兌獎截止時間視為放棄兌獎;
+            6. 用戶可以點擊頁面上的 **結束** 查看最近5期的開獎記錄.
+          weight: 20
+        - title: 幸運積分系統
+          content: |
+            1. 在下註頁面正確提交下註數據並點擊 **確認** 按鈕後會扣除相應的幸運積分;
+            2. 如果你贏了，你會獲得每註100,000幸運積分的獎勵，但是系統會扣除3%的獎金作為服務費.
+            3. 參與下註的每一輪都會增加一次遊戲次數.
+          weight: 30
       rules:
-      - title: 遊戲方法
-        content: |
-          **多多5** 指從00000-99999的數字中選取1個5位數作為一註投註號碼進行的投註，每註花費1個幸運積分;
-          用戶可對其選定的投註號碼進行多倍投註，投註倍數範圍為 1-100 倍；
-          多多5 每6分鐘匹配一輪；
-          單註獎勵固定為100,000幸運積分。
-        weight: 10
-      - title: 開獎
-        content: |
-          多多5 每6分鐘開獎一次;
-          以系統生成的5位號碼作為多多5當期的開獎號碼。
-        weight: 20
-      - title: 中獎
-        content: 投註號碼與開獎號碼數字相同且順序一致，即中獎。例如，開獎號碼為12345，則投註號碼為12345即中獎。
-        weight: 30
-      - title: 兌獎
-        content: 多多5 兌獎當期有效，中獎玩家應在開獎時間起6分鐘內完成兌獎，超時視為放棄兌獎。
-        weight: 40
+        - title: 遊戲方法
+          content: |
+            **多多5** 指從00000-99999的數字中選取1個5位數作為一註投註號碼進行的投註，每註花費1個幸運積分;
+            用戶可對其選定的投註號碼進行多倍投註，投註倍數範圍為 1-100 倍；
+            多多5 每6分鐘匹配一輪；
+            單註獎勵固定為100,000幸運積分。
+          weight: 10
+        - title: 開獎
+          content: |
+            多多5 每6分鐘開獎一次;
+            以系統生成的5位號碼作為多多5當期的開獎號碼。
+          weight: 20
+        - title: 中獎
+          content: 投註號碼與開獎號碼數字相同且順序一致，即中獎。例如，開獎號碼為12345，則投註號碼為12345即中獎。
+          weight: 30
+        - title: 兌獎
+          content: 多多5 兌獎當期有效，中獎玩家應在開獎時間起6分鐘內完成兌獎，超時視為放棄兌獎。
+          weight: 40
 
     - id: guess_who_win_rock
       name: 猜誰贏 - 石頭剪刀布
       weight: 900
       cover: /image/game/guess_who_win_rock/cover.png
-      msg_not_enought_lucky_point: 幸運值不足(🧧). 
+      msg_not_enought_lucky_point: 幸運值不足(🧧). [獲取更多](../../../add_lucky_point) 
       tips_page_1_item_select: 你需要選擇一個項目.
       tips_start_game: 當只剩一個元素的時候遊戲結束
       tips_miss_data: 缺少數據, [重新遊戲](../).
@@ -1824,7 +1794,7 @@ zh-tw:
       name: 猜誰贏 - 動物
       weight: 400
       cover: /image/game/guess_who_win_animal/cover.png
-      msg_not_enought_lucky_point: 幸運值不足(🧧).
+      msg_not_enought_lucky_point: 幸運值不足(🧧). [獲取更多](../../../add_lucky_point) 
       tips_page_1_item_select: 你需要選擇一個項目.
       tips_miss_data: 缺少數據, [重新遊戲](../).
       in_page_tips_content_page_bet_lucky_point: 建議從1個幸運積分（默認值）開始你的遊戲.
@@ -1888,7 +1858,7 @@ zh-tw:
       name: 水果機
       weight: 100
       cover: /image/game/fruit_slot/cover.png
-      msg_not_enought_lucky_point: 幸運值不足(🧧). 
+      msg_not_enought_lucky_point: 幸運值不足(🧧). [獲取更多](../../add_lucky_point) 
       tips_start_game: 享受快樂遊戲時光，祝你好運. 🎋
       tips_win: 🎉 贏啦 🎊
       tips:

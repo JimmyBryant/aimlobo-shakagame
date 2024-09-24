@@ -816,3 +816,11 @@
 
 - id: fruit_slot_machine
   translation: "Fruit slot machine"
+
+
+#page: add_lucky_point
+- id: add_your_lucky_point
+  translation: "Add your lucky point"
+
+- id: add_your_lucky_point_description
+  translation: "This page contains all buttons, apps or pages that will add your lucky point with no cost."

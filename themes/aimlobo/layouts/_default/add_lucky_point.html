@@ -1,0 +1,137 @@
+{{ define "main" }}
+
+{{- $lang := .Lang -}}
+{{- $addLukcyPointData := index .Site.Data.add_lucky_point $lang -}}
+{{- $gameData := index .Site.Data.game $lang -}}
+{{- $secretData := index .Site.Data.secret $lang -}}
+{{- $addLukcyPointDataGames := $addLukcyPointData.game_lists -}}
+{{- $addLukcyPointSecretGames := $addLukcyPointData.secret_lists -}}
+{{- $gameDataGames := $gameData.game_lists -}}
+{{- $secretDataSecrets := $secretData.secret_list -}}
+
+<div class="wrap">
+
+    <div class="page_add_lucky_point">
+
+        <div class="font-size-2 font-weight-600 text-center margin-tb-1rem">{{ T "add_your_lucky_point" }}</div>
+
+        <div class="font-size-1_2 margin-tb-_5rem padding-1rem">{{ T "add_your_lucky_point_description" }}</div>
+
+
+        <div class="flex gap-1rem align-items-center flex-wrap">
+
+            {{- /* 签到 */ -}}
+            <a href="../my">
+
+                <button class="btn_check_in_today btn_no_hover user_check_in info_icon cursor-pointer shadow-box width-100">
+                    {{- T "check_in_today" -}}
+                </button>
+
+            </a>
+
+            {{- /* Share button */ -}}
+            {{- partial "tools/btn_share_site.html" }}
+
+            {{- /* 阅读 */ -}}
+            <a href="../topic">
+
+                <button class="btn cursor-pointer shadow-box width-100">
+                    {{- T "read" -}}
+                </button>
+
+            </a>
+
+        </div>
+
+        {{- partial "google_adsense/05.html" }}
+
+        <div class="game">
+
+            <div class="font-size-2 text-center margin-tb-1rem">{{ T "game" }}</div>
+
+            <div class="game-lists">
+
+                {{ range (sort $addLukcyPointDataGames "weight" "asc") }}
+
+                    {{ $gameID := .id }}
+                    {{- $gameIDInGame := where $gameDataGames "id" $gameID  -}}
+                    {{ $game := index $gameIDInGame 0 }}
+
+                    {{ with $game }}
+                        <div class="list-item">
+                            {{- $path := .cover -}}
+                            {{- $alt := .id -}}
+                            <a href="../game/{{- .id | urlize -}}/" class="position-relative">
+            
+                                <div class="game-cover border-radius-_5rem">
+            
+                                    {{ partial "tools/img-res.html" (dict "imagePath" $path "alt" $alt "imageWidth" 20) }}
+                                </div>
+
+                                <div class="game-title">
+                                    {{- .name -}}
+                                </div>
+
+                            </a>
+            
+                        </div>
+
+                    {{ end }}
+
+                {{ end }}
+
+            </div>
+
+
+        </div>
+
+        <div class="secret">
+
+            <div class="font-size-2 text-center margin-tb-1rem">{{ T "secret" }}</div>
+
+            <div class="game-lists">
+
+                {{ range (sort $addLukcyPointSecretGames "weight" "asc") }}
+
+                    {{ $gameID := .id }}
+                    {{- $gameIDInGame := where $secretDataSecrets "id" $gameID  -}}
+                    {{ $game := index $gameIDInGame 0 }}
+
+                    {{ with $game }}
+                        <div class="list-item">
+                            {{- $path := .cover -}}
+                            {{- $alt := .id -}}
+                            <a href="../secret/{{- .id | urlize -}}/" class="position-relative">
+            
+                                <div class="game-cover border-radius-_5rem">
+            
+                                    {{ partial "tools/img-res.html" (dict "imagePath" $path "alt" $alt "imageWidth" 20) }}
+                                </div>
+
+                                <div class="game-title">
+                                    {{- .name -}}
+                                </div>
+
+                            </a>
+            
+                        </div>
+
+                    {{ end }}
+
+                {{ end }}
+
+            </div>
+
+
+        </div>
+
+
+
+    </div>
+
+
+</div>
+
+
+
+{{ end }}

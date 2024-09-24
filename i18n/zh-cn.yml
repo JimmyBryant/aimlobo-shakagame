@@ -802,3 +802,11 @@
 
 - id: fruit_slot_machine
   translation: "水果机"
+
+
+#page: add_lucky_point
+- id: add_your_lucky_point
+  translation: "增加你的幸运值"
+
+- id: add_your_lucky_point_description
+  translation: "本页面包含所有可以增加（不会扣减）你的幸运值的按钮，应用或页面。"
