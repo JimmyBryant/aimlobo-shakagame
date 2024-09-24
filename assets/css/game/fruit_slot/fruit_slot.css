@@ -100,3 +100,15 @@ body {
     width: 4rem;
     border-radius: 100%;
 }
+
+.image_bonus {
+
+    display: none;
+    position: relative;
+    top: -200px;
+
+    img {
+
+        width: 256px;
+    }
+}

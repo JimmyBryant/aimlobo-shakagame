@@ -9,6 +9,7 @@ let bonus = 0; // 用户中奖金额
 
 let isRolling = false; // 用于标记是否正在滚动
 
+const imageBonus = document.querySelector('.image_bonus');
 const infoIconForceClose = document.querySelector('.tips_icon_force_close');
 const btnGetIt = infoIconForceClose.querySelector('.btn_get_it');
 const tipsWin = document.querySelector('.tips_win');
@@ -174,7 +175,15 @@ function checkForWin() {
     if (score > 0) {
 
         bgmWin.play();
-        tipsWin.click();
+        // 让元素显示
+        imageBonus.style.display = 'block';
+
+        // 1秒后隐藏元素
+        setTimeout(() => {
+            imageBonus.style.display = 'none';
+        }, 1000); 
+
+        // tipsWin.click();
 
         // 用户中奖金额 - 下注金额 * 中奖金额 - 倍数
         const userBonusAmount = score * parseInt(varUserBetAmount.textContent);
