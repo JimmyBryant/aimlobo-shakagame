@@ -30,6 +30,10 @@ formWish.addEventListener("submit", (event) => {
 
     if (isUserJumpToThisPage()) {
 
+        updateUserLuckyPointToLocal(bonusLuckyPoint);
+
+        updateUserGameTimeToLocal(1);
+
         writeValueToRecordInLocal(keyName_1_00, keyName_1_02, wishContent);
 
         window.location.href = "../wish";
