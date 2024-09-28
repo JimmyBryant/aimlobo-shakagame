@@ -3017,6 +3017,1090 @@ en:
                 content: This year's luck is outstanding. Your career is on a steady rise, finances are flourishing, and love life is harmonious. Take care of your health and make the most of opportunities that come your way.
                 weight: 600
 
+    - id: dream_interpretation
+      name: Dream interpretation
+      weight: 90
+      cover: /image/luck/dream_interpretation/cover.png
+      description: >
+        - Dream analysis stems from humanity's exploration of the unconscious and inner world, believing that dreams reflect emotions, desires, fears, and unresolved issues within an individual's subconscious. The reason for analyzing dreams is that they often reflect internal conflicts that we cannot face or understand while awake. By interpreting the symbols in dreams (such as animals, people, or scenes), we can better understand underlying psychological states, uncover deeper emotional needs, and repressed feelings.
+
+        - The significance of dream analysis lies in its ability to provide insights or guidance for real-life issues through the interpretation of symbolic elements within dreams. The symbols in dreams are often linked to people's real-life experiences and psychological states. Analyzing these symbols can help us better understand life's challenges, desires, and potential solutions, thus guiding personal growth and psychological development.
+      category:
+        - id: character
+          name: Character
+          weight: 100
+          icon: 🧑‍💼
+          kind:
+            - id: husband
+              name: Husband
+              weight: 100
+              cover: /image/luck/dream_interpretation/character/husband.png
+              icon: 🤵
+              meaning: Dreaming of a husband often reflects your dependence on your partner, emotional state, or concerns about marriage in real life. It may also represent your expectations for family life or fears and anxieties regarding the marital relationship.
+              interpretations: >
+                - Dreaming of your husband embracing you signifies a harmonious relationship with mutual trust and care.
+
+                - If you dream of your husband leaving you, it may indicate a sense of insecurity about the relationship or marriage.
+
+                - Dreaming of your husband being ill or injured symbolizes your worries about his health or hidden conflicts in the marriage.
+
+                - Dreaming of your husband smiling suggests satisfaction and happiness with the marriage.
+
+                - Dreaming of your husband being indifferent to you means you feel he is neglecting some of your needs, and you may feel a sense of loneliness.
+
+                - If you dream of your husband being very busy, it implies that you are concerned his work or life stress may affect your relationship.
+
+                - Dreaming of arguing with your husband reveals unresolved conflicts or pressures in your marriage.
+
+                - Dreaming of your husband giving you a gift signifies an improvement in your relationship, or that he is trying to maintain the marriage.
+
+                - Dreaming of your husband being close to someone else may indicate doubts or fears about his loyalty.
+
+                - Dreaming of your husband appearing younger than he is in reality symbolizes a return to the initial sweetness and passion in your relationship.
+
+            - id: wife
+              name: Wife
+              weight: 200
+              cover: /image/luck/dream_interpretation/character/wife.png
+              icon: 👰
+              meaning: Dreaming of a wife often reflects your views on marriage and emotional life. It may also symbolize your need for care, tenderness, and support, or your worries about unresolved issues in your marriage.
+              interpretations: >
+                - Dreaming of a smiling wife symbolizes happiness, harmony, and love in your relationship.
+
+                - Dreaming of a crying wife indicates dissatisfaction or regret in certain aspects of your marriage.
+
+                - If you dream of your wife being ill, it may signify concerns about her health or worries about conflicts in the marriage.
+
+                - Dreaming of intimacy with your wife means your relationship is deepening, with mutual understanding and support.
+
+                - Dreaming of arguing with your wife suggests unresolved conflicts or poor communication between you.
+
+                - If you dream that your wife is ignoring you, it suggests you feel that she is neglecting some of your needs.
+
+                - Dreaming of your wife becoming indifferent might indicate feelings of loss or misunderstanding in the marriage.
+
+                - Dreaming of your wife preparing a meal for you shows your appreciation for her care and dedication.
+
+                - Dreaming of your wife appearing younger than in reality symbolizes a revitalization of passion in your relationship.
+
+                - Dreaming of your wife being angry with you may suggest feelings of guilt or concerns about her emotional changes.
+
+            - id: couple
+              name: Couple
+              weight: 300
+              cover: /image/luck/dream_interpretation/character/couple.png
+              icon: 💑
+              meaning: Dreaming of a couple symbolizes emotional needs, the state of intimate relationships, and the longing for love. It may also reflect unresolved issues or expectations in love.
+              interpretations: >
+                - Dreaming of being with a couple signifies stability and a healthy relationship.
+
+                - Dreaming of a couple kissing suggests smooth emotional communication and a strong emotional reliance.
+
+                - If you dream of a couple arguing, it means you are dissatisfied with your love life or feel troubled by something.
+
+                - Dreaming of a couple holding hands implies a solid, trusting, and dependent relationship.
+
+                - Dreaming of a couple breaking up may suggest feelings of insecurity or fear of losing love.
+
+                - If you dream of a couple at a distance, it symbolizes unfulfilled hopes and desires in love.
+
+                - Dreaming of a couple embracing signifies a longing for intimacy or deep feelings for a partner.
+
+                - Dreaming of a couple being indifferent to each other suggests feelings of loneliness or emotional distance in a relationship.
+
+                - Dreaming of a couple caring for each other indicates emotional support and deep affection in the relationship.
+
+                - Dreaming of a couple walking together symbolizes hope and commitment to the future of the relationship.
+
+            - id: parents
+              name: Parents
+              weight: 400
+              cover: /image/luck/dream_interpretation/character/parents.png
+              icon: 👫
+              meaning: Dreaming of parents symbolizes your identification with and reliance on family and traditional values. It may also reflect a sense of responsibility, desire to protect, or care for others in your own life.
+              interpretations: >
+                - Dreaming of your parents smiling at you means you feel safe and loved, with harmony and happiness in family life.
+
+                - If you dream of your parents arguing, it suggests uneasiness about conflicts or unresolved issues in the family.
+
+                - Dreaming of your parents passing away signifies anxiety about major changes in life or a fear of losing family.
+
+                - Dreaming of your parents being angry with you symbolizes guilt or self-blame for unmet expectations.
+
+                - Dreaming of reuniting with your parents indicates dependence on family relationships or a desire for family support.
+
+                - Dreaming of your parents giving advice suggests you are seeking guidance or support in life.
+
+                - If you dream of your parents being healthy, it signifies satisfaction and happiness with family life.
+
+                - Dreaming of your parents being ill suggests worries about their health or feeling that you haven't fulfilled your responsibilities.
+
+                - Dreaming of your parents doing housework represents your sense of responsibility and care for family.
+
+                - Dreaming of your parents taking care of you symbolizes feeling tired in real life and in need of more support.
+
+            - id: relatives
+              name: Relatives
+              weight: 500
+              cover: /image/luck/dream_interpretation/character/relatives.png
+              icon: 💞
+              meaning: Dreaming of relatives symbolizes dependence on and emotional bonds within family relationships. It may also reflect thoughts about your role and responsibility within the family.
+              interpretations: >
+                - Dreaming of a family reunion means acknowledgment of family relationships and strengthening of emotional ties.
+
+                - If you dream of a relative being ill, it implies concern for them or underlying stress within the family.
+
+                - Dreaming of a relative passing away signifies anxiety or fear of significant changes in family life.
+
+                - Dreaming of relatives arguing suggests unease about unresolved conflicts or tense relationships in the family.
+
+                - Dreaming of relatives caring for you means you feel warmth and support from your family.
+
+                - Dreaming of relatives being angry with you suggests feelings of inadequacy in meeting certain family expectations.
+
+                - If you dream of relatives living harmoniously, it signifies satisfaction and comfort in family life.
+
+                - Dreaming of relatives giving you gifts implies strengthening of emotional ties or recognition of the relationship.
+
+                - Dreaming of relatives leaving you may symbolize fears of losing family bonds or feelings of loneliness.
+
+                - Dreaming of relatives smiling symbolizes confidence in the happiness and harmony of family life.
+
+            - id: brother
+              name: Brother
+              weight: 600
+              cover: /image/luck/dream_interpretation/character/brother.png
+              icon: 👬
+              meaning: Dreaming of a brother symbolizes close family ties, competition, or cooperative relationships. It may also reflect internal conflicts or importance placed on brotherly bonds.
+              interpretations: >
+                - Dreaming of being close to your brother symbolizes emotional harmony, mutual understanding, and support between you.
+
+                - If you dream of arguing with your brother, it signifies unresolved conflicts or competitive pressure in real life.
+
+                - Dreaming of your brother helping you means you are receiving emotional support, especially from family.
+
+                - Dreaming of your brother being injured or ill suggests concern for him or worry about your relationship.
+
+                - If you dream of your brother leaving, it symbolizes fear of losing family ties or feelings of loneliness.
+
+                - Dreaming of your brother succeeding indicates pride in him and reflects your own aspirations and goals.
+
+                - Dreaming of traveling with your brother means you cherish shared experiences and value your relationship.
+
+                - If you dream of your brother distancing himself from you, it implies a sense of estrangement or feeling distant.
+
+                - Dreaming of helping your brother shows a willingness to take on more responsibilities and care for family.
+
+                - Dreaming of your brother taking care of you symbolizes dependence and trust in family relationships.
+
+            - id: sister
+              name: Sister
+              weight: 700
+              cover: /image/luck/dream_interpretation/character/sister.png
+              icon: 👭
+              meaning: Dreaming of a sister typically represents family bonds, care, and emotional reliance. It may also symbolize recognition or conflict with feminine qualities.
+              interpretations: >
+                - Dreaming of close interactions with your sister indicates a harmonious relationship with deep emotional connections.
+
+                - Dreaming of your sister crying may reflect concerns about her life or misunderstandings between you.
+
+                - Dreaming of arguing with your sister suggests dissatisfaction with certain family issues or unresolved conflicts.
+
+                - Dreaming of your sister seeking your help means you feel relied upon or burdened with responsibility in life.
+
+                - If you dream of your sister getting married, it symbolizes concern about changes in her life or anxiety about shifts in family dynamics.
+
+                - Dreaming of your sister being ill implies worry about her health or life situation.
+
+                - Dreaming of your sister succeeding symbolizes pride in her achievements and reflects your own future aspirations.
+
+                - If you dream of your sister passing away, it represents a sense of loss in the family or anxiety about the end of certain emotional relationships.
+
+                - Dreaming of your sister giving you advice indicates mutual care and emotional reliance between you.
+
+                - Dreaming of being distant from your sister implies feelings of alienation or the need for better communication.
+
+            - id: friend
+              name: Friend
+              weight: 800
+              cover: /image/luck/dream_interpretation/character/friend.png
+              icon: 👫
+              meaning: Dreaming about a friend symbolizes social relationships, trust, and support. It may reflect your value of friendship or concerns about social issues.
+              interpretations: >
+                - Dreaming of having a pleasant conversation with a friend indicates satisfaction with your friendships, feeling understood and supported.
+
+                - Dreaming of a friend distancing themselves from you may imply anxiety about social relationships or concerns about friendships.
+
+                - Dreaming of a friend helping you signifies feeling supported and cared for in real life.
+
+                - If you dream of arguing with a friend, it suggests unresolved conflicts between you or unmet expectations in the friendship.
+
+                - Dreaming of a friend getting sick shows concern for their health or well-being.
+
+                - Dreaming of a friend achieving success symbolizes pride in them and reflects your own aspirations and goals.
+
+                - Dreaming of a friend leaving you signifies a fear of losing friendships or anxiety about emotional changes.
+
+                - Dreaming of traveling with a friend represents valuing the friendship and reminiscing shared experiences.
+
+                - Dreaming of a friend betraying you may reflect inner mistrust or doubt about certain social relationships.
+
+                - Dreaming of a friend giving you a gift symbolizes warmth and mutual support in the relationship.
+
+            - id: leader
+              name: Leader
+              weight: 900
+              cover: /image/luck/dream_interpretation/character/leader.png
+              icon: 👨‍💼
+              meaning: Dreaming of a leader typically symbolizes authority, responsibility, and pressure. It reflects your feelings about your work environment or power dynamics.
+              interpretations: >
+                - Dreaming of receiving praise from a leader signifies recognition of your abilities and hints at a desire for more recognition and respect at work.
+
+                - Dreaming of a leader being angry with you implies work-related stress or dissatisfaction with your performance.
+
+                - If you dream of clashing with a leader, it indicates feelings of being restricted at work or a rebellious attitude toward authority.
+
+                - Dreaming of being assigned tasks by a leader symbolizes your awareness of work responsibilities and acceptance of authority.
+
+                - Dreaming of being ignored by a leader reflects feelings of neglect or unimportance at work.
+
+                - If you dream of a leader resigning, it suggests unease about changes in the work environment or a shift in expectations regarding leadership.
+
+                - Dreaming of receiving a reward from a leader shows recognition of your work efforts and pride.
+
+                - Dreaming of being criticized by a leader implies dissatisfaction or worry about your real-life performance.
+
+                - Dreaming of working closely with a leader indicates a desire to build a stronger connection with authority figures at work.
+
+                - Dreaming of a leader getting promoted may symbolize higher career aspirations for yourself.
+
+            - id: colleague
+              name: Colleague
+              weight: 1000
+              cover: /image/luck/dream_interpretation/character/colleague.png
+              icon: 👨‍💻
+              meaning: Dreaming of a colleague reflects your perceptions and feelings about work relationships. It may also symbolize concerns about teamwork or work-related stress.
+              interpretations: >
+                - Dreaming of collaborating well with a colleague signifies satisfaction with the work environment and confidence in teamwork.
+
+                - Dreaming of conflict with a colleague implies tension at work or differing opinions on certain issues.
+
+                - Dreaming of a colleague helping you indicates receiving support and encouragement at work.
+
+                - If you dream of being ignored by a colleague, it symbolizes feelings of isolation or unrecognized contributions at work.
+
+                - Dreaming of a colleague resigning reflects unease about changes in the work environment or team structure.
+
+                - Dreaming of a colleague excelling symbolizes higher expectations for your own work performance.
+
+                - Dreaming of a colleague smiling at you means harmonious relationships and a positive work atmosphere.
+
+                - If you dream of competing with a colleague, it may reflect work-related pressure or the desire for advancement.
+
+                - Dreaming of a colleague receiving a reward symbolizes expectations of fairness and recognition for hard work.
+
+                - Dreaming of going on a business trip with a colleague reflects satisfaction with collaboration in the workplace.
+
+            - id: teacher
+              name: Teacher
+              weight: 1100
+              cover: /image/luck/dream_interpretation/character/teacher.png
+              icon: 👩‍🏫
+              meaning: Dreaming of a teacher symbolizes learning, growth, and guidance. It often reflects your desire for knowledge or views on authority figures.
+              interpretations: >
+                - Dreaming of being praised by a teacher signifies recognition of your learning abilities and a desire for more guidance and support in life.
+
+                - Dreaming of being scolded by a teacher implies dissatisfaction with your behavior or stress from unfinished tasks.
+
+                - If you dream of a teacher being indifferent to you, it may symbolize doubts about certain authority figures or self-doubt about your abilities.
+
+                - Dreaming of talking to a teacher reflects a desire for more guidance and assistance, especially in specific areas.
+
+                - Dreaming of a teacher getting sick suggests concern for the health or situation of certain mentors.
+
+                - Dreaming of a teacher leaving indicates anxiety about changes in the learning environment or authority relationships.
+
+                - Dreaming of being assigned homework by a teacher symbolizes a sense of responsibility or tasks that need completion in real life.
+
+                - If you dream of being taught by a teacher, it means you seek more knowledge and skills in certain areas.
+
+                - Dreaming of traveling with a teacher symbolizes the value you place on growth and the learning process.
+
+                - Dreaming of being praised by a teacher indicates pride in your efforts in learning or life.
+
+            - id: classmate
+              name: Classmate
+              weight: 1200
+              cover: /image/luck/dream_interpretation/character/classmate.png
+              icon: 👩‍🎓
+              meaning: Dreaming of a classmate symbolizes social relationships, the learning environment, and memories of the past. It may also reflect nostalgia for youth or unfinished goals.
+              interpretations: >
+                - Dreaming of getting along well with a classmate signifies satisfaction with interpersonal relationships or nostalgia for your youthful days.
+
+                - Dreaming of arguing with a classmate may symbolize concerns about unresolved issues or regret over past actions.
+
+                - Dreaming of a classmate helping you signifies feeling supported by friendship or longing for past friendships.
+
+                - Dreaming of a classmate distancing themselves from you implies anxiety about social relationships or disappointment in unfinished goals.
+
+                - Dreaming of a classmate succeeding reflects your blessings and admiration for them, as well as your own future expectations.
+
+                - Dreaming of a classmate passing away symbolizes a sense of loss for past times or anxiety over the end of certain relationships.
+
+                - Dreaming of studying with a classmate signifies value placed on knowledge and the growth process or nostalgia for past learning experiences.
+
+                - Dreaming of a classmate getting sick suggests concerns about their life or health, or emotional pain related to past events.
+
+                - If you dream of a classmate inviting you to a gathering, it means a desire to rekindle certain relationships or return to a familiar environment.
+
+                - Dreaming of traveling with a classmate reflects nostalgia for past shared experiences and appreciation for friendships.
+
+            - id: neighbor
+              name: Neighbor
+              weight: 1300
+              cover: /image/luck/dream_interpretation/character/neighbor.png
+              icon: 🏘️
+              meaning: Dreaming of a neighbor symbolizes social relationships, community environment, and harmonious coexistence. It may reflect your view of community relations or expectations for neighborly relations.
+              interpretations: >
+                - Dreaming of getting along well with a neighbor indicates your satisfaction with the community environment and harmonious social relations.
+
+                - Dreaming of quarreling with a neighbor suggests dissatisfaction with your surroundings or concerns about certain social issues.
+
+                - If you dream of a neighbor helping you, it means you feel support and care from the community in real life.
+
+                - Dreaming of a neighbor moving away symbolizes anxiety about changes in your living environment or social circle.
+
+                - Dreaming of a neighbor inviting you to an event indicates your desire for closer social relationships.
+
+                - Dreaming of a neighbor being indifferent to you may suggest doubts or dissatisfaction with certain social relationships.
+
+                - Dreaming of a neighbor's pet coming to your home symbolizes your tolerance and acceptance of unexpected situations.
+
+                - If you dream of a fire at a neighbor's house, it suggests concerns about community safety or external threats.
+
+                - Dreaming of building something together with a neighbor indicates your appreciation for cooperation and harmonious coexistence.
+
+                - Dreaming of a neighbor thanking you symbolizes the recognition of your care and selfless help toward those around you.
+
+            - id: police
+              name: Police
+              weight: 1400
+              cover: /image/luck/dream_interpretation/character/police.png
+              icon: 👮‍♂️
+              meaning: Dreaming of police symbolizes authority, order, and the maintenance of rules. It may reflect your feelings about certain restrictions or your pursuit of justice and fairness.
+              interpretations: >
+                - Dreaming of the police arresting someone suggests you want to see justice served or feel that the environment is upholding the rules.
+
+                - Dreaming of being chased by the police suggests guilt over certain actions or anxiety about external pressure.
+
+                - Dreaming of talking to the police means you seek help from authority to solve certain problems.
+
+                - If you dream of becoming a police officer, it symbolizes your desire to take on more responsibility and maintain order.
+
+                - Dreaming of the police in a dangerous situation suggests concerns about potential dangers or challenges.
+
+                - Dreaming of the police stopping you may indicate feeling restricted or obstructed, especially in your pursuit of freedom.
+
+                - Dreaming of being rescued by the police indicates your desire for external support and protection, especially when facing difficulties.
+
+                - If you dream of the police resolving a dispute, it indicates you are concerned about conflicts in your environment and hope to restore balance.
+
+            - id: doctor
+              name: Doctor
+              weight: 1500
+              cover: /image/luck/dream_interpretation/character/doctor.png
+              icon: 🧑‍⚕️
+              meaning: Dreaming of a doctor symbolizes healing, care, and problem-solving. It may reflect your concern for health or a hope to find solutions to certain problems.
+              interpretations: >
+                - Dreaming of a doctor treating you indicates concerns about your health or a desire for help from others to solve problems.
+
+                - Dreaming of a doctor prescribing medicine suggests you need external assistance or guidance to restore balance in life.
+
+                - Dreaming of becoming a doctor means you have the ability to offer support and care to others, or a desire to take on more responsibility.
+
+                - If you dream of a doctor unable to heal you, it symbolizes feelings of helplessness about certain issues or worries that problems cannot be resolved.
+
+                - Dreaming of a doctor performing surgery indicates the need to solve problems at their root, even if it involves painful processes.
+
+                - Dreaming of a doctor comforting you suggests a desire for care from others or a need for more emotional support.
+
+                - Dreaming of a doctor telling you you're healed indicates hope for the future and a belief that problems will soon be resolved.
+
+            - id: criminal
+              name: Criminal
+              weight: 1700
+              cover: /image/luck/dream_interpretation/character/criminal.png
+              icon: 🚨
+              meaning: Dreaming of a criminal symbolizes the dark side of the psyche, guilt, or fear of unlawful behavior. It may reflect concerns about unethical actions or feeling troubled by negative emotions.
+              interpretations: >
+                - Dreaming of being chased by a criminal suggests guilt over certain actions or fear of confronting real-life problems.
+
+                - Dreaming of becoming a criminal symbolizes guilt over improper behavior or a rebellious attitude towards societal norms.
+
+                - Dreaming of a criminal being caught indicates a desire for justice to be served or problems to be resolved.
+
+                - If you dream of a criminal breaking into your home, it indicates worries about external threats, especially a sense of insecurity.
+
+                - Dreaming of fighting with a criminal suggests you are battling negative emotions or external challenges.
+
+                - Dreaming of a criminal being sentenced symbolizes a desire to see wrongs corrected or to be free from guilt and remorse.
+
+                - Dreaming of a criminal escaping suggests anxiety over procrastinating or failing to address certain issues in time.
+
+            - id: child
+              name: Child
+              weight: 1800
+              cover: /image/luck/dream_interpretation/character/child.png
+              icon: 👶
+              meaning: A child symbolizes innocence, hope, and new beginnings. Dreaming of a child often represents your inner innocence, creativity, or your hopes for growth and the future.
+              interpretations: >
+                - Dreaming of a happy child signifies that you feel your life is full of hope and vitality, symbolizing inner joy and contentment.
+
+                - Dreaming of a crying child suggests there may be an unmet need or a sense of emotional loss deep within you.
+
+                - If you dream of taking care of a child, it indicates you are nurturing new ideas or responsibilities and are optimistic about the future.
+
+                - Dreaming of a lost child means you may feel confused or directionless in life and need more guidance.
+
+                - Dreaming of becoming a child symbolizes a desire to return to a simple, pure state of life or an attempt to escape the pressures of the adult world.
+
+                - If you dream of a sick child, it suggests that an important aspect of your life might be in trouble and requires your attention and care.
+
+                - Dreaming of a child running and playing signifies a longing for freedom and an unrestrained life.
+
+                - Dreaming of a child crying for help indicates that you may need to listen to an inner need or face a challenge in real life.
+
+                - If you dream of a child growing up, it symbolizes your acceptance of growth and change, or that something new is about to mature.
+
+                - Dreaming of a group of children suggests that your life is filled with new opportunities and possibilities, or that things are developing positively.
+
+            - id: first_love
+              name: First Love
+              weight: 2000
+              cover: /image/luck/dream_interpretation/character/first_love.png
+              icon: 💖
+              meaning: First love symbolizes innocence, romance, and past emotions. Dreaming of a first love often represents nostalgia for your youth or unresolved feelings.
+              interpretations: >
+                - Dreaming of a smiling first love means you still cherish beautiful memories of the past, symbolizing nostalgia for pure love.
+
+                - Dreaming of reuniting with your first love suggests that in real life, you may desire to revisit some lost feelings or experiences.
+
+                - If you dream of your first love being with someone else, it means you have accepted the end of the past and are ready to move forward.
+
+                - Dreaming of arguing with your first love indicates that you may still feel dissatisfied with certain things from the past or have not completely let go.
+
+                - If you dream of returning to a scene with your first love, it symbolizes reflection on your emotional experiences during youth, possibly a desire to recapture that feeling.
+
+                - Dreaming of your first love giving you a gift means you might be seeking emotional fulfillment or recognition in real life.
+
+                - Dreaming of your first love leaving implies that you are gradually letting go of past emotions and are ready to embrace a new life.
+
+                - Dreaming of rekindling your relationship with your first love suggests that you may still hold expectations for unresolved emotions in your heart.
+
+                - If you dream of your first love crying, it indicates you may still feel guilty or regretful about unfinished emotions.
+
+                - Dreaming of your first love getting married signifies that you have completely moved on from the past and are ready to embrace new emotional relationships.
+
+            - id: ex
+              name: Ex
+              weight: 2100
+              cover: /image/luck/dream_interpretation/character/ex.png
+              icon: 💔
+              meaning: An ex symbolizes unresolved emotions, past relationships, and experiences of growth. Dreaming of an ex often reflects reviewing past relationships or areas that have not been fully healed.
+              interpretations: >
+                - Dreaming of your ex contacting you signifies that you are still reflecting on the past relationship and may not have fully moved on.
+
+                - Dreaming of reconciling with your ex means you may subconsciously still be dependent on or have expectations for the relationship.
+
+                - If you dream of your ex getting married, it indicates that you have let go of past emotions and are ready for a new chapter in life.
+
+                - Dreaming of arguing with your ex suggests that you are still processing unresolved emotional conflicts.
+
+                - Dreaming of your ex with a new partner indicates that you are gradually accepting reality and starting to look forward.
+
+                - Dreaming of your ex smiling at you symbolizes inner peace and acceptance of the past.
+
+                - If you dream of your ex crying, it suggests that you may still feel regretful or sorrowful over what was lost or mistakes made.
+
+                - Dreaming of your ex apologizing to you signifies that you are seeking more emotional release and closure.
+
+                - Dreaming of leaving your ex implies that you have decided to completely step out of the shadows of the past and are ready to start a new life.
+
+                - If you dream of your ex hurting you again, it reminds you to be more cautious in your emotional choices and avoid repeating past mistakes.
+
+
+        - id: animal
+          name: Animal
+          weight: 200
+          icon: 🦄
+          kind:
+            - id: lion
+              name: Lion
+              weight: 100
+              cover: /image/luck/dream_interpretation/animal/lion.png
+              icon: 🦁
+              meaning: The lion symbolizes strength, courage, and leadership. Dreaming of a lion often represents your inner confidence and authority, or it may reflect your readiness for a challenge or confrontation.
+              interpretations: >
+                - If the lion in the dream is gentle or friendly, it means your inner strength is controlled and calm, and you are able to handle situations in a peaceful way.
+
+                - If the lion roars in the dream, it symbolizes internal conflict or external challenges, reminding you to show more courage.
+
+                - Dreaming of being chased by a lion suggests you feel pressured by a powerful force or responsibility in life.
+
+                - Seeing an injured lion in a dream indicates that you may feel vulnerable or have lost confidence in certain areas.
+
+                - If the lion in the dream attacks you, it represents the pressure you feel when facing a major challenge or difficulty.
+
+                - Dreaming of riding a lion symbolizes that you are in control of your power or are gaining leadership.
+
+                - Walking alongside a lion in your dream implies you are at peace with your own strength and balance.
+
+                - Dreaming of a trapped lion means you feel that your potential or strength is being restricted.
+
+                - If the lion in the dream dies, it symbolizes that you may be losing an important source of power or status.
+
+                - Dreaming of becoming a lion means you are nurturing greater confidence and leadership within yourself.
+
+            - id: tiger
+              name: Tiger
+              weight: 200
+              cover: /image/luck/dream_interpretation/animal/tiger.png
+              icon: 🐯
+              meaning: The tiger represents primal strength and passion. Dreaming of a tiger often symbolizes hidden threats or challenges, and can also reflect your intense desires and instincts.
+              interpretations: >
+                - If you dream of a tiger attacking you, it means you may be confronting an internal fear or external danger.
+
+                - A calm and non-threatening tiger in your dream indicates that you have mastered your instincts and desires.
+
+                - Dreaming of riding a tiger symbolizes that you are harnessing great power and successfully overcoming difficulties in life.
+
+                - Seeing an injured tiger in your dream means you might be suppressing your passion or strength.
+
+                - Dreaming of being chased by a tiger suggests that you are avoiding certain emotions or responsibilities.
+
+                - A trapped or caged tiger in a dream indicates that you feel your desires or abilities are being restricted.
+
+                - Hearing a tiger roar in the distance symbolizes that a fear or threat is looming in your mind.
+
+                - If the tiger protects you in the dream, it means there is a strong inner force supporting you as you face challenges.
+
+                - Dreaming of fighting a tiger represents the struggles or internal conflicts you are currently facing.
+
+                - Seeing a tiger swimming in the water signifies that you are controlling your emotional or psychological strength.
+
+            - id: horse
+              name: Horse
+              weight: 300
+              cover: /image/luck/dream_interpretation/animal/horse.png
+              icon: 🐎
+              meaning: The horse symbolizes freedom, drive, and vitality. Dreaming of a horse reflects your desire for freedom or the motivation to pursue something.
+              interpretations: >
+                - Dreaming of riding a horse means you feel in control of your life and are moving forward toward your goals.
+
+                - If the horse in your dream is out of control or running wildly, it suggests that you may feel things in your life are beyond your control.
+
+                - Seeing an injured horse indicates that you feel exhausted or restricted in some area.
+
+                - Dreaming of a horse running symbolizes your pursuit of freedom and life goals.
+
+                - Being kicked by a horse in a dream suggests that you have encountered an unexpected obstacle or setback.
+
+                - If the horse is running through water, it symbolizes the free flow of emotions and energy within you.
+
+                - Dreaming of feeding a horse indicates that you are nurturing a talent or maintaining an important relationship.
+
+                - Seeing a horse climbing a mountain suggests that you are striving toward a lofty goal.
+
+                - If you dream of a white horse, it means you are seeking purity and spiritual elevation.
+
+                - Dreaming of a herd of horses represents that you feel energized and supported in your social relationships.
+
+            - id: elephant
+              name: Elephant
+              weight: 400
+              cover: /image/luck/dream_interpretation/animal/elephant.png
+              icon: 🐘
+              meaning: The elephant symbolizes wisdom, strength, and stability. Dreaming of an elephant often signifies your pursuit of stability and perseverance, or it may reflect your thoughtful approach to a situation.
+              interpretations: >
+                - Dreaming of a slow-walking elephant represents that you approach problems with calmness and steadiness.
+
+                - Riding an elephant in your dream suggests that you are in control of a complex and powerful situation.
+
+                - Dreaming of an elephant attacking you implies that you feel overwhelmed by a strong emotion or responsibility.
+
+                - Seeing a baby elephant means you are nurturing a new talent or relationship.
+
+                - Dreaming of an elephant in water symbolizes the release and balance of emotions.
+
+                - A trapped elephant in a dream represents feeling burdened by responsibilities or obligations in life.
+
+                - Dreaming of a herd of elephants signifies that you have strong social support.
+
+                - If the elephant in the dream dies, it symbolizes the loss of an important source of strength or support.
+
+                - Dreaming of an elephant protecting you indicates that you have a strong support system when facing challenges.
+
+                - Walking with an elephant in your dream suggests that your life is moving toward stability and success.
+
+            - id: wolf
+              name: Wolf
+              weight: 500
+              cover: /image/luck/dream_interpretation/animal/wolf.png
+              icon: 🐺
+              meaning: The wolf symbolizes independence, wildness, and teamwork. Dreaming of wolves often represents feelings of loneliness or a desire for group support.
+              interpretations: >
+                - Dreaming of a wolf howling in the distance indicates your longing for freedom and independence.
+
+                - If you dream of a pack of wolves surrounding you, it symbolizes tension and unease in your relationships.
+
+                - Dreaming of fighting a wolf suggests you are facing a strong challenge or conflict.
+
+                - If you dream of a wolf chasing you, it implies that you are avoiding a certain reality or responsibility.
+
+                - Dreaming of feeding a wolf symbolizes your attempt to tame your wild nature or control certain inner impulses.
+
+                - If you dream of coexisting peacefully with a wolf, it indicates harmony with your inner wildness.
+
+                - Dreaming of being bitten by a wolf means you feel threatened by something approaching.
+
+                - Dreaming of a wolf walking in the snow symbolizes you are going through a period of loneliness or coldness.
+
+                - If the wolf in your dream is guarding you, it represents protection and support from a powerful force.
+
+                - Dreaming of an injured wolf suggests that you may have lost your independence or strength in a certain situation.
+
+            - id: snake
+              name: Snake
+              weight: 600
+              cover: /image/luck/dream_interpretation/animal/snake.png
+              icon: 🐍
+              meaning: The snake symbolizes transformation, renewal, and potential danger. Dreaming of snakes is often associated with change or inner fears, and may also represent concerns about the unknown.
+              interpretations: >
+                - Dreaming of a snake shedding its skin symbolizes rebirth and self-renewal.
+
+                - If the snake in your dream bites you, it represents betrayal or hidden danger.
+
+                - Dreaming of a coiled snake indicates you are facing inner confusion or a complicated situation.
+
+                - If you dream of a snake swimming in water, it symbolizes emotional unrest and flow within you.
+
+                - Dreaming of being chased by a snake implies that you are avoiding certain inner fears or real-life issues.
+
+                - If you dream of killing a snake, it means you have successfully overcome a difficulty or fear.
+
+                - Dreaming of many snakes wrapping around you indicates that you feel surrounded by complex emotions or problems.
+
+                - If you dream of a snake entering your home, it suggests that the challenges you face may come from the core of your life.
+
+                - Dreaming of a snake fighting with other animals symbolizes an intense conflict within yourself.
+
+                - If the snake in your dream is friendly towards you, it represents that you have come to terms with certain fears or anxieties.
+
+            - id: eagle
+              name: Eagle
+              weight: 700
+              cover: /image/luck/dream_interpretation/animal/eagle.png
+              icon: 🦅
+              meaning: The eagle symbolizes vision, freedom, and strength. Dreaming of eagles usually reflects a desire for freedom or a clear vision for the future.
+              interpretations: >
+                - Dreaming of an eagle soaring high in the sky symbolizes your clear pursuit of goals and broad vision.
+
+                - If you dream of an eagle hunting, it indicates that you are fully committed to pursuing a goal or dream.
+
+                - Dreaming of an injured eagle suggests that you feel lost or without direction.
+
+                - If the eagle in your dream protects you, it means that you are being guarded by a noble force.
+
+                - Dreaming of an eagle attacking you symbolizes that you are facing a powerful challenge or threat.
+
+                - If you dream of becoming an eagle, it means you are gaining more freedom and strength.
+
+                - Dreaming of an eagle fighting with other birds suggests that you are standing out in some form of competition.
+
+                - If you dream of an eagle flying over water, it symbolizes balance between emotion and reason.
+
+                - Dreaming of a group of eagles represents that you are receiving support and strength from a team in your life.
+
+                - If you dream of an eagle flying away from you, it implies that you may be losing an important opportunity or goal.
+
+            - id: monkey
+              name: Monkey
+              weight: 800
+              cover: /image/luck/dream_interpretation/animal/monkey.png
+              icon: 🐒
+              meaning: The monkey symbolizes intelligence, flexibility, and curiosity. Dreaming of monkeys usually indicates your ability to solve problems and adapt.
+              interpretations: >
+                - Dreaming of a monkey jumping on a tree symbolizes your flexibility in facing challenges.
+
+                - If you dream of a monkey mimicking human behavior, it indicates that you may be reflecting on your own behavior or the influence of others.
+
+                - Dreaming of a monkey stealing food suggests that you may be facing unethical behavior in your life.
+
+                - If the monkey in your dream is friendly, it means you can handle complex situations in relationships with flexibility.
+
+                - Dreaming of a monkey trapped in a cage symbolizes feeling restricted by certain rules or limitations.
+
+                - If you dream of feeding a monkey, it indicates that you are nurturing creativity or problem-solving abilities.
+
+                - Dreaming of a monkey attacking you suggests that you may feel troubled while dealing with emotions or pressure.
+
+                - Dreaming of a monkey playing indicates that you are seeking fun and freedom in life.
+
+                - If you dream of a group of monkeys, it suggests that you may encounter a complex and changing situation in work or life.
+
+                - Dreaming of a monkey running away implies that you are avoiding certain responsibilities or problems.
+
+            - id: dog
+              name: Dog
+              weight: 900
+              cover: /image/luck/dream_interpretation/animal/dog.png
+              icon: 🐕
+              meaning: Dogs symbolize loyalty, protection, and friendship. Dreaming of dogs often reflects your appreciation for trust and loyal relationships.
+              interpretations: >
+                - Dreaming of a friendly dog symbolizes the loyalty and protection you feel in your relationships.
+
+                - If you dream of a dog chasing you, it indicates you may be avoiding some responsibility or commitment.
+
+                - Dreaming of being bitten by a dog suggests you may feel betrayed by a friend or someone you trust.
+
+                - If the dog in your dream is guarding you, it means you have a strong support system in your life.
+
+                - Dreaming of an injured dog symbolizes feelings of vulnerability or disappointment in a relationship.
+
+                - If you dream of petting a dog, it signifies feelings of safety and comfort in your life.
+
+                - Dreaming of a dog chasing other animals suggests you may be overly aggressive in protecting your or others' interests.
+
+                - If you dream of a pack of dogs, it indicates a wide circle of support and loyal friends in your life.
+
+                - Dreaming of a dog barking in the distance symbolizes potential dangers or threats you may face.
+
+                - If you dream of a dog dying, it suggests you might be losing an important friendship or support.
+
+            - id: cat
+              name: Cat
+              weight: 1000
+              cover: /image/luck/dream_interpretation/animal/cat.png
+              icon: 🐈
+              meaning: Cats symbolize independence, mystery, and agility. Dreaming of cats often represents your pursuit of freedom and self-awareness.
+              interpretations: >
+                - Dreaming of a cat gazing at you from a distance symbolizes curiosity and caution toward something unknown.
+
+                - If you dream of a friendly cat, it indicates that you feel comfortable and at ease in your life.
+
+                - Dreaming of being scratched by a cat suggests that you may be troubled by some hidden emotions or issues.
+
+                - If the cat in your dream lingers around you, it signifies reflection on your independence and autonomy.
+
+                - Dreaming of a black cat symbolizes feelings of awe or unease toward some unknown or mysterious force.
+
+                - If you dream of feeding a cat, it means you are focusing on details or nurturing emotions in your life.
+
+                - Dreaming of a cat catching a mouse symbolizes your wit and sharpness when facing difficulties.
+
+                - Dreaming of a cat swimming in water indicates you have maintained balance and calmness in your emotions.
+
+                - If you dream of a group of cats, it suggests you may be dealing with multiple complex emotions or issues.
+
+                - Dreaming of a cat disappearing signifies a potential loss of personal freedom or independence.
+
+            - id: mouse
+              name: Mouse
+              weight: 1100
+              cover: /image/luck/dream_interpretation/animal/mouse.png
+              icon: 🐭
+              meaning: Mice symbolize caution, carefulness, and concealment. Dreaming of mice usually indicates your attention to small yet significant issues.
+              interpretations: >
+                - Dreaming of a mouse stealing food symbolizes concerns about potential loss or hidden threats.
+
+                - If you dream of chasing a mouse, it indicates you are dealing with a hidden worry or issue.
+
+                - Dreaming of a mouse moving in the dark suggests fears regarding unknown or hidden problems.
+
+                - If the mouse in your dream is trapped, it means you feel powerless when facing a particular problem.
+
+                - Dreaming of a mouse being caught symbolizes successful revelation and resolution of a hidden issue.
+
+                - If you dream of caring for a mouse, it indicates you may be inadvertently nurturing some negative habits or behaviors.
+
+                - Dreaming of a mouse running around your house suggests you are dealing with small issues or pressures within the family.
+
+                - If you dream of a large group of mice, it signifies feeling overwhelmed by numerous small problems.
+
+                - Dreaming of a mouse and a cat together symbolizes your cleverness when facing contradictions or complex relationships.
+
+                - Dreaming of a mouse escaping indicates you may be avoiding some small yet significant responsibilities.
+
+            - id: sheep
+              name: Sheep
+              weight: 1200
+              cover: /image/luck/dream_interpretation/animal/sheep.png
+              icon: 🐑
+              meaning: Sheep symbolize docility, obedience, and collective consciousness. Dreaming of sheep often indicates a pursuit of peace and harmony.
+              interpretations: >
+                - Dreaming of a flock of sheep in a pasture symbolizes feelings of safety and harmony in your life.
+
+                - If you dream of feeding sheep, it indicates you are cultivating a peaceful environment or relationship.
+
+                - Dreaming of a lost sheep suggests feelings of confusion or lack of direction in your life.
+
+                - If you dream of a black sheep, it means you may feel like an outsider or misfit in a group.
+
+                - Dreaming of sheep being attacked by wolves symbolizes concerns or unease about external threats.
+
+                - If you dream of riding on the back of a sheep, it indicates control over a gentle power.
+
+                - Dreaming of a flock of sheep being scattered suggests facing division or disagreement.
+
+                - If you dream of sheep drinking water in a stream, it symbolizes your pursuit of inner peace and contentment.
+
+                - Dreaming of sheep wool indicates a pursuit of and protection over material wealth.
+
+                - If you dream of sheep being sheared, it suggests you may be experiencing a loss or sacrifice.
+
+            - id: pig
+              name: Pig
+              weight: 1300
+              cover: /image/luck/dream_interpretation/animal/pig.png
+              icon: 🐖
+              meaning: The pig symbolizes abundance, satisfaction, and enjoyment. Dreaming of a pig often indicates your contentment with and pursuit of material life.
+              interpretations: >
+                - Dreaming of a fat pig symbolizes your expectations for a rich material life.
+
+                - If you dream of feeding a pig, it indicates you are preparing for future harvests or successes.
+
+                - Dreaming of a dirty pig suggests you feel unclean or dissatisfied in certain areas.
+
+                - If the pig in your dream is rolling in mud, it means you are enjoying the pleasures and satisfactions of life.
+
+                - Dreaming of a pig being slaughtered symbolizes your concerns or losses regarding certain wealth or resources.
+
+                - If you dream of riding a pig, it indicates you can control and enjoy the abundance of the material world.
+
+                - Dreaming of a group of pigs means you have received ample resources or support in life.
+
+                - If you dream of a pig eating, it symbolizes your full utilization of resources in life.
+
+                - Dreaming of the sound of pigs suggests you may be overly eager or greedy in pursuing material benefits.
+
+                - If you dream of a pig running away, it means you might have lost some precious material resources.
+
+            - id: ox
+              name: Ox
+              weight: 1400
+              cover: /image/luck/dream_interpretation/animal/ox.png
+              icon: 🐂
+              meaning: The ox symbolizes strength, endurance, and stability. Dreaming of an ox often indicates your pursuit of lasting success and stability.
+              interpretations: >
+                - Dreaming of a strong ox symbolizes your strong motivation and persistence in work or life.
+
+                - If you dream of an ox plowing, it indicates you are making efforts and investments for long-term success.
+
+                - Dreaming of an ox in a field symbolizes your solid and stable work ethic.
+
+                - If you dream of an injured ox, it suggests you may encounter some setbacks or problems in your work.
+
+                - Dreaming of an ox pulling a cart indicates you are bearing a lot of responsibilities and pressures.
+
+                - If you dream of riding an ox, it symbolizes your ability to harness great power in life.
+
+                - Dreaming of an ox drinking water by the river signifies you have found a balance and satisfaction in life.
+
+                - If you dream of an ox being hunted, it symbolizes your facing external challenges and pressures.
+
+                - Dreaming of a group of oxen means you feel strength and support within a community.
+
+                - If you dream of an ox's horn being broken, it indicates you may have lost some solid support or resources.
+
+            - id: chicken
+              name: Chicken
+              weight: 1500
+              cover: /image/luck/dream_interpretation/animal/chicken.png
+              icon: 🐔
+              meaning: The chicken symbolizes hard work, prosperity, and family. Dreaming of a chicken often indicates your focus on family life and wealth.
+              interpretations: >
+                - Dreaming of a hen laying eggs symbolizes the rich rewards and successes you are gaining in life.
+
+                - If you dream of feeding chickens, it indicates you are working hard to create wealth and resources for the future.
+
+                - Dreaming of a rooster crowing suggests you are welcoming a new beginning or opportunity in life.
+
+                - If you dream of chickens foraging, it signifies your full utilization of opportunities and resources in life.
+
+                - Dreaming of chickens fighting with other animals symbolizes your facing competition and challenges in life.
+
+                - If you dream of riding on a chicken's back, it indicates you can manage the busyness and challenges of life.
+
+                - Dreaming of a flock of chickens being disturbed suggests you may be facing some turbulence or unease in family life.
+
+                - If you dream of a cracked egg, it symbolizes your worries about potential losses or missed opportunities.
+
+                - Dreaming of a hen protecting its chicks indicates your care and protection in family life.
+
+                - If you dream of chickens being slaughtered, it means you may have lost some important opportunities or resources in life.
+
+            - id: dragon
+              name: Dragon
+              weight: 1600
+              cover: /image/luck/dream_interpretation/animal/dragon.png
+              icon: 🐉
+              meaning: The dragon symbolizes power, wisdom, and authority. Dreaming of a dragon often indicates your desire for extraordinary power and achievement.
+              interpretations: >
+                - Dreaming of a flying dragon symbolizes the strength and motivation you feel in pursuing your dreams.
+
+                - If you dream of riding on a dragon's back, it indicates you are mastering a powerful force.
+
+                - Dreaming of a dragon breathing fire suggests you are dealing with intense emotions or challenges.
+
+                - If the dragon in your dream is guarding you, it symbolizes a strong protective force around you.
+
+                - Dreaming of a dragon flying in the clouds signifies your confidence and expectations for future visions.
+
+                - If you dream of fighting with a dragon, it symbolizes your fearlessness in facing strong competition or challenges.
+
+                - Dreaming of a dragon swimming in water indicates you have found balance between emotion and reason.
+
+                - If you dream of a dragon disappearing in front of you, it suggests you may be losing an important opportunity or power.
+
+                - Dreaming of a group of dragons signifies endless possibilities and support in your life.
+
+                - If you dream of a dragon stirring up a storm, it means you are undergoing significant changes or challenges.
+
+            - id: fish
+              name: Fish
+              weight: 1700
+              cover: /image/luck/dream_interpretation/animal/fish.png
+              icon: 🐟
+              meaning: Fish symbolizes abundance, flow, and potential. Dreaming of fish usually indicates your expectations and developments regarding future potential.
+              interpretations: >
+                - Dreaming of fish swimming in water symbolizes your free and smooth progress in life.
+
+                - If you dream of catching a fish, it means you have successfully seized an important opportunity.
+
+                - Dreaming of fish jumping out of the water suggests that you are experiencing new breakthroughs and advancements in life.
+
+                - If the fish in your dream swims in shallow water, it implies you may feel restricted in certain areas.
+
+                - Dreaming of a school of fish swimming symbolizes that you have received much support and opportunities in life.
+
+                - If you dream of eating fish, it indicates that you are absorbing new knowledge or experiences.
+
+                - Dreaming of fish disappearing in water suggests that you may have lost some potential opportunities.
+
+                - If you dream of fish flying, it symbolizes that you have transcended boundaries and limitations in your dreams.
+
+                - Dreaming of fish eggs indicates that you are full of expectations for future potential opportunities.
+
+                - If you dream of dead fish, it means you may have lost some important potential or resources.
+
+            - id: bird
+              name: Bird
+              weight: 1800
+              cover: /image/luck/dream_interpretation/animal/bird.png
+              icon: 🐦
+              meaning: Birds symbolize freedom, hope, and spiritual elevation. Dreaming of birds typically reflects your desire for freedom and self-expression.
+              interpretations: >
+                - Dreaming of flying birds symbolizes that you are filled with motivation and hope in your pursuit of freedom and dreams.
+
+                - If you dream of bird songs, it indicates that you feel joy and peace in your life.
+
+                - Dreaming of a bird in a cage suggests that you may feel restricted or oppressed in certain aspects.
+
+                - If you dream of feeding birds, it means you are nurturing new hopes or dreams.
+
+                - Dreaming of birds building nests symbolizes that you are creating a stable foundation for the future in your life.
+
+                - If you dream of a flock of birds flying over, it indicates that you feel support and connection within a community.
+
+                - Dreaming of an injured bird suggests that you may encounter difficulties or setbacks in pursuing freedom or dreams.
+
+                - If you dream of catching a bird, it means you have successfully seized an important opportunity or idea.
+
+                - Dreaming of bird eggs symbolizes potential opportunities or creativity.
+
+                - If you dream of a bird on your shoulder, it indicates that you feel a sense of guidance or protective power in your life.
+
+            - id: bear
+              name: Bear
+              weight: 1900
+              cover: /image/luck/dream_interpretation/animal/bear.png
+              icon: 🐻
+              meaning: Bears symbolize strength, courage, and independence. Dreaming of bears often reflects your resilience and confidence in facing challenges.
+              interpretations: >
+                - Dreaming of a bear symbolizes that you possess strong power and courage in your life.
+
+                - If you dream of fighting a bear, it means you are facing a significant challenge or competition.
+
+                - Dreaming of a bear hibernating suggests that you need time for recovery and reflection in your life.
+
+                - If you dream of a bear chasing you, it indicates that you may feel pressure or tension in your life.
+
+                - Dreaming of a bear wandering in the forest symbolizes that you have found tranquility and balance in life.
+
+                - If you dream of a bear protecting you, it indicates that you feel supported by a sense of security and strength in your life.
+
+                - Dreaming of a bear hunting suggests that you are filled with determination and power in pursuing your goals.
+
+                - If you dream of riding on a bear's back, it means you can handle significant challenges in life.
+
+                - Dreaming of an injured bear symbolizes that you may have experienced a loss or setback in your life.
+
+                - If you dream of a group of bears, it indicates that you have received strong collective support and power in your life.
+
+            - id: owl
+              name: Owl
+              weight: 2000
+              cover: /image/luck/dream_interpretation/animal/owl.png
+              icon: 🦉
+              meaning: Owls symbolize wisdom, insight, and mystery. Dreaming of owls often reflects your exploration and understanding of the unknown.
+              interpretations: >
+                - Dreaming of an owl symbolizes that you possess deep insight and wisdom in your life.
+
+                - If you dream of an owl flying at night, it indicates that you are seeking truth or understanding in a complex situation.
+
+                - Dreaming of an owl hooting suggests that you may be facing a warning or omen in your life.
+
+                - If you dream of an owl in a tree, it indicates that you are observing your surroundings and seeking deeper understanding.
+
+                - Dreaming of an owl hunting symbolizes that you can keenly seize opportunities or reveal truths in your life.
+
+                - If you dream of an owl interacting with other birds, it indicates that you are sharing wisdom or guiding others.
+
+                - Dreaming of an injured owl suggests that you may encounter obstacles or losses in your quest for truth.
+
+                - If you dream of an owl's eyes, it indicates that you have extraordinary insight and understanding regarding a particular issue.
+
+                - Dreaming of an owl guarding you symbolizes that you are protected on your path to wisdom.
+
+                - If you dream of an owl taking something away, it suggests that you are letting go of things you no longer need in life.
+
+            - id: leopard
+              name: Leopard
+              weight: 2100
+              cover: /image/luck/dream_interpretation/animal/leopard.png
+              icon: 🐆
+              meaning: The leopard symbolizes agility, determination, and hidden strength. Dreaming of a leopard often indicates the speed and decisiveness you exhibit in pursuing your goals.
+              interpretations: >
+                - Dreaming of a running leopard symbolizes your rapid pursuit of goals in life.
+
+                - If you dream of being chased by a leopard, it indicates a sense of urgency or pressure in your life.
+
+                - Dreaming of a leopard hunting suggests that you are fully focused on a particular goal or opportunity.
+
+                - If you dream of a leopard in a tree, it represents hiding your strengths while waiting for the right moment.
+
+                - Dreaming of taming a leopard symbolizes your control over a powerful force in your life.
+
+                - If you dream of a leopard fighting other animals, it indicates that you are facing intense competition and challenges.
+
+                - Dreaming of an injured leopard suggests that you may encounter setbacks in your pursuit of goals.
+
+                - If you dream of a group of leopards, it signifies the strong collective power and determination you feel in life.
+
+                - Dreaming of a leopard's spots symbolizes the uniqueness and individuality you display in life.
+
+                - If you dream of a leopard moving under the moonlight, it signifies the mystery and strength you possess while pursuing your goals.
+
 
 zh-cn:
   luck_lists:
@@ -6031,6 +7115,1093 @@ zh-cn:
                 content: This year's luck is outstanding. Your career is on a steady rise, finances are flourishing, and love life is harmonious. Take care of your health and make the most of opportunities that come your way.
                 weight: 600
 
+    - id: dream_interpretation
+      name: 解梦
+      weight: 90
+      cover: /image/luck/dream_interpretation/cover.png
+      description: >
+        - 梦境分析源于人类对无意识和内心世界的探究，认为梦境反映了个人潜意识中的情感、欲望、恐惧与未解的问题。分析梦境的原因在于，梦常常是我们在清醒状态下无法直面或理解的内心冲突的反映。通过解读梦境中的象征物（如动物、人物或场景），我们能够更好地理解潜在的心理状态，挖掘深层的情感需求与压抑的情绪。
+
+        - 梦境分析的意义在于，它使人能够通过解读梦境中的象征符号，获得对现实生活中问题的启发或指导。梦境中的象征物往往与人们的现实经验和心理状态相关联，分析这些象征可以帮助我们更好地理解生活中的挑战、欲望与潜在的解决之道，从而引导个人成长和心理发展。
+      category:
+        - id: character
+          name: 人物
+          weight: 100
+          icon: 🧑‍💼
+          kind:
+            - id: husband
+              name: 丈夫
+              weight: 100
+              cover: /image/luck/dream_interpretation/character/husband.png
+              icon: 🤵
+              meaning: 梦见丈夫通常反映了你在现实中对伴侣的依赖、情感状态或对婚姻的关切。它也可能代表你对家庭生活的期望或对婚姻关系的恐惧与不安。
+              interpretations: >
+                - 梦见丈夫拥抱你，意味着你们之间的关系和谐，彼此信任与关爱。
+
+                - 如果梦见丈夫离开你，可能暗示你对感情或婚姻有某种不安全感。
+
+                - 梦见丈夫生病或受伤，象征你对他健康的担忧或婚姻中隐藏的矛盾。
+
+                - 梦见丈夫在笑，表示你对婚姻的满意与幸福。
+
+                - 梦见丈夫对你冷漠，意味着你感到他在某方面忽略了你的需求，内心有些孤独。
+
+                - 如果梦到丈夫在梦中非常忙碌，暗示你担心他的工作或生活压力影响了你们的关系。
+
+                - 梦见与丈夫争吵，表明你内心对婚姻关系有未解决的冲突或压力。
+
+                - 梦见丈夫送你礼物，表示你们的关系有所改善，或他在努力维护婚姻。
+
+                - 梦见丈夫和他人亲近，可能暗示你对伴侣的忠诚有疑虑或恐惧。
+
+                - 梦见丈夫变得比现实中年轻，象征你们的感情在回归最初的甜蜜与热情。
+
+            - id: wife
+              name: 妻子
+              weight: 200
+              cover: /image/luck/dream_interpretation/character/wife.png
+              icon: 👰
+              meaning: 梦见妻子通常反映了你对婚姻、情感生活的看法。它也可能象征你对生活中关怀、温柔与支持的需求，或者对婚姻中未解决的问题的担忧。
+              interpretations: >
+                - 梦见妻子笑容满面，象征你们的关系幸福、和谐，充满爱的关怀。
+
+                - 梦见妻子哭泣，暗示你内心对婚姻中某些方面感到不满或遗憾。
+
+                - 如果梦见妻子生病，可能表示你担心她的健康，或担忧婚姻中的矛盾。
+
+                - 梦见妻子和你亲密，意味着你们的感情在不断加深，彼此理解与支持。
+
+                - 梦见与妻子争吵，象征你们之间存在未解决的矛盾或沟通不畅。
+
+                - 如果梦见妻子不理你，暗示你感到她在某方面忽略了你的需求。
+
+                - 梦见妻子变得冷漠，可能意味着你在婚姻中感到失落或不被理解。
+
+                - 梦见妻子为你准备饭菜，表示你对她的照顾与付出心存感激。
+
+                - 梦见妻子变得比现实中年轻，象征你们的感情重新焕发活力。
+
+                - 梦见妻子对你生气，可能暗示你在某些事情上感到自己有愧，或担心她的情绪变化。
+
+            - id: couple
+              name: 情侣
+              weight: 300
+              cover: /image/luck/dream_interpretation/character/couple.png
+              icon: 💑
+              meaning: 梦见情侣象征着你的情感需求、亲密关系的状态以及对爱情的渴望。它也可能反映出你对爱情中某些未解决问题的关注或期待。
+              interpretations: >
+                - 梦见你和情侣在一起，象征着你们的感情稳定，关系健康。
+
+                - 梦见情侣亲吻，表示你们的情感交流顺畅，彼此的情感依赖很强。
+
+                - 如果梦见情侣争吵，意味着你在爱情中感到不满或对某些事情感到困扰。
+
+                - 梦见情侣牵手，暗示你们的感情非常牢固，彼此信任和依赖。
+
+                - 梦见情侣分手，可能暗示你对感情中的不安全感或对失去爱情的恐惧。
+
+                - 如果梦见情侣在远处，象征着你对爱情的期望和追求尚未实现。
+
+                - 梦见情侣拥抱，意味着你对亲密关系的渴望或对伴侣的深厚情感。
+
+                - 梦见情侣彼此冷漠，暗示你在感情中感到孤独或与伴侣的情感疏远。
+
+                - 梦见情侣互相照顾，表示你们的关系中有着深厚的情感支持。
+
+                - 梦见情侣走在一起，象征着你对爱情未来的希望与承诺。
+
+            - id: parents
+              name: 父母
+              weight: 400
+              cover: /image/luck/dream_interpretation/character/parents.png
+              icon: 👫
+              meaning: 梦见父母象征着你对家庭、传统价值观的认同与依赖。它也可能反映出你对自己生活中的责任感、保护欲望或关怀之情。
+              interpretations: >
+                - 梦见父母对你微笑，意味着你感到安全与被爱，家庭生活和谐幸福。
+
+                - 如果梦见父母争吵，暗示你对家庭中的矛盾或未解决的冲突感到不安。
+
+                - 梦见父母离世，表示你对生活中的重大变化感到焦虑或对失去家庭的恐惧。
+
+                - 梦见父母对你生气，象征着你对未达成的期望感到内疚或自责。
+
+                - 梦见与父母重逢，表示你对家庭关系的依赖或对家庭支持的渴望。
+
+                - 梦见父母给你建议，意味着你在生活中寻求方向或支持。
+
+                - 如果梦见父母健康，表示你对家庭生活感到满足与幸福。
+
+                - 梦见父母生病，暗示你对他们的健康有担忧或感到自己未能尽责。
+
+                - 梦见父母在做家务，表示你对家庭的责任感与关怀。
+
+                - 梦见父母照顾你，象征着你在现实生活中感到疲惫，需要更多的支持。
+
+            - id: relatives
+              name: 亲人
+              weight: 500
+              cover: /image/luck/dream_interpretation/character/relatives.png
+              icon: 💞
+              meaning: 梦见亲人象征着你对家庭关系的依赖、关心和情感纽带。它也可能反映出你对自己在家庭中的角色或责任的思考。
+              interpretations: >
+                - 梦见亲人团聚，意味着你对家庭关系的认同与感情的加强。
+
+                - 如果梦见亲人生病，暗示你对他们的关心或家庭中潜在的压力。
+
+                - 梦见亲人离世，表示你对家庭生活中某些重大变化的焦虑或恐惧。
+
+                - 梦见亲人争吵，象征着你对家庭中未解决的矛盾或紧张关系的不安。
+
+                - 梦见亲人照顾你，意味着你感受到家庭的温暖与支持。
+
+                - 梦见亲人对你生气，表示你感到自己在家庭中未能满足某些期望。
+
+                - 如果梦见亲人和谐共处，表示你对家庭生活感到满足与安心。
+
+                - 梦见亲人送你礼物，暗示你们的感情正在加强或得到认可。
+
+                - 梦见亲人离你而去，可能象征着你对失去家庭纽带的恐惧或孤独感。
+
+                - 梦见亲人笑容满面，意味着你对家庭生活的幸福与和谐充满信心。
+
+            - id: brother
+              name: 兄弟
+              weight: 600
+              cover: /image/luck/dream_interpretation/character/brother.png
+              icon: 👬
+              meaning: 梦见兄弟象征着亲密的家庭纽带、竞争或合作的关系。它也可能反映你内心中的某种矛盾，或对兄弟关系的重视与怀念。
+              interpretations: >
+                - 梦见与兄弟亲近，象征着你们之间的情感和谐，互相理解和支持。
+
+                - 如果梦见与兄弟争吵，表示你们之间存在未解决的矛盾，或你在现实生活中感受到竞争压力。
+
+                - 梦见兄弟帮助你，意味着你在生活中获得了家人的支持，尤其是情感上的帮助。
+
+                - 梦见兄弟受伤或生病，暗示你对他的关心或对你们关系的担忧。
+
+                - 如果梦见兄弟离你而去，象征你对失去家族纽带的恐惧或孤独感。
+
+                - 梦见兄弟获得成功，表示你对他感到骄傲，同时也反映出你内心的期望与目标。
+
+                - 梦见兄弟和你一起旅行，意味着你对共同经历的怀念或对彼此关系的重视。
+
+                - 如果梦见兄弟远离你，暗示你们之间可能有某种隔阂或你感到疏远。
+
+                - 梦见自己帮助兄弟，表示你在现实中愿意承担更多责任，关心家人。
+
+                - 梦见兄弟照顾你，象征着你对家庭关系的依赖与信任。
+
+            - id: sister
+              name: 姐妹
+              weight: 700
+              cover: /image/luck/dream_interpretation/character/sister.png
+              icon: 👭
+              meaning: 梦见姐妹通常代表家庭纽带、关怀与依赖的情感，也可能象征你对女性特质的认同或冲突。
+              interpretations: >
+                - 梦见与你的姐妹亲密互动，表示你们之间的关系融洽，情感联系深厚。
+
+                - 梦见姐妹哭泣，可能反映出你对她生活中的某种担忧，或你们之间存在的误解。
+
+                - 梦见与姐妹争吵，暗示你内心对某些家庭问题感到不满或有未解决的矛盾。
+
+                - 梦见姐妹向你求助，意味着你在生活中感到自己被依赖或承担了更多责任。
+
+                - 如果梦见姐妹结婚，象征你对她生活变化的关心，或对亲情的某种转变感到不安。
+
+                - 梦见姐妹生病，暗示你对她的健康或生活状态感到担忧。
+
+                - 梦见姐妹成功，象征你对她的骄傲，同时也反映你对自己未来的期望。
+
+                - 如果梦见姐妹离世，意味着你对家庭的失落感，或对某种情感关系的终结感到焦虑。
+
+                - 梦见与姐妹一起旅行，表示你对共同回忆的珍视，或你们关系中的愉快时光。
+
+                - 梦见与姐妹一起工作，象征你们之间的合作精神与彼此的支持。
+
+            - id: friend
+              name: 朋友
+              weight: 800
+              cover: /image/luck/dream_interpretation/character/friend.png
+              icon: 👫
+              meaning: 梦见朋友象征着社交关系、信任与支持。它可能反映出你对友情的重视，或对某些社交问题的关注。
+              interpretations: >
+                - 梦见与朋友愉快地交流，表示你对友情的满意，感到被理解与支持。
+
+                - 梦见朋友疏远你，可能暗示你对社交关系的不安或你内心对友情的担忧。
+
+                - 梦见朋友帮助你，意味着你在现实生活中感受到了友情的支持与关怀。
+
+                - 如果梦见与朋友争吵，暗示你们之间存在某种未解决的矛盾，或你对友情的期待未能满足。
+
+                - 梦见朋友生病，表示你对他们的健康或生活状态感到担忧。
+
+                - 梦见朋友获得成功，象征你对他们的骄傲，也反映出你对自己的期望与目标。
+
+                - 梦见朋友离你而去，暗示你对失去友情的恐惧或对某种情感变化的不安。
+
+                - 梦见与朋友一起旅行，表示你对友情的珍视与对共同经历的怀念。
+
+                - 梦见朋友背叛你，可能反映你内心对某些社交关系的不信任或怀疑。
+
+                - 梦见朋友给你礼物，象征着你们关系中的温情与相互支持。
+
+            - id: leader
+              name: 领导
+              weight: 900
+              cover: /image/luck/dream_interpretation/character/leader.png
+              icon: 👨‍💼
+              meaning: 梦见领导通常象征着权威、责任与压力。它反映了你对工作环境的感受，或你对权力关系的看法。
+              interpretations: >
+                - 梦见领导对你赞赏，表示你对自己能力的认可，也暗示你在工作中渴望更多的认可与尊重。
+
+                - 梦见领导对你生气，暗示你对工作的压力或你对自己在某些方面表现的不满。
+
+                - 如果梦见与领导发生冲突，表示你在工作中感到受限制，或对现有的权威有抵触情绪。
+
+                - 梦见领导给你任务，象征着你对工作责任的意识与对权力的接受。
+
+                - 梦见领导忽视你，可能反映出你对工作中的忽略感或不被重视的情绪。
+
+                - 如果梦见领导离职，意味着你对工作环境的变化感到不安或对领导风格的期望改变。
+
+                - 梦见领导给你奖励，表示你对工作的努力获得了认可，感到自豪。
+
+                - 梦见领导批评你，暗示你在现实中对自己的表现有某种不满或担忧。
+
+                - 梦见与领导一起工作，表示你在工作中渴望与权威人物建立更密切的联系。
+
+                - 梦见领导升职，可能象征着你对自己的职业发展有更高的期待。
+
+            - id: colleague
+              name: 同事
+              weight: 1000
+              cover: /image/luck/dream_interpretation/character/colleague.png
+              icon: 👨‍💻
+              meaning: 梦见同事反映了你对工作关系的看法与感受。它也可能象征着你对团队合作或工作压力的关注。
+              interpretations: >
+                - 梦见与同事合作愉快，表示你对工作环境的满意与对团队合作的信心。
+
+                - 梦见与同事发生冲突，暗示你在工作中感到紧张，或对某些问题有不同意见。
+
+                - 梦见同事帮助你，意味着你在工作中获得了支持与鼓励。
+
+                - 如果梦见同事忽视你，可能象征你对工作中的孤立感，或你感到自己的贡献未被认可。
+
+                - 梦见同事辞职，表示你对工作环境或团队结构的变化感到不安。
+
+                - 梦见同事表现出色，象征你对自己在工作中的表现有更高的期望。
+
+                - 梦见同事对你微笑，意味着你们的关系融洽，工作气氛和谐。
+
+                - 如果梦见与同事竞争，可能反映你在工作中感受到的压力或对职位提升的渴望。
+
+                - 梦见同事获得奖励，象征你对公平与努力被认可的期望。
+
+                - 梦见与同事一起出差，表示你对工作中与他人的合作感到满意。
+
+            - id: teacher
+              name: 老师
+              weight: 1100
+              cover: /image/luck/dream_interpretation/character/teacher.png
+              icon: 👩‍🏫
+              meaning: 梦见老师象征着学习、成长与指导。它通常反映你对知识的渴望或对权威人物的看法。
+              interpretations: >
+                - 梦见老师对你赞赏，表示你对自己学习能力的认可，也意味着你在生活中渴望得到更多的指导与支持。
+
+                - 梦见老师责备你，暗示你对自己的某些行为或表现感到不满，或对未完成的任务感到压力。
+
+                - 如果梦见老师对你冷漠，可能象征你对某些权威人物的怀疑或对自己能力的质疑。
+
+                - 梦见与老师交谈，表示你渴望得到更多的指导与帮助，特别是在某些领域中。
+
+                - 梦见老师生病，暗示你对某些指导者的健康或处境感到担忧。
+
+                - 梦见老师离职，意味着你对某种学习环境或权威关系的变化感到不安。
+
+                - 梦见老师给你布置作业，表示你在现实生活中感到有任务或责任需要完成。
+
+                - 如果梦见老师教导你，意味着你渴望在某些方面获得更多的知识与技能。
+
+                - 梦见与老师一起旅行，象征着你对成长与学习过程的重视。
+
+                - 梦见老师表扬你，表示你对自己在学习或生活中的努力感到自豪。
+
+            - id: classmate
+              name: 同学
+              weight: 1200
+              cover: /image/luck/dream_interpretation/character/classmate.png
+              icon: 👩‍🎓
+              meaning: 梦见同学象征着社交关系、学习环境与过去的回忆。它也可能反映你对青春时光或未完成的目标的怀念。
+              interpretations: >
+                - 梦见与同学相处融洽，表示你对人际关系的满意，或对青春时光的怀念。
+
+                - 梦见与同学争吵，可能象征你对某些未解决问题的困扰，或对自己过去的某种行为感到后悔。
+
+                - 梦见同学帮助你，意味着你在生活中感受到友情的支持，或对过去友谊的怀念。
+
+                - 梦见同学疏远你，暗示你对某些社交关系的不安或对过去未完成目标的失望。
+
+                - 梦见同学成功，表示你对他们的祝福与欣赏，也反映你对自己未来的期望。
+
+                - 梦见同学离世，象征你对过去时光的失落感，或对某种关系的终结感到不安。
+
+                - 梦见与同学一起学习，表示你对知识与成长过程的重视，或对过去求学经历的怀念。
+
+                - 梦见同学生病，暗示你对他们生活或健康状况的担忧，或对过去某种情感的伤痛。
+
+                - 如果梦见同学邀请你参加聚会，意味着你对重拾某种关系或回归某种环境的渴望。
+
+                - 梦见与同学一起旅行，表示你对过去共同经历的怀念与对友情的珍视。
+
+            - id: neighbor
+              name: 邻居
+              weight: 1300
+              cover: /image/luck/dream_interpretation/character/neighbor.png
+              icon: 🏘️
+              meaning: 梦见邻居象征着社交关系、社区环境与和谐共处。它可能反映出你对社区关系的看法或对邻里关系的期待。
+              interpretations: >
+                - 梦见与邻居友好相处，表示你对社区环境的满意与和谐的社交关系。
+
+                - 梦见与邻居发生争吵，暗示你对周围环境的不满或对某些社交问题的担忧。
+
+                - 如果梦见邻居帮助你，意味着你在生活中感受到了社区的支持与关怀。
+
+                - 梦见邻居搬走，象征着你对生活环境或社交圈的变化感到不安。
+
+                - 梦见邻居邀请你参加活动，表示你对建立更紧密的社交关系的期望。
+
+                - 梦见邻居对你冷漠，可能暗示你对某些社交关系的怀疑或不满。
+
+                - 梦见邻居家的宠物跑到你家，象征着你对某些意外情况的包容与接受。
+
+                - 如果梦见邻居家着火，暗示你对社区安全或某些外部威胁的担忧。
+
+                - 梦见与邻居共同建造某物，表示你对合作精神与和谐共处的重视。
+
+                - 梦见邻居对你表示感谢，象征着你对周围人的关心与无私帮助的认可。
+
+            - id: police
+              name: 警察
+              weight: 1400
+              cover: /image/luck/dream_interpretation/character/police.png
+              icon: 👮‍♂️
+              meaning: 梦见警察象征着权威、秩序与规则的维护。它可能反映出你对某些限制或约束的感受，也可能表示你对某种正义与公平的追求。
+              interpretations: >
+                - 梦见警察逮捕别人，表示你希望看到正义得到伸张，或感到周围环境对规则的维护。
+
+                - 梦见自己被警察追捕，暗示你对某种行为感到内疚，或对外部压力感到不安。
+
+                - 梦见与警察交谈，意味着你希望通过权威的帮助解决某些问题。
+
+                - 如果梦见自己成为警察，象征着你希望承担更多的责任，并维护秩序。
+
+                - 梦见警察出现在危险场景，暗示你对某些潜在危险或挑战感到担忧。
+
+                - 梦见警察拦住你，可能表示你感受到某种限制或阻碍，尤其是在追求自由时。
+
+                - 梦见警察救你，表示你对外界支持与保护的渴望，尤其是在面对困难时。
+
+                - 如果梦见警察在处理纠纷，表示你对周围环境中的冲突感到关注，并希望能恢复平衡。
+
+            - id: doctor
+              name: 医生
+              weight: 1500
+              cover: /image/luck/dream_interpretation/character/doctor.png
+              icon: 🧑‍⚕️
+              meaning: 梦见医生象征着治愈、关怀与问题的解决。它可能反映你对健康的关注或对某些问题的希望找到解决方案。
+              interpretations: >
+                - 梦见医生为你治疗，表示你对健康状况的担忧，或希望通过他人的帮助解决问题。
+
+                - 梦见医生给你开药，暗示你在生活中需要某些外部的帮助或指引来恢复平衡。
+
+                - 梦见自己成为医生，意味着你有能力为他人提供支持与关怀，或希望承担更多责任。
+
+                - 如果梦见医生无法治愈你，象征着你对某些问题感到无助，或担心事情无法得到解决。
+
+                - 梦见医生对你进行手术，表示你需要从根本上解决某些问题，甚至不惜痛苦的过程。
+
+                - 梦见医生安慰你，暗示你对他人关怀的渴望，或希望得到更多精神上的支持。
+
+                - 梦见医生告诉你病情痊愈，意味着你对未来充满希望，并相信问题即将解决。
+
+            - id: criminal
+              name: 罪犯
+              weight: 1700
+              cover: /image/luck/dream_interpretation/character/criminal.png
+              icon: 🚨
+              meaning: 梦见罪犯象征着内心的阴暗面、负罪感或对不法行为的恐惧。它可能反映你对某种不道德行为的担忧，或你觉得自己被某些消极情绪困扰。
+              interpretations: >
+                - 梦见罪犯追逐你，暗示你内心对某种行为感到内疚，或害怕面对现实中的问题。
+
+                - 梦见自己成为罪犯，象征着你对某些不当行为的自责，或对社会规范的反叛心理。
+
+                - 梦见罪犯被抓住，表示你希望正义得到伸张，或希望问题得到解决。
+
+                - 如果梦见罪犯潜入你的家，意味着你对外界的威胁感到担忧，尤其是感受到某种不安全感。
+
+                - 梦见与罪犯搏斗，暗示你正在与内心的负面情绪或外部的挑战作斗争。
+
+                - 梦见罪犯被判刑，象征着你希望看到错误得到纠正，或希望自己摆脱内疚与负罪感。
+
+                - 梦见罪犯逃跑，表示你对某些问题的拖延或未能及时处理感到不安。
+
+            - id: child
+              name: 小孩
+              weight: 1800
+              cover: /image/luck/dream_interpretation/character/child.png
+              icon: 👶
+              meaning: 小孩象征着纯真、希望与新生。梦见小孩通常表示你内心的天真、创造力，或者是你对未来的期许与成长的希望。
+              interpretations: >
+                - 梦见快乐的小孩，意味着你感到生活充满希望与活力，象征着内心的快乐与满足。
+
+                - 梦见小孩哭泣，暗示你内心深处有某种未得到满足的需求或情感上的失落。
+
+                - 如果梦见自己照顾小孩，表示你正在培养新的想法或责任，并对未来充满期待。
+
+                - 梦见小孩迷路，意味着你可能在生活中感到困惑或失去了方向，需要更多的引导。
+
+                - 梦见自己成为小孩，象征着你渴望回归简单、纯粹的生活状态，或者试图逃避成人世界的压力。
+
+                - 如果梦见生病的小孩，暗示你在生活中某个重要的事情可能出现问题，需要你的关注与关心。
+
+                - 梦见小孩在奔跑玩耍，表示你对自由与无拘无束的生活的向往。
+
+                - 梦见小孩在哭求帮助，意味着你可能需要倾听内心的某种需求，或者面对现实中的某些困境。
+
+                - 如果梦见小孩长大成人，象征着你对成长与改变的接受，或某种新事物即将成熟。
+
+                - 梦见一群小孩，暗示你身边充满了新的机会与可能性，或者你的生活正朝着积极的方向发展。
+
+            - id: first_love
+              name: 初恋
+              weight: 2000
+              cover: /image/luck/dream_interpretation/character/first_love.png
+              icon: 💖
+              meaning: 初恋象征着纯真、浪漫与过去的情感。梦见初恋通常代表你对青春时期的怀念，或对未曾完全释怀的情感。
+              interpretations: >
+                - 梦见初恋微笑，意味着你对过去的美好记忆依然留存，象征着对纯真爱情的追忆。
+
+                - 梦见与初恋重逢，表示你可能在现实生活中渴望重温某种失去的感情或经历。
+
+                - 如果梦见初恋和别人交往，意味着你已经接受过去的结束，愿意继续前行。
+
+                - 梦见与初恋争吵，暗示你可能对过去的某些事情依然感到不满或没有完全放下。
+
+                - 如果梦见自己回到初恋的场景，象征着你对青春期情感经历的反思，可能渴望找回当时的感觉。
+
+                - 梦见初恋送你礼物，意味着你在现实中可能期待某种情感上的满足或认可。
+
+                - 梦见初恋离开，暗示你正在慢慢放下过去的感情，准备迎接新的生活。
+
+                - 梦见与初恋重归于好，意味着你在内心中仍然对某些未解的情感留有期待。
+
+                - 如果梦见初恋哭泣，表示你可能仍在某些未了的情感中感到内疚或遗憾。
+
+                - 梦见初恋结婚，意味着你已经彻底放下了过去，愿意拥抱新的情感关系。
+
+            - id: ex
+              name: 前任
+              weight: 2100
+              cover: /image/luck/dream_interpretation/character/ex.png
+              icon: 💔
+              meaning: 前任象征着未解的情感、过往的关系与成长的经历。梦见前任通常表示你在回顾过去的关系，或是内心仍有未完全释怀的地方。
+              interpretations: >
+                - 梦见前任联系你，表示你内心仍在反思过去的关系，可能未完全释怀。
+
+                - 梦见与前任复合，意味着你在潜意识中可能还对这段关系有某种依赖或期望。
+
+                - 如果梦见前任结婚，暗示你已经放下过去的感情，准备好迎接新的人生阶段。
+
+                - 梦见与前任争吵，表示你仍然在消化某些未解决的情感冲突。
+
+                - 梦见前任和新伴侣在一起，意味着你正在逐渐接受现实，并且开始向前看。
+
+                - 梦见前任对你微笑，象征着你内心对过去的释然与接受。
+
+                - 如果梦见前任哭泣，暗示你可能仍在为过去的失去或错误感到遗憾。
+
+                - 梦见前任向你道歉，表示你内心渴望得到更多的解脱与Closure（结束感）。
+
+                - 梦见自己主动离开前任，意味着你已经决定彻底走出过去的阴影，准备开始新的生活。
+
+                - 如果梦见前任再度伤害你，提醒你要更加注意自己在情感中的选择，不要重蹈覆辙。
+
+
+        - id: animal
+          name: 动物
+          weight: 200
+          icon: 🦄
+          kind:
+            - id: lion
+              name: 狮子
+              weight: 100
+              cover: /image/luck/dream_interpretation/animal/lion.png
+              icon: 🦁
+              meaning: 狮子象征着力量、勇气和领导力。梦见狮子通常代表你内心的自信与权威，也可能反映出你对某种挑战或对抗的准备。
+              interpretations: >
+                - 如果梦中的狮子温顺或友好，意味着你内心的力量是温和的、受控制的，你能够以平和的方式应对问题。
+
+                - 如果狮子在梦中咆哮，象征着你正在经历内心的冲突或面临外界的挑战，提醒你要展现出更多的勇气。
+
+                - 如果梦到自己被狮子追赶，表示你在生活中感到被强大的力量或责任压迫。
+
+                - 梦见一头受伤的狮子，意味着你可能在某些方面感到脆弱或失去自信。
+
+                - 如果梦中的狮子攻击你，代表你可能在面对某种巨大挑战或困境时感到压力。
+
+                - 如果你梦见骑在狮子背上，象征着你正在掌控你的权力或正在获得领导地位。
+
+                - 梦见狮子和你一起走，暗示你与自己的力量和平共处，保持平衡。
+
+                - 梦见狮子被困，意味着你可能感觉自己的力量和潜力未被完全释放。
+
+                - 如果梦中的狮子死去，象征着你可能在失去某种重要的力量或地位。
+
+                - 梦见自己变成狮子，表示你正在内心中培养更强的自信与领导力。
+
+            - id: tiger
+              name: 老虎
+              weight: 200
+              cover: /image/luck/dream_interpretation/animal/tiger.png
+              icon: 🐯
+              meaning: 老虎代表着原始的力量和激情。梦见老虎通常象征潜在的威胁或挑战，也可能反映出你内心的强烈欲望和野性。
+              interpretations: >
+                - 如果梦到老虎攻击你，意味着你可能正在对抗某种内心的恐惧或外界的危险。
+
+                - 如果梦中的老虎平静且不具威胁，表示你已经掌控了自己的本能和欲望。
+
+                - 梦见骑在老虎背上，象征着你能够驾驭强大的力量，成功克服生活中的困境。
+
+                - 如果梦见一只受伤的老虎，意味着你可能正在压抑你的激情或力量。
+
+                - 梦见老虎在追赶你，表示你在逃避某些情感或责任。
+
+                - 如果梦中的老虎被困或关在笼子里，意味着你感觉自己的某些欲望或能力受到限制。
+
+                - 梦见老虎在远处吼叫，表示你内心的某种恐惧或威胁正在逼近。
+
+                - 如果梦中的老虎保护你，象征着你内心有强大的力量在支持你面对挑战。
+
+                - 梦见与老虎搏斗，代表你正在面对巨大的困境或内心冲突。
+
+                - 梦见老虎在水中游泳，意味着你正在掌控情感或心理上的力量。
+
+            - id: horse
+              name: 马
+              weight: 300
+              cover: /image/luck/dream_interpretation/animal/horse.png
+              icon: 🐎
+              meaning: 马象征着自由、动力和活力。梦见马代表着你对自由的渴望，或者是对某种追求的驱动力。
+              interpretations: >
+                - 如果梦到骑马，表示你对生活充满掌控感，能够朝着目标前进。
+
+                - 如果梦中的马失控或奔跑，意味着你在现实生活中可能感到失控或无法掌握局势。
+
+                - 梦见受伤的马，暗示你在某些方面感到疲惫或受限制。
+
+                - 如果梦见马在奔跑，象征着你对自由的追求和对生活的渴望。
+
+                - 梦见被马踢，表示你可能在某件事上遭遇了意外的阻碍或挫折。
+
+                - 如果梦中的马在水中奔跑，象征着你内心情感的自由流动与动力。
+
+                - 梦见喂养马，表示你正在培养某种才能或维持一种重要关系。
+
+                - 梦见马在山上爬行，象征着你正在朝着一个高远的目标努力。
+
+                - 如果梦见一匹白马，表示你正在追求纯洁与精神上的升华。
+
+                - 梦见马群，象征着你在人际关系中感到充满活力，获得支持与合作。
+
+            - id: elephant
+              name: 大象
+              weight: 400
+              cover: /image/luck/dream_interpretation/animal/elephant.png
+              icon: 🐘
+              meaning: 大象象征着智慧、力量和稳定。梦见大象通常意味着你对稳健和坚忍的追求，也可能反映出你对某个问题有深思熟虑的态度。
+              interpretations: >
+                - 梦见大象慢慢行走，象征着你在面对问题时冷静且稳健。
+
+                - 如果梦到骑在大象背上，表示你在掌控一个复杂而强大的局势。
+                
+                - 梦见大象攻击你，暗示着你正被一种强大的情感或责任压迫。
+
+                - 如果梦中的大象是幼象，表示你正在培养某种才能或关系。
+
+                - 梦见大象在水中，象征着你内心情感的释放与平衡。
+
+                - 梦见大象被困，代表你在生活中感到被责任或义务束缚。
+
+                - 如果梦见一群大象，意味着你有很强的社会支持系统。
+
+                - 梦见大象死去，象征着你失去了某种重要的力量或支持。
+
+                - 梦见大象保护你，意味着你在面对挑战时有很强的后盾。
+
+                - 如果梦见大象在你身边行走，象征着你的人生正朝着稳固和成功的方向前进。
+
+            - id: wolf
+              name: 狼
+              weight: 500
+              cover: /image/luck/dream_interpretation/animal/wolf.png
+              icon: 🐺
+              meaning: 狼象征着独立、野性和团队精神。梦见狼通常代表着你内心的孤独感或对团队支持的渴望。
+              interpretations: >
+                - 梦见狼在远处嚎叫，表示你对自由和独立的渴望。
+
+                - 如果梦见狼群围绕你，象征着你在人际关系中的紧张与不安。
+
+                - 梦见与狼搏斗，表示你正在面对某种强烈的挑战或冲突。
+
+                - 如果梦到狼追逐你，暗示着你正在逃避某个现实问题或责任。
+
+                - 梦见喂养狼，象征着你在驯化自己的野性或控制某种内在冲动。
+
+                - 如果梦见与狼和平相处，表示你与内心的野性达成了和谐。
+
+                - 梦见被狼咬，意味着你感到某种威胁正在逼近。
+
+                - 梦见狼在雪地上行走，象征着你正在经历一段孤独或寒冷的时期。
+
+                - 如果梦中的狼守护你，表示你得到了某种力量的保护与支持。
+
+                - 梦见一只受伤的狼，暗示你可能在某种情况下失去了独立性或力量。
+
+            - id: snake
+              name: 蛇
+              weight: 600
+              cover: /image/luck/dream_interpretation/animal/snake.png
+              icon: 🐍
+              meaning: 蛇象征着转变、复苏和潜在的危险。梦见蛇常常与变化或内在恐惧有关，也可能代表着你对某些未知事物的担忧。
+              interpretations: >
+                - 梦见蛇蜕皮，象征着重生与自我更新。
+
+                - 如果梦中的蛇咬你，表示你感受到某种背叛或隐藏的危险。
+
+                - 梦见蛇盘绕，意味着你正在面对内心的困惑或复杂的局势。
+
+                - 如果梦见蛇在水中游动，象征着你内心的情感流动与不安。
+
+                - 梦见被蛇追逐，暗示你在逃避某种内在的恐惧或现实问题。
+
+                - 如果梦见蛇被你杀死，表示你成功克服了某种困境或恐惧。
+
+                - 梦见很多蛇缠绕你，表示你感到被复杂的情感或问题包围。
+
+                - 如果梦见蛇进入家中，意味着你面临的挑战可能来自你生活的核心。
+
+                - 梦见蛇与其他动物搏斗，暗示着你在内心中经历着激烈的冲突。
+
+                - 如果梦中的蛇对你友好，象征着你已经与某种恐惧或不安达成和解。
+
+            - id: eagle
+              name: 鹰
+              weight: 700
+              cover: /image/luck/dream_interpretation/animal/eagle.png
+              icon: 🦅
+              meaning: 鹰象征着视野、自由与力量。梦见鹰通常表示你对自由的渴望，或者是你对未来的清晰愿景。
+              interpretations: >
+                - 梦见鹰在高空翱翔，象征着你对目标的清晰追求与宏大的视野。
+
+                - 如果梦到捕猎中的鹰，表示你正在全力以赴追求某个目标或梦想。
+
+                - 梦见受伤的鹰，暗示你感到自己失去了方向或目标。
+
+                - 如果梦中的鹰保护你，意味着你有某种高尚的力量在守护你。
+
+                - 梦见鹰攻击你，象征着你正在面对某种强大的挑战或威胁。
+
+                - 如果梦见你变成鹰，表示你正在获得更多的自由与力量。
+
+                - 梦见鹰与其他鸟类搏斗，暗示你在某种竞争中脱颖而出。
+
+                - 如果梦见鹰在水面飞翔，表示你在情感与理性之间取得了平衡。
+
+                - 梦见一群鹰，象征着你在生活中获得了团队的支持与力量。
+
+                - 如果梦见鹰飞离你，暗示着你可能正在失去某个重要的机会或目标。
+
+            - id: monkey
+              name: 猴
+              weight: 800
+              cover: /image/luck/dream_interpretation/animal/monkey.png
+              icon: 🐒
+              meaning: 猴子象征着智慧、灵活性和好奇心。梦见猴子通常表示你对解决问题的能力和适应能力。
+              interpretations: >
+                - 梦见猴子在树上跳跃，象征着你在面对挑战时拥有高度的灵活性。
+
+                - 如果梦到猴子模仿人类的行为，表示你可能正在反思自己的行为或他人的影响。
+
+                - 梦见猴子偷窃食物，暗示你可能在生活中面临某种不道德的行为。
+
+                - 如果梦中的猴子对你友好，意味着你在人际关系中能够灵活应对复杂的局面。
+
+                - 梦见猴子被关在笼子里，象征着你感到被某些规则或限制束缚。
+
+                - 如果梦见你在喂养猴子，表示你在培养某种创造性或解决问题的能力。
+
+                - 梦见猴子攻击你，象征着你可能在处理某种情感或压力时感到困扰。
+
+                - 梦见猴子在玩耍，意味着你正在寻找生活中的乐趣与自由。
+
+                - 如果梦见一群猴子，表示你在工作或生活中可能遇到复杂且多变的局面。
+
+                - 梦见猴子逃跑，暗示你在逃避某些责任或问题。
+
+            - id: dog
+              name: 狗
+              weight: 900
+              cover: /image/luck/dream_interpretation/animal/dog.png
+              icon: 🐕
+              meaning: 狗象征着忠诚、保护和友情。梦见狗通常反映出你对信任和忠诚关系的重视。
+              interpretations: >
+                - 梦见狗对你友好，象征着你在人际关系中感受到忠诚与保护。
+
+                - 如果梦到狗在追赶你，表示你可能在逃避某种责任或承诺。
+
+                - 梦见被狗咬，暗示着你可能感觉受到某个朋友或信任的人背叛。
+
+                - 如果梦中的狗在守护你，意味着你在人生中有着强大的支持系统。
+
+                - 梦见一只受伤的狗，象征着你在某种关系中感到脆弱或失望。
+
+                - 如果梦见你在抚摸狗，表示你在生活中感受到安全与舒适。
+
+                - 梦见狗在追逐其他动物，暗示着你在维护自己或他人的利益时可能过于激进。
+
+                - 如果梦见一群狗，表示你在生活中拥有广泛的支持与忠诚的朋友。
+
+                - 梦见狗在远处吠叫，象征着你可能面临潜在的危险或威胁。
+
+                - 如果梦见狗死去，暗示着你可能在失去某种重要的友情或支持。
+
+            - id: cat
+              name: 猫
+              weight: 1000
+              cover: /image/luck/dream_interpretation/animal/cat.png
+              icon: 🐈
+              meaning: 猫象征着独立、神秘和灵敏。梦见猫通常代表你对自由和自我意识的追求。
+              interpretations: >
+                - 梦见猫在远处凝视你，象征着你对某种未知事物的好奇与谨慎。
+
+                - 如果梦到一只友善的猫，表示你在生活中感到舒适且自如。
+
+                - 梦见被猫抓伤，暗示着你可能被某种隐秘的情感或问题困扰。
+
+                - 如果梦中的猫在你身边徘徊，意味着你正在反思自己的独立性和自主权。
+
+                - 梦见黑猫，象征着你对某种未知或神秘的力量感到敬畏或不安。
+
+                - 如果梦见你在喂养猫，表示你在生活中关注细节或情感的培养。
+
+                - 梦见猫捉老鼠，象征着你在面对困境时的机智与敏锐。
+
+                - 梦见猫在水中游泳，表示你在情感中保持了平衡与冷静。
+
+                - 如果梦见一群猫，暗示着你可能在处理多个复杂的情感或问题。
+
+                - 梦见猫消失，表示你可能失去了一些个人自由或独立性。
+
+            - id: mouse
+              name: 老鼠
+              weight: 1100
+              cover: /image/luck/dream_interpretation/animal/mouse.png
+              icon: 🐭
+              meaning: 老鼠象征着谨慎、小心和隐蔽。梦见老鼠通常表示你对某些细小但重要的问题的关注。
+              interpretations: >
+                - 梦见老鼠偷窃食物，象征着你对潜在的损失或隐秘的威胁感到担忧。
+
+                - 如果梦到你追赶老鼠，表示你正在处理某个隐藏的困扰或问题。
+
+                - 梦见老鼠在黑暗中移动，暗示着你对某些未知事物或隐秘问题的恐惧。
+
+                - 如果梦中的老鼠被困，意味着你感觉自己在面对某个问题时无能为力。
+
+                - 梦见老鼠被捕获，象征着你成功揭示并解决了某个隐秘的问题。
+
+                - 如果梦见你在喂养老鼠，表示你可能在无意中培养了一些负面的习惯或行为。
+
+                - 梦见老鼠在家中奔跑，暗示着你在处理家庭中的细小问题或压力。
+
+                - 如果梦见一大群老鼠，表示你可能感觉被大量的小问题所困扰。
+
+                - 梦见老鼠和猫一起，象征着你在面对矛盾或复杂关系时表现得非常灵巧。
+
+                - 梦见老鼠逃跑，暗示你正在逃避某些微小但重要的责任。
+
+            - id: sheep
+              name: 羊
+              weight: 1200
+              cover: /image/luck/dream_interpretation/animal/sheep.png
+              icon: 🐑
+              meaning: 羊象征着温顺、服从和集体意识。梦见羊通常表示你对和平与和谐的追求。
+              interpretations: >
+                - 梦见一群羊在牧场上，象征着你在生活中感到安全与和谐。
+
+                - 如果梦到你在喂养羊，表示你在培养一种和平的环境或关系。
+
+                - 梦见迷路的羊，暗示着你在生活中可能感到困惑或失去了方向。
+
+                - 如果梦见黑羊，表示你可能在某个集体中感到异类或不合群。
+
+                - 梦见羊被狼攻击，象征着你对外界威胁的担忧或不安。
+
+                - 如果梦见你骑在羊背上，表示你能够掌控一种温和的力量。
+
+                - 梦见羊群被驱散，暗示着你可能在面对分裂或分歧。
+
+                - 如果梦见羊在水中饮水，象征着你在追求内心的平静与满足。
+
+                - 梦见羊毛，表示你对物质财富的追求与保护。
+
+                - 如果梦见羊被剪毛，意味着你可能在经历一种损失或牺牲。
+
+            - id: pig
+              name: 猪
+              weight: 1300
+              cover: /image/luck/dream_interpretation/animal/pig.png
+              icon: 🐖
+              meaning: 猪象征着富足、满足和享乐。梦见猪通常表示你对物质生活的满足与追求。
+              interpretations: >
+                - 梦见肥胖的猪，象征着你对丰厚的物质生活的期待。
+
+                - 如果梦到你在喂养猪，表示你正在为未来的丰收或成功做准备。
+
+                - 梦见脏兮兮的猪，暗示着你在某些方面感到不洁或不满意。
+
+                - 如果梦中的猪在泥中打滚，意味着你正在享受生活中的乐趣与满足。
+
+                - 梦见猪被宰杀，象征着你对某种财富或资源的担忧或损失。
+
+                - 如果梦见你骑在猪背上，表示你能够控制并享受物质世界的富足。
+
+                - 梦见一群猪，意味着你在生活中得到了大量的资源或支持。
+
+                - 如果梦见猪在吃食，象征着你正在充分利用生活中的资源。
+
+                - 梦见猪叫声，暗示着你在追求物质利益时可能过于急切或贪婪。
+
+                - 如果梦见猪跑掉，意味着你可能失去了一些珍贵的物质资源。
+
+            - id: ox
+              name: 牛
+              weight: 1400
+              cover: /image/luck/dream_interpretation/animal/ox.png
+              icon: 🐂
+              meaning: 牛象征着力量、耐力和稳定。梦见牛通常表示你对持久成功与稳定的追求。
+              interpretations: >
+                - 梦见一头强壮的牛，象征着你在工作或生活中拥有强大的动力与坚持。
+
+                - 如果梦到你在耕地的牛，表示你正在为长远的成功做出努力与投入。
+
+                - 梦见牛在田野上，象征着你在工作中的踏实与稳定。
+
+                - 如果梦见受伤的牛，暗示着你在工作中可能遇到了一些挫折或问题。
+
+                - 梦见牛在拉车，表示你正在承受大量的责任与压力。
+
+                - 如果梦见你骑在牛背上，象征着你能够驾驭生活中的巨大力量。
+
+                - 梦见牛在河边饮水，表示你在生活中找到了一种平衡与满足。
+
+                - 如果梦见牛被捕猎，象征着你可能在面对外界的挑战与压力。
+
+                - 梦见一群牛，意味着你在集体中感受到了力量与支持。
+
+                - 如果梦见牛角折断，表示你可能失去了一些坚固的支持或资源。
+
+            - id: chicken
+              name: 鸡
+              weight: 1500
+              cover: /image/luck/dream_interpretation/animal/chicken.png
+              icon: 🐔
+              meaning: 鸡象征着勤劳、繁荣与家庭。梦见鸡通常表示你对家庭生活和财富的关注。
+              interpretations: >
+                - 梦见母鸡下蛋，象征着你在生活中获得了丰厚的回报与成功。
+
+                - 如果梦到你在喂养鸡，表示你正在努力为未来创造财富与资源。
+
+                - 梦见公鸡啼叫，暗示着你在生活中正在迎来某种新的开始或机遇。
+
+                - 如果梦见鸡在觅食，表示你正在充分利用生活中的机会与资源。
+
+                - 梦见鸡与其他动物争斗，象征着你在生活中面临竞争与挑战。
+
+                - 如果梦见你骑在鸡背上，表示你能够控制生活中的繁忙与挑战。
+
+                - 梦见鸡群被打扰，暗示着你可能在家庭生活中面临一些波折或不安。
+
+                - 如果梦见鸡蛋破裂，象征着你对某种潜在的损失或机会的担忧。
+
+                - 梦见母鸡护崽，表示你对家庭生活充满了关怀与保护。
+
+                - 如果梦见鸡被捕杀，意味着你可能在生活中失去了一些重要的机会或资源。
+
+            - id: dragon
+              name: 龙
+              weight: 1600
+              cover: /image/luck/dream_interpretation/animal/dragon.png
+              icon: 🐉
+              meaning: 龙象征着力量、智慧与权力。梦见龙通常表示你对超凡力量与成就的渴望。
+              interpretations: >
+                - 梦见飞龙，象征着你在追求梦想时感到充满力量与动力。
+
+                - 如果梦到你骑在龙背上，表示你正在掌控某种强大的力量。
+
+                - 梦见龙喷火，暗示着你正在处理某种强烈的情绪或挑战。
+
+                - 如果梦见龙守护着你，象征着你有着某种强大的保护力量。
+
+                - 梦见龙在云中飞行，表示你对未来的愿景充满了信心与期待。
+
+                - 如果梦见你与龙搏斗，象征着你在面对强大的竞争或挑战时毫不畏惧。
+
+                - 梦见龙在水中游动，表示你在情感与理性之间找到了平衡。
+
+                - 如果梦见龙在你面前消失，暗示着你可能在失去某个重要的机会或力量。
+
+                - 梦见一群龙，表示你在生活中拥有了无尽的可能性与支持。
+
+                - 如果梦见龙卷起风暴，意味着你正在经历一场巨大的变化或挑战。
+
+            - id: fish
+              name: 鱼
+              weight: 1700
+              cover: /image/luck/dream_interpretation/animal/fish.png
+              icon: 🐟
+              meaning: 鱼象征着丰饶、流动与潜力。梦见鱼通常表示你对未来潜力的期待与发展。
+              interpretations: >
+                - 梦见鱼在水中游动，象征着你在生活中自由而流畅地前进。
+
+                - 如果梦到你抓住一条鱼，表示你成功地抓住了某个重要的机会。
+
+                - 梦见鱼跳出水面，暗示着你在生活中迎来了新的突破与进展。
+
+                - 如果梦中的鱼在浅水中游动，意味着你可能在某些领域感到局限。
+
+                - 梦见鱼群游动，象征着你在生活中得到了许多支持与机会。
+
+                - 如果梦见你吃鱼，表示你正在吸收某种新的知识或经验。
+
+                - 梦见鱼在水中消失，暗示着你可能失去了一些潜在的机会。
+
+                - 如果梦见鱼飞翔，象征着你在梦想中跨越了界限与限制。
+
+                - 梦见鱼卵，表示你对未来的潜在机会充满了期待。
+
+                - 如果梦见死鱼，意味着你可能失去了一些重要的潜力或资源。
+
+            - id: bird
+              name: 鸟
+              weight: 1800
+              cover: /image/luck/dream_interpretation/animal/bird.png
+              icon: 🐦
+              meaning: 鸟象征着自由、希望与精神的飞升。梦见鸟通常表示你对自由与表达自我的渴望。
+              interpretations: >
+                - 梦见飞翔的鸟，象征着你在追求自由与梦想时充满动力与希望。
+
+                - 如果梦到鸟鸣，表示你在生活中感受到了喜悦与和平。
+
+                - 梦见一只鸟在笼中，暗示着你可能在某些方面感到受限或压抑。
+
+                - 如果梦见你喂养鸟类，表示你正在培育某种新的希望或梦想。
+
+                - 梦见鸟在筑巢，象征着你在生活中为未来创造稳定的基础。
+
+                - 如果梦见鸟群飞过，表示你在集体中感受到了支持与连接。
+
+                - 梦见受伤的鸟，暗示着你可能在追求自由或梦想的过程中遇到了一些困难或挫折。
+
+                - 如果梦见捕捉鸟，表示你成功地抓住了某个重要的机会或想法。
+
+                - 梦见鸟蛋，象征着潜在的机会或创造力。
+
+                - 如果梦见一只鸟在你肩上，表示你在生活中感受到了某种指导或保护力量。
+
+            - id: bear
+              name: 熊
+              weight: 1900
+              cover: /image/luck/dream_interpretation/animal/bear.png
+              icon: 🐻
+              meaning: 熊象征着力量、勇气与独立。梦见熊通常表示你在面对挑战时表现出的坚韧与自信。
+              interpretations: >
+                - 梦见一只熊，象征着你在生活中拥有强大的力量与勇气。
+
+                - 如果梦到你与熊搏斗，表示你正在面对某种巨大的挑战或竞争。
+
+                - 梦见熊在冬眠，暗示着你在生活中需要时间来恢复与反思。
+
+                - 如果梦见熊在追逐你，表示你可能在生活中感到某种压力或紧张。
+
+                - 梦见熊在森林中漫步，象征着你在生活中找到了一种安静与平衡。
+
+                - 如果梦见熊保护着你，表示你在生活中感受到了某种安全与力量的支持。
+
+                - 梦见熊捕猎，暗示着你在追求自己的目标时充满了决心与力量。
+
+                - 如果梦见你骑在熊背上，表示你能够驾驭生活中的巨大挑战。
+
+                - 梦见一只受伤的熊，象征着你可能在生活中经历了某种失落或挫折。
+
+                - 如果梦见熊群，表示你在生活中得到了强大的集体支持与力量。
+
+            - id: owl
+              name: 猫头鹰
+              weight: 2000
+              cover: /image/luck/dream_interpretation/animal/owl.png
+              icon: 🦉
+              meaning: 猫头鹰象征着智慧、洞察力与神秘。梦见猫头鹰通常表示你对未知事物的探索与理解。
+              interpretations: >
+                - 梦见一只猫头鹰，象征着你在生活中拥有深刻的洞察力与智慧。
+
+                - 如果梦到猫头鹰夜晚飞翔，表示你在黑暗中寻找真相或理解某种复杂的局面。
+
+                - 梦见猫头鹰啼叫，暗示着你在生活中可能面临某种警告或预兆。
+
+                - 如果梦见猫头鹰在树上，表示你在观察周围的环境并寻求更深的理解。
+
+                - 梦见猫头鹰捕猎，象征着你在生活中能够敏锐地抓住机会或揭示真相。
+
+                - 如果梦见猫头鹰与其他鸟类互动，表示你在分享智慧或指导他人。
+
+                - 梦见受伤的猫头鹰，暗示着你可能在寻找真相的过程中遇到了阻碍或失落。
+
+                - 如果梦见猫头鹰的眼睛，表示你在某个问题上拥有非凡的洞察力与理解。
+
+                - 梦见猫头鹰在你的梦中守护你，象征着你在追求智慧的道路上得到了保护。
+
+                - 如果梦见猫头鹰带走某物，表示你在生活中放弃了一些不再需要的东西。
+
+            - id: leopard
+              name: 豹
+              weight: 2100
+              cover: /image/luck/dream_interpretation/animal/leopard.png
+              icon: 🐆
+              meaning: 豹象征着敏捷、决心与隐藏的力量。梦见豹通常表示你在追求目标时展现的速度与决断力。
+              interpretations: >
+                - 梦见一只奔跑的豹，象征着你在生活中迅速追求自己的目标。
+
+                - 如果梦到你被豹追逐，表示你在生活中感到某种紧迫感或压力。
+
+                - 梦见豹捕猎，暗示着你在生活中全神贯注于某个目标或机会。
+
+                - 如果梦见豹在树上，表示你在隐藏自己的实力，等待合适的时机。
+
+                - 梦见你驯服了一只豹，象征着你在生活中掌控了某种强大的力量。
+
+                - 如果梦见豹与其他动物搏斗，表示你在面对激烈的竞争与挑战。
+
+                - 梦见一只受伤的豹，暗示着你可能在追求目标的过程中遇到了某些挫折。
+
+                - 如果梦见豹群，表示你在生活中感受到了强大的集体力量与决心。
+
+                - 梦见豹的斑点，象征着你在生活中展现出的独特性与个性。
+
+                - 如果梦见豹在月光下活动，表示你在追求目标时充满了神秘与力量。
+
+
+
+
 zh-tw:
   luck_lists:
     - id: find_constellation_zodiac
@@ -9044,3 +11215,1086 @@ zh-tw:
                 content: This year's luck is outstanding. Your career is on a steady rise, finances are flourishing, and love life is harmonious. Take care of your health and make the most of opportunities that come your way.
                 weight: 600
 
+    - id: dream_interpretation
+      name: 解夢
+      weight: 90
+      cover: /image/luck/dream_interpretation/cover.png
+      description: >
+        - 夢境分析源於人類對無意識和內心世界的探究，認為夢境反映了個人潛意識中的情感、欲望、恐懼與未解的問題。分析夢境的原因在於，夢常常是我們在清醒狀態下無法直面或理解的內心沖突的反映。通過解讀夢境中的象征物（如動物、人物或場景），我們能夠更好地理解潛在的心理狀態，挖掘深層的情感需求與壓抑的情緒。
+
+        - 夢境分析的意義在於，它使人能夠通過解讀夢境中的象征符號，獲得對現實生活中問題的啟發或指導。夢境中的象征物往往與人們的現實經驗和心理狀態相關聯，分析這些象征可以幫助我們更好地理解生活中的挑戰、欲望與潛在的解決之道，從而引導個人成長和心理發展。
+      category:
+        - id: character
+          name: 人物
+          weight: 100
+          icon: 🧑‍💼
+          kind:
+            - id: husband
+              name: 丈夫
+              weight: 100
+              cover: /image/luck/dream_interpretation/character/husband.png
+              icon: 🤵
+              meaning: 夢見丈夫通常反映了你在現實中對伴侶的依賴、情感狀態或對婚姻的關切。它也可能代表你對家庭生活的期望或對婚姻關系的恐懼與不安。
+              interpretations: >
+                - 夢見丈夫擁抱你，意味著你們之間的關系和諧，彼此信任與關愛。
+
+                - 如果夢見丈夫離開你，可能暗示你對感情或婚姻有某種不安全感。
+
+                - 夢見丈夫生病或受傷，象征你對他健康的擔憂或婚姻中隱藏的矛盾。
+
+                - 夢見丈夫在笑，表示你對婚姻的滿意與幸福。
+
+                - 夢見丈夫對你冷漠，意味著你感到他在某方面忽略了你的需求，內心有些孤獨。
+
+                - 如果夢到丈夫在夢中非常忙碌，暗示你擔心他的工作或生活壓力影響了你們的關系。
+
+                - 夢見與丈夫爭吵，表明你內心對婚姻關系有未解決的沖突或壓力。
+
+                - 夢見丈夫送你禮物，表示你們的關系有所改善，或他在努力維護婚姻。
+
+                - 夢見丈夫和他人親近，可能暗示你對伴侶的忠誠有疑慮或恐懼。
+
+                - 夢見丈夫變得比現實中年輕，象征你們的感情在回歸最初的甜蜜與熱情。
+
+            - id: wife
+              name: 妻子
+              weight: 200
+              cover: /image/luck/dream_interpretation/character/wife.png
+              icon: 👰
+              meaning: 夢見妻子通常反映了你對婚姻、情感生活的看法。它也可能象征你對生活中關懷、溫柔與支持的需求，或者對婚姻中未解決的問題的擔憂。
+              interpretations: >
+                - 夢見妻子笑容滿面，象征你們的關系幸福、和諧，充滿愛的關懷。
+
+                - 夢見妻子哭泣，暗示你內心對婚姻中某些方面感到不滿或遺憾。
+
+                - 如果夢見妻子生病，可能表示你擔心她的健康，或擔憂婚姻中的矛盾。
+
+                - 夢見妻子和你親密，意味著你們的感情在不斷加深，彼此理解與支持。
+
+                - 夢見與妻子爭吵，象征你們之間存在未解決的矛盾或溝通不暢。
+
+                - 如果夢見妻子不理你，暗示你感到她在某方面忽略了你的需求。
+
+                - 夢見妻子變得冷漠，可能意味著你在婚姻中感到失落或不被理解。
+
+                - 夢見妻子為你準備飯菜，表示你對她的照顧與付出心存感激。
+
+                - 夢見妻子變得比現實中年輕，象征你們的感情重新煥發活力。
+
+                - 夢見妻子對你生氣，可能暗示你在某些事情上感到自己有愧，或擔心她的情緒變化。
+
+            - id: couple
+              name: 情侶
+              weight: 300
+              cover: /image/luck/dream_interpretation/character/couple.png
+              icon: 💑
+              meaning: 夢見情侶象征著你的情感需求、親密關系的狀態以及對愛情的渴望。它也可能反映出你對愛情中某些未解決問題的關註或期待。
+              interpretations: >
+                - 夢見你和情侶在一起，象征著你們的感情穩定，關系健康。
+
+                - 夢見情侶親吻，表示你們的情感交流順暢，彼此的情感依賴很強。
+
+                - 如果夢見情侶爭吵，意味著你在愛情中感到不滿或對某些事情感到困擾。
+
+                - 夢見情侶牽手，暗示你們的感情非常牢固，彼此信任和依賴。
+
+                - 夢見情侶分手，可能暗示你對感情中的不安全感或對失去愛情的恐懼。
+
+                - 如果夢見情侶在遠處，象征著你對愛情的期望和追求尚未實現。
+
+                - 夢見情侶擁抱，意味著你對親密關系的渴望或對伴侶的深厚情感。
+
+                - 夢見情侶彼此冷漠，暗示你在感情中感到孤獨或與伴侶的情感疏遠。
+
+                - 夢見情侶互相照顧，表示你們的關系中有著深厚的情感支持。
+
+                - 夢見情侶走在一起，象征著你對愛情未來的希望與承諾。
+
+            - id: parents
+              name: 父母
+              weight: 400
+              cover: /image/luck/dream_interpretation/character/parents.png
+              icon: 👫
+              meaning: 夢見父母象征著你對家庭、傳統價值觀的認同與依賴。它也可能反映出你對自己生活中的責任感、保護欲望或關懷之情。
+              interpretations: >
+                - 夢見父母對你微笑，意味著你感到安全與被愛，家庭生活和諧幸福。
+
+                - 如果夢見父母爭吵，暗示你對家庭中的矛盾或未解決的沖突感到不安。
+
+                - 夢見父母離世，表示你對生活中的重大變化感到焦慮或對失去家庭的恐懼。
+
+                - 夢見父母對你生氣，象征著你對未達成的期望感到內疚或自責。
+
+                - 夢見與父母重逢，表示你對家庭關系的依賴或對家庭支持的渴望。
+
+                - 夢見父母給你建議，意味著你在生活中尋求方向或支持。
+
+                - 如果夢見父母健康，表示你對家庭生活感到滿足與幸福。
+
+                - 夢見父母生病，暗示你對他們的健康有擔憂或感到自己未能盡責。
+
+                - 夢見父母在做家務，表示你對家庭的責任感與關懷。
+
+                - 夢見父母照顧你，象征著你在現實生活中感到疲憊，需要更多的支持。
+
+            - id: relatives
+              name: 親人
+              weight: 500
+              cover: /image/luck/dream_interpretation/character/relatives.png
+              icon: 💞
+              meaning: 夢見親人象征著你對家庭關系的依賴、關心和情感紐帶。它也可能反映出你對自己在家庭中的角色或責任的思考。
+              interpretations: >
+                - 夢見親人團聚，意味著你對家庭關系的認同與感情的加強。
+
+                - 如果夢見親人生病，暗示你對他們的關心或家庭中潛在的壓力。
+
+                - 夢見親人離世，表示你對家庭生活中某些重大變化的焦慮或恐懼。
+
+                - 夢見親人爭吵，象征著你對家庭中未解決的矛盾或緊張關系的不安。
+
+                - 夢見親人照顧你，意味著你感受到家庭的溫暖與支持。
+
+                - 夢見親人對你生氣，表示你感到自己在家庭中未能滿足某些期望。
+
+                - 如果夢見親人和諧共處，表示你對家庭生活感到滿足與安心。
+
+                - 夢見親人送你禮物，暗示你們的感情正在加強或得到認可。
+
+                - 夢見親人離你而去，可能象征著你對失去家庭紐帶的恐懼或孤獨感。
+
+                - 夢見親人笑容滿面，意味著你對家庭生活的幸福與和諧充滿信心。
+
+            - id: brother
+              name: 兄弟
+              weight: 600
+              cover: /image/luck/dream_interpretation/character/brother.png
+              icon: 👬
+              meaning: 夢見兄弟象征著親密的家庭紐帶、競爭或合作的關系。它也可能反映你內心中的某種矛盾，或對兄弟關系的重視與懷念。
+              interpretations: >
+                - 夢見與兄弟親近，象征著你們之間的情感和諧，互相理解和支持。
+
+                - 如果夢見與兄弟爭吵，表示你們之間存在未解決的矛盾，或你在現實生活中感受到競爭壓力。
+
+                - 夢見兄弟幫助你，意味著你在生活中獲得了家人的支持，尤其是情感上的幫助。
+
+                - 夢見兄弟受傷或生病，暗示你對他的關心或對你們關系的擔憂。
+
+                - 如果夢見兄弟離你而去，象征你對失去家族紐帶的恐懼或孤獨感。
+
+                - 夢見兄弟獲得成功，表示你對他感到驕傲，同時也反映出你內心的期望與目標。
+
+                - 夢見兄弟和你一起旅行，意味著你對共同經歷的懷念或對彼此關系的重視。
+
+                - 如果夢見兄弟遠離你，暗示你們之間可能有某種隔閡或你感到疏遠。
+
+                - 夢見自己幫助兄弟，表示你在現實中願意承擔更多責任，關心家人。
+
+                - 夢見兄弟照顧你，象征著你對家庭關系的依賴與信任。
+
+            - id: sister
+              name: 姐妹
+              weight: 700
+              cover: /image/luck/dream_interpretation/character/sister.png
+              icon: 👭
+              meaning: 夢見姐妹通常代表家庭紐帶、關懷與依賴的情感，也可能象征你對女性特質的認同或沖突。
+              interpretations: >
+                - 夢見與你的姐妹親密互動，表示你們之間的關系融洽，情感聯系深厚。
+
+                - 夢見姐妹哭泣，可能反映出你對她生活中的某種擔憂，或你們之間存在的誤解。
+
+                - 夢見與姐妹爭吵，暗示你內心對某些家庭問題感到不滿或有未解決的矛盾。
+
+                - 夢見姐妹向你求助，意味著你在生活中感到自己被依賴或承擔了更多責任。
+
+                - 如果夢見姐妹結婚，象征你對她生活變化的關心，或對親情的某種轉變感到不安。
+
+                - 夢見姐妹生病，暗示你對她的健康或生活狀態感到擔憂。
+
+                - 夢見姐妹成功，象征你對她的驕傲，同時也反映你對自己未來的期望。
+
+                - 如果夢見姐妹離世，意味著你對家庭的失落感，或對某種情感關系的終結感到焦慮。
+
+                - 夢見與姐妹一起旅行，表示你對共同回憶的珍視，或你們關系中的愉快時光。
+
+                - 夢見與姐妹一起工作，象征你們之間的合作精神與彼此的支持。
+
+            - id: friend
+              name: 朋友
+              weight: 800
+              cover: /image/luck/dream_interpretation/character/friend.png
+              icon: 👫
+              meaning: 夢見朋友象征著社交關系、信任與支持。它可能反映出你對友情的重視，或對某些社交問題的關註。
+              interpretations: >
+                - 夢見與朋友愉快地交流，表示你對友情的滿意，感到被理解與支持。
+
+                - 夢見朋友疏遠你，可能暗示你對社交關系的不安或你內心對友情的擔憂。
+
+                - 夢見朋友幫助你，意味著你在現實生活中感受到了友情的支持與關懷。
+
+                - 如果夢見與朋友爭吵，暗示你們之間存在某種未解決的矛盾，或你對友情的期待未能滿足。
+
+                - 夢見朋友生病，表示你對他們的健康或生活狀態感到擔憂。
+
+                - 夢見朋友獲得成功，象征你對他們的驕傲，也反映出你對自己的期望與目標。
+
+                - 夢見朋友離你而去，暗示你對失去友情的恐懼或對某種情感變化的不安。
+
+                - 夢見與朋友一起旅行，表示你對友情的珍視與對共同經歷的懷念。
+
+                - 夢見朋友背叛你，可能反映你內心對某些社交關系的不信任或懷疑。
+
+                - 夢見朋友給你禮物，象征著你們關系中的溫情與相互支持。
+
+            - id: leader
+              name: 領導
+              weight: 900
+              cover: /image/luck/dream_interpretation/character/leader.png
+              icon: 👨‍💼
+              meaning: 夢見領導通常象征著權威、責任與壓力。它反映了你對工作環境的感受，或你對權力關系的看法。
+              interpretations: >
+                - 夢見領導對你贊賞，表示你對自己能力的認可，也暗示你在工作中渴望更多的認可與尊重。
+
+                - 夢見領導對你生氣，暗示你對工作的壓力或你對自己在某些方面表現的不滿。
+
+                - 如果夢見與領導發生沖突，表示你在工作中感到受限製，或對現有的權威有抵觸情緒。
+
+                - 夢見領導給你任務，象征著你對工作責任的意識與對權力的接受。
+
+                - 夢見領導忽視你，可能反映出你對工作中的忽略感或不被重視的情緒。
+
+                - 如果夢見領導離職，意味著你對工作環境的變化感到不安或對領導風格的期望改變。
+
+                - 夢見領導給你獎勵，表示你對工作的努力獲得了認可，感到自豪。
+
+                - 夢見領導批評你，暗示你在現實中對自己的表現有某種不滿或擔憂。
+
+                - 夢見與領導一起工作，表示你在工作中渴望與權威人物建立更密切的聯系。
+
+                - 夢見領導升職，可能象征著你對自己的職業發展有更高的期待。
+
+            - id: colleague
+              name: 同事
+              weight: 1000
+              cover: /image/luck/dream_interpretation/character/colleague.png
+              icon: 👨‍💻
+              meaning: 夢見同事反映了你對工作關系的看法與感受。它也可能象征著你對團隊合作或工作壓力的關註。
+              interpretations: >
+                - 夢見與同事合作愉快，表示你對工作環境的滿意與對團隊合作的信心。
+
+                - 夢見與同事發生沖突，暗示你在工作中感到緊張，或對某些問題有不同意見。
+
+                - 夢見同事幫助你，意味著你在工作中獲得了支持與鼓勵。
+
+                - 如果夢見同事忽視你，可能象征你對工作中的孤立感，或你感到自己的貢獻未被認可。
+
+                - 夢見同事辭職，表示你對工作環境或團隊結構的變化感到不安。
+
+                - 夢見同事表現出色，象征你對自己在工作中的表現有更高的期望。
+
+                - 夢見同事對你微笑，意味著你們的關系融洽，工作氣氛和諧。
+
+                - 如果夢見與同事競爭，可能反映你在工作中感受到的壓力或對職位提升的渴望。
+
+                - 夢見同事獲得獎勵，象征你對公平與努力被認可的期望。
+
+                - 夢見與同事一起出差，表示你對工作中與他人的合作感到滿意。
+
+            - id: teacher
+              name: 老師
+              weight: 1100
+              cover: /image/luck/dream_interpretation/character/teacher.png
+              icon: 👩‍🏫
+              meaning: 夢見老師象征著學習、成長與指導。它通常反映你對知識的渴望或對權威人物的看法。
+              interpretations: >
+                - 夢見老師對你贊賞，表示你對自己學習能力的認可，也意味著你在生活中渴望得到更多的指導與支持。
+
+                - 夢見老師責備你，暗示你對自己的某些行為或表現感到不滿，或對未完成的任務感到壓力。
+
+                - 如果夢見老師對你冷漠，可能象征你對某些權威人物的懷疑或對自己能力的質疑。
+
+                - 夢見與老師交談，表示你渴望得到更多的指導與幫助，特別是在某些領域中。
+
+                - 夢見老師生病，暗示你對某些指導者的健康或處境感到擔憂。
+
+                - 夢見老師離職，意味著你對某種學習環境或權威關系的變化感到不安。
+
+                - 夢見老師給你布置作業，表示你在現實生活中感到有任務或責任需要完成。
+
+                - 如果夢見老師教導你，意味著你渴望在某些方面獲得更多的知識與技能。
+
+                - 夢見與老師一起旅行，象征著你對成長與學習過程的重視。
+
+                - 夢見老師表揚你，表示你對自己在學習或生活中的努力感到自豪。
+
+            - id: classmate
+              name: 同學
+              weight: 1200
+              cover: /image/luck/dream_interpretation/character/classmate.png
+              icon: 👩‍🎓
+              meaning: 夢見同學象征著社交關系、學習環境與過去的回憶。它也可能反映你對青春時光或未完成的目標的懷念。
+              interpretations: >
+                - 夢見與同學相處融洽，表示你對人際關系的滿意，或對青春時光的懷念。
+
+                - 夢見與同學爭吵，可能象征你對某些未解決問題的困擾，或對自己過去的某種行為感到後悔。
+
+                - 夢見同學幫助你，意味著你在生活中感受到友情的支持，或對過去友誼的懷念。
+
+                - 夢見同學疏遠你，暗示你對某些社交關系的不安或對過去未完成目標的失望。
+
+                - 夢見同學成功，表示你對他們的祝福與欣賞，也反映你對自己未來的期望。
+
+                - 夢見同學離世，象征你對過去時光的失落感，或對某種關系的終結感到不安。
+
+                - 夢見與同學一起學習，表示你對知識與成長過程的重視，或對過去求學經歷的懷念。
+
+                - 夢見同學生病，暗示你對他們生活或健康狀況的擔憂，或對過去某種情感的傷痛。
+
+                - 如果夢見同學邀請你參加聚會，意味著你對重拾某種關系或回歸某種環境的渴望。
+
+                - 夢見與同學一起旅行，表示你對過去共同經歷的懷念與對友情的珍視。
+
+            - id: neighbor
+              name: 鄰居
+              weight: 1300
+              cover: /image/luck/dream_interpretation/character/neighbor.png
+              icon: 🏘️
+              meaning: 夢見鄰居象征著社交關系、社區環境與和諧共處。它可能反映出你對社區關系的看法或對鄰裏關系的期待。
+              interpretations: >
+                - 夢見與鄰居友好相處，表示你對社區環境的滿意與和諧的社交關系。
+
+                - 夢見與鄰居發生爭吵，暗示你對周圍環境的不滿或對某些社交問題的擔憂。
+
+                - 如果夢見鄰居幫助你，意味著你在生活中感受到了社區的支持與關懷。
+
+                - 夢見鄰居搬走，象征著你對生活環境或社交圈的變化感到不安。
+
+                - 夢見鄰居邀請你參加活動，表示你對建立更緊密的社交關系的期望。
+
+                - 夢見鄰居對你冷漠，可能暗示你對某些社交關系的懷疑或不滿。
+
+                - 夢見鄰居家的寵物跑到你家，象征著你對某些意外情況的包容與接受。
+
+                - 如果夢見鄰居家著火，暗示你對社區安全或某些外部威脅的擔憂。
+
+                - 夢見與鄰居共同建造某物，表示你對合作精神與和諧共處的重視。
+
+                - 夢見鄰居對你表示感謝，象征著你對周圍人的關心與無私幫助的認可。
+
+            - id: police
+              name: 警察
+              weight: 1400
+              cover: /image/luck/dream_interpretation/character/police.png
+              icon: 👮‍♂️
+              meaning: 夢見警察象征著權威、秩序與規則的維護。它可能反映出你對某些限製或約束的感受，也可能表示你對某種正義與公平的追求。
+              interpretations: >
+                - 夢見警察逮捕別人，表示你希望看到正義得到伸張，或感到周圍環境對規則的維護。
+
+                - 夢見自己被警察追捕，暗示你對某種行為感到內疚，或對外部壓力感到不安。
+
+                - 夢見與警察交談，意味著你希望通過權威的幫助解決某些問題。
+
+                - 如果夢見自己成為警察，象征著你希望承擔更多的責任，並維護秩序。
+
+                - 夢見警察出現在危險場景，暗示你對某些潛在危險或挑戰感到擔憂。
+
+                - 夢見警察攔住你，可能表示你感受到某種限製或阻礙，尤其是在追求自由時。
+
+                - 夢見警察救你，表示你對外界支持與保護的渴望，尤其是在面對困難時。
+
+                - 如果夢見警察在處理糾紛，表示你對周圍環境中的沖突感到關註，並希望能恢復平衡。
+
+            - id: doctor
+              name: 醫生
+              weight: 1500
+              cover: /image/luck/dream_interpretation/character/doctor.png
+              icon: 🧑‍⚕️
+              meaning: 夢見醫生象征著治愈、關懷與問題的解決。它可能反映你對健康的關註或對某些問題的希望找到解決方案。
+              interpretations: >
+                - 夢見醫生為你治療，表示你對健康狀況的擔憂，或希望通過他人的幫助解決問題。
+
+                - 夢見醫生給你開藥，暗示你在生活中需要某些外部的幫助或指引來恢復平衡。
+
+                - 夢見自己成為醫生，意味著你有能力為他人提供支持與關懷，或希望承擔更多責任。
+
+                - 如果夢見醫生無法治愈你，象征著你對某些問題感到無助，或擔心事情無法得到解決。
+
+                - 夢見醫生對你進行手術，表示你需要從根本上解決某些問題，甚至不惜痛苦的過程。
+
+                - 夢見醫生安慰你，暗示你對他人關懷的渴望，或希望得到更多精神上的支持。
+
+                - 夢見醫生告訴你病情痊愈，意味著你對未來充滿希望，並相信問題即將解決。
+
+            - id: criminal
+              name: 罪犯
+              weight: 1700
+              cover: /image/luck/dream_interpretation/character/criminal.png
+              icon: 🚨
+              meaning: 夢見罪犯象征著內心的陰暗面、負罪感或對不法行為的恐懼。它可能反映你對某種不道德行為的擔憂，或你覺得自己被某些消極情緒困擾。
+              interpretations: >
+                - 夢見罪犯追逐你，暗示你內心對某種行為感到內疚，或害怕面對現實中的問題。
+
+                - 夢見自己成為罪犯，象征著你對某些不當行為的自責，或對社會規範的反叛心理。
+
+                - 夢見罪犯被抓住，表示你希望正義得到伸張，或希望問題得到解決。
+
+                - 如果夢見罪犯潛入你的家，意味著你對外界的威脅感到擔憂，尤其是感受到某種不安全感。
+
+                - 夢見與罪犯搏鬥，暗示你正在與內心的負面情緒或外部的挑戰作鬥爭。
+
+                - 夢見罪犯被判刑，象征著你希望看到錯誤得到糾正，或希望自己擺脫內疚與負罪感。
+
+                - 夢見罪犯逃跑，表示你對某些問題的拖延或未能及時處理感到不安。
+
+            - id: child
+              name: 小孩
+              weight: 1800
+              cover: /image/luck/dream_interpretation/character/child.png
+              icon: 👶
+              meaning: 小孩象征著純真、希望與新生。夢見小孩通常表示你內心的天真、創造力，或者是你對未來的期許與成長的希望。
+              interpretations: >
+                - 夢見快樂的小孩，意味著你感到生活充滿希望與活力，象征著內心的快樂與滿足。
+
+                - 夢見小孩哭泣，暗示你內心深處有某種未得到滿足的需求或情感上的失落。
+
+                - 如果夢見自己照顧小孩，表示你正在培養新的想法或責任，並對未來充滿期待。
+
+                - 夢見小孩迷路，意味著你可能在生活中感到困惑或失去了方向，需要更多的引導。
+
+                - 夢見自己成為小孩，象征著你渴望回歸簡單、純粹的生活狀態，或者試圖逃避成人世界的壓力。
+
+                - 如果夢見生病的小孩，暗示你在生活中某個重要的事情可能出現問題，需要你的關註與關心。
+
+                - 夢見小孩在奔跑玩耍，表示你對自由與無拘無束的生活的向往。
+
+                - 夢見小孩在哭求幫助，意味著你可能需要傾聽內心的某種需求，或者面對現實中的某些困境。
+
+                - 如果夢見小孩長大成人，象征著你對成長與改變的接受，或某種新事物即將成熟。
+
+                - 夢見一群小孩，暗示你身邊充滿了新的機會與可能性，或者你的生活正朝著積極的方向發展。
+
+            - id: first_love
+              name: 初戀
+              weight: 2000
+              cover: /image/luck/dream_interpretation/character/first_love.png
+              icon: 💖
+              meaning: 初戀象征著純真、浪漫與過去的情感。夢見初戀通常代表你對青春時期的懷念，或對未曾完全釋懷的情感。
+              interpretations: >
+                - 夢見初戀微笑，意味著你對過去的美好記憶依然留存，象征著對純真愛情的追憶。
+
+                - 夢見與初戀重逢，表示你可能在現實生活中渴望重溫某種失去的感情或經歷。
+
+                - 如果夢見初戀和別人交往，意味著你已經接受過去的結束，願意繼續前行。
+
+                - 夢見與初戀爭吵，暗示你可能對過去的某些事情依然感到不滿或沒有完全放下。
+
+                - 如果夢見自己回到初戀的場景，象征著你對青春期情感經歷的反思，可能渴望找回當時的感覺。
+
+                - 夢見初戀送你禮物，意味著你在現實中可能期待某種情感上的滿足或認可。
+
+                - 夢見初戀離開，暗示你正在慢慢放下過去的感情，準備迎接新的生活。
+
+                - 夢見與初戀重歸於好，意味著你在內心中仍然對某些未解的情感留有期待。
+
+                - 如果夢見初戀哭泣，表示你可能仍在某些未了的情感中感到內疚或遺憾。
+
+                - 夢見初戀結婚，意味著你已經徹底放下了過去，願意擁抱新的情感關系。
+
+            - id: ex
+              name: 前任
+              weight: 2100
+              cover: /image/luck/dream_interpretation/character/ex.png
+              icon: 💔
+              meaning: 前任象征著未解的情感、過往的關系與成長的經歷。夢見前任通常表示你在回顧過去的關系，或是內心仍有未完全釋懷的地方。
+              interpretations: >
+                - 夢見前任聯系你，表示你內心仍在反思過去的關系，可能未完全釋懷。
+
+                - 夢見與前任復合，意味著你在潛意識中可能還對這段關系有某種依賴或期望。
+
+                - 如果夢見前任結婚，暗示你已經放下過去的感情，準備好迎接新的人生階段。
+
+                - 夢見與前任爭吵，表示你仍然在消化某些未解決的情感沖突。
+
+                - 夢見前任和新伴侶在一起，意味著你正在逐漸接受現實，並且開始向前看。
+
+                - 夢見前任對你微笑，象征著你內心對過去的釋然與接受。
+
+                - 如果夢見前任哭泣，暗示你可能仍在為過去的失去或錯誤感到遺憾。
+
+                - 夢見前任向你道歉，表示你內心渴望得到更多的解脫與Closure（結束感）。
+
+                - 夢見自己主動離開前任，意味著你已經決定徹底走出過去的陰影，準備開始新的生活。
+
+                - 如果夢見前任再度傷害你，提醒你要更加註意自己在情感中的選擇，不要重蹈覆轍。
+
+
+        - id: animal
+          name: 動物
+          weight: 200
+          icon: 🦄
+          kind:
+            - id: lion
+              name: 獅子
+              weight: 100
+              cover: /image/luck/dream_interpretation/animal/lion.png
+              icon: 🦁
+              meaning: 獅子象征著力量、勇氣和領導力。夢見獅子通常代表你內心的自信與權威，也可能反映出你對某種挑戰或對抗的準備。
+              interpretations: >
+                - 如果夢中的獅子溫順或友好，意味著你內心的力量是溫和的、受控製的，你能夠以平和的方式應對問題。
+
+                - 如果獅子在夢中咆哮，象征著你正在經歷內心的沖突或面臨外界的挑戰，提醒你要展現出更多的勇氣。
+
+                - 如果夢到自己被獅子追趕，表示你在生活中感到被強大的力量或責任壓迫。
+
+                - 夢見一頭受傷的獅子，意味著你可能在某些方面感到脆弱或失去自信。
+
+                - 如果夢中的獅子攻擊你，代表你可能在面對某種巨大挑戰或困境時感到壓力。
+
+                - 如果你夢見騎在獅子背上，象征著你正在掌控你的權力或正在獲得領導地位。
+
+                - 夢見獅子和你一起走，暗示你與自己的力量和平共處，保持平衡。
+
+                - 夢見獅子被困，意味著你可能感覺自己的力量和潛力未被完全釋放。
+
+                - 如果夢中的獅子死去，象征著你可能在失去某種重要的力量或地位。
+
+                - 夢見自己變成獅子，表示你正在內心中培養更強的自信與領導力。
+
+            - id: tiger
+              name: 老虎
+              weight: 200
+              cover: /image/luck/dream_interpretation/animal/tiger.png
+              icon: 🐯
+              meaning: 老虎代表著原始的力量和激情。夢見老虎通常象征潛在的威脅或挑戰，也可能反映出你內心的強烈欲望和野性。
+              interpretations: >
+                - 如果夢到老虎攻擊你，意味著你可能正在對抗某種內心的恐懼或外界的危險。
+
+                - 如果夢中的老虎平靜且不具威脅，表示你已經掌控了自己的本能和欲望。
+
+                - 夢見騎在老虎背上，象征著你能夠駕馭強大的力量，成功克服生活中的困境。
+
+                - 如果夢見一只受傷的老虎，意味著你可能正在壓抑你的激情或力量。
+
+                - 夢見老虎在追趕你，表示你在逃避某些情感或責任。
+
+                - 如果夢中的老虎被困或關在籠子裏，意味著你感覺自己的某些欲望或能力受到限製。
+
+                - 夢見老虎在遠處吼叫，表示你內心的某種恐懼或威脅正在逼近。
+
+                - 如果夢中的老虎保護你，象征著你內心有強大的力量在支持你面對挑戰。
+
+                - 夢見與老虎搏鬥，代表你正在面對巨大的困境或內心沖突。
+
+                - 夢見老虎在水中遊泳，意味著你正在掌控情感或心理上的力量。
+
+            - id: horse
+              name: 馬
+              weight: 300
+              cover: /image/luck/dream_interpretation/animal/horse.png
+              icon: 🐎
+              meaning: 馬象征著自由、動力和活力。夢見馬代表著你對自由的渴望，或者是對某種追求的驅動力。
+              interpretations: >
+                - 如果夢到騎馬，表示你對生活充滿掌控感，能夠朝著目標前進。
+
+                - 如果夢中的馬失控或奔跑，意味著你在現實生活中可能感到失控或無法掌握局勢。
+
+                - 夢見受傷的馬，暗示你在某些方面感到疲憊或受限製。
+
+                - 如果夢見馬在奔跑，象征著你對自由的追求和對生活的渴望。
+
+                - 夢見被馬踢，表示你可能在某件事上遭遇了意外的阻礙或挫折。
+
+                - 如果夢中的馬在水中奔跑，象征著你內心情感的自由流動與動力。
+
+                - 夢見餵養馬，表示你正在培養某種才能或維持一種重要關系。
+
+                - 夢見馬在山上爬行，象征著你正在朝著一個高遠的目標努力。
+
+                - 如果夢見一匹白馬，表示你正在追求純潔與精神上的升華。
+
+                - 夢見馬群，象征著你在人際關系中感到充滿活力，獲得支持與合作。
+
+            - id: elephant
+              name: 大象
+              weight: 400
+              cover: /image/luck/dream_interpretation/animal/elephant.png
+              icon: 🐘
+              meaning: 大象象征著智慧、力量和穩定。夢見大象通常意味著你對穩健和堅忍的追求，也可能反映出你對某個問題有深思熟慮的態度。
+              interpretations: >
+                - 夢見大象慢慢行走，象征著你在面對問題時冷靜且穩健。
+
+                - 如果夢到騎在大象背上，表示你在掌控一個復雜而強大的局勢。
+                
+                - 夢見大象攻擊你，暗示著你正被一種強大的情感或責任壓迫。
+
+                - 如果夢中的大象是幼象，表示你正在培養某種才能或關系。
+
+                - 夢見大象在水中，象征著你內心情感的釋放與平衡。
+
+                - 夢見大象被困，代表你在生活中感到被責任或義務束縛。
+
+                - 如果夢見一群大象，意味著你有很強的社會支持系統。
+
+                - 夢見大象死去，象征著你失去了某種重要的力量或支持。
+
+                - 夢見大象保護你，意味著你在面對挑戰時有很強的後盾。
+
+                - 如果夢見大象在你身邊行走，象征著你的人生正朝著穩固和成功的方向前進。
+
+            - id: wolf
+              name: 狼
+              weight: 500
+              cover: /image/luck/dream_interpretation/animal/wolf.png
+              icon: 🐺
+              meaning: 狼象征著獨立、野性和團隊精神。夢見狼通常代表著你內心的孤獨感或對團隊支持的渴望。
+              interpretations: >
+                - 夢見狼在遠處嚎叫，表示你對自由和獨立的渴望。
+
+                - 如果夢見狼群圍繞你，象征著你在人際關系中的緊張與不安。
+
+                - 夢見與狼搏鬥，表示你正在面對某種強烈的挑戰或沖突。
+
+                - 如果夢到狼追逐你，暗示著你正在逃避某個現實問題或責任。
+
+                - 夢見餵養狼，象征著你在馴化自己的野性或控製某種內在沖動。
+
+                - 如果夢見與狼和平相處，表示你與內心的野性達成了和諧。
+
+                - 夢見被狼咬，意味著你感到某種威脅正在逼近。
+
+                - 夢見狼在雪地上行走，象征著你正在經歷一段孤獨或寒冷的時期。
+
+                - 如果夢中的狼守護你，表示你得到了某種力量的保護與支持。
+
+                - 夢見一只受傷的狼，暗示你可能在某種情況下失去了獨立性或力量。
+
+            - id: snake
+              name: 蛇
+              weight: 600
+              cover: /image/luck/dream_interpretation/animal/snake.png
+              icon: 🐍
+              meaning: 蛇象征著轉變、復蘇和潛在的危險。夢見蛇常常與變化或內在恐懼有關，也可能代表著你對某些未知事物的擔憂。
+              interpretations: >
+                - 夢見蛇蛻皮，象征著重生與自我更新。
+
+                - 如果夢中的蛇咬你，表示你感受到某種背叛或隱藏的危險。
+
+                - 夢見蛇盤繞，意味著你正在面對內心的困惑或復雜的局勢。
+
+                - 如果夢見蛇在水中遊動，象征著你內心的情感流動與不安。
+
+                - 夢見被蛇追逐，暗示你在逃避某種內在的恐懼或現實問題。
+
+                - 如果夢見蛇被你殺死，表示你成功克服了某種困境或恐懼。
+
+                - 夢見很多蛇纏繞你，表示你感到被復雜的情感或問題包圍。
+
+                - 如果夢見蛇進入家中，意味著你面臨的挑戰可能來自你生活的核心。
+
+                - 夢見蛇與其他動物搏鬥，暗示著你在內心中經歷著激烈的沖突。
+
+                - 如果夢中的蛇對你友好，象征著你已經與某種恐懼或不安達成和解。
+
+            - id: eagle
+              name: 鷹
+              weight: 700
+              cover: /image/luck/dream_interpretation/animal/eagle.png
+              icon: 🦅
+              meaning: 鷹象征著視野、自由與力量。夢見鷹通常表示你對自由的渴望，或者是你對未來的清晰願景。
+              interpretations: >
+                - 夢見鷹在高空翺翔，象征著你對目標的清晰追求與宏大的視野。
+
+                - 如果夢到捕獵中的鷹，表示你正在全力以赴追求某個目標或夢想。
+
+                - 夢見受傷的鷹，暗示你感到自己失去了方向或目標。
+
+                - 如果夢中的鷹保護你，意味著你有某種高尚的力量在守護你。
+
+                - 夢見鷹攻擊你，象征著你正在面對某種強大的挑戰或威脅。
+
+                - 如果夢見你變成鷹，表示你正在獲得更多的自由與力量。
+
+                - 夢見鷹與其他鳥類搏鬥，暗示你在某種競爭中脫穎而出。
+
+                - 如果夢見鷹在水面飛翔，表示你在情感與理性之間取得了平衡。
+
+                - 夢見一群鷹，象征著你在生活中獲得了團隊的支持與力量。
+
+                - 如果夢見鷹飛離你，暗示著你可能正在失去某個重要的機會或目標。
+
+            - id: monkey
+              name: 猴
+              weight: 800
+              cover: /image/luck/dream_interpretation/animal/monkey.png
+              icon: 🐒
+              meaning: 猴子象征著智慧、靈活性和好奇心。夢見猴子通常表示你對解決問題的能力和適應能力。
+              interpretations: >
+                - 夢見猴子在樹上跳躍，象征著你在面對挑戰時擁有高度的靈活性。
+
+                - 如果夢到猴子模仿人類的行為，表示你可能正在反思自己的行為或他人的影響。
+
+                - 夢見猴子偷竊食物，暗示你可能在生活中面臨某種不道德的行為。
+
+                - 如果夢中的猴子對你友好，意味著你在人際關系中能夠靈活應對復雜的局面。
+
+                - 夢見猴子被關在籠子裏，象征著你感到被某些規則或限製束縛。
+
+                - 如果夢見你在餵養猴子，表示你在培養某種創造性或解決問題的能力。
+
+                - 夢見猴子攻擊你，象征著你可能在處理某種情感或壓力時感到困擾。
+
+                - 夢見猴子在玩耍，意味著你正在尋找生活中的樂趣與自由。
+
+                - 如果夢見一群猴子，表示你在工作或生活中可能遇到復雜且多變的局面。
+
+                - 夢見猴子逃跑，暗示你在逃避某些責任或問題。
+
+            - id: dog
+              name: 狗
+              weight: 900
+              cover: /image/luck/dream_interpretation/animal/dog.png
+              icon: 🐕
+              meaning: 狗象征著忠誠、保護和友情。夢見狗通常反映出你對信任和忠誠關系的重視。
+              interpretations: >
+                - 夢見狗對你友好，象征著你在人際關系中感受到忠誠與保護。
+
+                - 如果夢到狗在追趕你，表示你可能在逃避某種責任或承諾。
+
+                - 夢見被狗咬，暗示著你可能感覺受到某個朋友或信任的人背叛。
+
+                - 如果夢中的狗在守護你，意味著你在人生中有著強大的支持系統。
+
+                - 夢見一只受傷的狗，象征著你在某種關系中感到脆弱或失望。
+
+                - 如果夢見你在撫摸狗，表示你在生活中感受到安全與舒適。
+
+                - 夢見狗在追逐其他動物，暗示著你在維護自己或他人的利益時可能過於激進。
+
+                - 如果夢見一群狗，表示你在生活中擁有廣泛的支持與忠誠的朋友。
+
+                - 夢見狗在遠處吠叫，象征著你可能面臨潛在的危險或威脅。
+
+                - 如果夢見狗死去，暗示著你可能在失去某種重要的友情或支持。
+
+            - id: cat
+              name: 貓
+              weight: 1000
+              cover: /image/luck/dream_interpretation/animal/cat.png
+              icon: 🐈
+              meaning: 貓象征著獨立、神秘和靈敏。夢見貓通常代表你對自由和自我意識的追求。
+              interpretations: >
+                - 夢見貓在遠處凝視你，象征著你對某種未知事物的好奇與謹慎。
+
+                - 如果夢到一只友善的貓，表示你在生活中感到舒適且自如。
+
+                - 夢見被貓抓傷，暗示著你可能被某種隱秘的情感或問題困擾。
+
+                - 如果夢中的貓在你身邊徘徊，意味著你正在反思自己的獨立性和自主權。
+
+                - 夢見黑貓，象征著你對某種未知或神秘的力量感到敬畏或不安。
+
+                - 如果夢見你在餵養貓，表示你在生活中關註細節或情感的培養。
+
+                - 夢見貓捉老鼠，象征著你在面對困境時的機智與敏銳。
+
+                - 夢見貓在水中遊泳，表示你在情感中保持了平衡與冷靜。
+
+                - 如果夢見一群貓，暗示著你可能在處理多個復雜的情感或問題。
+
+                - 夢見貓消失，表示你可能失去了一些個人自由或獨立性。
+
+            - id: mouse
+              name: 老鼠
+              weight: 1100
+              cover: /image/luck/dream_interpretation/animal/mouse.png
+              icon: 🐭
+              meaning: 老鼠象征著謹慎、小心和隱蔽。夢見老鼠通常表示你對某些細小但重要的問題的關註。
+              interpretations: >
+                - 夢見老鼠偷竊食物，象征著你對潛在的損失或隱秘的威脅感到擔憂。
+
+                - 如果夢到你追趕老鼠，表示你正在處理某個隱藏的困擾或問題。
+
+                - 夢見老鼠在黑暗中移動，暗示著你對某些未知事物或隱秘問題的恐懼。
+
+                - 如果夢中的老鼠被困，意味著你感覺自己在面對某個問題時無能為力。
+
+                - 夢見老鼠被捕獲，象征著你成功揭示並解決了某個隱秘的問題。
+
+                - 如果夢見你在餵養老鼠，表示你可能在無意中培養了一些負面的習慣或行為。
+
+                - 夢見老鼠在家中奔跑，暗示著你在處理家庭中的細小問題或壓力。
+
+                - 如果夢見一大群老鼠，表示你可能感覺被大量的小問題所困擾。
+
+                - 夢見老鼠和貓一起，象征著你在面對矛盾或復雜關系時表現得非常靈巧。
+
+                - 夢見老鼠逃跑，暗示你正在逃避某些微小但重要的責任。
+
+            - id: sheep
+              name: 羊
+              weight: 1200
+              cover: /image/luck/dream_interpretation/animal/sheep.png
+              icon: 🐑
+              meaning: 羊象征著溫順、服從和集體意識。夢見羊通常表示你對和平與和諧的追求。
+              interpretations: >
+                - 夢見一群羊在牧場上，象征著你在生活中感到安全與和諧。
+
+                - 如果夢到你在餵養羊，表示你在培養一種和平的環境或關系。
+
+                - 夢見迷路的羊，暗示著你在生活中可能感到困惑或失去了方向。
+
+                - 如果夢見黑羊，表示你可能在某個集體中感到異類或不合群。
+
+                - 夢見羊被狼攻擊，象征著你對外界威脅的擔憂或不安。
+
+                - 如果夢見你騎在羊背上，表示你能夠掌控一種溫和的力量。
+
+                - 夢見羊群被驅散，暗示著你可能在面對分裂或分歧。
+
+                - 如果夢見羊在水中飲水，象征著你在追求內心的平靜與滿足。
+
+                - 夢見羊毛，表示你對物質財富的追求與保護。
+
+                - 如果夢見羊被剪毛，意味著你可能在經歷一種損失或犧牲。
+
+            - id: pig
+              name: 豬
+              weight: 1300
+              cover: /image/luck/dream_interpretation/animal/pig.png
+              icon: 🐖
+              meaning: 豬象征著富足、滿足和享樂。夢見豬通常表示你對物質生活的滿足與追求。
+              interpretations: >
+                - 夢見肥胖的豬，象征著你對豐厚的物質生活的期待。
+
+                - 如果夢到你在餵養豬，表示你正在為未來的豐收或成功做準備。
+
+                - 夢見臟兮兮的豬，暗示著你在某些方面感到不潔或不滿意。
+
+                - 如果夢中的豬在泥中打滾，意味著你正在享受生活中的樂趣與滿足。
+
+                - 夢見豬被宰殺，象征著你對某種財富或資源的擔憂或損失。
+
+                - 如果夢見你騎在豬背上，表示你能夠控製並享受物質世界的富足。
+
+                - 夢見一群豬，意味著你在生活中得到了大量的資源或支持。
+
+                - 如果夢見豬在吃食，象征著你正在充分利用生活中的資源。
+
+                - 夢見豬叫聲，暗示著你在追求物質利益時可能過於急切或貪婪。
+
+                - 如果夢見豬跑掉，意味著你可能失去了一些珍貴的物質資源。
+
+            - id: ox
+              name: 牛
+              weight: 1400
+              cover: /image/luck/dream_interpretation/animal/ox.png
+              icon: 🐂
+              meaning: 牛象征著力量、耐力和穩定。夢見牛通常表示你對持久成功與穩定的追求。
+              interpretations: >
+                - 夢見一頭強壯的牛，象征著你在工作或生活中擁有強大的動力與堅持。
+
+                - 如果夢到你在耕地的牛，表示你正在為長遠的成功做出努力與投入。
+
+                - 夢見牛在田野上，象征著你在工作中的踏實與穩定。
+
+                - 如果夢見受傷的牛，暗示著你在工作中可能遇到了一些挫折或問題。
+
+                - 夢見牛在拉車，表示你正在承受大量的責任與壓力。
+
+                - 如果夢見你騎在牛背上，象征著你能夠駕馭生活中的巨大力量。
+
+                - 夢見牛在河邊飲水，表示你在生活中找到了一種平衡與滿足。
+
+                - 如果夢見牛被捕獵，象征著你可能在面對外界的挑戰與壓力。
+
+                - 夢見一群牛，意味著你在集體中感受到了力量與支持。
+
+                - 如果夢見牛角折斷，表示你可能失去了一些堅固的支持或資源。
+
+            - id: chicken
+              name: 雞
+              weight: 1500
+              cover: /image/luck/dream_interpretation/animal/chicken.png
+              icon: 🐔
+              meaning: 雞象征著勤勞、繁榮與家庭。夢見雞通常表示你對家庭生活和財富的關註。
+              interpretations: >
+                - 夢見母雞下蛋，象征著你在生活中獲得了豐厚的回報與成功。
+
+                - 如果夢到你在餵養雞，表示你正在努力為未來創造財富與資源。
+
+                - 夢見公雞啼叫，暗示著你在生活中正在迎來某種新的開始或機遇。
+
+                - 如果夢見雞在覓食，表示你正在充分利用生活中的機會與資源。
+
+                - 夢見雞與其他動物爭鬥，象征著你在生活中面臨競爭與挑戰。
+
+                - 如果夢見你騎在雞背上，表示你能夠控製生活中的繁忙與挑戰。
+
+                - 夢見雞群被打擾，暗示著你可能在家庭生活中面臨一些波折或不安。
+
+                - 如果夢見雞蛋破裂，象征著你對某種潛在的損失或機會的擔憂。
+
+                - 夢見母雞護崽，表示你對家庭生活充滿了關懷與保護。
+
+                - 如果夢見雞被捕殺，意味著你可能在生活中失去了一些重要的機會或資源。
+
+            - id: dragon
+              name: 龍
+              weight: 1600
+              cover: /image/luck/dream_interpretation/animal/dragon.png
+              icon: 🐉
+              meaning: 龍象征著力量、智慧與權力。夢見龍通常表示你對超凡力量與成就的渴望。
+              interpretations: >
+                - 夢見飛龍，象征著你在追求夢想時感到充滿力量與動力。
+
+                - 如果夢到你騎在龍背上，表示你正在掌控某種強大的力量。
+
+                - 夢見龍噴火，暗示著你正在處理某種強烈的情緒或挑戰。
+
+                - 如果夢見龍守護著你，象征著你有著某種強大的保護力量。
+
+                - 夢見龍在雲中飛行，表示你對未來的願景充滿了信心與期待。
+
+                - 如果夢見你與龍搏鬥，象征著你在面對強大的競爭或挑戰時毫不畏懼。
+
+                - 夢見龍在水中遊動，表示你在情感與理性之間找到了平衡。
+
+                - 如果夢見龍在你面前消失，暗示著你可能在失去某個重要的機會或力量。
+
+                - 夢見一群龍，表示你在生活中擁有了無盡的可能性與支持。
+
+                - 如果夢見龍卷起風暴，意味著你正在經歷一場巨大的變化或挑戰。
+
+            - id: fish
+              name: 魚
+              weight: 1700
+              cover: /image/luck/dream_interpretation/animal/fish.png
+              icon: 🐟
+              meaning: 魚象征著豐饒、流動與潛力。夢見魚通常表示你對未來潛力的期待與發展。
+              interpretations: >
+                - 夢見魚在水中遊動，象征著你在生活中自由而流暢地前進。
+
+                - 如果夢到你抓住一條魚，表示你成功地抓住了某個重要的機會。
+
+                - 夢見魚跳出水面，暗示著你在生活中迎來了新的突破與進展。
+
+                - 如果夢中的魚在淺水中遊動，意味著你可能在某些領域感到局限。
+
+                - 夢見魚群遊動，象征著你在生活中得到了許多支持與機會。
+
+                - 如果夢見你吃魚，表示你正在吸收某種新的知識或經驗。
+
+                - 夢見魚在水中消失，暗示著你可能失去了一些潛在的機會。
+
+                - 如果夢見魚飛翔，象征著你在夢想中跨越了界限與限製。
+
+                - 夢見魚卵，表示你對未來的潛在機會充滿了期待。
+
+                - 如果夢見死魚，意味著你可能失去了一些重要的潛力或資源。
+
+            - id: bird
+              name: 鳥
+              weight: 1800
+              cover: /image/luck/dream_interpretation/animal/bird.png
+              icon: 🐦
+              meaning: 鳥象征著自由、希望與精神的飛升。夢見鳥通常表示你對自由與表達自我的渴望。
+              interpretations: >
+                - 夢見飛翔的鳥，象征著你在追求自由與夢想時充滿動力與希望。
+
+                - 如果夢到鳥鳴，表示你在生活中感受到了喜悅與和平。
+
+                - 夢見一只鳥在籠中，暗示著你可能在某些方面感到受限或壓抑。
+
+                - 如果夢見你餵養鳥類，表示你正在培育某種新的希望或夢想。
+
+                - 夢見鳥在築巢，象征著你在生活中為未來創造穩定的基礎。
+
+                - 如果夢見鳥群飛過，表示你在集體中感受到了支持與連接。
+
+                - 夢見受傷的鳥，暗示著你可能在追求自由或夢想的過程中遇到了一些困難或挫折。
+
+                - 如果夢見捕捉鳥，表示你成功地抓住了某個重要的機會或想法。
+
+                - 夢見鳥蛋，象征著潛在的機會或創造力。
+
+                - 如果夢見一只鳥在你肩上，表示你在生活中感受到了某種指導或保護力量。
+
+            - id: bear
+              name: 熊
+              weight: 1900
+              cover: /image/luck/dream_interpretation/animal/bear.png
+              icon: 🐻
+              meaning: 熊象征著力量、勇氣與獨立。夢見熊通常表示你在面對挑戰時表現出的堅韌與自信。
+              interpretations: >
+                - 夢見一只熊，象征著你在生活中擁有強大的力量與勇氣。
+
+                - 如果夢到你與熊搏鬥，表示你正在面對某種巨大的挑戰或競爭。
+
+                - 夢見熊在冬眠，暗示著你在生活中需要時間來恢復與反思。
+
+                - 如果夢見熊在追逐你，表示你可能在生活中感到某種壓力或緊張。
+
+                - 夢見熊在森林中漫步，象征著你在生活中找到了一種安靜與平衡。
+
+                - 如果夢見熊保護著你，表示你在生活中感受到了某種安全與力量的支持。
+
+                - 夢見熊捕獵，暗示著你在追求自己的目標時充滿了決心與力量。
+
+                - 如果夢見你騎在熊背上，表示你能夠駕馭生活中的巨大挑戰。
+
+                - 夢見一只受傷的熊，象征著你可能在生活中經歷了某種失落或挫折。
+
+                - 如果夢見熊群，表示你在生活中得到了強大的集體支持與力量。
+
+            - id: owl
+              name: 貓頭鷹
+              weight: 2000
+              cover: /image/luck/dream_interpretation/animal/owl.png
+              icon: 🦉
+              meaning: 貓頭鷹象征著智慧、洞察力與神秘。夢見貓頭鷹通常表示你對未知事物的探索與理解。
+              interpretations: >
+                - 夢見一只貓頭鷹，象征著你在生活中擁有深刻的洞察力與智慧。
+
+                - 如果夢到貓頭鷹夜晚飛翔，表示你在黑暗中尋找真相或理解某種復雜的局面。
+
+                - 夢見貓頭鷹啼叫，暗示著你在生活中可能面臨某種警告或預兆。
+
+                - 如果夢見貓頭鷹在樹上，表示你在觀察周圍的環境並尋求更深的理解。
+
+                - 夢見貓頭鷹捕獵，象征著你在生活中能夠敏銳地抓住機會或揭示真相。
+
+                - 如果夢見貓頭鷹與其他鳥類互動，表示你在分享智慧或指導他人。
+
+                - 夢見受傷的貓頭鷹，暗示著你可能在尋找真相的過程中遇到了阻礙或失落。
+
+                - 如果夢見貓頭鷹的眼睛，表示你在某個問題上擁有非凡的洞察力與理解。
+
+                - 夢見貓頭鷹在你的夢中守護你，象征著你在追求智慧的道路上得到了保護。
+
+                - 如果夢見貓頭鷹帶走某物，表示你在生活中放棄了一些不再需要的東西。
+
+            - id: leopard
+              name: 豹
+              weight: 2100
+              cover: /image/luck/dream_interpretation/animal/leopard.png
+              icon: 🐆
+              meaning: 豹象征著敏捷、決心與隱藏的力量。夢見豹通常表示你在追求目標時展現的速度與決斷力。
+              interpretations: >
+                - 夢見一只奔跑的豹，象征著你在生活中迅速追求自己的目標。
+
+                - 如果夢到你被豹追逐，表示你在生活中感到某種緊迫感或壓力。
+
+                - 夢見豹捕獵，暗示著你在生活中全神貫註於某個目標或機會。
+
+                - 如果夢見豹在樹上，表示你在隱藏自己的實力，等待合適的時機。
+
+                - 夢見你馴服了一只豹，象征著你在生活中掌控了某種強大的力量。
+
+                - 如果夢見豹與其他動物搏鬥，表示你在面對激烈的競爭與挑戰。
+
+                - 夢見一只受傷的豹，暗示著你可能在追求目標的過程中遇到了某些挫折。
+
+                - 如果夢見豹群，表示你在生活中感受到了強大的集體力量與決心。
+
+                - 夢見豹的斑點，象征著你在生活中展現出的獨特性與個性。
+
+                - 如果夢見豹在月光下活動，表示你在追求目標時充滿了神秘與力量。

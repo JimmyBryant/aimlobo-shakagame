@@ -677,6 +677,26 @@
   color: var(--color-02-01);
 }
 
+.color-01 {
+  color: #A8D8EA;
+}
+
+.color-02 {
+  color: #FCBAD3;
+}
+
+.color-03 {
+  color: #AA96DA;
+}
+
+.color-04 {
+  color: #E5D1FA;
+}
+
+.color-05 {
+  color: #A1EEBD;
+}
+
 .bg-white {
   background-color: white;
 }
@@ -723,6 +743,10 @@
 
 .bg-color-04 {
   background-color: #E5D1FA !important;
+}
+
+.bg-color-05 {
+  background-color: #A1EEBD !important;
 }
 
 /* color & bg_color - end */

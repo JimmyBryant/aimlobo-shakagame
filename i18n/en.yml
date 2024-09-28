@@ -824,3 +824,25 @@
 
 - id: add_your_lucky_point_description
   translation: "This page contains all buttons, apps or pages that will add your lucky point with no cost."
+
+# page: dream_interpretation - kind_single
+- id: dream_interpretation_meaning
+  translation: "Meaning"
+
+- id: interpretation
+  translation: "Interpretation"
+
+- id: check_your_luck_index
+  translation: "Check your luck index"
+
+- id: dream_interpretation_need_belief
+  translation: "Need belief"
+
+- id: dream_interpretation_want_peace
+  translation: "Want peace"
+
+- id: dream_interpretation_need_answer
+  translation: "Need answer"
+
+- id: dream_interpretation_make_a_wish
+  translation: "Make a wish"

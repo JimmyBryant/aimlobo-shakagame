@@ -812,3 +812,25 @@
 - id: add_your_lucky_point_description
   translation: "本頁面包含所有可以增加（不會扣減）你的幸運值的按鈕，應用或頁面。"
 
+# page: dream_interpretation - kind_single
+- id: dream_interpretation_meaning
+  translation: "寓意"
+
+- id: interpretation
+  translation: "解析"
+
+- id: check_your_luck_index
+  translation: "查看你的幸運指數"
+
+- id: dream_interpretation_need_belief
+  translation: "需要信仰"
+
+- id: dream_interpretation_want_peace
+  translation: "追求平靜"
+
+- id: dream_interpretation_need_answer
+  translation: "追尋答案"
+
+- id: dream_interpretation_make_a_wish
+  translation: "許個願吧"
+

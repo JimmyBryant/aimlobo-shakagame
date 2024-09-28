@@ -1,0 +1,54 @@
+{{- define "main" -}}
+
+
+{{- $lang := .Lang -}}
+{{- $dataLang := index .Site.Data.luck $lang -}}
+{{- $luckLists := $dataLang.luck_lists -}}
+{{- $DreamInterpretation := where $luckLists "id" "dream_interpretation" -}}
+{{- $title := (index $DreamInterpretation 0).name -}}
+{{- $description := (index $DreamInterpretation 0).description -}}
+{{- $category := (index $DreamInterpretation 0).category -}}
+
+<div class="wrap">
+
+  <div class="margin-tb-1rem text-center padding-1rem">
+
+    <div class="font-size-2 font-weight-600">{{ $title }}</div> 
+
+  </div>
+
+  <div class="flex flex-wrap gap-1rem align-items-center margin-tb-_5rem padding-_5rem border-radius-_5rem bg-white">
+
+    {{ $colorClasses := slice "bg-color-01" "bg-color-02" "bg-color-03" "bg-color-04" "bg-color-05" }}
+    {{ $i := 0 }}
+
+    {{- with $category -}}
+
+      {{- range sort . "weight" "asc" -}}
+
+        {{ $colorIndex := mod $i 5 }}
+
+        <a href="{{- .id | urlize -}}/" class="{{ index $colorClasses $colorIndex }} padding-tb-_5rem padding-lr-1rem font-size-1_5 border-radius-_5rem">
+
+          {{ .icon }}&nbsp;{{ .name }}
+
+        </a>
+
+        {{ $i = add $i 1 }}
+
+      {{- end -}}
+      
+    {{- end -}}
+
+  </div>
+
+  <div class="line-height-1_8 margin-tb-_5rem padding-_5rem border-radius-_5rem bg-white">
+
+    {{ $description | markdownify }}
+  </div>
+
+
+  {{- partial "google_adsense/05.html" }}
+
+</div>
+{{- end -}}

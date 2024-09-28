@@ -1,0 +1,97 @@
+{{- define "main" -}}
+
+{{- $categoryName := T .File.BaseFileName -}}
+
+{{ $folderPath := path.Dir .File.Path }}
+{{ $folderName := path.Base $folderPath }}
+
+{{- $lang := .Lang -}}
+{{- $dataLang := index .Site.Data.luck $lang -}}
+{{- $luckLists := $dataLang.luck_lists -}}
+{{- $DreamInterpretation := where $luckLists "id" "dream_interpretation" -}}
+{{- $category := (index $DreamInterpretation 0).category -}}
+{{- $categoryID := where $category "id" $folderName -}}
+{{- $kind := (index $categoryID 0).kind -}}
+
+<div class="wrap">
+
+
+  
+
+  <div class="flex page_dream_interpretation gap-1rem">
+
+    <div class="page_left">
+
+      <div class="flex flex-wrap gap-1rem padding-1rem border-radius-_5rem bg-white margin-tb-_5rem">
+    
+        {{- with $category -}}
+    
+          {{- range sort . "weight" "asc" -}}
+
+            {{ if ne .id (index $categoryID 0).id }}
+    
+              <a href="../{{- .id | urlize -}}/" class="padding-tb-_5rem padding-lr-1rem font-size-1_5 border-radius-_5rem width-fit-content bg-color-05">
+          
+                {{ .icon }}&nbsp;{{ .name }}
+                
+              </a>
+
+            {{ else }}
+
+              <div class="padding-tb-_5rem padding-lr-1rem font-size-1_5 border-radius-_5rem width-fit-content bg-color-05">
+
+                {{ .icon }}&nbsp;{{ .name }}
+
+              </div>
+
+            {{ end }}
+
+          {{- end -}}
+          
+        {{- end -}}
+    
+      </div>
+
+      <div class="flex flex-wrap gap-1rem align-items-center bg-white padding-_5rem border-radius-_5rem margin-tb-_5rem">
+
+        {{ $colorClasses := slice "bg-color-01" "bg-color-02" "bg-color-03" "bg-color-04" }}
+        {{ $i := 0 }}
+    
+        {{- with $kind -}}
+    
+          {{- range sort . "weight" "asc" -}}
+    
+            {{ $colorIndex := mod $i 4 }}
+    
+            <a href="{{- .id | urlize -}}/" class="{{ index $colorClasses $colorIndex }} padding-tb-_5rem padding-lr-1rem font-size-1_2 border-radius-_5rem">
+    
+              {{ .icon }}&nbsp;{{ .name }}
+              
+            </a>
+    
+            {{ $i = add $i 1 }}
+    
+          {{- end -}}
+          
+        {{- end -}}
+    
+      </div>
+
+
+    </div>
+
+    <div class="page_right">
+
+      {{- partial "google_adsense/04.html" }}
+
+    </div>
+  </div>
+
+  
+
+  
+
+  
+
+</div>
+{{- end -}}

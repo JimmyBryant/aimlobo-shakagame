@@ -1,0 +1,278 @@
+{{- define "main" -}}
+
+{{- $categoryName := T .File.BaseFileName -}}
+
+{{ $currentURL := .Permalink }}
+{{ $parentURL := path.Dir $currentURL }}
+{{ $segments := split $parentURL "/" }}
+{{ $parentName := index $segments (sub (len $segments) 2) }}
+
+
+{{- $lang := .Lang -}}
+{{- $dataLang := index .Site.Data.luck $lang -}}
+{{- $luckLists := $dataLang.luck_lists -}}
+{{- $DreamInterpretation := where $luckLists "id" "dream_interpretation" -}}
+{{- $category := (index $DreamInterpretation 0).category -}}
+{{- $categoryID := where $category "id" $parentName -}}
+{{- $kind := (index $categoryID 0).kind -}}
+{{- $item := where $kind "id" .File.BaseFileName -}}
+{{- $item := index $item 0 -}}
+
+
+
+<div class="wrap">
+
+  <div class="page_dream_interpretation flex gap-1rem">
+
+    <div class="page_left">
+
+      <div class="flex flex-wrap gap-1rem padding-1rem border-radius-_5rem bg-white">
+    
+        {{- with $category -}}
+    
+          {{- range sort . "weight" "asc" -}}
+
+            {{ if ne .id (index $categoryID 0).id }}
+    
+              <a href="../../{{- .id | urlize -}}/" class="padding-tb-_5rem padding-lr-1rem font-size-1_5 border-radius-_5rem width-fit-content bg-color-05">
+          
+                {{ .icon }}&nbsp;{{ .name }}
+                
+              </a>
+
+            {{ else }}
+
+              <div class="padding-tb-_5rem padding-lr-1rem font-size-1_5 border-radius-_5rem width-fit-content bg-color-05">
+
+                {{ .icon }}&nbsp;{{ .name }}
+
+              </div>
+
+            {{ end }}
+
+          {{- end -}}
+          
+        {{- end -}}
+    
+      </div>
+
+      <div class="flex flex-wrap gap-1rem bg-white padding-1rem border-radius-_5rem margin-tb-1rem">
+
+        {{ $colorClasses := slice "bg-color-01" "bg-color-02" "bg-color-03" "bg-color-04" }}
+        {{ $i := 0 }}
+    
+        {{ range (sort $kind "weight" "asc") }}
+          {{ if ne .id $item.id }}
+            {{ $colorIndex := mod $i 4 }}
+            <a href="../{{ .id | urlize }}" class="{{ index $colorClasses $colorIndex }} padding-tb-_5rem padding-lr-1rem border-radius-_5rem">{{ .icon}}&nbsp;{{ .name }}</a>
+            {{ $i = add $i 1 }}
+          {{ end }}
+        {{ end }}
+    
+      </div>
+
+
+      <div class="padding-_5rem border-radius-_5rem bg-color-04">
+
+        <div class="padding-_5rem border-radius-_5rem bg-white">
+
+          {{ with $item }}
+
+            <div class="margin-tb-1rem flex gap-_5rem align-items-center">
+
+              {{- $path := .cover -}}
+
+              {{- $alt := .id -}}
+
+              {{ partial "tools/img-res.html" (dict "imagePath" $path "alt" $alt "imageWidth" 20 "class" "single_image border-radius-_5rem width-10rem inline-block") }}
+              
+
+              <div class="line-height-1_8">{{ .meaning | markdownify }}</div>
+            </div>
+
+            <div class="font-size-1_2 font-weight-600 margin-tb-_5rem">{{ T "interpretation" }}</div>
+
+            <div class="line-height-1_8">{{ .interpretations | markdownify }}</div>
+      
+      
+          {{ end }}
+      
+        </div>
+
+      </div>
+      
+
+    </div>
+
+    <div class="page_right">
+
+      {{- partial "google_adsense/04.html" }}
+
+
+      {{- /* 查看今日运势 - 跳转到 luck - find_constellation_zodiac */ -}}
+      <div class="padding-_5rem border-radius-_5rem margin-tb-_5rem bg-white flex flex-column gap-_5rem">
+
+        
+        <div class="font-size-1_2 font-weight-600">{{ T "check_your_luck_index" }}</div>
+
+        
+        <div>
+
+          {{- /* 幸运 */ -}}
+
+          {{ $gameid := slice "find_constellation_zodiac" }}
+
+          {{ range $gameid }}
+
+            {{ $game := where $luckLists "id" . }}
+            {{ $game := index $game 0 }}
+
+            {{ with $game }}
+              <div class="list-item">
+                {{- $path := .cover -}}
+                {{- $alt := .id -}}
+                <a href="{{- site.BaseURL -}}{{- $lang -}}/{{- "luck" -}}/{{- .id | urlize -}}/" class="flex align-items-center gap-1rem bg-color-01 padding-_5rem margin-tb-_5rem border-radius-_5rem">
+
+                    <div class="border-radius-_5rem width-50">
+
+                      {{ partial "tools/img-res.html" (dict "imagePath" $path "alt" $alt "imageWidth" 20 "class" "width-50 border-radius-_5rem") }}
+
+                    </div>
+
+                    <div class="game-title color-black overflow-hidden">
+                      {{- .name -}}
+                    </div>
+ 
+                </a>
+
+              </div>
+
+            {{ end }}
+
+          {{ end }}
+
+          {{- /* 幸运 - end */ -}}
+        </div>
+
+      </div>
+
+
+      {{- /* 相关应用 */ -}}
+      <div class="padding-_5rem border-radius-_5rem margin-tb-_5rem bg-white flex flex-column gap-_5rem">
+      
+        <div>
+
+          {{- /* 游戏 */ -}}
+
+          {{- $gameData := index .Site.Data.game $lang -}}
+          {{- $gameLists := $gameData.game_lists -}}
+
+          {{ $gameid := slice "happy_worship" "wooden_fish" "flying_book" }}
+
+          {{- /* 每个应用的广告语 */ -}}
+          {{ $gameDescription := slice "dream_interpretation_need_belief" "dream_interpretation_want_peace" "dream_interpretation_need_answer" }}
+          {{ $j := 0 }}
+
+          {{ range $gameid }}
+
+            {{ $game := where $gameLists "id" . }}
+            {{ $game := index $game 0 }}
+
+            {{ with $game }}
+              <div class="flex flex-column gap-_5rem">
+
+                <div class="font-size-1_2 font-weight-600 margin-top-1rem">{{ T (index $gameDescription $j) }}</div>
+
+                {{- $path := .cover -}}
+                {{- $alt := .id -}}
+                <a href="{{- site.BaseURL -}}{{- $lang -}}/{{- "game" -}}/{{- .id | urlize -}}/" class="flex align-items-center gap-1rem bg-color-03 padding-_5rem margin-tb-_5rem border-radius-_5rem">
+
+                    <div class="border-radius-_5rem width-50">
+
+                      {{ partial "tools/img-res.html" (dict "imagePath" $path "alt" $alt "imageWidth" 20 "class" "width-50 border-radius-_5rem") }}
+
+                    </div>
+
+                    <div class="game-title color-white overflow-hidden">
+                      {{- .name -}}
+                    </div>
+ 
+                </a>
+
+              </div>
+
+            {{ end }}
+
+            {{ $j = add $j 1 }}
+
+          {{ end }}
+
+          {{- /* 游戏 - end */ -}}
+
+          {{- /* 树洞 */ -}}
+
+          {{- $secretData := index .Site.Data.secret $lang -}}
+          {{- $secretLists := $secretData.secret_list -}}
+
+          {{ $secretID := slice "wish" }}
+          {{ $secretDescription := slice "dream_interpretation_make_a_wish" }}
+          {{ $m := 0 }}
+
+          {{ range $secretID }}
+
+            {{ $game := where $secretLists "id" . }}
+            {{ $game := index $game 0 }}
+
+            {{ with $game }}
+              <div class="flex flex-column gap-_5rem">
+
+                <div class="font-size-1_2 font-weight-600 margin-top-1rem">
+                  {{ T (index $secretDescription $m) }}
+                </div>
+
+                {{- $path := .cover -}}
+                {{- $alt := .id -}}
+                <a href="{{- site.BaseURL -}}{{- $lang -}}/{{- "secret" -}}/{{- .id | urlize -}}/" class="flex align-items-center gap-1rem bg-color-03 padding-_5rem margin-tb-_5rem border-radius-_5rem">
+
+                    <div class="border-radius-_5rem width-50">
+
+                      {{ partial "tools/img-res.html" (dict "imagePath" $path "alt" $alt "imageWidth" 20 "class" "width-50 border-radius-_5rem") }}
+
+                    </div>
+
+                    <div class="game-title color-white overflow-hidden">
+                      {{- .name -}}
+                    </div>
+
+                </a>
+
+              </div>
+
+            {{ end }}
+
+            {{ $m = add $m 1 }}
+
+          {{ end }}
+
+          {{- /* 树洞 - end */ -}}
+
+        </div>
+
+
+      </div>
+
+    </div>
+  </div>
+
+  
+
+
+
+  
+
+  
+
+  
+
+</div>
+{{- end -}}
