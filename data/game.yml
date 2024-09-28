@@ -482,7 +482,7 @@ en:
 
     - id: guess_who_win_rock
       name: Guess Who Wins - Rock Paper Scissors
-      weight: 900
+      weight: 150
       cover: /image/game/guess_who_win_rock/cover.png
       msg_not_enought_lucky_point: Not enough lucky point(🧧). [Get more](../../../add_lucky_point)
       tips_page_1_item_select: You need to select an item.
@@ -528,7 +528,7 @@ en:
 
     - id: guess_who_win_animal
       name: Guess Who Wins - Animal
-      weight: 400
+      weight: 160
       cover: /image/game/guess_who_win_animal/cover.png
       msg_not_enought_lucky_point: Not enough lucky point(🧧). [Get more](../../../add_lucky_point)
       tips_page_1_item_select: You need to select an item.
@@ -1109,7 +1109,7 @@ zh-cn:
     
     - id: guess_who_win_rock
       name: 猜谁赢 - 石头剪刀布
-      weight: 900
+      weight: 150
       cover: /image/game/guess_who_win_rock/cover.png
       msg_not_enought_lucky_point: 幸运值不足(🧧). [获取更多](../../../add_lucky_point)
       tips_page_1_item_select: 你需要选择一个项目.
@@ -1155,7 +1155,7 @@ zh-cn:
           
     - id: guess_who_win_animal
       name: 猜谁赢 - 动物
-      weight: 400
+      weight: 160
       cover: /image/game/guess_who_win_animal/cover.png
       msg_not_enought_lucky_point: 幸运值不足(🧧). [获取更多](../../../add_lucky_point)
       tips_page_1_item_select: 你需要选择一个项目.
@@ -1746,7 +1746,7 @@ zh-tw:
 
     - id: guess_who_win_rock
       name: 猜誰贏 - 石頭剪刀布
-      weight: 900
+      weight: 150
       cover: /image/game/guess_who_win_rock/cover.png
       msg_not_enought_lucky_point: 幸運值不足(🧧). [獲取更多](../../../add_lucky_point) 
       tips_page_1_item_select: 你需要選擇一個項目.
@@ -1792,7 +1792,7 @@ zh-tw:
     
     - id: guess_who_win_animal
       name: 猜誰贏 - 動物
-      weight: 400
+      weight: 160
       cover: /image/game/guess_who_win_animal/cover.png
       msg_not_enought_lucky_point: 幸運值不足(🧧). [獲取更多](../../../add_lucky_point) 
       tips_page_1_item_select: 你需要選擇一個項目.
