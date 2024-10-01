@@ -2,6 +2,22 @@ body {
 
 }
 
+.game_fruit_slot {
+
+    display: flex;
+    gap: 1rem;
+}
+
+.page_left {
+
+    width: 42rem;
+}
+
+.page_right {
+
+    width: 21rem;
+}
+
 .slot_machine_wrap {
 
     /* background: url('/image/game/fruit_slot/bg_image.jpg') no-repeat center center / cover; */
@@ -111,4 +127,20 @@ body {
 
         width: 256px;
     }
+}
+
+
+@media screen and (max-width: 48rem) {
+
+    .game_fruit_slot {
+
+        flex-direction: column;
+    }
+    
+    .page_left,
+    .page_right {
+    
+        width: 100%;
+    }
+    
 }
