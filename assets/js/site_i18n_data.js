@@ -220,6 +220,25 @@ const site_i18n_data = {
         'en': 's',
         'zh-cn': '秒',
         'zh-tw': '秒',
+    },
+
+    // page: game - five_in_a_row
+    five_in_a_row_playing: {
+        'en': 'Playing...',
+        'zh-cn': '对战中...',
+        'zh-tw': '對戰中...'
+    },
+
+    five_in_a_row_user_win_label: {
+        'en': 'Congratulation You Win, 🧧 + ',
+        'zh-cn': '恭喜你赢啦, 🧧 + ',
+        'zh-tw': '恭喜你贏啦, 🧧 + '
+    },
+
+    five_in_a_row_ai_win_label: {
+        'en': '🤖 AI Win, try again and defeat it',
+        'zh-cn': '🤖 机器人赢啦, 继续加油战胜它',
+        'zh-tw': '🤖 機器人贏啦, 繼續加油戰勝它'
     }
 
 

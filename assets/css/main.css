@@ -1635,7 +1635,8 @@ footer {
   }
   
   .game-title {
-    color: white;
+    /* color: white; */
+    color: black;
     text-align: center;
     font-size: 1.5rem;
     font-weight: 600;

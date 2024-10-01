@@ -1,0 +1,126 @@
+{{- define "main" -}}
+
+
+{{- $lang := .Lang -}}
+{{- $dataLang := index .Site.Data.game $lang -}}
+{{- $games := $dataLang.game_lists -}}
+{{- $FiveInARow := where $games "id" "five_in_a_row" -}}
+{{- $tips := (index $FiveInARow 0).tips -}}
+{{- $tipsStartGame := (index $FiveInARow 0).tips_start_game -}}
+{{- $title := (index $FiveInARow 0).name -}}
+{{- $userTips := (index $FiveInARow 0).user_tips -}}
+
+
+
+
+<div class="wrap">
+
+    <div class="game_five_in_a_row">
+
+        <div class="page_left flex flex-column gap-_5rem align-items-center">
+
+            {{- /* 游戏提示 */ -}}
+            <div class="tips_icon_force_close">
+
+                {{- partial "tools/popup_info_btn.html" (dict "infoContent" $tipsStartGame) }}
+
+            </div>
+
+            {{- /* 游戏标题 */ -}}
+            <div class="flex align-items-center gap-_5rem padding-tb-1rem">
+
+                <div class="game_title font-size-2">{{ $title }}</div>
+
+                <div class="tips_icon">
+
+                    <span class="tips_icon_in_page">❔</span>
+
+                    {{ partial "tools/popup_tips.html" (dict "tipsContent" $tips) }}
+
+                </div>
+
+            </div>
+
+            <h3 id="result-wrap">{{- $userTips -}}</h3>
+
+            {{- /* 游戏画面 */ -}}
+            <canvas id="chess"></canvas>
+
+            {{- /* 游戏数据区域 */ -}}
+            <a class="flex gap-1rem align-items-center" href="../../my">
+
+                <div class="font-size-1_5">{{ "🧧" }}</div>
+                <div class="var_user_lucky_point"></div>
+            </a>
+
+            {{- /* 游戏点击区域 */ -}}
+            <div class="game_control flex gap-_5rem align-items-center justify-content-between padding-_5rem border-radius-_5rem">
+                <button id='restart' class="restart cursor-pointer btn">{{ "🔄" }}</button>
+                <button id="goback" class="goback cursor-pointer btn">{{ "↩️" }}</button>
+                <button id="return" class="return cursor-pointer btn">{{ "↪️" }}</button>
+            </div>
+
+
+        </div>
+
+        <div class="page_right flex flex-column gap-1rem">
+
+            {{- partial "google_adsense/04.html" }}
+
+
+            {{- /* 其他游戏 */ -}}
+
+            <div class="padding-_5rem border-radius-_5rem margin-tb-_5rem bg-white flex flex-column gap-_5rem">
+
+                <a href="{{- site.BaseURL -}}{{- $lang -}}/{{- "game" -}}/" class="font-size-1_5 font-weight-600 color-black margin-tb-_5rem">{{ T "you_may_interested" }}</a>
+      
+                {{- $gameData := index .Site.Data.game $lang -}}
+                {{- $gameLists := $gameData.game_lists -}}
+      
+                {{ $gameid := slice "fruit_slot" "toto_3" "guess_who_win_rock" }}
+      
+                {{ range $gameid }}
+      
+                  {{ $game := where $gameLists "id" . }}
+                  {{ $game := index $game 0 }}
+      
+                  {{ with $game }}
+                    <div class="flex flex-column gap-_5rem">
+      
+                      {{- $path := .cover -}}
+                      {{- $alt := .id -}}
+                      <a href="{{- site.BaseURL -}}{{- $lang -}}/{{- "game" -}}/{{- .id | urlize -}}/" class="flex align-items-center gap-1rem bg-color-03 padding-_5rem border-radius-_5rem">
+      
+                          <div class="border-radius-_5rem width-50">
+      
+                            {{ partial "tools/img-res.html" (dict "imagePath" $path "alt" $alt "imageWidth" 20 "class" "width-50 border-radius-_5rem") }}
+      
+                          </div>
+      
+                          <div class="game-title color-white width-50 overflow-hidden">
+                            {{- .name -}}
+                          </div>
+       
+                      </a>
+      
+                    </div>
+      
+                  {{ end }}
+      
+                {{ end }}
+      
+                
+      
+              </div>
+
+        </div>
+
+
+
+    </div>
+
+
+    
+</div>
+
+{{- end -}}

@@ -617,6 +617,29 @@ en:
           3. Each round of the game will increase the game count by one.
         weight: 30
 
+    - id: five_in_a_row
+      name: Five in a Row
+      weight: 1000
+      cover: /image/game/five_in_a_row/cover.png
+      tips_start_game: Enjoy your game time, good luck. 🎋
+      user_tips: Playing...
+      tips:
+      - title: What is Five in a Row?
+        content: Five in a Row (shakagame.com) is a classic board game where two players use black and white pieces. Players take turns placing pieces on the intersections of the board's vertical and horizontal lines, and the first to form a line of 5 pieces wins.
+        weight: 10
+      - title: How to play Five in a Row?
+        content: |
+          1. Click anywhere on the board to place your piece and start the game.
+          2. Click the 🔄 button to refresh the game.
+          3. Click the ↩️ button to undo the last move.
+          4. Click the ↪️ button to redo the undo.
+        weight: 20
+      - title: Lucky Points System
+        content: |
+          1. There is no penalty for losing the game.
+          2. Each victory rewards you with 5 lucky points.
+        weight: 30
+
 
 zh-cn:
   game_lists:
@@ -1243,6 +1266,29 @@ zh-cn:
             2. 点击 💰 按钮会获得下注的幸运积分 * 奖励.
             3. 每一轮游戏都会增加一次游戏次数.
           weight: 30
+
+    - id: five_in_a_row
+      name: 五子棋
+      weight: 1000
+      cover: /image/game/five_in_a_row/cover.png
+      tips_start_game: 享受快乐游戏时光，祝你好运. 🎋
+      user_tips: 对战中...
+      tips:
+      - title: 什么是五子棋?
+        content: 五子棋 (shakagame.com) 是一款经典的下棋游戏，双方分别使用黑白两色的棋子，下在棋盘直线与横线的交叉点上，先形成5子连线者获胜.
+        weight: 10
+      - title: 如何玩五子棋?
+        content: |
+          1. 点击棋盘的任何地方即可开始下棋.
+          2. 点击 🔄 按钮即可刷新游戏.
+          3. 点击 ↩️ 按钮可以悔棋.
+          4. 点击 ↪️ 按钮可以撤销悔棋.
+        weight: 20
+      - title: 幸运积分系统
+        content: |
+          1. 游戏失败不会有任何代价.
+          2. 每次游戏胜利会获得5点幸运值奖励.
+        weight: 30
 
 
 zh-tw:
@@ -1880,3 +1926,26 @@ zh-tw:
             2. 點擊 💰 按鈕會獲得下註的幸運積分 * 獎勵.
             3. 每一輪遊戲都會增加一次遊戲次數.
           weight: 30
+
+    - id: five_in_a_row
+      name: 五子棋
+      weight: 1000
+      cover: /image/game/five_in_a_row/cover.png
+      tips_start_game: 享受快樂遊戲時光，祝你好運. 🎋
+      user_tips: 對戰中...
+      tips:
+      - title: 什麽是五子棋?
+        content: 五子棋 (shakagame.com) 是一款經典的下棋遊戲，雙方分別使用黑白兩色的棋子，下在棋盤直線與橫線的交叉點上，先形成5子連線者獲勝.
+        weight: 10
+      - title: 如何玩五子棋?
+        content: |
+          1. 點擊棋盤的任何地方即可開始下棋.
+          2. 點擊 🔄 按鈕即可刷新遊戲.
+          3. 點擊 ↩️ 按鈕可以悔棋.
+          4. 點擊 ↪️ 按鈕可以撤銷悔棋.
+        weight: 20
+      - title: 幸運積分系統
+        content: |
+          1. 遊戲失敗不會有任何代價.
+          2. 每次遊戲勝利會獲得5點幸運值獎勵.
+        weight: 30

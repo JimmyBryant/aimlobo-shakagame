@@ -1,0 +1,54 @@
+body {
+
+}
+
+.game_five_in_a_row {
+
+    display: flex;
+    gap: 1rem;
+}
+
+.page_left {
+
+    width: 42rem;
+}
+
+.page_right {
+
+    width: 21rem;
+}
+
+canvas {
+
+    margin: 1rem auto;
+    box-shadow: -2px -2px 2px #efefef, 5px 5px 5px #b9b9b9;
+    cursor: pointer;
+    background-color: #D2B17B;
+}
+
+
+
+#result-wrap {text-align: center;}
+
+.var_user_lucky_point {
+    padding: .2rem .5rem;
+    border-radius: .3rem;
+    background: #100803;
+    color: #fff;
+}
+
+
+@media screen and (max-width: 48rem) {
+
+    .game_five_in_a_row {
+
+        flex-direction: column;
+    }
+    
+    .page_left,
+    .page_right {
+    
+        width: 100%;
+    }
+    
+}

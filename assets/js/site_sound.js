@@ -112,5 +112,11 @@ const siteBgmCountDown4s = newSoundNoHtml5('/audio/share/count_down_4s-125125', 
 // 游戏胜利
 const siteBgmWin = newSoundNoHtml5('/audio/share/win-218995', false, 0.3);
 
+// 游戏成功
+const siteBgmSuccess = newSoundNoHtml5('/audio/share/success-1-6297', false, 0.3);
+
 // 游戏失败
 const siteBgmLose = newSoundNoHtml5('/audio/share/lose-6008', false, 0.3);
+
+// 游戏失败 - 2
+const siteBgmFail = newSoundNoHtml5('/audio/share/080205_life-lost-game-over-89697', false, 0.5);

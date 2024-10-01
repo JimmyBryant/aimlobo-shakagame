@@ -832,3 +832,7 @@
 
 - id: dream_interpretation_make_a_wish
   translation: "许个愿吧"
+
+# page: game - five_in_a_row
+- id: you_may_interested
+  translation: "你可能感兴趣"
