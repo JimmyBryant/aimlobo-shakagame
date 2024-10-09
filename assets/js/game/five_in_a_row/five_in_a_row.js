@@ -1,19 +1,34 @@
 // 常量定义
-const win_number = 5; // 几个子为赢，五子棋就是5 -- 没用上
-const canvasWidth_demarcation = 768; // pc 和 mobile 的屏幕宽度区分
-const canvasWidth_pc = 450; // pc 上的 canvas 的宽度和高度
-const canvasWidth_mobile = 300; // mobile 上的 canvas 的宽度和高度
-const cell_size_pc = 30; // pc 上的棋盘格子的宽度和高度
-const cell_size_mobile = 20; // mobile 上的棋盘格子的宽度和高度
+const canvas = document.getElementById("chess"); // 获取画布
+const ctx = canvas.getContext('2d');
+
+// // 获取屏幕宽度
+// const screenWidth = window.innerWidth; 
+
+const dpr = window.devicePixelRatio || 1;
+const rect = canvas.getBoundingClientRect();
+canvas.width = rect.width * dpr;
+canvas.height = rect.height * dpr;
+
 const cell_count = 15; // 棋盘格数
+
+// 确定棋格宽度和高度
+const cell_size = canvas.width / dpr / cell_count;
+
+// const canvasWidth_demarcation = 768; // pc 和 mobile 的屏幕宽度区分
+// const canvasWidth_pc = 450 * dpr; // pc 上的 canvas 的宽度和高度
+// const canvasWidth_mobile = 300 * dpr; // mobile 上的 canvas 的宽度和高度
+
+// const cell_size_pc = canvasWidth_pc / cell_count; // pc 上的棋盘格子的宽度和高度
+// const cell_size_mobile = canvasWidth_mobile / cell_count; // mobile 上的棋盘格子的宽度和高度
+
 const bonus_lucky_point = 5; // 用户赢了奖励的幸运值
 const play_label = "five_in_a_row_playing"; // 对战中的提示 -- 翻译
 const user_win_label = "five_in_a_row_user_win_label"; // 用户赢了的提示 -- 翻译
 const ai_win_label = "five_in_a_row_ai_win_label"; // AI赢了的提示 -- 翻译
 
-const canvas = document.getElementById("chess"); // 获取画布
-const context = canvas.getContext('2d');
-context.strokeStyle = '#000000'; //棋盘的线条颜色
+
+
 
 const infoIconForceClose = document.querySelector('.tips_icon_force_close');
 const btnGetIt = infoIconForceClose.querySelector('.btn_get_it');
@@ -27,11 +42,11 @@ const bgmGame = newSound('/audio/game/five_in_a_row/lucky-days-happy-acoustic-la
 let userBonused = false;
 
 
-// 获取屏幕宽度
-const screenWidth = window.innerWidth; 
 
-// 确定棋格宽度和高度
-const cell_size = screenWidth > canvasWidth_demarcation ? cell_size_pc : cell_size_mobile;
+
+
+
+
 
 
 // let backbtn = document.getElementById("goback");
@@ -75,25 +90,18 @@ function setCanvasWidth() {
 
     if (screenWidth > canvasWidth_demarcation) {
 
-        canvas.width = canvasWidth_pc;
+        canvas.width = canvasWidth_pc * dpr;
 
-        canvas.height = canvasWidth_pc;
+        canvas.height = canvasWidth_pc * dpr;
 
     } else {
         
-        canvas.width = canvasWidth_mobile;
+        canvas.width = canvasWidth_mobile * dpr;
 
-        canvas.height = canvasWidth_mobile;  
+        canvas.height = canvasWidth_mobile * dpr;  
     }
 }
 
-
-// // 初始化悔棋和撤销晦气按钮的状态
-// function initBtnStatus() {
-
-//     btnBack.disabled = true;
-//     btnReturn.disabled = true;
-// }
 
 // 更新悔棋和撤销悔棋按钮的状态
 function updateBtnStatus() {
@@ -129,32 +137,21 @@ function initchessBoard() {
 }
 
 
-/*
-context.moveTo(15 + i * 30 , 15);: 设置当前绘制位置为棋盘的一条竖线的起点。15 + i * 30 是 x 坐标，15 是 y 坐标。这里的 30 是每个棋格的宽度。
-
-context.lineTo(15 + i * 30 , 435);: 从刚才设置的起点绘制到 y 坐标为 435 的地方，形成一条竖线。
-
-context.stroke();: 这条命令会将前面定义的路径绘制出来。
-
-context.moveTo(15 , 15 + i * 30);: 设置当前绘制位置为棋盘的一条横线的起点。15 是 x 坐标，15 + i * 30 是 y 坐标。
-
-context.lineTo(435 , 15 + i * 30);: 从起点绘制到 x 坐标为 435 的地方，形成一条横线。
-
-*/
-
 
 function drawChessBoard() {
 
+    ctx.strokeStyle = '#000000'; //棋盘的线条颜色
+    
     for (let i = 0; i < cell_count; i++) {
         // 绘制竖线
-        context.moveTo(cell_size / 2 + i * cell_size, cell_size / 2);
-        context.lineTo(cell_size / 2 + i * cell_size, cell_size * cell_count - cell_size / 2);
-        context.stroke();
+        ctx.moveTo(cell_size / 2 + i * cell_size, cell_size / 2);
+        ctx.lineTo(cell_size / 2 + i * cell_size, cell_size * cell_count - cell_size / 2);
+        ctx.stroke();
 
         // 绘制横线
-        context.moveTo(cell_size / 2, cell_size / 2 + i * cell_size);
-        context.lineTo(cell_size * cell_count - cell_size / 2, cell_size / 2 + i * cell_size);
-        context.stroke();
+        ctx.moveTo(cell_size / 2, cell_size / 2 + i * cell_size);
+        ctx.lineTo(cell_size * cell_count - cell_size / 2, cell_size / 2 + i * cell_size);
+        ctx.stroke();
     }
 
 }
@@ -320,13 +317,13 @@ function computerAI() {
 //画棋子
 function oneStep(i, j, me) {
 
-    context.beginPath();
-    // 使用 cell_size 代替硬编码的 30
-    context.arc(cell_size / 2 + i * cell_size, cell_size / 2 + j * cell_size, cell_size / 2 - 2, 0, 2 * Math.PI); // 画圆
-    context.closePath();
+    ctx.beginPath();
+    
+    ctx.arc(cell_size / 2 + i * cell_size, cell_size / 2 + j * cell_size, cell_size / 2 - 2, 0, 2 * Math.PI); // 画圆
+    ctx.closePath();
 
     // 渐变
-    let gradient = context.createRadialGradient(
+    let gradient = ctx.createRadialGradient(
         cell_size / 2 + i * cell_size + 2,
         cell_size / 2 + j * cell_size - 2,
         cell_size / 2 - 2,
@@ -343,27 +340,27 @@ function oneStep(i, j, me) {
         gradient.addColorStop(1, '#f9f9f9');
     }
 
-    context.fillStyle = gradient;
-    context.fill();
+    ctx.fillStyle = gradient;
+    ctx.fill();
 }
 
 // 销毁棋子
 function minusStep(i, j) {
 
     // 擦除该圆
-    context.clearRect(i * cell_size, j * cell_size, cell_size, cell_size);
+    ctx.clearRect(i * cell_size, j * cell_size, cell_size, cell_size);
 
     // 重画该圆周围的格子线
-    context.beginPath();
+    ctx.beginPath();
     // 画竖线
-    context.moveTo(cell_size / 2 + i * cell_size, j * cell_size);
-    context.lineTo(cell_size / 2 + i * cell_size, j * cell_size + cell_size);
+    ctx.moveTo(cell_size / 2 + i * cell_size, j * cell_size);
+    ctx.lineTo(cell_size / 2 + i * cell_size, j * cell_size + cell_size);
 
     // 画横线
-    context.moveTo(i * cell_size, cell_size / 2 + j * cell_size);
-    context.lineTo((i + 1) * cell_size, cell_size / 2 + j * cell_size);
+    ctx.moveTo(i * cell_size, cell_size / 2 + j * cell_size);
+    ctx.lineTo((i + 1) * cell_size, cell_size / 2 + j * cell_size);
 
-    context.stroke();
+    ctx.stroke();
 }
 
 
@@ -382,7 +379,9 @@ infoIconForceClose.click();
 updateBtnStatus();
 
 // 根据屏幕宽度设置 canvas 尺寸和绘图区域
-setCanvasWidth();
+// setCanvasWidth();
+
+ctx.scale(dpr, dpr);
 
 // 画棋盘
 drawChessBoard();
