@@ -594,28 +594,59 @@ en:
       name: Fruit Slot Machine
       weight: 100
       cover: /image/game/fruit_slot/cover.png
+      kind:
+        - id: default
+          name: Fruit Slot Machine
+          weight: 100
+        - id: animal_slot
+          name: Animal Slot Machine
+          weight: 200
+        - id: car_slot
+          name: Transportation Slot Machine
+          weight: 300
+        - id: food_slot
+          name: Food Slot Machine
+          weight: 400
+        - id: career_slot
+          name: Career Slot Machine
+          weight: 500
+        - id: weather_slot
+          name: Weather Slot Machine
+          weight: 600
+        - id: express_slot
+          name: Express Slot Machine
+          weight: 700
+        - id: ball_slot
+          name: Ball Slot Machine
+          weight: 800
+        - id: sports_slot
+          name: Sports Slot Machine
+          weight: 900
+        - id: building_slot
+          name: Building Slot Machine
+          weight: 1000
       msg_not_enought_lucky_point: Not enough lucky point(🧧). [Get more](../../add_lucky_point)
       tips_start_game: Enjoy your happy game time, good luck. 🎋
       tips_win: 🎉 Win 🎊
       tips:
-      - title: What is the Fruit Slot Machine?
-        content: The Fruit Slot Machine (shakagame.com) is a classic online free game that simulates a real slot machine.
-        weight: 10
-      - title: How to Play the Fruit Slot Machine?
-        content: |
-          1. Click the 🎰 button to start spinning the slot machine, and it will stop automatically.
-          2. If three identical fruits appear on the screen, the player will earn 10 lucky points.
-          3. If the three identical fruits are in the same row, the player will earn an additional 30 lucky points.
-          4. Click the 💰 button to receive the reward of lucky points * the bet lucky points.
-          5. Click the ➖ button to reduce the bet lucky points (minimum bet is 1 lucky point).
-          6. Click the ➕ button to increase the bet lucky points (maximum bet is 10 lucky points).
-        weight: 20
-      - title: Lucky Point System
-        content: |
-          1. Clicking the 🎰 button will automatically deduct the bet lucky points.
-          2. Clicking the 💰 button will reward the player with the bet lucky points * the reward.
-          3. Each round of the game will increase the game count by one.
-        weight: 30
+        - title: What is the Fruit Slot Machine?
+          content: The Fruit Slot Machine (shakagame.com) is a classic online free game that simulates a real slot machine.
+          weight: 10
+        - title: How to Play the Fruit Slot Machine?
+          content: |
+            1. Click the 🎰 button to start spinning the slot machine, and it will stop automatically.
+            2. If three identical fruits appear on the screen, the player will earn 10 lucky points.
+            3. If the three identical fruits are in the same row, the player will earn an additional 30 lucky points.
+            4. Click the 💰 button to receive the reward of lucky points * the bet lucky points.
+            5. Click the ➖ button to reduce the bet lucky points (minimum bet is 1 lucky point).
+            6. Click the ➕ button to increase the bet lucky points (maximum bet is 10 lucky points).
+          weight: 20
+        - title: Lucky Point System
+          content: |
+            1. Clicking the 🎰 button will automatically deduct the bet lucky points.
+            2. Clicking the 💰 button will reward the player with the bet lucky points * the reward.
+            3. Each round of the game will increase the game count by one.
+          weight: 30
 
     - id: five_in_a_row
       name: Five in a Row
@@ -879,6 +910,7 @@ en:
             2. Each victory rewards you with 5 lucky points.
           weight: 30
 
+    
 
 zh-cn:
   game_lists:
@@ -1483,6 +1515,37 @@ zh-cn:
       name: 水果机
       weight: 100
       cover: /image/game/fruit_slot/cover.png
+      kind:
+        - id: default
+          name: 水果机
+          weight: 100
+        - id: animal_slot
+          name: 动物机
+          weight: 200
+        - id: car_slot
+          name: 交通机
+          weight: 300
+        - id: food_slot
+          name: 食物机
+          weight: 400
+        - id: career_slot
+          name: 职业机
+          weight: 500
+        - id: weather_slot
+          name: 天气机
+          weight: 600
+        - id: express_slot
+          name: 表情机
+          weight: 700
+        - id: ball_slot
+          name: 球类机
+          weight: 800
+        - id: sports_slot
+          name: 运动机
+          weight: 900
+        - id: building_slot
+          name: 建筑机
+          weight: 1000
       msg_not_enought_lucky_point: 幸运值不足(🧧). [获取更多](../../add_lucky_point)
       tips_start_game: 享受快乐游戏时光，祝你好运. 🎋
       tips_win: 🎉 赢啦 🎊
@@ -1795,6 +1858,7 @@ zh-cn:
             2. 增加指针指向的幸运值.
           weight: 30
 
+    
 
 zh-tw:
   game_lists:
@@ -2409,6 +2473,37 @@ zh-tw:
       name: 水果機
       weight: 100
       cover: /image/game/fruit_slot/cover.png
+      kind:
+        - id: default
+          name: 水果機
+          weight: 100
+        - id: animal_slot
+          name: 動物機
+          weight: 200
+        - id: car_slot
+          name: 交通機
+          weight: 300
+        - id: food_slot
+          name: 食物機
+          weight: 400
+        - id: career_slot
+          name: 職業機
+          weight: 500
+        - id: weather_slot
+          name: 天氣機
+          weight: 600
+        - id: express_slot
+          name: 表情機
+          weight: 700
+        - id: ball_slot
+          name: 球類機
+          weight: 800
+        - id: sports_slot
+          name: 運動機
+          weight: 900
+        - id: building_slot
+          name: 建築機
+          weight: 1000
       msg_not_enought_lucky_point: 幸運值不足(🧧). [獲取更多](../../add_lucky_point) 
       tips_start_game: 享受快樂遊戲時光，祝你好運. 🎋
       tips_win: 🎉 贏啦 🎊
@@ -2691,3 +2786,5 @@ zh-tw:
             1. 每次點擊轉盤消耗 1 個幸運值(只有幸運盤會扣減).
             2. 增加指針指向的幸運值.
           weight: 30
+
+    

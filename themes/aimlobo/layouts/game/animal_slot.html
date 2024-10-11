@@ -4,11 +4,11 @@
 {{- $lang := .Lang -}}
 {{- $dataLang := index .Site.Data.game $lang -}}
 {{- $games := $dataLang.game_lists -}}
-{{- $FruitSlot := where $games "id" "fruit_slot" -}}
-{{- $msg_not_enought_lucky_point := (index $FruitSlot 0).msg_not_enought_lucky_point -}}
-{{- $tips := (index $FruitSlot 0).tips -}}
-{{- $tipsStartGame := (index $FruitSlot 0).tips_start_game -}}
-{{- $tipsWin := (index $FruitSlot 0).tips_win -}}
+{{- $AnimalSlot := where $games "id" "animal_slot" -}}
+{{- $msg_not_enought_lucky_point := (index $AnimalSlot 0).msg_not_enought_lucky_point -}}
+{{- $tips := (index $AnimalSlot 0).tips -}}
+{{- $tipsStartGame := (index $AnimalSlot 0).tips_start_game -}}
+{{- $tipsWin := (index $AnimalSlot 0).tips_win -}}
 
 
 
@@ -29,7 +29,7 @@
             {{- /* 游戏标题 */ -}}
             <div class="flex align-items-center gap-_5rem padding-tb-1rem">
 
-                <div class="game_title font-size-2">{{ T "fruit_slot_machine" }}</div>
+                <div class="game_title font-size-2">{{ T "animal_slot_machine" }}</div>
 
                 <div class="tips_icon">
 
@@ -127,7 +127,7 @@
                 {{- $gameData := index .Site.Data.game $lang -}}
                 {{- $gameLists := $gameData.game_lists -}}
       
-                {{ $gameid := slice "five_in_a_row" "toto_3" "guess_who_win_rock" }}
+                {{ $gameid := slice "fruit_slot" "five_in_a_row" "toto_3" "guess_who_win_rock" }}
       
                 {{ range $gameid }}
       

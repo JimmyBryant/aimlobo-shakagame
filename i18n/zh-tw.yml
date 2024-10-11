@@ -804,6 +804,9 @@
 - id: fruit_slot_machine
   translation: "水果機"
 
+- id: animal_slot_machine
+  translation: "動物機"
+
 
 #page: add_lucky_point
 - id: add_your_lucky_point

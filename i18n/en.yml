@@ -817,6 +817,9 @@
 - id: fruit_slot_machine
   translation: "Fruit slot machine"
 
+- id: animal_slot_machine
+  translation: "Animal slot machine"
+
 
 #page: add_lucky_point
 - id: add_your_lucky_point

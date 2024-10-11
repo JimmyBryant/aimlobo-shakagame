@@ -1,0 +1,200 @@
+{{- define "main" -}}
+
+
+
+{{- $lang := .Lang -}}
+{{- $dataLang := index .Site.Data.game $lang -}}
+{{- $games := $dataLang.game_lists -}}
+{{- $FruitSlot := where $games "id" "fruit_slot" -}}
+{{- $msg_not_enought_lucky_point := (index $FruitSlot 0).msg_not_enought_lucky_point -}}
+{{- $tips := (index $FruitSlot 0).tips -}}
+{{- $tipsStartGame := (index $FruitSlot 0).tips_start_game -}}
+{{- $tipsWin := (index $FruitSlot 0).tips_win -}}
+{{- $kind := (index $FruitSlot 0).kind -}}
+{{- $file := where $kind "id" "default" -}}
+{{- $name := (index $file 0).name -}}
+
+
+
+
+
+<div class="wrap">
+
+    <div class="game_fruit_slot">
+
+        <div class="page_left flex flex-column gap-_5rem align-items-center">
+
+            {{- /* 游戏提示 */ -}}
+            <div class="tips_icon_force_close">
+
+                {{- partial "tools/popup_info_btn.html" (dict "infoContent" $tipsStartGame) }}
+
+            </div>
+
+            {{- /* 游戏标题 */ -}}
+            <div class="flex align-items-center gap-_5rem padding-tb-1rem">
+
+                <div class="game_title font-size-2">{{- $name -}}</div>
+
+                <div class="tips_icon">
+
+                    <span class="tips_icon_in_page">❔</span>
+
+                    {{ partial "tools/popup_tips.html" (dict "tipsContent" $tips) }}
+
+                </div>
+
+            </div>
+
+            {{- /* 游戏画面 */ -}}
+            <div class="slot_machine_wrap padding-_5rem border-radius-_5rem">
+
+                <div class="slot_machine">
+                    
+                    <div class="column_item">
+
+                        <div class="column" id="column1"></div>
+
+                    </div>
+
+                    <div class="column_item">
+
+                        <div class="column" id="column2"></div>
+
+                    </div>
+
+                    <div class="column_item">
+
+                        <div class="column" id="column3"></div>
+
+                    </div>
+                    
+                    
+                </div>
+
+            </div>
+
+            {{- /* 数据区域 */ -}}
+            <div class="game_data flex gap-1rem align-items-center justify-content-between padding-1rem border-radius-_5rem">
+
+                <div class="flex flex-column gap-_5rem align-items-center">
+                    <div class="font-size-1_2 font-weight-600">{{ T "lottery_win" }}</div>
+                    <div class="var_user_win_amount width-3rem text-center">0</div>
+                </div>
+
+                <div class="flex flex-column gap-_5rem align-items-center">
+                    <div class="font-size-1_2 font-weight-600">{{ T "bet" }}</div>
+                    <div class="var_user_bet_amount width-2rem text-center">1</div>
+                </div>
+
+                <a class="flex flex-column gap-_5rem align-items-center color-black" href="../../my">
+                    <div class="font-size-1_2 font-weight-600">{{ T "lucky_point" }}</div>
+                    <div class="var_user_lucky_point width-8rem text-center overflow-hidden"></div>
+                </a>
+
+            </div>
+
+
+
+            {{- /* 游戏点击区域 */ -}}
+            <div class="game_control flex gap-_5rem align-items-center justify-content-between padding-_5rem border-radius-_5rem">
+                <button id="bonus" class="cursor-pointer btn btn_game btn_game_yellow"><span>{{ "💰" }}</span></button>
+                <button id="minus_bonus" class="cursor-pointer btn">{{ "➖" }}</button>
+                <button id="add_bonus" class="cursor-pointer btn">{{ "➕" }}</button>
+                <button id="startBtn" class="cursor-pointer btn btn_game btn_game_blue"><span>{{ "🎰" }}</span></button>
+            </div>
+
+            {{- /* 中奖的烟花 */ -}}
+            <div class="image_bonus">
+                <img src="/image/game/fruit_slot/congratulations-13773_512.gif">
+            </div>
+            
+            <div class="not_enough_lucky_point info_icon">
+                {{- $infoType := "warning" -}}
+                {{- $infoContent := $msg_not_enought_lucky_point -}}
+                {{- partial "tools/popup_info.html" (dict "infoType" $infoType "infoContent" $infoContent) -}}
+            </div>
+
+        </div>
+        
+
+        <div class="page_right flex flex-column gap-1rem">
+
+            {{- /* 类似风格 */ -}}
+            <div class="padding-_5rem border-radius-_5rem margin-tb-_5rem bg-white flex flex-wrap gap-_5rem width-100">
+
+                {{ $colorClasses := slice "bg-color-01" "bg-color-02" "bg-color-03" "bg-color-04" }}
+                {{ $i := 0 }}
+    
+                {{ range (sort $kind "weight" "asc") }}
+    
+                  {{- if ne .id "default" -}}
+    
+                    {{ $colorIndex := mod $i 4 }}
+    
+                    <a href="./{{- .id -}}" class="{{ index $colorClasses $colorIndex }} padding-tb-_5rem padding-lr-1rem font-size-1_2 border-radius-_5rem">{{ .name }}</a>
+    
+                    {{ $i = add $i 1 }}
+    
+                  {{ end }}
+    
+                {{ end }}
+              </div>
+
+            {{- partial "google_adsense/04.html" }}
+
+
+            {{- /* 其他游戏 */ -}}
+
+            <div class="padding-_5rem border-radius-_5rem margin-tb-_5rem bg-white flex flex-column gap-_5rem">
+
+                <a href="{{- site.BaseURL -}}{{- $lang -}}/{{- "game" -}}/" class="font-size-1_5 font-weight-600 color-black margin-tb-_5rem">{{ T "you_may_interested" }}</a>
+      
+                {{- $gameData := index .Site.Data.game $lang -}}
+                {{- $gameLists := $gameData.game_lists -}}
+      
+                {{ $gameid := slice "lucky_wheel" "five_in_a_row" "toto_3" "guess_who_win_rock" }}
+      
+                {{ range $gameid }}
+      
+                  {{ $game := where $gameLists "id" . }}
+                  {{ $game := index $game 0 }}
+      
+                  {{ with $game }}
+                    <div class="flex flex-column gap-_5rem">
+      
+                      {{- $path := .cover -}}
+                      {{- $alt := .id -}}
+                      <a href="{{- site.BaseURL -}}{{- $lang -}}/{{- "game" -}}/{{- .id | urlize -}}/" class="flex align-items-center gap-1rem bg-color-03 padding-_5rem border-radius-_5rem">
+      
+                          <div class="border-radius-_5rem width-50">
+      
+                            {{ partial "tools/img-res.html" (dict "imagePath" $path "alt" $alt "imageWidth" 20 "class" "width-50 border-radius-_5rem") }}
+      
+                          </div>
+      
+                          <div class="game-title color-white width-50 overflow-hidden">
+                            {{- .name -}}
+                          </div>
+       
+                      </a>
+      
+                    </div>
+      
+                  {{ end }}
+      
+                {{ end }}
+      
+                
+      
+              </div>
+
+        </div>
+    </div>
+        
+
+
+    
+</div>
+
+{{- end -}}
