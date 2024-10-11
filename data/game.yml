@@ -640,6 +640,245 @@ en:
           2. Each victory rewards you with 5 lucky points.
         weight: 30
 
+    - id: lucky_wheel
+      name: Lucky Wheel
+      weight: 140
+      cover: /image/game/lucky_wheel/cover.png
+      msg_not_enought_lucky_point: Not enough lucky point(🧧). [Get more](../../add_lucky_point)
+      tips_start_game: Enjoy your game time, good luck. 🎋
+      kind:
+        - id: default
+          name: default
+          weight: 100
+          data_content:
+            - content: 🧧 + 1
+              weight: 100
+            - content: 🧧 + 2
+              weight: 200
+            - content: 🧧 + 3
+              weight: 300
+            - content: 🧧 + 0
+              weight: 400
+            - content: 🧧 + 4
+              weight: 500
+            - content: 🧧 + 5
+              weight: 600
+            - content: 🧧 + 6
+              weight: 700
+            - content: 🧧 + 0
+              weight: 800
+            - content: 🧧 + 7
+              weight: 900
+            - content: 🧧 + 8
+              weight: 1000
+            - content: 🧧 + 9
+              weight: 1100
+            - content: 🧧 + 0
+              weight: 1200
+
+        - id: fruit
+          name: Fruit
+          weight: 400
+          description: Which fruit you eat
+          data_content:
+            - content: 🍇 grape
+              weight: 100
+            - content: 🍉 watermelon
+              weight: 200
+            - content: 🍊 pomelo
+              weight: 300
+            - content: 🍋 lemon
+              weight: 400
+            - content: 🍌 banana
+              weight: 500
+            - content: 🍍 pineapple
+              weight: 600
+            - content: 🍎 apple
+              weight: 700
+            - content: 🍐 pear
+              weight: 800
+            - content: 🍑 peach
+              weight: 900
+            - content: 🍒 cherry
+              weight: 1000
+            - content: 🍓 strawberry
+              weight: 1100
+            - content: 🫐 strawberry
+              weight: 1200
+            - content: 🥝 kiwi fruit 
+              weight: 1300
+            - content: 🥥 coconut
+              weight: 1400
+            - content: 🥭 mango
+              weight: 1500
+
+        - id: number
+          name: Number
+          description: What is your lucky number
+          weight: 200
+          data_content:
+            - content: 0
+              weight: 100
+            - content: 1
+              weight: 200
+            - content: 2
+              weight: 300
+            - content: 3
+              weight: 400
+            - content: 4
+              weight: 500
+            - content: 5
+              weight: 600
+            - content: 6
+              weight: 700
+            - content: 7
+              weight: 800
+            - content: 8
+              weight: 900
+            - content: 9
+              weight: 1000
+
+        - id: prize
+          name: Prize
+          description: Will you get first prize
+          weight: 300
+          data_content:
+            - content: 🎁 First Prize
+              weight: 100
+            - content: 🎉 Second Prize
+              weight: 200
+            - content: 🎊 Third Prize
+              weight: 300
+            - content: 🎈 Fourth Prize
+              weight: 400
+            - content: 🎋 Fifth Prize
+              weight: 500
+
+        - id: sports
+          name: Sports
+          description: Which sports suit you
+          weight: 500
+          data_content:
+            - content: 🏇 Horse Racing
+              weight: 100
+            - content: ⛷️ Ski
+              weight: 200
+            - content: 🏌️ Golf
+              weight: 300
+            - content: 🏄 Surf
+              weight: 400
+            - content: 🏊 Swim
+              weight: 500
+            - content: 🏃 Run
+              weight: 600
+            - content: 🤾 Basketball
+              weight: 700
+            - content: 🧘 Yoga
+              weight: 800
+            - content: 🚴‍♀️ Bike
+              weight: 900
+            - content: 💤 Sleep
+              weight: 1000
+            - content: 🚣 Boating
+              weight: 1100
+            - content: 🎡 amusement park
+              weight: 1200
+
+        - id: transportation 
+          name: Transportation 
+          description: Which transportation suit you
+          weight: 600
+          data_content:
+            - content: 🚶 Walk
+              weight: 100
+            - content: 🚗 Car
+              weight: 200
+            - content: 🚇 Subway
+              weight: 300
+            - content: 🚆 Train
+              weight: 400
+            - content: 🚌 Bus
+              weight: 500
+            - content: 🚲 Bicycle
+              weight: 600
+            - content: 🏍️ Motor
+              weight: 700
+            - content: 🛩️ Air
+              weight: 800
+            - content: ⛴️ Ferry
+              weight: 900
+            - content: 🛵 Electric Motor
+              weight: 1000
+            - content: 🛺 tricycle
+              weight: 1100
+
+        - id: yes_no
+          name: Yes / No 
+          description: Hard to make a decision
+          weight: 150
+          data_content:
+            - content: "🥳 Yes"
+              weight: 100
+            - content: "😭 No"
+              weight: 200
+            - content: "🥳 Yes"
+              weight: 300
+            - content: "😭 No"
+              weight: 400
+            - content: "🥳 Yes"
+              weight: 500
+            - content: "😭 No"
+              weight: 600
+
+
+        - id: country
+          name: Country
+          description: Go where for tourist
+          weight: 700
+          data_content:
+            - content: 🐼 china
+              weight: 100
+            - content: 🗽 USA
+              weight: 200
+            - content: 🏜️ Australia
+              weight: 300
+            - content: 🏔️ New Zealand
+              weight: 400
+            - content: 🪄 UK
+              weight: 500
+            - content: 🏛️ EU
+              weight: 600
+            - content: ⛩️ Japan
+              weight: 700
+            - content: 🥋 Korean
+              weight: 800
+            - content: 🏝️ Singapore
+              weight: 900
+            - content: 🏖️ Brazil
+              weight: 1000
+            - content: 🍁 Canada
+              weight: 1100
+            - content: 🦩 Kenya
+              weight: 1200
+
+      
+      tips:
+        - title: What is Lucky Wheel?
+          content: Five in a Row (shakagame.com) is a classic board game where two players use black and white pieces. Players take turns placing pieces on the intersections of the board's vertical and horizontal lines, and the first to form a line of 5 pieces wins.
+          weight: 10
+        - title: How to play Five in a Row?
+          content: |
+            1. Click anywhere on the board to place your piece and start the game.
+            2. Click the 🔄 button to refresh the game.
+            3. Click the ↩️ button to undo the last move.
+            4. Click the ↪️ button to redo the undo.
+          weight: 20
+        - title: Lucky Points System
+          content: |
+            1. There is no penalty for losing the game.
+            2. Each victory rewards you with 5 lucky points.
+          weight: 30
+
 
 zh-cn:
   game_lists:
@@ -1289,6 +1528,272 @@ zh-cn:
           1. 游戏失败不会有任何代价.
           2. 每次游戏胜利会获得5点幸运值奖励.
         weight: 30
+
+    - id: lucky_wheel
+      name: 幸运转盘
+      weight: 140
+      cover: /image/game/lucky_wheel/cover.png
+      msg_not_enought_lucky_point: 幸运值不足(🧧). [获取更多](../../add_lucky_point)
+      tips_start_game: 享受快乐游戏时光，祝你好运. 🎋
+      kind:
+        - id: default
+          name: 幸运盘
+          weight: 100
+          data_content:
+            - content: 🧧 + 1
+              weight: 100
+            - content: 🧧 + 2
+              weight: 200
+            - content: 🧧 + 3
+              weight: 300
+            - content: 🧧 + 0
+              weight: 400
+            - content: 🧧 + 4
+              weight: 500
+            - content: 🧧 + 5
+              weight: 600
+            - content: 🧧 + 6
+              weight: 700
+            - content: 🧧 + 0
+              weight: 800
+            - content: 🧧 + 7
+              weight: 900
+            - content: 🧧 + 8
+              weight: 1000
+            - content: 🧧 + 9
+              weight: 1100
+            - content: 🧧 + 0
+              weight: 1200
+
+        - id: fruit
+          name: 水果
+          weight: 400
+          description: 吃点什么水果好呢
+          data_content:
+            - content: 🍇 葡萄
+              weight: 100
+            - content: 🍉 西瓜
+              weight: 200
+            - content: 🍊 柚子
+              weight: 300
+            - content: 🍋 柠檬
+              weight: 400
+            - content: 🍌 香蕉
+              weight: 500
+            - content: 🍍 菠萝
+              weight: 600
+            - content: 🍎 苹果
+              weight: 700
+            - content: 🍐 梨
+              weight: 800
+            - content: 🍑 桃子
+              weight: 900
+            - content: 🍒 樱桃
+              weight: 1000
+            - content: 🍓 草莓
+              weight: 1100
+            - content: 🫐 蓝莓
+              weight: 1200
+            - content: 🥝 猕猴桃
+              weight: 1300
+            - content: 🥥 椰子
+              weight: 1400
+            - content: 🥭 芒果
+              weight: 1500
+
+        - id: number
+          name: 数字
+          description: 看看你的幸运数字是几
+          weight: 200
+          data_content:
+            - content: 0
+              weight: 100
+            - content: 1
+              weight: 200
+            - content: 2
+              weight: 300
+            - content: 3
+              weight: 400
+            - content: 4
+              weight: 500
+            - content: 5
+              weight: 600
+            - content: 6
+              weight: 700
+            - content: 7
+              weight: 800
+            - content: 8
+              weight: 900
+            - content: 9
+              weight: 1000
+
+        - id: prize
+          name: 抽奖
+          description: 看看你能抽几等奖
+          weight: 300
+          data_content:
+            - content: 🎁 一等奖
+              weight: 100
+            - content: 🎉 二等奖
+              weight: 200
+            - content: 🎊 三等奖
+              weight: 300
+            - content: 🎈 四等奖
+              weight: 400
+            - content: 🎋 五等奖
+              weight: 500
+
+        - id: sports
+          name: 运动
+          description: 今天做点什么运动呢
+          weight: 500
+          data_content:
+            - content: 🏇 赛马
+              weight: 100
+            - content: ⛷️ 滑雪
+              weight: 200
+            - content: 🏌️ 高尔夫
+              weight: 300
+            - content: 🏄 冲浪
+              weight: 400
+            - content: 🏊 游泳
+              weight: 500
+            - content: 🏃 跑步
+              weight: 600
+            - content: 🤾 打球
+              weight: 700
+            - content: 🧘 瑜伽
+              weight: 800
+            - content: 🚴‍♀️ 骑车
+              weight: 900
+            - content: 💤 睡吧
+              weight: 1000
+            - content: 🚣 划船
+              weight: 1100
+            - content: 🎡 游乐园
+              weight: 1200
+
+        - id: transportation 
+          name: 交通
+          description: 今天怎么出行呢
+          weight: 600
+          data_content:
+            - content: 🚶 步行
+              weight: 100
+            - content: 🚗 开车
+              weight: 200
+            - content: 🚇 地铁
+              weight: 300
+            - content: 🚆 火车
+              weight: 400
+            - content: 🚌 公交
+              weight: 500
+            - content: 🚲 自行车
+              weight: 600
+            - content: 🏍️ 摩托车
+              weight: 700
+            - content: 🛩️ 飞机
+              weight: 800
+            - content: ⛴️ 轮渡
+              weight: 900
+            - content: 🛵 电瓶车
+              weight: 1000
+            - content: 🛺 三蹦子
+              weight: 1100
+
+        - id: yes_no
+          name: 是 / 否 
+          description: 难以决定...
+          weight: 150
+          data_content:
+            - content: "🥳 是"
+              weight: 100
+            - content: "😭 否"
+              weight: 200
+            - content: "🥳 是"
+              weight: 300
+            - content: "😭 否"
+              weight: 400
+            - content: "🥳 是"
+              weight: 500
+            - content: "😭 否"
+              weight: 600
+
+        - id: country
+          name: 国家
+          description: 去哪度假旅游呢
+          weight: 700
+          data_content:
+            - content: 🐼 中国
+              weight: 100
+            - content: 🗽 美国
+              weight: 200
+            - content: 🏜️ 澳大利亚
+              weight: 300
+            - content: 🏔️ 新西兰
+              weight: 400
+            - content: 🪄 英国
+              weight: 500
+            - content: 🏛️ 欧盟
+              weight: 600
+            - content: ⛩️ 日本
+              weight: 700
+            - content: 🥋 韩国
+              weight: 800
+            - content: 🏝️ 新加坡
+              weight: 900
+            - content: 🏖️ 巴西
+              weight: 1000
+            - content: 🍁 加拿大
+              weight: 1100
+            - content: 🦩 肯尼亚
+              weight: 1200
+
+        - id: takeout
+          name: 外卖
+          description: 不知道点什么外卖
+          weight: 160
+          data_content:
+            - content: 盖浇饭
+              weight: 100
+            - content: 麻辣烫
+              weight: 200
+            - content: 肯爷爷
+              weight: 300
+            - content: 麦当当
+              weight: 400
+            - content: 黄焖鸡
+              weight: 500
+            - content: 烤肉拌饭
+              weight: 600
+            - content: 寿司
+              weight: 700
+            - content: 酸辣粉
+              weight: 800
+            - content: 麻辣香锅
+              weight: 900
+            - content: 凉皮
+              weight: 1000
+            - content: 螺蛳粉
+              weight: 1100
+            - content: 小碗菜
+              weight: 1200
+
+      
+      tips:
+        - title: 什么是幸运转盘?
+          content: 幸运转盘 (shakagame.com) 是一个转盘小游戏，快来看看你的运气如何.
+          weight: 10
+        - title: 怎么玩幸运转盘?
+          content: |
+            1. 点击转盘的任何地方，转盘会开始转动.
+            2. 转盘停下，指针指向的内容就是你的幸运指向.
+          weight: 20
+        - title: 幸运积分系统
+          content: |
+            1. 每次点击转盘消耗 1 个幸运值(只有幸运盘会扣减).
+            2. 增加指针指向的幸运值.
+          weight: 30
 
 
 zh-tw:
@@ -1949,3 +2454,240 @@ zh-tw:
           1. 遊戲失敗不會有任何代價.
           2. 每次遊戲勝利會獲得5點幸運值獎勵.
         weight: 30
+
+    - id: lucky_wheel
+      name: 幸運轉盤
+      weight: 140
+      cover: /image/game/lucky_wheel/cover.png
+      msg_not_enought_lucky_point: 幸運值不足(🧧). [獲取更多](../../add_lucky_point)
+      tips_start_game: 享受快樂遊戲時光，祝你好運. 🎋
+      kind:
+        - id: default
+          name: 幸運盤
+          weight: 100
+          data_content:
+            - content: 🧧 + 1
+              weight: 100
+            - content: 🧧 + 2
+              weight: 200
+            - content: 🧧 + 3
+              weight: 300
+            - content: 🧧 + 0
+              weight: 400
+            - content: 🧧 + 4
+              weight: 500
+            - content: 🧧 + 5
+              weight: 600
+            - content: 🧧 + 6
+              weight: 700
+            - content: 🧧 + 0
+              weight: 800
+            - content: 🧧 + 7
+              weight: 900
+            - content: 🧧 + 8
+              weight: 1000
+            - content: 🧧 + 9
+              weight: 1100
+            - content: 🧧 + 0
+              weight: 1200
+
+        - id: fruit
+          name: 水果
+          weight: 400
+          description: 吃點什麽水果好呢
+          data_content:
+            - content: 🍇 葡萄
+              weight: 100
+            - content: 🍉 西瓜
+              weight: 200
+            - content: 🍊 柚子
+              weight: 300
+            - content: 🍋 檸檬
+              weight: 400
+            - content: 🍌 香蕉
+              weight: 500
+            - content: 🍍 菠蘿
+              weight: 600
+            - content: 🍎 蘋果
+              weight: 700
+            - content: 🍐 梨
+              weight: 800
+            - content: 🍑 桃子
+              weight: 900
+            - content: 🍒 櫻桃
+              weight: 1000
+            - content: 🍓 草莓
+              weight: 1100
+            - content: 🫐 藍莓
+              weight: 1200
+            - content: 🥝 獼猴桃
+              weight: 1300
+            - content: 🥥 椰子
+              weight: 1400
+            - content: 🥭 芒果
+              weight: 1500
+
+        - id: number
+          name: 數字
+          description: 看看你的幸運數字是幾
+          weight: 200
+          data_content:
+            - content: 0
+              weight: 100
+            - content: 1
+              weight: 200
+            - content: 2
+              weight: 300
+            - content: 3
+              weight: 400
+            - content: 4
+              weight: 500
+            - content: 5
+              weight: 600
+            - content: 6
+              weight: 700
+            - content: 7
+              weight: 800
+            - content: 8
+              weight: 900
+            - content: 9
+              weight: 1000
+
+        - id: prize
+          name: 抽獎
+          description: 看看你能抽幾等獎
+          weight: 300
+          data_content:
+            - content: 🎁 一等獎
+              weight: 100
+            - content: 🎉 二等獎
+              weight: 200
+            - content: 🎊 三等獎
+              weight: 300
+            - content: 🎈 四等獎
+              weight: 400
+            - content: 🎋 五等獎
+              weight: 500
+
+        - id: sports
+          name: 運動
+          description: 今天做點什麽運動呢
+          weight: 500
+          data_content:
+            - content: 🏇 賽馬
+              weight: 100
+            - content: ⛷️ 滑雪
+              weight: 200
+            - content: 🏌️ 高爾夫
+              weight: 300
+            - content: 🏄 沖浪
+              weight: 400
+            - content: 🏊 遊泳
+              weight: 500
+            - content: 🏃 跑步
+              weight: 600
+            - content: 🤾 打球
+              weight: 700
+            - content: 🧘 瑜伽
+              weight: 800
+            - content: 🚴‍♀️ 騎車
+              weight: 900
+            - content: 💤 睡吧
+              weight: 1000
+            - content: 🚣 劃船
+              weight: 1100
+            - content: 🎡 遊樂園
+              weight: 1200
+
+        - id: transportation 
+          name: 交通
+          description: 今天怎麽出行呢
+          weight: 600
+          data_content:
+            - content: 🚶 步行
+              weight: 100
+            - content: 🚗 開車
+              weight: 200
+            - content: 🚇 地鐵
+              weight: 300
+            - content: 🚆 火車
+              weight: 400
+            - content: 🚌 公交
+              weight: 500
+            - content: 🚲 自行車
+              weight: 600
+            - content: 🏍️ 摩托車
+              weight: 700
+            - content: 🛩️ 飛機
+              weight: 800
+            - content: ⛴️ 輪渡
+              weight: 900
+            - content: 🛵 電瓶車
+              weight: 1000
+            - content: 🛺 三蹦子
+              weight: 1100
+
+        - id: yes_no
+          name: 是 / 否 
+          description: 難以決定...
+          weight: 150
+          data_content:
+            - content: "🥳 是"
+              weight: 100
+            - content: "😭 否"
+              weight: 200
+            - content: "🥳 是"
+              weight: 300
+            - content: "😭 否"
+              weight: 400
+            - content: "🥳 是"
+              weight: 500
+            - content: "😭 否"
+              weight: 600
+
+
+        - id: country
+          name: 國家
+          description: 去哪度假旅遊呢
+          weight: 700
+          data_content:
+            - content: 🐼 中國
+              weight: 100
+            - content: 🗽 美國
+              weight: 200
+            - content: 🏜️ 澳大利亞
+              weight: 300
+            - content: 🏔️ 新西蘭
+              weight: 400
+            - content: 🪄 英國
+              weight: 500
+            - content: 🏛️ 歐盟
+              weight: 600
+            - content: ⛩️ 日本
+              weight: 700
+            - content: 🥋 韓國
+              weight: 800
+            - content: 🏝️ 新加坡
+              weight: 900
+            - content: 🏖️ 巴西
+              weight: 1000
+            - content: 🍁 加拿大
+              weight: 1100
+            - content: 🦩 肯尼亞
+              weight: 1200
+
+      
+      tips:
+        - title: 什麽是幸運轉盤?
+          content: 幸運轉盤 (shakagame.com) 是一個轉盤小遊戲，快來看看你的運氣如何.
+          weight: 10
+        - title: 怎麽玩幸運轉盤?
+          content: |
+            1. 點擊轉盤的任何地方，轉盤會開始轉動.
+            2. 轉盤停下，指針指向的內容就是你的幸運指向.
+          weight: 20
+        - title: 幸運積分系統
+          content: |
+            1. 每次點擊轉盤消耗 1 個幸運值(只有幸運盤會扣減).
+            2. 增加指針指向的幸運值.
+          weight: 30

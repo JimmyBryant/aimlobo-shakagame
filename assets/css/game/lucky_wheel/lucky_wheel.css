@@ -1,0 +1,66 @@
+body {
+
+}
+
+.game_lucky_wheel {
+
+    display: flex;
+    gap: 1rem;
+}
+
+.page_left {
+
+    width: 42rem;
+}
+
+.page_right {
+
+    width: 21rem;
+}
+
+canvas {
+
+    width: 540px;
+    height: 540px;
+    margin: 0.5rem auto;
+}
+
+.var_user_lucky_point {
+    padding: .2rem .5rem;
+    border-radius: .3rem;
+    background: #100803;
+    color: #fff;
+}
+
+.pin {
+    min-height: 3rem;
+}
+
+.data_content {
+
+    display: none;
+}
+
+
+
+
+@media screen and (max-width: 48rem) {
+
+    .game_lucky_wheel  {
+
+        flex-direction: column;
+    }
+    
+    .page_left,
+    .page_right {
+    
+        width: 100%;
+    }
+
+    canvas {
+
+        width: 320px;
+        height: 320px;
+    }
+    
+}
