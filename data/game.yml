@@ -492,9 +492,9 @@ en:
       tips_start_game: |
         🪨 > ✂️
 
-        ✂️ > 📄
+        ✂️ > 📜
 
-        📄 > 🪨
+        📜 > 🪨
       players:
         - id: 1
           name: Scissors
@@ -506,7 +506,7 @@ en:
           weight: 20
         - id: 3
           name: Paper
-          content: 📄
+          content: 📜
           weight: 30
       tips:
         - title: What is Guess Who Wins - Rock Paper Scissors?
@@ -1430,9 +1430,9 @@ zh-cn:
       tips_start_game: |
         🪨 > ✂️
 
-        ✂️ > 📄
+        ✂️ > 📜
 
-        📄 > 🪨
+        📜 > 🪨
       players:
         - id: 1
           name: 剪刀
@@ -1444,7 +1444,7 @@ zh-cn:
           weight: 20
         - id: 3
           name: 布
-          content: 📄
+          content: 📜
           weight: 30 
       tips:
         - title: 什么是 猜谁赢 - 石头剪刀布?
@@ -2405,9 +2405,9 @@ zh-tw:
       tips_start_game: |
         🪨 > ✂️
 
-        ✂️ > 📄
+        ✂️ > 📜
 
-        📄 > 🪨
+        📜 > 🪨
       players:
         - id: 1
           name: 剪刀
@@ -2419,7 +2419,7 @@ zh-tw:
           weight: 20
         - id: 3
           name: 布
-          content: 📄
+          content: 📜
           weight: 30 
       tips:
         - title: 什麽是 猜誰贏 - 石頭剪刀布?

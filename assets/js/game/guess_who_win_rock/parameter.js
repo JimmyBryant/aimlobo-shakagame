@@ -26,7 +26,7 @@ const INITIAL_COUNT = 15; // 生成各个元素的数量
 const ATTACK_MOVE_SPEED = 2; // 攻击敌人的速度
 const PROTECT_MOVE_SPEED = 1.8; // 保护自己的速度
 const DETECTION_RANGE = 600; // 攻击/保护的侦查范围
-const elementTypes = ['🪨', '✂️', '📄']; // 重要 -- 顺序 -- 按照 前边吃后边的顺序
+const elementTypes = ['🪨', '✂️', '📜']; // 重要 -- 顺序 -- 按照 前边吃后边的顺序
 
 
 // bgmGame所在位置
