@@ -853,3 +853,11 @@
 # page: game - five_in_a_row
 - id: you_may_interested
   translation: "You may interested"
+
+
+# page: game - lucky_wheel - customize
+- id: customize_items
+  translation: "Customize Items"
+
+- id: clear
+  translation: "Clear"

@@ -892,6 +892,23 @@ en:
             - content: 🦩 Kenya
               weight: 1200
 
+        - id: customize
+          name: Customize
+          placeholder: Type items in every row
+          weight: 140
+          data_content:
+            - content: "🥳"
+              weight: 100
+            - content: "😭"
+              weight: 200
+            - content: "🥳"
+              weight: 300
+            - content: "😭"
+              weight: 400
+            - content: "🥳"
+              weight: 500
+            - content: "😭"
+              weight: 600
       
       tips:
         - title: What is Lucky Wheel?
@@ -1842,6 +1859,23 @@ zh-cn:
             - content: 小碗菜
               weight: 1200
 
+        - id: customize
+          name: 自定义
+          placeholder: 在每行输入项目内容
+          weight: 140
+          data_content:
+            - content: "🥳"
+              weight: 100
+            - content: "😭"
+              weight: 200
+            - content: "🥳"
+              weight: 300
+            - content: "😭"
+              weight: 400
+            - content: "🥳"
+              weight: 500
+            - content: "😭"
+              weight: 600
       
       tips:
         - title: 什么是幸运转盘?
@@ -2770,6 +2804,24 @@ zh-tw:
               weight: 1100
             - content: 🦩 肯尼亞
               weight: 1200
+
+        - id: customize
+          name: 自定義
+          placeholder: 在每行輸入項目內容
+          weight: 140
+          data_content:
+            - content: "🥳"
+              weight: 100
+            - content: "😭"
+              weight: 200
+            - content: "🥳"
+              weight: 300
+            - content: "😭"
+              weight: 400
+            - content: "🥳"
+              weight: 500
+            - content: "😭"
+              weight: 600
 
       
       tips:

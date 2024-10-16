@@ -41,6 +41,11 @@ canvas {
     display: none;
 }
 
+#userInput {
+
+    resize: vertical;
+}
+
 
 
 

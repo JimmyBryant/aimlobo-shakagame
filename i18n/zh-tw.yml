@@ -840,3 +840,10 @@
 # page: game - five_in_a_row
 - id: you_may_interested
   translation: "你可能感興趣"
+
+# page: game - lucky_wheel - customize
+- id: customize_items
+  translation: "自定義項目"
+
+- id: clear
+  translation: "清空"

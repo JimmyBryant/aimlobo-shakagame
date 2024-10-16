@@ -1,0 +1,185 @@
+{{- define "main" -}}
+
+{{- $fileName := .File.BaseFileName -}}
+
+{{- $lang := .Lang -}}
+{{- $dataLang := index .Site.Data.game $lang -}}
+{{- $games := $dataLang.game_lists -}}
+{{- $luckyWheel := where $games "id" "lucky_wheel" -}}
+{{- $tips := (index $luckyWheel 0).tips -}}
+{{- $tipsStartGame := (index $luckyWheel 0).tips_start_game -}}
+{{- $title := (index $luckyWheel 0).name -}}
+{{- $kind := (index $luckyWheel 0).kind -}}
+{{- $file := where $kind "id" $fileName -}}
+{{- $name := (index $file 0).name -}}
+{{- $placeholder := (index $file 0).placeholder -}}
+{{- $dataContent := (index $file 0).data_content -}}
+
+
+
+
+<div class="wrap">
+
+    <div class="game_lucky_wheel">
+
+        <div class="page_left flex flex-column gap-_5rem align-items-center">
+
+            {{- /* 游戏提示 */ -}}
+            <div class="tips_icon_force_close">
+
+                {{- partial "tools/popup_info_btn.html" (dict "infoContent" $tipsStartGame) }}
+
+            </div>
+
+            {{- /* 游戏标题 */ -}}
+            <div class="flex align-items-center gap-_5rem padding-tb-1rem">
+
+              <div class="var_game_title font-size-2 cursor-pointer">{{ T "customize_title" }}&nbsp;✏️</div>
+
+              {{- /* 点击game-title后打开popup_form_edit_game_title */ -}}
+              <div class="popup_form_edit_game_title popup_box">
+
+                <div class="popup_box_content">
+
+                    <form class="form_edit_game_title">
+
+                        <div class="header">
+                            <span class="font-size-1">✏️&nbsp;</span>
+                            <span class="font-size-1_5">{{- T "edit_title" -}}</span>
+                        </div>
+                
+                        <div class="body">
+                            <input class="game_title_input" type="text" id="game_title_input" name="game_title_input" minlength="1" maxlength="15" placeholder="{{ T "edit_title" }}(1-15)" required pattern=".*\S.*">
+                        </div>
+                
+                        <div class="footer">
+                            <button class="btn btn_reset" type="reset">{{ T "cancel" }}</button>
+                            <button class="btn btn_submit" type="submit">{{ T "submit" }}</button>
+                        </div>
+                        
+                    </form>
+                </div>
+              </div>
+
+            </div>
+
+            
+
+            
+
+            {{- /* 扇形内容数据 */ -}}
+            <div class="data_content">
+
+              {{ range $dataContent }}
+
+                <span>{{ .content }}</span>
+
+              {{ end }}
+              
+            </div>
+
+
+            {{- /* 游戏画面 */ -}}
+            <canvas id="canvas" class="cursor-pointer">lucky wheel</canvas>
+
+            <div id="pin" class="pin width-100 text-center font-size-1_5 font-weight-600 bg-color-02 padding-_5rem border-radius-_5rem overflow-hidden"></div>
+
+
+        </div>
+
+        <div class="page_right flex flex-column gap-1rem">
+
+          {{- /* 用户输入 */ -}}
+          <label for="userInput" class="font-size-1_2 text-center">{{ T "customize_items" }}</label>
+          <textarea id="userInput" placeholder="{{ $placeholder }}" class="width-100 padding-_5rem margin-tb-_5rem" rows="6" required></textarea>
+
+          <div class="flex align-items-center justify-content-between gap-1rem">
+
+            <button id="submitBtn" class="btn">{{ T "submit" }}</button>
+          <button id="clearBtn" class="btn">{{ T "clear" }}</button>
+
+          </div>
+          
+          
+
+          {{- /* 类似风格 */ -}}
+          <div class="padding-_5rem border-radius-_5rem margin-tb-_5rem bg-white flex flex-wrap gap-_5rem width-100">
+
+            {{ $colorClasses := slice "bg-color-01" "bg-color-02" "bg-color-03" "bg-color-04" }}
+            {{ $i := 0 }}
+
+            {{ range (sort $kind "weight" "asc") }}
+
+              {{- if ne .id $fileName -}}
+
+                {{ $colorIndex := mod $i 4 }}
+
+                <a href="../{{- .id -}}" class="{{ index $colorClasses $colorIndex }} padding-tb-_5rem padding-lr-1rem font-size-1_2 border-radius-_5rem">{{ .name }}</a>
+
+                {{ $i = add $i 1 }}
+
+              {{ end }}
+
+            {{ end }}
+          </div>
+
+
+          {{- partial "google_adsense/04.html" }}
+
+
+          {{- /* 其他游戏 */ -}}
+
+          <div class="padding-_5rem border-radius-_5rem margin-tb-_5rem bg-white flex flex-column gap-_5rem">
+
+              <a href="{{- site.BaseURL -}}{{- $lang -}}/{{- "game" -}}/" class="font-size-1_5 font-weight-600 color-black margin-tb-_5rem">{{ T "you_may_interested" }}</a>
+    
+              {{- $gameData := index .Site.Data.game $lang -}}
+              {{- $gameLists := $gameData.game_lists -}}
+    
+              {{ $gameid := slice "fruit_slot" "toto_3" "guess_who_win_rock" }}
+    
+              {{ range $gameid }}
+    
+                {{ $game := where $gameLists "id" . }}
+                {{ $game := index $game 0 }}
+    
+                {{ with $game }}
+                  <div class="flex flex-column gap-_5rem">
+    
+                    {{- $path := .cover -}}
+                    {{- $alt := .id -}}
+                    <a href="{{- site.BaseURL -}}{{- $lang -}}/{{- "game" -}}/{{- .id | urlize -}}/" class="flex align-items-center gap-1rem bg-color-03 padding-_5rem border-radius-_5rem">
+    
+                        <div class="border-radius-_5rem width-50">
+    
+                          {{ partial "tools/img-res.html" (dict "imagePath" $path "alt" $alt "imageWidth" 20 "class" "width-50 border-radius-_5rem") }}
+    
+                        </div>
+    
+                        <div class="game-title color-white width-50 overflow-hidden">
+                          {{- .name -}}
+                        </div>
+      
+                    </a>
+    
+                  </div>
+    
+                {{ end }}
+    
+              {{ end }}
+    
+              
+    
+          </div>
+
+        </div>
+
+
+
+    </div>
+
+
+    
+</div>
+
+{{- end -}}
