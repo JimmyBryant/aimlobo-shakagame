@@ -25,8 +25,8 @@
     {{ $largeWidth := mul $imageWidth 16 }}
     {{ $smallWidth := mul (div $imageWidth 2) 24 }}
 
-    {{ $largeImageWebp := .Resize (printf "%dx webp" $largeWidth) }}
-    {{ $smallImageWebp := .Resize (printf "%dx webp q85" $smallWidth) }}
+    {{ $largeImageWebp := .Resize (printf "%dx webp q100" $largeWidth) }}
+    {{ $smallImageWebp := .Resize (printf "%dx webp q90" $smallWidth) }}
 
     <picture>
         <source srcset="{{ $largeImageWebp.RelPermalink }}" type="image/webp" media="(min-width: 600px)">
