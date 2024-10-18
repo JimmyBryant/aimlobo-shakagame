@@ -21,7 +21,7 @@ en:
     - id: constellation
       name: Constellation
       weight: 200
-      cover: /image/luck/constellation/cover.jpg
+      cover: /image/luck/constellation/cover.png
       item_thumb_lists:
         dates: 📆
         element: ☯️
@@ -4101,7 +4101,6 @@ en:
 
                 - If you dream of a leopard moving under the moonlight, it signifies the mystery and strength you possess while pursuing your goals.
 
-
 zh-cn:
   luck_lists:
     - id: find_constellation_zodiac
@@ -4125,7 +4124,7 @@ zh-cn:
     - id: constellation
       name: 星座
       weight: 200
-      cover: /image/luck/constellation/cover.jpg
+      cover: /image/luck/constellation/cover.png
       item_thumb_lists:
         dates: 📆
         element: ☯️
@@ -8225,7 +8224,7 @@ zh-tw:
     - id: constellation
       name: 星座
       weight: 200
-      cover: /image/luck/constellation/cover.jpg
+      cover: /image/luck/constellation/cover.png
       item_thumb_lists:
         dates: 📆
         element: ☯️
