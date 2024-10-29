@@ -239,6 +239,25 @@ const site_i18n_data = {
         'en': '🤖 AI Win, try again and defeat it',
         'zh-cn': '🤖 机器人赢啦, 继续加油战胜它',
         'zh-tw': '🤖 機器人贏啦, 繼續加油戰勝它'
+    },
+
+    // page: luck - draw_lots
+    draw_lots_kind_best: {
+        'en': '上',
+        'zh-cn': '上',
+        'zh-tw': '上'
+    },
+
+    draw_lots_kind_ok: {
+        'en': '中',
+        'zh-cn': '中',
+        'zh-tw': '中'
+    },
+
+    draw_lots_kind_bad: {
+        'en': '下',
+        'zh-cn': '下',
+        'zh-tw': '下'
     }
 
 

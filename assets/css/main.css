@@ -970,6 +970,34 @@ a:hover {
 
 }
 
+/* 游戏风格的提示 */
+.tips_icon_force_close {
+
+  .popup_tips.popup_box.game_style {
+
+    .popup_box_content {
+      background-color: blueviolet;
+      color: white;
+
+      .footer img {
+  
+        width: 1.5rem;
+        height: 1.5rem;
+        animation: rotate 3s linear infinite;
+      }
+    }
+  }
+}
+
+@keyframes rotate {
+  from {
+      transform: rotate(0deg);
+  }
+  to {
+      transform: rotate(360deg);
+  }
+}
+
 /* 玫瑰花 */
 .canvas_rose {
   height: 30rem;
@@ -1546,10 +1574,12 @@ body {
   font-family: var(--font-sans-serif);
   font-family: pretty;
   color:#27374D;
-  background-color: #f9f9FBFF;
-  /* background-color: #ffffff;
+  /* background-color: #f9f9FBFF;
+  background-color: #ffffff;
   background: linear-gradient(-45deg, #e8d8b9, #eccec5, #a3e9eb, #bdbdf0, #eec1ea);
   background-size: 150% 200%; */
+  background: #83ffe7 url('/bg-diamante.svg');
+  background-attachment: fixed;
 }
 
 header, main, footer {
@@ -1635,8 +1665,8 @@ footer {
   }
   
   .game-title {
-    /* color: white; */
-    color: black;
+    color: white;
+    /* color: black; */
     text-align: center;
     font-size: 1.5rem;
     font-weight: 600;

@@ -861,3 +861,7 @@
 
 - id: clear
   translation: "Clear"
+
+# page: secret - wish_lantern
+- id: wish_records
+  translation: "wish records"

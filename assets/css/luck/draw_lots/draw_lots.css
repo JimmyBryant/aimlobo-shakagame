@@ -1,0 +1,126 @@
+body {
+
+}
+
+.container {
+    position: relative;
+    /* border: 2px solid #333; */
+    overflow: hidden;
+    background-color: #fff;
+}
+
+/* #canvas, .container {
+
+    width: 1024px;
+    height: 512px;
+} */
+
+/* .box {
+    position: absolute;
+    background-color: #3498db;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+} */
+
+/* .box:hover {
+    background-color: #2980b9;
+} */
+
+
+.lot_main {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0); /* 先应用居中，再缩放 */
+    z-index: 10;
+    transition: transform 1s ease, opacity 1s ease;
+    opacity: 0; /* 隐藏时透明 */
+    background-color: #f5f5dc;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    width: 300px;
+}
+
+.lot_main.active {
+    transform: translate(-50%, -50%) scale(1); /* 保持居中，放大 */
+    opacity: 1;
+    display: flex;
+}
+
+
+#btn_open_lot_content {
+    /* position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);  */
+    width: 200px;
+    height: 200px;
+    font-size: 150px;
+
+}
+
+.lot_labels {
+
+    background-color: #fff;
+    padding: 0.3rem;
+    width: 50px;
+    height: 200px;
+}
+
+.lot_content {
+
+    display: none;
+    height: 200px;
+    width: 0;
+    background: #f5f5dc; /* 卷轴背景颜色 */
+    border: 1px solid #8b4513; /* 卷轴边框，模拟书画轴的边框 */
+    border-radius: 0.5rem;
+    overflow: hidden;
+    transition: width 2s ease-out; /* 动画效果，过渡宽度变化 */
+}
+
+.lot_content_1,
+.lot_content_2 {
+
+    white-space: nowrap; /* 强制内容不换行，模拟卷轴效果 */
+}
+
+.lot_content.expanded {
+
+    width: 250px;
+}
+
+
+.lot_content_unlock {
+
+    height: 180px;
+}
+
+.lot_content_lock {
+
+    display: none;
+
+    width: 0; /* 初始宽度为0，表示卷起来的状态 */
+
+    /* 固定高度，模拟卷轴的高度 */
+    /* height: 200px;  */
+    overflow: hidden; /* 隐藏溢出的内容，模拟卷轴 */
+    background: #f5f5dc; /* 卷轴背景颜色 */
+    border: 5px solid #8b4513; /* 卷轴边框，模拟书画轴的边框 */
+    border-radius: 15px;
+    transition: width 2s ease-out; /* 动画效果，过渡宽度变化 */
+}
+
+.lot_content_lock.expanded {
+
+    width: 400px; /* 展开后的宽度，根据内容调整 */
+}
+
+
+
+@media screen and (max-width: 48rem) {
+
+
+}

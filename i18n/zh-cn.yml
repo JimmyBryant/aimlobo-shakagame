@@ -846,3 +846,7 @@
 
 - id: clear
   translation: "清空"
+
+# page: secret - wish_lantern
+- id: wish_records
+  translation: "许愿记录"

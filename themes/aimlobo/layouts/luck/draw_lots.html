@@ -1,0 +1,66 @@
+{{- define "main" -}}
+
+
+{{- $lang := .Lang -}}
+{{- $dataLang := index .Site.Data.luck $lang -}}
+{{- $luckLists := $dataLang.luck_lists -}}
+{{- $draw_lots := where $luckLists "id" "draw_lots" -}}
+{{- $appName := (index $draw_lots 0).name -}}
+{{- $tips := (index $draw_lots 0).tips -}}
+
+<div class="wrap">
+
+  <div class="draw_lots">
+
+
+    {{- /* 游戏标题 */ -}}
+    <div class="game_title flex align-items-center justify-content-center gap-_5rem padding-tb-1rem">
+        <div class="title font-size-2">{{- $appName -}}</div>
+
+        <div class="tips_icon">
+            <span class="tips_icon_in_page">❔</span>
+            {{ partial "tools/popup_tips.html" (dict "tipsContent" $tips) }}
+        </div>
+    </div>
+
+    {{- /* 游戏内容 */ -}}
+    <div class="container margin-0-auto position-relative" id="container">
+
+      {{- /* 游戏背景 - 移动的图片 */ -}}
+      <canvas id="bg_canvas"></canvas>
+
+      {{- /* 游戏内容 - main */ -}}
+      <div class="lot_main flex align-items-center z-index-10">
+
+        {{- /* 签印 */ -}}
+        <div class="lot_labels flex flex-column gap-_5rem align-items-center justify-content-center padding-_5rem">
+
+          <div class="lot_label_1">A</div>
+          <div class="lot_label_2">A</div>
+        </div>
+
+
+
+        {{- /* 按钮 - 查看签文 */ -}}
+        <button id="btn_open_lot_content" class="cursor-pointer btn btn_game btn_game_blue">A</button>
+
+        {{- /* 签文 */ -}}
+        <div class="lot_content flex flex-column gap-_5rem align-items-center justify-content-center padding-_5rem">
+
+          <div class="lot_content_1">123</div>
+          <div class="lot_content_2">123</div>
+        </div>
+
+
+      </div>
+
+      
+
+    </div>
+
+
+
+  </div>
+
+</div>
+{{- end -}}
