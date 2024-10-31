@@ -851,3 +851,7 @@
 # page: secret - wish_lantern
 - id: wish_records
   translation: "許願記錄"
+
+# page: home
+- id: hot_app
+  translation: "熱門"

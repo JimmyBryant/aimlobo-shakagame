@@ -865,3 +865,7 @@
 # page: secret - wish_lantern
 - id: wish_records
   translation: "wish records"
+
+# page: home
+- id: hot_app
+  translation: "Hot"

@@ -850,3 +850,7 @@
 # page: secret - wish_lantern
 - id: wish_records
   translation: "许愿记录"
+
+# page: home
+- id: hot_app
+  translation: "热门"

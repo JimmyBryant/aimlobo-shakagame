@@ -16,6 +16,91 @@
         {{- partial "tools/popup_rose.html" }}
       </div>
 
+      {{- /* 热门，推荐应用 */ -}}
+      <div class="font-size-1_5 font-weight-600 text-center margin-tb-1rem padding-_5rem block bg-color-03 border-radius-_3rem color-white">🔥 {{ T "hot_app" }}</div>
+
+      <div class="game-lists">
+
+        {{- /* 推荐应用 - 秘密 */ -}}
+        {{- $secretData := index .Site.Data.secret $lang -}}
+        {{- $secretLists := $secretData.secret_list -}}
+
+        {{ $secretId := slice "wish_lantern" "show_love" }}
+
+        {{ range $secretId }}
+
+          {{ $secret := where $secretLists "id" . }}
+          {{ $secret := index $secret 0 }}
+
+          {{ with $secret }}
+            <div class="list-item">
+
+              {{- $path := .cover -}}
+              {{- $alt := .id -}}
+              <a href="./secret/{{- .id | urlize -}}/" class="position-relative">
+
+                <div class="game-cover border-radius-_5rem">
+  
+                  {{ partial "tools/img-res.html" (dict "imagePath" $path "alt" $alt "imageWidth" 25) }}
+
+                  <div class="game-title">
+                    {{- .name -}}
+                  </div>
+
+                </div>
+
+              </a>
+
+            </div>
+
+          {{ end }}
+
+        {{ end }}
+
+
+
+
+        {{- /* 推荐应用 - 游戏 */ -}}
+        {{- $gameData := index .Site.Data.game $lang -}}
+        {{- $gameLists := $gameData.game_lists -}}
+
+        {{ $gameid := slice "five_in_a_row" }}
+
+        {{ range $gameid }}
+
+          {{ $game := where $gameLists "id" . }}
+          {{ $game := index $game 0 }}
+
+          {{ with $game }}
+            <div class="list-item">
+
+              {{- $path := .cover -}}
+              {{- $alt := .id -}}
+              <a href="./game/{{- .id | urlize -}}/" class="position-relative">
+
+                <div class="game-cover border-radius-_5rem">
+  
+                  {{ partial "tools/img-res.html" (dict "imagePath" $path "alt" $alt "imageWidth" 25) }}
+
+                  <div class="game-title">
+                    {{- .name -}}
+                  </div>
+
+                </div>
+
+              </a>
+
+            </div>
+
+          {{ end }}
+
+        {{ end }}
+
+        
+
+      </div>
+
+
       <a href="./game/" class="font-size-1_5 font-weight-600 text-center margin-tb-1rem padding-_5rem block bg-color-03 border-radius-_3rem color-white">🕹️ {{ T "game" }}</a>
 
       {{- /* Game */ -}}
