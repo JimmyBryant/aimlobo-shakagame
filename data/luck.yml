@@ -4100,8 +4100,157 @@ en:
                 - Dreaming of a leopard's spots symbolizes the uniqueness and individuality you display in life.
 
                 - If you dream of a leopard moving under the moonlight, it signifies the mystery and strength you possess while pursuing your goals.
-      
 
+    # - id: divination_ziwei
+    #   name: Divination Ziwei
+    #   weight: 80
+    #   cover: /image/luck/find_constellation_zodiac/cover.png
+    #   tips_start_game: good luck
+    #   tips:
+    #     - title: What is Divination Ziwei?
+    #       content: Constellation & Zodiac (**shakagame.com**), search your Constellation and chinese Zodiac.
+    #       weight: 10
+    #     - title: How to use Constellation & Zodiac?
+    #       content: |
+    #         1. Select birthday;
+    #         2. click **Submit** button and you will get the answer.
+    #       weight: 20
+    #     - title: Lucky Points System
+    #       content: |
+    #         1. No lucky points add or cost.
+    #       weight: 30
+    #   user_birth:
+    #     - id: 0
+    #       time: zi
+    #       time_range: 23:00 - 01:00
+    #       weight: 100
+    #     - id: 1
+    #       time: chou
+    #       time_range: 01:00 - 03:00
+    #       weight: 200
+    #     - id: 2
+    #       time: yin
+    #       time_range: 03:00 - 05:00
+    #       weight: 300
+    #     - id: 3
+    #       time: mao
+    #       time_range: 05:00 - 07:00
+    #       weight: 400
+    #     - id: 4
+    #       time: chen
+    #       time_range: 07:00 - 09:00
+    #       weight: 500
+    #     - id: 5
+    #       time: si
+    #       time_range: 09:00 - 11:00
+    #       weight: 600
+    #     - id: 6
+    #       time: woo
+    #       time_range: 11:00 - 13:00
+    #       weight: 700
+    #     - id: 7
+    #       time: wei
+    #       time_range: 13:00 - 15:00
+    #       weight: 800
+    #     - id: 8
+    #       time: shen
+    #       time_range: 15:00 - 17:00
+    #       weight: 900
+    #     - id: 9
+    #       time: you
+    #       time_range: 17:00 - 19:00
+    #       weight: 1000
+    #     - id: 10
+    #       time: xu
+    #       time_range: 19:00 - 21:00
+    #       weight: 1100
+    #     - id: 11
+    #       time: hai
+    #       time_range: 21:00 - 23:00
+    #       weight: 1200
+    #   zhong_gong:
+    #     - id: solarDate
+    #       name: solarDate
+    #       weight: 100
+    #     - id: lunarDate
+    #       name: lunarDate
+    #       weight: 200
+    #     - id: chineseDate
+    #       name: chineseDate
+    #       weight: 300
+    #     - id: fiveElementsClass
+    #       name: fiveElementsClass
+    #       weight: 400
+    #     - id: time
+    #       name: time
+    #       weight: 500
+    #     - id: timeRange
+    #       name: timeRange
+    #       weight: 600
+    #     - id: sign
+    #       name: sign
+    #       weight: 700
+    #     - id: zodiac
+    #       name: zodiac
+    #       weight: 800
+    #     - id: soul
+    #       name: soul
+    #       weight: 900
+    #     - id: body
+    #       name: body
+    #       weight: 1000
+    #     - id: earthlyBranchOfSoulPalace
+    #       name: earthlyBranchOfSoulPalace
+    #       weight: 1100
+    #     - id: earthlyBranchOfBodyPalace
+    #       name: earthlyBranchOfBodyPalace
+    #       weight: 1200
+    #   palace:
+    #     - id: name
+    #       name: name
+    #       weight: 100
+    #     - id: isBodyPalace
+    #       name: isBodyPalace
+    #       weight: 200
+    #     - id: isBodyPalace
+    #       name: isBodyPalace
+    #       weight: 300
+    #     - id: isOriginalPalace
+    #       name: isOriginalPalace
+    #       weight: 400
+    #     - id: heavenlyStem
+    #       name: heavenlyStem
+    #       weight: 500
+    #     - id: earthlyBranch
+    #       name: earthlyBranch
+    #       weight: 600
+    #     - id: majorStars
+    #       name: majorStars
+    #       weight: 700
+    #     - id: minorStars
+    #       name: minorStars
+    #       weight: 800
+    #     - id: adjectiveStars
+    #       name: adjectiveStars
+    #       weight: 900
+    #     - id: changsheng12
+    #       name: changsheng12
+    #       weight: 1000
+    #     - id: boshi12
+    #       name: boshi12
+    #       weight: 1100
+    #     - id: jiangqian12
+    #       name: jiangqian12
+    #       weight: 1200
+    #     - id: suiqian12
+    #       name: suiqian12
+    #       weight: 1300
+    #     - id: decadal
+    #       name: decadal
+    #       weight: 1400
+    #     - id: ages
+    #       name: ages
+    #       weight: 1500
 
 zh-cn:
   luck_lists:

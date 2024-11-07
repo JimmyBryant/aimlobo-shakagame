@@ -1,0 +1,239 @@
+{{- define "main" -}}
+
+
+{{- $lang := .Lang -}}
+{{- $dataLang := index .Site.Data.luck $lang -}}
+{{- $lists := $dataLang.luck_lists -}}
+{{- $app := where $lists "id" "divination_ziwei" -}}
+{{- $appName := (index $app 0).name -}}
+{{- $appTips := (index $app 0).tips -}}
+{{- $tipsStartGame := (index $app 0).tips_start_game -}}
+
+<div class="wrap">
+
+  <div class="app">
+
+    {{- /* 应用标题 */ -}}
+    <div class="app_title flex align-items-center justify-content-center gap-_5rem padding-tb-1rem">
+
+        <div class="title font-size-2">{{- $appName -}}</div>
+
+        <div class="tips_icon">
+
+            <span class="tips_icon_in_page">❔</span>
+
+            {{ partial "tools/popup_tips.html" (dict "tipsContent" $appTips) }}
+
+        </div>
+
+    </div>
+
+    <div class="app_content">
+
+      {{- /* 第一页面 - 开启应用 */ -}}
+      <div class="app_slogan">
+
+        <div class="slogan_content_text">{{ "天地不仁, 以万物为刍狗" }}</div>
+
+        <button class="btn_start_app btn btn_game btn_game_purple">{{ "知命" }}</button>
+
+      </div>
+
+      {{- /* 用户输入 - 生日 */ -}}
+      <form class="form_user_birth_date">
+        <label for="input_user_birth_date" class="header">
+          
+          {{- "select_your_birthday" -}}
+
+        </label>
+  
+        <div class="body flex align-items-center justify-content-center">
+            <input
+            class="input_user_birth_date font-size-1_5"
+            type="date"
+            id="input_user_birth_date"
+            name="input_user_birth_date"
+            pattern="\d{4}-\d{2}-\d{2}"
+            required>
+        </div>
+  
+        <div class="footer">
+          <button class="btn btn_reset" type="reset">{{ T "cancel" }}</button>
+          <button class="btn btn_submit" type="submit">{{ T "submit" }}</button>
+        </div>
+        
+      </form>
+
+      {{- /* 用户输入 - 生日时辰 */ -}}
+      <div class="app_user_input user_birth_time">
+
+        {{- /* 居中提示 */ -}}
+        <div class="user_birth_time_container_description" style="grid-area: ct;">
+
+          <div class="description">{{- "出生时间" -}}</div>
+
+        </div>
+
+
+        {{- $userBirth := (index $app 0).user_birth -}}
+
+        {{- with $userBirth -}}
+
+          {{- range sort . "weight" "asc" -}}
+
+            <div class="user_birth_time_container" value="{{- .id -}}" style="grid-area: g{{- .id -}};">
+
+              <div class="time">{{- .time -}}</div>
+
+              <div class="time_range">{{- .time_range -}}</div>
+
+            </div>
+
+          {{- end -}}
+
+        {{- end -}}
+      </div>
+
+      {{- /* 用户输入 - 性别 */ -}}
+      <div class="app_user_input user_gender">
+
+        {{- /* 居中提示 */ -}}
+        <div class="user_gender_container_description">
+
+          <div class="description">{{- "选择性别" -}}</div>
+
+        </div>
+
+        <div class="user_gender_container">
+
+          <div class="user_gender_container_item" value="male">{{- "男性" -}}</div>
+
+          <div class="user_gender_container_item" value="female">{{- "女性" -}}</div>
+
+        </div>
+
+
+        
+      </div>
+
+      {{- /* 应用数据加载页面 */ -}}
+      <div class="app_data_loading">
+
+        <div class="wrap">
+
+          <div class="cube">
+            <!-- 外层立方体六个面 -->
+            <div class="out_front"><img src="https://i.loli.net/2018/05/03/5aeb0eef73838.jpg" class="pic"></div>
+            <div class="out_back"><img src="https://i.loli.net/2018/05/03/5aeb0f2fb9a83.jpg" class="pic"></div>
+            <div class="out_left"><img src="https://i.loli.net/2018/05/03/5aeb0f55411f0.jpg" class="pic"></div>
+            <div class="out_right"><img src="https://i.loli.net/2018/05/03/5aeb0f79a1124.jpg" class="pic"></div>
+            <div class="out_top"><img src="https://i.loli.net/2018/05/03/5aeb0f98a8b66.jpg" class="pic"></div>
+            <div class="out_bottom"><img src="https://i.loli.net/2018/05/03/5aeb0fdd51b7e.jpg" class="pic"></div>
+      
+            <!-- 内层小立方体六个面 -->
+            <span class="in_front"><img src="https://i.loli.net/2018/05/03/5aeb100223dd0.jpg" class="in_pic"></span>
+            <span class="in_back"><img src="https://i.loli.net/2018/05/03/5aeb101c2c24b.jpg" class="in_pic"></span>
+            <span class="in_left"><img src="https://i.loli.net/2018/05/03/5aeb1038127b5.jpg" class="in_pic"></span>
+            <span class="in_right"><img src="https://i.loli.net/2018/05/03/5aeb0dce1ca55.jpg" class="in_pic"></span>
+            <span class="in_top"><img src="https://i.loli.net/2018/05/03/5aeb1057bb167.jpg" class="in_pic"></span>
+            <span class="in_bottom"><img src="https://i.loli.net/2018/05/03/5aeb107514579.jpg" class="in_pic"></span>
+          </div>
+
+        </div>
+        
+
+      </div>
+
+
+      {{- /* 应用导航页面 */ -}}
+      <div class="app_data_nav">
+
+        {{- /* 中宫 */ -}}
+        <div class="nav_zhong_gong" style="grid-area: ct;">{{ "self" }}</div>
+
+        {{- /* 十二宫 */ -}}
+        {{ range $i := seq 0 11 }}
+
+          <div class="nav_palace_index nav_palace_index_{{- $i -}}" value="{{- $i -}}" style="grid-area: g{{- $i -}};">{{- $i -}}</div>
+
+        {{ end }}
+      </div>
+
+
+      {{- /* 应用数据 */ -}}
+      <div class="app_data">
+
+        {{- /* 中宫 */ -}}
+        {{- $zhongGong := (index $app 0).zhong_gong -}}
+        <div class="zhong_gong_container">
+
+          <div class="font-size-1_5 font-weight-600">{{ "基本信息" }}</div>
+
+          {{- with $zhongGong -}}
+
+            {{- range sort . "weight" "asc" -}}
+
+              <div class="flex gap-_5rem">
+
+                <div>{{- .name -}}: </div>
+
+                <div class="var_{{- .id -}}"></div>
+
+              </div>
+
+            {{- end -}}
+
+          {{- end -}}
+
+          <button class="btn_close_palace_info btn btn_game btn_game_purple">{{- T "close" -}}</button>
+
+        </div>
+
+        {{- /* 十二宫 */ -}}
+        {{ range $i := seq 0 11 }}
+
+          <div class="palace_index_info_container palace_index_{{ $i }}">
+            
+            <div class="var_palace_name"></div>
+            <div class="var_palace_isBodyPalace"></div>
+            <div class="var_palace_isOriginalPalace"></div>
+            <div class="var_palace_heavenlyStem"></div>
+            <div class="var_palace_earthlyBranch"></div>
+            <div class="var_palace_majorStars"></div>
+            <div class="var_palace_minorStars"></div>
+            <div class="var_palace_adjectiveStars"></div>
+            <div class="var_palace_horoscope_decadal_stars"></div>
+            <div class="var_palace_horoscope_yearly_stars"></div>
+            <div class="var_palace_changsheng12"></div>
+            <div class="var_palace_boshi12"></div>
+            <div class="var_palace_jiangqian12"></div>
+            <div class="var_palace_suiqian12"></div>
+            <div class="var_palace_decadal flex gap-_5rem">
+              <div class="var_palace_decadal_index_0"></div>
+              {{ "-" }}
+              <div class="var_palace_decadal_index_1"></div>
+            </div>
+            <div class="var_palace_ages flex gap-_5rem"></div>
+
+            <button class="btn_close_palace_info btn btn_game btn_game_purple">{{- "close" -}}</button>
+          </div>
+
+        {{ end }}
+
+
+      </div>
+
+    </div>
+
+    
+
+  </div>
+
+  <script src="/js/luck/divination_ziwei/iztro.min.js"></script>
+  <script>
+    // 获取一张星盘数据
+    var astro = iztro.astro;
+  </script>
+
+</div>
+{{- end -}}
